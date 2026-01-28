@@ -4,7 +4,7 @@ Evaluate subtitle alignment quality using DER, JER, WER, SCA, and SCER metrics.
 
 ## 📊 Interactive Visualization
 
-**[View Interactive Benchmark Results](https://lattifai.github.io/lattifai-python/benchmark/)**
+**[View Interactive Benchmark Results](https://lattifai.github.io/benchmark/index.html)**
 
 Open `index.html` in your browser for an interactive visualization with:
 - Click-to-highlight metric comparison
@@ -13,16 +13,9 @@ Open `index.html` in your browser for an interactive visualization with:
 - Responsive design for all devices
 
 ```bash
-# Open directly in browser (may have CORS issues with file://)
-open benchmark/index.html
-
-# Or start a local HTTP server (recommended)
-cd benchmark
+# Start a local HTTP server (recommended)
 python -m http.server 8002
 # Then open: http://localhost:8002/index.html
-
-# Alternative with Python 2
-python -m SimpleHTTPServer 8002
 ```
 
 ## Metrics
@@ -62,12 +55,8 @@ python -m SimpleHTTPServer 8002
 
 **Command to reproduce:**
 ```bash
-cd benchmark
-
-# set .env
-
 # Ground Truth vs Ground Truth
-python eval.py -r data/Introducing_GPT-4o_GroundTruth.ass -hyp data/Introducing_GPT-4o_GroundTruth.ass \
+python eval.py -r data/introducing-gpt4o/ground_truth.ass -hyp data/introducing-gpt4o/ground_truth.ass \
   --metrics der jer wer sca scer --collar 0.0 --model-name "Ground Truth"
 
 # Gemini 2.5 Pro + LattifAI alignment
@@ -77,17 +66,17 @@ lai alignment youtube -Y \
     https://www.youtube.com/watch\?v\=DQacCB9tDaw \
     media.output_dir=~/Downloads/lattifai_youtube client.profile=true \
     caption.include_speaker_in_text=false caption.split_sentence=true \
-    caption.input_path=./data/Introducing_GPT-4o_Gemini.md \
-    caption.output_path=./data/Introducing_GPT-4o_Gemini_LattifAI.ass \
+    caption.input_path=./data/introducing-gpt4o/gemini_2.5_pro.md \
+    caption.output_path=./data/introducing-gpt4o/gemini_2.5_pro_lattifai.ass \
     transcription.model_name=gemini-2.5-pro \
     transcription.gemini_api_key="YOUR_GEMINI_API_KEY"
 
 # Gemini 2.5 Pro
-lai caption convert -Y ./data/Introducing_GPT-4o_Gemini.md ./data/Introducing_GPT-4o_Gemini.ass include_speaker_in_text=false
+lai caption convert -Y ./data/introducing-gpt4o/gemini_2.5_pro.md ./data/introducing-gpt4o/gemini_2.5_pro.ass include_speaker_in_text=false
 
-python eval.py -r data/Introducing_GPT-4o_GroundTruth.ass -hyp data/Introducing_GPT-4o_Gemini.ass \
+python eval.py -r data/introducing-gpt4o/ground_truth.ass -hyp data/introducing-gpt4o/gemini_2.5_pro.ass \
   --metrics der jer wer sca scer --collar 0.0 --model-name "Gemini 2.5 Pro"
-python eval.py -r data/Introducing_GPT-4o_GroundTruth.ass -hyp data/Introducing_GPT-4o_Gemini_LattifAI.ass \
+python eval.py -r data/introducing-gpt4o/ground_truth.ass -hyp data/introducing-gpt4o/gemini_2.5_pro_lattifai.ass \
   --metrics der jer wer sca scer --collar 0.0 --model-name "Gemini 2.5 Pro + LattifAI"
 
 # Gemini 3 Pro + LattifAI alignment
@@ -95,37 +84,33 @@ lai alignment youtube -Y \
     https://www.youtube.com/watch\?v\=DQacCB9tDaw \
     media.output_dir=~/Downloads/lattifai_youtube_Gemini3 client.profile=true \
     caption.include_speaker_in_text=false caption.split_sentence=true \
-    caption.input_path=./data/Introducing_GPT-4o_Gemini3.md \
-    caption.output_path=./data/Introducing_GPT-4o_Gemini3_LattifAI.ass \
+    caption.input_path=./data/introducing-gpt4o/gemini_3_pro.md \
+    caption.output_path=./data/introducing-gpt4o/gemini_3_pro_lattifai.ass \
     transcription.model_name=gemini-3-pro-preview \
     transcription.gemini_api_key="YOUR_GEMINI_API_KEY"
 
-lai caption convert -Y ./data/Introducing_GPT-4o_Gemini3.md ./data/Introducing_GPT-4o_Gemini3.ass include_speaker_in_text=false
+lai caption convert -Y ./data/introducing-gpt4o/gemini_3_pro.md ./data/introducing-gpt4o/gemini_3_pro.ass include_speaker_in_text=false
 
-python eval.py -r data/Introducing_GPT-4o_GroundTruth.ass -hyp data/Introducing_GPT-4o_Gemini3.ass \
+python eval.py -r data/introducing-gpt4o/ground_truth.ass -hyp data/introducing-gpt4o/gemini_3_pro.ass \
   --metrics der jer wer sca scer --collar 0.0 --model-name "Gemini 3 Pro Preview"
-python eval.py -r data/Introducing_GPT-4o_GroundTruth.ass -hyp data/Introducing_GPT-4o_Gemini3_LattifAI.ass \
+python eval.py -r data/introducing-gpt4o/ground_truth.ass -hyp data/introducing-gpt4o/gemini_3_pro_lattifai.ass \
   --metrics der jer wer sca scer --collar 0.0 --model-name "Gemini 3 Pro Preview + LattifAI"
-
 
 # Gemini 3 Flash + LattifAI alignment
 lai alignment youtube -Y \
     https://www.youtube.com/watch\?v\=DQacCB9tDaw \
     media.output_dir=~/Downloads/lattifai_youtube_Gemini3 client.profile=true \
     caption.include_speaker_in_text=false caption.split_sentence=true \
-    caption.input_path=./data/Introducing_GPT-4o_Gemini3_Flash.md \
-    caption.output_path=./data/Introducing_GPT-4o_Gemini3_Flash_LattifAI.ass \
+    caption.input_path=./data/introducing-gpt4o/gemini_3_flash.md \
+    caption.output_path=./data/introducing-gpt4o/gemini_3_flash_lattifai.ass \
     transcription.model_name=gemini-3-flash-preview \
     transcription.gemini_api_key="YOUR_GEMINI_API_KEY"
-lai caption convert -Y ./data/Introducing_GPT-4o_Gemini3_Flash.md ./data/Introducing_GPT-4o_Gemini3_Flash.ass include_speaker_in_text=false
+lai caption convert -Y ./data/introducing-gpt4o/gemini_3_flash.md ./data/introducing-gpt4o/gemini_3_flash.ass include_speaker_in_text=false
 
-python eval.py -r data/Introducing_GPT-4o_GroundTruth.ass -hyp data/Introducing_GPT-4o_Gemini3_Flash.ass \
+python eval.py -r data/introducing-gpt4o/ground_truth.ass -hyp data/introducing-gpt4o/gemini_3_flash.ass \
   --metrics der jer wer sca scer --collar 0.0 --model-name "Gemini 3 Flash Preview"
-python eval.py -r data/Introducing_GPT-4o_GroundTruth.ass -hyp data/Introducing_GPT-4o_Gemini3_Flash_LattifAI.ass \
+python eval.py -r data/introducing-gpt4o/ground_truth.ass -hyp data/introducing-gpt4o/gemini_3_flash_lattifai.ass \
   --metrics der jer wer sca scer --collar 0.0 --model-name "Gemini 3 Flash Preview + LattifAI"
-
-# python eval.py -r data/Introducing_GPT-4o_Gemini.ass -hyp data/Introducing_GPT-4o_Gemini3.ass \
-#   --metrics der jer wer sca scer --collar 0.0 --model-name "Gemini 2.5 vs 3"
 ```
 
 ## Installation

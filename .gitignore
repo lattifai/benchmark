@@ -2,11 +2,6 @@
 .cache/
 .ruff_cache/
 
-# Generated C code from Cython test
-tests/**/*.c
-# Cython HTML annotations
-
-
 # C extensions
 *.so
 
@@ -37,16 +32,7 @@ nosetests.xml
 .noseids
 .pytest_cache
 
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
-
-*.csv
-build/
 env/
-env_docs/
-docs/_build/
 htmlcov/
 
 # vim/emacs backup files
@@ -55,37 +41,14 @@ htmlcov/
 .\#*
 .*.sw*
 
-#DB snapshots
-db_snapshots/
-
-#OSX
+# OSX
 .DS_Store
 
-node_modules/
-bower_components/
-.sass-cache/
 .idea/
-.unison.*
 
-.ipynb_checkpoints/
-_skbuild/
+# Data artifacts
+data/**/*.TextGrid
+data/**/*.txt
 
-# might want to remove this later when distributing
-MANIFEST
-
-.prompts
 .env
 .vscode/
-.github/*.md
-tests/data/SA1_*.*
-!SA1_24K.wav
-tests/data/SA1.TextGrid
-benchmark/data/*.TextGrid
-benchmark/data/*.txt
-checkpoints/
-tests/test_cli_commands.sh
-tests/data/AG*
-tests/data/Sh*
-tests/data/lVG*
-tests/data/VI*
-tests/data/memray-flamegraph*

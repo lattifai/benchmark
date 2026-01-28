@@ -3,9 +3,3 @@ show-source=true
 statistics=true
 max-line-length = 120
 ignore = W503, E203
-per-file-ignores =
-
-
-exclude =
-  .git,
-  setup.py,
