@@ -1,0 +1,51 @@
+{
+  "id": "introducing-gpt4o",
+  "name": "Introducing GPT-4o",
+  "description": "OpenAI GPT-4o announcement video featuring multi-speaker dialogue",
+  "language": "en",
+  "video": {
+    "url": "https://www.youtube.com/watch?v=DQacCB9tDaw",
+    "duration": 180,
+    "format": "youtube"
+  },
+  "speakers": {
+    "count": 2,
+    "labels": ["Speaker 1", "Speaker 2"]
+  },
+  "ground_truth": {
+    "path": "ground_truth.ass",
+    "format": "ass",
+    "annotator": "manual",
+    "annotation_date": "2024-05"
+  },
+  "results": [
+    {
+      "model": "gemini-2.5-pro",
+      "files": {
+        "raw_transcript": "results/gemini_2.5_pro.md",
+        "converted": "results/gemini_2.5_pro.ass",
+        "aligned": "results/gemini_2.5_pro_lattifai.ass"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "files": {
+        "raw_transcript": "results/gemini_3_pro.md",
+        "converted": "results/gemini_3_pro.ass",
+        "aligned": "results/gemini_3_pro_lattifai.ass"
+      }
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "files": {
+        "raw_transcript": "results/gemini_3_flash.md",
+        "converted": "results/gemini_3_flash.ass",
+        "aligned": "results/gemini_3_flash_lattifai.ass"
+      }
+    }
+  ],
+  "tags": ["multi-speaker", "product-announcement", "technical"],
+  "difficulty": "medium",
+  "created": "2024-05-13",
+  "updated": "2026-01-28"
+}

@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "datasets": [
+    {
+      "id": "introducing-gpt4o",
+      "language": "en",
+      "category": "alignment",
+      "name": "Introducing GPT-4o",
+      "description": "OpenAI GPT-4o announcement video with speaker diarization",
+      "video_url": "https://www.youtube.com/watch?v=DQacCB9tDaw",
+      "duration": 180,
+      "num_speakers": 2,
+      "path": "alignment/en/introducing-gpt4o",
+      "ground_truth": "ground_truth.ass",
+      "models": [
+        "gemini-2.5-pro",
+        "gemini-3-pro-preview",
+        "gemini-3-flash-preview"
+      ],
+      "tags": ["multi-speaker", "product-announcement", "english"]
+    }
+  ],
+  "languages": {
+    "en": "English",
+    "zh": "Chinese (Simplified)",
+    "ja": "Japanese",
+    "es": "Spanish",
+    "fr": "French",
+    "de": "German",
+    "ko": "Korean"
+  },
+  "categories": {
+    "alignment": "Forced Alignment",
+    "transcription": "Speech-to-Text",
+    "diarization": "Speaker Diarization"
+  }
+}

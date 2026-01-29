@@ -44,38 +44,100 @@ GEMINI_API_KEY=xxx ./scripts/reproduce.sh all
 
 ## Test Data
 
-- **Video**: [Introducing GPT-4o](https://www.youtube.com/watch?v=DQacCB9tDaw) (OpenAI)
-- **Ground Truth**: Manually annotated speaker-labeled subtitles
-- **Location**: `data/introducing-gpt4o/`
+Multi-language, multi-dataset structure supporting extensible benchmarking.
+
+### Current Datasets
+
+| ID | Language | Category | Name | Speakers |
+|----|----------|----------|------|----------|
+| `introducing-gpt4o` | English | Alignment | [Introducing GPT-4o](https://www.youtube.com/watch?v=DQacCB9tDaw) | 2 |
+
+**See [DATA_STRUCTURE.md](DATA_STRUCTURE.md) for detailed documentation.**
 
 ## Files
 
 ```
 lattifai-benchmark/
-├── eval.py                  # Evaluation script
+├── eval.py                      # Legacy evaluation script
 ├── scripts/
-│   └── reproduce.sh         # Reproduction script
+│   ├── reproduce.sh             # Legacy reproduction script
+│   ├── migrate_data.py          # Data migration tool
+│   ├── dataset_manager.py       # Dataset management CLI
+│   └── eval_dataset.py          # Evaluate single dataset
 ├── data/
-│   └── introducing-gpt4o/
-│       ├── ground_truth.ass           # Reference annotations
-│       ├── gemini_*.md                # Raw Gemini transcripts
-│       ├── gemini_*.ass               # Converted to ASS
-│       └── gemini_*_lattifai.ass      # After LattifAI alignment
-└── index.html               # Interactive visualization
+│   ├── datasets.json            # Global dataset index
+│   ├── alignment/               # Forced alignment tests
+│   │   ├── en/                  # English datasets
+│   │   │   └── introducing-gpt4o/
+│   │   │       ├── metadata.json           # Dataset metadata
+│   │   │       ├── ground_truth.ass        # Reference
+│   │   │       └── results/                # Model outputs
+│   │   │           ├── gemini_*.md         # Raw transcripts
+│   │   │           ├── gemini_*.ass        # Converted
+│   │   │           └── gemini_*_lattifai.ass  # Aligned
+│   │   └── zh/                  # Chinese datasets
+│   ├── transcription/           # Pure transcription (future)
+│   └── diarization/             # Speaker diarization (future)
+└── index.html                   # Interactive visualization
 ```
 
 ## Usage
 
+### Dataset Management
+
 ```bash
-# Single file evaluation
-python eval.py -r reference.ass -hyp hypothesis.ass -n "Model Name"
+# List all datasets
+python scripts/dataset_manager.py list
 
-# Specific metrics
-python eval.py -r ref.ass -hyp hyp.ass -m der wer
+# Filter by language
+python scripts/dataset_manager.py list -l en
 
-# JSON output
-python eval.py -r ref.ass -hyp hyp.ass -f json
+# Show dataset details
+python scripts/dataset_manager.py show introducing-gpt4o
+
+# Add new dataset
+python scripts/dataset_manager.py add \
+  my-dataset-id "My Dataset" en alignment \
+  "https://youtube.com/..." \
+  --speakers 2 --tags multi-speaker
 ```
+
+### Evaluation
+
+```bash
+# Evaluate a dataset (all models)
+python scripts/eval_dataset.py introducing-gpt4o
+
+# Custom metrics
+python scripts/eval_dataset.py introducing-gpt4o -m der jer wer
+
+# Legacy single file evaluation
+python eval.py -r reference.ass -hyp hypothesis.ass -n "Model Name"
+```
+
+### Adding New Datasets
+
+1. Create dataset entry:
+   ```bash
+   python scripts/dataset_manager.py add \
+     dataset-id "Dataset Name" {language} alignment \
+     "video-url" --speakers 2
+   ```
+
+2. Add ground truth:
+   ```bash
+   # Copy to data/alignment/{language}/{dataset-id}/ground_truth.ass
+   ```
+
+3. Add model results:
+   ```bash
+   # Create data/alignment/{language}/{dataset-id}/results/
+   # Add model outputs (*.md, *.ass, *_lattifai.ass)
+   ```
+
+4. Update metadata.json with result entries
+
+See [DATA_STRUCTURE.md](DATA_STRUCTURE.md) for details.
 
 ## References
 
