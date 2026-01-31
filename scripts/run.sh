@@ -7,6 +7,14 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 DATASETS_JSON="$PROJECT_DIR/data/datasets.json"
+DATA_ROOT="$PROJECT_DIR/data"
+
+# Load .env file if exists
+if [ -f "$PROJECT_DIR/.env" ]; then
+    set -a
+    source "$PROJECT_DIR/.env"
+    set +a
+fi
 
 # Colors
 GREEN='\033[0;32m'
@@ -77,10 +85,19 @@ for ds in data['datasets']:
 run_eval_for_dataset() {
     local dataset_id="$1"
     local skip_events="$2"
-    local DATA_DIR="$OUTPUT_DIR/$dataset_id"
+    local models_arg="$3"
+    local SRC_DIR="$DATA_ROOT/$dataset_id"
+    local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
-    if [ ! -d "$DATA_DIR" ]; then
-        print_warning "Dataset directory not found: $DATA_DIR"
+    # Check source data directory
+    if [ ! -d "$SRC_DIR" ]; then
+        print_warning "Source data not found: $SRC_DIR"
+        return 1
+    fi
+
+    # Check for ground_truth.ass in source
+    if [ ! -f "$SRC_DIR/ground_truth.ass" ]; then
+        print_warning "ground_truth.ass not found in $SRC_DIR"
         return 1
     fi
 
@@ -90,12 +107,6 @@ run_eval_for_dataset() {
 
     cd "$PROJECT_DIR"
 
-    # Check for ground_truth.ass
-    if [ ! -f "$DATA_DIR/ground_truth.ass" ]; then
-        print_warning "ground_truth.ass not found in $DATA_DIR"
-        return 1
-    fi
-
     # Build extra args
     local extra_args=""
     if [ "$skip_events" = "true" ]; then
@@ -103,35 +114,66 @@ run_eval_for_dataset() {
         print_step "Skipping [event] markers"
     fi
 
+    # Convert .md files to .ass if not already converted (for evaluating raw Gemini output)
+    while IFS= read -r model; do
+        [ -z "$model" ] && continue
+        local md_file="$OUT_DIR/${model}.md"
+        local ass_file="$OUT_DIR/${model}.ass"
+
+        # Skip if .md doesn't exist
+        [ -f "$md_file" ] || continue
+
+        # # Skip if .ass already exists
+        # if [ -f "$ass_file" ]; then
+        #     continue
+        # fi
+
+        print_step "Converting ${model}.md to .ass..."
+        lai caption convert -Y "$md_file" "$ass_file" 2>/dev/null || {
+            print_warning "Failed to convert $md_file"
+            continue
+        }
+    done < <(get_models "$models_arg")
+
     print_step "Ground Truth (baseline)"
-    python eval.py -r "$DATA_DIR/ground_truth.ass" -hyp "$DATA_DIR/ground_truth.ass" \
+    python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$SRC_DIR/ground_truth.ass" \
         --metrics der jer wer sca scer --collar 0.0 --model-name "Ground Truth" $extra_args
 
-    # Evaluate all model outputs if they exist
-    for model_file in "$DATA_DIR"/*.ass; do
-        [ -f "$model_file" ] || continue
-        local filename
-        filename=$(basename "$model_file")
-        [ "$filename" = "ground_truth.ass" ] && continue
+    # Evaluate specified models
+    while IFS= read -r model; do
+        [ -z "$model" ] && continue
 
-        local model_name="${filename%.ass}"
-        echo ""
-        print_step "$model_name"
-        python eval.py -r "$DATA_DIR/ground_truth.ass" -hyp "$model_file" \
-            --metrics der jer wer sca scer --collar 0.0 --model-name "$model_name" $extra_args
-    done
+        # Evaluate raw Gemini output (.ass converted from .md)
+        local ass_file="$OUT_DIR/${model}.ass"
+        if [ -f "$ass_file" ]; then
+            echo ""
+            print_step "$model"
+            python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$ass_file" \
+                --metrics der jer wer sca scer --collar 0.0 --model-name "$model" $extra_args
+        fi
+
+        # Evaluate LattifAI aligned output
+        local lattifai_file="$OUT_DIR/${model}_LattifAI.ass"
+        if [ -f "$lattifai_file" ]; then
+            echo ""
+            print_step "${model}_LattifAI"
+            python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$lattifai_file" \
+                --metrics der jer wer sca scer --collar 0.0 --model-name "${model}_LattifAI" $extra_args
+        fi
+    done < <(get_models "$models_arg")
 }
 
 run_eval() {
     local dataset_id="$1"
     local skip_events="$2"
+    local models_arg="$3"
 
     if [ -n "$dataset_id" ]; then
-        run_eval_for_dataset "$dataset_id" "$skip_events"
+        run_eval_for_dataset "$dataset_id" "$skip_events" "$models_arg"
     else
         # Run for all datasets
         while IFS= read -r id; do
-            run_eval_for_dataset "$id" "$skip_events"
+            run_eval_for_dataset "$id" "$skip_events" "$models_arg"
         done < <(get_all_dataset_ids)
     fi
 
@@ -141,14 +183,21 @@ run_eval() {
 # ============================================================================
 # STEP 2: Transcribe Audio (requires GEMINI_API_KEY)
 # ============================================================================
-get_all_models() {
-    python3 -c "
+get_models() {
+    local models_arg="$1"
+    if [ -n "$models_arg" ]; then
+        # Use user-specified models (comma-separated)
+        echo "$models_arg" | tr ',' '\n'
+    else
+        # Use all models from datasets.json
+        python3 -c "
 import json
 with open('$DATASETS_JSON') as f:
     data = json.load(f)
 for model in data.get('models', []):
     print(model)
 "
+    fi
 }
 
 run_transcribe_for_dataset() {
@@ -156,10 +205,12 @@ run_transcribe_for_dataset() {
     local use_local="$2"
     local prompt_file="$3"
     local include_thoughts="$4"
-    local DATA_DIR="$OUTPUT_DIR/$dataset_id"
+    local models_arg="$5"
+    local SRC_DIR="$DATA_ROOT/$dataset_id"
+    local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
-    # Create directory if not exists
-    mkdir -p "$DATA_DIR"
+    # Create output directory if not exists
+    mkdir -p "$OUT_DIR"
 
     local dataset_name
     dataset_name=$(get_dataset_info "$dataset_id" "name")
@@ -168,9 +219,9 @@ run_transcribe_for_dataset() {
     # Determine input source (default: URL)
     local input_source
     if [ "$use_local" = "true" ]; then
-        input_source="$DATA_DIR/audio.mp3"
+        input_source="$SRC_DIR/audio.mp3"
         if [ ! -f "$input_source" ]; then
-            print_warning "audio.mp3 not found in $DATA_DIR"
+            print_warning "audio.mp3 not found in $SRC_DIR"
             return 1
         fi
         print_step "Using local file: $input_source"
@@ -196,12 +247,13 @@ run_transcribe_for_dataset() {
 
     # Transcribe with each model
     while IFS= read -r model; do
-        local output_file="$DATA_DIR/${model}.md"
+        [ -z "$model" ] && continue
+        local output_file="$OUT_DIR/${model}.md"
         print_step "Transcribing with $model..."
         lai transcribe run -Y "$input_source" "$output_file" \
-            transcription.model="$model" \
+            transcription.model_name="$model" \
             $extra_args
-    done < <(get_all_models)
+    done < <(get_models "$models_arg")
 }
 
 run_transcribe() {
@@ -209,6 +261,7 @@ run_transcribe() {
     local use_local="$2"
     local prompt_file="$3"
     local include_thoughts="$4"
+    local models_arg="$5"
 
     if [ -z "$GEMINI_API_KEY" ]; then
         print_warning "GEMINI_API_KEY not set. Please export GEMINI_API_KEY first."
@@ -217,11 +270,11 @@ run_transcribe() {
     fi
 
     if [ -n "$dataset_id" ]; then
-        run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file" "$include_thoughts"
+        run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg"
     else
         # Run for all datasets
         while IFS= read -r id; do
-            run_transcribe_for_dataset "$id" "$use_local" "$prompt_file" "$include_thoughts"
+            run_transcribe_for_dataset "$id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg"
         done < <(get_all_dataset_ids)
     fi
 
@@ -233,44 +286,52 @@ run_transcribe() {
 # ============================================================================
 run_alignment_for_dataset() {
     local dataset_id="$1"
-    local DATA_DIR="$OUTPUT_DIR/$dataset_id"
-
-    if [ ! -d "$DATA_DIR" ]; then
-        print_warning "Dataset directory not found: $DATA_DIR"
-        return 1
-    fi
+    local models_arg="$2"
+    local SRC_DIR="$DATA_ROOT/$dataset_id"
+    local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
     local dataset_name
     dataset_name=$(get_dataset_info "$dataset_id" "name")
     print_header "Aligning: $dataset_name ($dataset_id)"
 
-    # Check for audio file
-    local audio_file="$DATA_DIR/audio.mp3"
+    # Check for audio file in source directory
+    local audio_file="$SRC_DIR/audio.mp3"
     if [ ! -f "$audio_file" ]; then
-        print_warning "audio.mp3 not found in $DATA_DIR"
+        print_warning "audio.mp3 not found in $SRC_DIR"
         return 1
     fi
 
-    # Align all markdown transcripts
-    for md_file in "$DATA_DIR"/*.md; do
-        [ -f "$md_file" ] || continue
-        local filename
-        filename=$(basename "$md_file")
-        local model_name="${filename%.md}"
-        local output_file="$DATA_DIR/${model_name}_lattifai.ass"
+    # Align transcripts for specified models
+    mkdir -p "$OUT_DIR"
 
-        print_step "Aligning $model_name transcript..."
+    while IFS= read -r model; do
+        [ -z "$model" ] && continue
+        local md_file="$OUT_DIR/${model}.md"
+        if [ ! -f "$md_file" ]; then
+            print_warning "Transcript not found: $md_file"
+            continue
+        fi
+        local output_file="$OUT_DIR/${model}_LattifAI.ass"
+
+        # Skip if output already exists
+        if [ -f "$output_file" ]; then
+            print_step "Skipping $model (already exists: $output_file)"
+            continue
+        fi
+
+        print_step "Aligning $model transcript..."
         lai alignment align -Y "$audio_file" \
             client.profile=true \
             caption.include_speaker_in_text=false \
             caption.split_sentence=true \
             caption.input_path="$md_file" \
             caption.output_path="$output_file"
-    done
+    done < <(get_models "$models_arg")
 }
 
 run_alignment() {
     local dataset_id="$1"
+    local models_arg="$2"
 
     if [ -z "$LATTIFAI_API_KEY" ]; then
         print_warning "LATTIFAI_API_KEY not set. Please export LATTIFAI_API_KEY first."
@@ -279,11 +340,11 @@ run_alignment() {
     fi
 
     if [ -n "$dataset_id" ]; then
-        run_alignment_for_dataset "$dataset_id"
+        run_alignment_for_dataset "$dataset_id" "$models_arg"
     else
         # Run for all datasets
         while IFS= read -r id; do
-            run_alignment_for_dataset "$id"
+            run_alignment_for_dataset "$id" "$models_arg"
         done < <(get_all_dataset_ids)
     fi
 
@@ -329,6 +390,7 @@ usage() {
     echo "  --prompt <file>     Custom prompt file for transcription"
     echo "  --thoughts          Include Gemini thinking process in output"
     echo "  --skip-events       Skip [event] markers in eval (e.g., [Laughter])"
+    echo "  --models <list>     Comma-separated model names (default: all from datasets.json)"
     echo ""
     echo "Examples:"
     echo "  $0 eval                                       # Evaluate all datasets"
@@ -348,6 +410,7 @@ OUTPUT_DIR="$PROJECT_DIR/data"
 PROMPT_FILE=""
 INCLUDE_THOUGHTS="false"
 SKIP_EVENTS="false"
+MODELS=""
 
 shift || true
 while [[ $# -gt 0 ]]; do
@@ -376,6 +439,10 @@ while [[ $# -gt 0 ]]; do
             SKIP_EVENTS="true"
             shift
             ;;
+        --models)
+            MODELS="$2"
+            shift 2
+            ;;
         -h|--help)
             usage
             exit 0
@@ -400,18 +467,18 @@ fi
 
 case "$COMMAND" in
     eval)
-        run_eval "$DATASET_ID" "$SKIP_EVENTS"
+        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS"
         ;;
     transcribe)
-        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS"
+        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS"
         ;;
     align)
-        run_alignment "$DATASET_ID"
+        run_alignment "$DATASET_ID" "$MODELS"
         ;;
     all)
-        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS"
-        run_alignment "$DATASET_ID"
-        run_eval "$DATASET_ID" "$SKIP_EVENTS"
+        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS"
+        run_alignment "$DATASET_ID" "$MODELS"
+        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS"
         ;;
     list)
         list_datasets

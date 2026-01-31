@@ -52,3 +52,5 @@ data/**/*.txt
 
 .env
 .vscode/
+*.txt
+outputs/

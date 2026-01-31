@@ -29,6 +29,11 @@ def remove_events(text: str) -> str:
     return EVENT_PATTERN.sub("", text).strip()
 
 
+def get_speakers(annotation: Annotation) -> set:
+    """Extract unique speaker labels from annotation."""
+    return set(annotation.labels())
+
+
 def caption_to_annotation(caption: pysubs2.SSAFile, uri: str = "default", skip_events: bool = False) -> Annotation:
     """Convert caption to pyannote Annotation for diarization metrics.
 
@@ -162,6 +167,10 @@ def evaluate_alignment(
                 hstart = hend
     results = {}
 
+    # Collect speaker info for SCA/SCER analysis
+    ref_speakers = get_speakers(ref_ann)
+    hyp_speakers = get_speakers(hyp_ann)
+
     for metric in metrics:
         metric_lower = metric.lower()
         if metric_lower == "der":
@@ -180,6 +189,10 @@ def evaluate_alignment(
             results["scer"] = scer_metric(ref_ann, hyp_ann)
         else:
             raise ValueError(f"Unknown metric: {metric}. Supported: der, jer, wer, sca, scer")
+
+    # Add speaker diff info
+    results["_ref_speakers"] = ref_speakers
+    results["_hyp_speakers"] = hyp_speakers
 
     return results
 
@@ -293,6 +306,10 @@ Examples:
                 value = value["diarization error rate"]
                 results[metric] = value
 
+        # Extract speaker info before displaying metrics
+        ref_speakers = results.pop("_ref_speakers", set())
+        hyp_speakers = results.pop("_hyp_speakers", set())
+
         # Display in markdown-friendly format
         metric_names = ["Model"]
         metric_values = [args.model_name if args.model_name else "-"]
@@ -304,6 +321,19 @@ Examples:
         print("| " + " | ".join(metric_names) + " |")
         print("|" + "|".join(["--------"] * len(metric_names)) + "|")
         print("| " + " | ".join(metric_values) + " |")
+
+        # Show speaker diff if SCA != 1 or SCER != 0
+        sca_val = results.get("sca", 1.0)
+        scer_val = results.get("scer", 0.0)
+        if sca_val != 1.0 or scer_val != 0.0:
+            missing = ref_speakers - hyp_speakers
+            extra = hyp_speakers - ref_speakers
+            if missing or extra:
+                print("\nSpeaker Diff:")
+                if missing:
+                    print(f"  Missing: {', '.join(sorted(missing))}")
+                if extra:
+                    print(f"  Extra:   {', '.join(sorted(extra))}")
 
 
 if __name__ == "__main__":
