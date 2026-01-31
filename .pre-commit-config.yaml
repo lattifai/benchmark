@@ -22,5 +22,8 @@ repos:
     hooks:
       - id: check-executables-have-shebangs
       - id: end-of-file-fixer
+        exclude: ^data/
       - id: mixed-line-ending
+        exclude: ^data/
       - id: trailing-whitespace
+        exclude: ^data/

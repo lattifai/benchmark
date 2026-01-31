@@ -2,36 +2,30 @@
   "version": "1.0.0",
   "datasets": [
     {
-      "id": "introducing-gpt4o",
+      "id": "OpenAI-Introducing-GPT-4o",
       "language": "en",
-      "category": "alignment",
       "name": "Introducing GPT-4o",
-      "description": "OpenAI GPT-4o announcement video with speaker diarization",
+      "description": "OpenAI Spring Update – streamed live on Monday, May 13, 2024.\n\nIntroducing GPT-4o, updates to ChatGPT, and more.",
       "video_url": "https://www.youtube.com/watch?v=DQacCB9tDaw",
-      "duration": 180,
-      "num_speakers": 2,
-      "path": "alignment/en/introducing-gpt4o",
-      "ground_truth": "ground_truth.ass",
-      "models": [
-        "gemini-2.5-pro",
-        "gemini-3-pro-preview",
-        "gemini-3-flash-preview"
-      ],
-      "tags": ["multi-speaker", "product-announcement", "english"]
+      "duration": "00:26:12.73",
+      "num_speakers": 4,
+      "caption": "DQacCB9tDaw.en-uYU-mmqFLq8.vtt",
+      "ground_truth": "ground_truth.ass"
+    },
+    {
+      "id": "TheValley101-GPT-4o-vs-Gemini",
+      "language": "zh & en",
+      "name": "OpenAI与谷歌多模态重磅更新，生成式AI大战升级第二轮｜GPT-4o、Gemini、Project Astra and more",
+      "description": "AI大战第二轮来了！OpenAI发布GPT-4o让AI长出了眼睛和嘴，在AI领域掀起了一场多模态新竞赛。仅一天之后，谷歌在I/O大会上发布对打OpenAI的语音助手Astra，同时展示一系列\"谷歌全家桶\"生态上的落地多模态应用。 这意味着，硅谷科技巨头的生成式AI之战正式进入了第二轮，而苹果和更多科技巨头很可能在这一轮正式入局。在AI大战Round 2中，巨头们的商业版图将会有什么变化？之后技术如何发展？生成式AI下一步将会迎来怎样的变革？这期视频我们深度聊聊这两场发布会和背后的深意。\n\n你会看到：\n00:00 - 01:15 抢先发布会：AI大战进行到第二轮\n01:16 - 08:02 OpenAI GPT-4o：AI长出了眼和嘴，电影Her成为现实\n08:03 - 10:08 谷歌的战书：语音助手Project Astra\n10:09 - 13:23 谷歌的战书：AI搜索及\"谷歌全家桶\"生态\n13:24 - 19:43 OpenAI vs. 谷歌：多模态之战与AI应用落地\n19:44 - 26:34 移动端AI落地：苹果入局及端模型未来",
+      "video_url": "https://www.youtube.com/watch?v=JaQmSHzjlpY",
+      "duration": "00:27:08.42",
+      "num_speakers": 14,
+      "ground_truth": "ground_truth.ass"
     }
   ],
-  "languages": {
-    "en": "English",
-    "zh": "Chinese (Simplified)",
-    "ja": "Japanese",
-    "es": "Spanish",
-    "fr": "French",
-    "de": "German",
-    "ko": "Korean"
-  },
-  "categories": {
-    "alignment": "Forced Alignment",
-    "transcription": "Speech-to-Text",
-    "diarization": "Speaker Diarization"
-  }
+  "models": [
+    "gemini-2.5-pro",
+    "gemini-3-pro-preview",
+    "gemini-3-flash-preview"
+  ]
 }
