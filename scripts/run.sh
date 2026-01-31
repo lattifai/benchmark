@@ -146,6 +146,7 @@ run_transcribe_for_dataset() {
     local dataset_id="$1"
     local use_local="$2"
     local prompt_file="$3"
+    local include_thoughts="$4"
     local DATA_DIR="$OUTPUT_DIR/$dataset_id"
 
     # Create directory if not exists
@@ -173,25 +174,24 @@ run_transcribe_for_dataset() {
         print_step "Using URL: $input_source"
     fi
 
-    # Build prompt argument (supports file path or direct text)
-    local prompt_arg=""
+    # Build extra arguments
+    local extra_args=""
     if [ -n "$prompt_file" ]; then
-        prompt_arg="transcription.prompt=\"$prompt_file\""
+        extra_args="$extra_args transcription.prompt=\"$prompt_file\""
         print_step "Using prompt: $prompt_file"
+    fi
+    if [ "$include_thoughts" = "true" ]; then
+        extra_args="$extra_args transcription.include_thoughts=true"
+        print_step "Including thinking process"
     fi
 
     # Transcribe with each model
     while IFS= read -r model; do
         local output_file="$DATA_DIR/${model}.md"
         print_step "Transcribing with $model..."
-        if [ -n "$prompt_arg" ]; then
-            lai transcribe run -Y "$input_source" "$output_file" \
-                transcription.model="$model" \
-                $prompt_arg
-        else
-            lai transcribe run -Y "$input_source" "$output_file" \
-                transcription.model="$model"
-        fi
+        lai transcribe run -Y "$input_source" "$output_file" \
+            transcription.model="$model" \
+            $extra_args
     done < <(get_all_models)
 }
 
@@ -199,6 +199,7 @@ run_transcribe() {
     local dataset_id="$1"
     local use_local="$2"
     local prompt_file="$3"
+    local include_thoughts="$4"
 
     if [ -z "$GEMINI_API_KEY" ]; then
         print_warning "GEMINI_API_KEY not set. Please export GEMINI_API_KEY first."
@@ -207,11 +208,11 @@ run_transcribe() {
     fi
 
     if [ -n "$dataset_id" ]; then
-        run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file"
+        run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file" "$include_thoughts"
     else
         # Run for all datasets
         while IFS= read -r id; do
-            run_transcribe_for_dataset "$id" "$use_local" "$prompt_file"
+            run_transcribe_for_dataset "$id" "$use_local" "$prompt_file" "$include_thoughts"
         done < <(get_all_dataset_ids)
     fi
 
@@ -317,6 +318,7 @@ usage() {
     echo "  --local             Use local audio.mp3 instead of video_url (for transcribe)"
     echo "  -o, --output <dir>  Output directory (default: data/)"
     echo "  --prompt <file>     Custom prompt file for transcription"
+    echo "  --thoughts          Include Gemini thinking process in output"
     echo ""
     echo "Examples:"
     echo "  $0 eval                                       # Evaluate all datasets"
@@ -334,6 +336,7 @@ DATASET_ID=""
 USE_LOCAL="false"
 OUTPUT_DIR="$PROJECT_DIR/data"
 PROMPT_FILE=""
+INCLUDE_THOUGHTS="false"
 
 shift || true
 while [[ $# -gt 0 ]]; do
@@ -353,6 +356,10 @@ while [[ $# -gt 0 ]]; do
         --prompt)
             PROMPT_FILE="$2"
             shift 2
+            ;;
+        --thoughts)
+            INCLUDE_THOUGHTS="true"
+            shift
             ;;
         -h|--help)
             usage
@@ -381,13 +388,13 @@ case "$COMMAND" in
         run_eval "$DATASET_ID"
         ;;
     transcribe)
-        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE"
+        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS"
         ;;
     align)
         run_alignment "$DATASET_ID"
         ;;
     all)
-        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE"
+        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS"
         run_alignment "$DATASET_ID"
         run_eval "$DATASET_ID"
         ;;
