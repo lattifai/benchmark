@@ -79,3 +79,6 @@ data/
 
 - [pyannote.metrics](https://pyannote.github.io/pyannote-metrics/)
 - [jiwer](https://github.com/jitsi/jiwer)
+
+---
+Credits: [@dotey](https://x.com/dotey) for the [prompts/Gemini_dotey.md](https://x.com/dotey/status/1971810075867046131)
