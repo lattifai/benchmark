@@ -25,19 +25,19 @@ LattifAI improves timing accuracy by **37-62%** across Gemini models:
 pip install pysubs2 pyannote.core pyannote.metrics jiwer whisper-normalizer
 
 # List datasets
-./scripts/reproduce.sh list
+./scripts/run.sh list
 
 # Run evaluation
-./scripts/reproduce.sh eval --id OpenAI-Introducing-GPT-4o
+./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o
 
 # Full pipeline (transcribe → align → eval)
-GEMINI_API_KEY=xxx LATTIFAI_API_KEY=xxx ./scripts/reproduce.sh all --id OpenAI-Introducing-GPT-4o
+GEMINI_API_KEY=xxx LATTIFAI_API_KEY=xxx ./scripts/run.sh all --id OpenAI-Introducing-GPT-4o
 ```
 
 ## Usage
 
 ```bash
-./scripts/reproduce.sh [command] [options]
+./scripts/run.sh [command] [options]
 
 Commands:
   list        List available datasets
