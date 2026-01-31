@@ -51,6 +51,8 @@ Options:
   --local         Use local audio.mp3 instead of YouTube URL
   -o <dir>        Output directory (default: data/)
   --prompt <file> Custom prompt for transcription
+  --thoughts      Include Gemini thinking process in output
+  --skip-events   Skip [event] markers in eval (e.g., [Laughter])
 ```
 
 ## Data Structure

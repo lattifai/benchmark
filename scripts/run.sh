@@ -76,6 +76,7 @@ for ds in data['datasets']:
 # ============================================================================
 run_eval_for_dataset() {
     local dataset_id="$1"
+    local skip_events="$2"
     local DATA_DIR="$OUTPUT_DIR/$dataset_id"
 
     if [ ! -d "$DATA_DIR" ]; then
@@ -95,9 +96,16 @@ run_eval_for_dataset() {
         return 1
     fi
 
+    # Build extra args
+    local extra_args=""
+    if [ "$skip_events" = "true" ]; then
+        extra_args="$extra_args --skip-events"
+        print_step "Skipping [event] markers"
+    fi
+
     print_step "Ground Truth (baseline)"
     python eval.py -r "$DATA_DIR/ground_truth.ass" -hyp "$DATA_DIR/ground_truth.ass" \
-        --metrics der jer wer sca scer --collar 0.0 --model-name "Ground Truth"
+        --metrics der jer wer sca scer --collar 0.0 --model-name "Ground Truth" $extra_args
 
     # Evaluate all model outputs if they exist
     for model_file in "$DATA_DIR"/*.ass; do
@@ -110,19 +118,20 @@ run_eval_for_dataset() {
         echo ""
         print_step "$model_name"
         python eval.py -r "$DATA_DIR/ground_truth.ass" -hyp "$model_file" \
-            --metrics der jer wer sca scer --collar 0.0 --model-name "$model_name"
+            --metrics der jer wer sca scer --collar 0.0 --model-name "$model_name" $extra_args
     done
 }
 
 run_eval() {
     local dataset_id="$1"
+    local skip_events="$2"
 
     if [ -n "$dataset_id" ]; then
-        run_eval_for_dataset "$dataset_id"
+        run_eval_for_dataset "$dataset_id" "$skip_events"
     else
         # Run for all datasets
         while IFS= read -r id; do
-            run_eval_for_dataset "$id"
+            run_eval_for_dataset "$id" "$skip_events"
         done < <(get_all_dataset_ids)
     fi
 
@@ -319,6 +328,7 @@ usage() {
     echo "  -o, --output <dir>  Output directory (default: data/)"
     echo "  --prompt <file>     Custom prompt file for transcription"
     echo "  --thoughts          Include Gemini thinking process in output"
+    echo "  --skip-events       Skip [event] markers in eval (e.g., [Laughter])"
     echo ""
     echo "Examples:"
     echo "  $0 eval                                       # Evaluate all datasets"
@@ -337,6 +347,7 @@ USE_LOCAL="false"
 OUTPUT_DIR="$PROJECT_DIR/data"
 PROMPT_FILE=""
 INCLUDE_THOUGHTS="false"
+SKIP_EVENTS="false"
 
 shift || true
 while [[ $# -gt 0 ]]; do
@@ -359,6 +370,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --thoughts)
             INCLUDE_THOUGHTS="true"
+            shift
+            ;;
+        --skip-events)
+            SKIP_EVENTS="true"
             shift
             ;;
         -h|--help)
@@ -385,7 +400,7 @@ fi
 
 case "$COMMAND" in
     eval)
-        run_eval "$DATASET_ID"
+        run_eval "$DATASET_ID" "$SKIP_EVENTS"
         ;;
     transcribe)
         run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS"
@@ -396,7 +411,7 @@ case "$COMMAND" in
     all)
         run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS"
         run_alignment "$DATASET_ID"
-        run_eval "$DATASET_ID"
+        run_eval "$DATASET_ID" "$SKIP_EVENTS"
         ;;
     list)
         list_datasets

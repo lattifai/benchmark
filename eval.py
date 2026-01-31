@@ -1,5 +1,6 @@
 """Evaluation metrics for caption alignment quality: DER, JER, WER, and SCA."""
 
+import re
 from pathlib import Path
 from typing import List, Union
 
@@ -7,18 +8,43 @@ import jiwer
 import pysubs2
 from pyannote.core import Annotation, Segment
 from pyannote.metrics.diarization import DiarizationErrorRate, JaccardErrorRate
-from speaker_count_metrics import SpeakerCountAccuracy, SpeakerCountingErrorRate
 from whisper_normalizer.english import EnglishTextNormalizer
+
+from speaker_count_metrics import SpeakerCountAccuracy, SpeakerCountingErrorRate
 
 english_normalizer = EnglishTextNormalizer()
 
+# Pattern to match [event] markers (e.g., [Laughter], [Breathes in], [Applause])
+EVENT_PATTERN = re.compile(r"\[[\w\s]+\]")
 
-def caption_to_annotation(caption: pysubs2.SSAFile, uri: str = "default") -> Annotation:
-    """Convert caption to pyannote Annotation for diarization metrics."""
+
+def is_event_only(text: str) -> bool:
+    """Check if text contains only event markers (no actual speech)."""
+    cleaned = EVENT_PATTERN.sub("", text).strip()
+    return len(cleaned) == 0
+
+
+def remove_events(text: str) -> str:
+    """Remove [event] markers from text."""
+    return EVENT_PATTERN.sub("", text).strip()
+
+
+def caption_to_annotation(caption: pysubs2.SSAFile, uri: str = "default", skip_events: bool = False) -> Annotation:
+    """Convert caption to pyannote Annotation for diarization metrics.
+
+    Args:
+        caption: Caption file to convert
+        uri: URI identifier for the annotation
+        skip_events: If True, skip entries that contain only [event] markers
+    """
     annotation = Annotation(uri=uri)
 
     speaker = None
     for event in caption.events:
+        # Skip event-only entries if requested
+        if skip_events and is_event_only(event.text):
+            continue
+
         segment = Segment(event.start / 1000.0, event.end / 1000.0)
         if event.name:
             event.name = event.name.rstrip(":").lstrip(">").strip()
@@ -31,15 +57,26 @@ def caption_to_annotation(caption: pysubs2.SSAFile, uri: str = "default") -> Ann
 
 def caption_to_text(
     caption: pysubs2.SSAFile,
+    skip_events: bool = False,
 ) -> str:
-    """Convert caption to text string for WER calculation."""
-    text = " ".join(
-        [
-            english_normalizer(event.text.replace("...", " ").strip()).replace("chatgpt", "chat gpt")
-            for event in caption.events
-        ]
-    )
-    return text
+    """Convert caption to text string for WER calculation.
+
+    Args:
+        caption: Caption file to convert
+        skip_events: If True, remove [event] markers and skip event-only entries
+    """
+    texts = []
+    for event in caption.events:
+        text = event.text.replace("...", " ").strip()
+        if skip_events:
+            # Skip event-only entries
+            if is_event_only(text):
+                continue
+            # Remove [event] markers from text
+            text = remove_events(text)
+        if text:
+            texts.append(english_normalizer(text).replace("chatgpt", "chat gpt"))
+    return " ".join(texts)
 
 
 def evaluate_alignment(
@@ -48,6 +85,7 @@ def evaluate_alignment(
     metrics: List[str] = ["der", "jer", "wer", "sca", "scer"],
     collar: float = 0.0,
     skip_overlap: bool = False,
+    skip_events: bool = False,
     verbose: bool = False,
 ) -> dict:
     """Evaluate alignment quality using specified metrics.
@@ -58,6 +96,7 @@ def evaluate_alignment(
         metrics: List of metrics to compute (der, jer, wer, sca, scer)
         collar: Collar size in seconds for diarization metrics
         skip_overlap: Skip overlapping speech regions for DER
+        skip_events: Skip [event] markers (e.g., [Laughter], [Applause])
 
     Returns:
         Dictionary mapping metric names to values
@@ -65,10 +104,10 @@ def evaluate_alignment(
     reference = pysubs2.load(reference_file)
     hypothesis = pysubs2.load(hypothesis_file)
 
-    ref_ann = caption_to_annotation(reference)
-    hyp_ann = caption_to_annotation(hypothesis)
-    ref_text = caption_to_text(reference)
-    hyp_text = caption_to_text(hypothesis)
+    ref_ann = caption_to_annotation(reference, skip_events=skip_events)
+    hyp_ann = caption_to_annotation(hypothesis, skip_events=skip_events)
+    ref_text = caption_to_text(reference, skip_events=skip_events)
+    hyp_text = caption_to_text(hypothesis, skip_events=skip_events)
 
     if False:
         with open(hypothesis_file[:-4] + ".txt", "w") as f:
@@ -80,10 +119,19 @@ def evaluate_alignment(
     if verbose:  # Enable for debugging alignment issues
         from kaldialign import align as kaldi_align
 
-        ref_timelines = [(event.start / 1000.0, event.end / 1000.0) for event in reference.events]
-        hyp_timelines = [(event.start / 1000.0, event.end / 1000.0) for event in hypothesis.events]
-        ref_sentences = [event.text for event in reference.events]
-        hyp_sentences = [event.text for event in hypothesis.events]
+        # Filter out event-only entries for verbose analysis if skip_events is True
+        if skip_events:
+            ref_events = [e for e in reference.events if not is_event_only(e.text)]
+            hyp_events = [e for e in hypothesis.events if not is_event_only(e.text)]
+            ref_sentences = [remove_events(event.text) for event in ref_events]
+            hyp_sentences = [remove_events(event.text) for event in hyp_events]
+        else:
+            ref_events = reference.events
+            hyp_events = hypothesis.events
+            ref_sentences = [event.text for event in ref_events]
+            hyp_sentences = [event.text for event in hyp_events]
+        ref_timelines = [(event.start / 1000.0, event.end / 1000.0) for event in ref_events]
+        hyp_timelines = [(event.start / 1000.0, event.end / 1000.0) for event in hyp_events]
 
         sent_symbol = "❅"
         eps_symbol = "-"
@@ -167,6 +215,9 @@ Examples:
     )
     parser.add_argument("--collar", "-c", type=float, default=0.0, help="Collar size in seconds")
     parser.add_argument("--skip-overlap", action="store_true", help="Skip overlapping speech for DER")
+    parser.add_argument(
+        "--skip-events", action="store_true", help="Skip [event] markers (e.g., [Laughter], [Applause])"
+    )
     parser.add_argument("--format", "-f", choices=["text", "json"], default="text", help="Output format")
     parser.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
@@ -192,6 +243,7 @@ Examples:
         metrics=args.metrics,
         collar=args.collar,
         skip_overlap=args.skip_overlap,
+        skip_events=args.skip_events,
         verbose=args.verbose,
     )
 
