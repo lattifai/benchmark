@@ -6,13 +6,23 @@ from typing import List, Union
 
 import jiwer
 import pysubs2
+from lattifai.alignment.tokenizer import tokenize_multilingual_text
 from pyannote.core import Annotation, Segment
 from pyannote.metrics.diarization import DiarizationErrorRate, JaccardErrorRate
+from whisper_normalizer.basic import BasicTextNormalizer
 from whisper_normalizer.english import EnglishTextNormalizer
 
 from speaker_count_metrics import SpeakerCountAccuracy, SpeakerCountingErrorRate
 
 english_normalizer = EnglishTextNormalizer()
+basic_normalizer = BasicTextNormalizer()
+
+
+def normalize_multilingual(text: str) -> str:
+    """Normalize multilingual text by tokenizing and joining with spaces."""
+    tokens = tokenize_multilingual_text(text, keep_spaces=False)
+    return " ".join(tokens).lower()
+
 
 # Pattern to match [event] markers (e.g., [Laughter], [Breathes in], [Applause])
 EVENT_PATTERN = re.compile(r"\[[\w\s]+\]")
@@ -63,12 +73,14 @@ def caption_to_annotation(caption: pysubs2.SSAFile, uri: str = "default", skip_e
 def caption_to_text(
     caption: pysubs2.SSAFile,
     skip_events: bool = False,
+    language: str = "en",
 ) -> str:
     """Convert caption to text string for WER calculation.
 
     Args:
         caption: Caption file to convert
         skip_events: If True, remove [event] markers and skip event-only entries
+        language: Language code (en for English, others use multilingual tokenizer)
     """
     texts = []
     for event in caption.events:
@@ -80,7 +92,12 @@ def caption_to_text(
             # Remove [event] markers from text
             text = remove_events(text)
         if text:
-            texts.append(english_normalizer(text).replace("chatgpt", "chat gpt"))
+            if language == "en":
+                normalized = english_normalizer(text).replace("chatgpt", "chat gpt")
+            else:
+                # Use multilingual tokenizer for Chinese and other languages
+                normalized = normalize_multilingual(text)
+            texts.append(normalized)
     return " ".join(texts)
 
 
@@ -91,6 +108,7 @@ def evaluate_alignment(
     collar: float = 0.0,
     skip_overlap: bool = False,
     skip_events: bool = False,
+    language: str = "en",
     verbose: bool = False,
 ) -> dict:
     """Evaluate alignment quality using specified metrics.
@@ -102,6 +120,7 @@ def evaluate_alignment(
         collar: Collar size in seconds for diarization metrics
         skip_overlap: Skip overlapping speech regions for DER
         skip_events: Skip [event] markers (e.g., [Laughter], [Applause])
+        language: Language code (en for English, zh for Chinese, etc.)
 
     Returns:
         Dictionary mapping metric names to values
@@ -111,8 +130,8 @@ def evaluate_alignment(
 
     ref_ann = caption_to_annotation(reference, skip_events=skip_events)
     hyp_ann = caption_to_annotation(hypothesis, skip_events=skip_events)
-    ref_text = caption_to_text(reference, skip_events=skip_events)
-    hyp_text = caption_to_text(hypothesis, skip_events=skip_events)
+    ref_text = caption_to_text(reference, skip_events=skip_events, language=language)
+    hyp_text = caption_to_text(hypothesis, skip_events=skip_events, language=language)
 
     if False:
         with open(hypothesis_file[:-4] + ".txt", "w") as f:
@@ -231,6 +250,9 @@ Examples:
     parser.add_argument(
         "--skip-events", action="store_true", help="Skip [event] markers (e.g., [Laughter], [Applause])"
     )
+    parser.add_argument(
+        "--language", "-l", default="en", help="Language code (en, zh, etc.). Non-English uses basic normalizer"
+    )
     parser.add_argument("--format", "-f", choices=["text", "json"], default="text", help="Output format")
     parser.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
@@ -257,8 +279,13 @@ Examples:
         collar=args.collar,
         skip_overlap=args.skip_overlap,
         skip_events=args.skip_events,
+        language=args.language,
         verbose=args.verbose,
     )
+
+    # Extract speaker info first (before any output)
+    ref_speakers = results.pop("_ref_speakers", set())
+    hyp_speakers = results.pop("_hyp_speakers", set())
 
     if args.format == "json":
         print(json.dumps(results, indent=2))
@@ -306,10 +333,6 @@ Examples:
                 value = value["diarization error rate"]
                 results[metric] = value
 
-        # Extract speaker info before displaying metrics
-        ref_speakers = results.pop("_ref_speakers", set())
-        hyp_speakers = results.pop("_hyp_speakers", set())
-
         # Display in markdown-friendly format
         metric_names = ["Model"]
         metric_values = [args.model_name if args.model_name else "-"]
@@ -326,6 +349,9 @@ Examples:
         sca_val = results.get("sca", 1.0)
         scer_val = results.get("scer", 0.0)
         if sca_val != 1.0 or scer_val != 0.0:
+            # Filter out None values
+            ref_speakers = {s for s in ref_speakers if s is not None}
+            hyp_speakers = {s for s in hyp_speakers if s is not None}
             missing = ref_speakers - hyp_speakers
             extra = hyp_speakers - ref_speakers
             if missing or extra:

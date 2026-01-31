@@ -86,6 +86,7 @@ run_eval_for_dataset() {
     local dataset_id="$1"
     local skip_events="$2"
     local models_arg="$3"
+    local language_arg="$4"
     local SRC_DIR="$DATA_ROOT/$dataset_id"
     local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
@@ -107,8 +108,21 @@ run_eval_for_dataset() {
 
     cd "$PROJECT_DIR"
 
+    # Use specified language or auto-detect from dataset
+    local lang_code="$language_arg"
+    if [ -z "$lang_code" ]; then
+        local dataset_lang
+        dataset_lang=$(get_dataset_info "$dataset_id" "language")
+        lang_code="en"
+        if [[ "$dataset_lang" == zh* ]]; then
+            lang_code="zh"
+        elif [[ "$dataset_lang" == ja* ]]; then
+            lang_code="ja"
+        fi
+    fi
+
     # Build extra args
-    local extra_args=""
+    local extra_args="--language $lang_code"
     if [ "$skip_events" = "true" ]; then
         extra_args="$extra_args --skip-events"
         print_step "Skipping [event] markers"
@@ -167,13 +181,14 @@ run_eval() {
     local dataset_id="$1"
     local skip_events="$2"
     local models_arg="$3"
+    local language_arg="$4"
 
     if [ -n "$dataset_id" ]; then
-        run_eval_for_dataset "$dataset_id" "$skip_events" "$models_arg"
+        run_eval_for_dataset "$dataset_id" "$skip_events" "$models_arg" "$language_arg"
     else
         # Run for all datasets
         while IFS= read -r id; do
-            run_eval_for_dataset "$id" "$skip_events" "$models_arg"
+            run_eval_for_dataset "$id" "$skip_events" "$models_arg" "$language_arg"
         done < <(get_all_dataset_ids)
     fi
 
@@ -391,6 +406,7 @@ usage() {
     echo "  --thoughts          Include Gemini thinking process in output"
     echo "  --skip-events       Skip [event] markers in eval (e.g., [Laughter])"
     echo "  --models <list>     Comma-separated model names (default: all from datasets.json)"
+    echo "  --language <code>   Language code for eval (en, zh, ja). Auto-detected if not set"
     echo ""
     echo "Examples:"
     echo "  $0 eval                                       # Evaluate all datasets"
@@ -411,6 +427,7 @@ PROMPT_FILE=""
 INCLUDE_THOUGHTS="false"
 SKIP_EVENTS="false"
 MODELS=""
+LANGUAGE=""
 
 shift || true
 while [[ $# -gt 0 ]]; do
@@ -443,6 +460,10 @@ while [[ $# -gt 0 ]]; do
             MODELS="$2"
             shift 2
             ;;
+        --language|-l)
+            LANGUAGE="$2"
+            shift 2
+            ;;
         -h|--help)
             usage
             exit 0
@@ -467,7 +488,7 @@ fi
 
 case "$COMMAND" in
     eval)
-        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS"
+        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE"
         ;;
     transcribe)
         run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS"
@@ -478,7 +499,7 @@ case "$COMMAND" in
     all)
         run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS"
         run_alignment "$DATASET_ID" "$MODELS"
-        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS"
+        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE"
         ;;
     list)
         list_datasets
