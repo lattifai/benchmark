@@ -69,8 +69,18 @@ Produce a single, cohesive output containing the parts in this order:
 `[00:00:00.000] Welcome back to my channel. Today we're going to talk about something exciting. [00:00:05.230]`
 * ✅ **CORRECT (multi-speaker):** `**Host:** [00:00:00.150] Welcome back. Today we have a guest. [00:00:02.890]`
 
+* **Chronological Order (CRITICAL):**
+  * All timestamps MUST appear in strictly increasing chronological order throughout the entire transcript.
+  * ❌ **NEVER** output a timestamp that is earlier than a previous timestamp.
+  * If you realize you missed something earlier, do NOT go back and insert it with an earlier timestamp.
+
 * **Non-Speech Audio**
-* Describe significant sounds like `[Laughter]` or `[Music starts]`, each on its own line with START and END timestamps: `[HH:MM:SS.mmm] [Event description] [HH:MM:SS.mmm]`
+* Only include **brief, meaningful** non-speech events: applause, laughter, short musical stings.
+* Each event on its own line with START and END timestamps: `[HH:MM:SS.mmm] [Event description] [HH:MM:SS.mmm]`
+* **IGNORE** long background music, intro/outro music sequences, or events spanning more than ~30 seconds.
+* ❌ **WRONG (event too long):** `[00:00:11.000] [Music plays] [00:06:14.000]` ← 6 minutes is not a valid event
+* ✅ **CORRECT (brief event):** `[00:00:05.200] [Intro music] [00:00:12.800]`
+* ✅ **CORRECT (applause):** `[00:22:44.100] [Applause] [00:22:54.500]`
 
 ---
 ### Example 1: Single Speaker Video (NO speaker labels)

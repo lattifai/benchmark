@@ -68,8 +68,18 @@ Produce a single, cohesive output containing the parts in this order:
 
 [00:00:18] And the results, well, they were quite surprising to the entire team. [00:00:22]` ← Correct only if speech is truly continuous
 
+* **Chronological Order (CRITICAL):**
+  * All timestamps MUST appear in strictly increasing chronological order throughout the entire transcript.
+  * ❌ **NEVER** output a timestamp that is earlier than a previous timestamp.
+  * If you realize you missed something earlier, do NOT go back and insert it with an earlier timestamp.
+
 * **Non-Speech Audio**
-* Describe significant sounds like `[Laughter]` or `[Music starts]`, each on its own line with START and END timestamps: `[HH:MM:SS] [Event description] [HH:MM:SS]`
+* Only include **brief, meaningful** non-speech events: applause, laughter, short musical stings.
+* Each event on its own line with START and END timestamps: `[HH:MM:SS] [Event description] [HH:MM:SS]`
+* **IGNORE** long background music, intro/outro music sequences, or events spanning more than ~30 seconds.
+* ❌ **WRONG (event too long):** `[00:00:11] [Music plays] [00:06:14]` ← 6 minutes is not a valid event
+* ✅ **CORRECT (brief event):** `[00:00:05] [Intro music] [00:00:12]`
+* ✅ **CORRECT (applause):** `[00:22:44] [Applause] [00:22:54]`
 
 ---
 ### Example 1: Single Speaker Video (NO speaker labels)
