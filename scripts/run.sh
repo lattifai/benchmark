@@ -173,14 +173,10 @@ run_transcribe_for_dataset() {
         print_step "Using URL: $input_source"
     fi
 
-    # Build prompt argument
+    # Build prompt argument (supports file path or direct text)
     local prompt_arg=""
     if [ -n "$prompt_file" ]; then
-        if [ ! -f "$prompt_file" ]; then
-            print_warning "Prompt file not found: $prompt_file"
-            return 1
-        fi
-        prompt_arg="transcription.prompt_file=\"$prompt_file\""
+        prompt_arg="transcription.prompt=\"$prompt_file\""
         print_step "Using prompt: $prompt_file"
     fi
 
