@@ -54,3 +54,4 @@ data/**/*.txt
 .vscode/
 *.txt
 outputs/
+data/*/gemini-*.ass
