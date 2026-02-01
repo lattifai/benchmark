@@ -25,19 +25,45 @@ def normalize_multilingual(text: str) -> str:
     return " ".join(tokens).lower()
 
 
-# Pattern to match [event] markers (e.g., [Laughter], [Breathes in], [Applause])
-EVENT_PATTERN = re.compile(r"\[[\w\s]+\]")
+# Pattern to match [event] markers (e.g., [Laughter], [Breathes in], [Applause], [♪ Music ♪], [笑声])
+# Matches any content within square brackets
+EVENT_PATTERN = re.compile(r"\[[^\]]+\]")
+# Pattern to match incomplete event markers (e.g., "[speaking In" without closing bracket)
+# This happens when YouTube captions split event markers across lines
+INCOMPLETE_EVENT_START = re.compile(r"\[[^\]]*$")
+# Pattern to match trailing part of split event markers (e.g., "Italian ]" or "Italian]")
+# Matches: word(s) followed by optional space and closing bracket at end of string
+INCOMPLETE_EVENT_END = re.compile(r"^\w+\s*\]$")
+
+
+def decode_html_entities(text: str) -> str:
+    """Decode common HTML entities in text."""
+    import html
+
+    return html.unescape(text)
 
 
 def is_event_only(text: str) -> bool:
     """Check if text contains only event markers (no actual speech)."""
-    cleaned = EVENT_PATTERN.sub("", text).strip()
+    cleaned = remove_events(text)
     return len(cleaned) == 0
 
 
 def remove_events(text: str) -> str:
-    """Remove [event] markers from text."""
-    return EVENT_PATTERN.sub("", text).strip()
+    """Remove [event] markers from text, including incomplete ones.
+
+    Handles:
+    - Complete markers: [Laughter], [APPLAUSE], [speaking In Italian]
+    - Split start: [speaking In (no closing bracket)
+    - Split end: Italian ] or Italian] (trailing part of split marker)
+    """
+    # Remove complete event markers [...]
+    text = EVENT_PATTERN.sub("", text)
+    # Remove incomplete event markers at start [... (no closing bracket)
+    text = INCOMPLETE_EVENT_START.sub("", text)
+    # Remove incomplete event markers at end (e.g., "Italian ]")
+    text = INCOMPLETE_EVENT_END.sub("", text)
+    return text.strip()
 
 
 def normalize_unicode(text: str) -> str:
@@ -183,7 +209,8 @@ def caption_to_text(
     """
     texts = []
     for event in caption.events:
-        text = fullwidth_to_halfwidth(event.text)  # Normalize fullwidth chars
+        text = decode_html_entities(event.text)  # Decode &gt; &lt; &amp; etc.
+        text = fullwidth_to_halfwidth(text)  # Normalize fullwidth chars
         text = text.replace("\\N", " ")  # ASS newline -> space
         text = text.replace("\\n", " ")  # SRT newline -> space
         text = text.replace("...", " ").strip()
