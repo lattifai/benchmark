@@ -19,8 +19,10 @@ DATASETS=(
 
 # Test configurations (format: "model:prompt:output_dir:tag")
 CONFIGS=(
-    "gemini-2.5-pro:prompts/Gemini_dotey.md:data:(baseline)"
-    "gemini-3-pro-preview:prompts/Gemini_dotey.md:data:(baseline)"
+    "gemini-2.5-pro:prompts/Gemini_dotey.md:data:(dotey)"
+    "gemini-2.5-pro:prompts/Gemini_dotey.md:outputs/2.5pro_run2:(dotey run2)"
+    "gemini-3-pro-preview:prompts/Gemini_dotey.md:data:(dotey)"
+    "gemini-3-pro-preview:prompts/Gemini_dotey.md:outputs/3pro_run2:(dotey run2)"
     "gemini-3-flash-preview:prompts/Gemini_dotey.md:data:(dotey)"
     "gemini-3-flash-preview:prompts/Gemini_dotey.md:outputs/V1_1:(dotey run2)"
     "gemini-3-flash-preview:prompts/Gemini_dotey_StartEnd.md:outputs/StartEnd_V1:(StartEnd)"
@@ -51,7 +53,7 @@ for ds_entry in "${DATASETS[@]}"; do
             continue
         fi
 
-        "$SCRIPT_DIR/run.sh" transcribe --local \
+        "$SCRIPT_DIR/run.sh" transcribe \
             --id "$dataset_id" \
             --models "$model" \
             -o "${PROJECT_DIR}/${output_dir}" \

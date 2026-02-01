@@ -4,7 +4,20 @@ Evaluating LattifAI's audio-text alignment capabilities.
 
 **[View Interactive Results →](https://lattifai.github.io/benchmark/)**
 
-## Results
+
+## Benchmark
+```
+# gemini-3-flash-preview temperature = 1.0 0.5 0.1
+bash scripts/temperature.sh
+
+# YouTube URL or local audio file
+bash scripts/compare_URL_Local.sh --id OpenAI-Introducing-GPT-4o --models gemini-2.5-pro,gemini-3-flash-preview,gemini-3-pro-preview --skip-events
+
+# DER JER and etc
+bash scripts/benchmark.sh
+```
+
+#### Results
 
 LattifAI improves timing accuracy by **37-62%** across Gemini models:
 

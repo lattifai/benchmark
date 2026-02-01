@@ -55,3 +55,4 @@ data/**/*.txt
 *.txt
 outputs/
 data/*/gemini-*.ass
+data/_compare/
