@@ -2,6 +2,16 @@
   "version": "1.0.0",
   "datasets": [
     {
+      "id": "OpenAI-Introducing-GPT-4o-First5mins",
+      "language": "en",
+      "name": "Introducing GPT-4o-First5mins",
+      "description": "OpenAI Spring Update – streamed live on Monday, May 13, 2024.\n\nIntroducing GPT-4o, updates to ChatGPT, and more.",
+      "duration": "00:05:11.69",
+      "num_speakers": 1,
+      "caption": "DQacCB9tDaw.en-uYU-mmqFLq8.vtt",
+      "ground_truth": "ground_truth.ass"
+    },
+    {
       "id": "OpenAI-Introducing-GPT-4o",
       "language": "en",
       "name": "Introducing GPT-4o",
