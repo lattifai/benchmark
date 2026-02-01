@@ -16,6 +16,9 @@ bash scripts/compare_URL_Local.sh --id OpenAI-Introducing-GPT-4o --models gemini
 # 验证 Thinking 机制是否有效
 bash scripts/compare_URL_Local.sh --id OpenAI-Introducing-GPT-4o --models gemini-3-flash-preview,gemini-3-pro-preview --skip-events --align --no-thinking
 
+# zh
+# bash scripts/compare_URL_Local.sh --id TheValley101-GPT-4o-vs-Gemini --models gemini-3-flash-preview,gemini-3-pro-preview --skip-events --align
+
 # DER JER and etc
 bash scripts/benchmark.sh
 ```

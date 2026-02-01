@@ -74,17 +74,24 @@ run_eval_for_dataset() {
         print_step "Skipping [event] markers"
     fi
 
-    # Convert .md files to .ass if needed
+    # Convert .md or .srt files to .ass if needed
     while IFS= read -r model; do
         [ -z "$model" ] && continue
-        local md_file="$OUT_DIR/${model}.md"
         local ass_file="$OUT_DIR/${model}.ass"
 
-        [ -f "$md_file" ] || continue
+        # Try .md first, then .srt
+        local input_file=""
+        if [ -f "$OUT_DIR/${model}.md" ]; then
+            input_file="$OUT_DIR/${model}.md"
+        elif [ -f "$OUT_DIR/${model}.srt" ]; then
+            input_file="$OUT_DIR/${model}.srt"
+        else
+            continue
+        fi
 
-        print_step "Converting ${model}.md to .ass..."
-        lai caption convert -Y "$md_file" "$ass_file" 2>/dev/null || {
-            print_warning "Failed to convert $md_file"
+        print_step "Converting $(basename "$input_file") to .ass..."
+        lai caption convert -Y "$input_file" "$ass_file" 2>/dev/null || {
+            print_warning "Failed to convert $input_file"
             continue
         }
     done < <(get_models "$models_arg")
@@ -194,14 +201,20 @@ run_transcribe_for_dataset() {
         print_step "Using temperature: $temperature"
     fi
 
+    # Determine output extension based on prompt file name
+    local output_ext=".md"
+    if [[ "$prompt_file" == *"SRT"* ]] || [[ "$prompt_file" == *"srt"* ]]; then
+        output_ext=".srt"
+    fi
+
     while IFS= read -r model; do
         [ -z "$model" ] && continue
         local suffix=""
         if [ "$no_thinking" = "true" ]; then
             suffix="_no-thinking"
         fi
-        local output_file="$OUT_DIR/${model}${suffix}.md"
-        print_step "Transcribing with $model..."
+        local output_file="$OUT_DIR/${model}${suffix}${output_ext}"
+        print_step "Transcribing with $model → ${output_ext}"
         lai transcribe run -Y "$input_source" "$output_file" \
             transcription.model_name="$model" \
             $extra_args
@@ -257,11 +270,18 @@ run_alignment_for_dataset() {
 
     while IFS= read -r model; do
         [ -z "$model" ] && continue
-        local md_file="$OUT_DIR/${model}.md"
-        if [ ! -f "$md_file" ]; then
-            print_warning "Transcript not found: $md_file"
+
+        # Try .md first, then .srt
+        local input_file=""
+        if [ -f "$OUT_DIR/${model}.md" ]; then
+            input_file="$OUT_DIR/${model}.md"
+        elif [ -f "$OUT_DIR/${model}.srt" ]; then
+            input_file="$OUT_DIR/${model}.srt"
+        else
+            print_warning "Transcript not found: $OUT_DIR/${model}.md or .srt"
             continue
         fi
+
         local output_file="$OUT_DIR/${model}_LattifAI.ass"
 
         if [ -f "$output_file" ]; then
@@ -269,12 +289,12 @@ run_alignment_for_dataset() {
             continue
         fi
 
-        print_step "Aligning $model transcript..."
+        print_step "Aligning $model transcript ($(basename "$input_file"))..."
         lai alignment align -Y "$audio_file" \
             client.profile=true \
             caption.include_speaker_in_text=false \
             caption.split_sentence=true \
-            caption.input_path="$md_file" \
+            caption.input_path="$input_file" \
             caption.output_path="$output_file"
     done < <(get_models "$models_arg")
 }

@@ -1,8 +1,9 @@
 """Evaluation metrics for caption alignment quality: DER, JER, WER, and SCA."""
 
+import json
 import re
 from pathlib import Path
-from typing import List, Union
+from typing import List, Optional, Union
 
 import jiwer
 import pysubs2
@@ -76,6 +77,36 @@ def normalize_unicode(text: str) -> str:
 
 # Alias for backward compatibility
 fullwidth_to_halfwidth = normalize_unicode
+
+
+def detect_language_from_path(file_path: Union[str, Path]) -> Optional[str]:
+    """Detect language from dataset id in file path using datasets.json."""
+    file_path = Path(file_path)
+    project_dir = Path(__file__).parent
+    datasets_json = project_dir / "data" / "datasets.json"
+
+    if not datasets_json.exists():
+        return None
+
+    try:
+        with open(datasets_json) as f:
+            data = json.load(f)
+
+        # Extract dataset id from path (e.g., .../OpenAI-Introducing-GPT-4o/...)
+        for ds in data.get("datasets", []):
+            ds_id = ds.get("id", "")
+            if ds_id and ds_id in str(file_path):
+                lang = ds.get("language", "en")
+                # Normalize: zh-CN, zh-TW -> zh
+                if lang.startswith("zh"):
+                    return "zh"
+                elif lang.startswith("ja"):
+                    return "ja"
+                return lang[:2] if len(lang) >= 2 else lang
+    except (json.JSONDecodeError, KeyError):
+        pass
+
+    return None
 
 
 def expand_contractions(text: str) -> str:
@@ -153,6 +184,8 @@ def caption_to_text(
     texts = []
     for event in caption.events:
         text = fullwidth_to_halfwidth(event.text)  # Normalize fullwidth chars
+        text = text.replace("\\N", " ")  # ASS newline -> space
+        text = text.replace("\\n", " ")  # SRT newline -> space
         text = text.replace("...", " ").strip()
         if skip_events:
             # Skip event-only entries
@@ -330,7 +363,10 @@ Examples:
         "--skip-events", action="store_true", help="Skip [event] markers (e.g., [Laughter], [Applause])"
     )
     parser.add_argument(
-        "--language", "-l", default="en", help="Language code (en, zh, etc.). Non-English uses basic normalizer"
+        "--language",
+        "-l",
+        default="auto",
+        help="Language code (en, zh, ja) or 'auto' to detect from datasets.json. Default: auto",
     )
     parser.add_argument("--format", "-f", choices=["text", "json"], default="text", help="Output format")
     parser.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
@@ -345,10 +381,19 @@ Examples:
         print(f"Error: Hypothesis file not found: {args.hypothesis}", file=sys.stderr)
         sys.exit(1)
 
+    # Auto-detect language from dataset id in path
+    language = args.language
+    if language == "auto":
+        detected = detect_language_from_path(args.reference) or detect_language_from_path(args.hypothesis)
+        language = detected if detected else "en"
+        if args.verbose:
+            print(f"Auto-detected language: {language}", file=sys.stderr)
+
     if args.verbose:
         print(f"Reference: {args.reference}", file=sys.stderr)
         print(f"Hypothesis: {args.hypothesis}", file=sys.stderr)
         print(f"Metrics: {', '.join(args.metrics)}", file=sys.stderr)
+        print(f"Language: {language}", file=sys.stderr)
         print(f"Collar: {args.collar}s\n", file=sys.stderr)
 
     results = evaluate_alignment(
@@ -358,7 +403,7 @@ Examples:
         collar=args.collar,
         skip_overlap=args.skip_overlap,
         skip_events=args.skip_events,
-        language=args.language,
+        language=language,
         verbose=args.verbose,
     )
 

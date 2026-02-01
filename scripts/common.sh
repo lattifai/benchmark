@@ -98,12 +98,12 @@ get_language_code() {
 # ============================================================================
 
 # Run eval and return JSON result
-# Usage: result=$(run_eval_json "$ref_file" "$hyp_file" "$lang_code" ["skip_events"])
+# Usage: result=$(run_eval_json "$ref_file" "$hyp_file" ["skip_events"])
+# Language is auto-detected from dataset id in file path
 run_eval_json() {
     local ref_file="$1"
     local hyp_file="$2"
-    local lang_code="${3:-en}"
-    local skip_events="${4:-true}"
+    local skip_events="${3:-true}"
 
     local extra_args=""
     if [ "$skip_events" = "true" ]; then
@@ -114,7 +114,6 @@ run_eval_json() {
         -r "$ref_file" \
         -hyp "$hyp_file" \
         --metrics der jer wer sca scer \
-        --language "$lang_code" \
         --format json $extra_args 2>/dev/null | python3 -c "import sys,json; print(json.dumps(json.load(sys.stdin)))"
 }
 
