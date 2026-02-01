@@ -41,14 +41,15 @@ print_error() {
     echo -e "${RED}✗ $1${NC}"
 }
 
-# Get dataset IDs from datasets.json
+# Get dataset IDs from datasets.json (excludes -First5mins variants)
 get_all_dataset_ids() {
     python3 -c "
 import json
 with open('$DATASETS_JSON') as f:
     data = json.load(f)
 for ds in data['datasets']:
-    print(ds['id'])
+    if '-First5mins' not in ds['id']:
+        print(ds['id'])
 "
 }
 
@@ -87,6 +88,7 @@ run_eval_for_dataset() {
     local skip_events="$2"
     local models_arg="$3"
     local language_arg="$4"
+    local tag="$5"
     local SRC_DIR="$DATA_ROOT/$dataset_id"
     local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
@@ -157,22 +159,29 @@ run_eval_for_dataset() {
     while IFS= read -r model; do
         [ -z "$model" ] && continue
 
+        # Build display name with optional tag
+        local display_name="$model"
+        if [ -n "$tag" ]; then
+            display_name="${model} ${tag}"
+        fi
+
         # Evaluate raw Gemini output (.ass converted from .md)
         local ass_file="$OUT_DIR/${model}.ass"
         if [ -f "$ass_file" ]; then
             echo ""
-            print_step "$model"
+            print_step "$display_name"
+            # print_step "$SRC_DIR/ground_truth.ass $ass_file $extra_args"
             python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$ass_file" \
-                --metrics der jer wer sca scer --collar 0.0 --model-name "$model" $extra_args
+                --metrics der jer wer sca scer --collar 0.0 --model-name "$display_name" $extra_args
         fi
 
         # Evaluate LattifAI aligned output
         local lattifai_file="$OUT_DIR/${model}_LattifAI.ass"
         if [ -f "$lattifai_file" ]; then
             echo ""
-            print_step "${model}_LattifAI"
+            print_step "${display_name}_LattifAI"
             python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$lattifai_file" \
-                --metrics der jer wer sca scer --collar 0.0 --model-name "${model}_LattifAI" $extra_args
+                --metrics der jer wer sca scer --collar 0.0 --model-name "${display_name}_LattifAI" $extra_args
         fi
     done < <(get_models "$models_arg")
 }
@@ -182,13 +191,14 @@ run_eval() {
     local skip_events="$2"
     local models_arg="$3"
     local language_arg="$4"
+    local tag="$5"
 
     if [ -n "$dataset_id" ]; then
-        run_eval_for_dataset "$dataset_id" "$skip_events" "$models_arg" "$language_arg"
+        run_eval_for_dataset "$dataset_id" "$skip_events" "$models_arg" "$language_arg" "$tag"
     else
         # Run for all datasets
         while IFS= read -r id; do
-            run_eval_for_dataset "$id" "$skip_events" "$models_arg" "$language_arg"
+            run_eval_for_dataset "$id" "$skip_events" "$models_arg" "$language_arg" "$tag"
         done < <(get_all_dataset_ids)
     fi
 
@@ -414,6 +424,7 @@ usage() {
     echo "  --models <list>     Comma-separated model names (default: all from datasets.json)"
     echo "  --language <code>   Language code for eval (en, zh, ja). Auto-detected if not set"
     echo "  --temperature <val> Sampling temperature for transcription (e.g., 0.5)"
+    echo "  --tag <suffix>      Suffix to append to model names in eval output (e.g., _temp0.5)"
     echo ""
     echo "Examples:"
     echo "  $0 eval                                       # Evaluate all datasets"
@@ -436,6 +447,7 @@ SKIP_EVENTS="false"
 MODELS=""
 LANGUAGE=""
 TEMPERATURE=""
+TAG=""
 
 shift || true
 while [[ $# -gt 0 ]]; do
@@ -476,6 +488,10 @@ while [[ $# -gt 0 ]]; do
             TEMPERATURE="$2"
             shift 2
             ;;
+        --tag)
+            TAG="$2"
+            shift 2
+            ;;
         -h|--help)
             usage
             exit 0
@@ -500,7 +516,7 @@ fi
 
 case "$COMMAND" in
     eval)
-        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE"
+        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE" "$TAG"
         ;;
     transcribe)
         run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE"
@@ -511,7 +527,7 @@ case "$COMMAND" in
     all)
         run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE"
         run_alignment "$DATASET_ID" "$MODELS"
-        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE"
+        run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE" "$TAG"
         ;;
     list)
         list_datasets

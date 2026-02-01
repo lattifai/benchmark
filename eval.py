@@ -39,6 +39,72 @@ def remove_events(text: str) -> str:
     return EVENT_PATTERN.sub("", text).strip()
 
 
+def normalize_unicode(text: str) -> str:
+    """Normalize unicode characters: fullwidth to halfwidth, smart quotes to ASCII, etc."""
+    # Quote/apostrophe variants -> ASCII
+    QUOTE_MAP = {
+        "'": "'",  # U+2018 LEFT SINGLE QUOTATION MARK
+        "'": "'",  # U+2019 RIGHT SINGLE QUOTATION MARK
+        "‚": "'",  # U+201A SINGLE LOW-9 QUOTATION MARK
+        "‛": "'",  # U+201B SINGLE HIGH-REVERSED-9 QUOTATION MARK
+        """: '"',  # U+201C LEFT DOUBLE QUOTATION MARK
+        """: '"',  # U+201D RIGHT DOUBLE QUOTATION MARK
+        "„": '"',  # U+201E DOUBLE LOW-9 QUOTATION MARK
+        "‟": '"',  # U+201F DOUBLE HIGH-REVERSED-9 QUOTATION MARK
+        "′": "'",  # U+2032 PRIME
+        "″": '"',  # U+2033 DOUBLE PRIME
+    }
+
+    result = []
+    for char in text:
+        # Check quote map first
+        if char in QUOTE_MAP:
+            result.append(QUOTE_MAP[char])
+            continue
+
+        code = ord(char)
+        # Fullwidth ASCII variants (FF01-FF5E) -> ASCII (0021-007E)
+        if 0xFF01 <= code <= 0xFF5E:
+            result.append(chr(code - 0xFEE0))
+        # Fullwidth space
+        elif code == 0x3000:
+            result.append(" ")
+        else:
+            result.append(char)
+    return "".join(result)
+
+
+# Alias for backward compatibility
+fullwidth_to_halfwidth = normalize_unicode
+
+
+def expand_contractions(text: str) -> str:
+    """Expand English contractions to full forms for consistent comparison."""
+    import re
+
+    # Order matters: longer patterns first to avoid partial matches
+    CONTRACTIONS = [
+        # Negative contractions
+        (r"\bwon't\b", "will not"),
+        (r"\bcan't\b", "cannot"),
+        (r"\bshan't\b", "shall not"),
+        (r"\bn't\b", " not"),  # don't, doesn't, didn't, hasn't, haven't, etc.
+        # Common contractions
+        (r"\blet's\b", "let us"),
+        (r"\b(\w+)'re\b", r"\1 are"),  # we're, you're, they're
+        (r"\b(\w+)'ve\b", r"\1 have"),  # we've, you've, they've, I've
+        (r"\b(\w+)'ll\b", r"\1 will"),  # I'll, we'll, you'll, he'll, she'll, they'll
+        (r"\b(\w+)'d\b", r"\1 would"),  # I'd, we'd, you'd, he'd, she'd, they'd
+        (r"\bI'm\b", "I am"),
+        (r"\b(\w+)'s\b", r"\1 is"),  # he's, she's, it's, that's, what's (default to 'is')
+    ]
+
+    result = text
+    for pattern, replacement in CONTRACTIONS:
+        result = re.sub(pattern, replacement, result, flags=re.IGNORECASE)
+    return result
+
+
 def get_speakers(annotation: Annotation) -> set:
     """Extract unique speaker labels from annotation."""
     return set(annotation.labels())
@@ -62,10 +128,12 @@ def caption_to_annotation(caption: pysubs2.SSAFile, uri: str = "default", skip_e
 
         segment = Segment(event.start / 1000.0, event.end / 1000.0)
         if event.name:
-            event.name = event.name.rstrip(":").lstrip(">").strip()
-            speaker = event.name
+            # Normalize speaker name: fullwidth to halfwidth, strip punctuation
+            name = fullwidth_to_halfwidth(event.name)
+            name = name.rstrip(":").lstrip(">").strip()
+            speaker = name
 
-        annotation[segment] = event.name or speaker
+        annotation[segment] = speaker
 
     return annotation
 
@@ -84,7 +152,8 @@ def caption_to_text(
     """
     texts = []
     for event in caption.events:
-        text = event.text.replace("...", " ").strip()
+        text = fullwidth_to_halfwidth(event.text)  # Normalize fullwidth chars
+        text = text.replace("...", " ").strip()
         if skip_events:
             # Skip event-only entries
             if is_event_only(text):
@@ -92,6 +161,7 @@ def caption_to_text(
             # Remove [event] markers from text
             text = remove_events(text)
         if text:
+            text = expand_contractions(text)
             if language == "en":
                 normalized = english_normalizer(text).replace("chatgpt", "chat gpt")
             else:
@@ -143,17 +213,26 @@ def evaluate_alignment(
     if verbose:  # Enable for debugging alignment issues
         from kaldialign import align as kaldi_align
 
+        # Normalize function for verbose output (same as WER calculation)
+        def normalize_for_compare(text: str) -> str:
+            text = normalize_unicode(text)
+            text = expand_contractions(text)
+            if language == "en":
+                return english_normalizer(text).replace("chatgpt", "chat gpt")
+            else:
+                return normalize_multilingual(text)
+
         # Filter out event-only entries for verbose analysis if skip_events is True
         if skip_events:
             ref_events = [e for e in reference.events if not is_event_only(e.text)]
             hyp_events = [e for e in hypothesis.events if not is_event_only(e.text)]
-            ref_sentences = [remove_events(event.text) for event in ref_events]
-            hyp_sentences = [remove_events(event.text) for event in hyp_events]
+            ref_sentences = [normalize_for_compare(remove_events(event.text)) for event in ref_events]
+            hyp_sentences = [normalize_for_compare(remove_events(event.text)) for event in hyp_events]
         else:
             ref_events = reference.events
             hyp_events = hypothesis.events
-            ref_sentences = [event.text for event in ref_events]
-            hyp_sentences = [event.text for event in hyp_events]
+            ref_sentences = [normalize_for_compare(event.text) for event in ref_events]
+            hyp_sentences = [normalize_for_compare(event.text) for event in hyp_events]
         ref_timelines = [(event.start / 1000.0, event.end / 1000.0) for event in ref_events]
         hyp_timelines = [(event.start / 1000.0, event.end / 1000.0) for event in hyp_events]
 
