@@ -221,6 +221,7 @@ run_transcribe_for_dataset() {
     local prompt_file="$3"
     local include_thoughts="$4"
     local models_arg="$5"
+    local temperature="$6"
     local SRC_DIR="$DATA_ROOT/$dataset_id"
     local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
@@ -259,6 +260,10 @@ run_transcribe_for_dataset() {
         extra_args="$extra_args transcription.include_thoughts=true"
         print_step "Including thinking process"
     fi
+    if [ -n "$temperature" ]; then
+        extra_args="$extra_args transcription.temperature=$temperature"
+        print_step "Using temperature: $temperature"
+    fi
 
     # Transcribe with each model
     while IFS= read -r model; do
@@ -277,6 +282,7 @@ run_transcribe() {
     local prompt_file="$3"
     local include_thoughts="$4"
     local models_arg="$5"
+    local temperature="$6"
 
     if [ -z "$GEMINI_API_KEY" ]; then
         print_warning "GEMINI_API_KEY not set. Please export GEMINI_API_KEY first."
@@ -285,11 +291,11 @@ run_transcribe() {
     fi
 
     if [ -n "$dataset_id" ]; then
-        run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg"
+        run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg" "$temperature"
     else
         # Run for all datasets
         while IFS= read -r id; do
-            run_transcribe_for_dataset "$id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg"
+            run_transcribe_for_dataset "$id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg" "$temperature"
         done < <(get_all_dataset_ids)
     fi
 
@@ -407,6 +413,7 @@ usage() {
     echo "  --skip-events       Skip [event] markers in eval (e.g., [Laughter])"
     echo "  --models <list>     Comma-separated model names (default: all from datasets.json)"
     echo "  --language <code>   Language code for eval (en, zh, ja). Auto-detected if not set"
+    echo "  --temperature <val> Sampling temperature for transcription (e.g., 0.5)"
     echo ""
     echo "Examples:"
     echo "  $0 eval                                       # Evaluate all datasets"
@@ -428,6 +435,7 @@ INCLUDE_THOUGHTS="false"
 SKIP_EVENTS="false"
 MODELS=""
 LANGUAGE=""
+TEMPERATURE=""
 
 shift || true
 while [[ $# -gt 0 ]]; do
@@ -464,6 +472,10 @@ while [[ $# -gt 0 ]]; do
             LANGUAGE="$2"
             shift 2
             ;;
+        --temperature)
+            TEMPERATURE="$2"
+            shift 2
+            ;;
         -h|--help)
             usage
             exit 0
@@ -491,13 +503,13 @@ case "$COMMAND" in
         run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE"
         ;;
     transcribe)
-        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS"
+        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE"
         ;;
     align)
         run_alignment "$DATASET_ID" "$MODELS"
         ;;
     all)
-        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS"
+        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE"
         run_alignment "$DATASET_ID" "$MODELS"
         run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE"
         ;;
