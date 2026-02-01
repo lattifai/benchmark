@@ -1,36 +1,36 @@
-# LattifAI Benchmark
+# LattifAI 基准测试
 
-Evaluating LattifAI's audio-text alignment capabilities.
+评估 LattifAI 的音频-文本对齐能力。
 
-**[View Interactive Results →](https://lattifai.github.io/benchmark/)** | **[中文版 →](README-zh.md)**
-
-
-## Test Data
-
-We use the [OpenAI GPT-4o launch event](https://www.youtube.com/watch?v=DQacCB9tDaw) (~26 min) as our primary test material. This is a challenging case:
-
-- **4 speakers** including ChatGPT's voice
-- **Frequent interruptions** and overlapping speech
-- **Audience applause** and ambient noise throughout
-
-> **Note on sample size**: We currently have one primary dataset. While limited, we run each experiment at least twice to verify result stability. More datasets will be added in future updates.
+**[查看交互式结果 →](https://lattifai.github.io/benchmark/index-zh.html)** | **[English →](README.md)**
 
 
-## Benchmark
+## 测试数据
+
+我们使用 [OpenAI GPT-4o 发布会](https://www.youtube.com/watch?v=DQacCB9tDaw)（约 26 分钟）作为主要测试素材。这是一个具有挑战性的案例：
+
+- **4 位说话人**，包括 ChatGPT 的语音
+- **频繁的打断**和语音重叠
+- 全程伴有**观众掌声**和环境噪音
+
+> **关于样本量的说明**：目前我们只有一个主要数据集。虽然数量有限，但我们对每个实验至少运行两次以验证结果的稳定性。未来会补充更多数据集。
+
+
+## 基准测试
 
 ```bash
-# Run all benchmarks and update README results
+# 运行所有基准测试并更新 README 结果
 ./scripts/update_readme.sh
 
-# Or run individually:
-./scripts/temperature.sh                    # Temperature comparison (1.0, 0.5, 0.1)
-./scripts/compare_URL_Local.sh --id ... --align  # URL vs Local audio
-./scripts/benchmark.sh                      # Main DER/JER/WER benchmark
+# 或单独运行：
+./scripts/temperature.sh                    # 温度参数对比 (1.0, 0.5, 0.1)
+./scripts/compare_URL_Local.sh --id ... --align  # URL vs 本地音频
+./scripts/benchmark.sh                      # 主要 DER/JER/WER 基准测试
 ```
 
-#### Results
+#### 结果
 
-##### Main Benchmark
+##### 主要基准测试
 
 ```
 Dataset: OpenAI-Introducing-GPT-4o
@@ -59,12 +59,9 @@ Dataset: OpenAI-Introducing-GPT-4o
 | gemini-3-flash-preview (SRT V2 run2) +LattifAI    | 0.3319 (33.19%)  | 0.4884 (48.84%)  | 0.0585 ( 5.85%)  | 1.0000 (100.00%) | 0.0000 ( 0.00%)  |
 ```
 
-> **Note on WER differences**: YouTube Caption +LattifAI may show slightly different WER than the original. This
-         +is because LattifAI's `split_sentence` reorganizes fragmented YouTube captions (e.g., `"we have 100"` + `"million
-         + people"` → `"we have 100 million people"`), which affects how numbers are normalized during WER calculation (`10
-         +0` + `million` → `1000000` vs `100 million` → `100000000`).
+> **关于 WER 差异的说明**：YouTube Caption +LattifAI 可能显示与原始略有不同的 WER。这是因为 LattifAI 的 `split_sentence` 会重组 YouTube 的碎片化字幕（例如 `"we have 100"` + `"million people"` → `"we have 100 million people"`），这会影响 WER 计算时数字的规范化方式（`100` + `million` → `1000000` vs `100 million` → `100000000`）。
 
-##### URL vs Local Audio
+##### URL vs 本地音频
 
 ```
 | Model                                    |      DER ↓       |      JER ↓       |      WER ↓       |      SCA ↑       |      SCER ↓      |
@@ -79,7 +76,7 @@ Dataset: OpenAI-Introducing-GPT-4o
 | gemini-3-pro-preview (Local +LattifAI)   | 0.1969 (19.69%)  | 0.3535 (35.35%)  | 0.0432 ( 4.32%)  | 1.0000 (100.00%) | 0.0000 ( 0.00%)  |
 ```
 
-##### Thinking Mode Impact
+##### 思考模式影响
 
 ```
 | Model                                               |      DER ↓       |      JER ↓       |      WER ↓       |      SCA ↑       |      SCER ↓      |
@@ -94,7 +91,7 @@ Dataset: OpenAI-Introducing-GPT-4o
 | gemini-3-pro-preview (no-think) (Local +LattifAI)   | 0.1036 (10.36%)  | 0.1531 (15.31%)  | 0.0412 ( 4.12%)  | 1.0000 (100.00%) | 0.0000 ( 0.00%)  |
 ```
 
-##### Temperature Comparison
+##### 温度参数对比
 
 ```
 | Model                                   |      DER ↓       |      JER ↓       |      WER ↓       |      SCA ↑       |      SCER ↓      |
@@ -107,86 +104,86 @@ Dataset: OpenAI-Introducing-GPT-4o
 | gemini-3-flash-preview (temp=0.1, run2) | 0.1957 (19.57%)  | 0.1665 (16.65%)  | 0.0147 ( 1.47%)  | 1.0000 (100.00%) | 0.0000 ( 0.00%)  |
 ```
 
-> **Metrics**: DER/JER = timing accuracy (lower = better), WER = transcription quality, SCA = speaker count accuracy
+> **指标说明**：DER/JER = 时间戳准确度（越低越好），WER = 转录质量，SCA = 说话人数量准确率
 
 
-## Quick Start
+## 快速开始
 
 ```bash
 pip install pysubs2 pyannote.core pyannote.metrics jiwer whisper-normalizer
 
-# Setup API keys (auto-loaded by run.sh)
+# 设置 API 密钥（由 run.sh 自动加载）
 cp .env.example .env
-# Edit .env with your keys
+# 编辑 .env 填入你的密钥
 
-# List datasets
+# 列出数据集
 ./scripts/run.sh list
 
-# Run evaluation
+# 运行评估
 ./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o
 
-# Full pipeline (transcribe → align → eval)
+# 完整流程（转录 → 对齐 → 评估）
 ./scripts/run.sh all --id OpenAI-Introducing-GPT-4o
 ```
 
-## Usage
+## 使用方法
 
 ```bash
-./scripts/run.sh [command] [options]
+./scripts/run.sh [命令] [选项]
 
-Commands:
-  list        List available datasets
-  eval        Run evaluation (default)
-  transcribe  Transcribe with Gemini (requires GEMINI_API_KEY)
-  align       Align with LattifAI (requires LATTIFAI_API_KEY)
-  all         Run full pipeline
+命令:
+  list        列出可用数据集
+  eval        运行评估（默认）
+  transcribe  使用 Gemini 转录（需要 GEMINI_API_KEY）
+  align       使用 LattifAI 对齐（需要 LATTIFAI_API_KEY）
+  all         运行完整流程
 
-Options:
-  --id <id>       Run for specific dataset
-  --local         Use local audio.mp3 instead of YouTube URL
-  -o <dir>        Output directory (default: data/)
-  --prompt <file> Custom prompt for transcription
-  --thoughts      Include Gemini thinking process in output
-  --skip-events   Skip [event] markers in eval (e.g., [Laughter])
-  --models <list> Comma-separated models (default: all in datasets.json)
+选项:
+  --id <id>       针对特定数据集运行
+  --local         使用本地 audio.mp3 而非 YouTube URL
+  -o <dir>        输出目录（默认：data/）
+  --prompt <file> 自定义转录提示词
+  --thoughts      在输出中包含 Gemini 思考过程
+  --skip-events   评估时跳过 [event] 标记（如 [Laughter]）
+  --models <list> 逗号分隔的模型列表（默认：datasets.json 中的所有模型）
 ```
 
-### Evaluate Raw Gemini Output (Skip Alignment)
+### 评估原始 Gemini 输出（跳过对齐）
 
 ```bash
-# Transcribe only, then evaluate raw Gemini timestamps
+# 仅转录，然后评估原始 Gemini 时间戳
 ./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o
 ./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o
 
-# eval auto-converts .md → .ass if needed
+# eval 会在需要时自动转换 .md → .ass
 ```
 
-## Data Structure
+## 数据结构
 
 ```
 data/
-├── datasets.json              # Dataset index
+├── datasets.json              # 数据集索引
 ├── OpenAI-Introducing-GPT-4o/
 │   ├── audio.mp3
-│   ├── ground_truth.ass       # Reference
-│   ├── gemini-2.5-pro.md      # Transcripts
+│   ├── ground_truth.ass       # 参考标注
+│   ├── gemini-2.5-pro.md      # 转录结果
 └── TheValley101-GPT-4o-vs-Gemini/
     └── ...
 ```
 
-## Metrics
+## 指标说明
 
-| Metric | Description |
-|--------|-------------|
-| **DER** | Diarization Error Rate |
-| **JER** | Jaccard Error Rate |
-| **WER** | Word Error Rate |
-| **SCA** | Speaker Count Accuracy |
+| 指标 | 说明 |
+|------|------|
+| **DER** | 说话人分离错误率 (Diarization Error Rate) |
+| **JER** | Jaccard 错误率 (Jaccard Error Rate) |
+| **WER** | 词错误率 (Word Error Rate) |
+| **SCA** | 说话人数量准确率 (Speaker Count Accuracy) |
 
-## References
+## 参考资料
 
 - [pyannote.metrics](https://pyannote.github.io/pyannote-metrics/)
 - [jiwer](https://github.com/jitsi/jiwer)
 
 ---
-Credits: [@dotey](https://x.com/dotey) for the [prompts/Gemini_dotey.md](https://x.com/dotey/status/1971810075867046131)
+致谢：[@dotey](https://x.com/dotey) 提供的 [prompts/Gemini_dotey.md](https://x.com/dotey/status/1971810075867046131)

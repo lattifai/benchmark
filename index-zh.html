@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Transcription Benchmark - Accuracy & Timestamps Evaluation</title>
-    <meta name="description" content="Systematic evaluation of Gemini's transcription capabilities: Temperature, URL vs Local, Thinking Mode, and multi-source comparison.">
+    <title>Gemini 转录基准测试 - 准确度与时间戳评估</title>
+    <meta name="description" content="系统性评估 Gemini 的转录能力：温度参数、URL vs 本地、思考模式及多来源对比。">
 
-    <meta property="og:title" content="Gemini Transcription Benchmark">
-    <meta property="og:description" content="Amazing accuracy, timestamps gone wrong - and how to fix them">
+    <meta property="og:title" content="Gemini 转录基准测试">
+    <meta property="og:description" content="惊人的准确率，失控的时间戳——以及如何修复它们">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -57,6 +57,39 @@
             padding: 20px;
             text-align: center;
             font-weight: 600;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 200;
+            display: flex;
+            gap: 4px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 4px;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-dim);
+            transition: all var(--transition-fast);
+        }
+
+        .lang-btn:hover {
+            color: var(--text-white);
+        }
+
+        .lang-btn.active {
+            background: var(--green-glow);
+            color: white;
         }
 
         /* Hero */
@@ -559,39 +592,6 @@
 
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Language Switcher */
-        .lang-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 200;
-            display: flex;
-            gap: 4px;
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 4px;
-        }
-
-        .lang-btn {
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            color: var(--text-dim);
-            transition: all var(--transition-fast);
-        }
-
-        .lang-btn:hover {
-            color: var(--text-white);
-        }
-
-        .lang-btn.active {
-            background: var(--green-glow);
-            color: white;
-        }
-
         @media (max-width: 768px) {
             .experiment-section { padding: 20px; }
             .hero-highlight { padding: 16px 20px; gap: 16px; }
@@ -603,8 +603,8 @@
 <body>
     <!-- Language Switcher -->
     <div class="lang-switcher">
-        <a href="index.html" class="lang-btn active">EN</a>
-        <a href="index-zh.html" class="lang-btn">中文</a>
+        <a href="index.html" class="lang-btn">EN</a>
+        <a href="index-zh.html" class="lang-btn active">中文</a>
     </div>
 
     <div id="error-container"></div>
@@ -612,15 +612,15 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">Open Source Benchmark</div>
-            <h1>Gemini Transcription: Amazing Accuracy,<br>Timestamps Gone Wrong</h1>
+            <div class="hero-badge">开源基准测试</div>
+            <h1>Gemini 转录：惊人的准确率，<br>失控的时间戳</h1>
             <p class="hero-subtitle">
-                We systematically tested Gemini's transcription across 4 dimensions. The text is excellent—but the timestamps need help.
+                我们从 4 个维度系统测试了 Gemini 的转录能力。文本质量优秀——但时间戳需要修复。
             </p>
             <div class="hero-highlight">
                 <div class="highlight-item">
                     <div class="highlight-value bad">30-300%</div>
-                    <div class="highlight-label">Original DER</div>
+                    <div class="highlight-label">原始 DER</div>
                 </div>
                 <div class="highlight-arrow">→</div>
                 <div class="highlight-item">
@@ -629,7 +629,7 @@
                 </div>
             </div>
             <div class="test-data-note">
-                <strong>Test Material:</strong> OpenAI GPT-4o Launch (~26 min) — 4 speakers including ChatGPT, frequent interruptions, overlapping speech, audience applause. Each experiment runs 2+ times for stability verification.
+                <strong>测试素材：</strong>OpenAI GPT-4o 发布会（约 26 分钟）— 4 位说话人（含 ChatGPT）、频繁打断、语音重叠、观众掌声。每个实验至少运行 2 次以验证稳定性。
             </div>
         </div>
     </section>
@@ -637,11 +637,11 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="#metrics" class="nav-link">Metrics</a>
-            <a href="#layer1" class="nav-link l1">L1: Temperature</a>
-            <a href="#layer2" class="nav-link l2">L2: URL vs Local</a>
-            <a href="#layer3" class="nav-link l3">L3: Thinking Mode</a>
-            <a href="#layer4" class="nav-link l4">L4: Multi-Source</a>
+            <a href="#metrics" class="nav-link">指标说明</a>
+            <a href="#layer1" class="nav-link l1">L1: 温度参数</a>
+            <a href="#layer2" class="nav-link l2">L2: URL vs 本地</a>
+            <a href="#layer3" class="nav-link l3">L3: 思考模式</a>
+            <a href="#layer4" class="nav-link l4">L4: 多来源对比</a>
         </div>
     </nav>
 
@@ -649,15 +649,15 @@
     <div class="content" id="content">
         <div class="loading">
             <div class="loading-spinner"></div>
-            <div>Loading benchmark data...</div>
+            <div>正在加载基准测试数据...</div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>All benchmarks are reproducible. <a href="https://github.com/lattifai/benchmark" target="_blank">View source →</a></p>
+        <p>所有基准测试均可复现。<a href="https://github.com/lattifai/benchmark" target="_blank">查看源码 →</a></p>
         <div class="cta-buttons">
-            <a href="https://lattifai.com" class="btn btn-primary" target="_blank">Try LattifAI</a>
+            <a href="https://lattifai.com" class="btn btn-primary" target="_blank">试用 LattifAI</a>
             <a href="https://github.com/lattifai/benchmark" class="btn btn-secondary" target="_blank">GitHub</a>
         </div>
     </footer>
@@ -667,12 +667,12 @@
 
         function parsePercent(val) {
             const match = val.match(/\(\s*(\d+\.?\d*)%\)/);
-            if (!match) throw new Error(`Parse error: ${val}`);
+            if (!match) throw new Error(`解析错误: ${val}`);
             return parseFloat(match[1]);
         }
 
         function parseTable(lines) {
-            if (lines.length < 3) throw new Error('Invalid table');
+            if (lines.length < 3) throw new Error('表格格式无效');
             const results = [];
             for (const row of lines.slice(2)) {
                 const cols = row.split('|').map(c => c.trim()).filter(c => c);
@@ -715,7 +715,7 @@
             }
 
             for (const [k, v] of Object.entries(sections)) {
-                if (!v) throw new Error(`Missing: ${k}`);
+                if (!v) throw new Error(`缺少数据: ${k}`);
             }
             return sections;
         }
@@ -727,7 +727,7 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Model</th>
+                                <th>模型</th>
                                 <th class="metric">DER ↓</th>
                                 <th class="metric">JER ↓</th>
                                 <th class="metric">WER ↓</th>
@@ -771,229 +771,229 @@
 
         function render(sections) {
             document.getElementById('content').innerHTML = `
-                <!-- Metrics -->
+                <!-- 指标说明 -->
                 <section id="metrics" class="metrics-intro">
-                    <h2>Understanding the Metrics</h2>
+                    <h2>理解评估指标</h2>
                     <div class="metrics-grid">
                         <div class="metric-card">
                             <div class="metric-card-name">DER</div>
-                            <div class="metric-card-full">Diarization Error Rate</div>
-                            <div class="metric-card-desc">Measures timestamp accuracy + speaker labeling. DER > 100% means severe timing issues.</div>
+                            <div class="metric-card-full">说话人分离错误率</div>
+                            <div class="metric-card-desc">衡量时间戳准确度 + 说话人标注。DER > 100% 意味着严重的时间问题。</div>
                         </div>
                         <div class="metric-card">
                             <div class="metric-card-name">JER</div>
-                            <div class="metric-card-full">Jaccard Error Rate</div>
-                            <div class="metric-card-desc">Stricter overlap calculation for segment boundaries.</div>
+                            <div class="metric-card-full">Jaccard 错误率</div>
+                            <div class="metric-card-desc">更严格的片段边界重叠计算方式。</div>
                         </div>
                         <div class="metric-card">
                             <div class="metric-card-name">WER</div>
-                            <div class="metric-card-full">Word Error Rate</div>
-                            <div class="metric-card-desc">Text accuracy. Lower = fewer transcription errors.</div>
+                            <div class="metric-card-full">词错误率</div>
+                            <div class="metric-card-desc">文本准确度。越低 = 转录错误越少。</div>
                         </div>
                         <div class="metric-card">
                             <div class="metric-card-name">SCA</div>
-                            <div class="metric-card-full">Speaker Count Accuracy</div>
-                            <div class="metric-card-desc">Did the model detect the correct number of speakers?</div>
+                            <div class="metric-card-full">说话人数量准确率</div>
+                            <div class="metric-card-desc">模型是否检测到了正确的说话人数量？</div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Layer 1: Temperature -->
+                <!-- 第一层：温度参数 -->
                 <section id="layer1" class="experiment">
                     <div class="experiment-header">
-                        <span class="experiment-level l1">Layer 1</span>
-                        <h2 class="experiment-title">Temperature Parameter</h2>
-                        <p class="experiment-meta">Test material: 5-min single-speaker audio • 2 runs per setting</p>
+                        <span class="experiment-level l1">第一层</span>
+                        <h2 class="experiment-title">温度参数</h2>
+                        <p class="experiment-meta">测试素材：5 分钟单说话人音频 • 每个设置运行 2 次</p>
                     </div>
                     <div class="experiment-body">
                         <div class="experiment-section">
-                            <div class="section-label question">The Question</div>
+                            <div class="section-label question">研究问题</div>
                             <div class="section-content">
-                                <p>Temperature controls output randomness. <strong>Gemini's default doesn't let users set it (None)</strong>. Does manually setting temperature affect accuracy or timestamp stability?</p>
+                                <p>温度参数控制输出的随机性。<strong>Gemini 默认不允许用户设置（None）</strong>。手动设置温度是否会影响准确度或时间戳稳定性？</p>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label setup">Test Setup</div>
+                            <div class="section-label setup">测试设置</div>
                             <div class="section-content">
                                 <ul>
-                                    <li>Temperature values: <code>1.0</code>, <code>0.5</code>, <code>0.1</code></li>
-                                    <li>Two runs per setting to measure consistency</li>
+                                    <li>温度值：<code>1.0</code>、<code>0.5</code>、<code>0.1</code></li>
+                                    <li>每个设置运行两次以衡量一致性</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label findings">Key Findings</div>
+                            <div class="section-label findings">主要发现</div>
                             <div class="section-content">
                                 <ul>
-                                    <li><strong>WER is stable</strong>: All settings produce 1.3-1.9% WER—temperature barely affects text accuracy</li>
-                                    <li><strong>temp=0.5 is unstable</strong>: DER jumped from 19% to 30% between runs</li>
-                                    <li><strong>temp=0.1 is most consistent</strong>: Only 1.4% DER variance between runs</li>
-                                    <li><strong>Lower ≠ Better</strong>: temp=0.1 isn't more accurate, just more reproducible</li>
+                                    <li><strong>WER 稳定</strong>：所有设置的 WER 都在 1.3-1.9%——温度几乎不影响文本准确度</li>
+                                    <li><strong>temp=0.5 不稳定</strong>：DER 在两次运行间从 19% 跳到 30%</li>
+                                    <li><strong>temp=0.1 最一致</strong>：两次运行间 DER 仅相差 1.4%</li>
+                                    <li><strong>更低 ≠ 更好</strong>：temp=0.1 并不更准确，只是更可复现</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label results">Results</div>
+                            <div class="section-label results">结果</div>
                             ${renderTable(sections.temperature.data, { showSCA: false })}
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label takeaway">Takeaway</div>
+                            <div class="section-label takeaway">结论</div>
                             <div class="takeaway-box">
-                                <p>Use <strong>temp=0.1</strong> if you need reproducible results. For best single-run quality, any setting works.</p>
+                                <p>如果需要可复现的结果，使用 <strong>temp=0.1</strong>。对于单次最佳质量，任何设置都可以。</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Layer 2: URL vs Local -->
+                <!-- 第二层：URL vs 本地 -->
                 <section id="layer2" class="experiment">
                     <div class="experiment-header">
-                        <span class="experiment-level l2">Layer 2</span>
-                        <h2 class="experiment-title">URL vs Local Audio</h2>
-                        <p class="experiment-meta">Test material: OpenAI GPT-4o launch (~26 min, multi-speaker)</p>
+                        <span class="experiment-level l2">第二层</span>
+                        <h2 class="experiment-title">URL vs 本地音频</h2>
+                        <p class="experiment-meta">测试素材：OpenAI GPT-4o 发布会（约 26 分钟，多说话人）</p>
                     </div>
                     <div class="experiment-body">
                         <div class="experiment-section">
-                            <div class="section-label question">The Question</div>
+                            <div class="section-label question">研究问题</div>
                             <div class="section-content">
-                                <p>Gemini accepts YouTube URLs or local files. Does the input method affect quality? Does video metadata (title, description) help?</p>
+                                <p>Gemini 接受 YouTube URL 或本地文件。输入方式是否影响质量？视频元数据（标题、描述）是否有帮助？</p>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label setup">Test Setup</div>
+                            <div class="section-label setup">测试设置</div>
                             <div class="section-content">
                                 <ul>
-                                    <li>Same audio via URL vs local MP3</li>
-                                    <li>Tested on Gemini 3 Flash and Gemini 3 Pro</li>
-                                    <li>Local input had <strong>no description</strong>; URL had video metadata</li>
+                                    <li>相同音频通过 URL vs 本地 MP3</li>
+                                    <li>在 Gemini 3 Flash 和 Gemini 3 Pro 上测试</li>
+                                    <li>本地输入<strong>没有描述</strong>；URL 有视频元数据</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label findings">Key Findings</div>
+                            <div class="section-label findings">主要发现</div>
                             <div class="section-content">
                                 <ul>
-                                    <li><strong>Flash: Nearly identical</strong> — DER differs by ~1% (31.86% vs 33.12%)</li>
-                                    <li><strong>Pro: URL mode unstable</strong> — DER 311% vs Local's 40%. Generative models sometimes hallucinate timestamps far beyond the actual duration (e.g., 1-hour marks in a 26-min video)</li>
-                                    <li><strong>Metadata doesn't help</strong> — URL (with metadata) ≈ Local (no metadata)</li>
-                                    <li><strong>LattifAI fixes both</strong> — All corrected to 11-20% DER range</li>
+                                    <li><strong>Flash：几乎相同</strong> — DER 相差约 1%（31.86% vs 33.12%）</li>
+                                    <li><strong>Pro：URL 模式不稳定</strong> — DER 311% vs 本地的 40%。生成式模型有时会产生远超实际时长的时间戳幻觉（例如在 26 分钟视频中出现 1 小时的时间标记）</li>
+                                    <li><strong>元数据无帮助</strong> — URL（有元数据）≈ 本地（无元数据）</li>
+                                    <li><strong>LattifAI 修复两者</strong> — 全部校正到 11-20% DER 范围</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label results">Results</div>
+                            <div class="section-label results">结果</div>
                             ${renderTable(sections.urlLocal.data)}
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label takeaway">Takeaway</div>
+                            <div class="section-label takeaway">结论</div>
                             <div class="takeaway-box">
-                                <p><strong>Flash:</strong> Use either method. <strong>Pro:</strong> Always use local files—URL mode has serious issues.</p>
+                                <p><strong>Flash：</strong>两种方式都可以。<strong>Pro：</strong>始终使用本地文件——URL 模式有严重问题。</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Layer 3: Thinking Mode -->
+                <!-- 第三层：思考模式 -->
                 <section id="layer3" class="experiment">
                     <div class="experiment-header">
-                        <span class="experiment-level l3">Layer 3</span>
-                        <h2 class="experiment-title">Thinking Mode Impact</h2>
-                        <p class="experiment-meta">Test material: OpenAI GPT-4o launch</p>
+                        <span class="experiment-level l3">第三层</span>
+                        <h2 class="experiment-title">思考模式的影响</h2>
+                        <p class="experiment-meta">测试素材：OpenAI GPT-4o 发布会</p>
                     </div>
                     <div class="experiment-body">
                         <div class="experiment-section">
-                            <div class="section-label question">The Question</div>
+                            <div class="section-label question">研究问题</div>
                             <div class="section-content">
-                                <p>Gemini 3 introduced Thinking Mode. Does the extra "reasoning" time improve timestamp accuracy?</p>
+                                <p>Gemini 3 引入了思考模式。额外的"推理"时间是否能提升时间戳准确度？</p>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label findings">Key Findings</div>
+                            <div class="section-label findings">主要发现</div>
                             <div class="section-content">
                                 <ul>
-                                    <li><strong>WER improves ~1%</strong>: no-think 5-6.5% → think 4.3-4.8%</li>
-                                    <li><strong>DER unchanged</strong>: Both modes hover around 30-33% for Flash</li>
-                                    <li><strong>Pro is unstable</strong>: think-URL fails (311%), no-think-Local fails (306%)</li>
-                                    <li><strong>Critical insight</strong>: We examined the thinking output—it's just a <em>draft transcript</em>, not timestamp reasoning</li>
+                                    <li><strong>WER 提升约 1%</strong>：no-think 5-6.5% → think 4.3-4.8%</li>
+                                    <li><strong>DER 无变化</strong>：Flash 的两种模式都在 30-33% 左右</li>
+                                    <li><strong>Pro 不稳定</strong>：think-URL 失败（311%），no-think-Local 失败（306%）</li>
+                                    <li><strong>关键发现</strong>：我们检查了思考输出——它只是一份<em>转录草稿</em>，而非时间戳推理</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label results">Results</div>
+                            <div class="section-label results">结果</div>
                             ${renderTable(sections.thinking.data)}
                             <div class="note-box">
-                                <strong>Why doesn't Thinking Mode help timestamps?</strong> From what we observed, the "thinking" output appears to be draft transcripts rather than timestamp reasoning. However, this needs further investigation—Google may not expose the full thinking process, or additional prompt optimization could unlock better results.
+                                <strong>为什么思考模式对时间戳没有帮助？</strong>从我们观察到的情况来看，"思考"输出似乎是转录草稿，而非时间戳推理。不过，这需要进一步研究——Google 可能没有展示完整的思考过程，或者通过额外的提示词优化可能会有更好的效果。
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label takeaway">Takeaway</div>
+                            <div class="section-label takeaway">结论</div>
                             <div class="takeaway-box">
-                                <p><strong>Enable Thinking Mode</strong> for ~1% better WER. But for timestamps, you still need forced alignment.</p>
+                                <p><strong>开启思考模式</strong>可获得约 1% 的 WER 提升。但对于时间戳，你仍然需要强制对齐。</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Layer 4: Multi-Source -->
+                <!-- 第四层：多来源对比 -->
                 <section id="layer4" class="experiment">
                     <div class="experiment-header">
-                        <span class="experiment-level l4">Layer 4</span>
-                        <h2 class="experiment-title">Multi-Source & Prompt Engineering</h2>
-                        <p class="experiment-meta">Test material: OpenAI GPT-4o launch • Multiple prompt variants</p>
+                        <span class="experiment-level l4">第四层</span>
+                        <h2 class="experiment-title">多来源与提示词工程</h2>
+                        <p class="experiment-meta">测试素材：OpenAI GPT-4o 发布会 • 多种提示词变体</p>
                     </div>
                     <div class="experiment-body">
                         <div class="experiment-section">
-                            <div class="section-label question">The Question</div>
+                            <div class="section-label question">研究问题</div>
                             <div class="section-content">
-                                <p>How does Gemini compare to YouTube auto-captions? Can prompt engineering improve timestamps?</p>
+                                <p>Gemini 与 YouTube 自动字幕相比如何？提示词工程能否改善时间戳？</p>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label setup">Prompt Variants Tested</div>
+                            <div class="section-label setup">测试的提示词变体</div>
                             <div class="section-content">
                                 <ul>
-                                    <li><strong>dotey</strong>: Base prompt from @dotey</li>
-                                    <li><strong>Precise</strong>: Request millisecond precision</li>
-                                    <li><strong>StartEnd</strong>: Include both start and end times</li>
-                                    <li><strong>SRT V2</strong>: Output directly as SRT format</li>
+                                    <li><strong>dotey</strong>：来自 @dotey 的基础提示词</li>
+                                    <li><strong>Precise</strong>：要求毫秒级精度</li>
+                                    <li><strong>StartEnd</strong>：同时包含开始和结束时间</li>
+                                    <li><strong>SRT V2</strong>：直接输出 SRT 格式</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label findings">Key Findings</div>
+                            <div class="section-label findings">主要发现</div>
                             <div class="section-content">
                                 <ul>
-                                    <li><strong>Gemini WER 5x better than YouTube</strong>: 4-5% vs 21%</li>
-                                    <li><strong>Prompt format affects DER 3.6x</strong>: Precise 21% vs SRT 77%</li>
-                                    <li><strong>SRT format backfires</strong>: Line-width limits cause speaker crossover → worse DER</li>
-                                    <li><strong>YouTube captions: DER 172%</strong>: Timestamps are completely off (but fixable)</li>
-                                    <li><strong>LattifAI normalizes all sources</strong>: 172% → 15%, 77% → 10%, 21% → 9%</li>
+                                    <li><strong>Gemini WER 比 YouTube 好 5 倍</strong>：4-5% vs 21%</li>
+                                    <li><strong>提示词格式影响 DER 3.6 倍</strong>：Precise 21% vs SRT 77%</li>
+                                    <li><strong>SRT 格式适得其反</strong>：行宽限制导致说话人交叉 → 更差的 DER</li>
+                                    <li><strong>YouTube 字幕：DER 172%</strong>：时间戳完全偏离（但可修复）</li>
+                                    <li><strong>LattifAI 归一化所有来源</strong>：172% → 15%，77% → 10%，21% → 9%</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label results">Results</div>
+                            <div class="section-label results">结果</div>
                             ${renderTable(sections.main.data)}
                             ${sections.main.note ? `
                                 <div class="note-box">
-                                    <strong>Note on WER:</strong> ${sections.main.note}
+                                    <strong>关于 WER 差异：</strong>${sections.main.note}
                                 </div>
                             ` : ''}
                         </div>
                         <div class="experiment-section">
-                            <div class="section-label takeaway">Takeaway</div>
+                            <div class="section-label takeaway">结论</div>
                             <div class="takeaway-box">
-                                <p>Prompt engineering has <strong>limited effect</strong> on timestamps—this is an architectural issue. Use the "Precise" prompt for best raw results, then apply forced alignment.</p>
+                                <p>提示词工程对时间戳的<strong>效果有限</strong>——这是架构层面的问题。使用"Precise"提示词获得最佳原始结果，然后应用强制对齐。</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Best Practice -->
+                <!-- 最佳实践 -->
                 <div class="best-practice">
-                    <h3>Best Practice</h3>
+                    <h3>最佳实践</h3>
                     <div class="best-practice-formula">
-                        Gemini 3 Flash + Precise Prompt + Thinking Mode + LattifAI
+                        Gemini 3 Flash + Precise 提示词 + 思考模式 + LattifAI
                     </div>
                     <div class="best-practice-result">
                         <span>WER 4.19%</span>
@@ -1004,15 +1004,15 @@
         }
 
         function showError(msg) {
-            document.getElementById('error-container').innerHTML = `<div class="error-banner">Error: ${msg}</div>`;
-            document.getElementById('content').innerHTML = `<div style="text-align:center;padding:100px 24px;color:#ef4444;"><h2>Failed to Load</h2><p style="margin-top:16px;color:var(--text-dim);">${msg}</p></div>`;
+            document.getElementById('error-container').innerHTML = `<div class="error-banner">错误: ${msg}</div>`;
+            document.getElementById('content').innerHTML = `<div style="text-align:center;padding:100px 24px;color:#ef4444;"><h2>加载失败</h2><p style="margin-top:16px;color:var(--text-dim);">${msg}</p></div>`;
         }
 
         async function load() {
             const res = await fetch('README.md');
-            if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+            if (!res.ok) throw new Error(`获取失败: ${res.status}`);
             const text = await res.text();
-            if (!text.includes('#### Results')) throw new Error('Missing "#### Results"');
+            if (!text.includes('#### Results')) throw new Error('缺少 "#### Results"');
             render(extractTables(text));
         }
 
