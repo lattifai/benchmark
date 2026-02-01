@@ -1,61 +1,108 @@
-./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o --models gemini-2.5-pro -o data --prompt prompts/Gemini_dotey.md
-./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o --models gemini-2.5-pro -o data
+#!/bin/bash
+# Benchmark script for comparing different transcription configurations
+# Runs transcription with various prompts/models and outputs unified results table
 
-./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o --models gemini-3-pro-preview -o data --prompt prompts/Gemini_dotey.md
-./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o --models gemini-3-pro-preview -o data
+set -e
 
-# gemini-3-flash-preview 1
-./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o data --prompt prompts/Gemini_dotey.md
-./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o data
+# Load common functions
+source "$(dirname "$0")/common.sh"
 
-# gemini-3-flash-preview 2
-./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/V1_1 --prompt prompts/Gemini_dotey.md
-./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/V1_1
+# ============================================================================
+# Configuration
+# ============================================================================
 
-# gemini-3-flash-preview StartEnd 1
-./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/StartEnd_V1 --prompt prompts/Gemini_dotey_StartEnd.md
-./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/StartEnd_V1
-lai caption convert -Y outputs/StartEnd_V1/OpenAI-Introducing-GPT-4o/gemini-3-flash-preview.md outputs/StartEnd_V1/OpenAI-Introducing-GPT-4o/gemini-3-flash-preview.TextGrid
-# gemini-3-flash-preview StartEnd 2
-./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/StartEnd_V1_2 --prompt prompts/Gemini_dotey_StartEnd.md
-./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/StartEnd_V1_2
+# Datasets to benchmark (format: "dataset_id:language")
+DATASETS=(
+    "OpenAI-Introducing-GPT-4o:en"
+    # "TheValley101-GPT-4o-vs-Gemini:zh"
+)
 
-# gemini-3-flash-preview PreciseEnd 1
-./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/PreciseEnd_V1 --prompt prompts/Gemini_dotey_Precise.md
-./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/PreciseEnd_V1
-lai caption convert -Y outputs/PreciseEnd_V1/OpenAI-Introducing-GPT-4o/gemini-3-flash-preview.md outputs/PreciseEnd_V1/OpenAI-Introducing-GPT-4o/gemini-3-flash-preview.TextGrid
-# gemini-3-flash-preview PreciseEnd 2
-./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/PreciseEnd_V1_2 --prompt prompts/Gemini_dotey_Precise.md
-./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o  --models gemini-3-flash-preview -o outputs/PreciseEnd_V1_2
+# Test configurations (format: "model:prompt:output_dir:tag")
+CONFIGS=(
+    "gemini-2.5-pro:prompts/Gemini_dotey.md:data:(baseline)"
+    "gemini-3-pro-preview:prompts/Gemini_dotey.md:data:(baseline)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey.md:data:(dotey)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey.md:outputs/V1_1:(dotey run2)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey_StartEnd.md:outputs/StartEnd_V1:(StartEnd)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey_StartEnd.md:outputs/StartEnd_V1_2:(StartEnd run2)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey_Precise.md:outputs/PreciseEnd_V1:(Precise)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey_Precise.md:outputs/PreciseEnd_V1_2:(Precise run2)"
+)
 
+# ============================================================================
+# Step 1: Run all transcriptions
+# ============================================================================
+print_header "Step 1: Transcribing (skips existing files)"
 
-# OpenAI-Introducing-GPT-4o
-# 1) 重复转写的稳定性
-# 2) + Start 是否有用
-| Model | DER ↓ | JER ↓ | WER ↓ | SCA ↑ | SCER ↓ |
-|--------|--------|--------|--------|--------|--------|
-| gemini-3-flash-preview 1           | 0.3335 (33.35%) | 0.3187 (31.87%) | 0.0454 ( 4.54%) | 0.0000 ( 0.00%) | 0.2500 (25.00%) |
-| gemini-3-flash-preview 2           | 0.3315 (33.15%) | 0.2958 (29.58%) | 0.0444 ( 4.44%) | 0.0000 ( 0.00%) | 0.2500 (25.00%) |
-| gemini-3-flash-preview StartEnd 1  | 0.3434 (34.34%) | 0.2965 (29.65%) | 0.0597 ( 5.97%) | 0.0000 ( 0.00%) | 0.2500 (25.00%) |
-| gemini-3-flash-preview StartEnd 2  | 0.2827 (28.27%) | 0.2653 (26.53%) | 0.0638 ( 6.38%) | 1.0000 (100.00%) | 0.0000 ( 0.00%) |
-| gemini-3-flash-preview PreciseEnd 1 | 0.2782 (27.82%) | 0.2572 (25.72%) | 0.0419 ( 4.19%) | 1.0000 (100.00%) | 0.0000 ( 0.00%) |
-| gemini-3-flash-preview PreciseEnd 2 | 0.2937 (29.37%) | 0.2586 (25.86%) | 0.0665 ( 6.65%) | 0.0000 ( 0.00%) | 0.2500 (25.00%) |
+for ds_entry in "${DATASETS[@]}"; do
+    dataset_id="${ds_entry%%:*}"
+    dataset_lang="${ds_entry##*:}"
 
+    for config in "${CONFIGS[@]}"; do
+        IFS=':' read -r model prompt output_dir tag <<< "$config"
 
+        target_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}.md"
 
-./scripts/run.sh transcribe --id TheValley101-GPT-4o-vs-Gemini --models gemini-2.5-pro -o data --prompt prompts/Gemini_dotey.md
-./scripts/run.sh eval --language zh --id TheValley101-GPT-4o-vs-Gemini --models gemini-2.5-pro -o data
+        echo ""
+        print_step "${model} ${tag} → ${output_dir}/${dataset_id}"
 
-./scripts/run.sh transcribe --id TheValley101-GPT-4o-vs-Gemini --models gemini-3-pro-preview -o data --prompt prompts/Gemini_dotey.md
-./scripts/run.sh eval --language zh --id TheValley101-GPT-4o-vs-Gemini --models gemini-3-pro-preview -o data
+        if [ -f "$target_file" ]; then
+            echo "  ⏭ Skipping (already exists)"
+            continue
+        fi
 
-./scripts/run.sh transcribe --id TheValley101-GPT-4o-vs-Gemini --models gemini-3-flash-preview -o data --prompt prompts/Gemini_dotey.md
-./scripts/run.sh eval --language zh --id TheValley101-GPT-4o-vs-Gemini --models gemini-3-flash-preview -o data
-lai caption convert -Y data/TheValley101-GPT-4o-vs-Gemini/gemini-3-flash-preview.md data/TheValley101-GPT-4o-vs-Gemini/gemini-3-flash-preview.TextGrid
+        "$SCRIPT_DIR/run.sh" transcribe --local \
+            --id "$dataset_id" \
+            --models "$model" \
+            -o "${PROJECT_DIR}/${output_dir}" \
+            --prompt "$prompt"
+    done
+done
 
+# ============================================================================
+# Step 2: Run all evaluations and collect results
+# ============================================================================
+print_header "Step 2: Evaluating all results"
 
-| Model | DER ↓ | JER ↓ | WER ↓ | SCA ↑ | SCER ↓ |
-|--------|--------|--------|--------|--------|--------|
-| Ground Truth           | 0.0000 ( 0.00%) | 0.0000 ( 0.00%) | 0.0000 ( 0.00%) | 1.0000 (100.00%) | 0.0000 ( 0.00%) |
-| gemini-3-pro-preview   | 0.1000 (10.00%) | 0.4216 (42.16%) | 0.1625 (16.25%) | 0.0000 ( 0.00%) | 0.2727 (27.27%) |
-| gemini-3-flash-preview | 0.4034 (40.34%) | 0.6886 (68.86%) | 0.1725 (17.25%) | 0.0000 ( 0.00%) | 0.0909 ( 9.09%) |
+RESULTS_FILE=$(mktemp)
+
+for ds_entry in "${DATASETS[@]}"; do
+    dataset_id="${ds_entry%%:*}"
+    dataset_lang="${ds_entry##*:}"
+
+    ref_file="${DATA_ROOT}/${dataset_id}/ground_truth.ass"
+
+    for config in "${CONFIGS[@]}"; do
+        IFS=':' read -r model prompt output_dir tag <<< "$config"
+
+        hyp_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}.ass"
+        md_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}.md"
+        model_name="${model} ${tag}"
+
+        echo ""
+        print_step "Evaluating: $model_name"
+
+        # Convert .md to .ass if needed
+        if [ -f "$md_file" ] && [ ! -f "$hyp_file" ]; then
+            lai caption convert -Y "$md_file" "$hyp_file" 2>/dev/null || true
+        fi
+
+        if [ ! -f "$hyp_file" ]; then
+            print_warning "Skipping (file not found: $hyp_file)"
+            continue
+        fi
+
+        result=$(run_eval_json "$ref_file" "$hyp_file" "$dataset_lang")
+        echo "{\"dataset\": \"$dataset_id\", \"model\": \"$model_name\", \"metrics\": $result}" >> "$RESULTS_FILE"
+    done
+done
+
+# ============================================================================
+# Step 3: Output summary table
+# ============================================================================
+print_header "Summary Table"
+
+print_summary_table "$RESULTS_FILE"
+rm -f "$RESULTS_FILE"
+
+print_header "Benchmark Complete"

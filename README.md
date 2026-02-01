@@ -64,7 +64,7 @@ Options:
 
 ```bash
 # Transcribe only, then evaluate raw Gemini timestamps
-GEMINI_API_KEY=xxx ./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o
+./scripts/run.sh transcribe --id OpenAI-Introducing-GPT-4o
 ./scripts/run.sh eval --id OpenAI-Introducing-GPT-4o
 
 # eval auto-converts .md → .ass if needed

@@ -1,45 +1,11 @@
 #!/bin/bash
 # Reproduce LattifAI Benchmark Results
-# Usage: ./scripts/reproduce.sh [command] [--id <dataset_id>]
+# Usage: ./scripts/run.sh [command] [--id <dataset_id>]
 
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-DATASETS_JSON="$PROJECT_DIR/data/datasets.json"
-DATA_ROOT="$PROJECT_DIR/data"
-
-# Load .env file if exists
-if [ -f "$PROJECT_DIR/.env" ]; then
-    set -a
-    source "$PROJECT_DIR/.env"
-    set +a
-fi
-
-# Colors
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-
-print_header() {
-    echo -e "\n${BLUE}═══════════════════════════════════════════════════════════════${NC}"
-    echo -e "${BLUE}  $1${NC}"
-    echo -e "${BLUE}═══════════════════════════════════════════════════════════════${NC}\n"
-}
-
-print_step() {
-    echo -e "${GREEN}▶ $1${NC}"
-}
-
-print_warning() {
-    echo -e "${YELLOW}⚠ $1${NC}"
-}
-
-print_error() {
-    echo -e "${RED}✗ $1${NC}"
-}
+# Load common functions
+source "$(dirname "$0")/common.sh"
 
 # Get dataset IDs from datasets.json (excludes -First5mins variants)
 get_all_dataset_ids() {
@@ -53,31 +19,20 @@ for ds in data['datasets']:
 "
 }
 
-# Check if dataset ID exists
-dataset_exists() {
-    local id="$1"
-    python3 -c "
-import json, sys
-with open('$DATASETS_JSON') as f:
-    data = json.load(f)
-ids = [ds['id'] for ds in data['datasets']]
-sys.exit(0 if '$id' in ids else 1)
-"
-}
-
-# Get dataset info
-get_dataset_info() {
-    local id="$1"
-    local field="$2"
-    python3 -c "
+# Get models from datasets.json or user-specified list
+get_models() {
+    local models_arg="$1"
+    if [ -n "$models_arg" ]; then
+        echo "$models_arg" | tr ',' '\n'
+    else
+        python3 -c "
 import json
 with open('$DATASETS_JSON') as f:
     data = json.load(f)
-for ds in data['datasets']:
-    if ds['id'] == '$id':
-        print(ds.get('$field', ''))
-        break
+for model in data.get('models', []):
+    print(model)
 "
+    fi
 }
 
 # ============================================================================
@@ -92,13 +47,11 @@ run_eval_for_dataset() {
     local SRC_DIR="$DATA_ROOT/$dataset_id"
     local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
-    # Check source data directory
     if [ ! -d "$SRC_DIR" ]; then
         print_warning "Source data not found: $SRC_DIR"
         return 1
     fi
 
-    # Check for ground_truth.ass in source
     if [ ! -f "$SRC_DIR/ground_truth.ass" ]; then
         print_warning "ground_truth.ass not found in $SRC_DIR"
         return 1
@@ -110,39 +63,24 @@ run_eval_for_dataset() {
 
     cd "$PROJECT_DIR"
 
-    # Use specified language or auto-detect from dataset
     local lang_code="$language_arg"
     if [ -z "$lang_code" ]; then
-        local dataset_lang
-        dataset_lang=$(get_dataset_info "$dataset_id" "language")
-        lang_code="en"
-        if [[ "$dataset_lang" == zh* ]]; then
-            lang_code="zh"
-        elif [[ "$dataset_lang" == ja* ]]; then
-            lang_code="ja"
-        fi
+        lang_code=$(get_language_code "$dataset_id")
     fi
 
-    # Build extra args
     local extra_args="--language $lang_code"
     if [ "$skip_events" = "true" ]; then
         extra_args="$extra_args --skip-events"
         print_step "Skipping [event] markers"
     fi
 
-    # Convert .md files to .ass if not already converted (for evaluating raw Gemini output)
+    # Convert .md files to .ass if needed
     while IFS= read -r model; do
         [ -z "$model" ] && continue
         local md_file="$OUT_DIR/${model}.md"
         local ass_file="$OUT_DIR/${model}.ass"
 
-        # Skip if .md doesn't exist
         [ -f "$md_file" ] || continue
-
-        # # Skip if .ass already exists
-        # if [ -f "$ass_file" ]; then
-        #     continue
-        # fi
 
         print_step "Converting ${model}.md to .ass..."
         lai caption convert -Y "$md_file" "$ass_file" 2>/dev/null || {
@@ -159,18 +97,16 @@ run_eval_for_dataset() {
     while IFS= read -r model; do
         [ -z "$model" ] && continue
 
-        # Build display name with optional tag
         local display_name="$model"
         if [ -n "$tag" ]; then
             display_name="${model} ${tag}"
         fi
 
-        # Evaluate raw Gemini output (.ass converted from .md)
+        # Evaluate raw Gemini output
         local ass_file="$OUT_DIR/${model}.ass"
         if [ -f "$ass_file" ]; then
             echo ""
             print_step "$display_name"
-            # print_step "$SRC_DIR/ground_truth.ass $ass_file $extra_args"
             python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$ass_file" \
                 --metrics der jer wer sca scer --collar 0.0 --model-name "$display_name" $extra_args
         fi
@@ -196,7 +132,6 @@ run_eval() {
     if [ -n "$dataset_id" ]; then
         run_eval_for_dataset "$dataset_id" "$skip_events" "$models_arg" "$language_arg" "$tag"
     else
-        # Run for all datasets
         while IFS= read -r id; do
             run_eval_for_dataset "$id" "$skip_events" "$models_arg" "$language_arg" "$tag"
         done < <(get_all_dataset_ids)
@@ -208,23 +143,6 @@ run_eval() {
 # ============================================================================
 # STEP 2: Transcribe Audio (requires GEMINI_API_KEY)
 # ============================================================================
-get_models() {
-    local models_arg="$1"
-    if [ -n "$models_arg" ]; then
-        # Use user-specified models (comma-separated)
-        echo "$models_arg" | tr ',' '\n'
-    else
-        # Use all models from datasets.json
-        python3 -c "
-import json
-with open('$DATASETS_JSON') as f:
-    data = json.load(f)
-for model in data.get('models', []):
-    print(model)
-"
-    fi
-}
-
 run_transcribe_for_dataset() {
     local dataset_id="$1"
     local use_local="$2"
@@ -235,14 +153,12 @@ run_transcribe_for_dataset() {
     local SRC_DIR="$DATA_ROOT/$dataset_id"
     local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
-    # Create output directory if not exists
     mkdir -p "$OUT_DIR"
 
     local dataset_name
     dataset_name=$(get_dataset_info "$dataset_id" "name")
     print_header "Transcribing: $dataset_name ($dataset_id)"
 
-    # Determine input source (default: URL)
     local input_source
     if [ "$use_local" = "true" ]; then
         input_source="$SRC_DIR/audio.mp3"
@@ -260,7 +176,6 @@ run_transcribe_for_dataset() {
         print_step "Using URL: $input_source"
     fi
 
-    # Build extra arguments
     local extra_args=""
     if [ -n "$prompt_file" ]; then
         extra_args="$extra_args transcription.prompt=\"$prompt_file\""
@@ -275,7 +190,6 @@ run_transcribe_for_dataset() {
         print_step "Using temperature: $temperature"
     fi
 
-    # Transcribe with each model
     while IFS= read -r model; do
         [ -z "$model" ] && continue
         local output_file="$OUT_DIR/${model}.md"
@@ -295,15 +209,14 @@ run_transcribe() {
     local temperature="$6"
 
     if [ -z "$GEMINI_API_KEY" ]; then
-        print_warning "GEMINI_API_KEY not set. Please export GEMINI_API_KEY first."
-        echo "  export GEMINI_API_KEY='your-api-key'"
+        print_warning "GEMINI_API_KEY not set. Add it to .env file:"
+        echo "  cp .env.example .env && edit .env"
         exit 1
     fi
 
     if [ -n "$dataset_id" ]; then
         run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg" "$temperature"
     else
-        # Run for all datasets
         while IFS= read -r id; do
             run_transcribe_for_dataset "$id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg" "$temperature"
         done < <(get_all_dataset_ids)
@@ -325,14 +238,12 @@ run_alignment_for_dataset() {
     dataset_name=$(get_dataset_info "$dataset_id" "name")
     print_header "Aligning: $dataset_name ($dataset_id)"
 
-    # Check for audio file in source directory
     local audio_file="$SRC_DIR/audio.mp3"
     if [ ! -f "$audio_file" ]; then
         print_warning "audio.mp3 not found in $SRC_DIR"
         return 1
     fi
 
-    # Align transcripts for specified models
     mkdir -p "$OUT_DIR"
 
     while IFS= read -r model; do
@@ -344,7 +255,6 @@ run_alignment_for_dataset() {
         fi
         local output_file="$OUT_DIR/${model}_LattifAI.ass"
 
-        # Skip if output already exists
         if [ -f "$output_file" ]; then
             print_step "Skipping $model (already exists: $output_file)"
             continue
@@ -365,15 +275,14 @@ run_alignment() {
     local models_arg="$2"
 
     if [ -z "$LATTIFAI_API_KEY" ]; then
-        print_warning "LATTIFAI_API_KEY not set. Please export LATTIFAI_API_KEY first."
-        echo "  export LATTIFAI_API_KEY='your-api-key'"
+        print_warning "LATTIFAI_API_KEY not set. Add it to .env file:"
+        echo "  cp .env.example .env && edit .env"
         exit 1
     fi
 
     if [ -n "$dataset_id" ]; then
         run_alignment_for_dataset "$dataset_id" "$models_arg"
     else
-        # Run for all datasets
         while IFS= read -r id; do
             run_alignment_for_dataset "$id" "$models_arg"
         done < <(get_all_dataset_ids)
@@ -427,13 +336,13 @@ usage() {
     echo "  --tag <suffix>      Suffix to append to model names in eval output (e.g., _temp0.5)"
     echo ""
     echo "Examples:"
+    echo "  $0 list                                       # List available datasets"
     echo "  $0 eval                                       # Evaluate all datasets"
     echo "  $0 eval --id OpenAI-Introducing-GPT-4o       # Evaluate specific dataset"
-    echo "  $0 list                                       # List available datasets"
-    echo "  GEMINI_API_KEY=xxx $0 transcribe --id xxx    # Transcribe from YouTube URL"
-    echo "  GEMINI_API_KEY=xxx $0 transcribe --local     # Transcribe from local audio"
-    echo "  GEMINI_API_KEY=xxx $0 transcribe -o ./out    # Output to custom directory"
-    echo "  LATTIFAI_API_KEY=xxx $0 align --id xxx       # Align specific dataset"
+    echo "  $0 transcribe --id OpenAI-Introducing-GPT-4o # Transcribe (requires .env)"
+    echo "  $0 transcribe --local                        # Transcribe from local audio"
+    echo "  $0 align --id OpenAI-Introducing-GPT-4o      # Align (requires .env)"
+    echo "  $0 all --id OpenAI-Introducing-GPT-4o        # Full pipeline"
 }
 
 # Parse arguments

@@ -4,74 +4,8 @@
 
 set -e
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-DATASETS_JSON="$PROJECT_DIR/data/datasets.json"
-DATA_ROOT="$PROJECT_DIR/data"
-
-# Load .env file if exists
-if [ -f "$PROJECT_DIR/.env" ]; then
-    set -a
-    source "$PROJECT_DIR/.env"
-    set +a
-fi
-
-# Colors
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-CYAN='\033[0;36m'
-NC='\033[0m'
-
-print_header() {
-    echo -e "\n${BLUE}═══════════════════════════════════════════════════════════════${NC}"
-    echo -e "${BLUE}  $1${NC}"
-    echo -e "${BLUE}═══════════════════════════════════════════════════════════════${NC}\n"
-}
-
-print_step() {
-    echo -e "${GREEN}▶ $1${NC}"
-}
-
-print_warning() {
-    echo -e "${YELLOW}⚠ $1${NC}"
-}
-
-print_error() {
-    echo -e "${RED}✗ $1${NC}"
-}
-
-print_info() {
-    echo -e "${CYAN}ℹ $1${NC}"
-}
-
-# Get dataset info
-get_dataset_info() {
-    local id="$1"
-    local field="$2"
-    python3 -c "
-import json
-with open('$DATASETS_JSON') as f:
-    data = json.load(f)
-for ds in data['datasets']:
-    if ds['id'] == '$id':
-        print(ds.get('$field', ''))
-        break
-"
-}
-
-# Check if dataset exists
-dataset_exists() {
-    local id="$1"
-    python3 -c "
-import json, sys
-with open('$DATASETS_JSON') as f:
-    data = json.load(f)
-ids = [ds['id'] for ds in data['datasets']]
-sys.exit(0 if '$id' in ids else 1)
-"
-}
+# Load common functions
+source "$(dirname "$0")/common.sh"
 
 usage() {
     echo "Compare transcription results: YouTube URL vs Local Audio"
@@ -167,21 +101,13 @@ if [ ! -f "$GROUND_TRUTH" ]; then
     exit 1
 fi
 
-# Get language
-LANG_CODE="en"
-DATASET_LANG=$(get_dataset_info "$DATASET_ID" "language")
-if [[ "$DATASET_LANG" == zh* ]]; then
-    LANG_CODE="zh"
-elif [[ "$DATASET_LANG" == ja* ]]; then
-    LANG_CODE="ja"
-fi
+LANG_CODE=$(get_language_code "$DATASET_ID")
 
 print_header "Comparing Input Sources: $DATASET_ID"
 print_info "Model: $MODEL"
 print_info "Language: $LANG_CODE"
 print_info "URL: $VIDEO_URL"
 print_info "Local: $AUDIO_FILE"
-echo ""
 
 # Output files
 URL_MD="$COMPARE_DIR/${MODEL}_url.md"
@@ -195,15 +121,21 @@ LOCAL_ASS="$COMPARE_DIR/${MODEL}_local.ass"
 if [ "$SKIP_TRANSCRIBE" != "true" ]; then
     print_header "Step 1: Transcription"
 
-    # Transcribe from URL
-    print_step "Transcribing from YouTube URL..."
-    lai transcribe run -Y "$VIDEO_URL" "$URL_MD" \
-        transcription.model_name="$MODEL"
+    if [ -f "$URL_MD" ]; then
+        print_step "Skipping URL transcription (already exists)"
+    else
+        print_step "Transcribing from YouTube URL..."
+        lai transcribe run -Y "$VIDEO_URL" "$URL_MD" \
+            transcription.model_name="$MODEL"
+    fi
 
-    # Transcribe from local file
-    print_step "Transcribing from local audio..."
-    lai transcribe run -Y "$AUDIO_FILE" "$LOCAL_MD" \
-        transcription.model_name="$MODEL"
+    if [ -f "$LOCAL_MD" ]; then
+        print_step "Skipping local transcription (already exists)"
+    else
+        print_step "Transcribing from local audio..."
+        lai transcribe run -Y "$AUDIO_FILE" "$LOCAL_MD" \
+            transcription.model_name="$MODEL"
+    fi
 else
     print_header "Step 1: Skipping Transcription (using existing files)"
     if [ ! -f "$URL_MD" ] || [ ! -f "$LOCAL_MD" ]; then
@@ -224,35 +156,35 @@ print_step "Converting local transcript..."
 lai caption convert -Y "$LOCAL_MD" "$LOCAL_ASS" 2>/dev/null
 
 # ============================================================================
-# Step 3: Evaluate both
+# Step 3: Evaluate and collect results
 # ============================================================================
-print_header "Step 3: Evaluation Results"
+print_header "Step 3: Evaluation"
 
-cd "$PROJECT_DIR"
+RESULTS_FILE=$(mktemp)
 
-echo -e "${CYAN}━━━ Ground Truth (baseline) ━━━${NC}"
-python eval.py -r "$GROUND_TRUTH" -hyp "$GROUND_TRUTH" \
-    --metrics der jer wer sca scer --collar 0.0 \
-    --model-name "Ground Truth" --language "$LANG_CODE"
+# Evaluate URL input
+print_step "Evaluating: $MODEL (URL)"
+result=$(run_eval_json "$GROUND_TRUTH" "$URL_ASS" "$LANG_CODE")
+echo "{\"model\": \"$MODEL (URL)\", \"metrics\": $result}" >> "$RESULTS_FILE"
 
-echo ""
-echo -e "${CYAN}━━━ YouTube URL Input ━━━${NC}"
-python eval.py -r "$GROUND_TRUTH" -hyp "$URL_ASS" \
-    --metrics der jer wer sca scer --collar 0.0 \
-    --model-name "$MODEL (URL)" --language "$LANG_CODE"
-
-echo ""
-echo -e "${CYAN}━━━ Local Audio Input ━━━${NC}"
-python eval.py -r "$GROUND_TRUTH" -hyp "$LOCAL_ASS" \
-    --metrics der jer wer sca scer --collar 0.0 \
-    --model-name "$MODEL (Local)" --language "$LANG_CODE"
+# Evaluate Local input
+print_step "Evaluating: $MODEL (Local)"
+result=$(run_eval_json "$GROUND_TRUTH" "$LOCAL_ASS" "$LANG_CODE")
+echo "{\"model\": \"$MODEL (Local)\", \"metrics\": $result}" >> "$RESULTS_FILE"
 
 # ============================================================================
-# Step 4: Text Diff Analysis
+# Step 4: Output summary table
 # ============================================================================
-print_header "Step 4: Text Comparison"
+print_header "Summary Table"
 
-# Extract plain text for comparison
+print_summary_table "$RESULTS_FILE"
+rm -f "$RESULTS_FILE"
+
+# ============================================================================
+# Step 5: Text Diff Analysis
+# ============================================================================
+print_header "Text Comparison"
+
 URL_TXT="$COMPARE_DIR/${MODEL}_url.txt"
 LOCAL_TXT="$COMPARE_DIR/${MODEL}_local.txt"
 
@@ -271,7 +203,6 @@ extract_text('$URL_ASS', '$URL_TXT')
 extract_text('$LOCAL_ASS', '$LOCAL_TXT')
 "
 
-# Word count comparison
 URL_WORDS=$(wc -w < "$URL_TXT" | tr -d ' ')
 LOCAL_WORDS=$(wc -w < "$LOCAL_TXT" | tr -d ' ')
 
@@ -279,7 +210,6 @@ print_info "Word count (URL):   $URL_WORDS"
 print_info "Word count (Local): $LOCAL_WORDS"
 print_info "Difference: $((LOCAL_WORDS - URL_WORDS)) words"
 
-# Show first few differences
 echo ""
 print_step "First 10 differing lines:"
 diff --side-by-side --width=120 "$URL_TXT" "$LOCAL_TXT" 2>/dev/null | grep -E '^.+\|.+$' | head -10 || echo "  (No differences found)"
