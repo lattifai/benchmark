@@ -211,14 +211,14 @@ for MODEL in ${MODELS//,/ }; do
     URL_ASS="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url.ass"
     LOCAL_ASS="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local.ass"
 
-    if [ -f "$URL_MD" ]; then
+    if [ -f "$URL_MD" ] && needs_update "$URL_MD" "$URL_ASS"; then
         print_step "[$MODEL] Converting URL transcript..."
-        lai caption convert -Y "$URL_MD" "$URL_ASS" 2>/dev/null || print_warning "Failed to convert $URL_MD"
+        convert_if_needed "$URL_MD" "$URL_ASS"
     fi
 
-    if [ -f "$LOCAL_MD" ]; then
+    if [ -f "$LOCAL_MD" ] && needs_update "$LOCAL_MD" "$LOCAL_ASS"; then
         print_step "[$MODEL] Converting local transcript..."
-        lai caption convert -Y "$LOCAL_MD" "$LOCAL_ASS" 2>/dev/null || print_warning "Failed to convert $LOCAL_MD"
+        convert_if_needed "$LOCAL_MD" "$LOCAL_ASS"
     fi
 done
 
@@ -288,28 +288,28 @@ for MODEL in ${MODELS//,/ }; do
     # Evaluate URL input
     if [ -f "$URL_ASS" ]; then
         print_step "Evaluating: $DISPLAY_NAME (URL)"
-        result=$(run_eval_json "$GROUND_TRUTH" "$URL_ASS" "$LANG_CODE" "$SKIP_EVENTS")
+        result=$(run_eval_json "$GROUND_TRUTH" "$URL_ASS" "$SKIP_EVENTS")
         echo "{\"model\": \"$DISPLAY_NAME (URL)\", \"metrics\": $result}" >> "$RESULTS_FILE"
     fi
 
     # Evaluate URL + LattifAI
     if [ -f "$URL_LATTIFAI" ]; then
         print_step "Evaluating: $DISPLAY_NAME (URL +LattifAI)"
-        result=$(run_eval_json "$GROUND_TRUTH" "$URL_LATTIFAI" "$LANG_CODE" "$SKIP_EVENTS")
+        result=$(run_eval_json "$GROUND_TRUTH" "$URL_LATTIFAI" "$SKIP_EVENTS")
         echo "{\"model\": \"$DISPLAY_NAME (URL +LattifAI)\", \"metrics\": $result}" >> "$RESULTS_FILE"
     fi
 
     # Evaluate Local input
     if [ -f "$LOCAL_ASS" ]; then
         print_step "Evaluating: $DISPLAY_NAME (Local)"
-        result=$(run_eval_json "$GROUND_TRUTH" "$LOCAL_ASS" "$LANG_CODE" "$SKIP_EVENTS")
+        result=$(run_eval_json "$GROUND_TRUTH" "$LOCAL_ASS" "$SKIP_EVENTS")
         echo "{\"model\": \"$DISPLAY_NAME (Local)\", \"metrics\": $result}" >> "$RESULTS_FILE"
     fi
 
     # Evaluate Local + LattifAI
     if [ -f "$LOCAL_LATTIFAI" ]; then
         print_step "Evaluating: $DISPLAY_NAME (Local +LattifAI)"
-        result=$(run_eval_json "$GROUND_TRUTH" "$LOCAL_LATTIFAI" "$LANG_CODE" "$SKIP_EVENTS")
+        result=$(run_eval_json "$GROUND_TRUTH" "$LOCAL_LATTIFAI" "$SKIP_EVENTS")
         echo "{\"model\": \"$DISPLAY_NAME (Local +LattifAI)\", \"metrics\": $result}" >> "$RESULTS_FILE"
     fi
 done

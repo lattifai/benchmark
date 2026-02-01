@@ -80,10 +80,10 @@ for entry in "${TEMPERATURES[@]}"; do
     echo ""
     print_step "Evaluating: $model_name"
 
-    # Convert .md to .ass if needed
+    # Convert .md to .ass if source is newer
     md_file="${output_dir}/${DATASET_ID}/${MODEL}.md"
-    if [ -f "$md_file" ] && [ ! -f "$hyp_file" ]; then
-        lai caption convert -Y "$md_file" "$hyp_file" 2>/dev/null || true
+    if [ -f "$md_file" ] && needs_update "$md_file" "$hyp_file"; then
+        convert_if_needed "$md_file" "$hyp_file"
     fi
 
     if [ ! -f "$hyp_file" ]; then
@@ -91,7 +91,7 @@ for entry in "${TEMPERATURES[@]}"; do
         continue
     fi
 
-    result=$(run_eval_json "$ref_file" "$hyp_file" "en")
+    result=$(run_eval_json "$ref_file" "$hyp_file")
     echo "{\"model\": \"$model_name\", \"metrics\": $result}" >> "$RESULTS_FILE"
 done
 

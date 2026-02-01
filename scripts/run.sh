@@ -89,11 +89,10 @@ run_eval_for_dataset() {
             continue
         fi
 
-        print_step "Converting $(basename "$input_file") to .ass..."
-        lai caption convert -Y "$input_file" "$ass_file" 2>/dev/null || {
-            print_warning "Failed to convert $input_file"
-            continue
-        }
+        if needs_update "$input_file" "$ass_file"; then
+            print_step "Converting $(basename "$input_file") to .ass..."
+            convert_if_needed "$input_file" "$ass_file" || continue
+        fi
     done < <(get_models "$models_arg")
 
     print_step "Ground Truth (baseline)"

@@ -106,11 +106,11 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                 yt_output_file="${DATA_ROOT}/${dataset_id}/${caption_basename}_LattifAI.ass"
 
                 if [ -f "$caption_path" ]; then
-                    # Convert to ASS if needed
-                    if [ ! -f "$caption_ass" ]; then
+                    # Convert to ASS if source is newer
+                    if needs_update "$caption_path" "$caption_ass"; then
                         echo ""
                         print_step "Converting ${caption_file} → ${caption_basename}.ass"
-                        lai caption convert -Y "$caption_path" "$caption_ass" 2>/dev/null || true
+                        convert_if_needed "$caption_path" "$caption_ass"
                     fi
 
                     echo ""
@@ -204,9 +204,9 @@ for ds_entry in "${DATASETS[@]}"; do
         lattifai_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}_LattifAI.ass"
         model_name="${model} ${tag}"
 
-        # Convert input file (.md or .srt) to .ass if needed
-        if [ -f "$input_file" ] && [ ! -f "$hyp_file" ]; then
-            lai caption convert -Y "$input_file" "$hyp_file" 2>/dev/null || true
+        # Convert input file (.md or .srt) to .ass if source is newer
+        if [ -f "$input_file" ] && needs_update "$input_file" "$hyp_file"; then
+            convert_if_needed "$input_file" "$hyp_file"
         fi
 
         # Evaluate raw Gemini output

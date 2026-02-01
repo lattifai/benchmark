@@ -53,6 +53,43 @@ print_info() {
 }
 
 # ============================================================================
+# File Functions
+# ============================================================================
+
+# Check if source is newer than target (or target doesn't exist)
+# Usage: if needs_update "$source" "$target"; then ... fi
+needs_update() {
+    local source="$1"
+    local target="$2"
+
+    # Target doesn't exist -> needs update
+    [ ! -f "$target" ] && return 0
+
+    # Source doesn't exist -> no update needed
+    [ ! -f "$source" ] && return 1
+
+    # Compare modification times: source newer than target?
+    [ "$source" -nt "$target" ]
+}
+
+# Convert caption format if source is newer than target
+# Usage: convert_if_needed "$source" "$target"
+convert_if_needed() {
+    local source="$1"
+    local target="$2"
+
+    if needs_update "$source" "$target"; then
+        lai caption convert -Y "$source" "$target" 2>/dev/null || {
+            print_warning "Failed to convert $(basename "$source")"
+            return 1
+        }
+        return 0
+    else
+        return 1  # No conversion needed
+    fi
+}
+
+# ============================================================================
 # Dataset Functions
 # ============================================================================
 get_dataset_info() {
