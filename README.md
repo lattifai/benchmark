@@ -11,7 +11,10 @@ Evaluating LattifAI's audio-text alignment capabilities.
 bash scripts/temperature.sh
 
 # YouTube URL or local audio file
-bash scripts/compare_URL_Local.sh --id OpenAI-Introducing-GPT-4o --models gemini-2.5-pro,gemini-3-flash-preview,gemini-3-pro-preview --skip-events
+bash scripts/compare_URL_Local.sh --id OpenAI-Introducing-GPT-4o --models gemini-3-flash-preview,gemini-3-pro-preview --skip-events --align
+
+# 验证 Thinking 机制是否有效
+bash scripts/compare_URL_Local.sh --id OpenAI-Introducing-GPT-4o --models gemini-3-flash-preview,gemini-3-pro-preview --skip-events --align --no-thinking
 
 # DER JER and etc
 bash scripts/benchmark.sh

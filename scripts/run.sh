@@ -150,6 +150,7 @@ run_transcribe_for_dataset() {
     local include_thoughts="$4"
     local models_arg="$5"
     local temperature="$6"
+    local no_thinking="$7"
     local SRC_DIR="$DATA_ROOT/$dataset_id"
     local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
@@ -181,9 +182,12 @@ run_transcribe_for_dataset() {
         extra_args="$extra_args transcription.prompt=\"$prompt_file\""
         print_step "Using prompt: $prompt_file"
     fi
-    if [ "$include_thoughts" = "true" ]; then
+    if [ "$no_thinking" = "true" ]; then
+        extra_args="$extra_args transcription.thinking=false"
+        print_step "Thinking mode: disabled"
+    elif [ "$include_thoughts" = "true" ]; then
         extra_args="$extra_args transcription.include_thoughts=true"
-        print_step "Including thinking process"
+        print_step "Including thinking process in output"
     fi
     if [ -n "$temperature" ]; then
         extra_args="$extra_args transcription.temperature=$temperature"
@@ -192,7 +196,11 @@ run_transcribe_for_dataset() {
 
     while IFS= read -r model; do
         [ -z "$model" ] && continue
-        local output_file="$OUT_DIR/${model}.md"
+        local suffix=""
+        if [ "$no_thinking" = "true" ]; then
+            suffix="_no-thinking"
+        fi
+        local output_file="$OUT_DIR/${model}${suffix}.md"
         print_step "Transcribing with $model..."
         lai transcribe run -Y "$input_source" "$output_file" \
             transcription.model_name="$model" \
@@ -207,6 +215,7 @@ run_transcribe() {
     local include_thoughts="$4"
     local models_arg="$5"
     local temperature="$6"
+    local no_thinking="$7"
 
     if [ -z "$GEMINI_API_KEY" ]; then
         print_warning "GEMINI_API_KEY not set. Add it to .env file:"
@@ -215,10 +224,10 @@ run_transcribe() {
     fi
 
     if [ -n "$dataset_id" ]; then
-        run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg" "$temperature"
+        run_transcribe_for_dataset "$dataset_id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg" "$temperature" "$no_thinking"
     else
         while IFS= read -r id; do
-            run_transcribe_for_dataset "$id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg" "$temperature"
+            run_transcribe_for_dataset "$id" "$use_local" "$prompt_file" "$include_thoughts" "$models_arg" "$temperature" "$no_thinking"
         done < <(get_all_dataset_ids)
     fi
 
@@ -328,6 +337,7 @@ usage() {
     echo "  --local             Use local audio.mp3 instead of video_url (for transcribe)"
     echo "  -o, --output <dir>  Output directory (default: data/)"
     echo "  --prompt <file>     Custom prompt file for transcription"
+    echo "  --no-thinking       Disable Gemini thinking mode (faster, cheaper)"
     echo "  --thoughts          Include Gemini thinking process in output"
     echo "  --skip-events       Skip [event] markers in eval (e.g., [Laughter])"
     echo "  --models <list>     Comma-separated model names (default: all from datasets.json)"
@@ -352,6 +362,7 @@ USE_LOCAL="false"
 OUTPUT_DIR="$PROJECT_DIR/data"
 PROMPT_FILE=""
 INCLUDE_THOUGHTS="false"
+NO_THINKING="false"
 SKIP_EVENTS="false"
 MODELS=""
 LANGUAGE=""
@@ -379,6 +390,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --thoughts)
             INCLUDE_THOUGHTS="true"
+            shift
+            ;;
+        --no-thinking)
+            NO_THINKING="true"
             shift
             ;;
         --skip-events)
@@ -428,13 +443,13 @@ case "$COMMAND" in
         run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE" "$TAG"
         ;;
     transcribe)
-        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE"
+        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE" "$NO_THINKING"
         ;;
     align)
         run_alignment "$DATASET_ID" "$MODELS"
         ;;
     all)
-        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE"
+        run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE" "$NO_THINKING"
         run_alignment "$DATASET_ID" "$MODELS"
         run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE" "$TAG"
         ;;

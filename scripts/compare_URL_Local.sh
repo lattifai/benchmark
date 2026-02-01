@@ -16,6 +16,8 @@ usage() {
     echo "  --id <dataset_id>   Dataset to test (required)"
     echo "  --models <list>     Comma-separated models (default: gemini-3-flash-preview)"
     echo "  --prompt <file>     Custom prompt file for transcription"
+    echo "  --align             Run LattifAI alignment after transcription"
+    echo "  --no-thinking       Disable Gemini thinking mode (faster, cheaper)"
     echo "  --skip-transcribe   Skip transcription, only run eval on existing files"
     echo "  --skip-events       Skip [event] markers in eval (default: true)"
     echo "  --no-skip-events    Include [event] markers in eval"
@@ -23,12 +25,14 @@ usage() {
     echo ""
     echo "Requirements:"
     echo "  - GEMINI_API_KEY must be set (unless --skip-transcribe)"
+    echo "  - LATTIFAI_API_KEY must be set (if --align)"
     echo "  - Dataset must have video_url in datasets.json"
     echo "  - Dataset must have audio.mp3 in data/<dataset_id>/"
     echo ""
     echo "Example:"
     echo "  $0 --id OpenAI-Introducing-GPT-4o"
     echo "  $0 --id OpenAI-Introducing-GPT-4o --models gemini-3-flash-preview,gemini-2.5-pro"
+    echo "  $0 --id OpenAI-Introducing-GPT-4o --align"
 }
 
 # Parse arguments
@@ -37,6 +41,8 @@ MODELS="gemini-3-flash-preview"
 PROMPT_FILE="prompts/Gemini_dotey.md"
 SKIP_TRANSCRIBE="false"
 SKIP_EVENTS="true"
+RUN_ALIGNMENT="false"
+NO_THINKING="false"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -51,6 +57,14 @@ while [[ $# -gt 0 ]]; do
         --prompt)
             PROMPT_FILE="$2"
             shift 2
+            ;;
+        --align)
+            RUN_ALIGNMENT="true"
+            shift
+            ;;
+        --no-thinking)
+            NO_THINKING="true"
+            shift
             ;;
         --skip-transcribe)
             SKIP_TRANSCRIBE="true"
@@ -93,6 +107,11 @@ if [ -z "$GEMINI_API_KEY" ] && [ "$SKIP_TRANSCRIBE" != "true" ]; then
     exit 1
 fi
 
+if [ "$RUN_ALIGNMENT" = "true" ] && [ -z "$LATTIFAI_API_KEY" ]; then
+    print_error "LATTIFAI_API_KEY not set (required for --align)"
+    exit 1
+fi
+
 # Setup paths
 SRC_DIR="$DATA_ROOT/$DATASET_ID"
 COMPARE_DIR="$PROJECT_DIR/data/_compare/$DATASET_ID"
@@ -127,13 +146,26 @@ if [ -n "$PROMPT_FILE" ]; then
 fi
 print_info "Language: $LANG_CODE"
 print_info "Skip events: $SKIP_EVENTS"
+print_info "Alignment: $RUN_ALIGNMENT"
+if [ "$NO_THINKING" = "true" ]; then
+    print_info "Thinking: disabled"
+fi
 print_info "URL: $VIDEO_URL"
 print_info "Local: $AUDIO_FILE"
 
-# Build prompt args
-PROMPT_ARGS=""
+# Build extra args
+EXTRA_ARGS=""
 if [ -n "$PROMPT_FILE" ]; then
-    PROMPT_ARGS="transcription.prompt=\"$PROMPT_FILE\""
+    EXTRA_ARGS="$EXTRA_ARGS transcription.prompt=\"$PROMPT_FILE\""
+fi
+if [ "$NO_THINKING" = "true" ]; then
+    EXTRA_ARGS="$EXTRA_ARGS transcription.thinking=false"
+fi
+
+# File suffix for no-thinking mode
+FILE_SUFFIX=""
+if [ "$NO_THINKING" = "true" ]; then
+    FILE_SUFFIX="_no-thinking"
 fi
 
 # ============================================================================
@@ -143,8 +175,8 @@ if [ "$SKIP_TRANSCRIBE" != "true" ]; then
     print_header "Step 1: Transcription"
 
     for MODEL in ${MODELS//,/ }; do
-        URL_MD="$COMPARE_DIR/${MODEL}_url.md"
-        LOCAL_MD="$COMPARE_DIR/${MODEL}_local.md"
+        URL_MD="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url.md"
+        LOCAL_MD="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local.md"
 
         if [ -f "$URL_MD" ]; then
             print_step "[$MODEL] Skipping URL (already exists)"
@@ -152,7 +184,7 @@ if [ "$SKIP_TRANSCRIBE" != "true" ]; then
             print_step "[$MODEL] Transcribing from YouTube URL..."
             lai transcribe run -Y "$VIDEO_URL" "$URL_MD" \
                 transcription.model_name="$MODEL" \
-                $PROMPT_ARGS
+                $EXTRA_ARGS
         fi
 
         if [ -f "$LOCAL_MD" ]; then
@@ -161,7 +193,7 @@ if [ "$SKIP_TRANSCRIBE" != "true" ]; then
             print_step "[$MODEL] Transcribing from local audio..."
             lai transcribe run -Y "$AUDIO_FILE" "$LOCAL_MD" \
                 transcription.model_name="$MODEL" \
-                $PROMPT_ARGS
+                $EXTRA_ARGS
         fi
     done
 else
@@ -174,10 +206,10 @@ fi
 print_header "Step 2: Convert to ASS"
 
 for MODEL in ${MODELS//,/ }; do
-    URL_MD="$COMPARE_DIR/${MODEL}_url.md"
-    LOCAL_MD="$COMPARE_DIR/${MODEL}_local.md"
-    URL_ASS="$COMPARE_DIR/${MODEL}_url.ass"
-    LOCAL_ASS="$COMPARE_DIR/${MODEL}_local.ass"
+    URL_MD="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url.md"
+    LOCAL_MD="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local.md"
+    URL_ASS="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url.ass"
+    LOCAL_ASS="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local.ass"
 
     if [ -f "$URL_MD" ]; then
         print_step "[$MODEL] Converting URL transcript..."
@@ -191,33 +223,99 @@ for MODEL in ${MODELS//,/ }; do
 done
 
 # ============================================================================
-# Step 3: Evaluate and collect results
+# Step 3: LattifAI Alignment (optional)
 # ============================================================================
-print_header "Step 3: Evaluation"
+if [ "$RUN_ALIGNMENT" = "true" ]; then
+    print_header "Step 3: LattifAI Alignment"
+
+    for MODEL in ${MODELS//,/ }; do
+        URL_MD="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url.md"
+        LOCAL_MD="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local.md"
+        URL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url_LattifAI.ass"
+        LOCAL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local_LattifAI.ass"
+
+        # Align URL transcript
+        if [ -f "$URL_MD" ]; then
+            if [ -f "$URL_LATTIFAI" ]; then
+                print_step "[$MODEL] Skipping URL alignment (already exists)"
+            else
+                print_step "[$MODEL] Aligning URL transcript..."
+                lai alignment align -Y "$AUDIO_FILE" \
+                    client.profile=true \
+                    caption.include_speaker_in_text=false \
+                    caption.split_sentence=true \
+                    caption.input_path="$URL_MD" \
+                    caption.output_path="$URL_LATTIFAI"
+            fi
+        fi
+
+        # Align Local transcript
+        if [ -f "$LOCAL_MD" ]; then
+            if [ -f "$LOCAL_LATTIFAI" ]; then
+                print_step "[$MODEL] Skipping local alignment (already exists)"
+            else
+                print_step "[$MODEL] Aligning local transcript..."
+                lai alignment align -Y "$AUDIO_FILE" \
+                    client.profile=true \
+                    caption.include_speaker_in_text=false \
+                    caption.split_sentence=true \
+                    caption.input_path="$LOCAL_MD" \
+                    caption.output_path="$LOCAL_LATTIFAI"
+            fi
+        fi
+    done
+fi
+
+# ============================================================================
+# Step 4: Evaluate and collect results
+# ============================================================================
+print_header "Step 4: Evaluation"
 
 RESULTS_FILE=$(mktemp)
 
 for MODEL in ${MODELS//,/ }; do
-    URL_ASS="$COMPARE_DIR/${MODEL}_url.ass"
-    LOCAL_ASS="$COMPARE_DIR/${MODEL}_local.ass"
+    URL_ASS="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url.ass"
+    LOCAL_ASS="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local.ass"
+    URL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url_LattifAI.ass"
+    LOCAL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local_LattifAI.ass"
+
+    # Model display name (include no-thinking suffix if applicable)
+    DISPLAY_NAME="$MODEL"
+    if [ "$NO_THINKING" = "true" ]; then
+        DISPLAY_NAME="${MODEL} (no-think)"
+    fi
 
     # Evaluate URL input
     if [ -f "$URL_ASS" ]; then
-        print_step "Evaluating: $MODEL (URL)"
+        print_step "Evaluating: $DISPLAY_NAME (URL)"
         result=$(run_eval_json "$GROUND_TRUTH" "$URL_ASS" "$LANG_CODE" "$SKIP_EVENTS")
-        echo "{\"model\": \"$MODEL (URL)\", \"metrics\": $result}" >> "$RESULTS_FILE"
+        echo "{\"model\": \"$DISPLAY_NAME (URL)\", \"metrics\": $result}" >> "$RESULTS_FILE"
+    fi
+
+    # Evaluate URL + LattifAI
+    if [ -f "$URL_LATTIFAI" ]; then
+        print_step "Evaluating: $DISPLAY_NAME (URL +LattifAI)"
+        result=$(run_eval_json "$GROUND_TRUTH" "$URL_LATTIFAI" "$LANG_CODE" "$SKIP_EVENTS")
+        echo "{\"model\": \"$DISPLAY_NAME (URL +LattifAI)\", \"metrics\": $result}" >> "$RESULTS_FILE"
     fi
 
     # Evaluate Local input
     if [ -f "$LOCAL_ASS" ]; then
-        print_step "Evaluating: $MODEL (Local)"
+        print_step "Evaluating: $DISPLAY_NAME (Local)"
         result=$(run_eval_json "$GROUND_TRUTH" "$LOCAL_ASS" "$LANG_CODE" "$SKIP_EVENTS")
-        echo "{\"model\": \"$MODEL (Local)\", \"metrics\": $result}" >> "$RESULTS_FILE"
+        echo "{\"model\": \"$DISPLAY_NAME (Local)\", \"metrics\": $result}" >> "$RESULTS_FILE"
+    fi
+
+    # Evaluate Local + LattifAI
+    if [ -f "$LOCAL_LATTIFAI" ]; then
+        print_step "Evaluating: $DISPLAY_NAME (Local +LattifAI)"
+        result=$(run_eval_json "$GROUND_TRUTH" "$LOCAL_LATTIFAI" "$LANG_CODE" "$SKIP_EVENTS")
+        echo "{\"model\": \"$DISPLAY_NAME (Local +LattifAI)\", \"metrics\": $result}" >> "$RESULTS_FILE"
     fi
 done
 
 # ============================================================================
-# Step 4: Output summary table
+# Step 5: Output summary table
 # ============================================================================
 print_header "Summary Table"
 
