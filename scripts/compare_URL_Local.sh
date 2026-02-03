@@ -17,6 +17,7 @@ usage() {
     echo "  --models <list>     Comma-separated models (default: gemini-3-flash-preview)"
     echo "  --prompt <file>     Custom prompt file for transcription"
     echo "  --align             Run LattifAI alignment after transcription"
+    echo "  --diarization       Enable speaker diarization in alignment"
     echo "  --no-thinking       Disable Gemini thinking mode (faster, cheaper)"
     echo "  --skip-transcribe   Skip transcription, only run eval on existing files"
     echo "  --skip-events       Skip [event] markers in eval (default: true)"
@@ -43,6 +44,7 @@ SKIP_TRANSCRIBE="false"
 SKIP_EVENTS="true"
 RUN_ALIGNMENT="false"
 NO_THINKING="false"
+DIARIZATION="false"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -60,6 +62,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --align)
             RUN_ALIGNMENT="true"
+            shift
+            ;;
+        --diarization)
+            DIARIZATION="true"
             shift
             ;;
         --no-thinking)
@@ -147,6 +153,7 @@ fi
 print_info "Language: $LANG_CODE"
 print_info "Skip events: $SKIP_EVENTS"
 print_info "Alignment: $RUN_ALIGNMENT"
+print_info "Diarization: $DIARIZATION"
 if [ "$NO_THINKING" = "true" ]; then
     print_info "Thinking: disabled"
 fi
@@ -228,11 +235,19 @@ done
 if [ "$RUN_ALIGNMENT" = "true" ]; then
     print_header "Step 3: LattifAI Alignment"
 
+    # Determine output suffix and diarization arg
+    LATTIFAI_SUFFIX="_LattifAI"
+    DIAR_ARG=""
+    if [ "$DIARIZATION" = "true" ]; then
+        LATTIFAI_SUFFIX="_LattifAI_Diarization"
+        DIAR_ARG="diarization.enabled=true"
+    fi
+
     for MODEL in ${MODELS//,/ }; do
         URL_MD="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url.md"
         LOCAL_MD="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local.md"
-        URL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url_LattifAI.ass"
-        LOCAL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local_LattifAI.ass"
+        URL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url${LATTIFAI_SUFFIX}.ass"
+        LOCAL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local${LATTIFAI_SUFFIX}.ass"
 
         # Align URL transcript
         if [ -f "$URL_MD" ]; then
@@ -245,7 +260,8 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                     caption.include_speaker_in_text=false \
                     caption.split_sentence=true \
                     caption.input_path="$URL_MD" \
-                    caption.output_path="$URL_LATTIFAI"
+                    caption.output_path="$URL_LATTIFAI" \
+                    $DIAR_ARG
             fi
         fi
 
@@ -260,7 +276,8 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                     caption.include_speaker_in_text=false \
                     caption.split_sentence=true \
                     caption.input_path="$LOCAL_MD" \
-                    caption.output_path="$LOCAL_LATTIFAI"
+                    caption.output_path="$LOCAL_LATTIFAI" \
+                    $DIAR_ARG
             fi
         fi
     done
@@ -271,13 +288,19 @@ fi
 # ============================================================================
 print_header "Step 4: Evaluation"
 
+# Determine LattifAI suffix for evaluation
+EVAL_LATTIFAI_SUFFIX="_LattifAI"
+if [ "$DIARIZATION" = "true" ]; then
+    EVAL_LATTIFAI_SUFFIX="_LattifAI_Diarization"
+fi
+
 RESULTS_FILE=$(mktemp)
 
 for MODEL in ${MODELS//,/ }; do
     URL_ASS="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url.ass"
     LOCAL_ASS="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local.ass"
-    URL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url_LattifAI.ass"
-    LOCAL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local_LattifAI.ass"
+    URL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_url${EVAL_LATTIFAI_SUFFIX}.ass"
+    LOCAL_LATTIFAI="$COMPARE_DIR/${MODEL}${FILE_SUFFIX}_local${EVAL_LATTIFAI_SUFFIX}.ass"
 
     # Model display name (include no-thinking suffix if applicable)
     DISPLAY_NAME="$MODEL"

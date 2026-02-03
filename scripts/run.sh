@@ -252,6 +252,7 @@ run_transcribe() {
 run_alignment_for_dataset() {
     local dataset_id="$1"
     local models_arg="$2"
+    local diarization="$3"
     local SRC_DIR="$DATA_ROOT/$dataset_id"
     local OUT_DIR="$OUTPUT_DIR/$dataset_id"
 
@@ -282,10 +283,18 @@ run_alignment_for_dataset() {
         fi
 
         local output_file="$OUT_DIR/${model}_LattifAI.ass"
+        if [ "$diarization" = "true" ]; then
+            output_file="$OUT_DIR/${model}_LattifAI_Diarization.ass"
+        fi
 
         if [ -f "$output_file" ]; then
             print_step "Skipping $model (already exists: $output_file)"
             continue
+        fi
+
+        local diar_arg=""
+        if [ "$diarization" = "true" ]; then
+            diar_arg="diarization.enabled=true"
         fi
 
         print_step "Aligning $model transcript ($(basename "$input_file"))..."
@@ -294,13 +303,15 @@ run_alignment_for_dataset() {
             caption.include_speaker_in_text=false \
             caption.split_sentence=true \
             caption.input_path="$input_file" \
-            caption.output_path="$output_file"
+            caption.output_path="$output_file" \
+            $diar_arg
     done < <(get_models "$models_arg")
 }
 
 run_alignment() {
     local dataset_id="$1"
     local models_arg="$2"
+    local diarization="$3"
 
     if [ -z "$LATTIFAI_API_KEY" ]; then
         print_warning "LATTIFAI_API_KEY not set. Add it to .env file:"
@@ -309,10 +320,10 @@ run_alignment() {
     fi
 
     if [ -n "$dataset_id" ]; then
-        run_alignment_for_dataset "$dataset_id" "$models_arg"
+        run_alignment_for_dataset "$dataset_id" "$models_arg" "$diarization"
     else
         while IFS= read -r id; do
-            run_alignment_for_dataset "$id" "$models_arg"
+            run_alignment_for_dataset "$id" "$models_arg" "$diarization"
         done < <(get_all_dataset_ids)
     fi
 
@@ -359,6 +370,7 @@ usage() {
     echo "  --no-thinking       Disable Gemini thinking mode (faster, cheaper)"
     echo "  --thoughts          Include Gemini thinking process in output"
     echo "  --skip-events       Skip [event] markers in eval (e.g., [Laughter])"
+    echo "  --diarization       Enable speaker diarization in alignment"
     echo "  --models <list>     Comma-separated model names (default: all from datasets.json)"
     echo "  --language <code>   Language code for eval (en, zh, ja). Auto-detected if not set"
     echo "  --temperature <val> Sampling temperature for transcription (e.g., 0.5)"
@@ -387,6 +399,7 @@ MODELS=""
 LANGUAGE=""
 TEMPERATURE=""
 TAG=""
+DIARIZATION="false"
 
 shift || true
 while [[ $# -gt 0 ]]; do
@@ -417,6 +430,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --skip-events)
             SKIP_EVENTS="true"
+            shift
+            ;;
+        --diarization)
+            DIARIZATION="true"
             shift
             ;;
         --models)
@@ -465,11 +482,11 @@ case "$COMMAND" in
         run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE" "$NO_THINKING"
         ;;
     align)
-        run_alignment "$DATASET_ID" "$MODELS"
+        run_alignment "$DATASET_ID" "$MODELS" "$DIARIZATION"
         ;;
     all)
         run_transcribe "$DATASET_ID" "$USE_LOCAL" "$PROMPT_FILE" "$INCLUDE_THOUGHTS" "$MODELS" "$TEMPERATURE" "$NO_THINKING"
-        run_alignment "$DATASET_ID" "$MODELS"
+        run_alignment "$DATASET_ID" "$MODELS" "$DIARIZATION"
         run_eval "$DATASET_ID" "$SKIP_EVENTS" "$MODELS" "$LANGUAGE" "$TAG"
         ;;
     list)
