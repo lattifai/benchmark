@@ -32,7 +32,10 @@ class BaseSpeakerCountMetric(BaseMetric):
         return True
 
     def _get_speaker_counts(self, reference: Annotation, hypothesis: Annotation) -> SpeakerCounts:
-        return SpeakerCounts(reference=len(reference.labels()), hypothesis=len(hypothesis.labels()))
+        # Filter out None speakers (from captions without speaker info like SRT)
+        ref_labels = [l for l in reference.labels() if l is not None]
+        hyp_labels = [l for l in hypothesis.labels() if l is not None]
+        return SpeakerCounts(reference=len(ref_labels), hypothesis=len(hyp_labels))
 
 
 class SpeakerCountingErrorRate(BaseSpeakerCountMetric):
