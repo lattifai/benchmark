@@ -63,7 +63,7 @@ echo "  Temperature: $(wc -l < "$RESULTS_DIR/temperature_table.txt") lines"
 # Update README.md
 # ============================================================================
 
-print_header "Updating README.md"
+print_header "Updating README.md and README-zh.md"
 
 python3 "$SCRIPT_DIR/update_readme_results.py" \
     --readme "$README" \
@@ -74,4 +74,4 @@ python3 "$SCRIPT_DIR/update_readme_results.py" \
 
 print_header "All Complete"
 print_info "Results saved to: $RESULTS_DIR/"
-print_info "README.md updated"
+print_info "README.md and README-zh.md updated"
