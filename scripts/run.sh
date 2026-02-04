@@ -299,6 +299,7 @@ run_alignment_for_dataset() {
 
         print_step "Aligning $model transcript ($(basename "$input_file"))..."
         lai alignment align -Y "$audio_file" \
+            alignment.model_hub=modelscope \
             client.profile=true \
             caption.include_speaker_in_text=false \
             caption.split_sentence=true \

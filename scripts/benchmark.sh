@@ -25,11 +25,11 @@ DATASETS=(
 CONFIGS=(
     # "gemini-2.5-pro:prompts/Gemini_dotey.md:data:(dotey)"
     # "gemini-2.5-pro:prompts/Gemini_dotey.md:outputs/2.5pro_run2:(dotey run2)"
-    # "gemini-3-pro-preview:prompts/Gemini_dotey.md:data:(dotey)"
-    # "gemini-3-pro-preview:prompts/Gemini_dotey.md:outputs/3pro_run2:(dotey run2)"
+    "gemini-3-pro-preview:prompts/Gemini_dotey.md:data:(dotey)"
+    "gemini-3-pro-preview:prompts/Gemini_dotey.md:outputs/3pro_run2:(dotey run2)"
     "gemini-3-flash-preview:prompts/Gemini_dotey.md:data:(dotey)"
     "gemini-3-flash-preview:prompts/Gemini_dotey.md:outputs/V1_1:(dotey run2)"
-    # "gemini-3-flash-preview:prompts/Gemini_dotey_StartEnd.md:outputs/StartEnd_V1:(StartEnd)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey_StartEnd.md:outputs/StartEnd_V1:(StartEnd)"
     "gemini-3-flash-preview:prompts/Gemini_dotey_StartEnd.md:outputs/StartEnd_V1_2:(StartEnd run2)"
     "gemini-3-flash-preview:prompts/Gemini_dotey_Precise.md:outputs/PreciseEnd_V1:(Precise)"
     "gemini-3-flash-preview:prompts/Gemini_dotey_Precise.md:outputs/PreciseEnd_V1_2:(Precise run2)"
@@ -82,6 +82,40 @@ done
 # ============================================================================
 # Step 2: Run LattifAI alignment (optional)
 # ============================================================================
+
+# Wrapper function to handle alignment failures gracefully
+# Creates .failed marker on failure, skips if marker exists (unless input is newer)
+run_alignment() {
+    local audio="$1"
+    local input="$2"
+    local output="$3"
+    local label="$4"
+    local failed_marker="${output}.failed"
+
+    # Skip if failed marker exists and input is not newer
+    if [ -f "$failed_marker" ] && [ ! "$input" -nt "$failed_marker" ]; then
+        echo "  ⏭ Skipping (previously failed)"
+        return 1
+    fi
+
+    # Remove stale failed marker if input is newer
+    [ -f "$failed_marker" ] && rm -f "$failed_marker"
+
+    if lai alignment align -Y "$audio" \
+        alignment.model_hub=modelscope \
+        client.profile=true \
+        caption.include_speaker_in_text=false \
+        caption.split_sentence=true \
+        caption.input_path="$input" \
+        caption.output_path="$output" 2>&1; then
+        return 0
+    else
+        print_warning "Alignment failed: $label"
+        touch "$failed_marker"
+        return 1
+    fi
+}
+
 if [ "$RUN_ALIGNMENT" = "true" ]; then
     print_header "Step 2: Aligning with LattifAI (skips existing files)"
 
@@ -119,12 +153,8 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                     if [ -f "$yt_output_file" ]; then
                         echo "  ⏭ Skipping (already exists)"
                     else
-                        lai alignment align -Y "$audio_file" \
-                            client.profile=true \
-                            caption.include_speaker_in_text=false \
-                            caption.split_sentence=true \
-                            caption.input_path="$caption_ass" \
-                            caption.output_path="$yt_output_file"
+                        run_alignment "$audio_file" "$caption_ass" "$yt_output_file" \
+                            "YouTube Caption (official)" || true
                     fi
                 fi
             fi
@@ -148,12 +178,8 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                     continue
                 fi
 
-                lai alignment align -Y "$audio_file" \
-                    client.profile=true \
-                    caption.include_speaker_in_text=false \
-                    caption.split_sentence=true \
-                    caption.input_path="$input_file" \
-                    caption.output_path="$output_file"
+                run_alignment "$audio_file" "$input_file" "$output_file" \
+                    "${model} ${tag}" || true
             done
         done
     fi

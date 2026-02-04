@@ -256,6 +256,7 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
             else
                 print_step "[$MODEL] Aligning URL transcript..."
                 lai alignment align -Y "$AUDIO_FILE" \
+                    alignment.model_hub=modelscope \
                     client.profile=true \
                     caption.include_speaker_in_text=false \
                     caption.split_sentence=true \
@@ -272,6 +273,7 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
             else
                 print_step "[$MODEL] Aligning local transcript..."
                 lai alignment align -Y "$AUDIO_FILE" \
+                    alignment.model_hub=modelscope \
                     client.profile=true \
                     caption.include_speaker_in_text=false \
                     caption.split_sentence=true \
