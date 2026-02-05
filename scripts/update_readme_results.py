@@ -47,7 +47,7 @@ def update_readme_en(readme_path: Path, tables: dict) -> None:
 {tables['temperature']}
 ```
 
-> **Metrics**: DER/JER = timing accuracy (lower = better), WER = transcription quality, SCA = speaker count accuracy
+> **Metrics**: DER/JER = timing accuracy (lower = better), WER = transcription quality, SCA = speaker count accuracy (only for diarization tests)
 
 """
 
@@ -90,7 +90,7 @@ def update_readme_zh(readme_path: Path, tables: dict) -> None:
 {tables['temperature']}
 ```
 
-> **指标说明**：DER/JER = 时间戳准确度（越低越好），WER = 转录质量，SCA = 说话人数量准确率
+> **指标说明**：DER/JER = 时间戳准确度（越低越好），WER = 转录质量，SCA = 说话人数量准确率（仅用于说话人分离测试）
 
 """
 

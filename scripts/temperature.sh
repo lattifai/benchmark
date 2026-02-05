@@ -91,7 +91,7 @@ for entry in "${TEMPERATURES[@]}"; do
         continue
     fi
 
-    result=$(run_eval_json "$ref_file" "$hyp_file")
+    result=$(run_eval_json "$ref_file" "$hyp_file" "true" "der jer wer")
     echo "{\"model\": \"$model_name\", \"metrics\": $result}" >> "$RESULTS_FILE"
 done
 
@@ -100,7 +100,7 @@ done
 # ============================================================================
 print_header "Summary Table"
 
-print_summary_table "$RESULTS_FILE"
+print_summary_table "$RESULTS_FILE" "der jer wer"
 rm -f "$RESULTS_FILE"
 
 print_header "Temperature Benchmark Complete"

@@ -135,12 +135,14 @@ get_language_code() {
 # ============================================================================
 
 # Run eval and return JSON result
-# Usage: result=$(run_eval_json "$ref_file" "$hyp_file" ["skip_events"])
+# Usage: result=$(run_eval_json "$ref_file" "$hyp_file" ["skip_events"] ["metrics"])
 # Language is auto-detected from dataset id in file path
+# Default metrics: der jer wer sca scer
 run_eval_json() {
     local ref_file="$1"
     local hyp_file="$2"
     local skip_events="${3:-true}"
+    local metrics="${4:-der jer wer sca scer}"
 
     local extra_args=""
     if [ "$skip_events" = "true" ]; then
@@ -150,14 +152,17 @@ run_eval_json() {
     python "$PROJECT_DIR/eval.py" \
         -r "$ref_file" \
         -hyp "$hyp_file" \
-        --metrics der jer wer sca scer \
+        --metrics $metrics \
         --format json $extra_args 2>/dev/null | python3 -c "import sys,json; print(json.dumps(json.load(sys.stdin)))"
 }
 
 # Print summary table from results file
-# Usage: print_summary_table "$results_file"
+# Usage: print_summary_table "$results_file" ["metrics"]
+# Default metrics: "der jer wer sca scer"
+# For DER/JER/WER only: print_summary_table "$file" "der jer wer"
 print_summary_table() {
     local results_file="$1"
+    local metrics="${2:-der jer wer sca scer}"
 
     python3 << EOF
 import json
@@ -171,6 +176,8 @@ with open("$results_file") as f:
 if not results:
     print("No results found.")
 else:
+    metrics = "$metrics".split()
+
     # Check if results have dataset field
     has_dataset = "dataset" in results[0]
 
@@ -182,7 +189,42 @@ else:
         v = m.get("der", 0)
         return v.get("diarization error rate", 0) if isinstance(v, dict) else v
 
+    def get_metric(m, name):
+        if name == "der":
+            return get_der(m)
+        return m.get(name, 0)
+
     metric_width = 16  # "0.1234 (12.34%)"
+
+    # Metric display names with arrows
+    metric_names = {
+        "der": "DER ↓",
+        "jer": "JER ↓",
+        "wer": "WER ↓",
+        "sca": "SCA ↑",
+        "scer": "SCER ↓",
+    }
+
+    def print_table(results_list):
+        max_model_len = max(len(r["model"]) for r in results_list)
+        max_model_len = max(max_model_len, 5)
+
+        # Build header
+        header_parts = [f"{'Model':<{max_model_len}}"]
+        sep_parts = ['-' * (max_model_len + 2)]
+        for m in metrics:
+            header_parts.append(f"{metric_names.get(m, m):^{metric_width}}")
+            sep_parts.append('-' * (metric_width + 2))
+
+        print("| " + " | ".join(header_parts) + " |")
+        print("|" + "|".join(sep_parts) + "|")
+
+        for r in results_list:
+            m = r["metrics"]
+            row_parts = [f"{r['model']:<{max_model_len}}"]
+            for metric in metrics:
+                row_parts.append(f"{fmt(get_metric(m, metric)):^{metric_width}}")
+            print("| " + " | ".join(row_parts) + " |")
 
     if has_dataset:
         # Group by dataset
@@ -196,37 +238,11 @@ else:
         for ds, ds_results in datasets.items():
             print(f"Dataset: {ds}")
             print("-" * 100)
-
-            max_model_len = max(len(r["model"]) for r in ds_results)
-            max_model_len = max(max_model_len, 5)
-
-            header = f"| {'Model':<{max_model_len}} | {'DER ↓':^{metric_width}} | {'JER ↓':^{metric_width}} | {'WER ↓':^{metric_width}} | {'SCA ↑':^{metric_width}} | {'SCER ↓':^{metric_width}} |"
-            separator = f"|{'-' * (max_model_len + 2)}|{'-' * (metric_width + 2)}|{'-' * (metric_width + 2)}|{'-' * (metric_width + 2)}|{'-' * (metric_width + 2)}|{'-' * (metric_width + 2)}|"
-
-            print(header)
-            print(separator)
-
-            for r in ds_results:
-                m = r["metrics"]
-                row = f"| {r['model']:<{max_model_len}} | {fmt(get_der(m)):^{metric_width}} | {fmt(m.get('jer', 0)):^{metric_width}} | {fmt(m.get('wer', 0)):^{metric_width}} | {fmt(m.get('sca', 0)):^{metric_width}} | {fmt(m.get('scer', 0)):^{metric_width}} |"
-                print(row)
-
+            print_table(ds_results)
             print("")
     else:
         # Single dataset mode
-        max_model_len = max(len(r["model"]) for r in results)
-        max_model_len = max(max_model_len, 5)
-
-        header = f"| {'Model':<{max_model_len}} | {'DER ↓':^{metric_width}} | {'JER ↓':^{metric_width}} | {'WER ↓':^{metric_width}} | {'SCA ↑':^{metric_width}} | {'SCER ↓':^{metric_width}} |"
-        separator = f"|{'-' * (max_model_len + 2)}|{'-' * (metric_width + 2)}|{'-' * (metric_width + 2)}|{'-' * (metric_width + 2)}|{'-' * (metric_width + 2)}|{'-' * (metric_width + 2)}|"
-
-        print(header)
-        print(separator)
-
-        for r in results:
-            m = r["metrics"]
-            row = f"| {r['model']:<{max_model_len}} | {fmt(get_der(m)):^{metric_width}} | {fmt(m.get('jer', 0)):^{metric_width}} | {fmt(m.get('wer', 0)):^{metric_width}} | {fmt(m.get('sca', 0)):^{metric_width}} | {fmt(m.get('scer', 0)):^{metric_width}} |"
-            print(row)
+        print_table(results)
 
         # Print diff if exactly 2 results
         if len(results) == 2:
