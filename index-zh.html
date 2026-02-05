@@ -487,6 +487,35 @@
             color: var(--blue-light);
         }
 
+        /* Warning box */
+        .warning-box {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 40px;
+        }
+
+        .warning-box h4 {
+            color: var(--orange-light);
+            font-size: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-box p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .warning-box strong {
+            color: var(--text-white);
+        }
+
         /* Best Practice */
         .best-practice {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
@@ -676,13 +705,13 @@
             const results = [];
             for (const row of lines.slice(2)) {
                 const cols = row.split('|').map(c => c.trim()).filter(c => c);
-                if (cols.length < 5) continue;
+                if (cols.length < 4) continue;
                 results.push({
                     model: cols[0],
                     der: parsePercent(cols[1]),
                     jer: parsePercent(cols[2]),
                     wer: parsePercent(cols[3]),
-                    sca: parsePercent(cols[4]),
+                    sca: cols.length > 4 ? parsePercent(cols[4]) : null,
                     hasLattifai: cols[0].includes('+LattifAI')
                 });
             }
@@ -721,7 +750,8 @@
         }
 
         function renderTable(data, opts = {}) {
-            const { showSCA = true, compact = false } = opts;
+            const hasSCAData = data.some(r => r.sca !== null);
+            const showSCA = opts.showSCA !== false && hasSCAData;
             return `
                 <div class="table-wrapper">
                     <table class="data-table">
@@ -866,6 +896,7 @@
                                     <li>相同音频通过 URL vs 本地 MP3</li>
                                     <li>在 Gemini 3 Flash 和 Gemini 3 Pro 上测试</li>
                                     <li>本地输入<strong>没有描述</strong>；URL 有视频元数据</li>
+                                    <li><strong>难度升级</strong>：从单人（L1）到 4 人频繁打断 → WER 从 ~1.5% 升至 ~4.5%（3 倍增长）</li>
                                 </ul>
                             </div>
                         </div>
@@ -876,6 +907,7 @@
                                     <li><strong>Flash：几乎相同</strong> — DER 相差约 1%（31.86% vs 33.12%）</li>
                                     <li><strong>Pro：URL 模式不稳定</strong> — DER 311% vs 本地的 40%。生成式模型有时会产生远超实际时长的时间戳幻觉（例如在 26 分钟视频中出现 1 小时的时间标记）</li>
                                     <li><strong>元数据无帮助</strong> — URL（有元数据）≈ 本地（无元数据）</li>
+                                    <li><strong>说话人识别 100% 准确</strong> — 即使是本地文件（无元数据），模型也正确识别了所有说话人（Mira Murati、Mark Chen、Barret Zoph、ChatGPT）</li>
                                     <li><strong>LattifAI 修复两者</strong> — 全部校正到 11-20% DER 范围</li>
                                 </ul>
                             </div>
@@ -965,7 +997,7 @@
                                 <ul>
                                     <li><strong>Gemini WER 比 YouTube 好 5 倍</strong>：4-5% vs 21%</li>
                                     <li><strong>提示词格式影响 DER 3.6 倍</strong>：Precise 21% vs SRT 77%</li>
-                                    <li><strong>SRT 格式适得其反</strong>：行宽限制导致说话人交叉 → 更差的 DER</li>
+                                    <li><strong>SRT 格式适得其反</strong>：SRT 的行宽限制迫使说话人标签被压缩，导致说话人交叉和时间误差放大 → 更差的 DER</li>
                                     <li><strong>YouTube 字幕：DER 172%</strong>：时间戳完全偏离（但可修复）</li>
                                     <li><strong>LattifAI 归一化所有来源</strong>：172% → 15%，77% → 10%，21% → 9%</li>
                                 </ul>
@@ -989,6 +1021,12 @@
                     </div>
                 </section>
 
+                <!-- 幻觉警告 -->
+                <div class="warning-box">
+                    <h4>⚠️ 幻觉问题警告</h4>
+                    <p>除了时间戳问题，我们还观察到 Gemini 输出中存在<strong>文本幻觉</strong>现象。在快速说话人切换时（例如人与 ChatGPT 频繁打断的对话），转录文本有时会包含<strong>原始音频中不存在的内容</strong>。这可能是模型在"补全"它认为应该说的内容。对于需要逐字准确的场景（法律、医疗），建议人工复核。</p>
+                </div>
+
                 <!-- 最佳实践 -->
                 <div class="best-practice">
                     <h3>最佳实践</h3>
@@ -997,7 +1035,7 @@
                     </div>
                     <div class="best-practice-result">
                         <span>WER 4.19%</span>
-                        <span>DER 9.34%</span>
+                        <span>DER 9.29%</span>
                     </div>
                 </div>
             `;

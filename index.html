@@ -454,6 +454,35 @@
             color: var(--blue-light);
         }
 
+        /* Warning box */
+        .warning-box {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 40px;
+        }
+
+        .warning-box h4 {
+            color: var(--orange-light);
+            font-size: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-box p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .warning-box strong {
+            color: var(--text-white);
+        }
+
         /* Best Practice */
         .best-practice {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
@@ -676,13 +705,13 @@
             const results = [];
             for (const row of lines.slice(2)) {
                 const cols = row.split('|').map(c => c.trim()).filter(c => c);
-                if (cols.length < 5) continue;
+                if (cols.length < 4) continue;
                 results.push({
                     model: cols[0],
                     der: parsePercent(cols[1]),
                     jer: parsePercent(cols[2]),
                     wer: parsePercent(cols[3]),
-                    sca: parsePercent(cols[4]),
+                    sca: cols.length > 4 ? parsePercent(cols[4]) : null,
                     hasLattifai: cols[0].includes('+LattifAI')
                 });
             }
@@ -721,7 +750,8 @@
         }
 
         function renderTable(data, opts = {}) {
-            const { showSCA = true, compact = false } = opts;
+            const hasSCAData = data.some(r => r.sca !== null);
+            const showSCA = opts.showSCA !== false && hasSCAData;
             return `
                 <div class="table-wrapper">
                     <table class="data-table">
@@ -866,6 +896,7 @@
                                     <li>Same audio via URL vs local MP3</li>
                                     <li>Tested on Gemini 3 Flash and Gemini 3 Pro</li>
                                     <li>Local input had <strong>no description</strong>; URL had video metadata</li>
+                                    <li><strong>Difficulty increase</strong>: From single-speaker (L1) to 4-speaker with interruptions → WER ~1.5% → ~4.5% (3x increase)</li>
                                 </ul>
                             </div>
                         </div>
@@ -876,6 +907,7 @@
                                     <li><strong>Flash: Nearly identical</strong> — DER differs by ~1% (31.86% vs 33.12%)</li>
                                     <li><strong>Pro: URL mode unstable</strong> — DER 311% vs Local's 40%. Generative models sometimes hallucinate timestamps far beyond the actual duration (e.g., 1-hour marks in a 26-min video)</li>
                                     <li><strong>Metadata doesn't help</strong> — URL (with metadata) ≈ Local (no metadata)</li>
+                                    <li><strong>Speaker names: 100% accurate</strong> — Even with local files (no metadata), the model correctly identified all speakers (Mira Murati, Mark Chen, Barret Zoph, ChatGPT)</li>
                                     <li><strong>LattifAI fixes both</strong> — All corrected to 11-20% DER range</li>
                                 </ul>
                             </div>
@@ -965,7 +997,7 @@
                                 <ul>
                                     <li><strong>Gemini WER 5x better than YouTube</strong>: 4-5% vs 21%</li>
                                     <li><strong>Prompt format affects DER 3.6x</strong>: Precise 21% vs SRT 77%</li>
-                                    <li><strong>SRT format backfires</strong>: Line-width limits cause speaker crossover → worse DER</li>
+                                    <li><strong>SRT format backfires</strong>: SRT's line-width limits force speaker labels into cramped segments, causing speaker crossover and amplified timing errors → worse DER</li>
                                     <li><strong>YouTube captions: DER 172%</strong>: Timestamps are completely off (but fixable)</li>
                                     <li><strong>LattifAI normalizes all sources</strong>: 172% → 15%, 77% → 10%, 21% → 9%</li>
                                 </ul>
@@ -989,6 +1021,12 @@
                     </div>
                 </section>
 
+                <!-- Hallucination Warning -->
+                <div class="warning-box">
+                    <h4>⚠️ Hallucination Warning</h4>
+                    <p>Beyond timestamp issues, we observed <strong>text hallucinations</strong> in Gemini outputs. During rapid speaker exchanges (e.g., human-ChatGPT dialogue with frequent interruptions), the transcript sometimes contains <strong>content that doesn't exist in the original audio</strong>. This is likely caused by the model "completing" what it thinks should be said. For verbatim-critical use cases (legal, medical), manual review is recommended.</p>
+                </div>
+
                 <!-- Best Practice -->
                 <div class="best-practice">
                     <h3>Best Practice</h3>
@@ -997,7 +1035,7 @@
                     </div>
                     <div class="best-practice-result">
                         <span>WER 4.19%</span>
-                        <span>DER 9.34%</span>
+                        <span>DER 9.29%</span>
                     </div>
                 </div>
             `;
