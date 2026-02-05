@@ -235,7 +235,7 @@ def evaluate_alignment(
     reference_file: Union[str, Path],
     hypothesis_file: Union[str, Path],
     metrics: List[str] = ["der", "jer", "wer", "sca", "scer"],
-    collar: float = 0.0,
+    collar: float = 0.2,
     skip_overlap: bool = False,
     skip_events: bool = False,
     language: str = "en",
@@ -384,7 +384,7 @@ Examples:
         choices=["der", "jer", "wer", "sca", "scer"],
         help="Metrics to compute",
     )
-    parser.add_argument("--collar", "-c", type=float, default=0.0, help="Collar size in seconds")
+    parser.add_argument("--collar", "-c", type=float, default=0.2, help="Collar size in seconds (default: 200ms)")
     parser.add_argument("--skip-overlap", action="store_true", help="Skip overlapping speech for DER")
     parser.add_argument(
         "--skip-events", action="store_true", help="Skip [event] markers (e.g., [Laughter], [Applause])"

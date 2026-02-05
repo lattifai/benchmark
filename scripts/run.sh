@@ -97,7 +97,7 @@ run_eval_for_dataset() {
 
     print_step "Ground Truth (baseline)"
     python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$SRC_DIR/ground_truth.ass" \
-        --metrics der jer wer sca scer --collar 0.0 --model-name "Ground Truth" $extra_args
+        --metrics der jer wer sca scer --collar 0.2 --model-name "Ground Truth" $extra_args
 
     # Evaluate specified models
     while IFS= read -r model; do
@@ -114,7 +114,7 @@ run_eval_for_dataset() {
             echo ""
             print_step "$display_name"
             python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$ass_file" \
-                --metrics der jer wer sca scer --collar 0.0 --model-name "$display_name" $extra_args
+                --metrics der jer wer sca scer --collar 0.2 --model-name "$display_name" $extra_args
         fi
 
         # Evaluate LattifAI aligned output
@@ -123,7 +123,7 @@ run_eval_for_dataset() {
             echo ""
             print_step "${display_name}_LattifAI"
             python eval.py -r "$SRC_DIR/ground_truth.ass" -hyp "$lattifai_file" \
-                --metrics der jer wer sca scer --collar 0.0 --model-name "${display_name}_LattifAI" $extra_args
+                --metrics der jer wer sca scer --collar 0.2 --model-name "${display_name}_LattifAI" $extra_args
         fi
     done < <(get_models "$models_arg")
 }
