@@ -13,16 +13,42 @@ source "$(dirname "$0")/common.sh"
 
 # Set to "true" to run LattifAI alignment after transcription
 RUN_ALIGNMENT="true"
+DIARIZATION="false"
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --diarization)
+            DIARIZATION="true"
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Usage: $0 [--diarization]"
+            exit 1
+            ;;
+    esac
+done
+
+# Suffix for diarization-aware file naming
+DIAR_SUFFIX=""
+DIAR_LABEL=""
+if [ "$DIARIZATION" = "true" ]; then
+    DIAR_SUFFIX="_Diarization"
+    DIAR_LABEL=" +Diarization"
+fi
 
 # Datasets to benchmark (format: "dataset_id:language")
 DATASETS=(
     "OpenAI-Introducing-GPT-4o:en"
-    # "TheValley101-GPT-4o-vs-Gemini:zh"
+    "TheValley101-GPT-4o-vs-Gemini:zh"
 )
 
-# Test configurations (format: "model:prompt:output_dir:tag")
+# Test configurations per language (format: "model:prompt:output_dir:tag")
 # NOTE: Different prompts must use different output_dir to avoid .ass file conflicts
-CONFIGS=(
+
+# English: full model comparison with multiple runs
+CONFIGS_en=(
     # "gemini-2.5-pro:prompts/Gemini_dotey.md:data:(dotey)"
     # "gemini-2.5-pro:prompts/Gemini_dotey.md:outputs/2.5pro_run2:(dotey run2)"
     "gemini-3-pro-preview:prompts/Gemini_dotey.md:data:(dotey)"
@@ -38,6 +64,25 @@ CONFIGS=(
     "gemini-3-flash-preview:prompts/Gemini_SRT_V2.md:outputs/SRT_V2:(SRT V2)"
     "gemini-3-flash-preview:prompts/Gemini_SRT_V2.md:outputs/SRT_V2_2:(SRT V2 run2)"
 )
+
+# Chinese: lightweight comparison (fewer models, no repeated runs)
+CONFIGS_zh=(
+    "gemini-2.5-pro:prompts/Gemini_dotey.md:data:(dotey)"
+    "gemini-2.5-pro:prompts/Gemini_dotey.md:outputs/2.5pro_run2:(dotey run2)"
+    "gemini-3-pro-preview:prompts/Gemini_dotey.md:data:(dotey)"
+    "gemini-3-pro-preview:prompts/Gemini_dotey.md:outputs/3pro_run2:(dotey run2)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey.md:data:(dotey)"
+    "gemini-3-flash-preview:prompts/Gemini_dotey.md:outputs/V1_1:(dotey run2)"
+)
+
+# Return configs array entries for a given language
+get_dataset_configs() {
+    local lang="$1"
+    case "$lang" in
+        zh) printf '%s\n' "${CONFIGS_zh[@]}" ;;
+        *)  printf '%s\n' "${CONFIGS_en[@]}" ;;
+    esac
+}
 
 # ============================================================================
 # Step 1: Run all transcriptions
@@ -56,8 +101,9 @@ get_output_ext() {
 
 for ds_entry in "${DATASETS[@]}"; do
     dataset_id="${ds_entry%%:*}"
+    lang="${ds_entry##*:}"
 
-    for config in "${CONFIGS[@]}"; do
+    while IFS= read -r config; do
         IFS=':' read -r model prompt output_dir tag <<< "$config"
 
         output_ext=$(get_output_ext "$prompt")
@@ -76,7 +122,7 @@ for ds_entry in "${DATASETS[@]}"; do
             --models "$model" \
             -o "${PROJECT_DIR}/${output_dir}" \
             --prompt "$prompt"
-    done
+    done < <(get_dataset_configs "$lang")
 done
 
 # ============================================================================
@@ -90,6 +136,7 @@ run_alignment() {
     local input="$2"
     local output="$3"
     local label="$4"
+    local diarization="$5"
     local failed_marker="${output}.failed"
 
     # Skip if failed marker exists and input is not newer
@@ -101,13 +148,19 @@ run_alignment() {
     # Remove stale failed marker if input is newer
     [ -f "$failed_marker" ] && rm -f "$failed_marker"
 
+    local diar_arg=""
+    if [ "$diarization" = "true" ]; then
+        diar_arg="diarization.enabled=true"
+    fi
+
     if lai alignment align -Y "$audio" \
         alignment.model_hub=modelscope \
         client.profile=true \
         caption.include_speaker_in_text=false \
         caption.split_sentence=true \
         caption.input_path="$input" \
-        caption.output_path="$output" 2>&1; then
+        caption.output_path="$output" \
+        $diar_arg 2>&1; then
         return 0
     else
         print_warning "Alignment failed: $label"
@@ -124,6 +177,7 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
     else
         for ds_entry in "${DATASETS[@]}"; do
             dataset_id="${ds_entry%%:*}"
+            lang="${ds_entry##*:}"
             audio_file="${DATA_ROOT}/${dataset_id}/audio.mp3"
 
             if [ ! -f "$audio_file" ]; then
@@ -137,7 +191,7 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                 caption_path="${DATA_ROOT}/${dataset_id}/${caption_file}"
                 caption_basename="${caption_file%.*}"
                 caption_ass="${DATA_ROOT}/${dataset_id}/${caption_basename}.ass"
-                yt_output_file="${DATA_ROOT}/${dataset_id}/${caption_basename}_LattifAI.ass"
+                yt_output_file="${DATA_ROOT}/${dataset_id}/${caption_basename}_LattifAI${DIAR_SUFFIX}.ass"
 
                 if [ -f "$caption_path" ]; then
                     # Convert to ASS if source is newer
@@ -154,24 +208,24 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                         echo "  ⏭ Skipping (already exists)"
                     else
                         run_alignment "$audio_file" "$caption_ass" "$yt_output_file" \
-                            "YouTube Caption (official)" || true
+                            "YouTube Caption (official)" "$DIARIZATION" || true
                     fi
                 fi
             fi
 
-            for config in "${CONFIGS[@]}"; do
+            while IFS= read -r config; do
                 IFS=':' read -r model prompt output_dir tag <<< "$config"
 
                 output_ext=$(get_output_ext "$prompt")
                 input_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}${output_ext}"
-                output_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}_LattifAI.ass"
+                output_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}_LattifAI${DIAR_SUFFIX}.ass"
 
                 if [ ! -f "$input_file" ]; then
                     continue
                 fi
 
                 echo ""
-                print_step "${model} ${tag} → ${model}_LattifAI.ass"
+                print_step "${model} ${tag} → ${model}_LattifAI${DIAR_SUFFIX}.ass"
 
                 if [ -f "$output_file" ]; then
                     echo "  ⏭ Skipping (already exists)"
@@ -179,8 +233,8 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                 fi
 
                 run_alignment "$audio_file" "$input_file" "$output_file" \
-                    "${model} ${tag}" || true
-            done
+                    "${model} ${tag}" "$DIARIZATION" || true
+            done < <(get_dataset_configs "$lang")
         done
     fi
 fi
@@ -194,6 +248,7 @@ RESULTS_FILE=$(mktemp)
 
 for ds_entry in "${DATASETS[@]}"; do
     dataset_id="${ds_entry%%:*}"
+    lang="${ds_entry##*:}"
 
     ref_file="${DATA_ROOT}/${dataset_id}/ground_truth.ass"
 
@@ -202,7 +257,7 @@ for ds_entry in "${DATASETS[@]}"; do
     if [ -n "$caption_file" ]; then
         caption_basename="${caption_file%.*}"
         caption_ass="${DATA_ROOT}/${dataset_id}/${caption_basename}.ass"
-        yt_lattifai_file="${DATA_ROOT}/${dataset_id}/${caption_basename}_LattifAI.ass"
+        yt_lattifai_file="${DATA_ROOT}/${dataset_id}/${caption_basename}_LattifAI${DIAR_SUFFIX}.ass"
 
         # Use converted .ass if exists, otherwise use original
         if [ -f "$caption_ass" ]; then
@@ -215,19 +270,19 @@ for ds_entry in "${DATASETS[@]}"; do
         # Evaluate LattifAI aligned YouTube caption
         if [ -f "$yt_lattifai_file" ]; then
             echo ""
-            print_step "Evaluating: YouTube Caption (official) +LattifAI"
+            print_step "Evaluating: YouTube Caption (official) +LattifAI${DIAR_LABEL}"
             result=$(run_eval_json "$ref_file" "$yt_lattifai_file")
-            echo "{\"dataset\": \"$dataset_id\", \"model\": \"YouTube Caption (official) +LattifAI\", \"metrics\": $result}" >> "$RESULTS_FILE"
+            echo "{\"dataset\": \"$dataset_id\", \"model\": \"YouTube Caption (official) +LattifAI${DIAR_LABEL}\", \"metrics\": $result}" >> "$RESULTS_FILE"
         fi
     fi
 
-    for config in "${CONFIGS[@]}"; do
+    while IFS= read -r config; do
         IFS=':' read -r model prompt output_dir tag <<< "$config"
 
         output_ext=$(get_output_ext "$prompt")
         input_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}${output_ext}"
         hyp_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}.ass"
-        lattifai_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}_LattifAI.ass"
+        lattifai_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}_LattifAI${DIAR_SUFFIX}.ass"
         model_name="${model} ${tag}"
 
         # Convert input file (.md or .srt) to .ass if source is newer
@@ -246,11 +301,11 @@ for ds_entry in "${DATASETS[@]}"; do
         # Evaluate LattifAI aligned output
         if [ -f "$lattifai_file" ]; then
             echo ""
-            print_step "Evaluating: ${model_name} +LattifAI"
+            print_step "Evaluating: ${model_name} +LattifAI${DIAR_LABEL}"
             result=$(run_eval_json "$ref_file" "$lattifai_file")
-            echo "{\"dataset\": \"$dataset_id\", \"model\": \"${model_name} +LattifAI\", \"metrics\": $result}" >> "$RESULTS_FILE"
+            echo "{\"dataset\": \"$dataset_id\", \"model\": \"${model_name} +LattifAI${DIAR_LABEL}\", \"metrics\": $result}" >> "$RESULTS_FILE"
         fi
-    done
+    done < <(get_dataset_configs "$lang")
 done
 
 # ============================================================================
