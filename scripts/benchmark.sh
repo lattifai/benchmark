@@ -14,17 +14,22 @@ source "$(dirname "$0")/common.sh"
 # Set to "true" to run LattifAI alignment after transcription
 RUN_ALIGNMENT="true"
 DIARIZATION="false"
+LANG_FILTER=""
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        --lang)
+            LANG_FILTER="$2"
+            shift 2
+            ;;
         --diarization)
             DIARIZATION="true"
             shift
             ;;
         *)
             echo "Unknown option: $1"
-            echo "Usage: $0 [--diarization]"
+            echo "Usage: $0 [--lang <en|zh>] [--diarization]"
             exit 1
             ;;
     esac
@@ -39,10 +44,23 @@ if [ "$DIARIZATION" = "true" ]; then
 fi
 
 # Datasets to benchmark (format: "dataset_id:language")
-DATASETS=(
+ALL_DATASETS=(
     "OpenAI-Introducing-GPT-4o:en"
     "TheValley101-GPT-4o-vs-Gemini:zh"
 )
+
+# Filter datasets by language if --lang is specified
+DATASETS=()
+for ds in "${ALL_DATASETS[@]}"; do
+    if [ -z "$LANG_FILTER" ] || [ "${ds##*:}" = "$LANG_FILTER" ]; then
+        DATASETS+=("$ds")
+    fi
+done
+
+if [ ${#DATASETS[@]} -eq 0 ]; then
+    echo "Error: no datasets match language '$LANG_FILTER'"
+    exit 1
+fi
 
 # Test configurations per language (format: "model:prompt:output_dir:tag")
 # NOTE: Different prompts must use different output_dir to avoid .ass file conflicts
