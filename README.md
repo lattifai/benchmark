@@ -115,7 +115,7 @@ Dataset: OpenAI-Introducing-GPT-4o
 ## Quick Start
 
 ```bash
-pip install pysubs2 pyannote.core pyannote.metrics jiwer whisper-normalizer
+pip install pysubs2 pyannote.core pyannote.metrics jiwer whisper-normalizer kaldialign
 
 # Setup API keys (auto-loaded by run.sh)
 cp .env.example .env

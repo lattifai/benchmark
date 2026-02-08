@@ -7,7 +7,7 @@ from typing import List, Optional, Union
 
 import jiwer
 import pysubs2
-from lattifai.alignment.tokenizer import tokenize_multilingual_text
+from lattifai.alignment.tokenizer import _is_punctuation, tokenize_multilingual_text
 from pyannote.core import Annotation, Segment
 from pyannote.metrics.diarization import DiarizationErrorRate, JaccardErrorRate
 from whisper_normalizer.basic import BasicTextNormalizer
@@ -22,6 +22,7 @@ basic_normalizer = BasicTextNormalizer()
 def normalize_multilingual(text: str) -> str:
     """Normalize multilingual text by tokenizing and joining with spaces."""
     tokens = tokenize_multilingual_text(text, keep_spaces=False)
+    tokens = [t for t in tokens if not _is_punctuation(t)]
     return " ".join(tokens).lower()
 
 
