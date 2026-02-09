@@ -239,7 +239,7 @@ else:
             print(f"Dataset: {ds}")
             print("-" * 100)
             print_table(ds_results)
-            print("")
+            print("\n")
     else:
         # Single dataset mode
         print_table(results)
