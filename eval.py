@@ -232,6 +232,259 @@ def caption_to_text(
     return " ".join(texts)
 
 
+def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypothesis_file, collar, skip_events):
+    """Print detailed DER error segments and write debug TextGrid.
+
+    Replicates pyannote's exact DER pipeline:
+      DiarizationErrorRate.compute_components → uemify → rename → optimal_mapping
+      IdentificationErrorRate.compute_components → uemify(returns_timeline) → matcher_ loop
+    Per-segment errors are recorded from this loop, guaranteeing matching totals.
+    """
+    import sys
+    import warnings
+
+    from tgt import Interval, IntervalTier, TextGrid, write_to_file
+
+    # === Replicate DiarizationErrorRate.compute_components exactly ===
+    # Step 1: uemify with collar (removes ±collar/2 around ref boundaries)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        collared_ref, collared_hyp, extruded_uem = der_metric.uemify(
+            ref_ann, hyp_ann, uem=None, collar=collar,
+            skip_overlap=der_metric.skip_overlap, returns_uem=True,
+        )
+
+    # Step 2: Rename labels exactly like pyannote does internally
+    ref_renamed = collared_ref.rename_labels(generator="string")
+    hyp_renamed = collared_hyp.rename_labels(generator="int")
+
+    # Step 3: Optimal mapping on renamed collared annotations
+    internal_mapping = der_metric.optimal_mapping(ref_renamed, hyp_renamed)
+    mapped_renamed = hyp_renamed.rename_labels(mapping=internal_mapping)
+
+    # Step 4: Get projected annotations + common timeline
+    # (IdentificationErrorRate.compute_components with collar=0)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        R, H, common_timeline = der_metric.uemify(
+            ref_renamed, mapped_renamed, uem=extruded_uem,
+            collar=0.0, skip_overlap=False, returns_timeline=True,
+        )
+
+    # Build reverse label map: renamed ("A","B") → original ref labels
+    ref_label_map = {}
+    for (_, _, orig), (_, _, renamed) in zip(
+        collared_ref.itertracks(yield_label=True),
+        ref_renamed.itertracks(yield_label=True),
+    ):
+        if renamed not in ref_label_map:
+            ref_label_map[renamed] = orig
+
+    # Human-readable mapping for display (hyp_original → ref_original)
+    display_mapping = {}
+    hyp_label_map = {}
+    for (_, _, orig), (_, _, renamed) in zip(
+        collared_hyp.itertracks(yield_label=True),
+        hyp_renamed.itertracks(yield_label=True),
+    ):
+        if renamed not in hyp_label_map:
+            hyp_label_map[renamed] = orig
+    for hyp_int, ref_str in internal_mapping.items():
+        hyp_orig = hyp_label_map.get(hyp_int, str(hyp_int))
+        ref_orig = ref_label_map.get(ref_str, str(ref_str))
+        display_mapping[hyp_orig] = ref_orig
+
+    # Step 5: Iterate over common timeline — exact same loop as pyannote
+    error_segments = []
+    fa_dur = miss_dur = conf_dur = 0.0
+
+    for segment in common_timeline:
+        dur = segment.duration
+        r_labels = R.get_labels(segment, unique=False)
+        h_labels = H.get_labels(segment, unique=False)
+        counts, _ = der_metric.matcher_(r_labels, h_labels)
+
+        fa = counts["false alarm"] * dur
+        miss = counts["missed detection"] * dur
+        conf = counts["confusion"] * dur
+
+        if fa > 1e-6 or miss > 1e-6 or conf > 1e-6:
+            # Map renamed labels back to originals for display
+            r_orig = tuple(sorted(ref_label_map.get(l, str(l)) for l in r_labels))
+            h_orig = tuple(sorted(ref_label_map.get(l, str(l)) for l in h_labels))
+            error_segments.append((segment.start, segment.end, r_orig, h_orig, fa, miss, conf))
+            fa_dur += fa
+            miss_dur += miss
+            conf_dur += conf
+
+    # Merge adjacent error segments with same labels
+    merged = []
+    for start, end, rl, hl, fa, miss, conf in error_segments:
+        if (merged and merged[-1][2] == rl and merged[-1][3] == hl
+                and abs(merged[-1][1] - start) < 0.01):
+            m = merged[-1]
+            merged[-1] = (m[0], end, rl, hl, m[4] + fa, m[5] + miss, m[6] + conf)
+        else:
+            merged.append([start, end, rl, hl, fa, miss, conf])
+
+    if not merged:
+        print("\nDER Error Details: no errors found", file=sys.stderr)
+        return
+
+    # Build hyp text lookup for context
+    hyp_text_map = []
+    for event in hypothesis.events:
+        if skip_events and is_event_only(event.text):
+            continue
+        hyp_text_map.append((event.start / 1000.0, event.end / 1000.0, event.name or "", event.text))
+
+    def _find_hyp_text(start, end):
+        texts = []
+        for hs, he, name, text in hyp_text_map:
+            if hs < end and he > start:
+                texts.append(f"{name} {text}" if name else text)
+        return " | ".join(texts) if texts else ""
+
+    # Print errors — durations match DER components by construction
+    print(f"\n=== DER Error Segments (collar={collar}s) ===", file=sys.stderr)
+    print(f"Speaker mapping: {display_mapping}", file=sys.stderr)
+    print(
+        f"\n{'Time':>20}  {'Type':<5}  {'Ref':<20}  {'Hyp':<20}  {'Dur':>6}  Text",
+        file=sys.stderr,
+    )
+    print("-" * 100, file=sys.stderr)
+
+    for start, end, rl, hl, fa, miss, conf in merged:
+        dur = end - start
+        ref_str = ",".join(rl) if rl else "-"
+        hyp_str = ",".join(hl) if hl else "-"
+
+        if miss > 1e-6 and fa < 1e-6 and conf < 1e-6:
+            etype = "MISS"
+        elif fa > 1e-6 and miss < 1e-6 and conf < 1e-6:
+            etype = "FA"
+        elif conf > 1e-6 and fa < 1e-6 and miss < 1e-6:
+            etype = "CONF"
+        else:
+            etype = "MIX"
+
+        text = _find_hyp_text(start, end)
+        print(
+            f"[{start:7.2f}-{end:7.2f}]  {etype:<5}  {ref_str:<20}  {hyp_str:<20}  {dur:5.2f}s  {text[:60]}",
+            file=sys.stderr,
+        )
+
+    total_err = fa_dur + miss_dur + conf_dur
+    print(f"\nDER Error Summary: FA={fa_dur:.2f}s  MISS={miss_dur:.2f}s  CONF={conf_dur:.2f}s  total={total_err:.2f}s", file=sys.stderr)
+    print(f"Error count: {len(merged)} segments\n", file=sys.stderr)
+
+    # === Write debug TextGrid ===
+    # Raw annotations for visual context; error tier from pyannote's pipeline
+    mapped_hyp = hyp_ann.rename_labels(mapping=display_mapping)
+    raw_boundaries = set()
+    for seg in ref_ann.itersegments():
+        raw_boundaries.add(seg.start)
+        raw_boundaries.add(seg.end)
+    for seg in mapped_hyp.itersegments():
+        raw_boundaries.add(seg.start)
+        raw_boundaries.add(seg.end)
+    duration = max(raw_boundaries) if raw_boundaries else 0.0
+
+    tg = TextGrid()
+
+    def _ann_to_tiers(ann, prefix, target_tg):
+        by_speaker = {}
+        for seg, track, label in ann.itertracks(yield_label=True):
+            by_speaker.setdefault(label or "unknown", []).append(Interval(seg.start, seg.end, label or ""))
+        for spk in sorted(by_speaker):
+            target_tg.add_tier(IntervalTier(start_time=0, end_time=duration, name=f"{prefix}_{spk}", objects=by_speaker[spk]))
+
+    _ann_to_tiers(ref_ann, "ref", tg)
+
+    def _caption_to_tiers(caption, prefix, target_tg):
+        layers = []
+        for event in caption.events:
+            if skip_events and is_event_only(event.text):
+                continue
+            iv = Interval(event.start / 1000.0, event.end / 1000.0, event.text)
+            placed = False
+            for layer in layers:
+                if not layer or layer[-1].end_time <= iv.start_time:
+                    layer.append(iv)
+                    placed = True
+                    break
+            if not placed:
+                layers.append([iv])
+        for i, layer in enumerate(layers):
+            name = prefix if i == 0 else f"{prefix}_{i + 1}"
+            target_tg.add_tier(IntervalTier(start_time=0, end_time=duration, name=name, objects=layer))
+
+    _caption_to_tiers(reference, "ref_text", tg)
+    _ann_to_tiers(mapped_hyp, "hyp", tg)
+    _caption_to_tiers(hypothesis, "hyp_text", tg)
+
+    # Error tier
+    err_ivs = []
+    for start, end, rl, hl, fa, miss, conf in merged:
+        dur = end - start
+        ref_str = ",".join(rl) if rl else "-"
+        hyp_str = ",".join(hl) if hl else "-"
+        if miss > 1e-6 and fa < 1e-6 and conf < 1e-6:
+            label = f"MISS {dur:.2f}s ref={ref_str}"
+        elif fa > 1e-6 and miss < 1e-6 and conf < 1e-6:
+            label = f"FA {dur:.2f}s hyp={hyp_str}"
+        elif conf > 1e-6 and fa < 1e-6 and miss < 1e-6:
+            label = f"CONF {dur:.2f}s ref={ref_str} hyp={hyp_str}"
+        else:
+            label = f"MIX {dur:.2f}s fa={fa:.2f} miss={miss:.2f} conf={conf:.2f}"
+        err_ivs.append(Interval(start, end, label))
+    tg.add_tier(IntervalTier(start_time=0, end_time=duration, name="error", objects=err_ivs))
+
+    collar_str = f"{collar:.2f}".replace(".", "_")
+    out_path = Path(hypothesis_file).with_suffix(f".der_collar{collar_str}.TextGrid")
+    write_to_file(tg, str(out_path), format="long")
+    print(f"DER debug TextGrid: {out_path}", file=sys.stderr)
+
+    # Per-error-type TextGrids (FA / MISS / CONF)
+    type_groups = {"FA": [], "MISS": [], "CONF": []}
+    for item in merged:
+        start, end, rl, hl, fa, miss, conf = item
+        if miss > 1e-6 and fa < 1e-6 and conf < 1e-6:
+            type_groups["MISS"].append(item)
+        elif fa > 1e-6 and miss < 1e-6 and conf < 1e-6:
+            type_groups["FA"].append(item)
+        elif conf > 1e-6 and fa < 1e-6 and miss < 1e-6:
+            type_groups["CONF"].append(item)
+        else:
+            type_groups["FA"].append(item)
+            type_groups["MISS"].append(item)
+            type_groups["CONF"].append(item)
+
+    for etype, items in type_groups.items():
+        if not items:
+            continue
+        etg = TextGrid()
+        for tier in tg.tiers:
+            if tier.name.startswith(("ref", "hyp")):
+                etg.add_tier(tier)
+        eivs = []
+        for start, end, rl, hl, fa, miss, conf in items:
+            dur = end - start
+            ref_str = ",".join(rl) if rl else "-"
+            hyp_str = ",".join(hl) if hl else "-"
+            if etype == "FA":
+                label = f"FA {dur:.2f}s hyp={hyp_str}"
+            elif etype == "MISS":
+                label = f"MISS {dur:.2f}s ref={ref_str}"
+            else:
+                label = f"CONF {dur:.2f}s ref={ref_str} hyp={hyp_str}"
+            eivs.append(Interval(start, end, label))
+        etg.add_tier(IntervalTier(start_time=0, end_time=duration, name=etype, objects=eivs))
+        epath = Path(hypothesis_file).with_suffix(f".der_collar{collar_str}_{etype}.TextGrid")
+        write_to_file(etg, str(epath), format="long")
+        print(f"DER {etype} TextGrid: {epath}", file=sys.stderr)
+
+
 def evaluate_alignment(
     reference_file: Union[str, Path],
     hypothesis_file: Union[str, Path],
@@ -335,6 +588,8 @@ def evaluate_alignment(
         if metric_lower == "der":
             der_metric = DiarizationErrorRate(collar=collar, skip_overlap=skip_overlap)
             results["der"] = der_metric(ref_ann, hyp_ann, detailed=True, uem=None)
+            if verbose:
+                _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypothesis_file, collar, skip_events)
         elif metric_lower == "jer":
             jer_metric = JaccardErrorRate(collar=collar)
             results["jer"] = jer_metric(ref_ann, hyp_ann)
