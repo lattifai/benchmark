@@ -249,6 +249,82 @@ def caption_to_annotation(caption: pysubs2.SSAFile, uri: str = "default", skip_e
     return annotation
 
 
+def _normalize_speaker_name(name: str) -> str:
+    """Normalize speaker name for fuzzy matching.
+
+    Strips numbering suffixes like "(1)", "(2)", trailing digits after space.
+    Does NOT strip digits from ID-style names like "SPEAKER_01".
+    Returns lowercase canonical form.
+    """
+    import re
+    n = name.strip()
+    # Remove parenthesized numbering: "GPT-4o (1)" -> "GPT-4o"
+    n = re.sub(r'\s*\(\d+\)\s*$', '', n)
+    # Remove trailing digits only if preceded by a letter (not underscore/digit)
+    # "ChatGPT0" -> "ChatGPT", but "SPEAKER_01" stays "SPEAKER_01"
+    # "Astra User2" -> "Astra User", but "SPEAKER_02" stays
+    n = re.sub(r'(?<=[a-zA-Z])\d+$', '', n)
+    n = n.strip()
+    return n.lower()
+
+
+def merge_speaker_aliases(ref_ann: Annotation, hyp_ann: Annotation) -> tuple:
+    """Merge speaker aliases within each annotation before DER computation.
+
+    Within each side (ref or hyp), speakers whose normalized names match
+    (case-insensitive, stripped numbering suffixes like "(1)", trailing digits)
+    are merged into one canonical label.
+
+    Examples:
+      "GPT-4o (1)" + "GPT-4o (2)" -> "GPT-4o"
+      "ChatGPT0" + "ChatGPT" -> "ChatGPT"
+      "Astra User1" + "Astra User2" -> "Astra User1"
+
+    No cross-side merging is done — that's left to pyannote's optimal_mapping.
+
+    Returns (merged_ref, merged_hyp, ref_merge_map, hyp_merge_map).
+    """
+    def _build_merge_map(labels):
+        norm_to_canonical = {}
+        merge_map = {}
+        for label in sorted(labels):
+            norm = _normalize_speaker_name(label)
+            if norm in norm_to_canonical:
+                merge_map[label] = norm_to_canonical[norm]
+            else:
+                norm_to_canonical[norm] = label
+                merge_map[label] = label
+        return merge_map
+
+    ref_map = _build_merge_map(ref_ann.labels())
+    hyp_map = _build_merge_map(hyp_ann.labels())
+
+    # Cross-side first-name matching: if HYP has "Mark" and REF has "Mark Chen",
+    # rename HYP's "Mark" to "Mark Chen" so optimal_mapping can match them.
+    # Only matches single-word names that are the first word of a multi-word name.
+    ref_canonical = set(ref_map.values())
+    hyp_canonical = set(hyp_map.values())
+    for hyp_label in list(hyp_canonical):
+        if hyp_label in ref_canonical:
+            continue  # Already an exact match
+        hyp_words = hyp_label.split()
+        if len(hyp_words) != 1:
+            continue  # Only match single-word HYP names
+        for ref_label in ref_canonical:
+            ref_words = ref_label.split()
+            if len(ref_words) > 1 and ref_words[0].lower() == hyp_words[0].lower():
+                # "Mark" matches "Mark Chen" — rename in hyp_map
+                for k, v in hyp_map.items():
+                    if v == hyp_label:
+                        hyp_map[k] = ref_label
+                break
+
+    merged_ref = ref_ann.rename_labels(mapping=ref_map)
+    merged_hyp = hyp_ann.rename_labels(mapping=hyp_map)
+
+    return merged_ref, merged_hyp, ref_map, hyp_map
+
+
 def caption_to_text(
     caption: pysubs2.SSAFile,
     skip_events: bool = False,
@@ -591,6 +667,20 @@ def evaluate_alignment(
 
     ref_ann = caption_to_annotation(reference, skip_events=skip_events)
     hyp_ann = caption_to_annotation(hypothesis, skip_events=skip_events)
+
+    # Merge speaker aliases (e.g., "GPT-4o (1)"+"GPT-4o (2)" -> "GPT-4o",
+    # "Mark" matched to "Mark Chen" via substring)
+    ref_ann, hyp_ann, ref_merge_map, hyp_merge_map = merge_speaker_aliases(ref_ann, hyp_ann)
+    # Log non-trivial merges
+    ref_merges = {k: v for k, v in ref_merge_map.items() if k != v}
+    hyp_merges = {k: v for k, v in hyp_merge_map.items() if k != v}
+    if ref_merges or hyp_merges:
+        import sys
+        if ref_merges:
+            print(f"Ref speaker merges: {ref_merges}", file=sys.stderr)
+        if hyp_merges:
+            print(f"Hyp speaker merges: {hyp_merges}", file=sys.stderr)
+
     ref_text = caption_to_text(reference, skip_events=skip_events, language=language)
     hyp_text = caption_to_text(hypothesis, skip_events=skip_events, language=language)
 
