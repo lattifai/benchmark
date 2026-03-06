@@ -168,6 +168,59 @@ def get_speakers(annotation: Annotation) -> set:
     return set(annotation.labels())
 
 
+def _compute_overlap_stats(ref_ann, hyp_ann):
+    """Compute overlap detection statistics between reference and hypothesis."""
+    ref_tl = ref_ann.get_timeline()
+    hyp_tl = hyp_ann.get_timeline()
+    ref_ovl = ref_ann.get_overlap()
+    hyp_ovl = hyp_ann.get_overlap()
+
+    ref_total = ref_tl.duration()
+    ref_ovl_dur = ref_ovl.duration()
+    hyp_ovl_dur = hyp_ovl.duration()
+
+    # Overlap detection precision/recall via timeline intersection
+    intersection = ref_ovl.crop(hyp_ovl)
+    inter_dur = intersection.duration()
+
+    precision = inter_dur / hyp_ovl_dur if hyp_ovl_dur > 0 else 0.0
+    recall = inter_dur / ref_ovl_dur if ref_ovl_dur > 0 else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
+
+    return {
+        "ref_total_duration": ref_total,
+        "ref_overlap_duration": ref_ovl_dur,
+        "ref_overlap_pct": ref_ovl_dur / ref_total * 100 if ref_total > 0 else 0,
+        "hyp_overlap_duration": hyp_ovl_dur,
+        "hyp_overlap_pct": hyp_ovl_dur / hyp_tl.duration() * 100 if hyp_tl.duration() > 0 else 0,
+        "overlap_precision": precision,
+        "overlap_recall": recall,
+        "overlap_f1": f1,
+    }
+
+
+def _compute_overlap_der(ref_ann, hyp_ann, collar):
+    """Compute DER separately for overlap and non-overlap regions."""
+    ref_ovl = ref_ann.get_overlap()
+    if ref_ovl.duration() == 0:
+        return {"overlap_der": None, "non_overlap_der": None}
+
+    # Overlap-only DER
+    ovl_der = DiarizationErrorRate(collar=collar)
+    ovl_ref = ref_ann.crop(ref_ovl)
+    ovl_hyp = hyp_ann.crop(ref_ovl)
+    overlap_der_val = ovl_der(ovl_ref, ovl_hyp)
+
+    # Non-overlap DER
+    non_ovl_tl = ref_ann.get_timeline().extrude(ref_ovl)
+    non_ovl_der = DiarizationErrorRate(collar=collar)
+    non_ovl_ref = ref_ann.crop(non_ovl_tl)
+    non_ovl_hyp = hyp_ann.crop(non_ovl_tl)
+    non_overlap_der_val = non_ovl_der(non_ovl_ref, non_ovl_hyp)
+
+    return {"overlap_der": overlap_der_val, "non_overlap_der": non_overlap_der_val}
+
+
 def caption_to_annotation(caption: pysubs2.SSAFile, uri: str = "default", skip_events: bool = False) -> Annotation:
     """Convert caption to pyannote Annotation for diarization metrics.
 
@@ -397,7 +450,21 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
         for seg, track, label in ann.itertracks(yield_label=True):
             by_speaker.setdefault(label or "unknown", []).append(Interval(seg.start, seg.end, label or ""))
         for spk in sorted(by_speaker):
-            target_tg.add_tier(IntervalTier(start_time=0, end_time=duration, name=f"{prefix}_{spk}", objects=by_speaker[spk]))
+            intervals = by_speaker[spk]
+            # Split overlapping intervals into layers
+            layers = []
+            for iv in intervals:
+                placed = False
+                for layer in layers:
+                    if not layer or layer[-1].end_time <= iv.start_time:
+                        layer.append(iv)
+                        placed = True
+                        break
+                if not placed:
+                    layers.append([iv])
+            for i, layer in enumerate(layers):
+                name = f"{prefix}_{spk}" if i == 0 else f"{prefix}_{spk}_{i + 1}"
+                target_tg.add_tier(IntervalTier(start_time=0, end_time=duration, name=name, objects=layer))
 
     _ann_to_tiers(ref_ann, "ref", tg)
 
@@ -439,6 +506,16 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
             label = f"MIX {dur:.2f}s fa={fa:.2f} miss={miss:.2f} conf={conf:.2f}"
         err_ivs.append(Interval(start, end, label))
     tg.add_tier(IntervalTier(start_time=0, end_time=duration, name="error", objects=err_ivs))
+
+    # Overlap tiers: mark overlap regions in ref and hyp
+    ref_ovl = ref_ann.get_overlap()
+    hyp_ovl = hyp_ann.get_overlap()
+    ref_ovl_ivs = [Interval(seg.start, seg.end, "overlap") for seg in ref_ovl]
+    hyp_ovl_ivs = [Interval(seg.start, seg.end, "overlap") for seg in hyp_ovl]
+    if ref_ovl_ivs:
+        tg.add_tier(IntervalTier(start_time=0, end_time=duration, name="ref_overlap", objects=ref_ovl_ivs))
+    if hyp_ovl_ivs:
+        tg.add_tier(IntervalTier(start_time=0, end_time=duration, name="hyp_overlap", objects=hyp_ovl_ivs))
 
     collar_str = f"{collar:.2f}".replace(".", "_")
     out_path = Path(hypothesis_file).with_suffix(f".der_collar{collar_str}.TextGrid")
@@ -601,8 +678,15 @@ def evaluate_alignment(
         elif metric_lower == "scer":
             scer_metric = SpeakerCountingErrorRate()
             results["scer"] = scer_metric(ref_ann, hyp_ann)
+        elif metric_lower == "ovl":
+            ovl_der = _compute_overlap_der(ref_ann, hyp_ann, collar)
+            results["overlap_der"] = ovl_der["overlap_der"]
+            results["non_overlap_der"] = ovl_der["non_overlap_der"]
         else:
-            raise ValueError(f"Unknown metric: {metric}. Supported: der, jer, wer, sca, scer")
+            raise ValueError(f"Unknown metric: {metric}. Supported: der, jer, wer, sca, scer, ovl")
+
+    # Compute overlap stats (always available, displayed on demand)
+    results["_overlap_stats"] = _compute_overlap_stats(ref_ann, hyp_ann)
 
     # Add speaker diff info
     results["_ref_speakers"] = ref_speakers
@@ -637,9 +721,10 @@ Examples:
         "-m",
         nargs="+",
         default=["der", "jer", "wer", "sca", "scer"],
-        choices=["der", "jer", "wer", "sca", "scer"],
-        help="Metrics to compute",
+        choices=["der", "jer", "wer", "sca", "scer", "ovl"],
+        help="Metrics to compute (ovl = overlap-region DER breakdown)",
     )
+    parser.add_argument("--overlap-stats", action="store_true", help="Show overlap detection statistics")
     parser.add_argument("--collar", "-c", type=float, default=0.2, help="Collar size in seconds (default: 200ms)")
     parser.add_argument("--skip-overlap", action="store_true", help="Skip overlapping speech for DER")
     parser.add_argument(
@@ -690,16 +775,20 @@ Examples:
         verbose=args.verbose,
     )
 
-    # Extract speaker info first (before any output)
+    # Extract internal metadata (before any output)
     ref_speakers = results.pop("_ref_speakers", set())
     hyp_speakers = results.pop("_hyp_speakers", set())
+    overlap_stats = results.pop("_overlap_stats", None)
 
     if args.format == "json":
-        print(json.dumps(results, indent=2))
+        output = dict(results)
+        if overlap_stats and (args.overlap_stats or args.verbose):
+            output["overlap_stats"] = overlap_stats
+        print(json.dumps(output, indent=2))
     else:
         # Extract detailed DER if present
         for metric, value in results.items():
-            if not isinstance(value, float):
+            if not isinstance(value, float) and value is not None:
                 assert metric == "der", f"Detailed output only supported for DER, got: {metric}"
 
                 model_display = args.model_name if args.model_name else "-"
@@ -743,14 +832,28 @@ Examples:
         # Display in markdown-friendly format
         metric_names = ["Model"]
         metric_values = [args.model_name if args.model_name else "-"]
+        down_metrics = {"der", "jer", "wer", "scer", "overlap_der", "non_overlap_der"}
         for metric, value in results.items():
-            arrow = "↓" if metric.lower() in ["der", "jer", "wer", "scer"] else "↑"
+            if value is None:
+                continue
+            arrow = "↓" if metric.lower() in down_metrics else "↑"
             metric_names.append(f"{metric.upper()} {arrow}")
             metric_values.append(f"{value:.4f} ({value * 100:5.2f}%)")
 
         print("| " + " | ".join(metric_names) + " |")
         print("|" + "|".join(["--------"] * len(metric_names)) + "|")
         print("| " + " | ".join(metric_values) + " |")
+
+        # Show overlap analysis
+        if overlap_stats and (args.overlap_stats or args.verbose):
+            s = overlap_stats
+            print("\nOverlap Analysis:")
+            print(f"  Reference:  {s['ref_overlap_duration']:.2f}s ({s['ref_overlap_pct']:.1f}% of {s['ref_total_duration']:.1f}s)")
+            hyp_total = s["hyp_overlap_duration"] / (s["hyp_overlap_pct"] / 100) if s["hyp_overlap_pct"] > 0 else 0
+            print(f"  Hypothesis: {s['hyp_overlap_duration']:.2f}s ({s['hyp_overlap_pct']:.1f}%)")
+            print(f"  Detection Precision: {s['overlap_precision']:.4f} ({s['overlap_precision'] * 100:.1f}%)")
+            print(f"  Detection Recall:    {s['overlap_recall']:.4f} ({s['overlap_recall'] * 100:.1f}%)")
+            print(f"  Detection F1:        {s['overlap_f1']:.4f} ({s['overlap_f1'] * 100:.1f}%)")
 
         # Show speaker diff if SCA != 1 or SCER != 0
         sca_val = results.get("sca", 1.0)
