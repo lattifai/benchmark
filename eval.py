@@ -257,13 +257,14 @@ def _normalize_speaker_name(name: str) -> str:
     Returns lowercase canonical form.
     """
     import re
+
     n = name.strip()
     # Remove parenthesized numbering: "GPT-4o (1)" -> "GPT-4o"
-    n = re.sub(r'\s*\(\d+\)\s*$', '', n)
+    n = re.sub(r"\s*\(\d+\)\s*$", "", n)
     # Remove trailing digits only if preceded by a letter (not underscore/digit)
     # "ChatGPT0" -> "ChatGPT", but "SPEAKER_01" stays "SPEAKER_01"
     # "Astra User2" -> "Astra User", but "SPEAKER_02" stays
-    n = re.sub(r'(?<=[a-zA-Z])\d+$', '', n)
+    n = re.sub(r"(?<=[a-zA-Z])\d+$", "", n)
     n = n.strip()
     return n.lower()
 
@@ -284,16 +285,22 @@ def merge_speaker_aliases(ref_ann: Annotation, hyp_ann: Annotation) -> tuple:
 
     Returns (merged_ref, merged_hyp, ref_merge_map, hyp_merge_map).
     """
+
     def _build_merge_map(labels):
         norm_to_canonical = {}
         merge_map = {}
-        for label in sorted(labels):
+        # Replace None labels (single unnamed speaker) with "SPEAKER"
+        clean_labels = [x if x is not None else "SPEAKER" for x in labels]
+        for label in sorted(set(clean_labels)):
             norm = _normalize_speaker_name(label)
             if norm in norm_to_canonical:
                 merge_map[label] = norm_to_canonical[norm]
             else:
                 norm_to_canonical[norm] = label
                 merge_map[label] = label
+        # Map None to the same target as its replacement
+        if None in labels:
+            merge_map[None] = merge_map.get("SPEAKER", "SPEAKER")
         return merge_map
 
     ref_map = _build_merge_map(ref_ann.labels())
@@ -379,8 +386,12 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         collared_ref, collared_hyp, extruded_uem = der_metric.uemify(
-            ref_ann, hyp_ann, uem=None, collar=collar,
-            skip_overlap=der_metric.skip_overlap, returns_uem=True,
+            ref_ann,
+            hyp_ann,
+            uem=None,
+            collar=collar,
+            skip_overlap=der_metric.skip_overlap,
+            returns_uem=True,
         )
 
     # Step 2: Rename labels exactly like pyannote does internally
@@ -396,8 +407,12 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         R, H, common_timeline = der_metric.uemify(
-            ref_renamed, mapped_renamed, uem=extruded_uem,
-            collar=0.0, skip_overlap=False, returns_timeline=True,
+            ref_renamed,
+            mapped_renamed,
+            uem=extruded_uem,
+            collar=0.0,
+            skip_overlap=False,
+            returns_timeline=True,
         )
 
     # Build reverse label map: renamed ("A","B") → original ref labels
@@ -439,8 +454,8 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
 
         if fa > 1e-6 or miss > 1e-6 or conf > 1e-6:
             # Map renamed labels back to originals for display
-            r_orig = tuple(sorted(ref_label_map.get(l, str(l)) for l in r_labels))
-            h_orig = tuple(sorted(ref_label_map.get(l, str(l)) for l in h_labels))
+            r_orig = tuple(sorted(ref_label_map.get(s, str(s)) for s in r_labels))
+            h_orig = tuple(sorted(ref_label_map.get(s, str(s)) for s in h_labels))
             error_segments.append((segment.start, segment.end, r_orig, h_orig, fa, miss, conf))
             fa_dur += fa
             miss_dur += miss
@@ -449,8 +464,7 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
     # Merge adjacent error segments with same labels
     merged = []
     for start, end, rl, hl, fa, miss, conf in error_segments:
-        if (merged and merged[-1][2] == rl and merged[-1][3] == hl
-                and abs(merged[-1][1] - start) < 0.01):
+        if merged and merged[-1][2] == rl and merged[-1][3] == hl and abs(merged[-1][1] - start) < 0.01:
             m = merged[-1]
             merged[-1] = (m[0], end, rl, hl, m[4] + fa, m[5] + miss, m[6] + conf)
         else:
@@ -504,7 +518,10 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
         )
 
     total_err = fa_dur + miss_dur + conf_dur
-    print(f"\nDER Error Summary: FA={fa_dur:.2f}s  MISS={miss_dur:.2f}s  CONF={conf_dur:.2f}s  total={total_err:.2f}s", file=sys.stderr)
+    print(
+        f"\nDER Error Summary: FA={fa_dur:.2f}s  MISS={miss_dur:.2f}s  CONF={conf_dur:.2f}s  total={total_err:.2f}s",
+        file=sys.stderr,
+    )
     print(f"Error count: {len(merged)} segments\n", file=sys.stderr)
 
     # === Write debug TextGrid ===
@@ -676,6 +693,7 @@ def evaluate_alignment(
     hyp_merges = {k: v for k, v in hyp_merge_map.items() if k != v}
     if ref_merges or hyp_merges:
         import sys
+
         if ref_merges:
             print(f"Ref speaker merges: {ref_merges}", file=sys.stderr)
         if hyp_merges:
@@ -756,7 +774,9 @@ def evaluate_alignment(
             der_metric = DiarizationErrorRate(collar=collar, skip_overlap=skip_overlap)
             results["der"] = der_metric(ref_ann, hyp_ann, detailed=True, uem=None)
             if verbose:
-                _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypothesis_file, collar, skip_events)
+                _print_der_errors(
+                    der_metric, ref_ann, hyp_ann, reference, hypothesis, hypothesis_file, collar, skip_events
+                )
         elif metric_lower == "jer":
             jer_metric = JaccardErrorRate(collar=collar)
             results["jer"] = jer_metric(ref_ann, hyp_ann)
@@ -785,6 +805,18 @@ def evaluate_alignment(
     return results
 
 
+def _print_aligned_table(headers: List[str], rows: List[List[str]]):
+    """Print a markdown table with column-width-aligned output."""
+    widths = [len(h) for h in headers]
+    for row in rows:
+        for i, cell in enumerate(row):
+            widths[i] = max(widths[i], len(cell))
+    print("| " + " | ".join(h.ljust(widths[i]) for i, h in enumerate(headers)) + " |")
+    print("|" + "|".join("-" * (w + 2) for w in widths) + "|")
+    for row in rows:
+        print("| " + " | ".join(cell.ljust(widths[i]) for i, cell in enumerate(row)) + " |")
+
+
 def main():
     """CLI for evaluation metrics."""
     import argparse
@@ -797,6 +829,7 @@ def main():
         epilog="""
 Examples:
   python eval.py -r ref.ass -hyp hyp.ass
+  python eval.py -r ref.ass -hyp hyp1.ass hyp2.ass hyp3.ass
   python eval.py -r ref.ass -hyp hyp.ass -m wer
   python eval.py -r ref.ass -hyp hyp.ass -m der jer sca -c 0.25
   python eval.py -r ref.ass -hyp hyp.ass -f json
@@ -804,8 +837,15 @@ Examples:
     )
 
     parser.add_argument("--reference", "-r", required=True, help="Reference caption file")
-    parser.add_argument("--hypothesis", "-hyp", required=True, help="Hypothesis caption file")
-    parser.add_argument("--model-name", "--model_name", "-n", default="", help="Model name to display in results")
+    parser.add_argument("--hypothesis", "-hyp", required=True, nargs="+", help="Hypothesis caption file(s)")
+    parser.add_argument(
+        "--model-name",
+        "--model_name",
+        "-n",
+        nargs="*",
+        default=[],
+        help="Model name(s) for display (auto-derived from filename if omitted)",
+    )
     parser.add_argument(
         "--metrics",
         "-m",
@@ -835,127 +875,146 @@ Examples:
         print(f"Error: Reference file not found: {args.reference}", file=sys.stderr)
         sys.exit(1)
 
-    if not Path(args.hypothesis).exists():
-        print(f"Error: Hypothesis file not found: {args.hypothesis}", file=sys.stderr)
-        sys.exit(1)
+    for hyp_file in args.hypothesis:
+        if not Path(hyp_file).exists():
+            print(f"Error: Hypothesis file not found: {hyp_file}", file=sys.stderr)
+            sys.exit(1)
+
+    # Build model names: use provided names, fill remaining with filename stems
+    model_names = list(args.model_name)
+    for i in range(len(model_names), len(args.hypothesis)):
+        model_names.append(Path(args.hypothesis[i]).stem)
 
     # Auto-detect language from dataset id in path
     language = args.language
     if language == "auto":
-        detected = detect_language_from_path(args.reference) or detect_language_from_path(args.hypothesis)
+        detected = detect_language_from_path(args.reference) or detect_language_from_path(args.hypothesis[0])
         language = detected if detected else "en"
         if args.verbose:
             print(f"Auto-detected language: {language}", file=sys.stderr)
 
-    if args.verbose:
-        print(f"Reference: {args.reference}", file=sys.stderr)
-        print(f"Hypothesis: {args.hypothesis}", file=sys.stderr)
-        print(f"Metrics: {', '.join(args.metrics)}", file=sys.stderr)
-        print(f"Language: {language}", file=sys.stderr)
-        print(f"Collar: {args.collar}s\n", file=sys.stderr)
+    # Evaluate all hypotheses
+    all_entries = []
+    for hyp_file, model_name in zip(args.hypothesis, model_names):
+        if args.verbose:
+            print(f"\n--- {model_name} ---", file=sys.stderr)
+            print(f"Reference: {args.reference}", file=sys.stderr)
+            print(f"Hypothesis: {hyp_file}", file=sys.stderr)
+            print(
+                f"Metrics: {', '.join(args.metrics)}  Language: {language}  Collar: {args.collar}s\n", file=sys.stderr
+            )
 
-    results = evaluate_alignment(
-        reference_file=args.reference,
-        hypothesis_file=args.hypothesis,
-        metrics=args.metrics,
-        collar=args.collar,
-        skip_overlap=args.skip_overlap,
-        skip_events=args.skip_events,
-        language=language,
-        verbose=args.verbose,
-    )
+        results = evaluate_alignment(
+            reference_file=args.reference,
+            hypothesis_file=hyp_file,
+            metrics=args.metrics,
+            collar=args.collar,
+            skip_overlap=args.skip_overlap,
+            skip_events=args.skip_events,
+            language=language,
+            verbose=args.verbose,
+        )
 
-    # Extract internal metadata (before any output)
-    ref_speakers = results.pop("_ref_speakers", set())
-    hyp_speakers = results.pop("_hyp_speakers", set())
-    overlap_stats = results.pop("_overlap_stats", None)
+        all_entries.append(
+            {
+                "model_name": model_name,
+                "results": results,
+                "ref_speakers": results.pop("_ref_speakers", set()),
+                "hyp_speakers": results.pop("_hyp_speakers", set()),
+                "overlap_stats": results.pop("_overlap_stats", None),
+            }
+        )
 
     if args.format == "json":
-        output = dict(results)
-        if overlap_stats and (args.overlap_stats or args.verbose):
-            output["overlap_stats"] = overlap_stats
-        print(json.dumps(output, indent=2))
-    else:
-        # Extract detailed DER if present
-        for metric, value in results.items():
-            if not isinstance(value, float) and value is not None:
-                assert metric == "der", f"Detailed output only supported for DER, got: {metric}"
+        if len(all_entries) == 1:
+            output = dict(all_entries[0]["results"])
+            s = all_entries[0]["overlap_stats"]
+            if s and (args.overlap_stats or args.verbose):
+                output["overlap_stats"] = s
+            print(json.dumps(output, indent=2))
+        else:
+            output = []
+            for e in all_entries:
+                item = {"model": e["model_name"], **dict(e["results"])}
+                if e["overlap_stats"] and (args.overlap_stats or args.verbose):
+                    item["overlap_stats"] = e["overlap_stats"]
+                output.append(item)
+            print(json.dumps(output, indent=2))
+        return
 
-                model_display = args.model_name if args.model_name else "-"
-                print("\nDetailed DER Components:")
+    # --- Text format: consolidated tables ---
 
-                # Build header and values with custom order
-                sorted_items = sorted(value.items(), key=lambda x: x[0])
+    # 1) Detailed DER components table
+    if "der" in args.metrics:
+        der_col_order = ["diarization error rate", "false alarm", "missed detection", "confusion", "correct", "total"]
+        der_headers = [
+            "Model",
+            "DER",
+            "false alarm (s)",
+            "missed detection (s)",
+            "confusion (s)",
+            "correct (s)",
+            "total (s)",
+        ]
+        der_rows = []
+        for e in all_entries:
+            der_val = e["results"].get("der")
+            if isinstance(der_val, dict):
+                row = [e["model_name"]]
+                for key in der_col_order:
+                    row.append(f"{der_val[key]:.4f}" if key in der_val else "-")
+                der_rows.append(row)
+                e["results"]["der"] = der_val.get("diarization error rate", 0.0)
+        if der_rows:
+            print("\nDetailed DER Components:")
+            print("Metric Details:")
+            _print_aligned_table(der_headers, der_rows)
+            print()
 
-                # Define the desired column order
-                column_order = [
-                    "diarization error rate",
-                    "false alarm",
-                    "missed detection",
-                    "confusion",
-                    "correct",
-                    "total",
-                ]
+    # 2) Summary metrics table
+    down_metrics = {"der", "jer", "wer", "scer", "overlap_der", "non_overlap_der"}
+    metric_keys = []
+    for m in args.metrics:
+        if m == "ovl":
+            for extra in ["overlap_der", "non_overlap_der"]:
+                if any(e["results"].get(extra) is not None for e in all_entries):
+                    metric_keys.append(extra)
+        elif any(e["results"].get(m) is not None for e in all_entries):
+            metric_keys.append(m)
 
-                # Reorder items according to column_order
-                ordered_items = []
-                value_dict = dict(sorted_items)
-                for key in column_order:
-                    if key in value_dict:
-                        ordered_items.append((key, value_dict[key]))
+    headers = ["Model"] + [f"{m.upper()} {'↓' if m in down_metrics else '↑'}" for m in metric_keys]
+    rows = []
+    for e in all_entries:
+        row = [e["model_name"]]
+        for m in metric_keys:
+            val = e["results"].get(m)
+            row.append(f"{val:.4f} ({val * 100:5.2f}%)" if val is not None else "-")
+        rows.append(row)
+    _print_aligned_table(headers, rows)
 
-                header = ["Model"] + [
-                    "DER" if key == "diarization error rate" else f"{key} (s)" for key, _ in ordered_items
-                ]
-                values = [model_display] + [f"{val:.4f}" for _, val in ordered_items]
-
-                # Print table
-                print("Metric Details:")
-                print("| " + " | ".join(header) + " |")
-                print("|" + "|".join(["--------"] * len(header)) + "|")
-                print("| " + " | ".join(values) + " |")
-                print()
-
-                value = value["diarization error rate"]
-                results[metric] = value
-
-        # Display in markdown-friendly format
-        metric_names = ["Model"]
-        metric_values = [args.model_name if args.model_name else "-"]
-        down_metrics = {"der", "jer", "wer", "scer", "overlap_der", "non_overlap_der"}
-        for metric, value in results.items():
-            if value is None:
-                continue
-            arrow = "↓" if metric.lower() in down_metrics else "↑"
-            metric_names.append(f"{metric.upper()} {arrow}")
-            metric_values.append(f"{value:.4f} ({value * 100:5.2f}%)")
-
-        print("| " + " | ".join(metric_names) + " |")
-        print("|" + "|".join(["--------"] * len(metric_names)) + "|")
-        print("| " + " | ".join(metric_values) + " |")
-
-        # Show overlap analysis
-        if overlap_stats and (args.overlap_stats or args.verbose):
-            s = overlap_stats
-            print("\nOverlap Analysis:")
-            print(f"  Reference:  {s['ref_overlap_duration']:.2f}s ({s['ref_overlap_pct']:.1f}% of {s['ref_total_duration']:.1f}s)")
-            hyp_total = s["hyp_overlap_duration"] / (s["hyp_overlap_pct"] / 100) if s["hyp_overlap_pct"] > 0 else 0
+    # 3) Overlap analysis & speaker diff
+    for e in all_entries:
+        s = e["overlap_stats"]
+        if s and (args.overlap_stats or args.verbose):
+            print(f"\nOverlap Analysis ({e['model_name']}):")
+            print(
+                f"  Reference:  {s['ref_overlap_duration']:.2f}s"
+                f" ({s['ref_overlap_pct']:.1f}% of {s['ref_total_duration']:.1f}s)"
+            )
             print(f"  Hypothesis: {s['hyp_overlap_duration']:.2f}s ({s['hyp_overlap_pct']:.1f}%)")
-            print(f"  Detection Precision: {s['overlap_precision']:.4f} ({s['overlap_precision'] * 100:.1f}%)")
-            print(f"  Detection Recall:    {s['overlap_recall']:.4f} ({s['overlap_recall'] * 100:.1f}%)")
-            print(f"  Detection F1:        {s['overlap_f1']:.4f} ({s['overlap_f1'] * 100:.1f}%)")
+            print(
+                f"  Detection P/R/F1: {s['overlap_precision']:.4f} / {s['overlap_recall']:.4f} / {s['overlap_f1']:.4f}"
+            )
 
-        # Show speaker diff if SCA != 1 or SCER != 0
-        sca_val = results.get("sca", 1.0)
-        scer_val = results.get("scer", 0.0)
+        sca_val = e["results"].get("sca", 1.0)
+        scer_val = e["results"].get("scer", 0.0)
         if sca_val != 1.0 or scer_val != 0.0:
-            # Filter out None values
-            ref_speakers = {s for s in ref_speakers if s is not None}
-            hyp_speakers = {s for s in hyp_speakers if s is not None}
-            missing = ref_speakers - hyp_speakers
-            extra = hyp_speakers - ref_speakers
+            ref_spk = {sp for sp in e["ref_speakers"] if sp is not None}
+            hyp_spk = {sp for sp in e["hyp_speakers"] if sp is not None}
+            missing = ref_spk - hyp_spk
+            extra = hyp_spk - ref_spk
             if missing or extra:
-                print("\nSpeaker Diff:")
+                print(f"\nSpeaker Diff ({e['model_name']}):")
                 if missing:
                     print(f"  Missing: {', '.join(sorted(missing))}")
                 if extra:
