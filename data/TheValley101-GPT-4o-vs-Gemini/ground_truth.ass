@@ -7,8 +7,7 @@ ScriptType: v4.00+
 
 [Aegisub Project Garbage]
 Audio File: audio.mp3
-Scroll Position: 39
-Active Line: 65
+Active Line: 4
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -20,7 +19,7 @@ Dialogue: 0,0:00:01.80,0:00:06.52,Default,host,0,0,0,,ChatGPT以及硅谷AI大�
 Dialogue: 0,0:00:06.91,0:00:26.61,Default,host,0,0,0,,5月中旬，OpenAI和谷歌前后发布重磅AI多模态更新，从基于文字交互的ChaGPT全面升级实现了声音、文字和视觉三者全面结合的人工智能新交互功能，而这也标志着硅谷科技巨头们的生成式AI之战正式进入到第二轮。
 Dialogue: 0,0:00:27.05,0:00:30.40,Default,host,0,0,0,,那么新一轮的竞争只会更加的激烈更加的全面。
 Dialogue: 0,0:00:33.25,0:00:34.08,Default,ChatGPT0,0,0,0,,Hello, I'm here.
-Dialogue: 0,0:00:34.08,0:00:36.98,Default,host,0,0,0,,Hello，大家好，欢迎来到硅谷101，我是陈倩。
+Dialogue: 0,0:00:34.08,0:00:36.98,Default,host,0,0,0,,Hello，大家好，欢迎来到硅谷101，我是陈茜。
 Dialogue: 0,0:00:37.24,0:00:44.04,Default,host,0,0,0,,我本来在希腊休假，但是因为OpenAI和谷歌的重磅更新啊，又被抓来加班更新了这期的视频。
 Dialogue: 0,0:00:44.23,0:00:54.24,Default,host,0,0,0,,来聊聊这次的多模式AI之战对于科技巨头们的商业版图意味着什么变化以及生成式AI智能技术的下一步会发生什么。
 Dialogue: 0,0:00:54.45,0:01:00.04,Default,host,0,0,0,,那我们就首先来快速复盘一下OpenAI和谷歌发布的多模态重磅更新。
