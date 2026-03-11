@@ -368,6 +368,14 @@ def caption_to_text(
     return " ".join(texts)
 
 
+def _fmt_ts(seconds: float) -> str:
+    """Format seconds to caption timestamp HH:MM:SS.mmm"""
+    h = int(seconds // 3600)
+    m = int((seconds % 3600) // 60)
+    s = seconds % 60
+    return f"{h:02d}:{m:02d}:{s:06.3f}"
+
+
 def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypothesis_file, collar, skip_events):
     """Print detailed DER error segments and write debug TextGrid.
 
@@ -439,6 +447,12 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
         display_mapping[hyp_orig] = ref_orig
 
     # Step 5: Iterate over common timeline — exact same loop as pyannote
+    # Build reverse map: H label space (ref_renamed strings) → original hyp labels
+    # H labels are in ref_renamed space because of optimal_mapping (hyp_int → ref_str)
+    h_to_hyp_orig = {}
+    for hyp_int, ref_str in internal_mapping.items():
+        h_to_hyp_orig[ref_str] = hyp_label_map.get(hyp_int, str(hyp_int))
+
     error_segments = []
     fa_dur = miss_dur = conf_dur = 0.0
 
@@ -455,7 +469,7 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
         if fa > 1e-6 or miss > 1e-6 or conf > 1e-6:
             # Map renamed labels back to originals for display
             r_orig = tuple(sorted(ref_label_map.get(s, str(s)) for s in r_labels))
-            h_orig = tuple(sorted(ref_label_map.get(s, str(s)) for s in h_labels))
+            h_orig = tuple(sorted(h_to_hyp_orig.get(s, hyp_label_map.get(s, str(s))) for s in h_labels))
             error_segments.append((segment.start, segment.end, r_orig, h_orig, fa, miss, conf))
             fa_dur += fa
             miss_dur += miss
@@ -492,10 +506,10 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
     print(f"\n=== DER Error Segments (collar={collar}s) ===", file=sys.stderr)
     print(f"Speaker mapping: {display_mapping}", file=sys.stderr)
     print(
-        f"\n{'Time':>20}  {'Type':<5}  {'Ref':<20}  {'Hyp':<20}  {'Dur':>6}  Text",
+        f"\n{'Time':>20}  {'Caption Time':>27}  {'Type':<5}  {'Ref':<20}  {'Hyp':<20}  {'Dur':>6}  Text",
         file=sys.stderr,
     )
-    print("-" * 100, file=sys.stderr)
+    print("-" * 130, file=sys.stderr)
 
     for start, end, rl, hl, fa, miss, conf in merged:
         dur = end - start
@@ -513,7 +527,7 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
 
         text = _find_hyp_text(start, end)
         print(
-            f"[{start:7.2f}-{end:7.2f}]  {etype:<5}  {ref_str:<20}  {hyp_str:<20}  {dur:5.2f}s  {text[:60]}",
+            f"[{start:7.2f}-{end:7.2f}]  {_fmt_ts(start)}-{_fmt_ts(end)}  {etype:<5}  {ref_str:<20}  {hyp_str:<20}  {dur:5.2f}s  {text[:60]}",
             file=sys.stderr,
         )
 
