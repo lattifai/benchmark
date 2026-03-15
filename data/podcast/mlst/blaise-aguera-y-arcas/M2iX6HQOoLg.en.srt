@@ -1,0 +1,6548 @@
+1
+00:00:00,160 --> 00:00:05,920
+After a few million interactions, magic
+
+2
+00:00:03,280 --> 00:00:08,800
+happens, which is that you go from noise
+
+3
+00:00:05,920 --> 00:00:11,120
+to programs. You start to see uh complex
+
+4
+00:00:08,800 --> 00:00:12,719
+programs appear on these tables. This is
+
+5
+00:00:11,120 --> 00:00:14,240
+the most exciting plot that I've made in
+
+6
+00:00:12,719 --> 00:00:15,839
+the last few years, and it's the one
+
+7
+00:00:14,240 --> 00:00:17,680
+that's on the cover of the book. You can
+
+8
+00:00:15,839 --> 00:00:19,760
+see that in the beginning, it's not very
+
+9
+00:00:17,680 --> 00:00:21,840
+computational. And then a sudden
+
+10
+00:00:19,760 --> 00:00:25,039
+transition takes place here. It looks
+
+11
+00:00:21,840 --> 00:00:26,960
+like a phase transition.
+
+12
+00:00:25,039 --> 00:00:28,560
+This is the book that I hear is making
+
+13
+00:00:26,960 --> 00:00:30,880
+the rounds at Sakana, which I'm very
+
+14
+00:00:28,560 --> 00:00:33,200
+happy to hear. The big one on the right,
+
+15
+00:00:30,880 --> 00:00:35,680
+what is intelligence is sort of the Lord
+
+16
+00:00:33,200 --> 00:00:37,680
+of the Rings. And what is life on the
+
+17
+00:00:35,680 --> 00:00:40,320
+left is kind of the Hobbit. So it's kind
+
+18
+00:00:37,680 --> 00:00:42,160
+of the single and it's also chapter one
+
+19
+00:00:40,320 --> 00:00:43,840
+of of what is intelligence. So it goes
+
+20
+00:00:42,160 --> 00:00:45,680
+kind of inside the other one. Mostly
+
+21
+00:00:43,840 --> 00:00:48,320
+what I'll be talking about today is is
+
+22
+00:00:45,680 --> 00:00:50,000
+what's in these two books, but with um
+
+23
+00:00:48,320 --> 00:00:51,520
+with quite a bit more detail, more
+
+24
+00:00:50,000 --> 00:00:53,360
+mathematical detail since I think this
+
+25
+00:00:51,520 --> 00:00:55,840
+is a really good audience for that. And
+
+26
+00:00:53,360 --> 00:00:58,079
+I'll also be connecting it uh a bit with
+
+27
+00:00:55,840 --> 00:01:01,039
+some of the the bigger themes of the A
+
+28
+00:00:58,079 --> 00:01:02,960
+life conference and community and dare I
+
+29
+00:01:01,039 --> 00:01:05,199
+dare I say even movement. You know in
+
+30
+00:01:02,960 --> 00:01:07,680
+particular I actually wanted to begin
+
+31
+00:01:05,199 --> 00:01:09,600
+with this wonderful sort of open
+
+32
+00:01:07,680 --> 00:01:12,640
+problems in artificial life uh summary
+
+33
+00:01:09,600 --> 00:01:15,119
+paper which you know has a number of of
+
+34
+00:01:12,640 --> 00:01:16,560
+very illustrious co-authors uh you know
+
+35
+00:01:15,119 --> 00:01:18,560
+at least one of whom we heard from
+
+36
+00:01:16,560 --> 00:01:20,479
+yesterday and and more than one of whom
+
+37
+00:01:18,560 --> 00:01:22,799
+are are here at the conference. This is
+
+38
+00:01:20,479 --> 00:01:24,320
+uh you know open problems uh 14 open
+
+39
+00:01:22,799 --> 00:01:26,320
+problems in artificial life in the year
+
+40
+00:01:24,320 --> 00:01:28,560
+2000. How does life arise from the
+
+41
+00:01:26,320 --> 00:01:31,520
+non-living? Uh how do the transition uh
+
+42
+00:01:28,560 --> 00:01:34,000
+to life uh in an artificial chemistry or
+
+43
+00:01:31,520 --> 00:01:36,479
+in silicon environment can occur and why
+
+44
+00:01:34,000 --> 00:01:38,560
+it occurs? I'm sure many of you know
+
+45
+00:01:36,479 --> 00:01:41,200
+this was the the problem that bedeled
+
+46
+00:01:38,560 --> 00:01:44,000
+Darwin. You know he made one of the most
+
+47
+00:01:41,200 --> 00:01:46,399
+uh rich and and uh explanatorily
+
+48
+00:01:44,000 --> 00:01:48,799
+powerful theories in you know ever in
+
+49
+00:01:46,399 --> 00:01:51,520
+science in in discovering how evolution
+
+50
+00:01:48,799 --> 00:01:53,600
+works. But he was unable to explain how
+
+51
+00:01:51,520 --> 00:01:54,960
+evolution got started. Uh he at some
+
+52
+00:01:53,600 --> 00:01:56,320
+point in one of his letters said, you
+
+53
+00:01:54,960 --> 00:01:58,799
+know, you might as well talk about the
+
+54
+00:01:56,320 --> 00:02:00,240
+origin of matter. Um I think that the
+
+55
+00:01:58,799 --> 00:02:02,000
+origin of matter and the origin of life
+
+56
+00:02:00,240 --> 00:02:03,520
+might actually be one and the same thing
+
+57
+00:02:02,000 --> 00:02:05,600
+and evolution might actually be the
+
+58
+00:02:03,520 --> 00:02:08,319
+answer to that question, but it's an
+
+59
+00:02:05,600 --> 00:02:10,160
+evolution that includes uh a term that
+
+60
+00:02:08,319 --> 00:02:12,959
+Darwin did not account for in his
+
+61
+00:02:10,160 --> 00:02:14,879
+original formulation. In section B of
+
+62
+00:02:12,959 --> 00:02:17,040
+these questions, uh determine what is
+
+63
+00:02:14,879 --> 00:02:20,000
+inevitable in the open-ended evolution
+
+64
+00:02:17,040 --> 00:02:21,520
+of life. uh I'm I'm hoping to speak a
+
+65
+00:02:20,000 --> 00:02:23,120
+little bit about that too. Create a
+
+66
+00:02:21,520 --> 00:02:25,920
+formal framework for synthesizing
+
+67
+00:02:23,120 --> 00:02:27,520
+dynamical hierarchies at all scales and
+
+68
+00:02:25,920 --> 00:02:29,280
+develop a theory of information
+
+69
+00:02:27,520 --> 00:02:30,800
+processing, information flow and
+
+70
+00:02:29,280 --> 00:02:33,360
+information generation for evolving
+
+71
+00:02:30,800 --> 00:02:36,720
+systems. Um I won't be going into the
+
+72
+00:02:33,360 --> 00:02:38,879
+information theory in any detail. Um but
+
+73
+00:02:36,720 --> 00:02:41,360
+uh but hopefully we'll we'll set up the
+
+74
+00:02:38,879 --> 00:02:44,400
+problem in in a perhaps somewhat new way
+
+75
+00:02:41,360 --> 00:02:47,120
+that that I I hope will help to do that.
+
+76
+00:02:44,400 --> 00:02:49,360
+Um and finally in section C, how is life
+
+77
+00:02:47,120 --> 00:02:51,599
+related to mind, machines and culture?
+
+78
+00:02:49,360 --> 00:02:53,120
+Um if I have time, I will get into this
+
+79
+00:02:51,599 --> 00:02:54,959
+as well and talk a bit about the
+
+80
+00:02:53,120 --> 00:02:57,200
+emergence of intelligence and mind in an
+
+81
+00:02:54,959 --> 00:02:59,280
+artificial living system and uh the
+
+82
+00:02:57,200 --> 00:03:02,159
+influence of machines on the next major
+
+83
+00:02:59,280 --> 00:03:04,159
+evolutionary transition of life. So uh
+
+84
+00:03:02,159 --> 00:03:07,200
+you know it was really cool to to read
+
+85
+00:03:04,159 --> 00:03:10,640
+this paper from 2020 and to see how much
+
+86
+00:03:07,200 --> 00:03:13,120
+of the perspective uh that that um uh
+
+87
+00:03:10,640 --> 00:03:15,440
+that you had already been exploring then
+
+88
+00:03:13,120 --> 00:03:17,599
+uh you know feels you know right and
+
+89
+00:03:15,440 --> 00:03:18,959
+consistent with uh you know with with a
+
+90
+00:03:17,599 --> 00:03:21,760
+sort of fresh look at this at these
+
+91
+00:03:18,959 --> 00:03:23,680
+problems in 2025. Let me just begin with
+
+92
+00:03:21,760 --> 00:03:25,519
+uh with this question of souls. It used
+
+93
+00:03:23,680 --> 00:03:28,000
+to be in the 19th century and and
+
+94
+00:03:25,519 --> 00:03:30,239
+earlier uh that we thought that uh life
+
+95
+00:03:28,000 --> 00:03:31,840
+had some vital force or spirit that
+
+96
+00:03:30,239 --> 00:03:34,000
+animated it and made it different from
+
+97
+00:03:31,840 --> 00:03:36,000
+inanimate matter. In the 19th century
+
+98
+00:03:34,000 --> 00:03:38,080
+when we began to figure out organic
+
+99
+00:03:36,000 --> 00:03:41,680
+chemistry and be able to synthesize ura
+
+100
+00:03:38,080 --> 00:03:42,799
+and so on u the the idea that that no we
+
+101
+00:03:41,680 --> 00:03:44,560
+should really adopt a strictly
+
+102
+00:03:42,799 --> 00:03:46,239
+materialist perspective because there's
+
+103
+00:03:44,560 --> 00:03:48,400
+nothing special or different about the
+
+104
+00:03:46,239 --> 00:03:50,799
+matter in us versus the matter anywhere
+
+105
+00:03:48,400 --> 00:03:54,080
+else in the universe uh took hold. And
+
+106
+00:03:50,799 --> 00:03:55,599
+that's progress for sure. But um but it
+
+107
+00:03:54,080 --> 00:03:57,760
+also you know when we when we embrace
+
+108
+00:03:55,599 --> 00:04:00,159
+atoms and materialism fully we're left
+
+109
+00:03:57,760 --> 00:04:01,599
+with some uh some questions about you
+
+110
+00:04:00,159 --> 00:04:03,599
+know what differentiates life from
+
+111
+00:04:01,599 --> 00:04:04,879
+non-life then you know like what can we
+
+112
+00:04:03,599 --> 00:04:07,360
+even say about life there are at least
+
+113
+00:04:04,879 --> 00:04:09,360
+some biologists who who say well maybe
+
+114
+00:04:07,360 --> 00:04:10,879
+it's not even meaningful to talk about
+
+115
+00:04:09,360 --> 00:04:12,720
+any difference between life and non-life
+
+116
+00:04:10,879 --> 00:04:14,400
+but I I don't think that that's true uh
+
+117
+00:04:12,720 --> 00:04:17,199
+and I think that the answer to the to
+
+118
+00:04:14,400 --> 00:04:19,120
+the conundrum is to invoke function
+
+119
+00:04:17,199 --> 00:04:21,280
+function is the thing that life has that
+
+120
+00:04:19,120 --> 00:04:22,960
+non-life doesn't have. In other words,
+
+121
+00:04:21,280 --> 00:04:25,120
+if we, you know, just to give you a
+
+122
+00:04:22,960 --> 00:04:27,040
+little parable, if I were to come back
+
+123
+00:04:25,120 --> 00:04:29,520
+from the future with this object and you
+
+124
+00:04:27,040 --> 00:04:31,120
+ask me what it is, uh, and I tell you it
+
+125
+00:04:29,520 --> 00:04:32,560
+is an artificial kidney with a
+
+126
+00:04:31,120 --> 00:04:33,759
+100red-year lifespan, you can implant it
+
+127
+00:04:32,560 --> 00:04:35,040
+in a body and it'll it'll, you know,
+
+128
+00:04:33,759 --> 00:04:36,880
+it'll work the way your kidneys do.
+
+129
+00:04:35,040 --> 00:04:39,759
+It'll it'll filter ura from the blood
+
+130
+00:04:36,880 --> 00:04:41,840
+and so on. Um, that's a really important
+
+131
+00:04:39,759 --> 00:04:43,840
+piece of information, but it's not a
+
+132
+00:04:41,840 --> 00:04:45,120
+material or a materialist piece of
+
+133
+00:04:43,840 --> 00:04:47,759
+information. It's not something that you
+
+134
+00:04:45,120 --> 00:04:49,199
+could read off from the atoms. uh and
+
+135
+00:04:47,759 --> 00:04:51,199
+you know those atoms could be I don't
+
+136
+00:04:49,199 --> 00:04:52,720
+know tungsten filaments or carbon nano
+
+137
+00:04:51,199 --> 00:04:54,240
+tubes are made out of some technology we
+
+138
+00:04:52,720 --> 00:04:56,080
+don't understand now or it could be
+
+139
+00:04:54,240 --> 00:04:58,800
+organic it could be made out of uh
+
+140
+00:04:56,080 --> 00:05:00,560
+cloned tissue um and and the point is
+
+141
+00:04:58,800 --> 00:05:02,880
+that it working as a kidney doesn't
+
+142
+00:05:00,560 --> 00:05:05,120
+depend on that matter there is a kind of
+
+143
+00:05:02,880 --> 00:05:07,039
+separation of concerns between the
+
+144
+00:05:05,120 --> 00:05:08,720
+matter and the function and so there's
+
+145
+00:05:07,039 --> 00:05:10,720
+some real sense in which the function is
+
+146
+00:05:08,720 --> 00:05:12,720
+like a spirit or like something like
+
+147
+00:05:10,720 --> 00:05:15,120
+something immaterial it's not material
+
+148
+00:05:12,720 --> 00:05:17,199
+and yet it also relies of course on the
+
+149
+00:05:15,120 --> 00:05:18,960
+physics of what's going on you can't
+
+150
+00:05:17,199 --> 00:05:21,680
+have the spirit without the matter as it
+
+151
+00:05:18,960 --> 00:05:24,639
+were. So function is really important
+
+152
+00:05:21,680 --> 00:05:27,280
+and uh and function is something that uh
+
+153
+00:05:24,639 --> 00:05:29,199
+uh you know a rock on a non-living
+
+154
+00:05:27,280 --> 00:05:31,120
+planet uh somewhere doesn't have. You
+
+155
+00:05:29,199 --> 00:05:32,800
+know if you if you break a rock on a
+
+156
+00:05:31,120 --> 00:05:34,880
+non-living planet you now have two
+
+157
+00:05:32,800 --> 00:05:37,440
+rocks. You don't have a broken rock. Uh
+
+158
+00:05:34,880 --> 00:05:38,800
+if you break a kidney you now no longer
+
+159
+00:05:37,440 --> 00:05:39,680
+have a working kidney. That's the
+
+160
+00:05:38,800 --> 00:05:41,520
+difference between something functional
+
+161
+00:05:39,680 --> 00:05:43,759
+and something non-functional. This idea
+
+162
+00:05:41,520 --> 00:05:45,600
+of function was formalized by Alan
+
+163
+00:05:43,759 --> 00:05:47,840
+Turing who never intended the touring
+
+164
+00:05:45,600 --> 00:05:49,840
+machine to actually be built uh when he
+
+165
+00:05:47,840 --> 00:05:52,080
+wrote it in 1936. But there is one that
+
+166
+00:05:49,840 --> 00:05:54,000
+was built by Mike Davyy in 2010. I don't
+
+167
+00:05:52,080 --> 00:05:56,639
+need to review Touring machines with all
+
+168
+00:05:54,000 --> 00:05:58,880
+of you of course um uh you you all know
+
+169
+00:05:56,639 --> 00:06:01,759
+how they how they work. But I do want to
+
+170
+00:05:58,880 --> 00:06:03,919
+review briefly uh Vonoman's update to
+
+171
+00:06:01,759 --> 00:06:05,600
+Turring's thinking about computation uh
+
+172
+00:06:03,919 --> 00:06:07,360
+which which he did a few years later.
+
+173
+00:06:05,600 --> 00:06:10,639
+This was published postumously after
+
+174
+00:06:07,360 --> 00:06:12,639
+Vonoman died. Um but the idea behind
+
+175
+00:06:10,639 --> 00:06:14,400
+behind vonoman's thinking is he was
+
+176
+00:06:12,639 --> 00:06:16,319
+trying to answer the same question that
+
+177
+00:06:14,400 --> 00:06:18,720
+Schroinger had quite had asked in his
+
+178
+00:06:16,319 --> 00:06:20,240
+what is life book. Uh and in particular
+
+179
+00:06:18,720 --> 00:06:22,400
+he was trying to ask the question if you
+
+180
+00:06:20,240 --> 00:06:25,120
+have a robot that is swimming around uh
+
+181
+00:06:22,400 --> 00:06:27,440
+on a uh you know in in a pond and the
+
+182
+00:06:25,120 --> 00:06:28,560
+pond has lots of loose Legos around.
+
+183
+00:06:27,440 --> 00:06:30,720
+There were no I don't know if there were
+
+184
+00:06:28,560 --> 00:06:32,880
+Legos in 1950 but let's pretend there
+
+185
+00:06:30,720 --> 00:06:34,960
+were Legos in 1950. And the job of the
+
+186
+00:06:32,880 --> 00:06:37,360
+robot is to assemble those Legos into a
+
+187
+00:06:34,960 --> 00:06:38,639
+new robot like itself. you know, there's
+
+188
+00:06:37,360 --> 00:06:40,000
+something a little bit mysterious about
+
+189
+00:06:38,639 --> 00:06:41,440
+that. It feels a little bit like pulling
+
+190
+00:06:40,000 --> 00:06:43,120
+yourself up by your own bootstraps or
+
+191
+00:06:41,440 --> 00:06:44,960
+like a paradox. And so he asked, what
+
+192
+00:06:43,120 --> 00:06:47,120
+does it take for something to be able to
+
+193
+00:06:44,960 --> 00:06:50,319
+make something like itself? Uh, which
+
+194
+00:06:47,120 --> 00:06:52,319
+seems uh hard, almost paradoxical. And
+
+195
+00:06:50,319 --> 00:06:55,039
+his conclusion was, well, you need to
+
+196
+00:06:52,319 --> 00:06:56,560
+have instructions for how to make a MI.
+
+197
+00:06:55,039 --> 00:06:58,479
+You need to have a tape with
+
+198
+00:06:56,560 --> 00:07:00,479
+instructions for how to make a MI, and
+
+199
+00:06:58,479 --> 00:07:02,240
+you need to have a universal constructor
+
+200
+00:07:00,479 --> 00:07:03,840
+that will follow the uh the instructions
+
+201
+00:07:02,240 --> 00:07:05,759
+on that on that tape in order to
+
+202
+00:07:03,840 --> 00:07:08,000
+assemble the necessary parts. And you
+
+203
+00:07:05,759 --> 00:07:09,919
+also need to have a tape copier uh so
+
+204
+00:07:08,000 --> 00:07:11,759
+that you can give your offspring uh a
+
+205
+00:07:09,919 --> 00:07:13,039
+copy of that tape. And by the way, the
+
+206
+00:07:11,759 --> 00:07:14,479
+tape has to also include the
+
+207
+00:07:13,039 --> 00:07:16,560
+instructions for making the universal
+
+208
+00:07:14,479 --> 00:07:19,440
+constructor and the tape copier. And if
+
+209
+00:07:16,560 --> 00:07:21,520
+those things all hold, then you have
+
+210
+00:07:19,440 --> 00:07:24,479
+life. You have something that can build
+
+211
+00:07:21,520 --> 00:07:26,400
+itself. Uh and uh what's what's so
+
+212
+00:07:24,479 --> 00:07:27,520
+profound about about Vonoyman's insight?
+
+213
+00:07:26,400 --> 00:07:29,360
+I mean, first of all, he predicted all
+
+214
+00:07:27,520 --> 00:07:31,120
+of this before we knew the structure and
+
+215
+00:07:29,360 --> 00:07:32,960
+function of DNA, before we understood
+
+216
+00:07:31,120 --> 00:07:35,199
+what ribosomes were or had discovered
+
+217
+00:07:32,960 --> 00:07:36,479
+DNA polymerase. So he called it exactly
+
+218
+00:07:35,199 --> 00:07:38,720
+right. Those all of those things really
+
+219
+00:07:36,479 --> 00:07:40,720
+do exist uh inside cells and he figured
+
+220
+00:07:38,720 --> 00:07:42,800
+this out from pure theory never having
+
+221
+00:07:40,720 --> 00:07:44,479
+set foot in a bolab. The the profound
+
+222
+00:07:42,800 --> 00:07:46,080
+insight is that he said by the way a
+
+223
+00:07:44,479 --> 00:07:47,840
+universal constructor is a universal
+
+224
+00:07:46,080 --> 00:07:50,319
+touring machine. Those are literally one
+
+225
+00:07:47,840 --> 00:07:52,960
+and the same thing. And by by making
+
+226
+00:07:50,319 --> 00:07:55,840
+that observation what he discovered was
+
+227
+00:07:52,960 --> 00:07:58,080
+that life is literally embodied
+
+228
+00:07:55,840 --> 00:07:59,199
+computation. It is computational. You
+
+229
+00:07:58,080 --> 00:08:01,120
+cannot have life without having
+
+230
+00:07:59,199 --> 00:08:02,720
+computation. So obviously not everything
+
+231
+00:08:01,120 --> 00:08:04,319
+that is alive reproduces but everything
+
+232
+00:08:02,720 --> 00:08:06,400
+that is alive has to be able to make
+
+233
+00:08:04,319 --> 00:08:09,039
+itself. It has to be able to do some
+
+234
+00:08:06,400 --> 00:08:10,720
+combination of healing, growing,
+
+235
+00:08:09,039 --> 00:08:12,479
+maintaining itself, reproducing. All of
+
+236
+00:08:10,720 --> 00:08:14,000
+that is autopoesis. All of that involves
+
+237
+00:08:12,479 --> 00:08:15,759
+self- construction and all of that
+
+238
+00:08:14,000 --> 00:08:17,520
+necessarily involves a universal
+
+239
+00:08:15,759 --> 00:08:19,440
+constructor. Now what do I mean by
+
+240
+00:08:17,520 --> 00:08:21,759
+embodied computation? This is a really
+
+241
+00:08:19,440 --> 00:08:24,639
+important distinction between vonoyman
+
+242
+00:08:21,759 --> 00:08:27,840
+and touring. in touring the symbols that
+
+243
+00:08:24,639 --> 00:08:31,039
+the that the head writes are different
+
+244
+00:08:27,840 --> 00:08:32,880
+from the head itself and the tape and uh
+
+245
+00:08:31,039 --> 00:08:35,440
+and the table of rules that the that the
+
+246
+00:08:32,880 --> 00:08:37,919
+head follows whereas in vonoyman it's
+
+247
+00:08:35,440 --> 00:08:41,279
+it's more like a 3D printer uh the the
+
+248
+00:08:37,919 --> 00:08:42,800
+memory is atoms not abstract symbols in
+
+249
+00:08:41,279 --> 00:08:44,159
+other words uh you know you could think
+
+250
+00:08:42,800 --> 00:08:46,640
+about a touring machine as like this
+
+251
+00:08:44,159 --> 00:08:48,480
+laptop uh you know which can't extrude
+
+252
+00:08:46,640 --> 00:08:50,959
+another laptop out the side but a
+
+253
+00:08:48,480 --> 00:08:53,200
+vonoyman replicator is like a
+
+254
+00:08:50,959 --> 00:08:55,120
+combination of a laptop and a 3D printer
+
+255
+00:08:53,200 --> 00:08:57,440
+that can print another laptop. So its
+
+256
+00:08:55,120 --> 00:08:58,880
+memory is actually atoms. Uh that's what
+
+257
+00:08:57,440 --> 00:08:59,920
+I mean by embodied. So I don't mean
+
+258
+00:08:58,880 --> 00:09:01,920
+embodied in the ways that a lot of
+
+259
+00:08:59,920 --> 00:09:04,560
+roboticists talk about embodied. I mean
+
+260
+00:09:01,920 --> 00:09:06,640
+that that there is a closure between the
+
+261
+00:09:04,560 --> 00:09:08,240
+uh the medium in which the computation
+
+262
+00:09:06,640 --> 00:09:10,320
+happens and the thing that is actually
+
+263
+00:09:08,240 --> 00:09:12,480
+doing the computation. That's the key.
+
+264
+00:09:10,320 --> 00:09:14,560
+So uh computation that is embodied in
+
+265
+00:09:12,480 --> 00:09:16,640
+that sense and that is autopetic is
+
+266
+00:09:14,560 --> 00:09:18,160
+alive. You can't reproduce non-trivally
+
+267
+00:09:16,640 --> 00:09:21,519
+evolvably without without uh
+
+268
+00:09:18,160 --> 00:09:23,120
+computation. No computation, no life. Uh
+
+269
+00:09:21,519 --> 00:09:25,680
+I do want to say a word briefly about
+
+270
+00:09:23,120 --> 00:09:27,519
+what I mean by computation. Uh and in
+
+271
+00:09:25,680 --> 00:09:29,600
+this I'm following the the work of uh
+
+272
+00:09:27,519 --> 00:09:31,839
+Susan Stephanie, Dominick Horesman, uh
+
+273
+00:09:29,600 --> 00:09:35,120
+Rob Wagner, Viv Kendon. Uh this is from
+
+274
+00:09:31,839 --> 00:09:37,360
+a nice paper they wrote in 2023 relating
+
+275
+00:09:35,120 --> 00:09:40,160
+uh the evolution of a physical system
+
+276
+00:09:37,360 --> 00:09:42,880
+and the computation that it does. So you
+
+277
+00:09:40,160 --> 00:09:44,640
+know on top you have logical gates, on
+
+278
+00:09:42,880 --> 00:09:47,279
+the bottom you have uh you know
+
+279
+00:09:44,640 --> 00:09:48,959
+transistors in in your computer. Uh this
+
+280
+00:09:47,279 --> 00:09:50,640
+is important because you know there's
+
+281
+00:09:48,959 --> 00:09:52,240
+there are no bits in a computer. There
+
+282
+00:09:50,640 --> 00:09:53,680
+are just voltages that go up and down.
+
+283
+00:09:52,240 --> 00:09:55,200
+In fact, you know, even the voltages are
+
+284
+00:09:53,680 --> 00:09:57,360
+an abstraction of something further, you
+
+285
+00:09:55,200 --> 00:09:58,720
+know, if we go further down. But you
+
+286
+00:09:57,360 --> 00:10:01,440
+know the the point is that you have to
+
+287
+00:09:58,720 --> 00:10:03,040
+coarse grain those voltages into bits
+
+288
+00:10:01,440 --> 00:10:05,200
+and then you have to have a logical
+
+289
+00:10:03,040 --> 00:10:06,880
+machine that talks about how those bits
+
+290
+00:10:05,200 --> 00:10:08,240
+uh evolve. What are the what are the
+
+291
+00:10:06,880 --> 00:10:10,480
+what are the computational processes
+
+292
+00:10:08,240 --> 00:10:12,320
+that those bits undergo and there is a
+
+293
+00:10:10,480 --> 00:10:14,240
+mapping from the physical system to the
+
+294
+00:10:12,320 --> 00:10:16,160
+logical system and vice versa. uh when
+
+295
+00:10:14,240 --> 00:10:17,839
+we say something computes what we mean
+
+296
+00:10:16,160 --> 00:10:19,839
+is that it is possible to construct such
+
+297
+00:10:17,839 --> 00:10:21,440
+a mapping and that therefore as the
+
+298
+00:10:19,839 --> 00:10:22,959
+physical system evolves that is
+
+299
+00:10:21,440 --> 00:10:25,760
+equivalent to the logical system
+
+300
+00:10:22,959 --> 00:10:27,600
+evolving. Uh so you know there are some
+
+301
+00:10:25,760 --> 00:10:28,720
+caveats you can have stochcastic
+
+302
+00:10:27,600 --> 00:10:30,079
+computation in which there's a little
+
+303
+00:10:28,720 --> 00:10:31,760
+bit of randomness injected so it doesn't
+
+304
+00:10:30,079 --> 00:10:33,600
+have to be fully deterministic. Uh
+
+305
+00:10:31,760 --> 00:10:34,959
+another really important caveat is that
+
+306
+00:10:33,600 --> 00:10:36,959
+you don't want that description to be
+
+307
+00:10:34,959 --> 00:10:38,560
+infinitely complex. Otherwise, you could
+
+308
+00:10:36,959 --> 00:10:40,560
+have the trivial case of saying like,
+
+309
+00:10:38,560 --> 00:10:42,240
+you know, the water in the sen is a
+
+310
+00:10:40,560 --> 00:10:43,360
+computer and the longer my computation,
+
+311
+00:10:42,240 --> 00:10:44,800
+I just need to make my description
+
+312
+00:10:43,360 --> 00:10:46,000
+longer and longer in order to match. No,
+
+313
+00:10:44,800 --> 00:10:48,320
+that doesn't work either. You need a a
+
+314
+00:10:46,000 --> 00:10:50,720
+kind of alchems razor uh description
+
+315
+00:10:48,320 --> 00:10:52,959
+that uh for it to be valid. But this is
+
+316
+00:10:50,720 --> 00:10:54,720
+a good definition of computation, but it
+
+317
+00:10:52,959 --> 00:10:56,720
+emphasizes that there is something
+
+318
+00:10:54,720 --> 00:10:59,440
+subjective about computation. You need
+
+319
+00:10:56,720 --> 00:11:01,120
+to have a model for how the uh how the
+
+320
+00:10:59,440 --> 00:11:02,560
+physical system translates into the
+
+321
+00:11:01,120 --> 00:11:04,640
+logical system in order for any of this
+
+322
+00:11:02,560 --> 00:11:07,279
+stuff to work. There are implications
+
+323
+00:11:04,640 --> 00:11:09,360
+about entropy, free energy and heat and
+
+324
+00:11:07,279 --> 00:11:11,600
+so on in this model. Uh and in
+
+325
+00:11:09,360 --> 00:11:13,519
+particular uh you as you all know we've
+
+326
+00:11:11,600 --> 00:11:15,360
+talked already you know ectctor Zenil in
+
+327
+00:11:13,519 --> 00:11:17,279
+his very elegant uh talk of a couple of
+
+328
+00:11:15,360 --> 00:11:18,720
+days ago talked about uh and actually
+
+329
+00:11:17,279 --> 00:11:20,800
+Chris Kempus also talked about the
+
+330
+00:11:18,720 --> 00:11:22,800
+landour limit uh and the fact that in a
+
+331
+00:11:20,800 --> 00:11:25,440
+computational system you're constantly
+
+332
+00:11:22,800 --> 00:11:27,360
+reducing the entropy of of your state
+
+333
+00:11:25,440 --> 00:11:29,920
+space and in doing so you therefore
+
+334
+00:11:27,360 --> 00:11:32,000
+require free energy. So uh you know you
+
+335
+00:11:29,920 --> 00:11:34,480
+need need to have free energy available
+
+336
+00:11:32,000 --> 00:11:36,399
+and you need to eject waste heat. The
+
+337
+00:11:34,480 --> 00:11:38,160
+exception in a way only proves the rule
+
+338
+00:11:36,399 --> 00:11:39,680
+which is reversible computation. In
+
+339
+00:11:38,160 --> 00:11:42,320
+reversible computation you generate
+
+340
+00:11:39,680 --> 00:11:44,240
+ancill uh and that's equivalent to just
+
+341
+00:11:42,320 --> 00:11:46,399
+saying there's no exhaust but you know
+
+342
+00:11:44,240 --> 00:11:47,760
+then you either have to keep on making
+
+343
+00:11:46,399 --> 00:11:49,920
+your computer bigger and bigger and
+
+344
+00:11:47,760 --> 00:11:52,000
+bigger as you accumulate these ancill
+
+345
+00:11:49,920 --> 00:11:53,040
+you have to uh shrink what you consider
+
+346
+00:11:52,000 --> 00:11:54,880
+to be the computer and then you're back
+
+347
+00:11:53,040 --> 00:11:56,720
+to reversible to to non-reversible
+
+348
+00:11:54,880 --> 00:11:58,000
+computation once again. three important
+
+349
+00:11:56,720 --> 00:11:59,920
+fallacies that I want to point out
+
+350
+00:11:58,000 --> 00:12:01,360
+before continuing. One of them I will
+
+351
+00:11:59,920 --> 00:12:03,440
+call the Seapolski error. Robert
+
+352
+00:12:01,360 --> 00:12:06,160
+Seapolski you know has written famously
+
+353
+00:12:03,440 --> 00:12:08,240
+about uh people not having free will uh
+
+354
+00:12:06,160 --> 00:12:10,800
+because we're built on physical systems.
+
+355
+00:12:08,240 --> 00:12:12,880
+Uh you know the physics is is uh you
+
+356
+00:12:10,800 --> 00:12:14,720
+know if you like deterministic let's set
+
+357
+00:12:12,880 --> 00:12:16,079
+aside quantum mechanics uh and stuff
+
+358
+00:12:14,720 --> 00:12:18,000
+like this. Let's let's imagine we live
+
+359
+00:12:16,079 --> 00:12:19,680
+in a Newtonian universe. It's fine. It's
+
+360
+00:12:18,000 --> 00:12:22,079
+good enough. The point is that physics
+
+361
+00:12:19,680 --> 00:12:24,160
+is reversible. uh all of the basic
+
+362
+00:12:22,079 --> 00:12:25,920
+physics that we understand uh whether
+
+363
+00:12:24,160 --> 00:12:28,639
+that's you know Newton's equations
+
+364
+00:12:25,920 --> 00:12:30,560
+Maxwell's equations Einstein's equations
+
+365
+00:12:28,639 --> 00:12:32,800
+quantum mechanics all of those are
+
+366
+00:12:30,560 --> 00:12:34,800
+essentially time reversible uh so you
+
+367
+00:12:32,800 --> 00:12:37,600
+can move them either forward or back
+
+368
+00:12:34,800 --> 00:12:40,560
+computation is not reversible when I add
+
+369
+00:12:37,600 --> 00:12:42,639
+you know 3 + 5 to get 8 once I've got
+
+370
+00:12:40,560 --> 00:12:44,880
+the 8 uh and I've you know I haven't
+
+371
+00:12:42,639 --> 00:12:46,399
+kept my ancillates around let's say I no
+
+372
+00:12:44,880 --> 00:12:48,720
+longer know what was added in order to
+
+373
+00:12:46,399 --> 00:12:50,880
+make the eight computation is inherently
+
+374
+00:12:48,720 --> 00:12:53,200
+irreversible and so to say that what
+
+375
+00:12:50,880 --> 00:12:54,880
+true of the physical system is also true
+
+376
+00:12:53,200 --> 00:12:56,720
+of the of the computational system or
+
+377
+00:12:54,880 --> 00:12:58,959
+the logical system is is not is not the
+
+378
+00:12:56,720 --> 00:13:00,800
+case and reversibility would be one
+
+379
+00:12:58,959 --> 00:13:03,040
+trivial example of how that is not the
+
+380
+00:13:00,800 --> 00:13:05,279
+case. Causation by the way only makes
+
+381
+00:13:03,040 --> 00:13:06,480
+sense in the light of irreversibility.
+
+382
+00:13:05,279 --> 00:13:08,399
+All right. So if you have a purely
+
+383
+00:13:06,480 --> 00:13:10,399
+physical system then you know to say
+
+384
+00:13:08,399 --> 00:13:12,160
+that A causes B is equivalent to saying
+
+385
+00:13:10,399 --> 00:13:13,600
+that B causes A because you know
+
+386
+00:13:12,160 --> 00:13:15,440
+everything is kind of a block universe
+
+387
+00:13:13,600 --> 00:13:18,000
+if you like in a uh you know in in that
+
+388
+00:13:15,440 --> 00:13:19,440
+kind of setup. But in computation uh you
+
+389
+00:13:18,000 --> 00:13:20,959
+know you you can you can talk about
+
+390
+00:13:19,440 --> 00:13:22,720
+causality because there are ifs and
+
+391
+00:13:20,959 --> 00:13:24,240
+thens in there. And this once again
+
+392
+00:13:22,720 --> 00:13:26,560
+connects with the way uh you know the
+
+393
+00:13:24,240 --> 00:13:28,079
+way ectctor was talking about how you
+
+394
+00:13:26,560 --> 00:13:29,519
+know essentially nothing in nothing in
+
+395
+00:13:28,079 --> 00:13:31,440
+causation makes sense except in the
+
+396
+00:13:29,519 --> 00:13:33,920
+light of computation. Uh which I fully
+
+397
+00:13:31,440 --> 00:13:36,000
+agree with. Uh another fallacy uh we
+
+398
+00:13:33,920 --> 00:13:37,839
+could call the the early victinstein
+
+399
+00:13:36,000 --> 00:13:40,399
+error. If we say something like birds
+
+400
+00:13:37,839 --> 00:13:42,480
+exist in the world uh line one of the
+
+401
+00:13:40,399 --> 00:13:44,560
+tractatus logical philosophy didn't say
+
+402
+00:13:42,480 --> 00:13:46,320
+birds but whatever. You can't say birds
+
+403
+00:13:44,560 --> 00:13:48,160
+exist or birds don't exist in a way that
+
+404
+00:13:46,320 --> 00:13:50,399
+is independent of a model of the
+
+405
+00:13:48,160 --> 00:13:51,839
+universe. Uh there are no birds in
+
+406
+00:13:50,399 --> 00:13:53,680
+physics. There are no birds in this
+
+407
+00:13:51,839 --> 00:13:55,360
+underlying dynamical system. When we
+
+408
+00:13:53,680 --> 00:13:57,199
+start talking about birds, we already
+
+409
+00:13:55,360 --> 00:13:58,959
+are talking about having some kind of
+
+410
+00:13:57,199 --> 00:14:01,120
+some kind of model. And once we start
+
+411
+00:13:58,959 --> 00:14:02,880
+talking about models, uh you've got
+
+412
+00:14:01,120 --> 00:14:04,240
+causality, reversibility, all kinds of
+
+413
+00:14:02,880 --> 00:14:07,279
+other irreversibility, all kinds of
+
+414
+00:14:04,240 --> 00:14:10,880
+other things in play. And none of these
+
+415
+00:14:07,279 --> 00:14:13,839
+statements are are are airtight. Uh they
+
+416
+00:14:10,880 --> 00:14:16,000
+all rely on on an observer. Uh this is
+
+417
+00:14:13,839 --> 00:14:18,000
+kind of Kant as well I guess. Uh and
+
+418
+00:14:16,000 --> 00:14:19,600
+this leads to the the early linenets
+
+419
+00:14:18,000 --> 00:14:21,360
+error uh or the same error that the good
+
+420
+00:14:19,600 --> 00:14:23,360
+old F good old fashioned AI
+
+421
+00:14:21,360 --> 00:14:25,440
+practitioners had which is that that
+
+422
+00:14:23,360 --> 00:14:27,600
+intelligence could be carried out by by
+
+423
+00:14:25,440 --> 00:14:29,839
+just having a series of uh programs of
+
+424
+00:14:27,600 --> 00:14:32,240
+of sort of strictly logical uh you know
+
+425
+00:14:29,839 --> 00:14:34,079
+deductions or inductions. That doesn't
+
+426
+00:14:32,240 --> 00:14:35,920
+work. This is why good old fashioned AI
+
+427
+00:14:34,079 --> 00:14:39,120
+never never panned out. And and the
+
+428
+00:14:35,920 --> 00:14:41,839
+reason is that that you can't start out
+
+429
+00:14:39,120 --> 00:14:43,839
+with like in math with propositions that
+
+430
+00:14:41,839 --> 00:14:45,360
+are self-sufficient. Even math is not
+
+431
+00:14:43,839 --> 00:14:47,519
+self-sufficient, but let's pretend for a
+
+432
+00:14:45,360 --> 00:14:48,959
+moment and just move from there and kind
+
+433
+00:14:47,519 --> 00:14:50,720
+of do an algebra in order to work
+
+434
+00:14:48,959 --> 00:14:52,639
+various things out. When when your
+
+435
+00:14:50,720 --> 00:14:54,240
+propositions are not airtight and when
+
+436
+00:14:52,639 --> 00:14:56,639
+you're looking only at regularities and
+
+437
+00:14:54,240 --> 00:14:58,399
+patterns, this good oldfashioned uh AI
+
+438
+00:14:56,639 --> 00:14:59,760
+idea simply cannot work. And that's
+
+439
+00:14:58,399 --> 00:15:01,360
+that's why we never got it to work.
+
+440
+00:14:59,760 --> 00:15:03,920
+Let's move now to to some of the
+
+441
+00:15:01,360 --> 00:15:06,160
+artificial life experiments that uh that
+
+442
+00:15:03,920 --> 00:15:09,199
+uh that I began playing with in at the
+
+443
+00:15:06,160 --> 00:15:11,600
+end of 2023 and my team and I published
+
+444
+00:15:09,199 --> 00:15:13,600
+in June of 2024. So just about a year
+
+445
+00:15:11,600 --> 00:15:15,120
+ago. I think some of you uh many of you
+
+446
+00:15:13,600 --> 00:15:16,720
+perhaps have heard of these. They're in
+
+447
+00:15:15,120 --> 00:15:18,639
+the what is life books and I've talked
+
+448
+00:15:16,720 --> 00:15:21,360
+about them a few times. The the basic
+
+449
+00:15:18,639 --> 00:15:23,440
+setup here is to try and get
+
+450
+00:15:21,360 --> 00:15:25,519
+self-replication to get you know
+
+451
+00:15:23,440 --> 00:15:27,600
+abiogenesis the emergence of life from
+
+452
+00:15:25,519 --> 00:15:30,880
+non-life to happen in a purely
+
+453
+00:15:27,600 --> 00:15:33,680
+artificial life system. Uh okay so the
+
+454
+00:15:30,880 --> 00:15:36,880
+setup is to begin with a minimal touring
+
+455
+00:15:33,680 --> 00:15:39,199
+complete language uh I used brain [ __ ]
+
+456
+00:15:36,880 --> 00:15:40,880
+uh because I I really liked the idea of
+
+457
+00:15:39,199 --> 00:15:42,880
+being able to talk at a conference and
+
+458
+00:15:40,880 --> 00:15:44,399
+say brain [ __ ] over and over and I'm
+
+459
+00:15:42,880 --> 00:15:47,279
+fundamentally 12 years old on the
+
+460
+00:15:44,399 --> 00:15:50,079
+inside. Um but but also because it's
+
+461
+00:15:47,279 --> 00:15:51,600
+it's uh it it very closely models uh the
+
+462
+00:15:50,079 --> 00:15:53,279
+touring machine. Uh you know it's it's a
+
+463
+00:15:51,600 --> 00:15:55,199
+it's a a minimal programming language
+
+464
+00:15:53,279 --> 00:15:56,639
+only only eight instructions that uh
+
+465
+00:15:55,199 --> 00:15:58,079
+that looks very touring machineike and
+
+466
+00:15:56,639 --> 00:16:00,079
+moves the head back and forth. I should
+
+467
+00:15:58,079 --> 00:16:02,880
+say that in its original version brain
+
+468
+00:16:00,079 --> 00:16:05,120
+[ __ ] is not embodied computation. It has
+
+469
+00:16:02,880 --> 00:16:07,040
+basically a separate data tape and code
+
+470
+00:16:05,120 --> 00:16:09,839
+tape and that means that it cannot make
+
+471
+00:16:07,040 --> 00:16:11,839
+a copy of itself. So I I made a couple
+
+472
+00:16:09,839 --> 00:16:12,959
+of modifications to brain [ __ ] that
+
+473
+00:16:11,839 --> 00:16:14,720
+actually reduce it from eight
+
+474
+00:16:12,959 --> 00:16:17,199
+instructions to seven in order to make
+
+475
+00:16:14,720 --> 00:16:19,759
+it embodied. Meaning that as it works on
+
+476
+00:16:17,199 --> 00:16:21,680
+the tape, it is able to read its own
+
+477
+00:16:19,759 --> 00:16:23,120
+code and write and write its own code on
+
+478
+00:16:21,680 --> 00:16:24,959
+that tape as well. There's no separate
+
+479
+00:16:23,120 --> 00:16:26,320
+console. There's no separation between
+
+480
+00:16:24,959 --> 00:16:27,759
+the data tape and the uh and the
+
+481
+00:16:26,320 --> 00:16:29,199
+instruction tape. For those of you who
+
+482
+00:16:27,759 --> 00:16:30,959
+are unfamiliar with BrainFuck, there is
+
+483
+00:16:29,199 --> 00:16:32,480
+hello world in it. I'm sure you've
+
+484
+00:16:30,959 --> 00:16:34,880
+already figured out how it works by just
+
+485
+00:16:32,480 --> 00:16:37,279
+looking at the program. Um I actually
+
+486
+00:16:34,880 --> 00:16:38,720
+still haven't, I have to admit. By the
+
+487
+00:16:37,279 --> 00:16:40,000
+way, this is actually the French brain
+
+488
+00:16:38,720 --> 00:16:41,600
+[ __ ] page because I thought it was
+
+489
+00:16:40,000 --> 00:16:43,040
+better uh but translated into English.
+
+490
+00:16:41,600 --> 00:16:44,399
+It's funnier to read it that way. These
+
+491
+00:16:43,040 --> 00:16:45,920
+are these are the eight instructions.
+
+492
+00:16:44,399 --> 00:16:47,600
+You know, the first four are move the
+
+493
+00:16:45,920 --> 00:16:49,279
+head one step to the left, one step to
+
+494
+00:16:47,600 --> 00:16:50,800
+the right, increment the bite at the
+
+495
+00:16:49,279 --> 00:16:52,320
+head, decrement the bite at the head.
+
+496
+00:16:50,800 --> 00:16:54,480
+We're already halfway through. There's
+
+497
+00:16:52,320 --> 00:16:56,480
+an input and output instruction, which
+
+498
+00:16:54,480 --> 00:16:58,240
+in this case really just copy from uh
+
+499
+00:16:56,480 --> 00:17:00,000
+from one head to another. And there are
+
+500
+00:16:58,240 --> 00:17:01,199
+jump instructions, open open bracket and
+
+501
+00:17:00,000 --> 00:17:02,959
+close bracket in order to be able to be
+
+502
+00:17:01,199 --> 00:17:04,640
+able to make loops. Uh and that's it.
+
+503
+00:17:02,959 --> 00:17:06,959
+That's all that's all brain [ __ ] is. So
+
+504
+00:17:04,640 --> 00:17:09,600
+how does how does the uh AIFE experiment
+
+505
+00:17:06,959 --> 00:17:12,880
+work? The AIFE experiment is called BFF.
+
+506
+00:17:09,600 --> 00:17:15,039
+Uh the first BF stand for brain [ __ ] and
+
+507
+00:17:12,880 --> 00:17:17,919
+the second F uh you can draw your own
+
+508
+00:17:15,039 --> 00:17:21,199
+conclusions. Um but uh you start off
+
+509
+00:17:17,919 --> 00:17:24,079
+with with a soup of of uh uh I I
+
+510
+00:17:21,199 --> 00:17:25,760
+actually generally use just 1,000 1,024
+
+511
+00:17:24,079 --> 00:17:28,400
+tapes. Uh that's enough for this
+
+512
+00:17:25,760 --> 00:17:30,559
+experiment. Uh so the tapes are of fixed
+
+513
+00:17:28,400 --> 00:17:33,840
+length. They're of length 64 and they
+
+514
+00:17:30,559 --> 00:17:35,440
+begin random. So just random bytes. Now,
+
+515
+00:17:33,840 --> 00:17:37,600
+if a tape is random bytes, that means
+
+516
+00:17:35,440 --> 00:17:39,280
+that only one in 32 of them or so are
+
+517
+00:17:37,600 --> 00:17:41,440
+even valid instructions. Most of them
+
+518
+00:17:39,280 --> 00:17:43,440
+are nos. A no-up will just be skipped
+
+519
+00:17:41,440 --> 00:17:46,080
+over uh like in most uh programming
+
+520
+00:17:43,440 --> 00:17:47,280
+languages. So, um so this is what those
+
+521
+00:17:46,080 --> 00:17:49,280
+tapes look like in the beginning. And
+
+522
+00:17:47,280 --> 00:17:50,880
+you can see that, you know, the uh I'm
+
+523
+00:17:49,280 --> 00:17:52,720
+not printing the noops, right? So,
+
+524
+00:17:50,880 --> 00:17:54,480
+that's all the blank space. Uh the the
+
+525
+00:17:52,720 --> 00:17:55,840
+operations are quite sparse. On any
+
+526
+00:17:54,480 --> 00:17:58,000
+given tape, you only have an average of
+
+527
+00:17:55,840 --> 00:18:00,000
+two instructions or so. And then the
+
+528
+00:17:58,000 --> 00:18:02,000
+procedure is to pluck two of these tapes
+
+529
+00:18:00,000 --> 00:18:04,640
+out of the soup at random, concatenate
+
+530
+00:18:02,000 --> 00:18:07,919
+them end to end, so you have 128 bytes,
+
+531
+00:18:04,640 --> 00:18:09,600
+and then run uh and then after running,
+
+532
+00:18:07,919 --> 00:18:12,960
+pull them back apart and put them back
+
+533
+00:18:09,600 --> 00:18:14,799
+in the soup and repeat. That's it. So
+
+534
+00:18:12,960 --> 00:18:17,200
+it's just that over and over. That's the
+
+535
+00:18:14,799 --> 00:18:21,799
+entire experiment. Uh so I'll show you
+
+536
+00:18:17,200 --> 00:18:21,799
+what happens uh on my laptop
+
+537
+00:18:23,760 --> 00:18:29,280
+after a few million interactions. um
+
+538
+00:18:26,880 --> 00:18:32,880
+magic happens which is that you go from
+
+539
+00:18:29,280 --> 00:18:34,799
+noise to to programs. You start to see
+
+540
+00:18:32,880 --> 00:18:37,120
+uh complex programs appear on these
+
+541
+00:18:34,799 --> 00:18:39,200
+tapes. And this is quite wonderful
+
+542
+00:18:37,120 --> 00:18:40,640
+because these programs take uh you know
+
+543
+00:18:39,200 --> 00:18:42,480
+they take real effort to reverse
+
+544
+00:18:40,640 --> 00:18:44,080
+engineer when you when you study them.
+
+545
+00:18:42,480 --> 00:18:45,360
+You know you it's like studying that
+
+546
+00:18:44,080 --> 00:18:46,559
+hello world program. You have to you
+
+547
+00:18:45,360 --> 00:18:48,559
+know they're they're functional in the
+
+548
+00:18:46,559 --> 00:18:50,080
+sense they really do something. Uh and
+
+549
+00:18:48,559 --> 00:18:52,400
+it's not trivial to figure out how they
+
+550
+00:18:50,080 --> 00:18:54,160
+work in order to do that. Uh okay what
+
+551
+00:18:52,400 --> 00:18:55,679
+are they doing? Well, they're definitely
+
+552
+00:18:54,160 --> 00:18:58,320
+copying themselves or each other
+
+553
+00:18:55,679 --> 00:18:59,520
+somehow. We know that because uh if you
+
+554
+00:18:58,320 --> 00:19:00,480
+know this is a histogram and you could
+
+555
+00:18:59,520 --> 00:19:02,320
+see, you know, in this case there were
+
+556
+00:19:00,480 --> 00:19:05,280
+8,000 tapes, there are 5,000 of the top
+
+557
+00:19:02,320 --> 00:19:07,039
+one, 297 of the next one and so on. So
+
+558
+00:19:05,280 --> 00:19:08,720
+there's clearly copying going on and
+
+559
+00:19:07,039 --> 00:19:10,720
+there's this ecology of programs all
+
+560
+00:19:08,720 --> 00:19:12,000
+copying each other. Uh which is which is
+
+561
+00:19:10,720 --> 00:19:13,919
+just wonderful to see. I mean that's
+
+562
+00:19:12,000 --> 00:19:16,320
+that's that's that you know emergence of
+
+563
+00:19:13,919 --> 00:19:18,320
+of of life in this very functional
+
+564
+00:19:16,320 --> 00:19:20,000
+minimal sense from randomness. A part of
+
+565
+00:19:18,320 --> 00:19:22,000
+this is very easy to understand. You
+
+566
+00:19:20,000 --> 00:19:23,840
+know why why do these things emerge?
+
+567
+00:19:22,000 --> 00:19:26,559
+Well, because something that copies
+
+568
+00:19:23,840 --> 00:19:28,160
+itself will be around forever and
+
+569
+00:19:26,559 --> 00:19:29,840
+something that doesn't copy itself will
+
+570
+00:19:28,160 --> 00:19:32,880
+be copied over by something that can
+
+571
+00:19:29,840 --> 00:19:35,039
+copy itself. So, inherently uh something
+
+572
+00:19:32,880 --> 00:19:36,720
+that can copy itself is more stable than
+
+573
+00:19:35,039 --> 00:19:38,000
+something that cannot copy itself. So,
+
+574
+00:19:36,720 --> 00:19:39,919
+it's really just the second law of
+
+575
+00:19:38,000 --> 00:19:41,840
+thermodynamics but uh but doing
+
+576
+00:19:39,919 --> 00:19:43,520
+something unexpected which is creating
+
+577
+00:19:41,840 --> 00:19:44,960
+something more complex because it's more
+
+578
+00:19:43,520 --> 00:19:47,039
+stable rather than something less
+
+579
+00:19:44,960 --> 00:19:49,600
+complex which is less stable. This idea
+
+580
+00:19:47,039 --> 00:19:51,760
+that stability doesn't necessarily mean
+
+581
+00:19:49,600 --> 00:19:53,919
+uh mean low complexity was worked out in
+
+582
+00:19:51,760 --> 00:19:55,360
+some detail by Adi Pros the organic
+
+583
+00:19:53,919 --> 00:19:57,600
+chemist in another book called what is
+
+584
+00:19:55,360 --> 00:19:59,440
+life. Uh he calls it dynamic kinetic
+
+585
+00:19:57,600 --> 00:20:01,200
+stability. Meaning usually we think of
+
+586
+00:19:59,440 --> 00:20:03,440
+stability only in terms of fixed points
+
+587
+00:20:01,200 --> 00:20:05,520
+in a phase space. But a cycle can be
+
+588
+00:20:03,440 --> 00:20:07,200
+even more stable than a fixed point. Uh
+
+589
+00:20:05,520 --> 00:20:09,360
+of course for these cycles to work you
+
+590
+00:20:07,200 --> 00:20:10,640
+need an input of free energy. Uh but you
+
+591
+00:20:09,360 --> 00:20:14,080
+know for reasons that we've already gone
+
+592
+00:20:10,640 --> 00:20:16,400
+into. Uh okay. So mystery mostly solved
+
+593
+00:20:14,080 --> 00:20:17,919
+but actually mystery not fully solved uh
+
+594
+00:20:16,400 --> 00:20:19,280
+for for reasons that I will that I will
+
+595
+00:20:17,919 --> 00:20:20,960
+uh show in a second. But but just to
+
+596
+00:20:19,280 --> 00:20:22,720
+give you a sense of what of what this
+
+597
+00:20:20,960 --> 00:20:24,799
+transition looks like from non-life to
+
+598
+00:20:22,720 --> 00:20:27,039
+life. It's very dramatic. In the
+
+599
+00:20:24,799 --> 00:20:28,480
+beginning uh you know these interactions
+
+600
+00:20:27,039 --> 00:20:30,400
+uh only involve you know there only a
+
+601
+00:20:28,480 --> 00:20:32,400
+few instructions in the soup. It's a
+
+602
+00:20:30,400 --> 00:20:34,559
+touring gas as Walter Fontano would have
+
+603
+00:20:32,400 --> 00:20:36,880
+called it. When you do the join and you
+
+604
+00:20:34,559 --> 00:20:39,360
+run only two operations run in any given
+
+605
+00:20:36,880 --> 00:20:41,600
+interaction on average uh as as you'd
+
+606
+00:20:39,360 --> 00:20:44,559
+expect. And that's what it looks like by
+
+607
+00:20:41,600 --> 00:20:47,120
+the end in this particular run. Uh and
+
+608
+00:20:44,559 --> 00:20:49,440
+1,374 operations on average are running
+
+609
+00:20:47,120 --> 00:20:52,000
+per interaction. So the soup has become
+
+610
+00:20:49,440 --> 00:20:53,440
+intensely computational. Uh there's been
+
+611
+00:20:52,000 --> 00:20:55,760
+a transition here. And there's a lot
+
+612
+00:20:53,440 --> 00:20:58,240
+more code uh than than one in 32 uh
+
+613
+00:20:55,760 --> 00:20:59,679
+bytes. As you can see, this is what that
+
+614
+00:20:58,240 --> 00:21:01,200
+looks like visually. This is the most
+
+615
+00:20:59,679 --> 00:21:02,799
+exciting plot that I've made in the last
+
+616
+00:21:01,200 --> 00:21:05,039
+few years. And it's the one that's on
+
+617
+00:21:02,799 --> 00:21:07,440
+the cover of the book. So what I've
+
+618
+00:21:05,039 --> 00:21:09,760
+drawn here are 10 million dots. It's a
+
+619
+00:21:07,440 --> 00:21:12,480
+scatter plot of interactions. The x-axis
+
+620
+00:21:09,760 --> 00:21:14,080
+is time and the y-axis for every dot is
+
+621
+00:21:12,480 --> 00:21:15,360
+how many computations took place. How
+
+622
+00:21:14,080 --> 00:21:17,200
+many operations took place on that
+
+623
+00:21:15,360 --> 00:21:19,440
+interaction and you can see that in the
+
+624
+00:21:17,200 --> 00:21:21,440
+beginning it's not very computational.
+
+625
+00:21:19,440 --> 00:21:24,240
+And then a sudden transition takes place
+
+626
+00:21:21,440 --> 00:21:26,000
+here at at 6 million interactions and it
+
+627
+00:21:24,240 --> 00:21:27,919
+becomes intensely computational. It
+
+628
+00:21:26,000 --> 00:21:29,600
+looks like a phase transition. In fact,
+
+629
+00:21:27,919 --> 00:21:32,320
+it is a phase transition. You can also
+
+630
+00:21:29,600 --> 00:21:34,159
+see that in the the entropy of the soup.
+
+631
+00:21:32,320 --> 00:21:36,159
+So here I'm just ent I'm just estimating
+
+632
+00:21:34,159 --> 00:21:38,080
+the entropy of the soup by zipping it
+
+633
+00:21:36,159 --> 00:21:39,919
+and looking at at the size of the zip
+
+634
+00:21:38,080 --> 00:21:41,280
+relative to the uh to the whole thing.
+
+635
+00:21:39,919 --> 00:21:42,799
+You can use any compression algorithm
+
+636
+00:21:41,280 --> 00:21:45,360
+you like. In the beginning it's
+
+637
+00:21:42,799 --> 00:21:46,960
+uncompressible. So it's a gas you know
+
+638
+00:21:45,360 --> 00:21:48,480
+in that touring gas sense because all
+
+639
+00:21:46,960 --> 00:21:49,840
+the bites are random. And you can see
+
+640
+00:21:48,480 --> 00:21:50,880
+that there's a dramatic change and
+
+641
+00:21:49,840 --> 00:21:52,480
+suddenly it becomes extremely
+
+642
+00:21:50,880 --> 00:21:53,760
+compressible right at that transition
+
+643
+00:21:52,480 --> 00:21:55,600
+moment. And of course this becomes
+
+644
+00:21:53,760 --> 00:21:58,000
+compressible because there everything is
+
+645
+00:21:55,600 --> 00:21:59,679
+copying uh right itself and each other.
+
+646
+00:21:58,000 --> 00:22:01,280
+So if things are copying themselves then
+
+647
+00:21:59,679 --> 00:22:03,600
+they'll we know that they'll become very
+
+648
+00:22:01,280 --> 00:22:05,360
+compressible. But it's cool because if
+
+649
+00:22:03,600 --> 00:22:07,039
+we think about what the phase of matter
+
+650
+00:22:05,360 --> 00:22:08,880
+is on the left, it is just like a gas.
+
+651
+00:22:07,039 --> 00:22:10,559
+Nothing is correlated. What would we
+
+652
+00:22:08,880 --> 00:22:13,200
+call the phase of matter on the right?
+
+653
+00:22:10,559 --> 00:22:14,400
+It's not a liquid. It's not a solid.
+
+654
+00:22:13,200 --> 00:22:16,559
+Right? It has structure. It has
+
+655
+00:22:14,400 --> 00:22:18,720
+structure at every scale. I think you
+
+656
+00:22:16,559 --> 00:22:20,640
+have to call that phase of matter life.
+
+657
+00:22:18,720 --> 00:22:23,200
+Uh that's it's a functional phase of
+
+658
+00:22:20,640 --> 00:22:25,039
+matter. Uh it means that uh that it that
+
+659
+00:22:23,200 --> 00:22:27,520
+its parts are different from its other
+
+660
+00:22:25,039 --> 00:22:29,520
+parts. And if you zoom in or out, you
+
+661
+00:22:27,520 --> 00:22:31,760
+see more structure. So it's what David
+
+662
+00:22:29,520 --> 00:22:33,360
+Walpert would call self dissimilar. It's
+
+663
+00:22:31,760 --> 00:22:35,760
+not a fractal. It's a more like a
+
+664
+00:22:33,360 --> 00:22:38,720
+multiffractal. I'll explain why in a
+
+665
+00:22:35,760 --> 00:22:41,039
+moment. Uh okay. Uh how long does it
+
+666
+00:22:38,720 --> 00:22:42,720
+take this transition to happen? Well um
+
+667
+00:22:41,039 --> 00:22:44,720
+the the answer is it looks more or less
+
+668
+00:22:42,720 --> 00:22:46,320
+like an airline distribution or uh a
+
+669
+00:22:44,720 --> 00:22:47,679
+little bit more precisely like this uh
+
+670
+00:22:46,320 --> 00:22:49,440
+distribution I call a lockpick
+
+671
+00:22:47,679 --> 00:22:51,360
+distribution which imagines that there
+
+672
+00:22:49,440 --> 00:22:53,120
+are steps that have to be undertaken and
+
+673
+00:22:51,360 --> 00:22:55,679
+those steps have a longtail distribution
+
+674
+00:22:53,120 --> 00:22:58,159
+of difficulty. And how many steps does
+
+675
+00:22:55,679 --> 00:23:00,159
+it take? Well, the answer is 12. It
+
+676
+00:22:58,159 --> 00:23:02,320
+takes 12 steps just like uh getting
+
+677
+00:23:00,159 --> 00:23:04,240
+sober. I suppose this is a you know a
+
+678
+00:23:02,320 --> 00:23:05,200
+fit of the empirical to the you know to
+
+679
+00:23:04,240 --> 00:23:06,480
+the heirlong and the lockpick
+
+680
+00:23:05,200 --> 00:23:07,760
+distribution is a little hard to see but
+
+681
+00:23:06,480 --> 00:23:10,240
+the lockpick is a bit better than
+
+682
+00:23:07,760 --> 00:23:12,480
+heirlong. Heirlong assumes pson lockpick
+
+683
+00:23:10,240 --> 00:23:14,400
+assumes longtailed but it's a process
+
+684
+00:23:12,480 --> 00:23:15,679
+phase distribution and and what this
+
+685
+00:23:14,400 --> 00:23:18,080
+tells you is that there are stepping
+
+686
+00:23:15,679 --> 00:23:20,559
+stones here. You know you can't get that
+
+687
+00:23:18,080 --> 00:23:22,640
+transition to life immediately. So
+
+688
+00:23:20,559 --> 00:23:23,840
+something interesting must be going on
+
+689
+00:23:22,640 --> 00:23:26,159
+here on the left other than just
+
+690
+00:23:23,840 --> 00:23:28,000
+randomness. It takes multiple things
+
+691
+00:23:26,159 --> 00:23:29,280
+happening in order to get to that point.
+
+692
+00:23:28,000 --> 00:23:31,919
+You know in this case you know it
+
+693
+00:23:29,280 --> 00:23:35,440
+happens somewhere between 1 million and
+
+694
+00:23:31,919 --> 00:23:38,240
+uh let's say 7 million uh interactions.
+
+695
+00:23:35,440 --> 00:23:40,000
+Okay. So um this all suggests that
+
+696
+00:23:38,240 --> 00:23:42,240
+pretty much any universe by the way that
+
+697
+00:23:40,000 --> 00:23:45,280
+has a source of randomness uh and can
+
+698
+00:23:42,240 --> 00:23:46,880
+support computation uh will evolve life
+
+699
+00:23:45,280 --> 00:23:50,640
+uh you know for this simple dynamical
+
+700
+00:23:46,880 --> 00:23:53,200
+stability reason. But the big mystery is
+
+701
+00:23:50,640 --> 00:23:54,880
+why does why does it appear to get more
+
+702
+00:23:53,200 --> 00:23:56,400
+complex over time? Uh you might have
+
+703
+00:23:54,880 --> 00:23:57,760
+seen in my little video that you know we
+
+704
+00:23:56,400 --> 00:24:00,159
+saw some programs emerge and then we saw
+
+705
+00:23:57,760 --> 00:24:02,559
+the we saw them sort of densify more
+
+706
+00:24:00,159 --> 00:24:04,799
+instructions appeared and and even more
+
+707
+00:24:02,559 --> 00:24:07,360
+fundamentally why does this work even
+
+708
+00:24:04,799 --> 00:24:09,360
+without mutation? I didn't mention but
+
+709
+00:24:07,360 --> 00:24:11,440
+you know in the original version of BFF
+
+710
+00:24:09,360 --> 00:24:13,200
+I added some random mutation because you
+
+711
+00:24:11,440 --> 00:24:15,840
+know we're all taught in school that the
+
+712
+00:24:13,200 --> 00:24:17,200
+way the way evolution works is chance
+
+713
+00:24:15,840 --> 00:24:18,240
+and necessity. you know, you mutate
+
+714
+00:24:17,200 --> 00:24:19,840
+things. You're sort of throwing
+
+715
+00:24:18,240 --> 00:24:21,919
+spaghetti at the wall and whatever
+
+716
+00:24:19,840 --> 00:24:24,320
+sticks is what is what does better. And
+
+717
+00:24:21,919 --> 00:24:26,000
+so you need a source of spaghetti. But
+
+718
+00:24:24,320 --> 00:24:27,679
+if you do this entire experiment with
+
+719
+00:24:26,000 --> 00:24:29,679
+the mutation rate cranked all the way
+
+720
+00:24:27,679 --> 00:24:31,279
+down to zero, you still get the same
+
+721
+00:24:29,679 --> 00:24:33,279
+exact phenomenon. And that is very
+
+722
+00:24:31,279 --> 00:24:35,279
+mysterious because if you crank mutation
+
+723
+00:24:33,279 --> 00:24:36,799
+down to zero, you should have no source
+
+724
+00:24:35,279 --> 00:24:39,440
+of novelty. You should have no
+
+725
+00:24:36,799 --> 00:24:41,679
+evolution. Why do you still get this
+
+726
+00:24:39,440 --> 00:24:43,760
+apparent complexification even with zero
+
+727
+00:24:41,679 --> 00:24:45,760
+mutation? Uh so let's let's go into some
+
+728
+00:24:43,760 --> 00:24:48,480
+of the some of the theory of this. By
+
+729
+00:24:45,760 --> 00:24:50,320
+the end uh we have a replicating entity.
+
+730
+00:24:48,480 --> 00:24:52,400
+It can engage in standard sort of
+
+731
+00:24:50,320 --> 00:24:53,919
+population evolution dynamics. This is
+
+732
+00:24:52,400 --> 00:24:55,520
+the kind of of differential equation
+
+733
+00:24:53,919 --> 00:24:56,720
+that that one generally writes for this
+
+734
+00:24:55,520 --> 00:24:59,279
+sort of thing. It's a very general
+
+735
+00:24:56,720 --> 00:25:01,840
+unsat. Uh this is for you know uh
+
+736
+00:24:59,279 --> 00:25:03,840
+species uh I let's say they're n
+
+737
+00:25:01,840 --> 00:25:05,440
+species. They could be chemical species.
+
+738
+00:25:03,840 --> 00:25:07,360
+They could be biological species
+
+739
+00:25:05,440 --> 00:25:09,760
+whatever. Here's a classic example of of
+
+740
+00:25:07,360 --> 00:25:12,080
+such an ansat. This is the uh the lotka
+
+741
+00:25:09,760 --> 00:25:13,840
+volta equations for predator and prey
+
+742
+00:25:12,080 --> 00:25:15,919
+which I'm sure many of you are very
+
+743
+00:25:13,840 --> 00:25:17,919
+familiar with. They were co-invented or
+
+744
+00:25:15,919 --> 00:25:19,760
+or invented independently by Alfred
+
+745
+00:25:17,919 --> 00:25:21,360
+Lotka and Vto Volatera near the
+
+746
+00:25:19,760 --> 00:25:23,440
+beginning of the 20th century. This is
+
+747
+00:25:21,360 --> 00:25:25,039
+what the classic lota equations look
+
+748
+00:25:23,440 --> 00:25:27,679
+like. There are two species. There is a
+
+749
+00:25:25,039 --> 00:25:30,559
+prey species and a predator species. And
+
+750
+00:25:27,679 --> 00:25:33,440
+those four terms are uh reproduction,
+
+751
+00:25:30,559 --> 00:25:36,159
+getting eaten, uh eating to reproduce
+
+752
+00:25:33,440 --> 00:25:37,840
+and background death rate. So uh if you
+
+753
+00:25:36,159 --> 00:25:39,919
+got those four terms, you get these nice
+
+754
+00:25:37,840 --> 00:25:41,760
+oscillatory solutions uh you know
+
+755
+00:25:39,919 --> 00:25:45,039
+between your predators and your prey
+
+756
+00:25:41,760 --> 00:25:47,200
+that arise. Okay. So this is a slightly
+
+757
+00:25:45,039 --> 00:25:49,440
+more general form of those lotka volta
+
+758
+00:25:47,200 --> 00:25:52,480
+equations. There is a linear part which
+
+759
+00:25:49,440 --> 00:25:54,880
+we'll call rx and uh in lotka volta that
+
+760
+00:25:52,480 --> 00:25:56,960
+linear part is diagonal. Uh so you know
+
+761
+00:25:54,880 --> 00:25:58,400
+the the uh the wolf can't turn into a
+
+762
+00:25:56,960 --> 00:25:59,919
+rabbit, the rabbit can't turn into a
+
+763
+00:25:58,400 --> 00:26:01,600
+wolf. So so the reproduction is
+
+764
+00:25:59,919 --> 00:26:03,679
+diagonal. And then there's also a
+
+765
+00:26:01,600 --> 00:26:05,600
+bilinear term which is the the part
+
+766
+00:26:03,679 --> 00:26:07,520
+where predation, competition and the
+
+767
+00:26:05,600 --> 00:26:09,120
+fact that niches are finite uh gets
+
+768
+00:26:07,520 --> 00:26:10,960
+implemented. So the the the right part
+
+769
+00:26:09,120 --> 00:26:12,880
+is suppressive. The left part makes
+
+770
+00:26:10,960 --> 00:26:15,279
+things grow. The right part makes things
+
+771
+00:26:12,880 --> 00:26:16,880
+uh um squish squish down. Keeps them
+
+772
+00:26:15,279 --> 00:26:18,799
+finite.
+
+773
+00:26:16,880 --> 00:26:20,480
+But this can't be the whole story of
+
+774
+00:26:18,799 --> 00:26:22,240
+evolution. Why can't it be the whole
+
+775
+00:26:20,480 --> 00:26:24,080
+story of evolution? Well, of course,
+
+776
+00:26:22,240 --> 00:26:25,679
+because it's closed-ended. Uh you know,
+
+777
+00:26:24,080 --> 00:26:26,960
+we only have two species here. It
+
+778
+00:26:25,679 --> 00:26:28,320
+doesn't matter how long you run this
+
+779
+00:26:26,960 --> 00:26:30,799
+damn thing. You're not going to get a
+
+780
+00:26:28,320 --> 00:26:33,440
+third species. Uh and uh and you're not
+
+781
+00:26:30,799 --> 00:26:34,640
+going to change the design space either.
+
+782
+00:26:33,440 --> 00:26:36,559
+uh you can have you know very
+
+783
+00:26:34,640 --> 00:26:38,960
+complicated terms in here that allow
+
+784
+00:26:36,559 --> 00:26:41,200
+finch beaks to adapt to different uh
+
+785
+00:26:38,960 --> 00:26:43,600
+environments but you have to have the
+
+786
+00:26:41,200 --> 00:26:45,840
+space of finch beaks predefined before
+
+787
+00:26:43,600 --> 00:26:48,080
+before this uh equation can even be made
+
+788
+00:26:45,840 --> 00:26:49,520
+to work. So uh this doesn't you know
+
+789
+00:26:48,080 --> 00:26:51,120
+this doesn't answer the question of how
+
+790
+00:26:49,520 --> 00:26:53,120
+evolution gets started. It doesn't
+
+791
+00:26:51,120 --> 00:26:55,520
+answer the question of what happens uh
+
+792
+00:26:53,120 --> 00:26:57,440
+afterward other than optimization to uh
+
+793
+00:26:55,520 --> 00:27:00,480
+to niches.
+
+794
+00:26:57,440 --> 00:27:02,720
+So uh now we bring in another uh Eastern
+
+795
+00:27:00,480 --> 00:27:04,799
+European uh Dimmitri Sergeovich
+
+796
+00:27:02,720 --> 00:27:06,880
+Meshovski. So he's the one who first
+
+797
+00:27:04,799 --> 00:27:08,960
+came up with the idea that maybe uh
+
+798
+00:27:06,880 --> 00:27:10,480
+mitochondria engaged in some kind of
+
+799
+00:27:08,960 --> 00:27:12,159
+simogenetic event in order to end up
+
+800
+00:27:10,480 --> 00:27:15,679
+inside other single-c cellled organisms
+
+801
+00:27:12,159 --> 00:27:17,840
+to make um to make ukarots. This was
+
+802
+00:27:15,679 --> 00:27:21,919
+popularized and proven to actually be
+
+803
+00:27:17,840 --> 00:27:23,600
+the case by Lin Margulus uh in in 1968.
+
+804
+00:27:21,919 --> 00:27:25,360
+Uh one of the really great papers in
+
+805
+00:27:23,600 --> 00:27:26,880
+biology from the 20 from the 20th
+
+806
+00:27:25,360 --> 00:27:28,799
+century. uh I'm sure many of you are
+
+807
+00:27:26,880 --> 00:27:31,360
+familiar with this is that paper sorry
+
+808
+00:27:28,799 --> 00:27:32,799
+1966 on the origin of mitosing cells. So
+
+809
+00:27:31,360 --> 00:27:35,279
+she's the one who proved uh that
+
+810
+00:27:32,799 --> 00:27:37,600
+ukarotes were actually a fusion between
+
+811
+00:27:35,279 --> 00:27:39,279
+two different kinds of procarots and
+
+812
+00:27:37,600 --> 00:27:41,279
+popularized this term that Medishovski
+
+813
+00:27:39,279 --> 00:27:43,760
+had invented symbioenesis.
+
+814
+00:27:41,279 --> 00:27:47,360
+Okay. So could symbioenesis be happening
+
+815
+00:27:43,760 --> 00:27:49,440
+as a as a source of novelty in BFF? Yes,
+
+816
+00:27:47,360 --> 00:27:51,120
+that is the source of novelty in BFF and
+
+817
+00:27:49,440 --> 00:27:53,039
+indeed that is the source of novelty in
+
+818
+00:27:51,120 --> 00:27:55,919
+evolution period. This is something that
+
+819
+00:27:53,039 --> 00:27:57,600
+Lin Margulus believed. Um but uh that
+
+820
+00:27:55,919 --> 00:28:00,240
+was not uh that had not been widely
+
+821
+00:27:57,600 --> 00:28:02,000
+accepted by the by the by the bi biology
+
+822
+00:28:00,240 --> 00:28:05,039
+community even by the time of her death
+
+823
+00:28:02,000 --> 00:28:06,960
+uh in 2011. Um you know so she she had a
+
+824
+00:28:05,039 --> 00:28:09,440
+much more expansive idea about about why
+
+825
+00:28:06,960 --> 00:28:11,520
+symbioenesis was important. Uh only the
+
+826
+00:28:09,440 --> 00:28:14,399
+particulars of chloroplasts and
+
+827
+00:28:11,520 --> 00:28:16,399
+mitochondria had been accepted. So the
+
+828
+00:28:14,399 --> 00:28:18,399
+way we can look for symbioenesis and BFF
+
+829
+00:28:16,399 --> 00:28:20,960
+is to look for replicators emerging
+
+830
+00:28:18,399 --> 00:28:22,399
+before that phase transition. And if you
+
+831
+00:28:20,960 --> 00:28:24,480
+look for them, if you just look for
+
+832
+00:28:22,399 --> 00:28:26,399
+stretches of bytes that are getting
+
+833
+00:28:24,480 --> 00:28:29,039
+copied during those interactions, you
+
+834
+00:28:26,399 --> 00:28:32,480
+find such stretches of bytes. They begin
+
+835
+00:28:29,039 --> 00:28:34,240
+short and kind of crappy, unreliable,
+
+836
+00:28:32,480 --> 00:28:35,679
+but they're there from the beginning.
+
+837
+00:28:34,240 --> 00:28:37,919
+Every time you have a single copy
+
+838
+00:28:35,679 --> 00:28:39,120
+instruction, after all, one bite is
+
+839
+00:28:37,919 --> 00:28:41,039
+getting copied from somewhere to
+
+840
+00:28:39,120 --> 00:28:42,960
+somewhere. So almost by definition, you
+
+841
+00:28:41,039 --> 00:28:44,559
+have at least one bite long sequences
+
+842
+00:28:42,960 --> 00:28:46,320
+that are getting copied right from the
+
+843
+00:28:44,559 --> 00:28:47,679
+beginning. So let's just call them
+
+844
+00:28:46,320 --> 00:28:49,600
+replicators, right? There are
+
+845
+00:28:47,679 --> 00:28:51,679
+replicators there from the beginning.
+
+846
+00:28:49,600 --> 00:28:53,200
+Now if you have these one bite
+
+847
+00:28:51,679 --> 00:28:55,679
+replicators that are copying themselves
+
+848
+00:28:53,200 --> 00:28:58,080
+back and forth now and then once in a
+
+849
+00:28:55,679 --> 00:29:01,279
+while they will come into conjunction
+
+850
+00:28:58,080 --> 00:29:02,880
+and two of them will will copy better as
+
+851
+00:29:01,279 --> 00:29:05,200
+a group than the than the two of them
+
+852
+00:29:02,880 --> 00:29:06,799
+copied on their own and that when that
+
+853
+00:29:05,200 --> 00:29:09,600
+happens then they'll start to copy as a
+
+854
+00:29:06,799 --> 00:29:11,679
+group and that is a symbiogenetic event.
+
+855
+00:29:09,600 --> 00:29:14,159
+uh and and so basically the reason that
+
+856
+00:29:11,679 --> 00:29:16,640
+even without uh mutation you get these
+
+857
+00:29:14,159 --> 00:29:18,880
+complex programs arising is because of
+
+858
+00:29:16,640 --> 00:29:20,720
+these fusion events between smaller
+
+859
+00:29:18,880 --> 00:29:23,279
+replicators.
+
+860
+00:29:20,720 --> 00:29:25,279
+So uh can one build singenesis into an
+
+861
+00:29:23,279 --> 00:29:28,000
+equation like uh like this one that you
+
+862
+00:29:25,279 --> 00:29:29,679
+know for for lot of volta you can this
+
+863
+00:29:28,000 --> 00:29:31,760
+is our statistical physicist who came up
+
+864
+00:29:29,679 --> 00:29:33,360
+with the right kind of term to write
+
+865
+00:29:31,760 --> 00:29:35,679
+mathematically for describing how
+
+866
+00:29:33,360 --> 00:29:37,919
+symbioenesis works. He wrote down an
+
+867
+00:29:35,679 --> 00:29:40,559
+equation for the coagulation of
+
+868
+00:29:37,919 --> 00:29:42,480
+polymers. Uh so this is uh small hovski
+
+869
+00:29:40,559 --> 00:29:44,799
+coagulation. Uh this is what happens
+
+870
+00:29:42,480 --> 00:29:47,840
+when clouds form. It's what happens when
+
+871
+00:29:44,799 --> 00:29:49,440
+gelatin sets in the fridge. Uh so the
+
+872
+00:29:47,840 --> 00:29:51,760
+idea is that you have uh let's say
+
+873
+00:29:49,440 --> 00:29:53,360
+polymers that begin uh as monomers you
+
+874
+00:29:51,760 --> 00:29:55,200
+know one monomer another monomer they
+
+875
+00:29:53,360 --> 00:29:57,279
+they stick together and now you have a
+
+876
+00:29:55,200 --> 00:29:58,559
+dimer and now the dimer and maybe
+
+877
+00:29:57,279 --> 00:30:00,480
+another monomer stick together and you
+
+878
+00:29:58,559 --> 00:30:02,000
+have a trimer. Uh two trimers stick
+
+879
+00:30:00,480 --> 00:30:03,919
+together and now you have a heximer and
+
+880
+00:30:02,000 --> 00:30:05,919
+so on. These are the equations for that.
+
+881
+00:30:03,919 --> 00:30:08,000
+This is the mass balance equation. It's
+
+882
+00:30:05,919 --> 00:30:10,080
+it's very simple. There's a merger gain
+
+883
+00:30:08,000 --> 00:30:12,000
+term and a merger loss term. The merger
+
+884
+00:30:10,080 --> 00:30:13,760
+gain term which scales like the
+
+885
+00:30:12,000 --> 00:30:16,000
+densities of the two things that are
+
+886
+00:30:13,760 --> 00:30:18,399
+coming together. Uh and the product of
+
+887
+00:30:16,000 --> 00:30:20,799
+those with some merger kernel K is
+
+888
+00:30:18,399 --> 00:30:23,279
+increasing the population of cluster K
+
+889
+00:30:20,799 --> 00:30:24,880
+which is of length I plus J. And then
+
+890
+00:30:23,279 --> 00:30:26,399
+you have to do the balance of that.
+
+891
+00:30:24,880 --> 00:30:28,000
+Every time you have two things coming
+
+892
+00:30:26,399 --> 00:30:29,919
+together to make a new one, you have to
+
+893
+00:30:28,000 --> 00:30:31,120
+then subtract their populations I and J.
+
+894
+00:30:29,919 --> 00:30:32,960
+And that's what the right hand side is
+
+895
+00:30:31,120 --> 00:30:34,720
+about. It's the loss of things that have
+
+896
+00:30:32,960 --> 00:30:37,039
+merged. So you put those two things
+
+897
+00:30:34,720 --> 00:30:39,600
+together and you get a stochastic
+
+898
+00:30:37,039 --> 00:30:41,520
+differential equation for mergers in a
+
+899
+00:30:39,600 --> 00:30:43,840
+solution.
+
+900
+00:30:41,520 --> 00:30:46,080
+And by the way there is a phase
+
+901
+00:30:43,840 --> 00:30:48,480
+transition associated with small husky
+
+902
+00:30:46,080 --> 00:30:50,080
+coagulation. It's called gilation. And
+
+903
+00:30:48,480 --> 00:30:52,240
+it's exactly what happens when you put
+
+904
+00:30:50,080 --> 00:30:53,520
+jello in the fridge and it sets.
+
+905
+00:30:52,240 --> 00:30:55,279
+Basically, if things are sticking
+
+906
+00:30:53,520 --> 00:30:56,799
+together and if they stick together with
+
+907
+00:30:55,279 --> 00:30:58,559
+a scaling exponent that is greater than
+
+908
+00:30:56,799 --> 00:31:00,880
+one, then you get this finite time
+
+909
+00:30:58,559 --> 00:31:03,279
+singularity in which the the the things
+
+910
+00:31:00,880 --> 00:31:05,440
+that stick together diverge to infinite
+
+911
+00:31:03,279 --> 00:31:07,440
+size and the whole thing sets no matter
+
+912
+00:31:05,440 --> 00:31:10,240
+how big it is. Uh and that's that's how
+
+913
+00:31:07,440 --> 00:31:12,159
+jello sets. Could that be galation? Yes.
+
+914
+00:31:10,240 --> 00:31:14,240
+Uh the short answer is that is gilation.
+
+915
+00:31:12,159 --> 00:31:15,919
+that phase transition uh that we see of
+
+916
+00:31:14,240 --> 00:31:18,159
+the emergence of life is ailation phase
+
+917
+00:31:15,919 --> 00:31:20,799
+transition according to a generalization
+
+918
+00:31:18,159 --> 00:31:23,440
+of smallhovki coagulation to this case
+
+919
+00:31:20,799 --> 00:31:25,679
+of BFF strings coming together if you if
+
+920
+00:31:23,440 --> 00:31:28,159
+you think about quote unquote inanimate
+
+921
+00:31:25,679 --> 00:31:30,159
+and viral replicators as being
+
+922
+00:31:28,159 --> 00:31:31,760
+replicators that uh that are not
+
+923
+00:31:30,159 --> 00:31:35,120
+self-contained in other words where the
+
+924
+00:31:31,760 --> 00:31:37,279
+code that runs is not fully within the
+
+925
+00:31:35,120 --> 00:31:38,960
+code that is actually getting copied
+
+926
+00:31:37,279 --> 00:31:40,799
+then you you you notice something
+
+927
+00:31:38,960 --> 00:31:43,279
+interesting so what I'm calling here an
+
+928
+00:31:40,799 --> 00:31:46,480
+inanimate replicator uh and very much in
+
+929
+00:31:43,279 --> 00:31:48,559
+scare quotes is uh is code that copies
+
+930
+00:31:46,480 --> 00:31:49,919
+something fully outside itself. In other
+
+931
+00:31:48,559 --> 00:31:51,519
+words, the code that runs in order to do
+
+932
+00:31:49,919 --> 00:31:53,440
+the copying is disjoint from the thing
+
+933
+00:31:51,519 --> 00:31:55,279
+that gets copied. Uh are there such
+
+934
+00:31:53,440 --> 00:31:57,600
+replicators in the real world? Of
+
+935
+00:31:55,279 --> 00:31:59,120
+course, that's what water is, right?
+
+936
+00:31:57,600 --> 00:32:01,360
+Water is a replicator of some kind. It
+
+937
+00:31:59,120 --> 00:32:03,039
+gets made by stuff, but the stuff that
+
+938
+00:32:01,360 --> 00:32:04,640
+it gets uh that it gets made from, you
+
+939
+00:32:03,039 --> 00:32:06,000
+know, like water is not a part of the of
+
+940
+00:32:04,640 --> 00:32:07,039
+the running process. I mean it is a part
+
+941
+00:32:06,000 --> 00:32:08,559
+of the running process that makes more
+
+942
+00:32:07,039 --> 00:32:11,600
+water in some cases but right it's it's
+
+943
+00:32:08,559 --> 00:32:14,000
+it's um it's it's not uh it's not part
+
+944
+00:32:11,600 --> 00:32:15,679
+of the code let's say viral is the case
+
+945
+00:32:14,000 --> 00:32:17,840
+in which the the code and the thing that
+
+946
+00:32:15,679 --> 00:32:19,679
+is copied overlap. So in other words
+
+947
+00:32:17,840 --> 00:32:21,200
+some of the code that does the copying
+
+948
+00:32:19,679 --> 00:32:24,080
+is actually some of the stuff that gets
+
+949
+00:32:21,200 --> 00:32:25,760
+copied but the uh the code is not fully
+
+950
+00:32:24,080 --> 00:32:28,799
+contained by what gets copied. So this
+
+951
+00:32:25,760 --> 00:32:30,559
+is a an an incomplete replicator that
+
+952
+00:32:28,799 --> 00:32:33,440
+would need to cooperate with another
+
+953
+00:32:30,559 --> 00:32:35,120
+replicator in order to reproduce. So
+
+954
+00:32:33,440 --> 00:32:38,080
+that's what I mean by viral. In the
+
+955
+00:32:35,120 --> 00:32:39,919
+beginning of BFF, all of the replicators
+
+956
+00:32:38,080 --> 00:32:41,360
+are inanimate and viral. The great
+
+957
+00:32:39,919 --> 00:32:43,840
+majority are inanimate and a few of them
+
+958
+00:32:41,360 --> 00:32:45,519
+are viral. A few of them happen to copy
+
+959
+00:32:43,840 --> 00:32:47,279
+uh you know one of those uh bites that
+
+960
+00:32:45,519 --> 00:32:50,559
+is actually an instruction that is doing
+
+961
+00:32:47,279 --> 00:32:51,919
+the copying. But as you move toward uh
+
+962
+00:32:50,559 --> 00:32:54,000
+the time of gilation which I've
+
+963
+00:32:51,919 --> 00:32:55,919
+normalized to one here, you can see that
+
+964
+00:32:54,000 --> 00:32:57,840
+cellular replicators suddenly emerge. So
+
+965
+00:32:55,919 --> 00:32:59,679
+they can't emerge before you know about
+
+966
+00:32:57,840 --> 00:33:01,519
+halfway through the run and they and
+
+967
+00:32:59,679 --> 00:33:02,720
+they shoot upward at the end. And that's
+
+968
+00:33:01,519 --> 00:33:05,039
+really interesting because that tells
+
+969
+00:33:02,720 --> 00:33:06,399
+you that that the moment of a cellular
+
+970
+00:33:05,039 --> 00:33:07,760
+replicator where the machinery for
+
+971
+00:33:06,399 --> 00:33:09,760
+copying yourself is part of the thing
+
+972
+00:33:07,760 --> 00:33:12,240
+that is copied emerges through the
+
+973
+00:33:09,760 --> 00:33:15,360
+symbiosis or the symbioenesis of
+
+974
+00:33:12,240 --> 00:33:18,640
+inanimate and viral uh replicators.
+
+975
+00:33:15,360 --> 00:33:20,640
+Okay. So a full equation would have two
+
+976
+00:33:18,640 --> 00:33:22,399
+terms. It would have this reproduction
+
+977
+00:33:20,640 --> 00:33:24,080
+and you know like a voltera type type
+
+978
+00:33:22,399 --> 00:33:26,159
+term and it would have a merger or
+
+979
+00:33:24,080 --> 00:33:27,919
+smallhovsky type term. One on the left
+
+980
+00:33:26,159 --> 00:33:29,600
+is normal population dynamics. That's
+
+981
+00:33:27,919 --> 00:33:30,880
+normal Darwinism. And the one on the
+
+982
+00:33:29,600 --> 00:33:33,120
+right, uh, you could think about the
+
+983
+00:33:30,880 --> 00:33:34,720
+left as evolution and the right as
+
+984
+00:33:33,120 --> 00:33:37,120
+revolution. Right? Those that's the
+
+985
+00:33:34,720 --> 00:33:39,200
+moments when things come together. Now,
+
+986
+00:33:37,120 --> 00:33:40,640
+the population dynamics part for BFF
+
+987
+00:33:39,200 --> 00:33:42,480
+looks like this. It's a little bit more
+
+988
+00:33:40,640 --> 00:33:44,799
+complicated, but it has the same basic
+
+989
+00:33:42,480 --> 00:33:46,480
+form as LKA volta. There's a linear part
+
+990
+00:33:44,799 --> 00:33:49,360
+on the left. I'm just writing that as a
+
+991
+00:33:46,480 --> 00:33:51,679
+matrix uh, RI operating on the on the
+
+992
+00:33:49,360 --> 00:33:53,200
+whole thing. And on the right u the
+
+993
+00:33:51,679 --> 00:33:55,039
+reason that looks a little bit a little
+
+994
+00:33:53,200 --> 00:33:56,799
+bit different from Lka Voltera is that
+
+995
+00:33:55,039 --> 00:33:59,519
+when something gets copied it overwrites
+
+996
+00:33:56,799 --> 00:34:01,200
+other stuff. So uh so now we have to say
+
+997
+00:33:59,519 --> 00:34:02,559
+well how does how does that suppress the
+
+998
+00:34:01,200 --> 00:34:05,120
+populations of everything else in the
+
+999
+00:34:02,559 --> 00:34:06,960
+soup? In order to figure that out you
+
+1000
+00:34:05,120 --> 00:34:08,800
+have to look at niches what are the
+
+1001
+00:34:06,960 --> 00:34:10,639
+bites where something gets copied and
+
+1002
+00:34:08,800 --> 00:34:12,800
+the overlap between the niches of two
+
+1003
+00:34:10,639 --> 00:34:14,960
+replicators tells you you know how much
+
+1004
+00:34:12,800 --> 00:34:16,800
+one thing getting copied you know how
+
+1005
+00:34:14,960 --> 00:34:18,879
+likely it is that that will overwrite uh
+
+1006
+00:34:16,800 --> 00:34:20,879
+something else that shares its niche.
+
+1007
+00:34:18,879 --> 00:34:22,480
+Uh, okay. The symbioenesis part is a bit
+
+1008
+00:34:20,879 --> 00:34:24,879
+of a mess, so I'm not going to go
+
+1009
+00:34:22,480 --> 00:34:26,960
+through it. Uh, I hope that's okay. But
+
+1010
+00:34:24,879 --> 00:34:29,200
+it looks just like Small Hovsky, just
+
+1011
+00:34:26,960 --> 00:34:31,599
+gnarlier. Um, the the reason that it's
+
+1012
+00:34:29,200 --> 00:34:34,800
+gnarlier is because Small Hovsky has
+
+1013
+00:34:31,599 --> 00:34:37,839
+only binary fusion uh between two parts.
+
+1014
+00:34:34,800 --> 00:34:39,280
+And in BFF, sometimes a bunch of things
+
+1015
+00:34:37,839 --> 00:34:40,960
+come together. So, you have to take into
+
+1016
+00:34:39,280 --> 00:34:43,679
+account these kernels that have more
+
+1017
+00:34:40,960 --> 00:34:45,040
+than two uh parameters in them. Also,
+
+1018
+00:34:43,679 --> 00:34:47,280
+when things come together, they don't
+
+1019
+00:34:45,040 --> 00:34:48,399
+necessarily look like the sum of of the
+
+1020
+00:34:47,280 --> 00:34:49,919
+things that came together. You could
+
+1021
+00:34:48,399 --> 00:34:51,440
+have something that is three bytes long
+
+1022
+00:34:49,919 --> 00:34:52,879
+or something five bytes long come
+
+1023
+00:34:51,440 --> 00:34:54,720
+together and the result that copies
+
+1024
+00:34:52,879 --> 00:34:56,960
+itself is only two bytes, one bite from
+
+1025
+00:34:54,720 --> 00:34:58,880
+each one or or anything uh right along
+
+1026
+00:34:56,960 --> 00:35:00,400
+those lines. So to to account for those
+
+1027
+00:34:58,880 --> 00:35:02,079
+complexities, you end up with a much
+
+1028
+00:35:00,400 --> 00:35:03,920
+more complicated k term, but it's
+
+1029
+00:35:02,079 --> 00:35:06,880
+essentially the same as as a small
+
+1030
+00:35:03,920 --> 00:35:09,680
+huskulation. to prove that this kind of
+
+1031
+00:35:06,880 --> 00:35:12,480
+symbioenesis is needed in order to get
+
+1032
+00:35:09,680 --> 00:35:14,480
+uh these complex programs. Uh you you
+
+1033
+00:35:12,480 --> 00:35:17,359
+can do a very simple intervention which
+
+1034
+00:35:14,480 --> 00:35:19,040
+is uh when you're interacting two tapes
+
+1035
+00:35:17,359 --> 00:35:21,599
+you can sort of do it in a sandbox
+
+1036
+00:35:19,040 --> 00:35:24,160
+before committing and in the sandbox you
+
+1037
+00:35:21,599 --> 00:35:27,599
+see whether uh whether a new replicator
+
+1038
+00:35:24,160 --> 00:35:29,119
+arises and if so what replicators is it
+
+1039
+00:35:27,599 --> 00:35:30,400
+made out of. In other words, uh you
+
+1040
+00:35:29,119 --> 00:35:31,760
+know, when you look at the source, you
+
+1041
+00:35:30,400 --> 00:35:33,920
+can see what you know whether whether
+
+1042
+00:35:31,760 --> 00:35:35,440
+any of those uh source bytes were
+
+1043
+00:35:33,920 --> 00:35:37,359
+actually the output the outputs of
+
+1044
+00:35:35,440 --> 00:35:39,119
+copies of some previous replicator. And
+
+1045
+00:35:37,359 --> 00:35:41,359
+if so, then you have a tree. You have an
+
+1046
+00:35:39,119 --> 00:35:42,720
+ancestry tree for uh for that for that
+
+1047
+00:35:41,359 --> 00:35:44,640
+replicator. That means that you can
+
+1048
+00:35:42,720 --> 00:35:45,760
+think about the depth of such a tree. Uh
+
+1049
+00:35:44,640 --> 00:35:47,599
+you know, how many things have come
+
+1050
+00:35:45,760 --> 00:35:49,440
+together and you can limit the depth of
+
+1051
+00:35:47,599 --> 00:35:52,000
+that tree. You can say if the tree depth
+
+1052
+00:35:49,440 --> 00:35:53,680
+exceeds 10 for a new replicator, then
+
+1053
+00:35:52,000 --> 00:35:54,640
+I'm going to I'm going to actually not
+
+1054
+00:35:53,680 --> 00:35:55,839
+not do this [clears throat] interaction.
+
+1055
+00:35:54,640 --> 00:35:57,359
+and I'm going to take them back apart,
+
+1056
+00:35:55,839 --> 00:35:59,680
+pretend it never happened, put it back
+
+1057
+00:35:57,359 --> 00:36:01,920
+in the soup, and try again. If you if
+
+1058
+00:35:59,680 --> 00:36:05,200
+you limit the depth of the tree to say
+
+1059
+00:36:01,920 --> 00:36:06,320
+24, then the number of operations that
+
+1060
+00:36:05,200 --> 00:36:07,520
+you have to block, the number of
+
+1061
+00:36:06,320 --> 00:36:09,040
+interactions you have to block is
+
+1062
+00:36:07,520 --> 00:36:11,040
+actually very small. You only have to
+
+1063
+00:36:09,040 --> 00:36:12,560
+block one in a thousand operations. But
+
+1064
+00:36:11,040 --> 00:36:14,240
+that one in a thousand operations is
+
+1065
+00:36:12,560 --> 00:36:16,640
+really important. As it turns out, if
+
+1066
+00:36:14,240 --> 00:36:19,119
+you block those, no galation will
+
+1067
+00:36:16,640 --> 00:36:21,119
+happen. You need uh at least tree depths
+
+1068
+00:36:19,119 --> 00:36:22,880
+of 20 or so in order to get these
+
+1069
+00:36:21,119 --> 00:36:25,359
+complex uh programs. So this is a very
+
+1070
+00:36:22,880 --> 00:36:27,040
+nice proof that symbioenesis is what
+
+1071
+00:36:25,359 --> 00:36:29,359
+what is needed in order to get to these
+
+1072
+00:36:27,040 --> 00:36:31,200
+complex tapes. When you do that
+
+1073
+00:36:29,359 --> 00:36:32,960
+blocking, you end up with sort of
+
+1074
+00:36:31,200 --> 00:36:34,400
+logistic curves for the populations of
+
+1075
+00:36:32,960 --> 00:36:36,400
+all the replicators in that soup. They
+
+1076
+00:36:34,400 --> 00:36:38,320
+they they go up and then they saturate
+
+1077
+00:36:36,400 --> 00:36:41,200
+and stabilize. That's fun because it
+
+1078
+00:36:38,320 --> 00:36:42,800
+lets you do a little bit of math. So as
+
+1079
+00:36:41,200 --> 00:36:45,440
+you can see, you know, that not only do
+
+1080
+00:36:42,800 --> 00:36:47,680
+things go up and saturate, but then they
+
+1081
+00:36:45,440 --> 00:36:49,040
+they there's some random uh oscillations
+
+1082
+00:36:47,680 --> 00:36:50,880
+and those oscillations can be
+
+1083
+00:36:49,040 --> 00:36:52,560
+correlated. Sometimes you can see the
+
+1084
+00:36:50,880 --> 00:36:54,160
+two of those populations go up and down
+
+1085
+00:36:52,560 --> 00:36:55,440
+together. So that means that they
+
+1086
+00:36:54,160 --> 00:36:57,599
+they're maybe collaborating with each
+
+1087
+00:36:55,440 --> 00:36:59,280
+other and sometimes they go in opposite
+
+1088
+00:36:57,599 --> 00:37:00,400
+directions. They're anti-correlated and
+
+1089
+00:36:59,280 --> 00:37:01,680
+that means that they're competing with
+
+1090
+00:37:00,400 --> 00:37:03,680
+each other because they're you know one
+
+1091
+00:37:01,680 --> 00:37:05,760
+is overwriting the other for instance.
+
+1092
+00:37:03,680 --> 00:37:07,200
+So that's what one would expect from
+
+1093
+00:37:05,760 --> 00:37:08,800
+from off diagonal production and
+
+1094
+00:37:07,200 --> 00:37:10,720
+competition from those those equations I
+
+1095
+00:37:08,800 --> 00:37:12,960
+wrote earlier. And if you linearize the
+
+1096
+00:37:10,720 --> 00:37:14,880
+dynamics around that steady state, then
+
+1097
+00:37:12,960 --> 00:37:16,960
+you can sample the correlations in those
+
+1098
+00:37:14,880 --> 00:37:20,000
+population fluctuations and you can
+
+1099
+00:37:16,960 --> 00:37:21,920
+reconstruct the matrix R. I will skip
+
+1100
+00:37:20,000 --> 00:37:24,880
+the details of how one does this, but
+
+1101
+00:37:21,920 --> 00:37:27,280
+this is a classic fluctuation analysis.
+
+1102
+00:37:24,880 --> 00:37:29,680
+You solve the leaponov equation and you
+
+1103
+00:37:27,280 --> 00:37:32,560
+get a Jacobian and from that you get the
+
+1104
+00:37:29,680 --> 00:37:34,320
+matrix R. And the matrices R look really
+
+1105
+00:37:32,560 --> 00:37:36,240
+cool. First of all, they have a strong
+
+1106
+00:37:34,320 --> 00:37:39,119
+diagonal that tells you that by and
+
+1107
+00:37:36,240 --> 00:37:40,640
+large things replicate themselves. uh
+
+1108
+00:37:39,119 --> 00:37:43,359
+just as you would expect from Lka
+
+1109
+00:37:40,640 --> 00:37:45,119
+Voltera. But uh there's some other stuff
+
+1110
+00:37:43,359 --> 00:37:47,839
+going on here as well. Aside from that
+
+1111
+00:37:45,119 --> 00:37:49,839
+dominant diagonal of self-replication,
+
+1112
+00:37:47,839 --> 00:37:51,680
+there is some negative stuff off the
+
+1113
+00:37:49,839 --> 00:37:53,359
+diagonal and some positive stuff off the
+
+1114
+00:37:51,680 --> 00:37:54,880
+diagonal. The negative stuff off the
+
+1115
+00:37:53,359 --> 00:37:56,880
+diagonal, you can see looks largely
+
+1116
+00:37:54,880 --> 00:37:59,280
+symmetric about the diagonal. And that's
+
+1117
+00:37:56,880 --> 00:38:02,320
+as you would expect too. Basically, if A
+
+1118
+00:37:59,280 --> 00:38:03,760
+competes with B, then B competes with A.
+
+1119
+00:38:02,320 --> 00:38:05,680
+Two things that are that are fighting
+
+1120
+00:38:03,760 --> 00:38:07,760
+for the same niche are are in a kind of
+
+1121
+00:38:05,680 --> 00:38:09,920
+zero sum relationship with each other.
+
+1122
+00:38:07,760 --> 00:38:12,000
+But the cooperation part where where uh
+
+1123
+00:38:09,920 --> 00:38:13,760
+where something helps something else is
+
+1124
+00:38:12,000 --> 00:38:16,240
+not symmetric and that's as you would
+
+1125
+00:38:13,760 --> 00:38:19,599
+expect too. Just because A helps B or
+
+1126
+00:38:16,240 --> 00:38:21,520
+enables B doesn't mean that B enables A
+
+1127
+00:38:19,599 --> 00:38:23,680
+or at least not directly. Right? So
+
+1128
+00:38:21,520 --> 00:38:26,480
+they're complex cycles in this in this
+
+1129
+00:38:23,680 --> 00:38:28,560
+graph on the right of of of codependency
+
+1130
+00:38:26,480 --> 00:38:30,640
+or enablement.
+
+1131
+00:38:28,560 --> 00:38:32,560
+So uh negative component is symmetric,
+
+1132
+00:38:30,640 --> 00:38:34,320
+positive component is is asymmetric and
+
+1133
+00:38:32,560 --> 00:38:36,400
+there's this big diagonal. Do the
+
+1134
+00:38:34,320 --> 00:38:38,000
+submatrices that are about to undergo
+
+1135
+00:38:36,400 --> 00:38:40,480
+symbioenesis have any special
+
+1136
+00:38:38,000 --> 00:38:43,040
+properties? They do. So in other words,
+
+1137
+00:38:40,480 --> 00:38:44,720
+if it's these let's say four rows and
+
+1138
+00:38:43,040 --> 00:38:46,720
+columns that are about to about to
+
+1139
+00:38:44,720 --> 00:38:48,560
+undergo symbioenesis, you can ask what
+
+1140
+00:38:46,720 --> 00:38:51,200
+are the what are the igen values of that
+
+1141
+00:38:48,560 --> 00:38:52,960
+matrix of that submatrix and it turns
+
+1142
+00:38:51,200 --> 00:38:54,800
+out that that they are generally
+
+1143
+00:38:52,960 --> 00:38:56,320
+cooperative. So essentially if you if
+
+1144
+00:38:54,800 --> 00:38:58,240
+you were to pick random rows and columns
+
+1145
+00:38:56,320 --> 00:39:00,320
+from this matrix then you get a
+
+1146
+00:38:58,240 --> 00:39:01,760
+highdimensional picture of the rank of
+
+1147
+00:39:00,320 --> 00:39:03,359
+the matrix. But when you look at the
+
+1148
+00:39:01,760 --> 00:39:05,839
+ones that actually combine, it's much
+
+1149
+00:39:03,359 --> 00:39:07,280
+lower rank. They're already uh working
+
+1150
+00:39:05,839 --> 00:39:09,359
+together. So in other words, there's a
+
+1151
+00:39:07,280 --> 00:39:11,680
+relationship between the R and K parts
+
+1152
+00:39:09,359 --> 00:39:14,079
+of this equation. Symbioenesis happens
+
+1153
+00:39:11,680 --> 00:39:16,480
+among guys who are already working
+
+1154
+00:39:14,079 --> 00:39:18,720
+together. Not all the same, not
+
+1155
+00:39:16,480 --> 00:39:20,720
+independent, cooperative. Here's another
+
+1156
+00:39:18,720 --> 00:39:23,359
+really interesting thing. If you look
+
+1157
+00:39:20,720 --> 00:39:26,160
+not at the R matrix but at the Jacobian
+
+1158
+00:39:23,359 --> 00:39:28,480
+itself then you can find the signs of
+
+1159
+00:39:26,160 --> 00:39:30,560
+imminent instability in it of when it's
+
+1160
+00:39:28,480 --> 00:39:33,520
+about to pop when it's about to go run
+
+1161
+00:39:30,560 --> 00:39:35,359
+away and gellate uh or gel you don't say
+
+1162
+00:39:33,520 --> 00:39:37,040
+gelate you say gel right so in
+
+1163
+00:39:35,359 --> 00:39:40,079
+particular if you block the depth of the
+
+1164
+00:39:37,040 --> 00:39:42,160
+possible trees to a low number then uh
+
+1165
+00:39:40,079 --> 00:39:44,560
+the igen vector the igen values of the
+
+1166
+00:39:42,160 --> 00:39:47,359
+jacobian are always negative meaning
+
+1167
+00:39:44,560 --> 00:39:50,000
+that the system is stable but as you
+
+1168
+00:39:47,359 --> 00:39:51,920
+look at larger depth ceilings you find
+
+1169
+00:39:50,000 --> 00:39:53,119
+that more and more of this leading igon
+
+1170
+00:39:51,920 --> 00:39:55,440
+vectors or the real parts of those
+
+1171
+00:39:53,119 --> 00:39:57,200
+leading igon vectors pop positive and
+
+1172
+00:39:55,440 --> 00:39:59,440
+that means that the system is about to
+
+1173
+00:39:57,200 --> 00:40:01,440
+blow. Uh you can keep it from blowing
+
+1174
+00:39:59,440 --> 00:40:03,119
+for a while by keeping that merger clamp
+
+1175
+00:40:01,440 --> 00:40:04,880
+on but it tells you that essentially the
+
+1176
+00:40:03,119 --> 00:40:06,640
+more you evolve these things the more
+
+1177
+00:40:04,880 --> 00:40:08,800
+they begin to cooperate with each other
+
+1178
+00:40:06,640 --> 00:40:10,480
+and the more incipient symbioenesis is
+
+1179
+00:40:08,800 --> 00:40:12,960
+about to happen. Uh and that's what
+
+1180
+00:40:10,480 --> 00:40:15,200
+leads to this phase transition. Uh, all
+
+1181
+00:40:12,960 --> 00:40:17,200
+right. Um, I I just want to put a little
+
+1182
+00:40:15,200 --> 00:40:19,040
+plug in for what I think could be a
+
+1183
+00:40:17,200 --> 00:40:20,560
+really beautiful missing link between
+
+1184
+00:40:19,040 --> 00:40:22,480
+the kind of algorithmic information
+
+1185
+00:40:20,560 --> 00:40:25,520
+theory that Ector Zanil was talking
+
+1186
+00:40:22,480 --> 00:40:27,760
+about and the assembly theory that he
+
+1187
+00:40:25,520 --> 00:40:29,760
+has somewhat slammed with a couple of
+
+1188
+00:40:27,760 --> 00:40:31,119
+papers that he has written. But uh, you
+
+1189
+00:40:29,760 --> 00:40:33,280
+know, as as those of you who have
+
+1190
+00:40:31,119 --> 00:40:34,480
+followed that might know or might might
+
+1191
+00:40:33,280 --> 00:40:36,320
+realize from what I've just talked
+
+1192
+00:40:34,480 --> 00:40:37,440
+about, there's a very close relationship
+
+1193
+00:40:36,320 --> 00:40:38,880
+between what I've just been describing
+
+1194
+00:40:37,440 --> 00:40:41,040
+and assembly theory. It's things coming
+
+1195
+00:40:38,880 --> 00:40:43,040
+together to make bigger things. But the
+
+1196
+00:40:41,040 --> 00:40:44,480
+assembly theory proponents have have not
+
+1197
+00:40:43,040 --> 00:40:46,000
+really talked about the computational
+
+1198
+00:40:44,480 --> 00:40:47,440
+nature of what they're doing. And in
+
+1199
+00:40:46,000 --> 00:40:49,440
+this I fully agree with with where
+
+1200
+00:40:47,440 --> 00:40:51,359
+ectctor is coming from. Uh and the way
+
+1201
+00:40:49,440 --> 00:40:52,880
+that those connect I think is by
+
+1202
+00:40:51,359 --> 00:40:54,720
+starting to look at things like
+
+1203
+00:40:52,880 --> 00:40:55,920
+conditional cologoral complexity of the
+
+1204
+00:40:54,720 --> 00:40:57,200
+things that are coming together. So I
+
+1205
+00:40:55,920 --> 00:40:58,880
+think this is a construction point for
+
+1206
+00:40:57,200 --> 00:41:00,880
+us to maybe reconcile those two
+
+1207
+00:40:58,880 --> 00:41:02,240
+different pictures. All right. So
+
+1208
+00:41:00,880 --> 00:41:04,480
+symbioenesis is what gives you
+
+1209
+00:41:02,240 --> 00:41:07,200
+complexification that in turn is what
+
+1210
+00:41:04,480 --> 00:41:08,480
+gives evolution its arrow of time. uh in
+
+1211
+00:41:07,200 --> 00:41:09,760
+classical evolution and Darwinian
+
+1212
+00:41:08,480 --> 00:41:11,839
+evolution there's no reason that things
+
+1213
+00:41:09,760 --> 00:41:13,200
+should become more complex over time uh
+
+1214
+00:41:11,839 --> 00:41:15,760
+you know they might simplify they might
+
+1215
+00:41:13,200 --> 00:41:18,160
+get more complex it doesn't matter but
+
+1216
+00:41:15,760 --> 00:41:20,240
+uh with symbioenesis we know that things
+
+1217
+00:41:18,160 --> 00:41:22,240
+get more complex because if A can
+
+1218
+00:41:20,240 --> 00:41:24,319
+replicate itself and and survive into
+
+1219
+00:41:22,240 --> 00:41:26,079
+the future and B can replicate itself
+
+1220
+00:41:24,319 --> 00:41:28,560
+and survive into the future when they
+
+1221
+00:41:26,079 --> 00:41:30,319
+come together you suddenly need A to
+
+1222
+00:41:28,560 --> 00:41:31,520
+replicate itself and B to replicate
+
+1223
+00:41:30,319 --> 00:41:33,200
+itself and there's some additional
+
+1224
+00:41:31,520 --> 00:41:36,079
+information that has been added which is
+
+1225
+00:41:33,200 --> 00:41:38,000
+how the two fit together uh and and
+
+1226
+00:41:36,079 --> 00:41:40,000
+those those extra bits of information
+
+1227
+00:41:38,000 --> 00:41:42,640
+that keep getting added to the program
+
+1228
+00:41:40,000 --> 00:41:44,400
+of what is the large replicator, they
+
+1229
+00:41:42,640 --> 00:41:45,760
+don't come from mutation. They come from
+
+1230
+00:41:44,400 --> 00:41:47,680
+the fact that things encounter each
+
+1231
+00:41:45,760 --> 00:41:50,079
+other randomly in order to possibly
+
+1232
+00:41:47,680 --> 00:41:51,599
+undergo that symbiogenetic event. So
+
+1233
+00:41:50,079 --> 00:41:52,800
+it's actually the thermal randomness of
+
+1234
+00:41:51,599 --> 00:41:54,800
+the fact that we pluck two of these guys
+
+1235
+00:41:52,800 --> 00:41:56,560
+out of the soup at random. That's the
+
+1236
+00:41:54,800 --> 00:41:58,400
+the information source if you like or
+
+1237
+00:41:56,560 --> 00:42:00,960
+the noise source that is selectively
+
+1238
+00:41:58,400 --> 00:42:03,680
+turned into algorithmic information by
+
+1239
+00:42:00,960 --> 00:42:05,599
+the symbioenetic process. yours and John
+
+1240
+00:42:03,680 --> 00:42:07,520
+Mayard Smith have have uh have written
+
+1241
+00:42:05,599 --> 00:42:09,200
+you know extensively about these major
+
+1242
+00:42:07,520 --> 00:42:12,560
+evolutionary transitions in which
+
+1243
+00:42:09,200 --> 00:42:14,319
+symbioenesis results in large novel
+
+1244
+00:42:12,560 --> 00:42:17,440
+forms of life like ukarotes
+
+1245
+00:42:14,319 --> 00:42:19,680
+multisellularity and so on uh and uh I
+
+1246
+00:42:17,440 --> 00:42:21,359
+think this work is great but uh but the
+
+1247
+00:42:19,680 --> 00:42:24,400
+flaw is that they're only talking about
+
+1248
+00:42:21,359 --> 00:42:26,960
+eight events or 12 events and if if what
+
+1249
+00:42:24,400 --> 00:42:29,440
+I'm saying is true then this is just the
+
+1250
+00:42:26,960 --> 00:42:31,119
+tip of a gigantic iceberg basically it's
+
+1251
+00:42:29,440 --> 00:42:32,880
+symbioenesis all the way down most of
+
+1252
+00:42:31,119 --> 00:42:34,319
+these symbioenic events are much more
+
+1253
+00:42:32,880 --> 00:42:36,000
+uneven. There may be just a little bit
+
+1254
+00:42:34,319 --> 00:42:37,839
+of something getting incorporated into
+
+1255
+00:42:36,000 --> 00:42:40,079
+something much bigger, but that is the
+
+1256
+00:42:37,839 --> 00:42:41,760
+source of novelty in all of evolution.
+
+1257
+00:42:40,079 --> 00:42:43,760
+These are just the most dramatic cases
+
+1258
+00:42:41,760 --> 00:42:46,160
+that involve, you know, uh really really
+
+1259
+00:42:43,760 --> 00:42:47,839
+big uh visible stuff happening. So, is
+
+1260
+00:42:46,160 --> 00:42:49,920
+there evidence for these smaller
+
+1261
+00:42:47,839 --> 00:42:51,760
+singogenetic events in biology? Lots
+
+1262
+00:42:49,920 --> 00:42:53,359
+there's lots of evidence for it. So uh
+
+1263
+00:42:51,760 --> 00:42:55,040
+you know I I don't have time to go into
+
+1264
+00:42:53,359 --> 00:42:57,599
+it in any detail but if you look at at
+
+1265
+00:42:55,040 --> 00:43:00,240
+just the human genome you find that you
+
+1266
+00:42:57,599 --> 00:43:02,960
+know only 1 and a.5% of it codes for our
+
+1267
+00:43:00,240 --> 00:43:06,079
+proteins and lots of the rest of it is
+
+1268
+00:43:02,960 --> 00:43:08,079
+transposons and uh other endogenous uh
+
+1269
+00:43:06,079 --> 00:43:11,200
+retroviral elements of various kinds
+
+1270
+00:43:08,079 --> 00:43:13,119
+that involve viruses whose whose ecology
+
+1271
+00:43:11,200 --> 00:43:14,880
+is our own genomes and that reproduce
+
+1272
+00:43:13,119 --> 00:43:17,760
+inside our genomes and sometimes jump
+
+1273
+00:43:14,880 --> 00:43:19,599
+species resulting in weird [ __ ] like uh
+
+1274
+00:43:17,760 --> 00:43:21,920
+a quarter of the cow genome being a a
+
+1275
+00:43:19,599 --> 00:43:24,000
+retroron that also lives and lizards and
+
+1276
+00:43:21,920 --> 00:43:25,040
+salamanders and stuff. Uh, and so, you
+
+1277
+00:43:24,000 --> 00:43:27,359
+know, when you start to look at that,
+
+1278
+00:43:25,040 --> 00:43:29,680
+you you realize that that genomes are
+
+1279
+00:43:27,359 --> 00:43:31,839
+fractal and it's replicators made of
+
+1280
+00:43:29,680 --> 00:43:34,319
+replicators made of replicators just as
+
+1281
+00:43:31,839 --> 00:43:36,319
+I've as I've described, not these kind
+
+1282
+00:43:34,319 --> 00:43:37,920
+of uh, you know, fixed design space and
+
+1283
+00:43:36,319 --> 00:43:39,599
+evolution only happening in its usual
+
+1284
+00:43:37,920 --> 00:43:41,599
+way. It's not just horizontal gene
+
+1285
+00:43:39,599 --> 00:43:43,520
+transfer in bacteria. This synogenetic
+
+1286
+00:43:41,599 --> 00:43:45,599
+picture, I think, is is the engine uh,
+
+1287
+00:43:43,520 --> 00:43:47,280
+that produces novelty throughout all of
+
+1288
+00:43:45,599 --> 00:43:49,839
+life, including including big complex
+
+1289
+00:43:47,280 --> 00:43:51,200
+animals like ours, like us. Um there's
+
+1290
+00:43:49,839 --> 00:43:52,720
+more and more evidence in the in the
+
+1291
+00:43:51,200 --> 00:43:55,119
+last decade of of things like this going
+
+1292
+00:43:52,720 --> 00:43:57,760
+on. You know, for instance, the arc
+
+1293
+00:43:55,119 --> 00:43:59,440
+virus uh was endogenized uh in in the
+
+1294
+00:43:57,760 --> 00:44:01,280
+mammal lineage and you can find it in
+
+1295
+00:43:59,440 --> 00:44:03,359
+our brains and it turns out that if you
+
+1296
+00:44:01,280 --> 00:44:05,359
+knock out the ark virus in mice, they
+
+1297
+00:44:03,359 --> 00:44:07,119
+stop being able to form new memories. So
+
+1298
+00:44:05,359 --> 00:44:08,960
+clearly the arc virus is doing something
+
+1299
+00:44:07,119 --> 00:44:10,800
+important for us and and that's a source
+
+1300
+00:44:08,960 --> 00:44:14,000
+of novelty that that was an endogenized
+
+1301
+00:44:10,800 --> 00:44:15,760
+virus. uh similar the mamalian placenta
+
+1302
+00:44:14,000 --> 00:44:17,839
+uh was uh is formed by an indogenized
+
+1303
+00:44:15,760 --> 00:44:20,960
+virus that fuses cell membranes together
+
+1304
+00:44:17,839 --> 00:44:23,200
+and so on. Okay. So there's a definition
+
+1305
+00:44:20,960 --> 00:44:24,640
+of life that comes out of this life uh
+
+1306
+00:44:23,200 --> 00:44:26,319
+and I I said this uh you know in the
+
+1307
+00:44:24,640 --> 00:44:28,240
+panel yesterday is an embodied
+
+1308
+00:44:26,319 --> 00:44:30,640
+autopoetic computation arising and
+
+1309
+00:44:28,240 --> 00:44:31,920
+complexifying through symbioenesis. It's
+
+1310
+00:44:30,640 --> 00:44:33,520
+not just neuroscience that's
+
+1311
+00:44:31,920 --> 00:44:36,560
+computational. Life was computational
+
+1312
+00:44:33,520 --> 00:44:39,119
+from the beginning and it gets more
+
+1313
+00:44:36,560 --> 00:44:41,760
+computationally complex over time
+
+1314
+00:44:39,119 --> 00:44:43,680
+through symbioenesis at many scales
+
+1315
+00:44:41,760 --> 00:44:46,240
+because remember if life is a computer
+
+1316
+00:44:43,680 --> 00:44:48,400
+from the start then every time things
+
+1317
+00:44:46,240 --> 00:44:50,960
+fuse together you're making a more and
+
+1318
+00:44:48,400 --> 00:44:52,400
+more parallel computer. Those computers
+
+1319
+00:44:50,960 --> 00:44:54,079
+have to be not only running the code
+
+1320
+00:44:52,400 --> 00:44:56,160
+that model themselves and reproduce
+
+1321
+00:44:54,079 --> 00:44:57,920
+themselves but that also do something
+
+1322
+00:44:56,160 --> 00:44:59,440
+about modeling the other and figuring
+
+1323
+00:44:57,920 --> 00:45:01,440
+out how they interact or work with the
+
+1324
+00:44:59,440 --> 00:45:03,040
+other. And this means that an ecology of
+
+1325
+00:45:01,440 --> 00:45:05,119
+functions is building up through
+
+1326
+00:45:03,040 --> 00:45:07,040
+massively parallel computation that
+
+1327
+00:45:05,119 --> 00:45:09,119
+becomes if you like more and more
+
+1328
+00:45:07,040 --> 00:45:11,280
+intelligent with every one of these of
+
+1329
+00:45:09,119 --> 00:45:13,359
+these fusions. And since symbioenesis
+
+1330
+00:45:11,280 --> 00:45:15,040
+makes the computation massively parallel
+
+1331
+00:45:13,359 --> 00:45:17,280
+uh that implies that intelligence and
+
+1332
+00:45:15,040 --> 00:45:19,359
+life are very very closely connected. uh
+
+1333
+00:45:17,280 --> 00:45:21,280
+which is why uh you know I ended up with
+
+1334
+00:45:19,359 --> 00:45:23,520
+the book what is life as part of the
+
+1335
+00:45:21,280 --> 00:45:24,880
+book what is intelligence when you're
+
+1336
+00:45:23,520 --> 00:45:26,800
+not only using that intelligence to
+
+1337
+00:45:24,880 --> 00:45:29,200
+model yourself but also to model your
+
+1338
+00:45:26,800 --> 00:45:31,920
+environment which by the way includes
+
+1339
+00:45:29,200 --> 00:45:34,160
+others most importantly then that's
+
+1340
+00:45:31,920 --> 00:45:36,160
+intelligence and that means that life
+
+1341
+00:45:34,160 --> 00:45:37,680
+was intelligent from the start and the
+
+1342
+00:45:36,160 --> 00:45:40,480
+moment that that modeling of others
+
+1343
+00:45:37,680 --> 00:45:43,040
+begins what we call in in larger more
+
+1344
+00:45:40,480 --> 00:45:44,880
+complex animals theory of mind becomes
+
+1345
+00:45:43,040 --> 00:45:48,079
+fundamental to the way intelligence
+
+1346
+00:45:44,880 --> 00:45:50,319
+develops So uh you know these are really
+
+1347
+00:45:48,079 --> 00:45:52,640
+simple simulations that show how uh you
+
+1348
+00:45:50,319 --> 00:45:54,800
+know just persistence allows you know
+
+1349
+00:45:52,640 --> 00:45:57,520
+the modeling of of of an environment to
+
+1350
+00:45:54,800 --> 00:45:59,839
+turn into learning chemotaxis in these
+
+1351
+00:45:57,520 --> 00:46:02,000
+fake bacteria. Uh but of course you know
+
+1352
+00:45:59,839 --> 00:46:03,920
+in real life uh you're not only learning
+
+1353
+00:46:02,000 --> 00:46:05,280
+about an environment that that exists in
+
+1354
+00:46:03,920 --> 00:46:07,760
+isolation like the like the sugar
+
+1355
+00:46:05,280 --> 00:46:09,440
+crystal but actually all of your friends
+
+1356
+00:46:07,760 --> 00:46:10,960
+right the moment you're reproducing the
+
+1357
+00:46:09,440 --> 00:46:12,560
+greater part of your environment is is
+
+1358
+00:46:10,960 --> 00:46:14,480
+actually all of your all of the other
+
+1359
+00:46:12,560 --> 00:46:17,040
+things that that uh you know even your
+
+1360
+00:46:14,480 --> 00:46:19,119
+own reproduction is creating.
+
+1361
+00:46:17,040 --> 00:46:21,119
+Uh life is never single player. Things
+
+1362
+00:46:19,119 --> 00:46:24,000
+like intelligence explosions in in our
+
+1363
+00:46:21,119 --> 00:46:25,680
+lineage in the hominins and in citations
+
+1364
+00:46:24,000 --> 00:46:28,640
+uh and in bats and a variety of other
+
+1365
+00:46:25,680 --> 00:46:31,599
+species are exactly this kind of runaway
+
+1366
+00:46:28,640 --> 00:46:35,200
+modeling of others resulting in uh
+
+1367
+00:46:31,599 --> 00:46:36,720
+growth of brains and growth of of groups
+
+1368
+00:46:35,200 --> 00:46:37,599
+and and therefore that you know that
+
+1369
+00:46:36,720 --> 00:46:39,520
+when we think about the growth of
+
+1370
+00:46:37,599 --> 00:46:41,440
+advanced intelligence you know in in in
+
+1371
+00:46:39,520 --> 00:46:43,599
+you know human societies or human brains
+
+1372
+00:46:41,440 --> 00:46:45,200
+it's it's really that same sort of of
+
+1373
+00:46:43,599 --> 00:46:47,440
+synogenetic process happening at a much
+
+1374
+00:46:45,200 --> 00:46:49,839
+at a much higher level. Let's end there
+
+1375
+00:46:47,440 --> 00:46:51,359
+and and switch to uh questions.
+
+1376
+00:46:49,839 --> 00:46:53,440
+>> I think there are multiple different
+
+1377
+00:46:51,359 --> 00:46:55,599
+ways to represent the symbiosis. I think
+
+1378
+00:46:53,440 --> 00:46:57,599
+in the real biology we maintain those
+
+1379
+00:46:55,599 --> 00:46:59,599
+high record structures and that there
+
+1380
+00:46:57,599 --> 00:47:02,319
+are fundamental mathematical differences
+
+1381
+00:46:59,599 --> 00:47:04,240
+how how you treat those symbiosis that
+
+1382
+00:47:02,319 --> 00:47:07,599
+do you have any insight how we can
+
+1383
+00:47:04,240 --> 00:47:09,680
+implement that? Yes, in biology we often
+
+1384
+00:47:07,599 --> 00:47:11,280
+uh sort of raify one particular level of
+
+1385
+00:47:09,680 --> 00:47:13,040
+detail and we say you know these are the
+
+1386
+00:47:11,280 --> 00:47:15,599
+life forms and you know maybe there's a
+
+1387
+00:47:13,040 --> 00:47:17,680
+symbiosis between uh you know let's say
+
+1388
+00:47:15,599 --> 00:47:18,880
+you know algae and a sea slug but we
+
+1389
+00:47:17,680 --> 00:47:20,400
+still think of the algae and the sea
+
+1390
+00:47:18,880 --> 00:47:22,319
+slug as as as separate and we think
+
+1391
+00:47:20,400 --> 00:47:23,599
+about population dynamics within that
+
+1392
+00:47:22,319 --> 00:47:25,280
+rather than modeling them separately. Is
+
+1393
+00:47:23,599 --> 00:47:27,359
+there a reason to prefer one scale or
+
+1394
+00:47:25,280 --> 00:47:28,960
+another? You know, for me, one of the
+
+1395
+00:47:27,359 --> 00:47:30,800
+lessons I the reason that I spent so
+
+1396
+00:47:28,960 --> 00:47:33,839
+much time on the relationship between R
+
+1397
+00:47:30,800 --> 00:47:36,079
+and K is that you can always move
+
+1398
+00:47:33,839 --> 00:47:38,160
+something from one from from R to K and
+
+1399
+00:47:36,079 --> 00:47:39,760
+back. Uh, you know, Lin Margulus
+
+1400
+00:47:38,160 --> 00:47:41,440
+famously said we're just colonies of
+
+1401
+00:47:39,760 --> 00:47:43,520
+bacteria, you know, some of which live
+
+1402
+00:47:41,440 --> 00:47:45,119
+inside each other. And that's true. You
+
+1403
+00:47:43,520 --> 00:47:47,119
+know, you could describe us as just
+
+1404
+00:47:45,119 --> 00:47:49,280
+colonies of bacteria. But the reason
+
+1405
+00:47:47,119 --> 00:47:51,920
+that it's useful to to move up a level
+
+1406
+00:47:49,280 --> 00:47:53,680
+of detail is because you know humans
+
+1407
+00:47:51,920 --> 00:47:56,000
+also you know reproduce as a unit you
+
+1408
+00:47:53,680 --> 00:47:57,760
+know hence the mess and uh and there are
+
+1409
+00:47:56,000 --> 00:47:59,200
+a lot of things that you can uh you can
+
+1410
+00:47:57,760 --> 00:48:01,119
+learn about when you study at that
+
+1411
+00:47:59,200 --> 00:48:02,400
+higher level uh a lot of abstractions
+
+1412
+00:48:01,119 --> 00:48:04,240
+you can make from a computational
+
+1413
+00:48:02,400 --> 00:48:06,480
+perspective that are hard if you're only
+
+1414
+00:48:04,240 --> 00:48:08,240
+modeling at the lower level. So I don't
+
+1415
+00:48:06,480 --> 00:48:09,920
+think that there's any there's any one
+
+1416
+00:48:08,240 --> 00:48:11,680
+layer layer level that is true and we
+
+1417
+00:48:09,920 --> 00:48:13,599
+have lots of boundary cases like lyken
+
+1418
+00:48:11,680 --> 00:48:15,280
+or like uh colony insects right where
+
+1419
+00:48:13,599 --> 00:48:16,880
+you can model the entire colony or you
+
+1420
+00:48:15,280 --> 00:48:19,040
+can model the individuals I don't think
+
+1421
+00:48:16,880 --> 00:48:21,440
+there's a right answer to those two uh
+
+1422
+00:48:19,040 --> 00:48:23,599
+so you know do you do you keep a block
+
+1423
+00:48:21,440 --> 00:48:25,119
+of rows and columns in R that are that
+
+1424
+00:48:23,599 --> 00:48:26,720
+are uh that are in you know that always
+
+1425
+00:48:25,119 --> 00:48:29,280
+end up or mostly end up getting copied
+
+1426
+00:48:26,720 --> 00:48:30,960
+together uh or do you add a new row you
+
+1427
+00:48:29,280 --> 00:48:32,400
+know it's it's it's actually a coarse
+
+1428
+00:48:30,960 --> 00:48:32,880
+graining choice and you can make either
+
+1429
+00:48:32,400 --> 00:48:36,000
+one
+
+1430
+00:48:32,880 --> 00:48:39,839
+>> symbiosis is not symbiogenesis like you
+
+1431
+00:48:36,000 --> 00:48:42,400
+What is the thing that you would claim
+
+1432
+00:48:39,839 --> 00:48:45,440
+is kind of like you know a good insight
+
+1433
+00:48:42,400 --> 00:48:47,599
+for how like you know A and B stop being
+
+1434
+00:48:45,440 --> 00:48:49,680
+A and B in symbiosis and they become
+
+1435
+00:48:47,599 --> 00:48:52,240
+something else. the fact that that uh
+
+1436
+00:48:49,680 --> 00:48:53,760
+phase transitions don't come from R
+
+1437
+00:48:52,240 --> 00:48:55,440
+alone, you know, but but you have to
+
+1438
+00:48:53,760 --> 00:48:57,280
+look at K. Now, you you do you do get
+
+1439
+00:48:55,440 --> 00:48:58,720
+this these runaway modes, right, which
+
+1440
+00:48:57,280 --> 00:49:00,559
+which tell you that something is about
+
+1441
+00:48:58,720 --> 00:49:02,880
+to is about to happen. But in order to
+
+1442
+00:49:00,559 --> 00:49:04,559
+understand that phase transition, right,
+
+1443
+00:49:02,880 --> 00:49:06,079
+in other words, in order to see that a
+
+1444
+00:49:04,559 --> 00:49:07,760
+major evolutionary transition has
+
+1445
+00:49:06,079 --> 00:49:09,920
+occurred, right, to put it in biological
+
+1446
+00:49:07,760 --> 00:49:12,400
+terms, you you actually have to
+
+1447
+00:49:09,920 --> 00:49:13,920
+understand the physics of K. It's only
+
+1448
+00:49:12,400 --> 00:49:16,559
+by understanding the physics of K that
+
+1449
+00:49:13,920 --> 00:49:17,920
+you can do the theory that lets you you
+
+1450
+00:49:16,559 --> 00:49:20,559
+know predict and understand what is
+
+1451
+00:49:17,920 --> 00:49:23,200
+going on right here. So you know if you
+
+1452
+00:49:20,559 --> 00:49:26,000
+model a body as just a bunch of bacteria
+
+1453
+00:49:23,200 --> 00:49:28,079
+then it's not wrong but but then uh you
+
+1454
+00:49:26,000 --> 00:49:29,520
+know it's invisible to you that uh you
+
+1455
+00:49:28,079 --> 00:49:31,520
+know that something amazing happened
+
+1456
+00:49:29,520 --> 00:49:33,040
+when we became multisellular or when
+
+1457
+00:49:31,520 --> 00:49:35,359
+ukarotes formed out of out of out of
+
+1458
+00:49:33,040 --> 00:49:37,520
+bacteria. So this allows higher order
+
+1459
+00:49:35,359 --> 00:49:38,880
+modeling and and in particular by the
+
+1460
+00:49:37,520 --> 00:49:40,079
+way that higher order modeling you know
+
+1461
+00:49:38,880 --> 00:49:42,079
+if we just take the subjective
+
+1462
+00:49:40,079 --> 00:49:43,599
+perspective for a moment if you are one
+
+1463
+00:49:42,079 --> 00:49:45,599
+of those bodies if you are one of those
+
+1464
+00:49:43,599 --> 00:49:47,280
+people then you know you're not going to
+
+1465
+00:49:45,599 --> 00:49:49,040
+survive very well if you're only
+
+1466
+00:49:47,280 --> 00:49:50,960
+modeling other people as collections of
+
+1467
+00:49:49,040 --> 00:49:53,040
+bacteria right you have to build higher
+
+1468
+00:49:50,960 --> 00:49:55,280
+order models of them because that
+
+1469
+00:49:53,040 --> 00:49:57,200
+becomes an essential part of your envelt
+
+1470
+00:49:55,280 --> 00:49:58,880
+and you have to simplify or coar grain
+
+1471
+00:49:57,200 --> 00:50:01,839
+the world in order to build a model that
+
+1472
+00:49:58,880 --> 00:50:04,319
+is that is ecologically relevant to you
+
+1473
+00:50:01,839 --> 00:50:06,400
+so uh you know I'm kind mixing here of
+
+1474
+00:50:04,319 --> 00:50:07,920
+of subjective and and an objective
+
+1475
+00:50:06,400 --> 00:50:09,200
+perspective. But the subjective
+
+1476
+00:50:07,920 --> 00:50:10,800
+perspective ultimately is super
+
+1477
+00:50:09,200 --> 00:50:12,319
+important. Uh you know it's a little bit
+
+1478
+00:50:10,800 --> 00:50:14,160
+similar to like why do we need
+
+1479
+00:50:12,319 --> 00:50:15,440
+temperature and pressure in physics? You
+
+1480
+00:50:14,160 --> 00:50:18,160
+know those don't exist if we just look
+
+1481
+00:50:15,440 --> 00:50:19,520
+at the microscopics. But it's only by by
+
+1482
+00:50:18,160 --> 00:50:21,599
+coarse graining and looking at the
+
+1483
+00:50:19,520 --> 00:50:23,839
+larger scale that you can understand
+
+1484
+00:50:21,599 --> 00:50:25,520
+thermodynamics. And in the same way,
+
+1485
+00:50:23,839 --> 00:50:27,119
+it's only by zooming out and looking at
+
+1486
+00:50:25,520 --> 00:50:29,200
+the symbioenesis that you can understand
+
+1487
+00:50:27,119 --> 00:50:31,280
+the dynamics of transitions of phase
+
+1488
+00:50:29,200 --> 00:50:33,040
+transitions, messes and smaller and
+
+1489
+00:50:31,280 --> 00:50:35,440
+coarser grained models that you know
+
+1490
+00:50:33,040 --> 00:50:37,760
+where higher orders of things emerge.
+
+1491
+00:50:35,440 --> 00:50:39,760
+>> Well, actually that's exactly what I was
+
+1492
+00:50:37,760 --> 00:50:41,520
+doing like 30 years ago, right?
+
+1493
+00:50:39,760 --> 00:50:43,599
+>> Exactly. That's that's why I began with
+
+1494
+00:50:41,520 --> 00:50:46,079
+your nearly 30 years ago paper. There
+
+1495
+00:50:43,599 --> 00:50:47,839
+was a big problem like it's always you
+
+1496
+00:50:46,079 --> 00:50:50,480
+know the symbol is possible like you
+
+1497
+00:50:47,839 --> 00:50:53,200
+know we burn the wood then it becomes
+
+1498
+00:50:50,480 --> 00:50:55,520
+complicated coupling with each other
+
+1499
+00:50:53,200 --> 00:50:58,720
+however the function itself is not
+
+1500
+00:50:55,520 --> 00:51:01,680
+becoming complex or become high water
+
+1501
+00:50:58,720 --> 00:51:03,440
+the function itself is just
+
+1502
+00:51:01,680 --> 00:51:05,040
+>> I have three answers I suppose uh
+
+1503
+00:51:03,440 --> 00:51:07,680
+depending on depending on which way we
+
+1504
+00:51:05,040 --> 00:51:09,359
+we talk about it so uh first answer
+
+1505
+00:51:07,680 --> 00:51:12,400
+actually comes from from software
+
+1506
+00:51:09,359 --> 00:51:13,440
+engineering uh so composition or or from
+
+1507
+00:51:12,400 --> 00:51:15,680
+mathematics for for that matter
+
+1508
+00:51:13,440 --> 00:51:18,079
+composition of functions is uh
+
+1509
+00:51:15,680 --> 00:51:20,240
+symbioenesis as as I've described it and
+
+1510
+00:51:18,079 --> 00:51:22,640
+when you compose you know two functions
+
+1511
+00:51:20,240 --> 00:51:24,640
+to make a a higher order function you
+
+1512
+00:51:22,640 --> 00:51:26,720
+are making something more complex uh
+
+1513
+00:51:24,640 --> 00:51:28,400
+than than the than the primitives uh you
+
+1514
+00:51:26,720 --> 00:51:30,960
+know and and and you know the what I
+
+1515
+00:51:28,400 --> 00:51:32,240
+hinted at with uh you know the Eric Eric
+
+1516
+00:51:30,960 --> 00:51:35,040
+Mosnino's you know beginnings of
+
+1517
+00:51:32,240 --> 00:51:37,440
+conditional complexity can quantify that
+
+1518
+00:51:35,040 --> 00:51:39,040
+sort of compositional complexity you
+
+1519
+00:51:37,440 --> 00:51:40,640
+could find signatures of it in you know
+
+1520
+00:51:39,040 --> 00:51:42,640
+if you don't want to look in DNA you
+
+1521
+00:51:40,640 --> 00:51:44,160
+could look in GitHub at the way you
+
+1522
+00:51:42,640 --> 00:51:45,839
+every time somebody writes some code,
+
+1523
+00:51:44,160 --> 00:51:47,680
+right? It it begins by importing a bunch
+
+1524
+00:51:45,839 --> 00:51:49,760
+of other things and combining them and
+
+1525
+00:51:47,680 --> 00:51:51,760
+and and and you you you do see a
+
+1526
+00:51:49,760 --> 00:51:54,160
+tendency toward toward complexity. Now
+
+1527
+00:51:51,760 --> 00:51:56,160
+that is constrained by energy. Uh you
+
+1528
+00:51:54,160 --> 00:51:58,640
+know, the more complex a thing you make,
+
+1529
+00:51:56,160 --> 00:52:02,400
+the the the more uh free energy it has
+
+1530
+00:51:58,640 --> 00:52:04,079
+to use. But uh now you get uh some of
+
+1531
+00:52:02,400 --> 00:52:05,760
+Chris Kempus's beautiful work in which
+
+1532
+00:52:04,079 --> 00:52:08,079
+you see that there are energetic
+
+1533
+00:52:05,760 --> 00:52:10,000
+benefits to teamwork. Uh right. So, so
+
+1534
+00:52:08,079 --> 00:52:11,839
+the the the way the scaling laws work
+
+1535
+00:52:10,000 --> 00:52:13,280
+for this uh which are also
+
+1536
+00:52:11,839 --> 00:52:14,559
+environmentally dependent. I mean, you
+
+1537
+00:52:13,280 --> 00:52:16,480
+know, I don't know Chris if you got to
+
+1538
+00:52:14,559 --> 00:52:17,599
+like the snow the snowball earth type
+
+1539
+00:52:16,480 --> 00:52:19,680
+stuff, but there were certain very
+
+1540
+00:52:17,599 --> 00:52:21,119
+specific conditions at certain points in
+
+1541
+00:52:19,680 --> 00:52:23,920
+the earth's history that became
+
+1542
+00:52:21,119 --> 00:52:25,599
+favorable for ukarioenesis if I'm
+
+1543
+00:52:23,920 --> 00:52:26,880
+remembering correctly and and and so
+
+1544
+00:52:25,599 --> 00:52:28,800
+there there are some external conditions
+
+1545
+00:52:26,880 --> 00:52:31,040
+as well. But the other cool thing is
+
+1546
+00:52:28,800 --> 00:52:33,359
+that when you start to have more uh
+
+1547
+00:52:31,040 --> 00:52:34,960
+complexity in the in the computers when
+
+1548
+00:52:33,359 --> 00:52:37,839
+you start to have massively parallel
+
+1549
+00:52:34,960 --> 00:52:41,200
+computation that greater intelligence
+
+1550
+00:52:37,839 --> 00:52:42,720
+also unlocks new energy sources and and
+
+1551
+00:52:41,200 --> 00:52:45,200
+that gives you a bigger budget to play
+
+1552
+00:52:42,720 --> 00:52:46,880
+with uh which which in turn allows the
+
+1553
+00:52:45,200 --> 00:52:48,800
+next me to take place. So I think
+
+1554
+00:52:46,880 --> 00:52:50,720
+there's an energetic perspective,
+
+1555
+00:52:48,800 --> 00:52:53,040
+there's a compositional perspective, a
+
+1556
+00:52:50,720 --> 00:52:55,119
+comorical perspective, there's a scaling
+
+1557
+00:52:53,040 --> 00:52:57,760
+law perspective that that can all come
+
+1558
+00:52:55,119 --> 00:52:59,359
+to rescue uh that that uh that question,
+
+1559
+00:52:57,760 --> 00:53:00,880
+but we should talk more about it. I'd
+
+1560
+00:52:59,359 --> 00:53:01,599
+love to I'd love to get into this in
+
+1561
+00:53:00,880 --> 00:53:03,359
+more detail.
+
+1562
+00:53:01,599 --> 00:53:06,880
+>> It's essential for life to have some
+
+1563
+00:53:03,359 --> 00:53:09,520
+functionality pointing for the brain
+
+1564
+00:53:06,880 --> 00:53:12,480
+programs their strings in which their
+
+1565
+00:53:09,520 --> 00:53:13,280
+functionality by external goals aka the
+
+1566
+00:53:12,480 --> 00:53:15,520
+CPU.
+
+1567
+00:53:13,280 --> 00:53:16,880
+>> I agree. So I made claims that maybe
+
+1568
+00:53:15,520 --> 00:53:18,880
+sound contradictory. You know, one of
+
+1569
+00:53:16,880 --> 00:53:20,400
+which was that, you know, Vonoyman is
+
+1570
+00:53:18,880 --> 00:53:22,160
+embodied computation and different from
+
+1571
+00:53:20,400 --> 00:53:24,800
+touring in that sense, but on the other
+
+1572
+00:53:22,160 --> 00:53:25,920
+hand that BFF uh, you know, looks like,
+
+1573
+00:53:24,800 --> 00:53:28,319
+you know, very much like a touring
+
+1574
+00:53:25,920 --> 00:53:30,000
+machine. And um, and yet I I also said
+
+1575
+00:53:28,319 --> 00:53:32,400
+it was embodied because I I made one
+
+1576
+00:53:30,000 --> 00:53:34,000
+tape. So you know, even the question of
+
+1577
+00:53:32,400 --> 00:53:35,599
+whether something is embodied or not is
+
+1578
+00:53:34,000 --> 00:53:37,839
+a little bit perspective dependent as
+
+1579
+00:53:35,599 --> 00:53:39,680
+well because in a in a Vonoyman system,
+
+1580
+00:53:37,839 --> 00:53:41,680
+for instance, there's of course the same
+
+1581
+00:53:39,680 --> 00:53:43,520
+rule operating at every pixel. You know,
+
+1582
+00:53:41,680 --> 00:53:45,119
+you can ask yourself the question, is a
+
+1583
+00:53:43,520 --> 00:53:47,119
+computer the thing that I make, you
+
+1584
+00:53:45,119 --> 00:53:49,440
+know, with lots of parts, right? You
+
+1585
+00:53:47,119 --> 00:53:51,440
+know, of the kinds that designed, or is
+
+1586
+00:53:49,440 --> 00:53:52,880
+it just the operation of a single pixel?
+
+1587
+00:53:51,440 --> 00:53:55,040
+The usual answer is to say what happens
+
+1588
+00:53:52,880 --> 00:53:57,599
+at a single pixel is just the physics of
+
+1589
+00:53:55,040 --> 00:53:58,800
+that world. But what constitutes the
+
+1590
+00:53:57,599 --> 00:54:01,119
+physics and what constitutes the
+
+1591
+00:53:58,800 --> 00:54:03,520
+computation is actually a movable
+
+1592
+00:54:01,119 --> 00:54:06,160
+boundary. So uh you know embodiment is
+
+1593
+00:54:03,520 --> 00:54:08,000
+is is essential in a very minimal sense
+
+1594
+00:54:06,160 --> 00:54:10,800
+that you need to be able to uh to
+
+1595
+00:54:08,000 --> 00:54:12,720
+operate on the the thing that is going
+
+1596
+00:54:10,800 --> 00:54:15,119
+to you need to be able to make coins
+
+1597
+00:54:12,720 --> 00:54:17,920
+essentially right in and um uh and in
+
+1598
+00:54:15,119 --> 00:54:19,680
+ordinary um uh brain [ __ ] you you can't
+
+1599
+00:54:17,920 --> 00:54:21,599
+make a quin because the data tape is
+
+1600
+00:54:19,680 --> 00:54:23,040
+separate from the from the program tape
+
+1601
+00:54:21,599 --> 00:54:25,440
+but you bring them together you're now
+
+1602
+00:54:23,040 --> 00:54:27,599
+in the same realm as as a as a cellular
+
+1603
+00:54:25,440 --> 00:54:29,119
+automaton albeit with a different coarse
+
+1604
+00:54:27,599 --> 00:54:30,880
+graining of what you consider to be the
+
+1605
+00:54:29,119 --> 00:54:34,160
+physics and what you consider to be the
+
+1606
+00:54:30,880 --> 00:54:35,359
+the the code. Now I mean in our world we
+
+1607
+00:54:34,160 --> 00:54:37,280
+know that it's possible to build
+
+1608
+00:54:35,359 --> 00:54:38,559
+computers or else we wouldn't be able to
+
+1609
+00:54:37,280 --> 00:54:41,040
+build computers and we wouldn't be here
+
+1610
+00:54:38,559 --> 00:54:42,960
+either. Um but you know what constitutes
+
+1611
+00:54:41,040 --> 00:54:44,480
+the physics if you like the the physics
+
+1612
+00:54:42,960 --> 00:54:46,800
+that makes up computers itself had to
+
+1613
+00:54:44,480 --> 00:54:48,079
+evolve. You know we began as I guess
+
+1614
+00:54:46,800 --> 00:54:49,760
+nothing but a quant you know quantum
+
+1615
+00:54:48,079 --> 00:54:52,319
+field theory and then things came
+
+1616
+00:54:49,760 --> 00:54:53,280
+together you know into particles uh you
+
+1617
+00:54:52,319 --> 00:54:54,800
+know and the particles come together
+
+1618
+00:54:53,280 --> 00:54:57,520
+into atoms the atoms come together into
+
+1619
+00:54:54,800 --> 00:54:58,559
+molecules and so on. Those are
+
+1620
+00:54:57,520 --> 00:55:01,040
+essentially what I would call the
+
+1621
+00:54:58,559 --> 00:55:03,520
+inanimate replicators right in in the
+
+1622
+00:55:01,040 --> 00:55:06,000
+system. And and there there's a there's
+
+1623
+00:55:03,520 --> 00:55:08,000
+an important phase transition when those
+
+1624
+00:55:06,000 --> 00:55:10,160
+suddenly are rich uh form a rich enough
+
+1625
+00:55:08,000 --> 00:55:12,640
+set that not only do you have an autoc
+
+1626
+00:55:10,160 --> 00:55:15,040
+catalytic system as mold fontana would
+
+1627
+00:55:12,640 --> 00:55:16,800
+have said but also that that you can
+
+1628
+00:55:15,040 --> 00:55:18,400
+form a touring complete instruction set
+
+1629
+00:55:16,800 --> 00:55:21,200
+and and therefore you know open the door
+
+1630
+00:55:18,400 --> 00:55:24,319
+to generality of of computing. I hope
+
+1631
+00:55:21,200 --> 00:55:25,440
+that I hope that makes uh some sense.
+
+1632
+00:55:24,319 --> 00:55:27,359
+>> All right. I think we're
+
+1633
+00:55:25,440 --> 00:55:32,078
+>> And yeah, I'm afraid we have to wrap up.
+
+1634
+00:55:27,359 --> 00:55:32,078
+So, let's thank once again. [applause]
+
+1635
+00:55:35,298 --> 00:55:37,318
+[applause]
+
+1636
+00:55:38,559 --> 00:55:45,480
+>> Thank you so much for this amazing this
+
+1637
+00:55:40,800 --> 00:55:45,480
+amazing talk. Great questions, too.
+

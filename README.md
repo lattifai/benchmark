@@ -13,7 +13,30 @@ We use the [OpenAI GPT-4o launch event](https://www.youtube.com/watch?v=DQacCB9t
 - **Frequent interruptions** and overlapping speech
 - **Audience applause** and ambient noise throughout
 
-> **Note on sample size**: We currently have one primary dataset. While limited, we run each experiment at least twice to verify result stability. More datasets will be added in future updates.
+> **Note on sample size**: We currently have one primary dataset. While limited, we run each experiment at least twice to verify result stability.
+
+### Podcast Dataset
+
+Long-form AI podcast episodes for evaluating alignment and transcription across different durations. Audio files are stored with [Git LFS](https://git-lfs.github.com/).
+
+| Duration | Podcast | Episode | Length |
+|----------|---------|---------|--------|
+| < 1h | No Priors | 2026 AI Forecast (Sarah Guo & Elad Gil) | 40m |
+| < 1h | MLST | Blaise Agüera y Arcas — Intelligence | 55m |
+| 1–2h | No Priors | Jensen Huang — Reasoning & Robotics | 1h 16m |
+| 1–2h | Latent Space | Jeff Dean — Gemini 3 Deep Think | 1h 23m |
+| 2–3h | Dwarkesh | Dario Amodei — "End of the exponential" | 2h 22m |
+| 2–3h | Dwarkesh | Dylan Patel — AI compute bottleneck | 2h 30m |
+| 3h+ | Lex Fridman | State of AI in 2026 (#490) | 4h 25m |
+| 3h+ | MLST | Max Bennett — Brain Predictions | 3h 17m |
+
+Each episode directory contains:
+- Audio: `.m4a` (original) + `.mp3` (16kHz mono, for alignment)
+- YouTube subtitles: `.en.srt` (manual or auto-generated)
+- Metadata: `.info.json`, `.description`
+- External transcripts: `.transcript.html` (where available)
+
+See [`data/podcast/RESEARCH.md`](data/podcast/RESEARCH.md) for full research notes and source URLs.
 
 
 ## Benchmark
@@ -185,13 +208,28 @@ Options:
 
 ```
 data/
-├── datasets.json              # Dataset index
+├── datasets.json                  # Dataset index
 ├── OpenAI-Introducing-GPT-4o/
 │   ├── audio.mp3
-│   ├── ground_truth.ass       # Reference
-│   ├── gemini-2.5-pro.md      # Transcripts
-└── TheValley101-GPT-4o-vs-Gemini/
-    └── ...
+│   ├── ground_truth.ass           # Reference
+│   └── gemini-2.5-pro.md          # Transcripts
+├── TheValley101-GPT-4o-vs-Gemini/
+│   └── ...
+└── podcast/                       # Podcast benchmark dataset (LFS)
+    ├── RESEARCH.md                # Research notes & source URLs
+    ├── lex-fridman/
+    │   └── state-of-ai-2026/      # 4h 25m
+    ├── dwarkesh/
+    │   ├── dario-amodei/           # 2h 22m
+    │   └── dylan-patel/            # 2h 30m
+    ├── no-priors/
+    │   ├── 2026-ai-forecast/       # 40m
+    │   └── jensen-huang/           # 1h 16m
+    ├── mlst/
+    │   ├── blaise-aguera-y-arcas/  # 55m
+    │   └── max-bennett/            # 3h 17m
+    └── latent-space/
+        └── jeff-dean/              # 1h 23m
 ```
 
 ## Metrics

@@ -1,0 +1,8644 @@
+1
+00:00:05,839 --> 00:00:08,000
+Hson, thanks so much for joining us
+
+2
+00:00:07,359 --> 00:00:09,920
+today.
+
+3
+00:00:08,000 --> 00:00:10,639
+>> So great to have you guys. What an
+
+4
+00:00:09,920 --> 00:00:11,519
+amazing year.
+
+5
+00:00:10,639 --> 00:00:13,519
+>> What a year.
+
+6
+00:00:11,519 --> 00:00:15,200
+>> Happy Hanukkah, merry Christmas,
+
+7
+00:00:13,519 --> 00:00:16,480
+>> happy new year coming up. Yep. Happy
+
+8
+00:00:15,200 --> 00:00:18,640
+holidays.
+
+9
+00:00:16,480 --> 00:00:20,960
+>> So, uh, with everything that's happened
+
+10
+00:00:18,640 --> 00:00:22,640
+in 2025,
+
+11
+00:00:20,960 --> 00:00:24,400
+um, and you know, being in the middle of
+
+12
+00:00:22,640 --> 00:00:26,160
+the vortex with it, what do you reflect
+
+13
+00:00:24,400 --> 00:00:27,680
+on and say like this surprised you most
+
+14
+00:00:26,160 --> 00:00:28,960
+or this is the biggest change?
+
+15
+00:00:27,680 --> 00:00:30,560
+>> Let's see. There there's some things
+
+16
+00:00:28,960 --> 00:00:32,079
+that didn't surprise me like for example
+
+17
+00:00:30,560 --> 00:00:33,920
+the scaling laws didn't surprise me
+
+18
+00:00:32,079 --> 00:00:35,840
+because we already knew about that. The
+
+19
+00:00:33,920 --> 00:00:39,360
+technology advancement didn't surprise
+
+20
+00:00:35,840 --> 00:00:41,200
+me. I was pleased with the improvements
+
+21
+00:00:39,360 --> 00:00:43,040
+of grounding. I was pleased with the
+
+22
+00:00:41,200 --> 00:00:46,480
+improvements of reasoning. I was pleased
+
+23
+00:00:43,040 --> 00:00:49,600
+with uh uh the connection of all of the
+
+24
+00:00:46,480 --> 00:00:52,719
+models to to to search. I'm pleased that
+
+25
+00:00:49,600 --> 00:00:54,960
+it that uh there are now routers that
+
+26
+00:00:52,719 --> 00:00:56,719
+are in front of these models so that it
+
+27
+00:00:54,960 --> 00:01:00,079
+could depending on the confidence of the
+
+28
+00:00:56,719 --> 00:01:02,719
+answers go off and do necessary research
+
+29
+00:01:00,079 --> 00:01:05,439
+and and just generally improve the
+
+30
+00:01:02,719 --> 00:01:07,920
+quality and the accuracy of answers.
+
+31
+00:01:05,439 --> 00:01:10,080
+>> I'm hugely proud of that. I think the
+
+32
+00:01:07,920 --> 00:01:13,360
+whole industry addressed one of the
+
+33
+00:01:10,080 --> 00:01:16,240
+biggest skeptical responses of AI which
+
+34
+00:01:13,360 --> 00:01:18,159
+is hallucination and um generating
+
+35
+00:01:16,240 --> 00:01:19,920
+gibberish and all of that stuff. I I
+
+36
+00:01:18,159 --> 00:01:22,000
+thought that this year the whole
+
+37
+00:01:19,920 --> 00:01:24,880
+industry everything from every every
+
+38
+00:01:22,000 --> 00:01:28,400
+field from language to vision to
+
+39
+00:01:24,880 --> 00:01:30,880
+robotics to self-driving cars the the
+
+40
+00:01:28,400 --> 00:01:34,960
+application of reasoning
+
+41
+00:01:30,880 --> 00:01:38,479
+and the grounding of the of of of the
+
+42
+00:01:34,960 --> 00:01:39,280
+answers. Um big big leaps would you guys
+
+43
+00:01:38,479 --> 00:01:40,720
+say this year?
+
+44
+00:01:39,280 --> 00:01:42,000
+>> Huge. I mean things like open evidence
+
+45
+00:01:40,720 --> 00:01:43,360
+too for medical information where
+
+46
+00:01:42,000 --> 00:01:45,840
+doctors are now really using that as a
+
+47
+00:01:43,360 --> 00:01:47,360
+trusted resource like you Harvey for
+
+48
+00:01:45,840 --> 00:01:48,560
+legal you're really starting to see AI
+
+49
+00:01:47,360 --> 00:01:51,280
+emerge as one of these things that's
+
+50
+00:01:48,560 --> 00:01:53,360
+become a trusted tool or counterparty
+
+51
+00:01:51,280 --> 00:01:54,720
+for you know experts to actually be able
+
+52
+00:01:53,360 --> 00:01:56,799
+to do what they do much better.
+
+53
+00:01:54,720 --> 00:01:58,960
+>> That's that's right. And so so in a lot
+
+54
+00:01:56,799 --> 00:02:00,799
+of ways I was expecting it but I'm still
+
+55
+00:01:58,960 --> 00:02:02,560
+pleased by it. I'm proud of it. I'm
+
+56
+00:02:00,799 --> 00:02:06,159
+proud of all of the industry's work in
+
+57
+00:02:02,560 --> 00:02:08,800
+this area. I'm really pleased and and uh
+
+58
+00:02:06,159 --> 00:02:12,720
+uh and probably a little bit surprised
+
+59
+00:02:08,800 --> 00:02:15,360
+in fact that token generation rate for
+
+60
+00:02:12,720 --> 00:02:18,560
+inference especially reasoning tokens
+
+61
+00:02:15,360 --> 00:02:22,080
+are growing so fast several exponentials
+
+62
+00:02:18,560 --> 00:02:23,840
+at the same times it seems and uh and
+
+63
+00:02:22,080 --> 00:02:26,080
+I'm so pleased that that these tokens
+
+64
+00:02:23,840 --> 00:02:29,280
+are now profitable that people are
+
+65
+00:02:26,080 --> 00:02:31,360
+generating I heard somebody hurt today
+
+66
+00:02:29,280 --> 00:02:34,000
+that that open evidence speaking of them
+
+67
+00:02:31,360 --> 00:02:35,120
+90% gross margins I mean those are very
+
+68
+00:02:34,000 --> 00:02:35,440
+profitable tokens.
+
+69
+00:02:35,120 --> 00:02:36,959
+>> Yeah.
+
+70
+00:02:35,440 --> 00:02:39,280
+>> And so they're obviously doing very
+
+71
+00:02:36,959 --> 00:02:41,519
+profitable, very valuable work. Cursor,
+
+72
+00:02:39,280 --> 00:02:43,680
+their margins are great. Uh Claude's
+
+73
+00:02:41,519 --> 00:02:46,319
+margins are great for the enterprise use
+
+74
+00:02:43,680 --> 00:02:48,480
+of OpenAI. Their margins are great. Um
+
+75
+00:02:46,319 --> 00:02:51,440
+so anyways, it's really terrific to see
+
+76
+00:02:48,480 --> 00:02:53,920
+that that um we're now generating tokens
+
+77
+00:02:51,440 --> 00:02:55,440
+that are sufficiently good, so good in
+
+78
+00:02:53,920 --> 00:02:57,280
+value that that people are willing to
+
+79
+00:02:55,440 --> 00:02:58,959
+pay good money for. And so I I think
+
+80
+00:02:57,280 --> 00:03:01,599
+these are are really great grounding for
+
+81
+00:02:58,959 --> 00:03:04,560
+the year. I mean some of the things that
+
+82
+00:03:01,599 --> 00:03:06,319
+the narrative that that um uh of course
+
+83
+00:03:04,560 --> 00:03:08,720
+the conversation with China really
+
+84
+00:03:06,319 --> 00:03:11,519
+really you know occupied a lot of my my
+
+85
+00:03:08,720 --> 00:03:13,440
+time this year. Geopolitics
+
+86
+00:03:11,519 --> 00:03:15,200
+uh the importance of technology in each
+
+87
+00:03:13,440 --> 00:03:16,560
+one of the countries. Uh I spent more
+
+88
+00:03:15,200 --> 00:03:18,480
+time traveling around the world this
+
+89
+00:03:16,560 --> 00:03:21,200
+year than just about any time in the h
+
+90
+00:03:18,480 --> 00:03:22,800
+all of my life combined. You know my
+
+91
+00:03:21,200 --> 00:03:25,280
+average elevation this year is probably
+
+92
+00:03:22,800 --> 00:03:27,040
+about 17,000 ft. You know so so it's
+
+93
+00:03:25,280 --> 00:03:29,599
+nice to be here on the ground with you
+
+94
+00:03:27,040 --> 00:03:32,000
+guys. Um and so so I think uh
+
+95
+00:03:29,599 --> 00:03:34,480
+geopolitics the importance of AI to all
+
+96
+00:03:32,000 --> 00:03:36,239
+the nations uh all worth talking about
+
+97
+00:03:34,480 --> 00:03:38,319
+later. You know of course I spent a lot
+
+98
+00:03:36,239 --> 00:03:40,879
+of time on expert control and and making
+
+99
+00:03:38,319 --> 00:03:43,840
+sure that our strategy is nuanced and uh
+
+100
+00:03:40,879 --> 00:03:45,920
+really grounded and um uh promotes
+
+101
+00:03:43,840 --> 00:03:49,519
+national security but recognizing the
+
+102
+00:03:45,920 --> 00:03:51,920
+importance of various uh various facets
+
+103
+00:03:49,519 --> 00:03:54,480
+of national security. Um a lot of
+
+104
+00:03:51,920 --> 00:03:56,319
+conversations around that. Um, you know,
+
+105
+00:03:54,480 --> 00:03:58,480
+of course, of course, uh, lots of
+
+106
+00:03:56,319 --> 00:04:00,959
+conversation about jobs, the impact of
+
+107
+00:03:58,480 --> 00:04:03,200
+AI, uh, energy,
+
+108
+00:04:00,959 --> 00:04:05,439
+>> um, uh, labor shortage. I mean, boy, we
+
+109
+00:04:03,200 --> 00:04:06,480
+covered everything, did we? Yeah.
+
+110
+00:04:05,439 --> 00:04:08,480
+Everything was AI.
+
+111
+00:04:06,480 --> 00:04:09,040
+>> Everything was AI. Yeah, it was
+
+112
+00:04:08,480 --> 00:04:10,239
+incredible.
+
+113
+00:04:09,040 --> 00:04:11,519
+>> Yeah, AI was definitely the center of
+
+114
+00:04:10,239 --> 00:04:13,280
+the storm for like every one of those
+
+115
+00:04:11,519 --> 00:04:15,519
+themes. Maybe one we can start with
+
+116
+00:04:13,280 --> 00:04:16,880
+actually um is jobs because or there
+
+117
+00:04:15,519 --> 00:04:19,919
+jobs and employment because when I look
+
+118
+00:04:16,880 --> 00:04:21,600
+at the traditional AI community even
+
+119
+00:04:19,919 --> 00:04:23,520
+before things were scaling and even
+
+120
+00:04:21,600 --> 00:04:25,840
+before AI was really working there was a
+
+121
+00:04:23,520 --> 00:04:27,520
+strong sort of doomsday component in the
+
+122
+00:04:25,840 --> 00:04:28,880
+people working on AI oddly enough right
+
+123
+00:04:27,520 --> 00:04:30,400
+the people who were most trying to push
+
+124
+00:04:28,880 --> 00:04:31,680
+the field forward were often the people
+
+125
+00:04:30,400 --> 00:04:33,440
+who are most pessimistic which is very
+
+126
+00:04:31,680 --> 00:04:35,120
+odd why would you do both at once
+
+127
+00:04:33,440 --> 00:04:37,440
+>> and I feel like that narrative has taken
+
+128
+00:04:35,120 --> 00:04:38,960
+over some subset of media or some set of
+
+129
+00:04:37,440 --> 00:04:40,720
+other things despite all the things that
+
+130
+00:04:38,960 --> 00:04:42,160
+we think are very positive about what AI
+
+131
+00:04:40,720 --> 00:04:43,360
+has done That's going to help with
+
+132
+00:04:42,160 --> 00:04:44,560
+healthcare, with education, with
+
+133
+00:04:43,360 --> 00:04:45,759
+productivity, with all these other
+
+134
+00:04:44,560 --> 00:04:47,759
+areas.
+
+135
+00:04:45,759 --> 00:04:49,680
+>> And in in general, whenever we have a
+
+136
+00:04:47,759 --> 00:04:50,639
+technology shift, you have a shift in
+
+137
+00:04:49,680 --> 00:04:51,759
+terms of the jobs that are important,
+
+138
+00:04:50,639 --> 00:04:52,240
+but you still have more jobs.
+
+139
+00:04:51,759 --> 00:04:53,440
+>> That's right.
+
+140
+00:04:52,240 --> 00:04:55,360
+>> Could you talk about how you think about
+
+141
+00:04:53,440 --> 00:04:56,479
+employment and jobs and sort of what
+
+142
+00:04:55,360 --> 00:04:57,360
+people are saying and what you think the
+
+143
+00:04:56,479 --> 00:04:58,800
+real narrative is there?
+
+144
+00:04:57,360 --> 00:05:02,479
+>> Maybe what I'll do is I'll I'll ground
+
+145
+00:04:58,800 --> 00:05:04,160
+it on uh three points in space, three
+
+146
+00:05:02,479 --> 00:05:05,120
+points in time. now.
+
+147
+00:05:04,160 --> 00:05:08,880
+>> Mhm.
+
+148
+00:05:05,120 --> 00:05:11,440
+>> Uh maybe uh uh very near future and then
+
+149
+00:05:08,880 --> 00:05:13,520
+some some point out out in the distance
+
+150
+00:05:11,440 --> 00:05:15,120
+and and maybe maybe some
+
+151
+00:05:13,520 --> 00:05:17,199
+counternarratives.
+
+152
+00:05:15,120 --> 00:05:19,520
+>> Um something else to think about with
+
+153
+00:05:17,199 --> 00:05:21,120
+respect to jobs in the near term.
+
+154
+00:05:19,520 --> 00:05:25,520
+>> Uh one of the most important things is
+
+155
+00:05:21,120 --> 00:05:27,919
+that that AI is not just AI is software
+
+156
+00:05:25,520 --> 00:05:29,600
+>> but it's not pre-recorded software as
+
+157
+00:05:27,919 --> 00:05:32,000
+you know. For example, Excel was written
+
+158
+00:05:29,600 --> 00:05:34,400
+by several hundred engineers. They
+
+159
+00:05:32,000 --> 00:05:36,080
+compiled it. It's pre-recorded and then
+
+160
+00:05:34,400 --> 00:05:39,120
+they distribute it as is for several
+
+161
+00:05:36,080 --> 00:05:41,919
+years. In the case of AI, because it
+
+162
+00:05:39,120 --> 00:05:43,919
+takes into the context, what you asked
+
+163
+00:05:41,919 --> 00:05:46,160
+of it, what's happening in the world,
+
+164
+00:05:43,919 --> 00:05:48,720
+right? Contextual information, it
+
+165
+00:05:46,160 --> 00:05:50,479
+generates every single token for the
+
+166
+00:05:48,720 --> 00:05:52,560
+first time, every time.
+
+167
+00:05:50,479 --> 00:05:55,120
+>> Which means every time you use the
+
+168
+00:05:52,560 --> 00:05:57,280
+software and and everything that we do,
+
+169
+00:05:55,120 --> 00:05:59,120
+AI is being generated for the first time
+
+170
+00:05:57,280 --> 00:06:01,840
+ever. Just like intelligence, our
+
+171
+00:05:59,120 --> 00:06:03,919
+conversation today relies on some, you
+
+172
+00:06:01,840 --> 00:06:06,240
+know, ground truth and some knowledge
+
+173
+00:06:03,919 --> 00:06:08,160
+and but it's every single word is being
+
+174
+00:06:06,240 --> 00:06:10,400
+generated for the first time here. The
+
+175
+00:06:08,160 --> 00:06:12,800
+thing that's really really quite unique
+
+176
+00:06:10,400 --> 00:06:15,120
+about AI is that it needs these
+
+177
+00:06:12,800 --> 00:06:17,280
+computers to generate these tokens every
+
+178
+00:06:15,120 --> 00:06:19,759
+single time. I call them AI factories
+
+179
+00:06:17,280 --> 00:06:21,600
+because it's producing tokens that will
+
+180
+00:06:19,759 --> 00:06:23,440
+be, you know, used all over the world.
+
+181
+00:06:21,600 --> 00:06:25,120
+Now, some people would say it's also
+
+182
+00:06:23,440 --> 00:06:27,039
+part of infrastructure. The reason why
+
+183
+00:06:25,120 --> 00:06:29,280
+it's infrastructure is because obviously
+
+184
+00:06:27,039 --> 00:06:32,000
+it affects every single application.
+
+185
+00:06:29,280 --> 00:06:33,840
+It's used in every single company. It's
+
+186
+00:06:32,000 --> 00:06:35,120
+used in every single industry every
+
+187
+00:06:33,840 --> 00:06:36,880
+single country. Therefore, it's part
+
+188
+00:06:35,120 --> 00:06:39,680
+infrastructure like energy and and
+
+189
+00:06:36,880 --> 00:06:41,280
+internet. Now, because of that and the
+
+190
+00:06:39,680 --> 00:06:42,800
+amount of computers that's necessary to
+
+191
+00:06:41,280 --> 00:06:44,240
+generate these tokens and it's never
+
+192
+00:06:42,800 --> 00:06:46,800
+happened before and because we need
+
+193
+00:06:44,240 --> 00:06:48,960
+these factories, three new industries
+
+194
+00:06:46,800 --> 00:06:50,400
+have emerged. Number one, well, three
+
+195
+00:06:48,960 --> 00:06:52,160
+new type of plants have to be created.
+
+196
+00:06:50,400 --> 00:06:53,440
+Number one, we have to build a lot more
+
+197
+00:06:52,160 --> 00:06:56,479
+chip plants.
+
+198
+00:06:53,440 --> 00:06:58,639
+>> Mhm. TSMC is building, right? SKH Highix
+
+199
+00:06:56,479 --> 00:07:01,120
+building a lot more plants and so we
+
+200
+00:06:58,639 --> 00:07:02,960
+need more chip plants. We need more
+
+201
+00:07:01,120 --> 00:07:04,960
+computer plants. These computers are
+
+202
+00:07:02,960 --> 00:07:06,400
+very different. These are supercomputers
+
+203
+00:07:04,960 --> 00:07:09,199
+that the world's never seen before.
+
+204
+00:07:06,400 --> 00:07:10,639
+Right. Grace Blackwell looks like a very
+
+205
+00:07:09,199 --> 00:07:13,360
+different type of computer than anything
+
+206
+00:07:10,639 --> 00:07:14,720
+that's ever been made. And entire rack
+
+207
+00:07:13,360 --> 00:07:17,039
+is one GPU.
+
+208
+00:07:14,720 --> 00:07:20,160
+>> And so we need new supercomputer plants.
+
+209
+00:07:17,039 --> 00:07:22,479
+And then we need new AI factories. These
+
+210
+00:07:20,160 --> 00:07:24,639
+three plants are currently being met
+
+211
+00:07:22,479 --> 00:07:27,199
+being built in the United States at very
+
+212
+00:07:24,639 --> 00:07:29,199
+large scale quite broadly all over the
+
+213
+00:07:27,199 --> 00:07:31,360
+United States for the very first time.
+
+214
+00:07:29,199 --> 00:07:33,280
+>> The number of construction workers,
+
+215
+00:07:31,360 --> 00:07:35,919
+plumbers, electricians, technicians,
+
+216
+00:07:33,280 --> 00:07:38,639
+network engineers, you know, right? The
+
+217
+00:07:35,919 --> 00:07:40,400
+the number of the skilled labor that's
+
+218
+00:07:38,639 --> 00:07:41,840
+necessary to support this new industry
+
+219
+00:07:40,400 --> 00:07:44,560
+in the near term,
+
+220
+00:07:41,840 --> 00:07:45,840
+>> it'll be enormous. Let's just face it.
+
+221
+00:07:44,560 --> 00:07:47,599
+Uh I'm [clears throat] so excited to
+
+222
+00:07:45,840 --> 00:07:49,919
+hear that electricians are seeing their
+
+223
+00:07:47,599 --> 00:07:52,000
+paychecks double. They're being they're
+
+224
+00:07:49,919 --> 00:07:53,360
+being paid to travels like like us. We
+
+225
+00:07:52,000 --> 00:07:55,280
+go on business trips. They're going on
+
+226
+00:07:53,360 --> 00:07:57,919
+business trips. And so it's really
+
+227
+00:07:55,280 --> 00:08:00,639
+terrific to see, you know, that this
+
+228
+00:07:57,919 --> 00:08:03,199
+these three industries are now three
+
+229
+00:08:00,639 --> 00:08:05,599
+types of plants, factories are just
+
+230
+00:08:03,199 --> 00:08:10,400
+creating so much so much jobs. The next
+
+231
+00:08:05,599 --> 00:08:14,240
+part is the the near-term impact of AI
+
+232
+00:08:10,400 --> 00:08:18,400
+on jobs. And one of my favorites is um I
+
+233
+00:08:14,240 --> 00:08:21,280
+love Jeff Hinton. uh he said uh you know
+
+234
+00:08:18,400 --> 00:08:25,360
+some five six seven years ago that in
+
+235
+00:08:21,280 --> 00:08:28,160
+five years time uh AI will completely
+
+236
+00:08:25,360 --> 00:08:30,319
+revolutionize radiology that every
+
+237
+00:08:28,160 --> 00:08:35,360
+single radiology application will be
+
+238
+00:08:30,319 --> 00:08:38,159
+powered by AI and that radiologists
+
+239
+00:08:35,360 --> 00:08:40,320
+uh will no longer be needed and that he
+
+240
+00:08:38,159 --> 00:08:42,479
+would advise this the first profession
+
+241
+00:08:40,320 --> 00:08:46,000
+not to go into is radiology and he's
+
+242
+00:08:42,479 --> 00:08:48,560
+absolutely right 100% of radiology
+
+243
+00:08:46,000 --> 00:08:51,120
+applications are now AI powered. That's
+
+244
+00:08:48,560 --> 00:08:56,080
+completely true and in some eight years
+
+245
+00:08:51,120 --> 00:08:58,320
+time it is now completely pervaded uh uh
+
+246
+00:08:56,080 --> 00:09:00,480
+radiology. However, what's interesting
+
+247
+00:08:58,320 --> 00:09:01,440
+is that the number of radiologists
+
+248
+00:09:00,480 --> 00:09:03,680
+increased
+
+249
+00:09:01,440 --> 00:09:06,560
+>> and so now the question is why and this
+
+250
+00:09:03,680 --> 00:09:10,480
+is where the difference between task
+
+251
+00:09:06,560 --> 00:09:13,200
+versus purpose of a job. A job has tasks
+
+252
+00:09:10,480 --> 00:09:17,519
+and has purpose. And in the case of a
+
+253
+00:09:13,200 --> 00:09:20,640
+radiologist, the task is to study scans,
+
+254
+00:09:17,519 --> 00:09:21,920
+but the purpose is to diagnose disease
+
+255
+00:09:20,640 --> 00:09:23,680
+>> and to research
+
+256
+00:09:21,920 --> 00:09:26,080
+>> and and that exactly and they're doing
+
+257
+00:09:23,680 --> 00:09:27,760
+research. And so in the case in their
+
+258
+00:09:26,080 --> 00:09:31,040
+case, the fact that they're able to
+
+259
+00:09:27,760 --> 00:09:33,440
+study more scans more deeply,
+
+260
+00:09:31,040 --> 00:09:35,680
+um they're able to uh request more
+
+261
+00:09:33,440 --> 00:09:38,880
+scans, do a better job diagnosing
+
+262
+00:09:35,680 --> 00:09:41,120
+disease, the hospital's more productive,
+
+263
+00:09:38,880 --> 00:09:42,800
+they can have more patients, which
+
+264
+00:09:41,120 --> 00:09:44,160
+allows them to make more money, which
+
+265
+00:09:42,800 --> 00:09:47,279
+allows them to want to hire more
+
+266
+00:09:44,160 --> 00:09:49,760
+radiologists. And so the question is
+
+267
+00:09:47,279 --> 00:09:51,760
+what is the purpose of the job versus
+
+268
+00:09:49,760 --> 00:09:54,000
+what is the task that you do in your
+
+269
+00:09:51,760 --> 00:09:54,880
+job? And and as you know, I spend most
+
+270
+00:09:54,000 --> 00:09:58,480
+of my
+
+271
+00:09:54,880 --> 00:10:00,640
+>> day typing. [snorts] That's my task, but
+
+272
+00:09:58,480 --> 00:10:02,640
+my purpose is obviously not typing. And
+
+273
+00:10:00,640 --> 00:10:04,640
+so the fact that somebody could use AI
+
+274
+00:10:02,640 --> 00:10:06,080
+to automate a lot of my typing, and I
+
+275
+00:10:04,640 --> 00:10:06,880
+really appreciate that, and it helps a
+
+276
+00:10:06,080 --> 00:10:09,360
+lot.
+
+277
+00:10:06,880 --> 00:10:11,680
+>> Um, it hasn't really made me, if you
+
+278
+00:10:09,360 --> 00:10:13,360
+will, less busy. In a lot of ways, I
+
+279
+00:10:11,680 --> 00:10:15,040
+become more busy because I'm able to do
+
+280
+00:10:13,360 --> 00:10:17,200
+more work. So, I think that that's the
+
+281
+00:10:15,040 --> 00:10:19,440
+second part to consider is the task
+
+282
+00:10:17,200 --> 00:10:21,040
+versus the purpose of the job. This
+
+283
+00:10:19,440 --> 00:10:23,279
+example really strikes home because my
+
+284
+00:10:21,040 --> 00:10:25,040
+my sister-in-law Erin actually leads um
+
+285
+00:10:23,279 --> 00:10:27,839
+in nuclear medicine at Stanford, right?
+
+286
+00:10:25,040 --> 00:10:30,079
+So, she's in radiology and with all the
+
+287
+00:10:27,839 --> 00:10:32,240
+technology advancements that are coming,
+
+288
+00:10:30,079 --> 00:10:34,160
+>> these doctors really welcome it and they
+
+289
+00:10:32,240 --> 00:10:36,000
+are working 20 hours a day trying to do
+
+290
+00:10:34,160 --> 00:10:37,760
+more research and serve more patients.
+
+291
+00:10:36,000 --> 00:10:42,000
+Exactly. And and I think one thing that
+
+292
+00:10:37,760 --> 00:10:44,240
+is often missed beyond the sort of um uh
+
+293
+00:10:42,000 --> 00:10:46,480
+diversity of jobs being created by this
+
+294
+00:10:44,240 --> 00:10:49,200
+investment in infrastructure is actually
+
+295
+00:10:46,480 --> 00:10:51,680
+how much latent demand there is for
+
+296
+00:10:49,200 --> 00:10:53,440
+different goods that we we need in
+
+297
+00:10:51,680 --> 00:10:55,120
+society like better healthcare. I don't
+
+298
+00:10:53,440 --> 00:10:58,560
+think anybody feels like you know what
+
+299
+00:10:55,120 --> 00:11:00,480
+we have reached the the tiptop uh
+
+300
+00:10:58,560 --> 00:11:03,120
+mountaintop of like what American
+
+301
+00:11:00,480 --> 00:11:05,600
+healthcare or global healthcare could be
+
+302
+00:11:03,120 --> 00:11:07,200
+and um the more we can make these people
+
+303
+00:11:05,600 --> 00:11:09,440
+productive the more demand there will be
+
+304
+00:11:07,200 --> 00:11:12,079
+>> that's exactly right if I if Nvidia was
+
+305
+00:11:09,440 --> 00:11:15,040
+more productive it doesn't result in
+
+306
+00:11:12,079 --> 00:11:15,519
+layoffs it results in us doing more more
+
+307
+00:11:15,040 --> 00:11:17,519
+things
+
+308
+00:11:15,519 --> 00:11:20,160
+>> I met your new hire class today you seem
+
+309
+00:11:17,519 --> 00:11:22,079
+to be hiring every week anyway yeah
+
+310
+00:11:20,160 --> 00:11:24,959
+>> that's exactly right right the the more
+
+311
+00:11:22,079 --> 00:11:27,920
+productive we are the more uh ideas we
+
+312
+00:11:24,959 --> 00:11:30,320
+can explore uh the more growth as as a
+
+313
+00:11:27,920 --> 00:11:32,720
+result the more profitable we become
+
+314
+00:11:30,320 --> 00:11:34,000
+which allows us to pursue more ideas and
+
+315
+00:11:32,720 --> 00:11:37,120
+so I think you're you're absolutely
+
+316
+00:11:34,000 --> 00:11:39,920
+right that that if if the job if if your
+
+317
+00:11:37,120 --> 00:11:42,560
+if your life if the world the problems
+
+318
+00:11:39,920 --> 00:11:44,959
+is literally already specified and
+
+319
+00:11:42,560 --> 00:11:47,839
+there's no other problem to solve then
+
+320
+00:11:44,959 --> 00:11:49,600
+productivity would actually reduce the
+
+321
+00:11:47,839 --> 00:11:52,320
+economy but it's clearly going to
+
+322
+00:11:49,600 --> 00:11:54,560
+increase the e economy I think that the
+
+323
+00:11:52,320 --> 00:11:56,800
+Next part that I would consider is, you
+
+324
+00:11:54,560 --> 00:11:58,079
+know, people say, gosh, all of these
+
+325
+00:11:56,800 --> 00:12:00,320
+robots that we're talking about, it's
+
+326
+00:11:58,079 --> 00:12:02,640
+going to take away jobs. As as we know
+
+327
+00:12:00,320 --> 00:12:04,959
+very clearly, we don't have enough
+
+328
+00:12:02,640 --> 00:12:06,560
+factory workers. Our economy is actually
+
+329
+00:12:04,959 --> 00:12:09,680
+limited by the number of factory workers
+
+330
+00:12:06,560 --> 00:12:13,120
+we have. Most people are are having a
+
+331
+00:12:09,680 --> 00:12:15,360
+very hard time retaining their workers.
+
+332
+00:12:13,120 --> 00:12:18,160
+Um, we also know that the number of
+
+333
+00:12:15,360 --> 00:12:19,680
+truck drivers in the world is severely
+
+334
+00:12:18,160 --> 00:12:21,920
+short. And the reason for that is people
+
+335
+00:12:19,680 --> 00:12:23,600
+don't want those jobs where you have to
+
+336
+00:12:21,920 --> 00:12:24,880
+travel across the country and live in
+
+337
+00:12:23,600 --> 00:12:26,160
+different parts of the world, different
+
+338
+00:12:24,880 --> 00:12:28,079
+parts of the country, you know, every
+
+339
+00:12:26,160 --> 00:12:30,000
+single night. So people want to stay in
+
+340
+00:12:28,079 --> 00:12:31,760
+their town, stay with their families.
+
+341
+00:12:30,000 --> 00:12:35,600
+And so I think that I think the first
+
+342
+00:12:31,760 --> 00:12:38,639
+part is that having robotic systems is
+
+343
+00:12:35,600 --> 00:12:40,800
+going to allow us to cover the labor
+
+344
+00:12:38,639 --> 00:12:42,880
+shortage gap which is really really
+
+345
+00:12:40,800 --> 00:12:45,440
+severe and getting worse because of
+
+346
+00:12:42,880 --> 00:12:47,040
+aging population. This is this is not
+
+347
+00:12:45,440 --> 00:12:48,240
+only United States, it's all over the
+
+348
+00:12:47,040 --> 00:12:50,800
+world as you guys know.
+
+349
+00:12:48,240 --> 00:12:52,560
+>> And so we're going to cover the labor
+
+350
+00:12:50,800 --> 00:12:54,720
+shortage. But the second part that
+
+351
+00:12:52,560 --> 00:12:56,639
+people forget and and as a result we'll
+
+352
+00:12:54,720 --> 00:12:58,240
+go there are shortages as well in other
+
+353
+00:12:56,639 --> 00:12:59,680
+places that people talk about AI being
+
+354
+00:12:58,240 --> 00:13:01,680
+relevant. Accounting would be an example
+
+355
+00:12:59,680 --> 00:13:04,000
+where there's shortages there. Nursing
+
+356
+00:13:01,680 --> 00:13:05,040
+is another example. So you know you can
+
+357
+00:13:04,000 --> 00:13:06,560
+you can go through multiple other
+
+358
+00:13:05,040 --> 00:13:07,040
+industries and say okay there's gaps
+
+359
+00:13:06,560 --> 00:13:08,399
+right
+
+360
+00:13:07,040 --> 00:13:08,959
+>> and AI is trying to help fill those
+
+361
+00:13:08,399 --> 00:13:11,200
+gaps.
+
+362
+00:13:08,959 --> 00:13:13,279
+>> That's exactly right. And so so um
+
+363
+00:13:11,200 --> 00:13:16,560
+automation is going to help us increase
+
+364
+00:13:13,279 --> 00:13:19,440
+and solve the the the the labor gap. Now
+
+365
+00:13:16,560 --> 00:13:22,560
+people also don't don't remember that
+
+366
+00:13:19,440 --> 00:13:24,800
+when we have cars, we need mechanics to
+
+367
+00:13:22,560 --> 00:13:27,120
+take care of our cars.
+
+368
+00:13:24,800 --> 00:13:29,279
+>> And if you look at the robo taxis that
+
+369
+00:13:27,120 --> 00:13:32,000
+are that are even on the streets today,
+
+370
+00:13:29,279 --> 00:13:34,160
+it's taken 10 years for that to happen.
+
+371
+00:13:32,000 --> 00:13:37,120
+Look at all the maintenance crews and
+
+372
+00:13:34,160 --> 00:13:38,639
+all of the the the various, you know,
+
+373
+00:13:37,120 --> 00:13:40,800
+hubs that they're in where you have to
+
+374
+00:13:38,639 --> 00:13:43,760
+take care of these robo taxis and just
+
+375
+00:13:40,800 --> 00:13:44,079
+imagine we have a billion robots.
+
+376
+00:13:43,760 --> 00:13:45,600
+>> Mhm.
+
+377
+00:13:44,079 --> 00:13:47,680
+>> It's going to be the largest repair
+
+378
+00:13:45,600 --> 00:13:49,120
+industry on the planet. So I I think a
+
+379
+00:13:47,680 --> 00:13:50,480
+lot of people don't they they just have
+
+380
+00:13:49,120 --> 00:13:52,320
+to think through
+
+381
+00:13:50,480 --> 00:13:54,000
+>> and this is the part where you said um
+
+382
+00:13:52,320 --> 00:13:56,320
+when we create this type of automation,
+
+383
+00:13:54,000 --> 00:13:59,040
+we create this other job. Right now look
+
+384
+00:13:56,320 --> 00:14:01,120
+at AI is creating so many jobs. Mhm.
+
+385
+00:13:59,040 --> 00:14:01,920
+>> The AI industry is creating a boom of
+
+386
+00:14:01,120 --> 00:14:03,440
+jobs.
+
+387
+00:14:01,920 --> 00:14:06,720
+>> I think one of the core challenges here
+
+388
+00:14:03,440 --> 00:14:10,160
+is it's very easy to draw a straight
+
+389
+00:14:06,720 --> 00:14:12,160
+line of extrapolation from like oh you
+
+390
+00:14:10,160 --> 00:14:13,600
+know uh there are tools that help
+
+391
+00:14:12,160 --> 00:14:15,440
+lawyers be more productive. It's going
+
+392
+00:14:13,600 --> 00:14:17,760
+to replace the lawyers but it's actually
+
+393
+00:14:15,440 --> 00:14:20,720
+it takes like a step of incremental
+
+394
+00:14:17,760 --> 00:14:22,399
+reasoning to say there's a sucking sound
+
+395
+00:14:20,720 --> 00:14:24,000
+in the economy for everything in AI
+
+396
+00:14:22,399 --> 00:14:25,680
+infrastructure. there's actually a
+
+397
+00:14:24,000 --> 00:14:28,160
+sucking sound toward all of this demand
+
+398
+00:14:25,680 --> 00:14:30,800
+that is latent in the places where we
+
+399
+00:14:28,160 --> 00:14:33,040
+have gaps where um I think a lot of
+
+400
+00:14:30,800 --> 00:14:34,959
+policy makers have focused on you know
+
+401
+00:14:33,040 --> 00:14:36,800
+we can't replace or reduce what we have
+
+402
+00:14:34,959 --> 00:14:39,279
+when it's really there's there's far
+
+403
+00:14:36,800 --> 00:14:40,880
+more demand in what we actually are not
+
+404
+00:14:39,279 --> 00:14:43,199
+>> and in the case of lawyer what's the
+
+405
+00:14:40,880 --> 00:14:45,360
+what's the purpose of the lawyer versus
+
+406
+00:14:43,199 --> 00:14:48,480
+the task of the lawyer
+
+407
+00:14:45,360 --> 00:14:50,160
+>> reading a contract writing a contract is
+
+408
+00:14:48,480 --> 00:14:51,920
+not the purpose of the lawyer the
+
+409
+00:14:50,160 --> 00:14:54,079
+purpose of the lawyer is to help you
+
+410
+00:14:51,920 --> 00:14:56,399
+resolve conflict
+
+411
+00:14:54,079 --> 00:14:58,639
+And that's more than reading a contract.
+
+412
+00:14:56,399 --> 00:15:00,720
+It's more than writing a contract. The
+
+413
+00:14:58,639 --> 00:15:02,399
+purpose is to protect you. That's more
+
+414
+00:15:00,720 --> 00:15:04,560
+than reading a contract. It's more than
+
+415
+00:15:02,399 --> 00:15:06,240
+writing a contract. And so I think just
+
+416
+00:15:04,560 --> 00:15:09,360
+it's really really important to go back
+
+417
+00:15:06,240 --> 00:15:11,680
+to what is the purpose of the job versus
+
+418
+00:15:09,360 --> 00:15:13,440
+the task that we use,
+
+419
+00:15:11,680 --> 00:15:14,160
+>> you know, to perform that job that
+
+420
+00:15:13,440 --> 00:15:15,279
+changes over time.
+
+421
+00:15:14,160 --> 00:15:16,320
+>> Yeah. The other big theme of the year
+
+422
+00:15:15,279 --> 00:15:18,160
+that you mentioned that I think is
+
+423
+00:15:16,320 --> 00:15:20,399
+really important to touch upon is both
+
+424
+00:15:18,160 --> 00:15:22,480
+uh China is sort of in the rise of
+
+425
+00:15:20,399 --> 00:15:24,160
+Chinese open source in particular where
+
+426
+00:15:22,480 --> 00:15:25,600
+you know some of the highest scoring
+
+427
+00:15:24,160 --> 00:15:26,959
+models against benchmarks now are
+
+428
+00:15:25,600 --> 00:15:28,399
+Chinese models on the open source side
+
+429
+00:15:26,959 --> 00:15:30,320
+on the closer side it's still a lot of
+
+430
+00:15:28,399 --> 00:15:31,839
+the US models but things like Quinn
+
+431
+00:15:30,320 --> 00:15:33,839
+Deepseek etc
+
+432
+00:15:31,839 --> 00:15:35,360
+>> are doing very well you've long been a
+
+433
+00:15:33,839 --> 00:15:36,720
+proponent for open source in general
+
+434
+00:15:35,360 --> 00:15:39,760
+could you could you share views about
+
+435
+00:15:36,720 --> 00:15:41,040
+both China emerging for AI for open
+
+436
+00:15:39,760 --> 00:15:42,480
+source and what the US should be doing
+
+437
+00:15:41,040 --> 00:15:43,519
+in terms of both open source as well as
+
+438
+00:15:42,480 --> 00:15:46,000
+its own industries
+
+439
+00:15:43,519 --> 00:15:49,279
+>> when you Think about these complicated
+
+440
+00:15:46,000 --> 00:15:51,440
+interconnected dependent
+
+441
+00:15:49,279 --> 00:15:54,720
+um networks of problems. These this you
+
+442
+00:15:51,440 --> 00:15:57,279
+know big goop of a mesh of problems it's
+
+443
+00:15:54,720 --> 00:15:59,440
+always good to to go back and find a
+
+444
+00:15:57,279 --> 00:16:03,600
+framework for what it is that we're
+
+445
+00:15:59,440 --> 00:16:05,519
+talking about. In the case of AI um what
+
+446
+00:16:03,600 --> 00:16:08,959
+is AI?
+
+447
+00:16:05,519 --> 00:16:11,199
+Well, of course, the technology of AI
+
+448
+00:16:08,959 --> 00:16:13,839
+and the capability, the capabilities of
+
+449
+00:16:11,199 --> 00:16:15,519
+AI is about automation. It's about
+
+450
+00:16:13,839 --> 00:16:18,880
+automation of intelligence for the very
+
+451
+00:16:15,519 --> 00:16:22,880
+first time. And you could combine it
+
+452
+00:16:18,880 --> 00:16:25,279
+with megatronics technology to embody
+
+453
+00:16:22,880 --> 00:16:26,800
+that megatronics and and make it perform
+
+454
+00:16:25,279 --> 00:16:30,639
+tasks.
+
+455
+00:16:26,800 --> 00:16:32,560
+>> So that's what's AI automation. But what
+
+456
+00:16:30,639 --> 00:16:34,480
+what is the stack that makes AI
+
+457
+00:16:32,560 --> 00:16:36,560
+possible? What's the technology stack?
+
+458
+00:16:34,480 --> 00:16:38,639
+functional stack. And of course the e
+
+459
+00:16:36,560 --> 00:16:40,720
+the easiest way to think about that is
+
+460
+00:16:38,639 --> 00:16:42,639
+it's kind of like a fivey year five year
+
+461
+00:16:40,720 --> 00:16:44,720
+five layer cake which is at the lowest
+
+462
+00:16:42,639 --> 00:16:47,040
+level is energy.
+
+463
+00:16:44,720 --> 00:16:49,040
+>> Um it transforms energy to the output
+
+464
+00:16:47,040 --> 00:16:51,120
+that I just described. The next layer is
+
+465
+00:16:49,040 --> 00:16:53,199
+chips. The next layer is infrastructure
+
+466
+00:16:51,120 --> 00:16:55,600
+and that infrastructure is both hardware
+
+467
+00:16:53,199 --> 00:16:57,920
+software right this is where land power
+
+468
+00:16:55,600 --> 00:17:00,720
+and shell this is where construction is
+
+469
+00:16:57,920 --> 00:17:02,639
+data centers are the software stack
+
+470
+00:17:00,720 --> 00:17:04,959
+>> you know for orchestrating the so it's
+
+471
+00:17:02,639 --> 00:17:06,959
+software and hardware the layer above
+
+472
+00:17:04,959 --> 00:17:09,520
+that is where everybody thinks about
+
+473
+00:17:06,959 --> 00:17:11,600
+which is AI which is the models
+
+474
+00:17:09,520 --> 00:17:15,439
+>> we know this but it's really helpful to
+
+475
+00:17:11,600 --> 00:17:20,079
+understand that AI is a system of models
+
+476
+00:17:15,439 --> 00:17:22,319
+>> and AI is a um a techn technology that
+
+477
+00:17:20,079 --> 00:17:25,760
+understands information and there's
+
+478
+00:17:22,319 --> 00:17:28,319
+human information and so we often times
+
+479
+00:17:25,760 --> 00:17:30,240
+think about AI as a chatbot
+
+480
+00:17:28,319 --> 00:17:31,919
+>> but remember there's biological
+
+481
+00:17:30,240 --> 00:17:34,320
+information there's chemical information
+
+482
+00:17:31,919 --> 00:17:36,559
+there's physical information of all
+
+483
+00:17:34,320 --> 00:17:38,320
+kinds there's financial information
+
+484
+00:17:36,559 --> 00:17:40,559
+there's healthcare information there's f
+
+485
+00:17:38,320 --> 00:17:44,080
+there's information of all modalities
+
+486
+00:17:40,559 --> 00:17:46,000
+all kinds AI is really really broad and
+
+487
+00:17:44,080 --> 00:17:48,480
+of course human language is at the
+
+488
+00:17:46,000 --> 00:17:50,559
+foundation of of many things but it's
+
+489
+00:17:48,480 --> 00:17:53,280
+not the essence of everything because as
+
+490
+00:17:50,559 --> 00:17:54,720
+you know you know biology molecules
+
+491
+00:17:53,280 --> 00:17:56,559
+don't understand English
+
+492
+00:17:54,720 --> 00:17:58,000
+>> they understand something else right
+
+493
+00:17:56,559 --> 00:17:59,520
+proteins don't understand English they
+
+494
+00:17:58,000 --> 00:18:02,160
+understand something else I think the
+
+495
+00:17:59,520 --> 00:18:03,679
+next layer the important thing is is uh
+
+496
+00:18:02,160 --> 00:18:06,000
+that's where the AI models are but
+
+497
+00:18:03,679 --> 00:18:07,679
+there's a whole the AI is very very
+
+498
+00:18:06,000 --> 00:18:09,600
+diverse and then the the layer above
+
+499
+00:18:07,679 --> 00:18:11,440
+that is is applications and it depends
+
+500
+00:18:09,600 --> 00:18:13,200
+on the industry and you already
+
+501
+00:18:11,440 --> 00:18:14,960
+mentioned open evidence there you
+
+502
+00:18:13,200 --> 00:18:16,320
+mentioned Harvey there's cursor there's
+
+503
+00:18:14,960 --> 00:18:18,320
+all kinds of right there's all kinds of
+
+504
+00:18:16,320 --> 00:18:20,720
+applications full self-driving is really
+
+505
+00:18:18,320 --> 00:18:23,360
+an application, an AI application that
+
+506
+00:18:20,720 --> 00:18:26,160
+is embodied into a mechanical car
+
+507
+00:18:23,360 --> 00:18:28,480
+>> and figure is a AI application that has
+
+508
+00:18:26,160 --> 00:18:30,640
+been embodied into a mechanical human.
+
+509
+00:18:28,480 --> 00:18:32,720
+And so, so you got all these different
+
+510
+00:18:30,640 --> 00:18:35,840
+applications. Well, this five layer
+
+511
+00:18:32,720 --> 00:18:37,200
+stack is one way of thinking about it.
+
+512
+00:18:35,840 --> 00:18:38,720
+And then the next way of thinking about
+
+513
+00:18:37,200 --> 00:18:40,320
+I just mentioned is AI is really
+
+514
+00:18:38,720 --> 00:18:43,200
+diverse. When you now have this
+
+515
+00:18:40,320 --> 00:18:46,160
+framework of what the the technology
+
+516
+00:18:43,200 --> 00:18:49,039
+capabilities are, how to how to build
+
+517
+00:18:46,160 --> 00:18:50,880
+the technology and how diverse it is,
+
+518
+00:18:49,039 --> 00:18:52,799
+then you can come back and think about
+
+519
+00:18:50,880 --> 00:18:55,600
+okay, let's ask the question, how
+
+520
+00:18:52,799 --> 00:18:59,760
+important is open source? Well, without
+
+521
+00:18:55,600 --> 00:19:02,400
+open source, you know, today, of course,
+
+522
+00:18:59,760 --> 00:19:05,280
+the frontier models, the the the leading
+
+523
+00:19:02,400 --> 00:19:07,679
+labs have chosen to to use a closed
+
+524
+00:19:05,280 --> 00:19:09,600
+source um application approach, which is
+
+525
+00:19:07,679 --> 00:19:11,360
+just fine. you know what people decide
+
+526
+00:19:09,600 --> 00:19:12,960
+to do with their business models is is
+
+527
+00:19:11,360 --> 00:19:14,559
+really in the final analysis. It's their
+
+528
+00:19:12,960 --> 00:19:16,720
+business and they have to they have to
+
+529
+00:19:14,559 --> 00:19:18,480
+calculate what is the best way for them
+
+530
+00:19:16,720 --> 00:19:20,400
+to get the return on investment so that
+
+531
+00:19:18,480 --> 00:19:23,360
+they could scale up and and make better
+
+532
+00:19:20,400 --> 00:19:25,760
+advances. Um however they they made that
+
+533
+00:19:23,360 --> 00:19:27,919
+calculus is fantastic. On the other
+
+534
+00:19:25,760 --> 00:19:30,720
+hand, uh without open source, as you
+
+535
+00:19:27,919 --> 00:19:33,440
+know, startups would be challenged, uh
+
+536
+00:19:30,720 --> 00:19:36,080
+companies that are in in uh uh different
+
+537
+00:19:33,440 --> 00:19:39,200
+industries, whether it's manufacturing
+
+538
+00:19:36,080 --> 00:19:41,840
+or transportation or um it could be in
+
+539
+00:19:39,200 --> 00:19:45,520
+healthcare. Without open source today,
+
+540
+00:19:41,840 --> 00:19:46,960
+all of that AI work would be suffocated.
+
+541
+00:19:45,520 --> 00:19:49,520
+>> And so, they just need to have something
+
+542
+00:19:46,960 --> 00:19:51,200
+that's pre-trained. They need to have
+
+543
+00:19:49,520 --> 00:19:54,080
+some fundamental technology about
+
+544
+00:19:51,200 --> 00:19:57,200
+reasoning. from that they could all
+
+545
+00:19:54,080 --> 00:19:59,760
+adapt, fine-tune, you know, train their
+
+546
+00:19:57,200 --> 00:20:01,600
+AI models into exactly the domain and
+
+547
+00:19:59,760 --> 00:20:04,960
+application they want. And so what
+
+548
+00:20:01,600 --> 00:20:08,080
+people really really miss is just the
+
+549
+00:20:04,960 --> 00:20:10,240
+incredible pervasiveness and the
+
+550
+00:20:08,080 --> 00:20:12,640
+importance of open source to all of
+
+551
+00:20:10,240 --> 00:20:15,039
+these industries. large companies uh
+
+552
+00:20:12,640 --> 00:20:16,640
+without without open source some of some
+
+553
+00:20:15,039 --> 00:20:17,360
+of 100-year-old companies that I work
+
+554
+00:20:16,640 --> 00:20:20,080
+with
+
+555
+00:20:17,360 --> 00:20:22,000
+>> in in industrial spaces in healthcare
+
+556
+00:20:20,080 --> 00:20:22,799
+spaces they would be suffocated they
+
+557
+00:20:22,000 --> 00:20:24,480
+wouldn't be able to do that
+
+558
+00:20:22,799 --> 00:20:26,720
+>> open source at this point is driving all
+
+559
+00:20:24,480 --> 00:20:28,159
+of our data centers is driving a big
+
+560
+00:20:26,720 --> 00:20:30,400
+chunk of telefan in the world in terms
+
+561
+00:20:28,159 --> 00:20:30,640
+of Android or other devices it's driving
+
+562
+00:20:30,400 --> 00:20:31,600
+exactly
+
+563
+00:20:30,640 --> 00:20:33,200
+>> you know to your point a lot of the
+
+564
+00:20:31,600 --> 00:20:34,480
+industrial applications so it's already
+
+565
+00:20:33,200 --> 00:20:34,720
+pervasive and I think the big question
+
+566
+00:20:34,480 --> 00:20:36,559
+is
+
+567
+00:20:34,720 --> 00:20:37,039
+>> open source without open source higher
+
+568
+00:20:36,559 --> 00:20:38,320
+ed
+
+569
+00:20:37,039 --> 00:20:39,760
+>> higher ed wouldn't happen
+
+570
+00:20:38,320 --> 00:20:41,679
+>> education research
+
+571
+00:20:39,760 --> 00:20:43,679
+>> startups I mean the list goes on, you
+
+572
+00:20:41,679 --> 00:20:46,400
+know, and so so
+
+573
+00:20:43,679 --> 00:20:48,720
+>> we talk we talk all day long about the
+
+574
+00:20:46,400 --> 00:20:51,440
+tip but the most visible part of that
+
+575
+00:20:48,720 --> 00:20:55,600
+the most the part that's most newsworthy
+
+576
+00:20:51,440 --> 00:20:58,320
+maybe but underneath that is such an
+
+577
+00:20:55,600 --> 00:21:00,880
+important space of open source AI and
+
+578
+00:20:58,320 --> 00:21:05,039
+whatever we decide to do with policies
+
+579
+00:21:00,880 --> 00:21:08,240
+do not damage that innovation flywheel.
+
+580
+00:21:05,039 --> 00:21:10,640
+So I spent a lot of time uh educating
+
+581
+00:21:08,240 --> 00:21:12,480
+educating uh uh policy makers to help
+
+582
+00:21:10,640 --> 00:21:14,720
+them understand whatever you decide
+
+583
+00:21:12,480 --> 00:21:16,720
+whatever you do don't forget open
+
+584
+00:21:14,720 --> 00:21:19,840
+source. Whatever you decide whatever you
+
+585
+00:21:16,720 --> 00:21:22,320
+do don't forget biology.
+
+586
+00:21:19,840 --> 00:21:25,120
+I think the counternarrative here that
+
+587
+00:21:22,320 --> 00:21:28,000
+is worth addressing is that essentially
+
+588
+00:21:25,120 --> 00:21:30,240
+like you know there should be a
+
+589
+00:21:28,000 --> 00:21:32,400
+monolithic vertical player and
+
+590
+00:21:30,240 --> 00:21:34,320
+monolithic asset in the like one model
+
+591
+00:21:32,400 --> 00:21:36,640
+that does it all and that we can't give
+
+592
+00:21:34,320 --> 00:21:39,200
+away that crown jewel to other countries
+
+593
+00:21:36,640 --> 00:21:41,360
+or non-American companies and and your
+
+594
+00:21:39,200 --> 00:21:44,159
+your argument is like we actually need
+
+595
+00:21:41,360 --> 00:21:46,240
+this huge diversity of AI applications
+
+596
+00:21:44,159 --> 00:21:48,159
+and and the American advantage is
+
+597
+00:21:46,240 --> 00:21:49,919
+actually or any any sovereign advantage
+
+598
+00:21:48,159 --> 00:21:52,080
+is in the whole stack right? The
+
+599
+00:21:49,919 --> 00:21:55,760
+capability to deliver any piece of it.
+
+600
+00:21:52,080 --> 00:21:56,880
+>> I guess someday we will have God AI.
+
+601
+00:21:55,760 --> 00:21:59,280
+>> But when is that day?
+
+602
+00:21:56,880 --> 00:22:02,000
+>> But but that someday that someday is
+
+603
+00:21:59,280 --> 00:22:04,960
+probably on biblical scales, you know, I
+
+604
+00:22:02,000 --> 00:22:08,080
+think galactic scales. Um I I think it's
+
+605
+00:22:04,960 --> 00:22:11,440
+it's not helpful to go from where we are
+
+606
+00:22:08,080 --> 00:22:14,000
+today to God AI.
+
+607
+00:22:11,440 --> 00:22:15,520
+>> And um I don't think any company
+
+608
+00:22:14,000 --> 00:22:19,760
+practically believes they're anywhere
+
+609
+00:22:15,520 --> 00:22:22,400
+near God AI. And nor nor do I do I see
+
+610
+00:22:19,760 --> 00:22:25,280
+any researchers having any reasonable
+
+611
+00:22:22,400 --> 00:22:28,720
+ability to create god AI. The ability to
+
+612
+00:22:25,280 --> 00:22:30,799
+h understand human language and genome
+
+613
+00:22:28,720 --> 00:22:33,120
+language and molecular language and
+
+614
+00:22:30,799 --> 00:22:36,240
+protein language and amino acid language
+
+615
+00:22:33,120 --> 00:22:38,799
+and physics language all supremely well.
+
+616
+00:22:36,240 --> 00:22:41,120
+That god AI just doesn't exist.
+
+617
+00:22:38,799 --> 00:22:43,440
+>> And and yet we have a lot of industries
+
+618
+00:22:41,120 --> 00:22:47,200
+that need AI. Mhm.
+
+619
+00:22:43,440 --> 00:22:49,679
+>> AI is if if you will at the simplistic
+
+620
+00:22:47,200 --> 00:22:50,799
+level, it's just the next computer
+
+621
+00:22:49,679 --> 00:22:53,520
+industry.
+
+622
+00:22:50,799 --> 00:22:56,080
+>> And give me an example of a company, an
+
+623
+00:22:53,520 --> 00:22:56,960
+industry, a nation who doesn't need
+
+624
+00:22:56,080 --> 00:22:57,919
+computers.
+
+625
+00:22:56,960 --> 00:22:59,760
+>> Mhm.
+
+626
+00:22:57,919 --> 00:23:02,720
+>> And we all don't have to wait around for
+
+627
+00:22:59,760 --> 00:23:04,480
+God AI for us to advance, right? So God
+
+628
+00:23:02,720 --> 00:23:05,995
+AI is not showing up next week. I'm
+
+629
+00:23:04,480 --> 00:23:07,600
+fairly certain of that. Okay. And God
+
+630
+00:23:05,995 --> 00:23:09,520
+[clears throat] AI god AI is not not
+
+631
+00:23:07,600 --> 00:23:11,200
+going to show up next year, but the
+
+632
+00:23:09,520 --> 00:23:13,360
+whole world needs to move forward next
+
+633
+00:23:11,200 --> 00:23:16,159
+week, next year, next decade. I think
+
+634
+00:23:13,360 --> 00:23:18,159
+that that the idea of a monolithic
+
+635
+00:23:16,159 --> 00:23:19,679
+gigantic
+
+636
+00:23:18,159 --> 00:23:23,760
+company,
+
+637
+00:23:19,679 --> 00:23:24,799
+>> country, nation, state that has got AI
+
+638
+00:23:23,760 --> 00:23:25,760
+is just
+
+639
+00:23:24,799 --> 00:23:28,480
+>> it's unhelpful.
+
+640
+00:23:25,760 --> 00:23:30,559
+>> It's unhelpful. It's too extreme.
+
+641
+00:23:28,480 --> 00:23:32,480
+>> Then in fact, if you want to take it to
+
+642
+00:23:30,559 --> 00:23:34,480
+that level, then we ought to just all
+
+643
+00:23:32,480 --> 00:23:35,919
+stop everything.
+
+644
+00:23:34,480 --> 00:23:37,600
+What's the point of having even
+
+645
+00:23:35,919 --> 00:23:39,360
+governments? I mean, why why why are
+
+646
+00:23:37,600 --> 00:23:41,280
+they doing policies? God AI is going to
+
+647
+00:23:39,360 --> 00:23:43,520
+be smart enough to avert, you know, work
+
+648
+00:23:41,280 --> 00:23:46,159
+around any policy. And so, what's the
+
+649
+00:23:43,520 --> 00:23:48,159
+point? And so, I I think that that we
+
+650
+00:23:46,159 --> 00:23:50,400
+ought to bring things back to the ground
+
+651
+00:23:48,159 --> 00:23:53,280
+ground level and start thinking about
+
+652
+00:23:50,400 --> 00:23:54,799
+things practically and and use common
+
+653
+00:23:53,280 --> 00:23:56,320
+sense.
+
+654
+00:23:54,799 --> 00:23:57,520
+>> This seems to be like a big theme in
+
+655
+00:23:56,320 --> 00:23:59,200
+general in terms of this conversation
+
+656
+00:23:57,520 --> 00:24:01,520
+where there's been a lot that's been
+
+657
+00:23:59,200 --> 00:24:02,720
+kind of put out there that seems very
+
+658
+00:24:01,520 --> 00:24:04,240
+extreme if you actually think about it.
+
+659
+00:24:02,720 --> 00:24:06,320
+It's the jobs and employment. Nobody's
+
+660
+00:24:04,240 --> 00:24:08,240
+going to be able to work again. It's God
+
+661
+00:24:06,320 --> 00:24:09,840
+AI is going to solve every problem. It's
+
+662
+00:24:08,240 --> 00:24:11,200
+we shouldn't have open source for XYZ
+
+663
+00:24:09,840 --> 00:24:12,320
+reason despite open source powering much
+
+664
+00:24:11,200 --> 00:24:12,799
+of our industries already.
+
+665
+00:24:12,320 --> 00:24:14,159
+>> That's right.
+
+666
+00:24:12,799 --> 00:24:16,159
+>> And so it seems like in general maybe
+
+667
+00:24:14,159 --> 00:24:18,000
+one of the themes of 2025 was there's a
+
+668
+00:24:16,159 --> 00:24:20,640
+lot of extremes that were sort of
+
+669
+00:24:18,000 --> 00:24:21,840
+painted in the public with AI that if
+
+670
+00:24:20,640 --> 00:24:23,120
+you look at them very closely don't
+
+671
+00:24:21,840 --> 00:24:24,799
+really follow a logical change in terms
+
+672
+00:24:23,120 --> 00:24:26,159
+of happening anytime soon.
+
+673
+00:24:24,799 --> 00:24:27,039
+>> Yeah. And so it's it's it sounds like
+
+674
+00:24:26,159 --> 00:24:27,760
+it's really important to have this
+
+675
+00:24:27,039 --> 00:24:30,320
+conversation.
+
+676
+00:24:27,760 --> 00:24:33,039
+>> Extremely hurtful frankly. And I I think
+
+677
+00:24:30,320 --> 00:24:35,840
+we've done a lot of damage uh with very
+
+678
+00:24:33,039 --> 00:24:39,760
+wellrespected people um who have who
+
+679
+00:24:35,840 --> 00:24:42,240
+have painted a doom doomer narrative um
+
+680
+00:24:39,760 --> 00:24:45,039
+end of the world narrative science
+
+681
+00:24:42,240 --> 00:24:47,120
+fiction narrative and um you know and I
+
+682
+00:24:45,039 --> 00:24:50,080
+and I appreciate that that many of us
+
+683
+00:24:47,120 --> 00:24:52,320
+grew up in and enjoyed science fiction.
+
+684
+00:24:50,080 --> 00:24:53,760
+>> Um but I but it's not helpful. It's not
+
+685
+00:24:52,320 --> 00:24:55,120
+helpful to people. It's not helpful to
+
+686
+00:24:53,760 --> 00:24:56,880
+the industry. It's not helpful to
+
+687
+00:24:55,120 --> 00:24:57,840
+society. It's not helpful to the
+
+688
+00:24:56,880 --> 00:24:59,520
+governments. Mhm.
+
+689
+00:24:57,840 --> 00:25:03,360
+>> There are a lot of many people in the
+
+690
+00:24:59,520 --> 00:25:06,400
+government who obviously aren't as
+
+691
+00:25:03,360 --> 00:25:07,440
+familiar with as as comfortable with the
+
+692
+00:25:06,400 --> 00:25:11,600
+technology
+
+693
+00:25:07,440 --> 00:25:13,520
+>> and when PhDs of this and CEOs of that
+
+694
+00:25:11,600 --> 00:25:15,520
+>> goes to governments and explain and
+
+695
+00:25:13,520 --> 00:25:18,720
+describe these end of the world
+
+696
+00:25:15,520 --> 00:25:22,159
+scenarios and extremely extremely
+
+697
+00:25:18,720 --> 00:25:24,320
+dystopian future the future. Um, you
+
+698
+00:25:22,159 --> 00:25:26,159
+have to ask yourself, you know, what is
+
+699
+00:25:24,320 --> 00:25:28,480
+the purpose of that narrative and what
+
+700
+00:25:26,159 --> 00:25:30,720
+is their what are their intentions and
+
+701
+00:25:28,480 --> 00:25:32,320
+what do they hope? Why are they why are
+
+702
+00:25:30,720 --> 00:25:34,640
+they talking to governments about these
+
+703
+00:25:32,320 --> 00:25:36,240
+things to create regulations to
+
+704
+00:25:34,640 --> 00:25:37,600
+suffocate startups? [clears throat]
+
+705
+00:25:36,240 --> 00:25:39,279
+>> For what reason would they be doing
+
+706
+00:25:37,600 --> 00:25:40,640
+that, you know, and so
+
+707
+00:25:39,279 --> 00:25:42,880
+>> and do you think that's just regulatory
+
+708
+00:25:40,640 --> 00:25:44,480
+capture where they're trying to prevent
+
+709
+00:25:42,880 --> 00:25:45,840
+uh new startups from showing up and
+
+710
+00:25:44,480 --> 00:25:47,039
+being able to compete effectively or
+
+711
+00:25:45,840 --> 00:25:49,520
+what do you think is the goal of some of
+
+712
+00:25:47,039 --> 00:25:52,559
+these conversations? you know, I I can't
+
+713
+00:25:49,520 --> 00:25:54,799
+I can't um uh guess what they what they
+
+714
+00:25:52,559 --> 00:25:58,480
+have in mind. I know that the concern is
+
+715
+00:25:54,799 --> 00:26:02,400
+regulatory capture. As a policy, as a
+
+716
+00:25:58,480 --> 00:26:04,240
+practice, I don't think companies had to
+
+717
+00:26:02,400 --> 00:26:07,679
+go to
+
+718
+00:26:04,240 --> 00:26:11,520
+um governments to advocate
+
+719
+00:26:07,679 --> 00:26:14,880
+for the regulation on other companies
+
+720
+00:26:11,520 --> 00:26:18,240
+and other industries. just in practice
+
+721
+00:26:14,880 --> 00:26:21,600
+their their intentions are clearly
+
+722
+00:26:18,240 --> 00:26:24,400
+deeply conflicted and and uh their
+
+723
+00:26:21,600 --> 00:26:26,159
+intentions are clearly you know not
+
+724
+00:26:24,400 --> 00:26:28,480
+completely in the best interest of
+
+725
+00:26:26,159 --> 00:26:30,159
+society. I mean they're obviously CEOs
+
+726
+00:26:28,480 --> 00:26:32,000
+are obviously companies and obviously
+
+727
+00:26:30,159 --> 00:26:35,760
+they're advocating for themselves
+
+728
+00:26:32,000 --> 00:26:39,039
+>> and so so I think if we can all
+
+729
+00:26:35,760 --> 00:26:40,799
+>> come back to where are we today
+
+730
+00:26:39,039 --> 00:26:43,200
+>> and think about where the technology is
+
+731
+00:26:40,799 --> 00:26:45,200
+going to be. I mean look lit literally
+
+732
+00:26:43,200 --> 00:26:48,000
+in one year's time as we were talking
+
+733
+00:26:45,200 --> 00:26:52,000
+about in the beginning uh some of the
+
+734
+00:26:48,000 --> 00:26:54,640
+most proud moments is when the industry
+
+735
+00:26:52,000 --> 00:26:57,279
+was able to invest very aggressively in
+
+736
+00:26:54,640 --> 00:26:58,400
+advancing AI technology instead of being
+
+737
+00:26:57,279 --> 00:27:00,320
+slowed down.
+
+738
+00:26:58,400 --> 00:27:02,480
+>> Remember just two years ago people were
+
+739
+00:27:00,320 --> 00:27:05,039
+talking about slowing the industry down
+
+740
+00:27:02,480 --> 00:27:08,400
+>> but as we advanced quickly what did we
+
+741
+00:27:05,039 --> 00:27:11,279
+solve? We solved grounding, we solved
+
+742
+00:27:08,400 --> 00:27:14,240
+reasoning. We solved research. All of
+
+743
+00:27:11,279 --> 00:27:17,440
+that technology was applied for good
+
+744
+00:27:14,240 --> 00:27:18,960
+improving the functionality of the AI
+
+745
+00:27:17,440 --> 00:27:20,159
+not you know
+
+746
+00:27:18,960 --> 00:27:22,000
+>> yet the end has not come
+
+747
+00:27:20,159 --> 00:27:24,559
+>> yet the end has not come it's become
+
+748
+00:27:22,000 --> 00:27:26,960
+more useful it's become more functional
+
+749
+00:27:24,559 --> 00:27:29,840
+it's become able to do what we ask it to
+
+750
+00:27:26,960 --> 00:27:32,480
+do you know and so the first the first
+
+751
+00:27:29,840 --> 00:27:36,000
+part of the safety of a product is that
+
+752
+00:27:32,480 --> 00:27:40,000
+it perform as advertised
+
+753
+00:27:36,000 --> 00:27:42,159
+>> the first part of safety is performance
+
+754
+00:27:40,000 --> 00:27:44,480
+that it's is supposed like the first
+
+755
+00:27:42,159 --> 00:27:46,559
+part of safety of a car isn't that some
+
+756
+00:27:44,480 --> 00:27:49,120
+person is going to jump into the car and
+
+757
+00:27:46,559 --> 00:27:51,840
+use it as a missile. The first part of
+
+758
+00:27:49,120 --> 00:27:52,960
+the car is it works as advertised.
+
+759
+00:27:51,840 --> 00:27:54,720
+>> Mhm.
+
+760
+00:27:52,960 --> 00:27:57,520
+>> 99.999%
+
+761
+00:27:54,720 --> 00:28:00,159
+of the time working as advertised. And
+
+762
+00:27:57,520 --> 00:28:02,960
+so it takes a lot of technology to make
+
+763
+00:28:00,159 --> 00:28:04,960
+that car or make that AI work as
+
+764
+00:28:02,960 --> 00:28:06,640
+advertised. And I'm really glad that in
+
+765
+00:28:04,960 --> 00:28:08,880
+the last couple two three years the
+
+766
+00:28:06,640 --> 00:28:11,679
+industry has invested so much in
+
+767
+00:28:08,880 --> 00:28:14,320
+enhancing the functionality of the AI as
+
+768
+00:28:11,679 --> 00:28:17,360
+advertised. And I think if if we were to
+
+769
+00:28:14,320 --> 00:28:20,799
+to look at the next 10 years, we have so
+
+770
+00:28:17,360 --> 00:28:23,360
+much work to do to make it work as
+
+771
+00:28:20,799 --> 00:28:25,200
+advertised. Meanwhile, as as you know,
+
+772
+00:28:23,360 --> 00:28:27,919
+you both of you invest so much in in the
+
+773
+00:28:25,200 --> 00:28:31,360
+in the ecosystem, you see so many
+
+774
+00:28:27,919 --> 00:28:34,320
+companies being built for um synthetic
+
+775
+00:28:31,360 --> 00:28:37,760
+data generation so that the AIs could be
+
+776
+00:28:34,320 --> 00:28:40,399
+more grounded uh more diverse uh less
+
+777
+00:28:37,760 --> 00:28:41,600
+biased more safe uh you're investing in
+
+778
+00:28:40,399 --> 00:28:43,840
+a whole bunch of companies in cyber
+
+779
+00:28:41,600 --> 00:28:47,200
+security using AI for cyber security you
+
+780
+00:28:43,840 --> 00:28:49,039
+right people think that there's this AI
+
+781
+00:28:47,200 --> 00:28:52,159
+um the marginal cost of AI is going to
+
+782
+00:28:49,039 --> 00:28:54,320
+go go down significantly and it is
+
+783
+00:28:52,159 --> 00:28:56,799
+>> and therefore the AI is going to be
+
+784
+00:28:54,320 --> 00:28:59,039
+dangerous. It's exactly the opposite. If
+
+785
+00:28:56,799 --> 00:29:01,440
+the marginal cost of AI is going to go
+
+786
+00:28:59,039 --> 00:29:03,520
+down significantly, that one AI is going
+
+787
+00:29:01,440 --> 00:29:04,399
+to be monitored by millions of AIS.
+
+788
+00:29:03,520 --> 00:29:05,840
+>> Mhm.
+
+789
+00:29:04,399 --> 00:29:07,840
+>> And more and more AI is going to be
+
+790
+00:29:05,840 --> 00:29:10,480
+monitoring monitoring each other. People
+
+791
+00:29:07,840 --> 00:29:12,480
+don't can't forget that an AI is not
+
+792
+00:29:10,480 --> 00:29:14,320
+going to be an agent by itself. It's
+
+793
+00:29:12,480 --> 00:29:17,279
+likely the AI is going to be surrounded
+
+794
+00:29:14,320 --> 00:29:18,799
+by agents monitoring it. And so it's no
+
+795
+00:29:17,279 --> 00:29:22,480
+different than if the if the marginal
+
+796
+00:29:18,799 --> 00:29:25,279
+cost of of keeping society safe was
+
+797
+00:29:22,480 --> 00:29:26,960
+lower. We have police in every corner.
+
+798
+00:29:25,279 --> 00:29:28,320
+>> So one thing that that we were talking
+
+799
+00:29:26,960 --> 00:29:29,919
+about a little bit earlier was just the
+
+800
+00:29:28,320 --> 00:29:31,279
+cost of AI and how it's been coming
+
+801
+00:29:29,919 --> 00:29:34,880
+down. And so
+
+802
+00:29:31,279 --> 00:29:37,200
+>> I I think um in 2024 the the cost of
+
+803
+00:29:34,880 --> 00:29:40,320
+GPT4 equivalent models if you look at a
+
+804
+00:29:37,200 --> 00:29:41,760
+million tokens it came down over 100x.
+
+805
+00:29:40,320 --> 00:29:44,000
+Um you know somebody in my team did this
+
+806
+00:29:41,760 --> 00:29:45,279
+analysis to show that. Uh so the costs
+
+807
+00:29:44,000 --> 00:29:46,559
+are dropping pretty dramatically and
+
+808
+00:29:45,279 --> 00:29:47,760
+very rapidly and part of it is all the
+
+809
+00:29:46,559 --> 00:29:49,200
+advancements you all have been driving
+
+810
+00:29:47,760 --> 00:29:51,520
+on and the Nvidia level but also just
+
+811
+00:29:49,200 --> 00:29:52,159
+across the stack getting big efficiency
+
+812
+00:29:51,520 --> 00:29:52,640
+gains.
+
+813
+00:29:52,159 --> 00:29:54,480
+>> Yeah.
+
+814
+00:29:52,640 --> 00:29:56,000
+>> Um at the same time model companies are
+
+815
+00:29:54,480 --> 00:29:57,679
+talking about how the costs are rising
+
+816
+00:29:56,000 --> 00:30:00,080
+how there's enormous sort of capital
+
+817
+00:29:57,679 --> 00:30:01,440
+modes to building these things out. How
+
+818
+00:30:00,080 --> 00:30:02,799
+do you think about cost of training and
+
+819
+00:30:01,440 --> 00:30:05,200
+cost of inference over time and what
+
+820
+00:30:02,799 --> 00:30:06,559
+that means for the average end user or
+
+821
+00:30:05,200 --> 00:30:08,000
+the average startup company trying to
+
+822
+00:30:06,559 --> 00:30:10,080
+compete or people trying to do more in
+
+823
+00:30:08,000 --> 00:30:12,320
+this industry? I forget the statistic
+
+824
+00:30:10,080 --> 00:30:15,360
+that but but you know Andre Andre
+
+825
+00:30:12,320 --> 00:30:17,760
+Cararpathy um estimated the cost of
+
+826
+00:30:15,360 --> 00:30:19,520
+building the first chatbt I think
+
+827
+00:30:17,760 --> 00:30:20,240
+>> versus now I think you could do that on
+
+828
+00:30:19,520 --> 00:30:21,600
+the PC now.
+
+829
+00:30:20,240 --> 00:30:22,799
+>> Yeah. Yeah. It's probably tens of
+
+830
+00:30:21,600 --> 00:30:23,679
+thousands of dollars at this point or
+
+831
+00:30:22,799 --> 00:30:25,840
+maybe even less.
+
+832
+00:30:23,679 --> 00:30:26,240
+>> Right. And so it costs nothing.
+
+833
+00:30:25,840 --> 00:30:26,799
+>> Mhm.
+
+834
+00:30:26,240 --> 00:30:28,159
+>> And and
+
+835
+00:30:26,799 --> 00:30:29,200
+>> he has an open source project that you
+
+836
+00:30:28,159 --> 00:30:30,559
+can do in a weekend.
+
+837
+00:30:29,200 --> 00:30:32,159
+>> Oh, is that right? Okay. That's
+
+838
+00:30:30,559 --> 00:30:33,440
+incredible. Right. We're talking about
+
+839
+00:30:32,159 --> 00:30:34,240
+three years. Mhm.
+
+840
+00:30:33,440 --> 00:30:37,279
+>> Mhm.
+
+841
+00:30:34,240 --> 00:30:38,799
+>> What people people said cost billions of
+
+842
+00:30:37,279 --> 00:30:42,000
+dollars
+
+843
+00:30:38,799 --> 00:30:44,960
+um supercomputers built raising billions
+
+844
+00:30:42,000 --> 00:30:47,279
+of dollars in order to do all that now
+
+845
+00:30:44,960 --> 00:30:50,080
+>> cost you know something that you can do
+
+846
+00:30:47,279 --> 00:30:51,919
+on a weekend on a PC. And so that tells
+
+847
+00:30:50,080 --> 00:30:54,000
+you something about how quickly we're
+
+848
+00:30:51,919 --> 00:30:56,240
+making making AI more cost effective
+
+849
+00:30:54,000 --> 00:30:59,039
+>> or Spark sorry probably not quite a PC.
+
+850
+00:30:56,240 --> 00:31:02,559
+>> Okay. Not quite a PC. Yeah. We're
+
+851
+00:30:59,039 --> 00:31:04,399
+improving our architecture and
+
+852
+00:31:02,559 --> 00:31:06,559
+performance
+
+853
+00:31:04,399 --> 00:31:08,159
+um every single year. The first GBTU I
+
+854
+00:31:06,559 --> 00:31:08,960
+think was trained on Voltus.
+
+855
+00:31:08,159 --> 00:31:11,279
+>> Mhm.
+
+856
+00:31:08,960 --> 00:31:13,840
+>> And then uh Ampear
+
+857
+00:31:11,279 --> 00:31:15,840
+um you know and and it wasn't I think
+
+858
+00:31:13,840 --> 00:31:16,880
+the first breakthroughs none of it
+
+859
+00:31:15,840 --> 00:31:18,000
+included Hopper.
+
+860
+00:31:16,880 --> 00:31:19,919
+>> Mhm.
+
+861
+00:31:18,000 --> 00:31:22,480
+>> And um of course Hopper the last couple
+
+862
+00:31:19,919 --> 00:31:24,240
+two three years and um uh we're off in
+
+863
+00:31:22,480 --> 00:31:27,360
+Blackwell for the last year and a half
+
+864
+00:31:24,240 --> 00:31:29,840
+or so. And um every single one of these
+
+865
+00:31:27,360 --> 00:31:31,520
+generations the architecture improves
+
+866
+00:31:29,840 --> 00:31:34,640
+and of course the number of transistors
+
+867
+00:31:31,520 --> 00:31:37,120
+go up and uh the capacity goes up every
+
+868
+00:31:34,640 --> 00:31:38,559
+single generation very easily every
+
+869
+00:31:37,120 --> 00:31:40,640
+every single year from a computing
+
+870
+00:31:38,559 --> 00:31:43,600
+perspective. The combination of all that
+
+871
+00:31:40,640 --> 00:31:45,840
+getting 5 to 10x every single year
+
+872
+00:31:43,600 --> 00:31:48,000
+>> is not unusual. And here comes Reuben
+
+873
+00:31:45,840 --> 00:31:51,200
+just around the corner. And so we're
+
+874
+00:31:48,000 --> 00:31:53,519
+seeing 5 to 10x every single year. Well
+
+875
+00:31:51,200 --> 00:31:56,480
+compounded it's incredible. Moore's law
+
+876
+00:31:53,519 --> 00:31:58,480
+was two times every year and a half
+
+877
+00:31:56,480 --> 00:32:00,559
+>> and over the course of five years is 10x
+
+878
+00:31:58,480 --> 00:32:03,120
+over the course of 10 years is 100x
+
+879
+00:32:00,559 --> 00:32:04,640
+>> in the in the in the case of AI over the
+
+880
+00:32:03,120 --> 00:32:07,519
+course of 10 years is probably 100,000
+
+881
+00:32:04,640 --> 00:32:08,720
+to a millionx okay and that's just the
+
+882
+00:32:07,519 --> 00:32:10,960
+hardware
+
+883
+00:32:08,720 --> 00:32:12,559
+>> then the next layer is the algorithm
+
+884
+00:32:10,960 --> 00:32:15,519
+layer and the model layer the
+
+885
+00:32:12,559 --> 00:32:17,120
+combination of all that the fact that if
+
+886
+00:32:15,519 --> 00:32:19,760
+you were to tell me that in the cost in
+
+887
+00:32:17,120 --> 00:32:21,440
+the in the in in the span of you know 10
+
+888
+00:32:19,760 --> 00:32:23,120
+years we're going to reduce the cost of
+
+889
+00:32:21,440 --> 00:32:24,240
+token generation about a billion times.
+
+890
+00:32:23,120 --> 00:32:24,880
+I would not be surprised.
+
+891
+00:32:24,240 --> 00:32:28,080
+>> Mhm.
+
+892
+00:32:24,880 --> 00:32:30,880
+>> Okay. And so that's the tokconomics
+
+893
+00:32:28,080 --> 00:32:33,440
+of of of AI. On the training side, it's
+
+894
+00:32:30,880 --> 00:32:35,360
+not quite as aggressive in in cost
+
+895
+00:32:33,440 --> 00:32:37,600
+reduction, but it's close. If you were
+
+896
+00:32:35,360 --> 00:32:40,000
+to say that that every single year we're
+
+897
+00:32:37,600 --> 00:32:42,960
+increasing by two or 3x over the course
+
+898
+00:32:40,000 --> 00:32:45,440
+of 10 years, incredible. But the
+
+899
+00:32:42,960 --> 00:32:48,080
+important idea is when somebody says it
+
+900
+00:32:45,440 --> 00:32:49,519
+cost $und00 million to train something
+
+901
+00:32:48,080 --> 00:32:51,039
+or half a billion dollars to train
+
+902
+00:32:49,519 --> 00:32:53,600
+something.
+
+903
+00:32:51,039 --> 00:32:54,480
+Well, next year it's 10 times less. Next
+
+904
+00:32:53,600 --> 00:32:55,679
+year it's 10 times.
+
+905
+00:32:54,480 --> 00:32:57,039
+>> For people to scale these things up,
+
+906
+00:32:55,679 --> 00:32:58,480
+though, right? So the counter argument
+
+907
+00:32:57,039 --> 00:33:01,120
+is, well, we'll just get bigger every
+
+908
+00:32:58,480 --> 00:33:03,279
+year by 10x or 100x or, you know, we'll
+
+909
+00:33:01,120 --> 00:33:04,559
+try to offset that decrease in cost by
+
+910
+00:33:03,279 --> 00:33:06,320
+scale
+
+911
+00:33:04,559 --> 00:33:08,720
+>> and others can't keep up.
+
+912
+00:33:06,320 --> 00:33:11,760
+>> Yeah. But really what's happening is is
+
+913
+00:33:08,720 --> 00:33:13,760
+you're and and this is where come in as
+
+914
+00:33:11,760 --> 00:33:16,240
+you know the scale went up by a factor
+
+915
+00:33:13,760 --> 00:33:18,159
+of 10 but the computational burden did
+
+916
+00:33:16,240 --> 00:33:20,320
+not go up by a factor of 10 because
+
+917
+00:33:18,159 --> 00:33:22,320
+you're getting the compounded benefits
+
+918
+00:33:20,320 --> 00:33:24,559
+of all three things. The hardware is
+
+919
+00:33:22,320 --> 00:33:26,399
+going up the the algorithms of the
+
+920
+00:33:24,559 --> 00:33:27,760
+training models are going up and of
+
+921
+00:33:26,399 --> 00:33:29,360
+course the model architecture is going
+
+922
+00:33:27,760 --> 00:33:30,880
+up and we're getting the benefit of
+
+923
+00:33:29,360 --> 00:33:33,279
+learning from each other. This is, you
+
+924
+00:33:30,880 --> 00:33:36,960
+know, let's face it, Deep Seek was
+
+925
+00:33:33,279 --> 00:33:39,120
+probably the single most important paper
+
+926
+00:33:36,960 --> 00:33:41,279
+that most Silicon Valley researchers
+
+927
+00:33:39,120 --> 00:33:43,440
+read from in the last couple years.
+
+928
+00:33:41,279 --> 00:33:44,480
+>> It was the only thing that felt frontier
+
+929
+00:33:43,440 --> 00:33:45,039
+that was open.
+
+930
+00:33:44,480 --> 00:33:47,120
+>> That's right.
+
+931
+00:33:45,039 --> 00:33:48,799
+>> In years,
+
+932
+00:33:47,120 --> 00:33:49,360
+the value of open source again putting
+
+933
+00:33:48,799 --> 00:33:51,360
+out these papers.
+
+934
+00:33:49,360 --> 00:33:53,679
+>> Literally, Deep Seek
+
+935
+00:33:51,360 --> 00:33:55,200
+>> benefited American startups and American
+
+936
+00:33:53,679 --> 00:33:56,240
+AI labs all over
+
+937
+00:33:55,200 --> 00:33:58,640
+>> and infrastructure companies
+
+938
+00:33:56,240 --> 00:33:59,840
+>> and infrastructure company all over.
+
+939
+00:33:58,640 --> 00:34:02,720
+probably the single greatest
+
+940
+00:33:59,840 --> 00:34:05,039
+contribution to American AI last year.
+
+941
+00:34:02,720 --> 00:34:07,919
+>> And so if you said this out loud, of
+
+942
+00:34:05,039 --> 00:34:10,960
+course, you know, people
+
+943
+00:34:07,919 --> 00:34:13,200
+>> kind of shudder um that we're uh
+
+944
+00:34:10,960 --> 00:34:15,839
+American AI is actually getting learning
+
+945
+00:34:13,200 --> 00:34:17,599
+from and benefiting from uh AI from
+
+946
+00:34:15,839 --> 00:34:20,079
+other nation. But why would that be
+
+947
+00:34:17,599 --> 00:34:22,480
+surprising? You know, AI researchers in
+
+948
+00:34:20,079 --> 00:34:24,480
+all over America, all over America are
+
+949
+00:34:22,480 --> 00:34:26,320
+uh Chinese natives and come from
+
+950
+00:34:24,480 --> 00:34:28,320
+different countries. We benefit from
+
+951
+00:34:26,320 --> 00:34:30,960
+every country. become benefit from every
+
+952
+00:34:28,320 --> 00:34:33,200
+researcher and no all of the world's
+
+953
+00:34:30,960 --> 00:34:36,079
+ideas don't have to come from the United
+
+954
+00:34:33,200 --> 00:34:38,560
+States and so I I think um back to your
+
+955
+00:34:36,079 --> 00:34:40,159
+your original question it is the case
+
+956
+00:34:38,560 --> 00:34:42,320
+that
+
+957
+00:34:40,159 --> 00:34:44,560
+you know some of the narratives around
+
+958
+00:34:42,320 --> 00:34:46,720
+around the cost of AI is about scaring
+
+959
+00:34:44,560 --> 00:34:48,639
+everybody out of the market you know
+
+960
+00:34:46,720 --> 00:34:50,639
+nobody ought to do pre-training but us
+
+961
+00:34:48,639 --> 00:34:53,280
+nobody should do you know training these
+
+962
+00:34:50,639 --> 00:34:55,760
+frontier models but us because the
+
+963
+00:34:53,280 --> 00:34:56,960
+because of innovation of models
+
+964
+00:34:55,760 --> 00:34:59,599
+algorithms
+
+965
+00:34:56,960 --> 00:35:02,560
+and the computing stack, the cost of AI
+
+966
+00:34:59,599 --> 00:35:04,320
+is actually decreasing well more than
+
+967
+00:35:02,560 --> 00:35:06,079
+10x every single year. And so if you're
+
+968
+00:35:04,320 --> 00:35:08,480
+just one year behind or even six months
+
+969
+00:35:06,079 --> 00:35:09,359
+behind, you could you could really stay
+
+970
+00:35:08,480 --> 00:35:10,880
+close.
+
+971
+00:35:09,359 --> 00:35:14,960
+>> And I think one thing that felt very
+
+972
+00:35:10,880 --> 00:35:16,960
+different to me about 2025 is um Ilia uh
+
+973
+00:35:14,960 --> 00:35:19,839
+said recently that uh you know we're in
+
+974
+00:35:16,960 --> 00:35:21,200
+the age of research again versus an age
+
+975
+00:35:19,839 --> 00:35:22,720
+of scaling. I think both things are
+
+976
+00:35:21,200 --> 00:35:24,400
+happening by the way. Everybody is also
+
+977
+00:35:22,720 --> 00:35:26,160
+trying to scale on multiple dimensions.
+
+978
+00:35:24,400 --> 00:35:28,320
+>> Yeah, exactly. both are happening.
+
+979
+00:35:26,160 --> 00:35:31,359
+>> You know, being 6 months behind or being
+
+980
+00:35:28,320 --> 00:35:32,560
+at 100 versus a 200k cluster, I think
+
+981
+00:35:31,359 --> 00:35:34,640
+matters if you are competing
+
+982
+00:35:32,560 --> 00:35:38,160
+symmetrically, but now you have people
+
+983
+00:35:34,640 --> 00:35:39,599
+from Frontier Labs or um at the very top
+
+984
+00:35:38,160 --> 00:35:41,520
+of the game who have very different
+
+985
+00:35:39,599 --> 00:35:42,800
+ideas about how to progress from here or
+
+986
+00:35:41,520 --> 00:35:44,960
+who are working on diversity of
+
+987
+00:35:42,800 --> 00:35:48,400
+problems, right? Uh and and I I think
+
+988
+00:35:44,960 --> 00:35:50,480
+that felt different from 24 maybe where
+
+989
+00:35:48,400 --> 00:35:52,480
+there was a lot of energy focused on
+
+990
+00:35:50,480 --> 00:35:53,680
+just pre-training scale and LLM.
+
+991
+00:35:52,480 --> 00:35:56,800
+>> Yeah. And several several other
+
+992
+00:35:53,680 --> 00:36:00,320
+dynamics. Um, as the market grows, each
+
+993
+00:35:56,800 --> 00:36:01,599
+one of these models could choose to have
+
+994
+00:36:00,320 --> 00:36:02,960
+verticals
+
+995
+00:36:01,599 --> 00:36:04,320
+>> or segments where they want to
+
+996
+00:36:02,960 --> 00:36:05,680
+differentiate.
+
+997
+00:36:04,320 --> 00:36:08,560
+>> Somebody could decide to be a better
+
+998
+00:36:05,680 --> 00:36:11,280
+coder. Somebody could decide to be just
+
+999
+00:36:08,560 --> 00:36:12,960
+better at being easier to be accessible
+
+1000
+00:36:11,280 --> 00:36:13,680
+so that it could be a greater consumer
+
+1001
+00:36:12,960 --> 00:36:15,440
+product.
+
+1002
+00:36:13,680 --> 00:36:17,760
+>> You know, the diversity of these models.
+
+1003
+00:36:15,440 --> 00:36:21,680
+As a result, you could you could
+
+1004
+00:36:17,760 --> 00:36:23,359
+probably make a niche leap without
+
+1005
+00:36:21,680 --> 00:36:25,119
+having to be great at everything else
+
+1006
+00:36:23,359 --> 00:36:26,000
+and still be super valuable to the
+
+1007
+00:36:25,119 --> 00:36:27,920
+market.
+
+1008
+00:36:26,000 --> 00:36:30,640
+>> It's no longer necessary to boil the
+
+1009
+00:36:27,920 --> 00:36:33,599
+entire ocean. The f two years ago,
+
+1010
+00:36:30,640 --> 00:36:36,400
+because it was called pre-training pre,
+
+1011
+00:36:33,599 --> 00:36:38,240
+you know, people people said, well, you
+
+1012
+00:36:36,400 --> 00:36:41,359
+know, pre-training is over. First of
+
+1013
+00:36:38,240 --> 00:36:43,280
+all, pre-training is not over. But the
+
+1014
+00:36:41,359 --> 00:36:45,359
+point of pre-training is to train
+
+1015
+00:36:43,280 --> 00:36:47,359
+yourself for training. That's why it's
+
+1016
+00:36:45,359 --> 00:36:49,359
+called pre-training to prepare yourself
+
+1017
+00:36:47,359 --> 00:36:51,599
+to do the real training. And now we call
+
+1018
+00:36:49,359 --> 00:36:53,520
+it post-training. It's kind of weird. I
+
+1019
+00:36:51,599 --> 00:36:55,440
+I think it's just training, but
+
+1020
+00:36:53,520 --> 00:36:57,599
+pre-training is pre-training and
+
+1021
+00:36:55,440 --> 00:37:02,160
+therefore it's training. Training as you
+
+1022
+00:36:57,599 --> 00:37:04,400
+as as we all know is is where uh compute
+
+1023
+00:37:02,160 --> 00:37:07,440
+scaling directly translates to
+
+1024
+00:37:04,400 --> 00:37:10,000
+intelligence. You you've you've largely
+
+1025
+00:37:07,440 --> 00:37:11,599
+now now this the the data the the data
+
+1026
+00:37:10,000 --> 00:37:13,839
+necessary to train a model is actually
+
+1027
+00:37:11,599 --> 00:37:16,000
+pretty small. Maybe it's just the
+
+1028
+00:37:13,839 --> 00:37:18,640
+verifiable results. Now it's really
+
+1029
+00:37:16,000 --> 00:37:20,480
+algorithmic, very compute intensive and
+
+1030
+00:37:18,640 --> 00:37:22,560
+so and you don't have to be good at
+
+1031
+00:37:20,480 --> 00:37:24,160
+everything in life as you know just like
+
+1032
+00:37:22,560 --> 00:37:25,760
+all of us we don't we could decide
+
+1033
+00:37:24,160 --> 00:37:28,400
+because we don't have time to learn
+
+1034
+00:37:25,760 --> 00:37:30,560
+everything equally well. We decide to
+
+1035
+00:37:28,400 --> 00:37:33,040
+choose a specialty and focus all of our
+
+1036
+00:37:30,560 --> 00:37:34,960
+energy on it and we become superhuman or
+
+1037
+00:37:33,040 --> 00:37:37,359
+incredibly good at something that other
+
+1038
+00:37:34,960 --> 00:37:38,640
+people are not. And so I think AI labs
+
+1039
+00:37:37,359 --> 00:37:40,960
+are going to start doing the same.
+
+1040
+00:37:38,640 --> 00:37:43,760
+They're going to start bifurcating into
+
+1041
+00:37:40,960 --> 00:37:45,599
+various segments and over time you're
+
+1042
+00:37:43,760 --> 00:37:47,280
+gonna and startups will do the same.
+
+1043
+00:37:45,599 --> 00:37:48,720
+>> They'll find a micro niche and they'll
+
+1044
+00:37:47,280 --> 00:37:49,520
+take something open and then be
+
+1045
+00:37:48,720 --> 00:37:51,040
+incredibly good at it.
+
+1046
+00:37:49,520 --> 00:37:53,280
+>> Well, I think one of the most optimistic
+
+1047
+00:37:51,040 --> 00:37:55,599
+views here is uh actually that these
+
+1048
+00:37:53,280 --> 00:37:57,440
+microniches are quite valuable, right? I
+
+1049
+00:37:55,599 --> 00:37:58,400
+was talking to Andre um because I've
+
+1050
+00:37:57,440 --> 00:37:59,839
+been talking to a lot of people about
+
+1051
+00:37:58,400 --> 00:38:02,800
+their predictions for next year. We'll
+
+1052
+00:37:59,839 --> 00:38:05,040
+ask you yours as well of course. Um um
+
+1053
+00:38:02,800 --> 00:38:06,480
+but he asked you know what is a what's
+
+1054
+00:38:05,040 --> 00:38:09,599
+an example of a prediction that would
+
+1055
+00:38:06,480 --> 00:38:11,520
+have been preient last year uh and my
+
+1056
+00:38:09,599 --> 00:38:13,760
+answer everything's easy in retrospect
+
+1057
+00:38:11,520 --> 00:38:15,839
+is that coding would be the first
+
+1058
+00:38:13,760 --> 00:38:18,320
+application level business that gets to
+
+1059
+00:38:15,839 --> 00:38:20,720
+a billion of AR as an AI native app
+
+1060
+00:38:18,320 --> 00:38:22,880
+right and I I think if you taken an old
+
+1061
+00:38:20,720 --> 00:38:24,400
+world view of this
+
+1062
+00:38:22,880 --> 00:38:27,520
+>> um you would have believed like one of
+
+1063
+00:38:24,400 --> 00:38:29,119
+two narratives right one is uh single
+
+1064
+00:38:27,520 --> 00:38:31,040
+model does everything and it'll all just
+
+1065
+00:38:29,119 --> 00:38:31,359
+be subsumed into something monolithic
+
+1066
+00:38:31,040 --> 00:38:32,960
+Mhm.
+
+1067
+00:38:31,359 --> 00:38:34,720
+>> And two is that developer tools never
+
+1068
+00:38:32,960 --> 00:38:36,000
+get very big, right? Well, kind of
+
+1069
+00:38:34,720 --> 00:38:38,160
+depends on how valuable the developer
+
+1070
+00:38:36,000 --> 00:38:39,839
+tool is. Now, I think many more people
+
+1071
+00:38:38,160 --> 00:38:41,200
+understand software engineering is in a
+
+1072
+00:38:39,839 --> 00:38:42,240
+niche and there's more demand than ever
+
+1073
+00:38:41,200 --> 00:38:44,000
+for it,
+
+1074
+00:38:42,240 --> 00:38:47,440
+>> but I think we'll see more like that.
+
+1075
+00:38:44,000 --> 00:38:49,599
+>> Also interesting, uh we are using we we
+
+1076
+00:38:47,440 --> 00:38:51,839
+use cursor here and we use cursor
+
+1077
+00:38:49,599 --> 00:38:53,359
+pervasively here. Every engineer uses it
+
+1078
+00:38:51,839 --> 00:38:54,640
+and the number of engineers, you just
+
+1079
+00:38:53,359 --> 00:38:56,000
+mentioned it, the number of people we're
+
+1080
+00:38:54,640 --> 00:38:56,960
+hiring today is just incredible.
+
+1081
+00:38:56,000 --> 00:38:58,960
+>> Yep.
+
+1082
+00:38:56,960 --> 00:39:02,720
+>> Right. Monday is come to work at Nvidia
+
+1083
+00:38:58,960 --> 00:39:04,800
+day and and um uh why is that? Uh this
+
+1084
+00:39:02,720 --> 00:39:07,760
+is now the purpose and the task.
+
+1085
+00:39:04,800 --> 00:39:10,240
+>> The purpose of a software engineer is to
+
+1086
+00:39:07,760 --> 00:39:15,280
+solve known problems
+
+1087
+00:39:10,240 --> 00:39:17,920
+and to find new problems to solve.
+
+1088
+00:39:15,280 --> 00:39:21,040
+Coding is one of the tasks.
+
+1089
+00:39:17,920 --> 00:39:22,560
+>> And so if the purpose is not coding, if
+
+1090
+00:39:21,040 --> 00:39:23,760
+your purpose literally is coding,
+
+1091
+00:39:22,560 --> 00:39:25,680
+somebody tells you what to do, you code
+
+1092
+00:39:23,760 --> 00:39:27,040
+it. All right? Maybe you're going to get
+
+1093
+00:39:25,680 --> 00:39:28,960
+replaced by the AI. But most of our
+
+1094
+00:39:27,040 --> 00:39:31,599
+software engineers, all of our software,
+
+1095
+00:39:28,960 --> 00:39:33,040
+their goal is to solve problems. And it
+
+1096
+00:39:31,599 --> 00:39:34,400
+turns out we have so many problems in
+
+1097
+00:39:33,040 --> 00:39:36,560
+the company and we have so many
+
+1098
+00:39:34,400 --> 00:39:37,920
+undiscovered problems. And so the more
+
+1099
+00:39:36,560 --> 00:39:39,520
+time they have to go explore
+
+1100
+00:39:37,920 --> 00:39:41,760
+undiscovered problems, the better off we
+
+1101
+00:39:39,520 --> 00:39:43,520
+are as a company. Nothing would give me
+
+1102
+00:39:41,760 --> 00:39:46,400
+more joy than if none of them are coding
+
+1103
+00:39:43,520 --> 00:39:48,000
+at all. They're just solving problems.
+
+1104
+00:39:46,400 --> 00:39:49,760
+>> You see what I'm saying? And so I I
+
+1105
+00:39:48,000 --> 00:39:52,160
+think that this framework of purpose
+
+1106
+00:39:49,760 --> 00:39:54,400
+versus task is really good for everybody
+
+1107
+00:39:52,160 --> 00:39:58,560
+to apply. For example, somebody who's a
+
+1108
+00:39:54,400 --> 00:40:00,320
+waiter, their job is to not to take the
+
+1109
+00:39:58,560 --> 00:40:02,160
+order. That's not their job. As it turns
+
+1110
+00:40:00,320 --> 00:40:04,160
+out, their job is so that we have a
+
+1111
+00:40:02,160 --> 00:40:07,119
+great experience. And if somebody if
+
+1112
+00:40:04,160 --> 00:40:09,119
+some AI is taking the order, their job
+
+1113
+00:40:07,119 --> 00:40:10,960
+or even delivering the food, their job
+
+1114
+00:40:09,119 --> 00:40:13,280
+is still helping us have a great
+
+1115
+00:40:10,960 --> 00:40:16,000
+experience. They they would reshape
+
+1116
+00:40:13,280 --> 00:40:18,960
+their jobs accordingly. And so so I
+
+1117
+00:40:16,000 --> 00:40:22,800
+think the um the question about about
+
+1118
+00:40:18,960 --> 00:40:25,119
+cost of compute um uh is really
+
+1119
+00:40:22,800 --> 00:40:28,160
+important. Let's let let me come back to
+
+1120
+00:40:25,119 --> 00:40:32,079
+one the the reason why we are so
+
+1121
+00:40:28,160 --> 00:40:33,599
+dedicated to a programmable architecture
+
+1122
+00:40:32,079 --> 00:40:35,040
+versus a fixed architect. Remember a
+
+1123
+00:40:33,599 --> 00:40:37,200
+long time ago
+
+1124
+00:40:35,040 --> 00:40:39,280
+>> uh a CNN chip came along and they said
+
+1125
+00:40:37,200 --> 00:40:41,040
+Nvidia is done.
+
+1126
+00:40:39,280 --> 00:40:42,320
+>> And then and then a transformer chip
+
+1127
+00:40:41,040 --> 00:40:43,440
+came and Nvidia was done.
+
+1128
+00:40:42,320 --> 00:40:46,480
+>> People are still trying that. Yes.
+
+1129
+00:40:43,440 --> 00:40:48,800
+>> Yeah. NP and and the benefit of these
+
+1130
+00:40:46,480 --> 00:40:50,160
+dedicated AS6 of course it could perform
+
+1131
+00:40:48,800 --> 00:40:55,359
+a job really really well and
+
+1132
+00:40:50,160 --> 00:40:57,760
+transformers is a much more universal AI
+
+1133
+00:40:55,359 --> 00:41:00,000
+network but the transformer as you know
+
+1134
+00:40:57,760 --> 00:41:00,960
+the species of it is growing incredibly
+
+1135
+00:41:00,000 --> 00:41:02,880
+>> the attention mechanism
+
+1136
+00:41:00,960 --> 00:41:04,800
+>> the attention mechanism how it thinks
+
+1137
+00:41:02,880 --> 00:41:07,680
+about context
+
+1138
+00:41:04,800 --> 00:41:09,839
+diffusion versus auto reggressive
+
+1139
+00:41:07,680 --> 00:41:12,079
+>> these hybrid SSM transformation
+
+1140
+00:41:09,839 --> 00:41:15,359
+>> hybrid SSM for example Neotron we just
+
+1141
+00:41:12,079 --> 00:41:17,599
+announced a new hybrid SM SM and and so
+
+1142
+00:41:15,359 --> 00:41:19,599
+the architecture of transformer is in
+
+1143
+00:41:17,599 --> 00:41:21,200
+fact changing very rapidly and over the
+
+1144
+00:41:19,599 --> 00:41:23,680
+next several years it's likely to change
+
+1145
+00:41:21,200 --> 00:41:25,040
+tremendously and so we we dedicate
+
+1146
+00:41:23,680 --> 00:41:26,720
+ourselves to an architecture that's
+
+1147
+00:41:25,040 --> 00:41:29,680
+flexible for this reason so that we can
+
+1148
+00:41:26,720 --> 00:41:32,480
+on the one hand adapt with remember
+
+1149
+00:41:29,680 --> 00:41:36,720
+because MOS law is largely over
+
+1150
+00:41:32,480 --> 00:41:38,880
+transistor benefit is only tens 10%
+
+1151
+00:41:36,720 --> 00:41:40,480
+maybe a couple of years
+
+1152
+00:41:38,880 --> 00:41:43,520
+>> and yet we would like to have hundreds
+
+1153
+00:41:40,480 --> 00:41:45,599
+of X every year and so the benefit is
+
+1154
+00:41:43,520 --> 00:41:48,160
+actually all in algorithms and an
+
+1155
+00:41:45,599 --> 00:41:50,480
+architecture that enables any algorithm
+
+1156
+00:41:48,160 --> 00:41:51,920
+is likely going to be the best one right
+
+1157
+00:41:50,480 --> 00:41:54,079
+because the transistor didn't it didn't
+
+1158
+00:41:51,920 --> 00:41:56,560
+advance that much and so I I think the
+
+1159
+00:41:54,079 --> 00:41:58,160
+the our dedication to programmability is
+
+1160
+00:41:56,560 --> 00:42:01,200
+number one for that reason we have so
+
+1161
+00:41:58,160 --> 00:42:03,440
+much optimism for innovation and
+
+1162
+00:42:01,200 --> 00:42:06,240
+algorithms and iteration software that
+
+1163
+00:42:03,440 --> 00:42:08,640
+we protect our programmability for that
+
+1164
+00:42:06,240 --> 00:42:10,880
+reason the second thing is is by
+
+1165
+00:42:08,640 --> 00:42:13,359
+protecting this architecture
+
+1166
+00:42:10,880 --> 00:42:15,839
+our installed base is really large. When
+
+1167
+00:42:13,359 --> 00:42:17,680
+a software engineer wants to optimize
+
+1168
+00:42:15,839 --> 00:42:19,599
+their algorithm, they want to make sure
+
+1169
+00:42:17,680 --> 00:42:21,440
+that it doesn't run on just one this one
+
+1170
+00:42:19,599 --> 00:42:23,599
+little cloud or this one little stack.
+
+1171
+00:42:21,440 --> 00:42:25,440
+They want it to run on as many mo on as
+
+1172
+00:42:23,599 --> 00:42:27,119
+many computers as possible. So the the
+
+1173
+00:42:25,440 --> 00:42:29,599
+fact that we protect our architecture
+
+1174
+00:42:27,119 --> 00:42:32,160
+compatibility then flash attention runs
+
+1175
+00:42:29,599 --> 00:42:34,000
+everywhere. So SSM run everywhere,
+
+1176
+00:42:32,160 --> 00:42:36,000
+diffusion runs everywhere, auto
+
+1177
+00:42:34,000 --> 00:42:37,200
+reggression runs everywhere. Just
+
+1178
+00:42:36,000 --> 00:42:38,640
+depending it doesn't matter what you
+
+1179
+00:42:37,200 --> 00:42:41,280
+want to do. CNN still run everywhere.
+
+1180
+00:42:38,640 --> 00:42:43,440
+LSTM still runs everywhere. And so that
+
+1181
+00:42:41,280 --> 00:42:44,960
+this this architecture that is
+
+1182
+00:42:43,440 --> 00:42:46,880
+architecturally compatible so that we
+
+1183
+00:42:44,960 --> 00:42:49,599
+have a large installed base programmable
+
+1184
+00:42:46,880 --> 00:42:51,599
+for the future is really important in
+
+1185
+00:42:49,599 --> 00:42:54,834
+the way that we help to advance and as a
+
+1186
+00:42:51,599 --> 00:42:56,400
+result all of this drives the cost down
+
+1187
+00:42:54,834 --> 00:42:59,440
+[clears throat] and and I'm super proud
+
+1188
+00:42:56,400 --> 00:43:00,960
+that that um uh our latest innovation
+
+1189
+00:42:59,440 --> 00:43:04,400
+MVLink72
+
+1190
+00:43:00,960 --> 00:43:07,280
+we're the lowest cost token generation
+
+1191
+00:43:04,400 --> 00:43:09,520
+machine in the world by enormous amounts
+
+1192
+00:43:07,280 --> 00:43:11,280
+and the reason for that is because are
+
+1193
+00:43:09,520 --> 00:43:13,040
+really really hard
+
+1194
+00:43:11,280 --> 00:43:16,960
+>> and so you know people didn't expect
+
+1195
+00:43:13,040 --> 00:43:19,359
+that um that forees it's probably easier
+
+1196
+00:43:16,960 --> 00:43:21,599
+to train but for inference is incredibly
+
+1197
+00:43:19,359 --> 00:43:23,280
+hard to generate tokens on but as as
+
+1198
+00:43:21,599 --> 00:43:25,040
+cost drop usually you open up new
+
+1199
+00:43:23,280 --> 00:43:26,640
+applications or new verticals that
+
+1200
+00:43:25,040 --> 00:43:28,079
+become more and more accessible
+
+1201
+00:43:26,640 --> 00:43:29,520
+>> and we talked a little bit about coding
+
+1202
+00:43:28,079 --> 00:43:30,560
+like cursor and cognition and other
+
+1203
+00:43:29,520 --> 00:43:32,400
+companies that are really benefiting
+
+1204
+00:43:30,560 --> 00:43:33,760
+from that in this last year do you have
+
+1205
+00:43:32,400 --> 00:43:35,359
+any thoughts or predictions in terms of
+
+1206
+00:43:33,760 --> 00:43:37,040
+what the next breakthrough industries
+
+1207
+00:43:35,359 --> 00:43:38,400
+will be or new applications or areas
+
+1208
+00:43:37,040 --> 00:43:40,079
+that you're most excited about coming in
+
+1209
+00:43:38,400 --> 00:43:41,040
+26 in particular like Are there one or
+
+1210
+00:43:40,079 --> 00:43:44,240
+two things that you think will
+
+1211
+00:43:41,040 --> 00:43:47,440
+>> because of three things I because of
+
+1212
+00:43:44,240 --> 00:43:48,960
+because of a couple two three things I I
+
+1213
+00:43:47,440 --> 00:43:50,400
+think I think several industries are
+
+1214
+00:43:48,960 --> 00:43:53,839
+going to are going to experience their
+
+1215
+00:43:50,400 --> 00:43:56,839
+chat moment. Um I believe that
+
+1216
+00:43:53,839 --> 00:43:56,839
+multi-modality
+
+1217
+00:43:57,119 --> 00:44:04,079
+and um very long context is going to
+
+1218
+00:44:01,359 --> 00:44:07,839
+enable of course really really cool chat
+
+1219
+00:44:04,079 --> 00:44:09,680
+bots. Um but the basic architecture that
+
+1220
+00:44:07,839 --> 00:44:11,920
+in combination with breakthroughs in
+
+1221
+00:44:09,680 --> 00:44:15,760
+synthetic data generation is going to
+
+1222
+00:44:11,920 --> 00:44:17,839
+help create the chat GPT moment for
+
+1223
+00:44:15,760 --> 00:44:19,119
+digital biology.
+
+1224
+00:44:17,839 --> 00:44:20,480
+>> That moment is coming.
+
+1225
+00:44:19,119 --> 00:44:22,720
+>> And by digital biology, do you
+
+1226
+00:44:20,480 --> 00:44:24,480
+specifically mean other aspects of like
+
+1227
+00:44:22,720 --> 00:44:26,400
+protein folding or protein binding or
+
+1228
+00:44:24,480 --> 00:44:27,520
+protein diagnosis? I see proteins.
+
+1229
+00:44:26,400 --> 00:44:30,319
+>> I think we're good at protein
+
+1230
+00:44:27,520 --> 00:44:33,119
+understanding. Mhm. Now multi-proin
+
+1231
+00:44:30,319 --> 00:44:34,720
+understanding is coming online and we
+
+1232
+00:44:33,119 --> 00:44:36,880
+recently created a model called LA
+
+1233
+00:44:34,720 --> 00:44:38,720
+prina. It's open. Um it's for
+
+1234
+00:44:36,880 --> 00:44:40,800
+multi-proin
+
+1235
+00:44:38,720 --> 00:44:43,280
+>> um understanding and and represent
+
+1236
+00:44:40,800 --> 00:44:45,599
+representation learning and generation.
+
+1237
+00:44:43,280 --> 00:44:47,359
+Uh so so I think that the protein
+
+1238
+00:44:45,599 --> 00:44:49,280
+understanding is is advancing very
+
+1239
+00:44:47,359 --> 00:44:51,520
+quickly. Now protein generation is going
+
+1240
+00:44:49,280 --> 00:44:52,079
+to advance very quickly. Chat GPD moment
+
+1241
+00:44:51,520 --> 00:44:53,200
+proteins.
+
+1242
+00:44:52,079 --> 00:44:55,440
+>> Yeah. There are a lot of interesting
+
+1243
+00:44:53,200 --> 00:44:57,119
+companies working on molecule design in
+
+1244
+00:44:55,440 --> 00:44:59,520
+endtoend way like chai.
+
+1245
+00:44:57,119 --> 00:45:01,119
+>> Exactly. And then and then of course
+
+1246
+00:44:59,520 --> 00:45:04,880
+chemical understanding and chemical
+
+1247
+00:45:01,119 --> 00:45:06,560
+generation and then protein chemical
+
+1248
+00:45:04,880 --> 00:45:08,880
+>> confirmation understanding and
+
+1249
+00:45:06,560 --> 00:45:10,880
+generation. Is that right? And so that
+
+1250
+00:45:08,880 --> 00:45:12,560
+combination the chat GBT moment the
+
+1251
+00:45:10,880 --> 00:45:14,400
+generative AI moment all of that stuff
+
+1252
+00:45:12,560 --> 00:45:15,119
+is coming together for for um digital
+
+1253
+00:45:14,400 --> 00:45:16,880
+biology
+
+1254
+00:45:15,119 --> 00:45:18,640
+>> and to your to your point about like new
+
+1255
+00:45:16,880 --> 00:45:20,880
+industries or you know the way I think
+
+1256
+00:45:18,640 --> 00:45:23,119
+about it is like investing in the inputs
+
+1257
+00:45:20,880 --> 00:45:24,800
+for this AI as well. All of these things
+
+1258
+00:45:23,119 --> 00:45:26,560
+around biology and chemistry and
+
+1259
+00:45:24,800 --> 00:45:27,920
+material science, they require real
+
+1260
+00:45:26,560 --> 00:45:29,599
+world data generation and
+
+1261
+00:45:27,920 --> 00:45:30,480
+experimentation, right? And that's new
+
+1262
+00:45:29,599 --> 00:45:32,560
+infrastructure too.
+
+1263
+00:45:30,480 --> 00:45:33,680
+>> New infrastructure, uh, synthetic data
+
+1264
+00:45:32,560 --> 00:45:36,079
+is going to be really important because
+
+1265
+00:45:33,680 --> 00:45:37,680
+they just have such sparse, right? Spar
+
+1266
+00:45:36,079 --> 00:45:40,160
+sparity of data and they just don't have
+
+1267
+00:45:37,680 --> 00:45:41,760
+as much as human language. And there the
+
+1268
+00:45:40,160 --> 00:45:44,640
+the real breakthrough is going to be
+
+1269
+00:45:41,760 --> 00:45:47,680
+when we can train a a world foundation
+
+1270
+00:45:44,640 --> 00:45:50,240
+model, a foundation model for proteins,
+
+1271
+00:45:47,680 --> 00:45:52,000
+a foundation model for cells. I'm I'm
+
+1272
+00:45:50,240 --> 00:45:54,720
+very excited about both of those things.
+
+1273
+00:45:52,000 --> 00:45:56,560
+Once we have a a foundation model, our
+
+1274
+00:45:54,720 --> 00:45:58,720
+understanding capability, our generative
+
+1275
+00:45:56,560 --> 00:46:00,000
+capability, that data flywheel is really
+
+1276
+00:45:58,720 --> 00:46:01,760
+going to take off.
+
+1277
+00:46:00,000 --> 00:46:03,599
+>> The this this the second area that I'm
+
+1278
+00:46:01,760 --> 00:46:06,160
+excited about, um, of course, reasoning
+
+1279
+00:46:03,599 --> 00:46:08,560
+made huge breakthroughs in language, but
+
+1280
+00:46:06,160 --> 00:46:10,400
+because of reasoning, cars are going to
+
+1281
+00:46:08,560 --> 00:46:12,880
+be able to perform better. So, instead
+
+1282
+00:46:10,400 --> 00:46:14,000
+of just perception cars and planning
+
+1283
+00:46:12,880 --> 00:46:15,520
+cars, they're going to be reasoning
+
+1284
+00:46:14,000 --> 00:46:16,960
+cars. So, these cars are going to be
+
+1285
+00:46:15,520 --> 00:46:18,800
+thinking all the time. And when they
+
+1286
+00:46:16,960 --> 00:46:21,200
+come up they come up to a circumstance
+
+1287
+00:46:18,800 --> 00:46:22,400
+they they've never en encountered before
+
+1288
+00:46:21,200 --> 00:46:24,319
+they can break it down into
+
+1289
+00:46:22,400 --> 00:46:28,079
+circumstances they have encountered it
+
+1290
+00:46:24,319 --> 00:46:30,000
+before and construct a reason reasoning
+
+1291
+00:46:28,079 --> 00:46:33,119
+system for how to navigate through it.
+
+1292
+00:46:30,000 --> 00:46:34,800
+And so the out of domain out of you know
+
+1293
+00:46:33,119 --> 00:46:38,160
+out of distribution
+
+1294
+00:46:34,800 --> 00:46:40,720
+>> part of AI is going to very much be be
+
+1295
+00:46:38,160 --> 00:46:42,640
+addressed by reasoning systems or and as
+
+1296
+00:46:40,720 --> 00:46:44,480
+a result we could do more things than we
+
+1297
+00:46:42,640 --> 00:46:48,880
+were taught to do between uh generative
+
+1298
+00:46:44,480 --> 00:46:51,280
+AI uh and um multimodal uh you know
+
+1299
+00:46:48,880 --> 00:46:52,960
+vision language action models and
+
+1300
+00:46:51,280 --> 00:46:54,720
+reasoning systems. I think we're going
+
+1301
+00:46:52,960 --> 00:46:57,760
+to see big breakthroughs in human robots
+
+1302
+00:46:54,720 --> 00:46:58,960
+or multi-mbodiment robots. you know does
+
+1303
+00:46:57,760 --> 00:47:00,240
+>> what do you think what do you think is a
+
+1304
+00:46:58,960 --> 00:47:02,319
+time frame for that because if you look
+
+1305
+00:47:00,240 --> 00:47:04,560
+at the self-driving analog and obviously
+
+1306
+00:47:02,319 --> 00:47:06,240
+self-driving technologies were based on
+
+1307
+00:47:04,560 --> 00:47:07,760
+very different types of neural networks
+
+1308
+00:47:06,240 --> 00:47:09,119
+than what we're using today in terms of
+
+1309
+00:47:07,760 --> 00:47:10,640
+you know there's been a big swap over
+
+1310
+00:47:09,119 --> 00:47:12,160
+the last two three years
+
+1311
+00:47:10,640 --> 00:47:13,520
+>> in terms of how we do a lot there
+
+1312
+00:47:12,160 --> 00:47:17,280
+>> we started too soon
+
+1313
+00:47:13,520 --> 00:47:20,079
+>> self-driving cars really had four eras
+
+1314
+00:47:17,280 --> 00:47:21,760
+era was smart sensors
+
+1315
+00:47:20,079 --> 00:47:22,640
+>> connected into a car
+
+1316
+00:47:21,760 --> 00:47:24,640
+>> the mobile [clears throat] eye era
+
+1317
+00:47:22,640 --> 00:47:27,359
+>> the mobile eye era and even even the
+
+1318
+00:47:24,640 --> 00:47:27,599
+very earliest days of of
+
+1319
+00:47:27,359 --> 00:47:29,599
+Yeah.
+
+1320
+00:47:27,599 --> 00:47:31,760
+>> Yeah. Even the earliest days of Whimo,
+
+1321
+00:47:29,599 --> 00:47:34,560
+>> the the um you're talk you're using
+
+1322
+00:47:31,760 --> 00:47:36,400
+smart sensors um a lot of human
+
+1323
+00:47:34,560 --> 00:47:39,680
+engineered algorithms
+
+1324
+00:47:36,400 --> 00:47:40,720
+>> and education severe mapping as far
+
+1325
+00:47:39,680 --> 00:47:42,319
+>> extreme mapping
+
+1326
+00:47:40,720 --> 00:47:43,680
+>> mapping and then different systems for
+
+1327
+00:47:42,319 --> 00:47:46,240
+planning and perception.
+
+1328
+00:47:43,680 --> 00:47:48,560
+>> Exactly. And so so you're essentially
+
+1329
+00:47:46,240 --> 00:47:50,079
+creating a car that is driving on
+
+1330
+00:47:48,560 --> 00:47:52,720
+digital rails, right? It's no different
+
+1331
+00:47:50,079 --> 00:47:54,480
+than than the rails at Disneyland. There
+
+1332
+00:47:52,720 --> 00:47:56,640
+are digital rails. And so that's the
+
+1333
+00:47:54,480 --> 00:47:58,640
+first generation. the second generation.
+
+1334
+00:47:56,640 --> 00:48:01,280
+Um and during that generation you have
+
+1335
+00:47:58,640 --> 00:48:01,760
+perception, world model and planning.
+
+1336
+00:48:01,280 --> 00:48:05,280
+>> Mh.
+
+1337
+00:48:01,760 --> 00:48:06,720
+>> And and the these modules um and each
+
+1338
+00:48:05,280 --> 00:48:08,720
+one of these modules have the limits of
+
+1339
+00:48:06,720 --> 00:48:10,720
+their technology and and perception was
+
+1340
+00:48:08,720 --> 00:48:13,680
+first imple was was first affected by
+
+1341
+00:48:10,720 --> 00:48:15,359
+deep learning uh first and then and then
+
+1342
+00:48:13,680 --> 00:48:16,079
+uh and then it propagated through the
+
+1343
+00:48:15,359 --> 00:48:17,839
+pipeline.
+
+1344
+00:48:16,079 --> 00:48:18,560
+>> And so that but that system was too
+
+1345
+00:48:17,839 --> 00:48:20,079
+brittle
+
+1346
+00:48:18,560 --> 00:48:23,440
+>> and it only knows how to perform what
+
+1347
+00:48:20,079 --> 00:48:26,640
+you taught it. And now where we are are
+
+1348
+00:48:23,440 --> 00:48:28,319
+endtoend models and then and then where
+
+1349
+00:48:26,640 --> 00:48:30,880
+we're going to go next are end to end
+
+1350
+00:48:28,319 --> 00:48:33,520
+models. There you go. So that those are
+
+1351
+00:48:30,880 --> 00:48:35,200
+kind of the four eras in a lot of ways.
+
+1352
+00:48:33,520 --> 00:48:37,760
+If we would have started self-driving
+
+1353
+00:48:35,200 --> 00:48:40,160
+cars probably three years ago,
+
+1354
+00:48:37,760 --> 00:48:40,559
+>> we would probably be exactly the same
+
+1355
+00:48:40,160 --> 00:48:41,920
+place.
+
+1356
+00:48:40,559 --> 00:48:43,119
+>> All our poor friends who were working in
+
+1357
+00:48:41,920 --> 00:48:44,480
+self-driving. Yeah.
+
+1358
+00:48:43,119 --> 00:48:46,000
+>> And and I don't I don't mind it. I've
+
+1359
+00:48:44,480 --> 00:48:48,319
+been working on on it for 10 years.
+
+1360
+00:48:46,000 --> 00:48:51,440
+Nvidia's self-driving car stack, by the
+
+1361
+00:48:48,319 --> 00:48:52,720
+way, number one rated safety in the
+
+1362
+00:48:51,440 --> 00:48:54,720
+world today.
+
+1363
+00:48:52,720 --> 00:48:56,800
+>> Number one, we just got we just got that
+
+1364
+00:48:54,720 --> 00:48:58,559
+rating today uh last week. And number
+
+1365
+00:48:56,800 --> 00:49:00,160
+two is Tesla. So, I'm very proud that
+
+1366
+00:48:58,559 --> 00:49:01,599
+two American companies are up on the
+
+1367
+00:49:00,160 --> 00:49:03,040
+>> Are you um So, from a robotics
+
+1368
+00:49:01,599 --> 00:49:04,160
+perspective, you think because we've
+
+1369
+00:49:03,040 --> 00:49:06,480
+already built all these sorts of
+
+1370
+00:49:04,160 --> 00:49:10,000
+technologies in the modern era, robotics
+
+1371
+00:49:06,480 --> 00:49:11,280
+won't have the same 10, 15 years. That's
+
+1372
+00:49:10,000 --> 00:49:12,960
+right.
+
+1373
+00:49:11,280 --> 00:49:15,040
+>> I'm much more optimistic with robotics
+
+1374
+00:49:12,960 --> 00:49:17,920
+because we we've kind of
+
+1375
+00:49:15,040 --> 00:49:20,240
+>> advanced foundational technology.
+
+1376
+00:49:17,920 --> 00:49:22,400
+>> Now, you know, people are thinking about
+
+1377
+00:49:20,240 --> 00:49:23,760
+human robotics. Human robotics has a lot
+
+1378
+00:49:22,400 --> 00:49:25,680
+of challenges. I mean, there's all the
+
+1379
+00:49:23,760 --> 00:49:26,800
+megatronics challenges there. You know,
+
+1380
+00:49:25,680 --> 00:49:29,119
+like for example,
+
+1381
+00:49:26,800 --> 00:49:30,240
+>> it's not helpful if the robot weighs 300
+
+1382
+00:49:29,119 --> 00:49:31,760
+lb
+
+1383
+00:49:30,240 --> 00:49:33,280
+>> and what happens if it falls over and
+
+1384
+00:49:31,760 --> 00:49:34,720
+interacting with kids and so on so
+
+1385
+00:49:33,280 --> 00:49:36,559
+forth. And so, so you got all kinds of
+
+1386
+00:49:34,720 --> 00:49:38,079
+challenges to deal with. I'm certain
+
+1387
+00:49:36,559 --> 00:49:40,079
+that we're going to we're going to solve
+
+1388
+00:49:38,079 --> 00:49:42,079
+those. But remember the fundamental
+
+1389
+00:49:40,079 --> 00:49:44,160
+technology that goes into a human robot
+
+1390
+00:49:42,079 --> 00:49:45,280
+robot can go into a pick and place
+
+1391
+00:49:44,160 --> 00:49:47,520
+robot.
+
+1392
+00:49:45,280 --> 00:49:48,880
+>> Um it could be it could be um how do you
+
+1393
+00:49:47,520 --> 00:49:50,880
+think about one thing I've been curious
+
+1394
+00:49:48,880 --> 00:49:53,119
+about for robotics in particular is if I
+
+1395
+00:49:50,880 --> 00:49:55,280
+look at who won or who who who's
+
+1396
+00:49:53,119 --> 00:49:56,960
+perceived as winning in self-driving.
+
+1397
+00:49:55,280 --> 00:49:59,440
+>> It's largely incumbents, right? It's
+
+1398
+00:49:56,960 --> 00:50:01,200
+Whimo, it's Tesla. You mentioned uh the
+
+1399
+00:49:59,440 --> 00:50:02,240
+safety rating Nvidia's gotten. And so
+
+1400
+00:50:01,200 --> 00:50:03,520
+it's people who've been working on this
+
+1401
+00:50:02,240 --> 00:50:04,880
+for a long time. It took a lot of
+
+1402
+00:50:03,520 --> 00:50:06,000
+capital. It was really intensive to get
+
+1403
+00:50:04,880 --> 00:50:07,119
+there. You have supply chain, you have
+
+1404
+00:50:06,000 --> 00:50:08,720
+hardware, you have all this extra
+
+1405
+00:50:07,119 --> 00:50:09,920
+complexity. Do you think the same thing
+
+1406
+00:50:08,720 --> 00:50:11,680
+will be true in robotics? Are the
+
+1407
+00:50:09,920 --> 00:50:14,400
+winners basically going to be Tesla with
+
+1408
+00:50:11,680 --> 00:50:15,599
+Optimus and other people who have both
+
+1409
+00:50:14,400 --> 00:50:17,040
+been in the industry for a while but
+
+1410
+00:50:15,599 --> 00:50:18,079
+also have all those sort of incumbent
+
+1411
+00:50:17,040 --> 00:50:18,559
+effects? Do you think there's room for
+
+1412
+00:50:18,079 --> 00:50:20,480
+startups?
+
+1413
+00:50:18,559 --> 00:50:24,240
+>> They will be one of the leader one of
+
+1414
+00:50:20,480 --> 00:50:27,839
+the one of them and and and
+
+1415
+00:50:24,240 --> 00:50:30,800
+surely a major one. Um but everything
+
+1416
+00:50:27,839 --> 00:50:32,880
+that moves will be robotic.
+
+1417
+00:50:30,800 --> 00:50:35,040
+>> Everything that moves will be robotic.
+
+1418
+00:50:32,880 --> 00:50:36,720
+And everything that moves is a very
+
+1419
+00:50:35,040 --> 00:50:40,319
+large space. It's not all human or
+
+1420
+00:50:36,720 --> 00:50:42,640
+robot. And yet every AI will be
+
+1421
+00:50:40,319 --> 00:50:46,079
+multi-mbodiment meaning you know just
+
+1422
+00:50:42,640 --> 00:50:47,680
+like just like a human with our m our
+
+1423
+00:50:46,079 --> 00:50:49,440
+multi-mbodiment
+
+1424
+00:50:47,680 --> 00:50:51,280
+AI ourselves
+
+1425
+00:50:49,440 --> 00:50:52,559
+>> we could sit in a car
+
+1426
+00:50:51,280 --> 00:50:54,400
+>> and embody that
+
+1427
+00:50:52,559 --> 00:50:56,400
+>> we could pick up a tennis racket embody
+
+1428
+00:50:54,400 --> 00:50:56,960
+that we could pick up a chopstick embody
+
+1429
+00:50:56,400 --> 00:50:58,400
+that
+
+1430
+00:50:56,960 --> 00:50:59,680
+>> and so we could embody the
+
+1431
+00:50:58,400 --> 00:51:00,480
+>> people are general purpose right they
+
+1432
+00:50:59,680 --> 00:51:02,000
+can do all these things
+
+1433
+00:51:00,480 --> 00:51:03,920
+>> exactly and so AIS are going to become
+
+1434
+00:51:02,000 --> 00:51:05,839
+general purpose so you have one arm pick
+
+1435
+00:51:03,920 --> 00:51:07,520
+and place maybe it's two arms pick and
+
+1436
+00:51:05,839 --> 00:51:09,040
+place could be six arms pick and place,
+
+1437
+00:51:07,520 --> 00:51:10,559
+you know. So, so I think you're going to
+
+1438
+00:51:09,040 --> 00:51:12,079
+have all kinds of different sizes and
+
+1439
+00:51:10,559 --> 00:51:13,280
+shapes. It could be a caterpillar. It
+
+1440
+00:51:12,079 --> 00:51:14,640
+could be, you know, it could be an
+
+1441
+00:51:13,280 --> 00:51:17,359
+excavator. It could be all kinds of
+
+1442
+00:51:14,640 --> 00:51:20,079
+stuff. And so AI will embody those just
+
+1443
+00:51:17,359 --> 00:51:22,480
+as a just as a a construction worker
+
+1444
+00:51:20,079 --> 00:51:25,119
+embodies an excavator embodies a
+
+1445
+00:51:22,480 --> 00:51:26,160
+tractor. You know, they you know,
+
+1446
+00:51:25,119 --> 00:51:27,520
+>> could there be a small number of
+
+1447
+00:51:26,160 --> 00:51:28,559
+companies then that do the embodiment
+
+1448
+00:51:27,520 --> 00:51:29,599
+for everything or are you saying more
+
+1449
+00:51:28,559 --> 00:51:30,720
+there's going to be niche applications?
+
+1450
+00:51:29,599 --> 00:51:32,559
+You should definitely see a lot of
+
+1451
+00:51:30,720 --> 00:51:34,160
+software companies and then those that
+
+1452
+00:51:32,559 --> 00:51:35,760
+software
+
+1453
+00:51:34,160 --> 00:51:36,880
+company could serve a lot of a lot of
+
+1454
+00:51:35,760 --> 00:51:38,880
+different
+
+1455
+00:51:36,880 --> 00:51:40,960
+>> verticals but each one of the verticals
+
+1456
+00:51:38,880 --> 00:51:43,040
+will still have solution providers that
+
+1457
+00:51:40,960 --> 00:51:44,720
+then grounds it all turns it into
+
+1458
+00:51:43,040 --> 00:51:46,559
+something that works perfectly. Does it
+
+1459
+00:51:44,720 --> 00:51:49,200
+make sense? Because in the case of AI
+
+1460
+00:51:46,559 --> 00:51:51,200
+for consumers if it works 90% of the
+
+1461
+00:51:49,200 --> 00:51:53,200
+time you're delighted you you're you
+
+1462
+00:51:51,200 --> 00:51:55,119
+know you're mind blown. If it works 80%
+
+1463
+00:51:53,200 --> 00:51:56,800
+of the time you're satisfied. In the
+
+1464
+00:51:55,119 --> 00:51:59,520
+case of most industrial and physical
+
+1465
+00:51:56,800 --> 00:52:00,559
+AIs, if it works 90% of the time, nobody
+
+1466
+00:51:59,520 --> 00:52:03,359
+cares about that. They only care about
+
+1467
+00:52:00,559 --> 00:52:06,000
+the 10% that it fails. Basically, you
+
+1468
+00:52:03,359 --> 00:52:08,720
+know, 100% dissatisfaction. And so, you
+
+1469
+00:52:06,000 --> 00:52:11,040
+got to take it to 99.99999.
+
+1470
+00:52:08,720 --> 00:52:12,960
+So, the core technology might be able to
+
+1471
+00:52:11,040 --> 00:52:15,040
+get get you to 99%.
+
+1472
+00:52:12,960 --> 00:52:17,040
+>> And then a vertical solution provider
+
+1473
+00:52:15,040 --> 00:52:19,040
+like a Caterpillar or somebody, they
+
+1474
+00:52:17,040 --> 00:52:21,040
+could take that core technology and make
+
+1475
+00:52:19,040 --> 00:52:22,640
+it 99.999%
+
+1476
+00:52:21,040 --> 00:52:24,800
+great. Do you think that's what happens
+
+1477
+00:52:22,640 --> 00:52:26,720
+like earliest on because in in markets
+
+1478
+00:52:24,800 --> 00:52:28,400
+that are this immature it seems one of
+
+1479
+00:52:26,720 --> 00:52:30,400
+the fastest paths to market could be
+
+1480
+00:52:28,400 --> 00:52:32,559
+full verticalization right because you
+
+1481
+00:52:30,400 --> 00:52:34,480
+just have control of iteration speed
+
+1482
+00:52:32,559 --> 00:52:36,960
+>> the different the the difficulty
+
+1483
+00:52:34,480 --> 00:52:39,440
+difficulty of of verticalization for
+
+1484
+00:52:36,960 --> 00:52:41,680
+technology that that is general purpose
+
+1485
+00:52:39,440 --> 00:52:43,440
+is that you don't have the R&D scale to
+
+1486
+00:52:41,680 --> 00:52:45,359
+build a general purpose technology. Now,
+
+1487
+00:52:43,440 --> 00:52:46,640
+of course, open source helps that
+
+1488
+00:52:45,359 --> 00:52:48,160
+tremendously,
+
+1489
+00:52:46,640 --> 00:52:50,880
+>> which is the reason why you're going to
+
+1490
+00:52:48,160 --> 00:52:52,400
+see a, you know, a a big surge of
+
+1491
+00:52:50,880 --> 00:52:54,480
+vertical
+
+1492
+00:52:52,400 --> 00:52:55,200
+opportunities in AI in the next several
+
+1493
+00:52:54,480 --> 00:52:57,280
+years.
+
+1494
+00:52:55,200 --> 00:52:59,040
+>> My my prediction would be over the
+
+1495
+00:52:57,280 --> 00:53:00,400
+course of the next five years, the
+
+1496
+00:52:59,040 --> 00:53:02,160
+excitement is going to be
+
+1497
+00:53:00,400 --> 00:53:04,720
+verticalization.
+
+1498
+00:53:02,160 --> 00:53:06,480
+>> Notice we we're excited about Open
+
+1499
+00:53:04,720 --> 00:53:08,880
+Evidence, we're excited about Harvey,
+
+1500
+00:53:06,480 --> 00:53:10,559
+we're excited about Cursor. cursor is is
+
+1501
+00:53:08,880 --> 00:53:11,839
+a horizontal but it's kind of a
+
+1502
+00:53:10,559 --> 00:53:14,400
+horizontal vertical
+
+1503
+00:53:11,839 --> 00:53:15,839
+>> you know and so um I'm I'm super excited
+
+1504
+00:53:14,400 --> 00:53:17,599
+about all the verticals
+
+1505
+00:53:15,839 --> 00:53:19,440
+>> you know a lot of people said yeah AI is
+
+1506
+00:53:17,599 --> 00:53:22,000
+gonna get so god AI is going to get so
+
+1507
+00:53:19,440 --> 00:53:24,000
+good that all these rapper companies are
+
+1508
+00:53:22,000 --> 00:53:25,440
+going to be obsolete it's just it misses
+
+1509
+00:53:24,000 --> 00:53:27,119
+the big point
+
+1510
+00:53:25,440 --> 00:53:29,200
+>> you know the reason why you could talk
+
+1511
+00:53:27,119 --> 00:53:31,520
+about the reason why somebody can talk
+
+1512
+00:53:29,200 --> 00:53:33,040
+talk about somebody is creating
+
+1513
+00:53:31,520 --> 00:53:34,480
+technology could talk about the life of
+
+1514
+00:53:33,040 --> 00:53:36,480
+a surgeon is because they've never been
+
+1515
+00:53:34,480 --> 00:53:38,400
+a surgeon the reason why somebody who
+
+1516
+00:53:36,480 --> 00:53:40,400
+builds at AI and talk talks about the
+
+1517
+00:53:38,400 --> 00:53:42,400
+life of a accountant and a tax, you
+
+1518
+00:53:40,400 --> 00:53:44,960
+know, a tax expert because they've never
+
+1519
+00:53:42,400 --> 00:53:46,640
+been a tax expert, you know, and so so I
+
+1520
+00:53:44,960 --> 00:53:48,000
+I think they just the reason why
+
+1521
+00:53:46,640 --> 00:53:49,599
+somebody could talk about being a bus
+
+1522
+00:53:48,000 --> 00:53:51,440
+boy without being a bus boy is they
+
+1523
+00:53:49,599 --> 00:53:53,599
+never been a bus boy. And so so I I
+
+1524
+00:53:51,440 --> 00:53:55,280
+think you you you've got to be a little
+
+1525
+00:53:53,599 --> 00:53:57,200
+bit more empathetic about the depth of
+
+1526
+00:53:55,280 --> 00:53:59,359
+the complexity of the work
+
+1527
+00:53:57,200 --> 00:54:01,440
+>> and and tr try to truly understand the
+
+1528
+00:53:59,359 --> 00:54:03,760
+purpose of the work. Often times the the
+
+1529
+00:54:01,440 --> 00:54:06,960
+technology addresses the task, it
+
+1530
+00:54:03,760 --> 00:54:08,880
+doesn't address the purpose. So I guess
+
+1531
+00:54:06,960 --> 00:54:10,400
+one of the other narratives from we're
+
+1532
+00:54:08,880 --> 00:54:12,800
+looking at narratives that are true
+
+1533
+00:54:10,400 --> 00:54:14,000
+versus not true, you know, for 25. One
+
+1534
+00:54:12,800 --> 00:54:16,400
+other narrative that's come up has been
+
+1535
+00:54:14,000 --> 00:54:18,160
+more about energy and energy utilization
+
+1536
+00:54:16,400 --> 00:54:19,599
+and will we have enough energy to
+
+1537
+00:54:18,160 --> 00:54:21,520
+support AI. How do how do you think
+
+1538
+00:54:19,599 --> 00:54:23,040
+about that? On the first week of
+
+1539
+00:54:21,520 --> 00:54:25,119
+President Trump's administration, he
+
+1540
+00:54:23,040 --> 00:54:26,960
+said drill, baby drill. He got so much
+
+1541
+00:54:25,119 --> 00:54:30,880
+flack for that.
+
+1542
+00:54:26,960 --> 00:54:33,359
+If not for this entire change in in
+
+1543
+00:54:30,880 --> 00:54:34,480
+sentiment about energy growth in our
+
+1544
+00:54:33,359 --> 00:54:37,920
+country,
+
+1545
+00:54:34,480 --> 00:54:40,480
+>> we can all concede now we would have
+
+1546
+00:54:37,920 --> 00:54:42,160
+handed this industrial revolution to
+
+1547
+00:54:40,480 --> 00:54:43,359
+somebody else.
+
+1548
+00:54:42,160 --> 00:54:44,720
+>> And we're still power constrained.
+
+1549
+00:54:43,359 --> 00:54:48,319
+>> We're still power constrained. Yeah.
+
+1550
+00:54:44,720 --> 00:54:49,119
+>> Without energy, there can be no new
+
+1551
+00:54:48,319 --> 00:54:51,760
+industry.
+
+1552
+00:54:49,119 --> 00:54:54,480
+>> Mhm. And of course, we've been energy
+
+1553
+00:54:51,760 --> 00:54:56,480
+starved now for what, a decade. If not
+
+1554
+00:54:54,480 --> 00:54:58,480
+for the fact that President Trump
+
+1555
+00:54:56,480 --> 00:54:59,839
+reversed that narrative, we would be
+
+1556
+00:54:58,480 --> 00:55:00,400
+completely screwed.
+
+1557
+00:54:59,839 --> 00:55:02,240
+>> Mhm.
+
+1558
+00:55:00,400 --> 00:55:04,079
+>> Without energy, you can't have
+
+1559
+00:55:02,240 --> 00:55:06,400
+industrial growth. Without industrial
+
+1560
+00:55:04,079 --> 00:55:07,920
+growth, the the nation can't be more
+
+1561
+00:55:06,400 --> 00:55:09,359
+prosperous. Without being more
+
+1562
+00:55:07,920 --> 00:55:10,960
+prosperous, we can't take care of
+
+1563
+00:55:09,359 --> 00:55:13,280
+domestic issues. We can't take care of
+
+1564
+00:55:10,960 --> 00:55:15,359
+social issues. You know, on and on and
+
+1565
+00:55:13,280 --> 00:55:17,119
+on. And so, the fact of the matter is,
+
+1566
+00:55:15,359 --> 00:55:18,640
+we need energy to grow. We need every
+
+1567
+00:55:17,119 --> 00:55:21,440
+form of energy. We need, you know,
+
+1568
+00:55:18,640 --> 00:55:23,440
+natural gas. We need to be, of course,
+
+1569
+00:55:21,440 --> 00:55:25,440
+we need more energy on the grid. We need
+
+1570
+00:55:23,440 --> 00:55:27,599
+more energy behind the meter. Uh we're
+
+1571
+00:55:25,440 --> 00:55:28,880
+going to need nuclear. Uh wind is not
+
+1572
+00:55:27,599 --> 00:55:30,559
+going to be enough. Solar is not going
+
+1573
+00:55:28,880 --> 00:55:31,920
+to be enough. Let's just all acknowledge
+
+1574
+00:55:30,559 --> 00:55:34,000
+that we'll take it. We'll take
+
+1575
+00:55:31,920 --> 00:55:35,839
+everything we can. Um but the fact that
+
+1576
+00:55:34,000 --> 00:55:37,200
+matters, I think, for the for the next
+
+1577
+00:55:35,839 --> 00:55:39,680
+decade,
+
+1578
+00:55:37,200 --> 00:55:41,839
+>> natural gas, you know, is probably the
+
+1579
+00:55:39,680 --> 00:55:43,440
+the only way to go forward. What's
+
+1580
+00:55:41,839 --> 00:55:45,599
+really interesting is I I agree the
+
+1581
+00:55:43,440 --> 00:55:47,920
+timeline is too far out to address
+
+1582
+00:55:45,599 --> 00:55:51,359
+people's um you know power generation
+
+1583
+00:55:47,920 --> 00:55:52,960
+issues in 27 and 28 where uh you know
+
+1584
+00:55:51,359 --> 00:55:57,119
+large players building clusters are very
+
+1585
+00:55:52,960 --> 00:56:00,079
+concerned but the the biggest drivers of
+
+1586
+00:55:57,119 --> 00:56:02,240
+like climate innovation in the US have
+
+1587
+00:56:00,079 --> 00:56:04,160
+actually been as a result of this AI
+
+1588
+00:56:02,240 --> 00:56:05,440
+infrastructure problem right because
+
+1589
+00:56:04,160 --> 00:56:06,799
+people look at the demand
+
+1590
+00:56:05,440 --> 00:56:08,559
+>> finally that's right demand
+
+1591
+00:56:06,799 --> 00:56:11,040
+>> they look at the demand and the demand
+
+1592
+00:56:08,559 --> 00:56:12,960
+is driving people to create massive of
+
+1593
+00:56:11,040 --> 00:56:15,200
+new battery companies, solar
+
+1594
+00:56:12,960 --> 00:56:17,760
+concentrators. It's put new energy be
+
+1595
+00:56:15,200 --> 00:56:18,160
+new energy like you know willpower
+
+1596
+00:56:17,760 --> 00:56:21,520
+behind
+
+1597
+00:56:18,160 --> 00:56:23,599
+>> SM the AI industry is driving all of
+
+1598
+00:56:21,520 --> 00:56:24,000
+that sustainable energy industry.
+
+1599
+00:56:23,599 --> 00:56:26,079
+>> Yeah.
+
+1600
+00:56:24,000 --> 00:56:28,240
+>> Um because people see that there is
+
+1601
+00:56:26,079 --> 00:56:30,240
+going to be demand for it right so even
+
+1602
+00:56:28,240 --> 00:56:32,480
+if and I think there is no practical
+
+1603
+00:56:30,240 --> 00:56:36,640
+answer in the small number of years time
+
+1604
+00:56:32,480 --> 00:56:38,480
+frame versus uh large gas right um uh it
+
+1605
+00:56:36,640 --> 00:56:40,000
+still drives climate innovation. Yeah,
+
+1606
+00:56:38,480 --> 00:56:41,839
+no question about it. No question about
+
+1607
+00:56:40,000 --> 00:56:46,079
+it. And I I think that's exactly right
+
+1608
+00:56:41,839 --> 00:56:50,480
+that that you know doomer messages um
+
+1609
+00:56:46,079 --> 00:56:52,079
+causes policy and that policy may may
+
+1610
+00:56:50,480 --> 00:56:53,280
+affect the industry in some way. But
+
+1611
+00:56:52,079 --> 00:56:54,640
+there's nothing more powerful than
+
+1612
+00:56:53,280 --> 00:56:55,839
+demand. Look at all the jobs that's
+
+1613
+00:56:54,640 --> 00:56:57,200
+being created. Look at all the the
+
+1614
+00:56:55,839 --> 00:56:59,680
+industries that's being formed around
+
+1615
+00:56:57,200 --> 00:57:01,680
+it. um sustainable energy likely and
+
+1616
+00:56:59,680 --> 00:57:02,720
+when history rewrites it as Sarah, I
+
+1617
+00:57:01,680 --> 00:57:07,520
+think you you're going to be absolutely
+
+1618
+00:57:02,720 --> 00:57:09,520
+right that that if not for AI, well AI
+
+1619
+00:57:07,520 --> 00:57:10,960
+was is probably the biggest driver for
+
+1620
+00:57:09,520 --> 00:57:12,559
+sustainable energy ever.
+
+1621
+00:57:10,960 --> 00:57:14,000
+>> Yeah. A friend of mine has a saying that
+
+1622
+00:57:12,559 --> 00:57:15,839
+uh doomers are the people who sound
+
+1623
+00:57:14,000 --> 00:57:17,040
+smart at dinner parties and optimists
+
+1624
+00:57:15,839 --> 00:57:18,400
+are the people who drive humanity
+
+1625
+00:57:17,040 --> 00:57:19,760
+forward. And I think that's very true
+
+1626
+00:57:18,400 --> 00:57:20,640
+for for all these things we've talked
+
+1627
+00:57:19,760 --> 00:57:21,599
+about. Yeah. So
+
+1628
+00:57:20,640 --> 00:57:24,000
+>> yeah, it's really true.
+
+1629
+00:57:21,599 --> 00:57:26,880
+>> Yeah. Well, that that's one of the big
+
+1630
+00:57:24,000 --> 00:57:30,079
+big um takeaways for for uh this last
+
+1631
+00:57:26,880 --> 00:57:33,119
+year, the battle of narratives.
+
+1632
+00:57:30,079 --> 00:57:35,119
+>> And it's too simplistic
+
+1633
+00:57:33,119 --> 00:57:37,520
+um to say that everything that the
+
+1634
+00:57:35,119 --> 00:57:39,520
+doomers are saying are irrelevant.
+
+1635
+00:57:37,520 --> 00:57:42,160
+That's not true. A lot of very sensible
+
+1636
+00:57:39,520 --> 00:57:44,319
+things are being said. Um it is too
+
+1637
+00:57:42,160 --> 00:57:46,400
+simplistic to say that when somebody is
+
+1638
+00:57:44,319 --> 00:57:47,760
+optimistic that they're just naive.
+
+1639
+00:57:46,400 --> 00:57:50,079
+>> It needs to be grounded in reality.
+
+1640
+00:57:47,760 --> 00:57:51,359
+Yeah, that optimistic people are just
+
+1641
+00:57:50,079 --> 00:57:53,599
+naive, you know,
+
+1642
+00:57:51,359 --> 00:57:55,280
+>> and that that's obviously not true.
+
+1643
+00:57:53,599 --> 00:57:58,720
+>> Um, but I think we just have to be
+
+1644
+00:57:55,280 --> 00:58:02,480
+mindful of the balance of it.
+
+1645
+00:57:58,720 --> 00:58:04,240
+>> When 90% of the messaging is all around
+
+1646
+00:58:02,480 --> 00:58:06,960
+the end of the world and doom and the
+
+1647
+00:58:04,240 --> 00:58:08,480
+pessimism and you know, I think we we're
+
+1648
+00:58:06,960 --> 00:58:10,640
+scaring people
+
+1649
+00:58:08,480 --> 00:58:12,960
+>> from making the investments in AI that
+
+1650
+00:58:10,640 --> 00:58:14,160
+makes it safer, more functional, more
+
+1651
+00:58:12,960 --> 00:58:16,160
+productive
+
+1652
+00:58:14,160 --> 00:58:18,319
+>> and more useful to society. And so we
+
+1653
+00:58:16,160 --> 00:58:20,160
+just, you know, more secure. We, you
+
+1654
+00:58:18,319 --> 00:58:22,160
+know, all of that takes technology.
+
+1655
+00:58:20,160 --> 00:58:24,480
+Security takes technology. Safety takes
+
+1656
+00:58:22,160 --> 00:58:25,920
+technology. I appreciate that my car is
+
+1657
+00:58:24,480 --> 00:58:28,240
+safer today because it has better
+
+1658
+00:58:25,920 --> 00:58:30,480
+technology than a car 50 years ago.
+
+1659
+00:58:28,240 --> 00:58:33,200
+>> And so so I I think it takes technology
+
+1660
+00:58:30,480 --> 00:58:35,680
+to be safe, technology to be secure. And
+
+1661
+00:58:33,200 --> 00:58:37,760
+so I I'm I'm I'm delighted to see that
+
+1662
+00:58:35,680 --> 00:58:40,960
+the the advancement of technology is
+
+1663
+00:58:37,760 --> 00:58:42,480
+still accelerating and ongoing. And so
+
+1664
+00:58:40,960 --> 00:58:44,480
+we just have to make sure that the the
+
+1665
+00:58:42,480 --> 00:58:47,040
+policy makers around the world, the
+
+1666
+00:58:44,480 --> 00:58:49,040
+governments um are able to are are
+
+1667
+00:58:47,040 --> 00:58:50,240
+thinking about balancing these two
+
+1668
+00:58:49,040 --> 00:58:51,680
+ideas.
+
+1669
+00:58:50,240 --> 00:58:52,960
+>> How do you So I guess we've talked a lot
+
+1670
+00:58:51,680 --> 00:58:54,319
+about 25
+
+1671
+00:58:52,960 --> 00:58:55,680
+>> and the narratives of 25. How do you
+
+1672
+00:58:54,319 --> 00:58:57,599
+think about 26? What are you excited
+
+1673
+00:58:55,680 --> 00:58:58,960
+about? What do you see coming? What do
+
+1674
+00:58:57,599 --> 00:58:59,839
+you think are big changes that we should
+
+1675
+00:58:58,960 --> 00:59:03,520
+be aware of?
+
+1676
+00:58:59,839 --> 00:59:05,440
+>> I am optimistic that that um our
+
+1677
+00:59:03,520 --> 00:59:06,160
+relationship with China will improve.
+
+1678
+00:59:05,440 --> 00:59:07,680
+Mhm. [clears throat]
+
+1679
+00:59:06,160 --> 00:59:10,720
+>> that President Trump and the
+
+1680
+00:59:07,680 --> 00:59:13,760
+administration um has a really really
+
+1681
+00:59:10,720 --> 00:59:17,040
+grounded and common sense um attitude
+
+1682
+00:59:13,760 --> 00:59:19,680
+about um and philosophy around around
+
+1683
+00:59:17,040 --> 00:59:21,520
+how to think about China that that
+
+1684
+00:59:19,680 --> 00:59:23,920
+they're an adversary
+
+1685
+00:59:21,520 --> 00:59:26,640
+>> um but they're also also a partner in
+
+1686
+00:59:23,920 --> 00:59:29,599
+many ways and that the idea of
+
+1687
+00:59:26,640 --> 00:59:32,559
+decoupling is naive and the idea of
+
+1688
+00:59:29,599 --> 00:59:34,079
+decoupling um for whatever reason
+
+1689
+00:59:32,559 --> 00:59:37,040
+philosophical reasons or national
+
+1690
+00:59:34,079 --> 00:59:39,359
+security reasons It's just not not it's
+
+1691
+00:59:37,040 --> 00:59:41,200
+not based on any common sense and the
+
+1692
+00:59:39,359 --> 00:59:44,079
+more you the more deeply you look into
+
+1693
+00:59:41,200 --> 00:59:46,559
+it the more the two countries are
+
+1694
+00:59:44,079 --> 00:59:48,400
+actually highly coupled.
+
+1695
+00:59:46,559 --> 00:59:51,599
+>> Um both countries ought to ought to
+
+1696
+00:59:48,400 --> 00:59:53,280
+invest in their own independence. Um I
+
+1697
+00:59:51,599 --> 00:59:55,200
+you know when you depend too much on
+
+1698
+00:59:53,280 --> 00:59:58,000
+someone the relationship becomes too
+
+1699
+00:59:55,200 --> 00:59:59,839
+emotional uh as you know [laughter] and
+
+1700
+00:59:58,000 --> 01:00:01,760
+so it's good to have some independence
+
+1701
+00:59:59,839 --> 01:00:03,839
+or as much independence as either either
+
+1702
+01:00:01,760 --> 01:00:06,079
+would like but to recognize that there's
+
+1703
+01:00:03,839 --> 01:00:08,480
+a lot of coupling a lot of dependence
+
+1704
+01:00:06,079 --> 01:00:09,760
+between the two countries and and I
+
+1705
+01:00:08,480 --> 01:00:12,559
+think there's a there needs to be a
+
+1706
+01:00:09,760 --> 01:00:15,119
+nuanced strategy a nuanced attitude
+
+1707
+01:00:12,559 --> 01:00:17,359
+about how to how to how to manage this
+
+1708
+01:00:15,119 --> 01:00:19,520
+relationship in a productive way for all
+
+1709
+01:00:17,359 --> 01:00:20,960
+of the people of two countries and for
+
+1710
+01:00:19,520 --> 01:00:24,079
+all of the people around the world,
+
+1711
+01:00:20,960 --> 01:00:26,400
+everybody depends on a productive,
+
+1712
+01:00:24,079 --> 01:00:28,720
+constructive relationship of the two
+
+1713
+01:00:26,400 --> 01:00:30,160
+most important nations and the single
+
+1714
+01:00:28,720 --> 01:00:32,319
+most important relationship for the next
+
+1715
+01:00:30,160 --> 01:00:34,880
+century. And so we have to find that
+
+1716
+01:00:32,319 --> 01:00:37,280
+answer. And I'm I'm I I'm just really
+
+1717
+01:00:34,880 --> 01:00:39,760
+delighted uh that President Trump is
+
+1718
+01:00:37,280 --> 01:00:42,160
+looking for a constructive answer. And
+
+1719
+01:00:39,760 --> 01:00:44,240
+so I I think that next year uh will be a
+
+1720
+01:00:42,160 --> 01:00:46,000
+much better better better year than the
+
+1721
+01:00:44,240 --> 01:00:49,440
+last several. I'm happy with the
+
+1722
+01:00:46,000 --> 01:00:54,240
+administration was able to to to suggest
+
+1723
+01:00:49,440 --> 01:00:56,400
+a a an export control um policy that is
+
+1724
+01:00:54,240 --> 01:00:58,640
+grounded on national security
+
+1725
+01:00:56,400 --> 01:01:01,280
+recognizing that they already make so
+
+1726
+01:00:58,640 --> 01:01:03,440
+many chips themselves and they they can
+
+1727
+01:01:01,280 --> 01:01:05,119
+depend on Huawei themselves for their
+
+1728
+01:01:03,440 --> 01:01:08,079
+military for their national security.
+
+1729
+01:01:05,119 --> 01:01:09,839
+they got ample technology to do that.
+
+1730
+01:01:08,079 --> 01:01:12,799
+And so that American technology,
+
+1731
+01:01:09,839 --> 01:01:14,319
+although general purpose um is unlikely
+
+1732
+01:01:12,799 --> 01:01:16,079
+to be used by their military because
+
+1733
+01:01:14,319 --> 01:01:17,839
+their military is too smart, just as our
+
+1734
+01:01:16,079 --> 01:01:20,079
+military is too smart to to use their
+
+1735
+01:01:17,839 --> 01:01:22,960
+technology. And so it's grounded on
+
+1736
+01:01:20,079 --> 01:01:25,359
+national security. It's grounded on on
+
+1737
+01:01:22,960 --> 01:01:27,760
+uh technology leadership. It's grounded
+
+1738
+01:01:25,359 --> 01:01:29,359
+on national prosperity. You know, one of
+
+1739
+01:01:27,760 --> 01:01:31,440
+the things that that we just always have
+
+1740
+01:01:29,359 --> 01:01:34,079
+to remember is that the world's
+
+1741
+01:01:31,440 --> 01:01:36,880
+mightiest military uh is supported by
+
+1742
+01:01:34,079 --> 01:01:39,599
+the world's mightiest mil economy. And
+
+1743
+01:01:36,880 --> 01:01:41,920
+so the wealth that we generate um brings
+
+1744
+01:01:39,599 --> 01:01:44,319
+jobs home, creates prosperity in the
+
+1745
+01:01:41,920 --> 01:01:46,960
+United States, um provides for tax
+
+1746
+01:01:44,319 --> 01:01:49,280
+revenues, and ultimately funds the
+
+1747
+01:01:46,960 --> 01:01:50,799
+mightiest military on the planet. And so
+
+1748
+01:01:49,280 --> 01:01:54,000
+that circular system, that
+
+1749
+01:01:50,799 --> 01:01:57,440
+interconnected system requires a nuanced
+
+1750
+01:01:54,000 --> 01:02:00,400
+strategy. and and um uh and and and and
+
+1751
+01:01:57,440 --> 01:02:02,880
+I'm I'm I'm pleased to to to to see some
+
+1752
+01:02:00,400 --> 01:02:04,799
+of the progress in that area that allows
+
+1753
+01:02:02,880 --> 01:02:07,680
+American technology companies to keep
+
+1754
+01:02:04,799 --> 01:02:10,400
+America first and keep America ahead
+
+1755
+01:02:07,680 --> 01:02:13,200
+>> and to to support American technology
+
+1756
+01:02:10,400 --> 01:02:14,640
+leadership on the one hand um to win
+
+1757
+01:02:13,200 --> 01:02:16,799
+globally
+
+1758
+01:02:14,640 --> 01:02:19,119
+>> and and then and then China of course is
+
+1759
+01:02:16,799 --> 01:02:20,559
+sorting itself out you know I mean not
+
+1760
+01:02:19,119 --> 01:02:22,400
+sorting but they're sorting out the
+
+1761
+01:02:20,559 --> 01:02:24,079
+attitude about how to think about
+
+1762
+01:02:22,400 --> 01:02:25,440
+American technology and there
+
+1763
+01:02:24,079 --> 01:02:27,119
+>> because historical argument there has
+
+1764
+01:02:25,440 --> 01:02:29,119
+been that if if you look for example at
+
+1765
+01:02:27,119 --> 01:02:30,559
+the internet um there was what was known
+
+1766
+01:02:29,119 --> 01:02:31,440
+as a great firewall right China
+
+1767
+01:02:30,559 --> 01:02:33,280
+basically
+
+1768
+01:02:31,440 --> 01:02:35,520
+>> prevented US competition into China
+
+1769
+01:02:33,280 --> 01:02:38,240
+while the opposite wasn't as true
+
+1770
+01:02:35,520 --> 01:02:40,079
+>> um there's been mass expatriation of US
+
+1771
+01:02:38,240 --> 01:02:41,599
+jobs and industry to China as sort of
+
+1772
+01:02:40,079 --> 01:02:43,280
+part of the development of the 90s and
+
+1773
+01:02:41,599 --> 01:02:44,799
+2000s and so I think a lot of the things
+
+1774
+01:02:43,280 --> 01:02:46,640
+that people have brought up from a China
+
+1775
+01:02:44,799 --> 01:02:49,680
+US policy perspective besides just the
+
+1776
+01:02:46,640 --> 01:02:51,280
+military adversarial relationship um or
+
+1777
+01:02:49,680 --> 01:02:52,559
+spheres of influence or you know all the
+
+1778
+01:02:51,280 --> 01:02:54,240
+various things like that is also just
+
+1779
+01:02:52,559 --> 01:02:56,400
+the economic imbalances that have
+
+1780
+01:02:54,240 --> 01:02:57,839
+perceived to exist between the two
+
+1781
+01:02:56,400 --> 01:03:00,160
+countries. The way that I would think
+
+1782
+01:02:57,839 --> 01:03:02,799
+through that is go back to the first
+
+1783
+01:03:00,160 --> 01:03:05,119
+principles of technologies again
+
+1784
+01:03:02,799 --> 01:03:07,200
+>> and and let's say the internet you have
+
+1785
+01:03:05,119 --> 01:03:08,880
+the chip industry you have the systems
+
+1786
+01:03:07,200 --> 01:03:11,119
+industry the software industry you have
+
+1787
+01:03:08,880 --> 01:03:14,559
+the services industry on top remember
+
+1788
+01:03:11,119 --> 01:03:17,599
+China's internet growth has been a boon
+
+1789
+01:03:14,559 --> 01:03:20,880
+for Intel and AMD selling CPUs
+
+1790
+01:03:17,599 --> 01:03:22,720
+>> Micron selling DRAM skinex and Samsung
+
+1791
+01:03:20,880 --> 01:03:25,760
+selling DRAM
+
+1792
+01:03:22,720 --> 01:03:28,799
+>> it is the second largest internet
+
+1793
+01:03:25,760 --> 01:03:31,599
+market for American technology industry
+
+1794
+01:03:28,799 --> 01:03:33,440
+>> and so so maybe maybe it wasn't helpful
+
+1795
+01:03:31,599 --> 01:03:35,280
+to some layer of the stack
+
+1796
+01:03:33,440 --> 01:03:37,760
+>> the Googles of the world
+
+1797
+01:03:35,280 --> 01:03:39,680
+>> but don't exclude every layer of the
+
+1798
+01:03:37,760 --> 01:03:41,359
+stack always come back every single one
+
+1799
+01:03:39,680 --> 01:03:42,559
+of these things take a step back and
+
+1800
+01:03:41,359 --> 01:03:44,160
+look at the whole stack
+
+1801
+01:03:42,559 --> 01:03:45,520
+>> maybe that's a theme for today as well
+
+1802
+01:03:44,160 --> 01:03:47,440
+and it makes sense that you would you
+
+1803
+01:03:45,520 --> 01:03:50,480
+would send this message but you know
+
+1804
+01:03:47,440 --> 01:03:52,319
+technology is actually not just the the
+
+1805
+01:03:50,480 --> 01:03:53,920
+sort of internet software application
+
+1806
+01:03:52,319 --> 01:03:54,400
+layer that's been very dominant for two
+
+1807
+01:03:53,920 --> 01:03:56,960
+decades
+
+1808
+01:03:54,400 --> 01:04:00,640
+>> it's the whole stack and Remember as as
+
+1809
+01:03:56,960 --> 01:04:03,039
+as Intel and AMD prospered
+
+1810
+01:04:00,640 --> 01:04:05,280
+>> uh with the internet industry uh in
+
+1811
+01:04:03,039 --> 01:04:07,440
+China growth the China industry growth
+
+1812
+01:04:05,280 --> 01:04:09,680
+don't forget China also contributed
+
+1813
+01:04:07,440 --> 01:04:11,200
+tremendously to open source. No country
+
+1814
+01:04:09,680 --> 01:04:13,200
+in the world contributes more to open
+
+1815
+01:04:11,200 --> 01:04:14,720
+source than China. And look at all the
+
+1816
+01:04:13,200 --> 01:04:16,799
+startups here in America that were able
+
+1817
+01:04:14,720 --> 01:04:18,480
+to benefit from that open source to
+
+1818
+01:04:16,799 --> 01:04:22,880
+create the the new startups that are
+
+1819
+01:04:18,480 --> 01:04:24,960
+here. And so you can't look at one area
+
+1820
+01:04:22,880 --> 01:04:27,520
+in isolation. You have to look at the
+
+1821
+01:04:24,960 --> 01:04:29,200
+whole life cycle of the technology and
+
+1822
+01:04:27,520 --> 01:04:30,799
+look at every layer of the stack. Does
+
+1823
+01:04:29,200 --> 01:04:33,200
+it make sense? When you take a look at
+
+1824
+01:04:30,799 --> 01:04:36,480
+that from that lens,
+
+1825
+01:04:33,200 --> 01:04:39,119
+>> China's internet industry
+
+1826
+01:04:36,480 --> 01:04:39,920
+generated enormous prosperity for
+
+1827
+01:04:39,119 --> 01:04:41,039
+America.
+
+1828
+01:04:39,920 --> 01:04:43,680
+>> Mhm.
+
+1829
+01:04:41,039 --> 01:04:45,359
+>> Just not at the internet company per se.
+
+1830
+01:04:43,680 --> 01:04:47,200
+>> Jensen, my other investor friends will
+
+1831
+01:04:45,359 --> 01:04:51,520
+not forgive me if I don't ask you about
+
+1832
+01:04:47,200 --> 01:04:54,079
+2026 um uh on the business side. Uh are
+
+1833
+01:04:51,520 --> 01:04:55,359
+we in an AI bubble? AI bubble. Yeah,
+
+1834
+01:04:54,079 --> 01:04:56,240
+there's a lot of ways to reason through
+
+1835
+01:04:55,359 --> 01:04:59,760
+that.
+
+1836
+01:04:56,240 --> 01:05:02,480
+>> And so, so again, um, you know, when
+
+1837
+01:04:59,760 --> 01:05:06,799
+when asked that question, my mind goes
+
+1838
+01:05:02,480 --> 01:05:08,559
+to what is AI and where are we in that?
+
+1839
+01:05:06,799 --> 01:05:11,440
+There's AI,
+
+1840
+01:05:08,559 --> 01:05:14,079
+then there's computing. You know, as you
+
+1841
+01:05:11,440 --> 01:05:15,680
+know, Nvidia invented accelerated
+
+1842
+01:05:14,079 --> 01:05:17,119
+computing. Accelerated computing does
+
+1843
+01:05:15,680 --> 01:05:19,680
+computer graphics and rendering. AI
+
+1844
+01:05:17,119 --> 01:05:21,839
+doesn't. Um, accelerated computing does
+
+1845
+01:05:19,680 --> 01:05:22,799
+data processing, SQL data processing. AI
+
+1846
+01:05:21,839 --> 01:05:25,359
+doesn't.
+
+1847
+01:05:22,799 --> 01:05:27,200
+>> Um, accelerated computing does molecular
+
+1848
+01:05:25,359 --> 01:05:29,440
+dynamics and quantum chemistry. AI
+
+1849
+01:05:27,200 --> 01:05:30,880
+doesn't. You know, all these are all
+
+1850
+01:05:29,440 --> 01:05:32,799
+things that people could say someday AI
+
+1851
+01:05:30,880 --> 01:05:35,119
+will, but it doesn't today. Accelerated
+
+1852
+01:05:32,799 --> 01:05:37,520
+computing is really essential for uh
+
+1853
+01:05:35,119 --> 01:05:40,240
+classical machine learning, XG boost,
+
+1854
+01:05:37,520 --> 01:05:42,400
+recommener systems, the whole process of
+
+1855
+01:05:40,240 --> 01:05:45,839
+uh feature engineering, extract, load,
+
+1856
+01:05:42,400 --> 01:05:48,160
+and transform. That entire data science,
+
+1857
+01:05:45,839 --> 01:05:49,760
+machine learning life cycle, accelerated
+
+1858
+01:05:48,160 --> 01:05:51,839
+computing is used for all of that. The
+
+1859
+01:05:49,760 --> 01:05:53,599
+first thing to go to is in the context
+
+1860
+01:05:51,839 --> 01:05:56,799
+of Nvidia.
+
+1861
+01:05:53,599 --> 01:05:59,119
+What we see is the the the dynamic is
+
+1862
+01:05:56,799 --> 01:06:00,799
+the shift from general purpose computing
+
+1863
+01:05:59,119 --> 01:06:03,440
+to accelerated computing because MOS
+
+1864
+01:06:00,799 --> 01:06:06,400
+laws largely ended. You can't use CPUs
+
+1865
+01:06:03,440 --> 01:06:08,799
+for everything anymore like you used to.
+
+1866
+01:06:06,400 --> 01:06:11,680
+And so it's just no longer productive
+
+1867
+01:06:08,799 --> 01:06:13,760
+enough. It's not deflationary enough.
+
+1868
+01:06:11,680 --> 01:06:14,880
+>> And so so we have to move towards a new
+
+1869
+01:06:13,760 --> 01:06:17,119
+computing model. And that's where
+
+1870
+01:06:14,880 --> 01:06:20,000
+accelerator comes in. If you if
+
+1871
+01:06:17,119 --> 01:06:21,520
+generative AI well excuse me if chatbots
+
+1872
+01:06:20,000 --> 01:06:24,000
+let's just go you know open AI and
+
+1873
+01:06:21,520 --> 01:06:27,119
+Anthropic and Gemini if none of that
+
+1874
+01:06:24,000 --> 01:06:29,440
+existed today Nvidia would be a
+
+1875
+01:06:27,119 --> 01:06:31,359
+multiundred billion dollar company and
+
+1876
+01:06:29,440 --> 01:06:33,359
+the reason for that is because as you
+
+1877
+01:06:31,359 --> 01:06:35,520
+know the foundation of computing is
+
+1878
+01:06:33,359 --> 01:06:38,000
+shifting to accelerated computing
+
+1879
+01:06:35,520 --> 01:06:40,400
+>> that's the first thing to to realize is
+
+1880
+01:06:38,000 --> 01:06:42,559
+is to take a step back and ask yourself
+
+1881
+01:06:40,400 --> 01:06:44,960
+what is actually happening now the next
+
+1882
+01:06:42,559 --> 01:06:47,920
+layer up the question about AI now
+
+1883
+01:06:44,960 --> 01:06:50,720
+becomes What is AI? Now, we ask that we
+
+1884
+01:06:47,920 --> 01:06:53,520
+ask the AI bubble question and we always
+
+1885
+01:06:50,720 --> 01:06:53,920
+go back to OpenAI's revenues 100%. Don't
+
+1886
+01:06:53,520 --> 01:06:54,319
+we?
+
+1887
+01:06:53,920 --> 01:06:56,160
+>> Mhm.
+
+1888
+01:06:54,319 --> 01:06:58,559
+>> You ask somebody, hey, is there an AI
+
+1889
+01:06:56,160 --> 01:07:01,280
+bubble? Everybody goes directly to
+
+1890
+01:06:58,559 --> 01:07:03,920
+OpenAI's revenues. First of all, if
+
+1891
+01:07:01,280 --> 01:07:05,359
+OpenAI currently has twice the capacity,
+
+1892
+01:07:03,920 --> 01:07:07,119
+their revenues would double. You guys
+
+1893
+01:07:05,359 --> 01:07:08,880
+know that if they have 10 times the
+
+1894
+01:07:07,119 --> 01:07:10,799
+capacity, their I really believe their
+
+1895
+01:07:08,880 --> 01:07:13,440
+revenues would 10 times. And so, they
+
+1896
+01:07:10,799 --> 01:07:15,680
+need capacity. This is no different than
+
+1897
+01:07:13,440 --> 01:07:17,760
+Nvidia needs wafers from TSMC. Just
+
+1898
+01:07:15,680 --> 01:07:19,440
+because you know Nvidia exists and and
+
+1899
+01:07:17,760 --> 01:07:20,880
+we're doing great doesn't mean we don't
+
+1900
+01:07:19,440 --> 01:07:23,039
+need capacity. We need capacity. We need
+
+1901
+01:07:20,880 --> 01:07:24,559
+capacity of DRAM. We need and so in our
+
+1902
+01:07:23,039 --> 01:07:26,160
+world it's sensible to everybody. We
+
+1903
+01:07:24,559 --> 01:07:27,119
+need capacity. Well, in their world they
+
+1904
+01:07:26,160 --> 01:07:28,559
+need factories
+
+1905
+01:07:27,119 --> 01:07:30,400
+>> and if they don't have factory capacity
+
+1906
+01:07:28,559 --> 01:07:32,720
+how they generate tokens, which is where
+
+1907
+01:07:30,400 --> 01:07:35,440
+we started our conversation today and so
+
+1908
+01:07:32,720 --> 01:07:37,359
+they need factory capacity in order to
+
+1909
+01:07:35,440 --> 01:07:40,880
+increase their revenue growth. But
+
+1910
+01:07:37,359 --> 01:07:43,280
+nonetheless, we also said that AI is
+
+1911
+01:07:40,880 --> 01:07:45,280
+more than chatbots. It includes all
+
+1912
+01:07:43,280 --> 01:07:47,760
+these different fields of science. Um,
+
+1913
+01:07:45,280 --> 01:07:49,920
+Nvidia's AV business is coming up on 10
+
+1914
+01:07:47,760 --> 01:07:52,160
+billion dollars. Nobody ever talks about
+
+1915
+01:07:49,920 --> 01:07:54,480
+that. And you have to train world
+
+1916
+01:07:52,160 --> 01:07:56,319
+models. You have to train these AI AVs
+
+1917
+01:07:54,480 --> 01:07:58,880
+and it's happening robo taxis happening
+
+1918
+01:07:56,319 --> 01:08:00,960
+all over the world. Our AI work with uh
+
+1919
+01:07:58,880 --> 01:08:03,760
+digital biology, our AI work in
+
+1920
+01:08:00,960 --> 01:08:06,880
+financial services. The whole industry
+
+1921
+01:08:03,760 --> 01:08:10,240
+of quants, quantitative trading is
+
+1922
+01:08:06,880 --> 01:08:12,079
+moving towards Yeah, exactly. They used
+
+1923
+01:08:10,240 --> 01:08:14,319
+to be classical machine learning. A
+
+1924
+01:08:12,079 --> 01:08:17,199
+whole bunch of human featured they call
+
+1925
+01:08:14,319 --> 01:08:18,560
+quants, right? These these specialized
+
+1926
+01:08:17,199 --> 01:08:20,640
+mathematicians were trying to figure out
+
+1927
+01:08:18,560 --> 01:08:23,040
+what the predictive features are. Now we
+
+1928
+01:08:20,640 --> 01:08:25,040
+use AI to figure it out. And so in order
+
+1929
+01:08:23,040 --> 01:08:26,799
+to have instead of having quants, you
+
+1930
+01:08:25,040 --> 01:08:28,480
+need a lot of supercomputers. Financial
+
+1931
+01:08:26,799 --> 01:08:31,199
+services is one of our fastest growing
+
+1932
+01:08:28,480 --> 01:08:33,440
+segments. billions of dollars in in
+
+1933
+01:08:31,199 --> 01:08:35,759
+quants, you know, in financial services,
+
+1934
+01:08:33,440 --> 01:08:38,159
+billions of dollars in AV, billions of
+
+1935
+01:08:35,759 --> 01:08:40,960
+dollars in robotics coming up, billions
+
+1936
+01:08:38,159 --> 01:08:42,960
+of dollars in digital biology. And so
+
+1937
+01:08:40,960 --> 01:08:44,799
+how big can that all that be? Well,
+
+1938
+01:08:42,960 --> 01:08:46,560
+simple logic is this simple math.
+
+1939
+01:08:44,799 --> 01:08:50,000
+Whether you you think that AI is going
+
+1940
+01:08:46,560 --> 01:08:52,560
+to replace shortage, labor shortage or
+
+1941
+01:08:50,000 --> 01:08:54,960
+workforce shortage in any kind, um,
+
+1942
+01:08:52,560 --> 01:08:56,960
+let's ignore that for a second. The
+
+1943
+01:08:54,960 --> 01:09:01,600
+world is at hundred trillion dollars in
+
+1944
+01:08:56,960 --> 01:09:04,640
+GDP. out of that let's just say 2% 2%
+
+1945
+01:09:01,600 --> 01:09:06,960
+annually is R&D and let's just go back
+
+1946
+01:09:04,640 --> 01:09:08,560
+in time five years ago if you were to
+
+1947
+01:09:06,960 --> 01:09:10,159
+take the largest drug discovery company
+
+1948
+01:09:08,560 --> 01:09:14,480
+in the world drug company in the world
+
+1949
+01:09:10,159 --> 01:09:16,960
+and where's all of their R&D wet labs
+
+1950
+01:09:14,480 --> 01:09:19,120
+>> today what are they do doing building
+
+1951
+01:09:16,960 --> 01:09:21,520
+supercomputers
+
+1952
+01:09:19,120 --> 01:09:24,560
+>> and so there's a fundamental shift in
+
+1953
+01:09:21,520 --> 01:09:26,880
+how they think about that $2 trillion
+
+1954
+01:09:24,560 --> 01:09:28,319
+>> it used to be $2 trillion for the old
+
+1955
+01:09:26,880 --> 01:09:30,880
+way of doing things. It's now going to
+
+1956
+01:09:28,319 --> 01:09:33,199
+be $2 trillion in the AI way of doing
+
+1957
+01:09:30,880 --> 01:09:35,839
+things. Well, $2 trillion is going to
+
+1958
+01:09:33,199 --> 01:09:37,279
+need $2 trillion of R&D is going to be
+
+1959
+01:09:35,839 --> 01:09:39,440
+powered by a whole bunch of
+
+1960
+01:09:37,279 --> 01:09:40,640
+infrastructure. And that's the reason
+
+1961
+01:09:39,440 --> 01:09:42,799
+why we're building supercomputers
+
+1962
+01:09:40,640 --> 01:09:44,880
+everywhere around the world. And so so I
+
+1963
+01:09:42,799 --> 01:09:47,600
+think if if you reason about it from the
+
+1964
+01:09:44,880 --> 01:09:49,759
+outside in, you know, either from the
+
+1965
+01:09:47,600 --> 01:09:51,920
+foundation up, from the outside in, you
+
+1966
+01:09:49,759 --> 01:09:53,839
+come to the conclusion that what we're
+
+1967
+01:09:51,920 --> 01:09:55,600
+experiencing, what all three of us are
+
+1968
+01:09:53,839 --> 01:09:58,880
+experiencing, which is the amount of
+
+1969
+01:09:55,600 --> 01:10:00,640
+computing demand is insane.
+
+1970
+01:09:58,880 --> 01:10:02,719
+>> Give me an example of a startup company
+
+1971
+01:10:00,640 --> 01:10:04,480
+that goes, "No, we're good."
+
+1972
+01:10:02,719 --> 01:10:06,560
+>> They are all dying for computing
+
+1973
+01:10:04,480 --> 01:10:08,719
+capacity. Give me an example for a
+
+1974
+01:10:06,560 --> 01:10:11,040
+researcher in any university, a
+
+1975
+01:10:08,719 --> 01:10:13,920
+scientist in any company who says got
+
+1976
+01:10:11,040 --> 01:10:17,280
+plenty of capacity. Everybody is dying
+
+1977
+01:10:13,920 --> 01:10:20,560
+for capacity. And so we have a global
+
+1978
+01:10:17,280 --> 01:10:22,320
+multi- company, multi-industry shortage.
+
+1979
+01:10:20,560 --> 01:10:24,320
+It's not just about open AI even though
+
+1980
+01:10:22,320 --> 01:10:26,320
+open AI could use a lot more capacity as
+
+1981
+01:10:24,320 --> 01:10:28,880
+well. So I think I think how we think
+
+1982
+01:10:26,320 --> 01:10:31,440
+about this what with the narrative the
+
+1983
+01:10:28,880 --> 01:10:34,400
+narrative is not helpful and it's a
+
+1984
+01:10:31,440 --> 01:10:36,400
+little bit too superficial to say how do
+
+1985
+01:10:34,400 --> 01:10:39,040
+you prove there's an AI bubble$12
+
+1986
+01:10:36,400 --> 01:10:40,080
+billion of revenues
+
+1987
+01:10:39,040 --> 01:10:42,239
+hundreds of billions of dollar
+
+1988
+01:10:40,080 --> 01:10:43,760
+infrastructure being built is a little
+
+1989
+01:10:42,239 --> 01:10:45,360
+bit too simplistic.
+
+1990
+01:10:43,760 --> 01:10:47,040
+>> Yeah. The other thing people um tend to
+
+1991
+01:10:45,360 --> 01:10:48,159
+point out is the MIT study. There
+
+1992
+01:10:47,040 --> 01:10:49,760
+there's some study that I think came out
+
+1993
+01:10:48,159 --> 01:10:51,760
+of MIT that claimed that most enterprise
+
+1994
+01:10:49,760 --> 01:10:52,880
+deployments of AI weren't that useful.
+
+1995
+01:10:51,760 --> 01:10:54,800
+And you're like, well, did you do the
+
+1996
+01:10:52,880 --> 01:10:56,640
+change management? Did you do a reorg?
+
+1997
+01:10:54,800 --> 01:10:57,679
+Did you integrate into tooling? Did you
+
+1998
+01:10:56,640 --> 01:10:58,960
+like how long did it even take to
+
+1999
+01:10:57,679 --> 01:11:01,120
+implement it? If a planning cycle in an
+
+2000
+01:10:58,960 --> 01:11:02,880
+enterprise is a year and is something in
+
+2001
+01:11:01,120 --> 01:11:04,560
+six months and so it feels like there's
+
+2002
+01:11:02,880 --> 01:11:06,800
+a lot of these kind of again overstated
+
+2003
+01:11:04,560 --> 01:11:08,480
+things that get a lot of attention, but
+
+2004
+01:11:06,800 --> 01:11:09,120
+then you map it against what's actually
+
+2005
+01:11:08,480 --> 01:11:09,600
+happening.
+
+2006
+01:11:09,120 --> 01:11:11,040
+>> Yeah.
+
+2007
+01:11:09,600 --> 01:11:12,400
+>> And the growth of these companies using
+
+2008
+01:11:11,040 --> 01:11:14,400
+AI and it's just a completely different
+
+2009
+01:11:12,400 --> 01:11:16,560
+world. And and and if you want to find
+
+2010
+01:11:14,400 --> 01:11:19,360
+out where the world's innovation's
+
+2011
+01:11:16,560 --> 01:11:20,480
+happening, I would not go find out at an
+
+2012
+01:11:19,360 --> 01:11:21,520
+enterprise.
+
+2013
+01:11:20,480 --> 01:11:21,920
+>> Would you guys agree?
+
+2014
+01:11:21,520 --> 01:11:24,640
+>> Yeah.
+
+2015
+01:11:21,920 --> 01:11:27,280
+>> Enterprise is like the slowest adopters
+
+2016
+01:11:24,640 --> 01:11:30,159
+of new technologies. I would go talk to
+
+2017
+01:11:27,280 --> 01:11:32,080
+all of the startups, the 30, 40,000
+
+2018
+01:11:30,159 --> 01:11:33,679
+startups that are currently doing this
+
+2019
+01:11:32,080 --> 01:11:35,600
+stuff. I would go talk to Open Evans.
+
+2020
+01:11:33,679 --> 01:11:37,360
+How how's it working? I would go go talk
+
+2021
+01:11:35,600 --> 01:11:38,880
+to cursor. How's coding working by the
+
+2022
+01:11:37,360 --> 01:11:39,520
+way? You know, I would just go talk to
+
+2023
+01:11:38,880 --> 01:11:41,280
+these people.
+
+2024
+01:11:39,520 --> 01:11:43,440
+>> I think it's really interesting that you
+
+2025
+01:11:41,280 --> 01:11:45,199
+see that. Um, of course you do have
+
+2026
+01:11:43,440 --> 01:11:47,199
+companies making, you know, hundred
+
+2027
+01:11:45,199 --> 01:11:50,000
+million plus, multiund million plus
+
+2028
+01:11:47,199 --> 01:11:52,080
+progress of AR in enterprise sales,
+
+2029
+01:11:50,000 --> 01:11:53,520
+Harvey, Sierra, etc. But some of the
+
+2030
+01:11:52,080 --> 01:11:56,800
+fastest growing companies have been
+
+2031
+01:11:53,520 --> 01:11:59,040
+enduser adopted even in conservative
+
+2032
+01:11:56,800 --> 01:12:00,480
+industries, right? Like healthcare, you
+
+2033
+01:11:59,040 --> 01:12:00,880
+know, skeptical industries like
+
+2034
+01:12:00,480 --> 01:12:03,040
+engineering,
+
+2035
+01:12:00,880 --> 01:12:05,440
+>> healthare, the most right, the most
+
+2036
+01:12:03,040 --> 01:12:07,920
+conservative of all. But guess what?
+
+2037
+01:12:05,440 --> 01:12:09,520
+They are so concerned about getting the
+
+2038
+01:12:07,920 --> 01:12:11,520
+right answer
+
+2039
+01:12:09,520 --> 01:12:12,480
+>> that the ability to have something like
+
+2040
+01:12:11,520 --> 01:12:12,880
+open evidence.
+
+2041
+01:12:12,480 --> 01:12:15,120
+>> Yeah.
+
+2042
+01:12:12,880 --> 01:12:17,520
+>> To do grounded research, high quality
+
+2043
+01:12:15,120 --> 01:12:20,000
+research and get that get that research
+
+2044
+01:12:17,520 --> 01:12:22,000
+as information to you. Nobody wants to
+
+2045
+01:12:20,000 --> 01:12:23,360
+do research. They want answers. Nobody
+
+2046
+01:12:22,000 --> 01:12:23,920
+wants to do search. They want answers.
+
+2047
+01:12:23,360 --> 01:12:25,199
+Is that right?
+
+2048
+01:12:23,920 --> 01:12:26,480
+>> A bridge is a great example of that too
+
+2049
+01:12:25,199 --> 01:12:28,080
+where they're basically making it really
+
+2050
+01:12:26,480 --> 01:12:29,120
+easy to do the physician knows instead
+
+2051
+01:12:28,080 --> 01:12:30,960
+of the physician sitting there and doing
+
+2052
+01:12:29,120 --> 01:12:32,320
+it. Back to your point on task versus
+
+2053
+01:12:30,960 --> 01:12:33,440
+>> task versus purpose. Exactly. And I
+
+2054
+01:12:32,320 --> 01:12:35,280
+think a different way to think about the
+
+2055
+01:12:33,440 --> 01:12:37,520
+demand is like there are so many jobs
+
+2056
+01:12:35,280 --> 01:12:39,679
+where you're asking the the work is
+
+2057
+01:12:37,520 --> 01:12:42,800
+actually like an impossible ask right of
+
+2058
+01:12:39,679 --> 01:12:45,600
+a doctor or a radiologist keep up with
+
+2059
+01:12:42,800 --> 01:12:47,199
+the world's biomedical knowledge in R&D
+
+2060
+01:12:45,600 --> 01:12:49,120
+which is accelerating you know computing
+
+2061
+01:12:47,199 --> 01:12:50,800
+and otherwise um and then
+
+2062
+01:12:49,120 --> 01:12:53,760
+>> like archive papers
+
+2063
+01:12:50,800 --> 01:12:56,000
+>> there was a time you s you and I read
+
+2064
+01:12:53,760 --> 01:12:59,040
+>> you and I both both used to do I don't
+
+2065
+01:12:56,000 --> 01:12:59,920
+do that anymore but here now now I just
+
+2066
+01:12:59,040 --> 01:13:03,280
+load it all into chat
+
+2067
+01:12:59,920 --> 01:13:04,880
+>> GBTh you Now I just load it all in with
+
+2068
+01:13:03,280 --> 01:13:06,560
+all of the the ones that are interesting
+
+2069
+01:13:04,880 --> 01:13:08,960
+and and I make it learn it
+
+2070
+01:13:06,560 --> 01:13:11,120
+>> and then I you know make it summarize
+
+2071
+01:13:08,960 --> 01:13:13,520
+and another summary and I I interact
+
+2072
+01:13:11,120 --> 01:13:15,199
+with it. But but the point is uh we used
+
+2073
+01:13:13,520 --> 01:13:17,120
+to do search. We don't do it that
+
+2074
+01:13:15,199 --> 01:13:20,239
+anymore. I don't do search. We used to
+
+2075
+01:13:17,120 --> 01:13:22,000
+do research. You know the goal is to get
+
+2076
+01:13:20,239 --> 01:13:24,239
+answers. The goal is to get smarter. And
+
+2077
+01:13:22,000 --> 01:13:27,760
+these AIs allow us to help us do all
+
+2078
+01:13:24,239 --> 01:13:30,640
+that. And I think all of it all of it
+
+2079
+01:13:27,760 --> 01:13:32,239
+comes back with it. It's all more
+
+2080
+01:13:30,640 --> 01:13:36,320
+helpful if you come back to the
+
+2081
+01:13:32,239 --> 01:13:37,199
+framework that says AI is a multi-layer
+
+2082
+01:13:36,320 --> 01:13:41,199
+cake
+
+2083
+01:13:37,199 --> 01:13:43,440
+>> and that AI is not just a chatbot. AI is
+
+2084
+01:13:41,199 --> 01:13:45,280
+very very diverse in all of the
+
+2085
+01:13:43,440 --> 01:13:47,440
+industries and modalities and
+
+2086
+01:13:45,280 --> 01:13:49,760
+information and applications that it
+
+2087
+01:13:47,440 --> 01:13:51,280
+addresses. When you think about wanting
+
+2088
+01:13:49,760 --> 01:13:54,159
+to win
+
+2089
+01:13:51,280 --> 01:13:56,640
+>> that America should win AI, it should
+
+2090
+01:13:54,159 --> 01:13:59,120
+not just be America should have this
+
+2091
+01:13:56,640 --> 01:14:00,960
+company win AI, but it we should try to
+
+2092
+01:13:59,120 --> 01:14:02,080
+win across the board
+
+2093
+01:14:00,960 --> 01:14:04,239
+>> and across domains.
+
+2094
+01:14:02,080 --> 01:14:05,600
+>> Across domains. Exactly. And when we
+
+2095
+01:14:04,239 --> 01:14:07,600
+think about open source, all of a sudden
+
+2096
+01:14:05,600 --> 01:14:08,960
+this this is a helpful framework. When
+
+2097
+01:14:07,600 --> 01:14:10,960
+we think about winning, it's a helpful
+
+2098
+01:14:08,960 --> 01:14:12,640
+framework. When we think about uh energy
+
+2099
+01:14:10,960 --> 01:14:15,600
+is a helpful framework that because we
+
+2100
+01:14:12,640 --> 01:14:17,120
+need factories. Factories need energy.
+
+2101
+01:14:15,600 --> 01:14:19,199
+And without energy, we have no factory.
+
+2102
+01:14:17,120 --> 01:14:22,080
+without factories we have no AI that's a
+
+2103
+01:14:19,199 --> 01:14:24,719
+helpful framework and so I think if if
+
+2104
+01:14:22,080 --> 01:14:27,600
+um if we if we have a better
+
+2105
+01:14:24,719 --> 01:14:29,600
+understanding a system a framework for
+
+2106
+01:14:27,600 --> 01:14:31,840
+understanding what AI is I think the
+
+2107
+01:14:29,600 --> 01:14:33,440
+narratives will become more common sense
+
+2108
+01:14:31,840 --> 01:14:34,640
+the narratives will become more
+
+2109
+01:14:33,440 --> 01:14:36,880
+pragmatic
+
+2110
+01:14:34,640 --> 01:14:38,080
+>> become more balanced we want to keep
+
+2111
+01:14:36,880 --> 01:14:39,920
+people safe
+
+2112
+01:14:38,080 --> 01:14:41,679
+>> but one of the best ways to keep people
+
+2113
+01:14:39,920 --> 01:14:43,360
+safe is advancing advancing of
+
+2114
+01:14:41,679 --> 01:14:45,360
+technology quickly
+
+2115
+01:14:43,360 --> 01:14:46,800
+>> and and I think the industry is doing
+
+2116
+01:14:45,360 --> 01:14:47,760
+that and I'm very proud of the industry
+
+2117
+01:14:46,800 --> 01:14:49,840
+for doing that.
+
+2118
+01:14:47,760 --> 01:14:52,960
+>> No one wants to drive a car from, you
+
+2119
+01:14:49,840 --> 01:14:54,080
+know, the first decade of cars. And so I
+
+2120
+01:14:52,960 --> 01:14:55,679
+I think uh
+
+2121
+01:14:54,080 --> 01:14:56,239
+>> ABS is a really good thing.
+
+2122
+01:14:55,679 --> 01:14:58,320
+>> Yes,
+
+2123
+01:14:56,239 --> 01:15:00,480
+>> ABS is a really good thing. Lane keeping
+
+2124
+01:14:58,320 --> 01:15:02,480
+is a really good thing. There's no
+
+2125
+01:15:00,480 --> 01:15:03,840
+question FSD is a really good thing.
+
+2126
+01:15:02,480 --> 01:15:05,600
+>> And I think people will be excited about
+
+2127
+01:15:03,840 --> 01:15:06,719
+the, you know, third or fourth year of
+
+2128
+01:15:05,600 --> 01:15:10,480
+AI.
+
+2129
+01:15:06,719 --> 01:15:13,600
+>> Yeah. No, no doubt. And and I I say with
+
+2130
+01:15:10,480 --> 01:15:16,800
+great pride that the industry made
+
+2131
+01:15:13,600 --> 01:15:18,960
+tremendous strides this last year.
+
+2132
+01:15:16,800 --> 01:15:21,280
+all the technologies we've mentioned.
+
+2133
+01:15:18,960 --> 01:15:25,920
+Um, and that the scaling laws are so
+
+2134
+01:15:21,280 --> 01:15:28,320
+intact that we we now know that more
+
+2135
+01:15:25,920 --> 01:15:33,679
+compute, more intelligence
+
+2136
+01:15:28,320 --> 01:15:36,880
+>> and and um uh gosh, the the the the
+
+2137
+01:15:33,679 --> 01:15:39,120
+innovations in one in in one sector
+
+2138
+01:15:36,880 --> 01:15:41,840
+diffuses and spreads across all of the
+
+2139
+01:15:39,120 --> 01:15:43,679
+other sectors so fast. I'm so happy to
+
+2140
+01:15:41,840 --> 01:15:44,880
+see all that. And so I think the next
+
+2141
+01:15:43,679 --> 01:15:46,320
+five years it's going to be
+
+2142
+01:15:44,880 --> 01:15:47,520
+extraordinary. No, no doubt about it.
+
+2143
+01:15:46,320 --> 01:15:48,239
+And I think next year is going to be
+
+2144
+01:15:47,520 --> 01:15:49,600
+incredible.
+
+2145
+01:15:48,239 --> 01:15:50,880
+>> Amazing. Well, we're excited to talk to
+
+2146
+01:15:49,600 --> 01:15:52,640
+you at the end of next year, too.
+
+2147
+01:15:50,880 --> 01:15:54,000
+>> Yeah. Looking forward to it. Thank you
+
+2148
+01:15:52,640 --> 01:15:55,280
+guys for all the work that you guys do.
+
+2149
+01:15:54,000 --> 01:15:56,560
+Congratulations. What a great year.
+
+2150
+01:15:55,280 --> 01:15:57,840
+>> Wow. Amazing year.
+
+2151
+01:15:56,560 --> 01:15:59,520
+>> Yeah. A lot. Thank you.
+
+2152
+01:15:57,840 --> 01:16:02,520
+>> Yeah. Thank you. Happy New Year. Happy
+
+2153
+01:15:59,520 --> 01:16:02,520
+New Year.
+
+2154
+01:16:02,800 --> 01:16:07,120
+>> Find us on Twitter at No Prior Pod.
+
+2155
+01:16:05,440 --> 01:16:09,040
+Subscribe to our YouTube channel if you
+
+2156
+01:16:07,120 --> 01:16:11,300
+want to see our faces. Follow the show
+
+2157
+01:16:09,040 --> 01:16:12,800
+on Apple Podcasts, Spotify, or wherever
+
+2158
+01:16:11,300 --> 01:16:14,800
+[music] you listen. That way you get a
+
+2159
+01:16:12,800 --> 01:16:16,560
+new episode every week. And sign up for
+
+2160
+01:16:14,800 --> 01:16:20,360
+emails or find transcripts for every
+
+2161
+01:16:16,560 --> 01:16:20,360
+episode at no-briers.com.
+

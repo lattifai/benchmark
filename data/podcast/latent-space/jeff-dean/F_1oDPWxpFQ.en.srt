@@ -1,0 +1,9292 @@
+1
+00:00:00,654 --> 00:00:02,674
+[music]
+
+2
+00:00:04,319 --> 00:00:08,000
+Hey everyone, welcome to the L in space
+
+3
+00:00:06,319 --> 00:00:09,599
+podcast. This is Allesio, founder of
+
+4
+00:00:08,000 --> 00:00:10,880
+Colonel Labs, and I'm joined by Swix,
+
+5
+00:00:09,599 --> 00:00:12,240
+editor of L in Space.
+
+6
+00:00:10,880 --> 00:00:13,679
+>> Hello. Hello. We're here in the studio
+
+7
+00:00:12,240 --> 00:00:14,799
+with Jeff Dean, chief AI scientist at
+
+8
+00:00:13,679 --> 00:00:16,240
+Google. Welcome.
+
+9
+00:00:14,799 --> 00:00:18,160
+>> Thanks for having me. [laughter]
+
+10
+00:00:16,240 --> 00:00:19,520
+>> It's a bit surreal to have you in the
+
+11
+00:00:18,160 --> 00:00:22,880
+studio. I've I've watched so many of
+
+12
+00:00:19,520 --> 00:00:25,279
+your talks uh and obviously uh you your
+
+13
+00:00:22,880 --> 00:00:27,039
+career has been super legendary. So, uh
+
+14
+00:00:25,279 --> 00:00:28,400
+I mean, congrats. I I think the the
+
+15
+00:00:27,039 --> 00:00:30,400
+first thing must be said congrats on
+
+16
+00:00:28,400 --> 00:00:31,920
+owning the Purto Frontier. [laughter]
+
+17
+00:00:30,400 --> 00:00:34,559
+>> Thank you. Thank you. Parto Frontiers
+
+18
+00:00:31,920 --> 00:00:35,840
+are good and it's good to be out there.
+
+19
+00:00:34,559 --> 00:00:39,280
+>> Yeah. I mean I I think it's a
+
+20
+00:00:35,840 --> 00:00:41,280
+combination of both uh your you have to
+
+21
+00:00:39,280 --> 00:00:43,760
+own the Parto Frontier you have to have
+
+22
+00:00:41,280 --> 00:00:46,320
+like frontier capability but also
+
+23
+00:00:43,760 --> 00:00:48,399
+efficiency and then offer that range of
+
+24
+00:00:46,320 --> 00:00:50,879
+models [snorts] that people like to use.
+
+25
+00:00:48,399 --> 00:00:53,440
+uh and you know some part of this was
+
+26
+00:00:50,879 --> 00:00:55,760
+started because of your hardware work
+
+27
+00:00:53,440 --> 00:00:56,960
+some part of that is your model work and
+
+28
+00:00:55,760 --> 00:00:58,480
+uh you know I'm sure there's lots of
+
+29
+00:00:56,960 --> 00:01:00,719
+secret sauce that you guys uh have
+
+30
+00:00:58,480 --> 00:01:02,000
+worked on uh accumulatively but like
+
+31
+00:01:00,719 --> 00:01:03,920
+it's it's really impressive to see it
+
+32
+00:01:02,000 --> 00:01:05,280
+all come together in like this steadily
+
+33
+00:01:03,920 --> 00:01:06,799
+advancing frontier.
+
+34
+00:01:05,280 --> 00:01:08,880
+>> Yeah. Yeah. I mean I think as you say
+
+35
+00:01:06,799 --> 00:01:10,400
+it's not just one thing it's like a
+
+36
+00:01:08,880 --> 00:01:11,360
+whole bunch of things up and down the
+
+37
+00:01:10,400 --> 00:01:13,760
+stack
+
+38
+00:01:11,360 --> 00:01:16,320
+>> and uh you know all of those really
+
+39
+00:01:13,760 --> 00:01:18,640
+combined to help make you an OS able to
+
+40
+00:01:16,320 --> 00:01:21,040
+make highly capable large models as well
+
+41
+00:01:18,640 --> 00:01:23,280
+as you know software techniques to get
+
+42
+00:01:21,040 --> 00:01:25,280
+those large model capabilities into much
+
+43
+00:01:23,280 --> 00:01:27,119
+smaller lighter weight models that are
+
+44
+00:01:25,280 --> 00:01:29,920
+you know much more cost-effective and
+
+45
+00:01:27,119 --> 00:01:31,840
+lower latency but still you know quite
+
+46
+00:01:29,920 --> 00:01:32,560
+capable for their size. So
+
+47
+00:01:31,840 --> 00:01:34,560
+>> yeah,
+
+48
+00:01:32,560 --> 00:01:36,720
+>> how how much pressure do you have on
+
+49
+00:01:34,560 --> 00:01:38,560
+like having the lower bound of the prior
+
+50
+00:01:36,720 --> 00:01:41,040
+frontier too? I think like the new labs
+
+51
+00:01:38,560 --> 00:01:42,560
+are always trying to push the top
+
+52
+00:01:41,040 --> 00:01:44,560
+performance frontier because they need
+
+53
+00:01:42,560 --> 00:01:47,040
+to raise more money and all of that. And
+
+54
+00:01:44,560 --> 00:01:49,040
+you guys have billions of users and I
+
+55
+00:01:47,040 --> 00:01:50,720
+think initially when you work on the CPU
+
+56
+00:01:49,040 --> 00:01:52,240
+you were thinking about you know if
+
+57
+00:01:50,720 --> 00:01:53,759
+everybody that used Google we used the
+
+58
+00:01:52,240 --> 00:01:55,040
+voice model for like 3 minutes a day
+
+59
+00:01:53,759 --> 00:01:58,640
+they were like you need to double your
+
+60
+00:01:55,040 --> 00:02:00,240
+CPU number like what's that discussion
+
+61
+00:01:58,640 --> 00:02:02,000
+today at Google like how do you
+
+62
+00:02:00,240 --> 00:02:03,439
+prioritize frontier versus like we
+
+63
+00:02:02,000 --> 00:02:05,759
+actually need to deploy it if we build
+
+64
+00:02:03,439 --> 00:02:07,680
+it. Yeah, I mean I think we always want
+
+65
+00:02:05,759 --> 00:02:09,119
+to have models that are at the frontier
+
+66
+00:02:07,680 --> 00:02:11,200
+or pushing the frontier because I think
+
+67
+00:02:09,119 --> 00:02:13,360
+that's where you see what capabilities
+
+68
+00:02:11,200 --> 00:02:16,400
+now exist that didn't exist at the sort
+
+69
+00:02:13,360 --> 00:02:17,360
+of slightly less capable last year's
+
+70
+00:02:16,400 --> 00:02:18,800
+version or last [clears throat] six
+
+71
+00:02:17,360 --> 00:02:21,360
+months ago version.
+
+72
+00:02:18,800 --> 00:02:22,800
+>> Um at the same time, you know, we know
+
+73
+00:02:21,360 --> 00:02:24,879
+there those are going to be really
+
+74
+00:02:22,800 --> 00:02:27,520
+useful for a bunch of use cases, but
+
+75
+00:02:24,879 --> 00:02:30,239
+they're going to be uh a bit slower and
+
+76
+00:02:27,520 --> 00:02:32,239
+a bit more expensive than people might
+
+77
+00:02:30,239 --> 00:02:34,000
+like for a bunch of other broader use
+
+78
+00:02:32,239 --> 00:02:38,640
+cases. So I think what we want to do is
+
+79
+00:02:34,000 --> 00:02:41,840
+always have um kind of a highly capable
+
+80
+00:02:38,640 --> 00:02:44,319
+uh sort of uh affordable model that
+
+81
+00:02:41,840 --> 00:02:46,000
+enables a whole bunch of you know lower
+
+82
+00:02:44,319 --> 00:02:49,280
+latency use cases. People can use them
+
+83
+00:02:46,000 --> 00:02:52,319
+for agentic coding much more readily. Um
+
+84
+00:02:49,280 --> 00:02:54,800
+and then have the the high-end you know
+
+85
+00:02:52,319 --> 00:02:57,200
+frontier model that is really useful for
+
+86
+00:02:54,800 --> 00:02:59,360
+um you know deep reasoning you know
+
+87
+00:02:57,200 --> 00:03:01,680
+solving really complicated math problems
+
+88
+00:02:59,360 --> 00:03:03,840
+those kinds of things. And and it's not
+
+89
+00:03:01,680 --> 00:03:06,239
+that one or the other is useful. They're
+
+90
+00:03:03,840 --> 00:03:08,400
+both useful. So I think we like to do
+
+91
+00:03:06,239 --> 00:03:10,879
+both. And also, you know, through
+
+92
+00:03:08,400 --> 00:03:12,879
+distillation, which is a key technique
+
+93
+00:03:10,879 --> 00:03:14,560
+for making the smaller models more
+
+94
+00:03:12,879 --> 00:03:16,159
+capable, you know, you have to have the
+
+95
+00:03:14,560 --> 00:03:18,959
+frontier model in order to then distill
+
+96
+00:03:16,159 --> 00:03:20,720
+it into your your smaller model. So it's
+
+97
+00:03:18,959 --> 00:03:22,239
+not like an either or choice. You sort
+
+98
+00:03:20,720 --> 00:03:24,640
+of need that in order to actually get a
+
+99
+00:03:22,239 --> 00:03:26,480
+highly capable more modest size model.
+
+100
+00:03:24,640 --> 00:03:28,480
+>> Yeah. And I mean you and Jeffrey In came
+
+101
+00:03:26,480 --> 00:03:31,040
+out with this solution in 2014.
+
+102
+00:03:28,480 --> 00:03:32,720
+>> Don't forget L'Oreal Vine as well.
+
+103
+00:03:31,040 --> 00:03:34,480
+a long time ago. Like
+
+104
+00:03:32,720 --> 00:03:36,959
+>> I'm curious how you [snorts] think about
+
+105
+00:03:34,480 --> 00:03:39,360
+the cycle of these ideas even like you
+
+106
+00:03:36,959 --> 00:03:41,040
+know sparse models and uh you know how
+
+107
+00:03:39,360 --> 00:03:42,799
+do you re-evaluate them? How do you
+
+108
+00:03:41,040 --> 00:03:45,120
+think about in the next generational
+
+109
+00:03:42,799 --> 00:03:46,400
+model what is worth revisiting like a
+
+110
+00:03:45,120 --> 00:03:48,000
+yeah they're just kind of like a you
+
+111
+00:03:46,400 --> 00:03:49,840
+know you worked on so many ideas that
+
+112
+00:03:48,000 --> 00:03:51,599
+end up being influential but like in the
+
+113
+00:03:49,840 --> 00:03:53,200
+moment they might not feel that way
+
+114
+00:03:51,599 --> 00:03:55,040
+necessarily. Yeah, I mean I I think
+
+115
+00:03:53,200 --> 00:03:56,959
+distillation was originally motivated
+
+116
+00:03:55,040 --> 00:03:59,599
+because we were seeing that we had a
+
+117
+00:03:56,959 --> 00:04:01,280
+very large image data set at the time,
+
+118
+00:03:59,599 --> 00:04:03,599
+you know, 300 million images that we
+
+119
+00:04:01,280 --> 00:04:05,519
+could train on with, you know, I forget
+
+120
+00:04:03,599 --> 00:04:08,239
+like 20,000 categories or something, so
+
+121
+00:04:05,519 --> 00:04:10,560
+much bigger than ImageNet. And we were
+
+122
+00:04:08,239 --> 00:04:12,080
+seeing that if you create specialists
+
+123
+00:04:10,560 --> 00:04:13,920
+for different subsets of those image
+
+124
+00:04:12,080 --> 00:04:16,160
+categories, you know, this one's going
+
+125
+00:04:13,920 --> 00:04:17,680
+to be really good at sort of mammals and
+
+126
+00:04:16,160 --> 00:04:20,479
+this one's going to be really good at
+
+127
+00:04:17,680 --> 00:04:22,560
+sort of indoor room scenes or whatever.
+
+128
+00:04:20,479 --> 00:04:26,960
+and you can cluster those categories and
+
+129
+00:04:22,560 --> 00:04:29,040
+train on an enriched stream of data
+
+130
+00:04:26,960 --> 00:04:30,960
+after you do pre-training on on a much
+
+131
+00:04:29,040 --> 00:04:32,479
+broader set of images. You get much
+
+132
+00:04:30,960 --> 00:04:35,040
+better performance if you then treat
+
+133
+00:04:32,479 --> 00:04:37,680
+that whole set of maybe 50 models you've
+
+134
+00:04:35,040 --> 00:04:39,280
+trained as a large ensemble. Um but
+
+135
+00:04:37,680 --> 00:04:40,160
+that's not a very practical thing to
+
+136
+00:04:39,280 --> 00:04:42,400
+serve,
+
+137
+00:04:40,160 --> 00:04:45,199
+>> right? So distillation really came about
+
+138
+00:04:42,400 --> 00:04:47,280
+from the idea of okay what if we want to
+
+139
+00:04:45,199 --> 00:04:50,720
+actually serve that and train all these
+
+140
+00:04:47,280 --> 00:04:52,720
+independent sort of expert models um and
+
+141
+00:04:50,720 --> 00:04:54,160
+then squish it into something that
+
+142
+00:04:52,720 --> 00:04:56,639
+actually fits in a form factor that you
+
+143
+00:04:54,160 --> 00:04:58,080
+can actually serve. And that's you know
+
+144
+00:04:56,639 --> 00:04:59,680
+not that different from what we're doing
+
+145
+00:04:58,080 --> 00:05:01,440
+today. You know often today we're
+
+146
+00:04:59,680 --> 00:05:04,160
+instead of having an ensemble of 50
+
+147
+00:05:01,440 --> 00:05:07,039
+models we're having a much larger scale
+
+148
+00:05:04,160 --> 00:05:09,759
+model that we then distill into a much
+
+149
+00:05:07,039 --> 00:05:12,639
+smaller scale model.
+
+150
+00:05:09,759 --> 00:05:15,600
+Yeah, a part of me also wonders if
+
+151
+00:05:12,639 --> 00:05:20,080
+distillation also has a story with the
+
+152
+00:05:15,600 --> 00:05:21,600
+RL um revolution. So what let me let me
+
+153
+00:05:20,080 --> 00:05:24,000
+maybe try to articulate what I mean by
+
+154
+00:05:21,600 --> 00:05:26,160
+that. uh which is you can uh RL
+
+155
+00:05:24,000 --> 00:05:29,120
+basically spikes models in a certain uh
+
+156
+00:05:26,160 --> 00:05:30,400
+part of the distribution and then you
+
+157
+00:05:29,120 --> 00:05:32,720
+have to sort of well you can spike
+
+158
+00:05:30,400 --> 00:05:35,360
+models but usually sometimes it might be
+
+159
+00:05:32,720 --> 00:05:37,440
+lossy in other areas and it's kind of
+
+160
+00:05:35,360 --> 00:05:40,160
+like an uneven technique but you can
+
+161
+00:05:37,440 --> 00:05:43,759
+probably distill it back uh and you can
+
+162
+00:05:40,160 --> 00:05:46,880
+uh I think that the sort of general um
+
+163
+00:05:43,759 --> 00:05:48,320
+dream is to be able to advance
+
+164
+00:05:46,880 --> 00:05:49,280
+capabilities without regressing on
+
+165
+00:05:48,320 --> 00:05:51,120
+anything else
+
+166
+00:05:49,280 --> 00:05:54,800
+>> and I think like that that whole
+
+167
+00:05:51,120 --> 00:05:56,639
+capability merging without loss. Uh uh I
+
+168
+00:05:54,800 --> 00:05:58,400
+feel like it's like you know some part
+
+169
+00:05:56,639 --> 00:06:00,160
+of that should be a distillation process
+
+170
+00:05:58,400 --> 00:06:02,240
+but I can't quite articulate it. I
+
+171
+00:06:00,160 --> 00:06:04,160
+haven't seen much papers about it.
+
+172
+00:06:02,240 --> 00:06:06,160
+>> Yeah. I mean I I tend to think of one of
+
+173
+00:06:04,160 --> 00:06:08,160
+the key advantages of distillation is
+
+174
+00:06:06,160 --> 00:06:11,360
+that you can have a much smaller model
+
+175
+00:06:08,160 --> 00:06:13,360
+and you can have a very large uh you
+
+176
+00:06:11,360 --> 00:06:15,120
+know training data set and you can get
+
+177
+00:06:13,360 --> 00:06:18,160
+utility out of making many passes over
+
+178
+00:06:15,120 --> 00:06:20,479
+that data set because you're now getting
+
+179
+00:06:18,160 --> 00:06:21,919
+the logits from the much larger model in
+
+180
+00:06:20,479 --> 00:06:23,440
+order to sort of
+
+181
+00:06:21,919 --> 00:06:25,440
+>> sort of coax the right behavior out of
+
+182
+00:06:23,440 --> 00:06:26,800
+the smaller model uh that you don't
+
+183
+00:06:25,440 --> 00:06:30,000
+wouldn't otherwise get with just the
+
+184
+00:06:26,800 --> 00:06:32,560
+hard labels and and so um you know I
+
+185
+00:06:30,000 --> 00:06:35,759
+think that's what we've observed is you
+
+186
+00:06:32,560 --> 00:06:37,520
+can get, you know, clo very close to
+
+187
+00:06:35,759 --> 00:06:40,240
+your largest model performance with
+
+188
+00:06:37,520 --> 00:06:41,919
+distillation approaches. And that that
+
+189
+00:06:40,240 --> 00:06:43,919
+seems to be, you know, a nice sweet spot
+
+190
+00:06:41,919 --> 00:06:46,639
+for a lot of people because it enables
+
+191
+00:06:43,919 --> 00:06:48,960
+us to kind of for multiple Gemini
+
+192
+00:06:46,639 --> 00:06:51,680
+generations now, we've been able to make
+
+193
+00:06:48,960 --> 00:06:53,440
+>> the sort of flash version of the next
+
+194
+00:06:51,680 --> 00:06:55,360
+generation
+
+195
+00:06:53,440 --> 00:06:57,440
+>> as good or even substantially better
+
+196
+00:06:55,360 --> 00:06:59,039
+than the previous generations pro. And I
+
+197
+00:06:57,440 --> 00:07:00,560
+think we're going to keep trying to do
+
+198
+00:06:59,039 --> 00:07:02,000
+that because that seems like a good uh
+
+199
+00:07:00,560 --> 00:07:04,560
+trend to follow.
+
+200
+00:07:02,000 --> 00:07:07,199
+>> Um dare I ask uh so it was it was the
+
+201
+00:07:04,560 --> 00:07:08,639
+original map was Flash Pro and Ultra.
+
+202
+00:07:07,199 --> 00:07:10,000
+>> Uh is ultra are you just sitting on
+
+203
+00:07:08,639 --> 00:07:11,919
+ultra and distilling from that? Is that
+
+204
+00:07:10,000 --> 00:07:14,000
+like the mother load? [laughter]
+
+205
+00:07:11,919 --> 00:07:15,759
+>> Uh I mean we have a lot of different
+
+206
+00:07:14,000 --> 00:07:17,280
+kinds of models. Some are internal ones
+
+207
+00:07:15,759 --> 00:07:19,759
+that are not necessarily meant to be
+
+208
+00:07:17,280 --> 00:07:21,680
+released or served. Some are you know
+
+209
+00:07:19,759 --> 00:07:23,759
+our pros scale model and we can distill
+
+210
+00:07:21,680 --> 00:07:26,800
+from that as well into our flash scale
+
+211
+00:07:23,759 --> 00:07:29,680
+model. So I think you know uh it's u
+
+212
+00:07:26,800 --> 00:07:31,919
+it's an important set of capabilities to
+
+213
+00:07:29,680 --> 00:07:34,160
+have and also inference time scaling can
+
+214
+00:07:31,919 --> 00:07:36,720
+also be a useful thing to improve the
+
+215
+00:07:34,160 --> 00:07:38,880
+capabilities of a model and
+
+216
+00:07:36,720 --> 00:07:41,039
+>> yeah cool yeah and obviously I think the
+
+217
+00:07:38,880 --> 00:07:42,639
+economy of flash is what led to the
+
+218
+00:07:41,039 --> 00:07:45,280
+total dominance I think the the latest
+
+219
+00:07:42,639 --> 00:07:46,240
+number is like 50 trillion uh tokens I I
+
+220
+00:07:45,280 --> 00:07:47,520
+don't know I mean obviously it's
+
+221
+00:07:46,240 --> 00:07:49,280
+changing every day
+
+222
+00:07:47,520 --> 00:07:51,280
+>> but uh you know by market share
+
+223
+00:07:49,280 --> 00:07:53,840
+>> hopefully hopefully up [laughter]
+
+224
+00:07:51,280 --> 00:07:56,240
+>> no I mean there's no I mean Just the
+
+225
+00:07:53,840 --> 00:07:57,919
+economics wise like uh because flash is
+
+226
+00:07:56,240 --> 00:08:00,000
+so economical like you can use it for
+
+227
+00:07:57,919 --> 00:08:02,160
+everything like it's in Gmail now it's
+
+228
+00:08:00,000 --> 00:08:03,360
+in YouTube like it's it's in everything
+
+229
+00:08:02,160 --> 00:08:05,759
+>> we're using it more in our search
+
+230
+00:08:03,360 --> 00:08:07,759
+products of various AI mode overviews.
+
+231
+00:08:05,759 --> 00:08:09,520
+>> Oh my god flash parts AI mode. Oh my
+
+232
+00:08:07,759 --> 00:08:10,400
+god. Yeah that's yeah I didn't even
+
+233
+00:08:09,520 --> 00:08:12,160
+think about that.
+
+234
+00:08:10,400 --> 00:08:15,280
+>> Um [laughter] I mean I think one of the
+
+235
+00:08:12,160 --> 00:08:16,639
+things that is uh quite nice about the
+
+236
+00:08:15,280 --> 00:08:18,240
+flash model is not only is it more
+
+237
+00:08:16,639 --> 00:08:19,759
+affordable it's also a lower latency.
+
+238
+00:08:18,240 --> 00:08:20,960
+And I think latency is actually a pretty
+
+239
+00:08:19,759 --> 00:08:22,800
+important characteristic for these
+
+240
+00:08:20,960 --> 00:08:24,639
+models because we're going to want
+
+241
+00:08:22,800 --> 00:08:26,639
+models to do much more complicated
+
+242
+00:08:24,639 --> 00:08:29,199
+things that are going to involve, you
+
+243
+00:08:26,639 --> 00:08:31,440
+know, generating many more tokens from
+
+244
+00:08:29,199 --> 00:08:33,200
+when you ask the model to do something
+
+245
+00:08:31,440 --> 00:08:35,839
+until it actually finishes what you ask
+
+246
+00:08:33,200 --> 00:08:37,760
+it to do because you're going to ask now
+
+247
+00:08:35,839 --> 00:08:40,000
+not just write me a for loop, but like
+
+248
+00:08:37,760 --> 00:08:42,959
+write me a a whole software package to
+
+249
+00:08:40,000 --> 00:08:46,080
+do X or Y or Z. And so having low
+
+250
+00:08:42,959 --> 00:08:48,640
+latency systems that can do that uh
+
+251
+00:08:46,080 --> 00:08:50,640
+seems really important. and flash is one
+
+252
+00:08:48,640 --> 00:08:50,959
+direction, one one way of doing that.
+
+253
+00:08:50,640 --> 00:08:52,720
+>> Yeah.
+
+254
+00:08:50,959 --> 00:08:55,440
+>> You know, obviously our hardware
+
+255
+00:08:52,720 --> 00:08:57,839
+platforms enable a bunch of interesting
+
+256
+00:08:55,440 --> 00:09:00,720
+aspects of our, you know, serving stack
+
+257
+00:08:57,839 --> 00:09:03,279
+as well like TPUs. Uh the interconnect
+
+258
+00:09:00,720 --> 00:09:05,680
+between chips on the TPUs, uh is
+
+259
+00:09:03,279 --> 00:09:08,480
+actually quite quite high performance
+
+260
+00:09:05,680 --> 00:09:10,880
+and quite amendable to for example long
+
+261
+00:09:08,480 --> 00:09:12,880
+context kind of attention operations.
+
+262
+00:09:10,880 --> 00:09:15,120
+You know, having sparse models with lots
+
+263
+00:09:12,880 --> 00:09:16,800
+of experts. These kinds of things really
+
+264
+00:09:15,120 --> 00:09:20,240
+really matter a lot in terms of how do
+
+265
+00:09:16,800 --> 00:09:23,440
+you make them servable at scale.
+
+266
+00:09:20,240 --> 00:09:25,519
+>> Yeah. Does it feel like there's some
+
+267
+00:09:23,440 --> 00:09:27,360
+breaking point for like the protoflash
+
+268
+00:09:25,519 --> 00:09:30,000
+distillation kind of like one generation
+
+269
+00:09:27,360 --> 00:09:32,080
+delayed? I I almost think about almost
+
+270
+00:09:30,000 --> 00:09:35,680
+like the capability asmtote in certain
+
+271
+00:09:32,080 --> 00:09:37,600
+tasks like the pro model today is as
+
+272
+00:09:35,680 --> 00:09:39,680
+saturated some sort of task. Mhm.
+
+273
+00:09:37,600 --> 00:09:42,080
+>> So next generation that same task will
+
+274
+00:09:39,680 --> 00:09:44,240
+be saturated at the flash price point
+
+275
+00:09:42,080 --> 00:09:47,040
+and I think for most of the things that
+
+276
+00:09:44,240 --> 00:09:48,959
+people use models for at some point the
+
+277
+00:09:47,040 --> 00:09:52,000
+flash model in two generation will be
+
+278
+00:09:48,959 --> 00:09:53,680
+able to do basically everything and how
+
+279
+00:09:52,000 --> 00:09:56,160
+do you make it economical to like keep
+
+280
+00:09:53,680 --> 00:09:57,760
+pushing the pro frontier when a lot of
+
+281
+00:09:56,160 --> 00:09:59,360
+the population will be okay with the
+
+282
+00:09:57,760 --> 00:09:59,839
+flash model? I'm curious how you think
+
+283
+00:09:59,360 --> 00:10:01,920
+about that.
+
+284
+00:09:59,839 --> 00:10:03,519
+>> I mean I think that's true if your
+
+285
+00:10:01,920 --> 00:10:06,000
+distribution of what people are asking
+
+286
+00:10:03,519 --> 00:10:08,320
+people the models to do is stationary,
+
+287
+00:10:06,000 --> 00:10:10,800
+right? But I think what often happens is
+
+288
+00:10:08,320 --> 00:10:13,519
+as the models become more capable,
+
+289
+00:10:10,800 --> 00:10:15,519
+people ask them to do more, right? So I
+
+290
+00:10:13,519 --> 00:10:18,160
+mean I think this happens in my own
+
+291
+00:10:15,519 --> 00:10:20,880
+usage like I used to try our models a
+
+292
+00:10:18,160 --> 00:10:23,279
+year ago for some sort of coding task
+
+293
+00:10:20,880 --> 00:10:25,200
+and it was okay at some simpler things
+
+294
+00:10:23,279 --> 00:10:27,920
+but wouldn't do work very well for more
+
+295
+00:10:25,200 --> 00:10:29,680
+complicated things. And since then we've
+
+296
+00:10:27,920 --> 00:10:31,600
+improved dramatically on the more on the
+
+297
+00:10:29,680 --> 00:10:33,200
+more complicated coding tasks and now
+
+298
+00:10:31,600 --> 00:10:34,800
+I'll ask it to do much more complicated
+
+299
+00:10:33,200 --> 00:10:37,680
+things. And I think that's true not just
+
+300
+00:10:34,800 --> 00:10:40,720
+of coding but of you know now you know
+
+301
+00:10:37,680 --> 00:10:43,120
+can you analyze all the you know
+
+302
+00:10:40,720 --> 00:10:44,720
+renewable energy uh deployments in the
+
+303
+00:10:43,120 --> 00:10:46,800
+world and give me a report on solar
+
+304
+00:10:44,720 --> 00:10:48,480
+panel deployment or whatever. That's a
+
+305
+00:10:46,800 --> 00:10:50,000
+very complicated you know more
+
+306
+00:10:48,480 --> 00:10:51,440
+complicated task than people would have
+
+307
+00:10:50,000 --> 00:10:53,839
+asked a year ago.
+
+308
+00:10:51,440 --> 00:10:56,480
+>> And so you are going to want more
+
+309
+00:10:53,839 --> 00:10:59,040
+capable models to push the frontier in
+
+310
+00:10:56,480 --> 00:11:01,200
+some sense of what people ask the models
+
+311
+00:10:59,040 --> 00:11:04,079
+to do. And that also then gives us
+
+312
+00:11:01,200 --> 00:11:05,600
+insight into okay where does the where
+
+313
+00:11:04,079 --> 00:11:07,200
+do things break down? How can we improve
+
+314
+00:11:05,600 --> 00:11:10,320
+the model in these these particular
+
+315
+00:11:07,200 --> 00:11:11,680
+areas uh in order to sort of um make the
+
+316
+00:11:10,320 --> 00:11:13,360
+next generation even better?
+
+317
+00:11:11,680 --> 00:11:15,360
+>> Yeah. Are there any benchmarks or like
+
+318
+00:11:13,360 --> 00:11:16,480
+test sets that you use internally?
+
+319
+00:11:15,360 --> 00:11:18,000
+Because it's almost like the same
+
+320
+00:11:16,480 --> 00:11:19,920
+benchmarks get reported every time and
+
+321
+00:11:18,000 --> 00:11:22,800
+it's like all right it's like 99 instead
+
+322
+00:11:19,920 --> 00:11:24,560
+of 97. Like how do you have to keep
+
+323
+00:11:22,800 --> 00:11:26,240
+pushing the team internally too to like
+
+324
+00:11:24,560 --> 00:11:28,480
+this is what we're building towards?
+
+325
+00:11:26,240 --> 00:11:30,160
+>> Yeah. I mean, I think benchmarks,
+
+326
+00:11:28,480 --> 00:11:32,240
+particularly external ones that are
+
+327
+00:11:30,160 --> 00:11:35,680
+publicly available, have their utility,
+
+328
+00:11:32,240 --> 00:11:38,320
+but they often kind of have a lifespan
+
+329
+00:11:35,680 --> 00:11:40,320
+of utility where they're introduced and
+
+330
+00:11:38,320 --> 00:11:42,720
+maybe they're quite hard for current
+
+331
+00:11:40,320 --> 00:11:44,399
+models. You know, I I like to think of
+
+332
+00:11:42,720 --> 00:11:47,600
+the best kinds of benchmarks are ones
+
+333
+00:11:44,399 --> 00:11:50,480
+where the initial scores are like 10 to
+
+334
+00:11:47,600 --> 00:11:52,160
+20 or 30% maybe, but not higher. And
+
+335
+00:11:50,480 --> 00:11:55,120
+then you can sort of work on improving
+
+336
+00:11:52,160 --> 00:11:57,519
+that capability for uh whatever it is
+
+337
+00:11:55,120 --> 00:12:01,440
+the benchmark is trying to assess and
+
+338
+00:11:57,519 --> 00:12:03,440
+get it up to like 80 90% whatever. I I
+
+339
+00:12:01,440 --> 00:12:05,200
+think once it hits kind of 95% or
+
+340
+00:12:03,440 --> 00:12:06,560
+something you get very diminishing
+
+341
+00:12:05,200 --> 00:12:08,639
+returns from really focusing on that
+
+342
+00:12:06,560 --> 00:12:10,399
+benchmark because it's sort of it's
+
+343
+00:12:08,639 --> 00:12:12,720
+either the case that you've now achieved
+
+344
+00:12:10,399 --> 00:12:15,440
+that capability [snorts] or there's also
+
+345
+00:12:12,720 --> 00:12:18,079
+the issue of leakage in public data or
+
+346
+00:12:15,440 --> 00:12:20,160
+very related kind of data being being in
+
+347
+00:12:18,079 --> 00:12:21,920
+your training data. Um, so we have a
+
+348
+00:12:20,160 --> 00:12:24,000
+bunch of held out internal benchmarks
+
+349
+00:12:21,920 --> 00:12:25,519
+that we really look at where we know
+
+350
+00:12:24,000 --> 00:12:27,600
+that wasn't represented in the training
+
+351
+00:12:25,519 --> 00:12:31,440
+data at all. There are capabilities that
+
+352
+00:12:27,600 --> 00:12:33,200
+we want the model to have um that it
+
+353
+00:12:31,440 --> 00:12:36,399
+doesn't have now and then we can work
+
+354
+00:12:33,200 --> 00:12:37,680
+on, you know, assessing, you know, how
+
+355
+00:12:36,399 --> 00:12:39,120
+do we make the model better at these
+
+356
+00:12:37,680 --> 00:12:40,639
+kinds of things? Is it we need different
+
+357
+00:12:39,120 --> 00:12:42,240
+kind of data to train on that's more
+
+358
+00:12:40,639 --> 00:12:45,680
+specialized for this particular kind of
+
+359
+00:12:42,240 --> 00:12:47,839
+task? Do we need um you know a bunch of
+
+360
+00:12:45,680 --> 00:12:50,160
+uh you know architectural improvements
+
+361
+00:12:47,839 --> 00:12:51,839
+or some sort of uh model capability
+
+362
+00:12:50,160 --> 00:12:53,519
+improvements? You know what would help
+
+363
+00:12:51,839 --> 00:12:55,760
+make that better?
+
+364
+00:12:53,519 --> 00:12:58,160
+>> Is there is there such an example that
+
+365
+00:12:55,760 --> 00:13:00,079
+you uh a benchmark inspired an
+
+366
+00:12:58,160 --> 00:13:01,519
+architectural improvement? like uh I'm
+
+367
+00:13:00,079 --> 00:13:02,800
+just kind of jumping on that because you
+
+368
+00:13:01,519 --> 00:13:04,639
+just
+
+369
+00:13:02,800 --> 00:13:07,120
+>> uh I mean I think some of the long
+
+370
+00:13:04,639 --> 00:13:09,440
+context capabilities of the of the
+
+371
+00:13:07,120 --> 00:13:10,880
+Gemini models that came I guess first in
+
+372
+00:13:09,440 --> 00:13:13,519
+1.5
+
+373
+00:13:10,880 --> 00:13:15,360
+>> really were about looking at okay we
+
+374
+00:13:13,519 --> 00:13:15,839
+want to have um
+
+375
+00:13:15,360 --> 00:13:17,279
+>> you know [clears throat]
+
+376
+00:13:15,839 --> 00:13:19,680
+>> immediately everyone jumped to like
+
+377
+00:13:17,279 --> 00:13:21,760
+completely green charts of like everyone
+
+378
+00:13:19,680 --> 00:13:23,120
+had I was like how did everyone crack
+
+379
+00:13:21,760 --> 00:13:26,880
+this at the same time like [laughter]
+
+380
+00:13:23,120 --> 00:13:29,600
+>> right yeah I mean I think um and once
+
+381
+00:13:26,880 --> 00:13:31,680
+you're set I mean as you say that needle
+
+382
+00:13:29,600 --> 00:13:34,079
+single needle in a haststack benchmark
+
+383
+00:13:31,680 --> 00:13:35,920
+is really saturated for at least context
+
+384
+00:13:34,079 --> 00:13:36,800
+lengths up to 128k or something. I think
+
+385
+00:13:35,920 --> 00:13:38,720
+most people
+
+386
+00:13:36,800 --> 00:13:41,200
+>> don't actually have you know much larger
+
+387
+00:13:38,720 --> 00:13:42,959
+than 128k these days or 256 or
+
+388
+00:13:41,200 --> 00:13:44,639
+something. Um you know we're trying to
+
+389
+00:13:42,959 --> 00:13:45,760
+push the frontier of 1 million or 2
+
+390
+00:13:44,639 --> 00:13:46,959
+million context language.
+
+391
+00:13:45,760 --> 00:13:47,440
+>> I think Google's still the leader 2
+
+392
+00:13:46,959 --> 00:13:49,440
+million.
+
+393
+00:13:47,440 --> 00:13:51,839
+>> Yep. which is good because I think there
+
+394
+00:13:49,440 --> 00:13:53,839
+are a lot of use cases where you know
+
+395
+00:13:51,839 --> 00:13:56,160
+putting a thousand pages of text or
+
+396
+00:13:53,839 --> 00:13:58,480
+putting you know multiple you know
+
+397
+00:13:56,160 --> 00:13:59,839
+hourlong videos in the context and then
+
+398
+00:13:58,480 --> 00:14:04,320
+actually being able to make use of that
+
+399
+00:13:59,839 --> 00:14:06,000
+is useful but the the single needle in a
+
+400
+00:14:04,320 --> 00:14:08,800
+haststack benchmark is sort of
+
+401
+00:14:06,000 --> 00:14:12,240
+saturated. Um so you really want more
+
+402
+00:14:08,800 --> 00:14:15,440
+complicated uh sort of multi- needle or
+
+403
+00:14:12,240 --> 00:14:18,320
+you know more realistic take all this
+
+404
+00:14:15,440 --> 00:14:22,480
+content and produce this kind of answer
+
+405
+00:14:18,320 --> 00:14:24,399
+from uh uh a long context that sort of
+
+406
+00:14:22,480 --> 00:14:26,000
+better assesses what it is people really
+
+407
+00:14:24,399 --> 00:14:28,800
+want to do with long context which is
+
+408
+00:14:26,000 --> 00:14:30,880
+not just you know can you tell me the
+
+409
+00:14:28,800 --> 00:14:31,360
+product number for this particular
+
+410
+00:14:30,880 --> 00:14:33,839
+thing.
+
+411
+00:14:31,360 --> 00:14:35,519
+>> Yeah it's retrieval it's it's retrieval
+
+412
+00:14:33,839 --> 00:14:37,120
+within machine learning. Uh yeah, it's
+
+413
+00:14:35,519 --> 00:14:38,639
+it's interesting because like I think
+
+414
+00:14:37,120 --> 00:14:41,120
+that the more meta lesson level I'm
+
+415
+00:14:38,639 --> 00:14:42,959
+trying to operate at here is uh you have
+
+416
+00:14:41,120 --> 00:14:44,480
+a benchmark you're like okay I see the
+
+417
+00:14:42,959 --> 00:14:46,639
+architectural thing I need to do in
+
+418
+00:14:44,480 --> 00:14:48,720
+order to go fix that but like should you
+
+419
+00:14:46,639 --> 00:14:51,040
+do it because sometimes you know that's
+
+420
+00:14:48,720 --> 00:14:52,959
+an inductive bias basically that you're
+
+421
+00:14:51,040 --> 00:14:54,800
+Jason we used to work at Google would
+
+422
+00:14:52,959 --> 00:14:56,480
+say like exactly the kind of thing like
+
+423
+00:14:54,800 --> 00:14:58,480
+yeah you're going to win short term
+
+424
+00:14:56,480 --> 00:15:01,290
+longer term I don't know if that's going
+
+425
+00:14:58,480 --> 00:15:01,600
+to scale you might have to undo that
+
+426
+00:15:01,290 --> 00:15:05,120
+[laughter]
+
+427
+00:15:01,600 --> 00:15:07,120
+>> I mean I I I like to sort of not focus
+
+428
+00:15:05,120 --> 00:15:09,040
+on exactly what solution one should
+
+429
+00:15:07,120 --> 00:15:12,480
+drive but what capability would you want
+
+430
+00:15:09,040 --> 00:15:15,279
+and I think we're very convinced that
+
+431
+00:15:12,480 --> 00:15:16,800
+you know long context is useful but it's
+
+432
+00:15:15,279 --> 00:15:18,959
+way too short today
+
+433
+00:15:16,800 --> 00:15:21,360
+>> right like I think what you would really
+
+434
+00:15:18,959 --> 00:15:23,560
+want is can I attend to the internet
+
+435
+00:15:21,360 --> 00:15:23,920
+while I answer my question right
+
+436
+00:15:23,560 --> 00:15:26,560
+[laughter]
+
+437
+00:15:23,920 --> 00:15:28,720
+>> but that's not going to be solved by
+
+438
+00:15:26,560 --> 00:15:30,800
+purely scaling the existing solutions
+
+439
+00:15:28,720 --> 00:15:32,320
+which are quadratic so a million tokens
+
+440
+00:15:30,800 --> 00:15:33,920
+kind of pushes
+
+441
+00:15:32,320 --> 00:15:35,760
+>> uh what you can do you're not going to
+
+442
+00:15:33,920 --> 00:15:37,199
+do that to a trillion tokens, let alone,
+
+443
+00:15:35,760 --> 00:15:40,079
+you know, a billion tokens, let alone a
+
+444
+00:15:37,199 --> 00:15:41,760
+trillion. Um, but I think if you could
+
+445
+00:15:40,079 --> 00:15:43,120
+give the illusion that you can attend to
+
+446
+00:15:41,760 --> 00:15:45,519
+trillions of tokens, that would be
+
+447
+00:15:43,120 --> 00:15:48,399
+amazing. You'd be find all kinds of uses
+
+448
+00:15:45,519 --> 00:15:51,040
+for that. You would have um attend to
+
+449
+00:15:48,399 --> 00:15:54,160
+the internet. you could attend to the
+
+450
+00:15:51,040 --> 00:15:56,160
+pixels of YouTube and the sort of deeper
+
+451
+00:15:54,160 --> 00:15:59,040
+representations that we can form for a
+
+452
+00:15:56,160 --> 00:16:01,920
+single video, but across many videos,
+
+453
+00:15:59,040 --> 00:16:04,639
+you know, uh on a personal Gemini level,
+
+454
+00:16:01,920 --> 00:16:06,480
+you could attend to all of your personal
+
+455
+00:16:04,639 --> 00:16:08,079
+state with your permission. So like your
+
+456
+00:16:06,480 --> 00:16:08,480
+emails, your photos, your
+
+457
+00:16:08,079 --> 00:16:11,600
+>> yeah,
+
+458
+00:16:08,480 --> 00:16:13,759
+>> your docs, your plane tickets you have.
+
+459
+00:16:11,600 --> 00:16:16,639
+Um I I think that would be really really
+
+460
+00:16:13,759 --> 00:16:19,199
+useful. And the question is, how do you
+
+461
+00:16:16,639 --> 00:16:21,440
+get algorithmic improvements and system
+
+462
+00:16:19,199 --> 00:16:23,519
+level improvements that get you to
+
+463
+00:16:21,440 --> 00:16:25,440
+something where you actually can attend
+
+464
+00:16:23,519 --> 00:16:26,320
+to trillions of tokens in some
+
+465
+00:16:25,440 --> 00:16:28,160
+meaningful way?
+
+466
+00:16:26,320 --> 00:16:30,000
+>> Yeah. But by the way, I think I I did
+
+467
+00:16:28,160 --> 00:16:32,720
+some math and if like if you spoke all
+
+468
+00:16:30,000 --> 00:16:34,880
+day every day for eight hours a day, um
+
+469
+00:16:32,720 --> 00:16:37,600
+you only generate a maximum of like 100k
+
+470
+00:16:34,880 --> 00:16:38,880
+tokens, which like very comfortably
+
+471
+00:16:37,600 --> 00:16:40,880
+fits, [laughter]
+
+472
+00:16:38,880 --> 00:16:44,560
+>> right? But if you then say okay I want
+
+473
+00:16:40,880 --> 00:16:45,680
+to be able to um understand everything
+
+474
+00:16:44,560 --> 00:16:47,440
+people are putting on video.
+
+475
+00:16:45,680 --> 00:16:49,199
+>> Exactly. Exactly. Well also I think that
+
+476
+00:16:47,440 --> 00:16:51,519
+the classic example is um you start
+
+477
+00:16:49,199 --> 00:16:54,320
+going beyond language into like proteins
+
+478
+00:16:51,519 --> 00:16:55,199
+and whatever else is extremely
+
+479
+00:16:54,320 --> 00:16:56,000
+information dense.
+
+480
+00:16:55,199 --> 00:16:57,199
+>> Yeah.
+
+481
+00:16:56,000 --> 00:16:59,440
+>> Yeah. I mean, I think one of the things
+
+482
+00:16:57,199 --> 00:17:02,000
+about Gemini's
+
+483
+00:16:59,440 --> 00:17:03,680
+multimodal aspects is we've always
+
+484
+00:17:02,000 --> 00:17:07,679
+wanted it to be multimodal from the
+
+485
+00:17:03,680 --> 00:17:09,919
+start. And so, you know, that sometimes
+
+486
+00:17:07,679 --> 00:17:11,760
+to people means
+
+487
+00:17:09,919 --> 00:17:15,360
+text and images and video sort of
+
+488
+00:17:11,760 --> 00:17:17,039
+humanlike and audio audio humanike
+
+489
+00:17:15,360 --> 00:17:18,880
+modalities. But I think it's also really
+
+490
+00:17:17,039 --> 00:17:22,640
+useful to have Gemini know about
+
+491
+00:17:18,880 --> 00:17:25,360
+nonhuman modalities. like LAR sensor
+
+492
+00:17:22,640 --> 00:17:29,120
+data from say Whimo vehicles or like
+
+493
+00:17:25,360 --> 00:17:31,760
+robots or you know various kinds of
+
+494
+00:17:29,120 --> 00:17:34,559
+health modalities, X-rays and MRIs and
+
+495
+00:17:31,760 --> 00:17:36,080
+imaging and genomics information. Um and
+
+496
+00:17:34,559 --> 00:17:38,400
+I think there's probably hundreds of
+
+497
+00:17:36,080 --> 00:17:40,320
+modalities of data where you'd like the
+
+498
+00:17:38,400 --> 00:17:41,919
+model to be able to at least be exposed
+
+499
+00:17:40,320 --> 00:17:44,160
+to the fact that this is an interesting
+
+500
+00:17:41,919 --> 00:17:46,640
+modality and has certain meaning in the
+
+501
+00:17:44,160 --> 00:17:50,720
+world. uh where even if you haven't
+
+502
+00:17:46,640 --> 00:17:53,120
+trained on all the LAR data or MRI data
+
+503
+00:17:50,720 --> 00:17:54,559
+you could have because maybe that's not
+
+504
+00:17:53,120 --> 00:17:56,640
+you know doesn't make sense in terms of
+
+505
+00:17:54,559 --> 00:17:58,320
+trade-offs of you know what you include
+
+506
+00:17:56,640 --> 00:17:59,840
+in your main pre-training data mix at
+
+507
+00:17:58,320 --> 00:18:02,640
+least including a little bit of it is
+
+508
+00:17:59,840 --> 00:18:04,480
+actually quite useful because it sort of
+
+509
+00:18:02,640 --> 00:18:05,039
+>> uh tempts the model that this is a
+
+510
+00:18:04,480 --> 00:18:06,720
+thing.
+
+511
+00:18:05,039 --> 00:18:08,320
+>> Yeah. Yeah. Do do you believe I mean
+
+512
+00:18:06,720 --> 00:18:09,520
+since we're on this topic and something
+
+513
+00:18:08,320 --> 00:18:10,640
+I just get to ask you all the questions
+
+514
+00:18:09,520 --> 00:18:12,480
+I always wanted to ask which is
+
+515
+00:18:10,640 --> 00:18:14,160
+fantastic. uh like there are there some
+
+516
+00:18:12,480 --> 00:18:15,919
+king modalities like modalities that
+
+517
+00:18:14,160 --> 00:18:19,360
+supersede all the other modalities. So
+
+518
+00:18:15,919 --> 00:18:22,240
+the a simple example was vision um can
+
+519
+00:18:19,360 --> 00:18:24,799
+on a pixel level encode text and deepc
+
+520
+00:18:22,240 --> 00:18:27,120
+had this deepr paper that did that. Uh
+
+521
+00:18:24,799 --> 00:18:29,200
+vision has also been shown to maybe
+
+522
+00:18:27,120 --> 00:18:31,200
+incorporate audio because you can do
+
+523
+00:18:29,200 --> 00:18:33,520
+audio spectrograms and that's that's
+
+524
+00:18:31,200 --> 00:18:34,960
+also like a vision uh capable thing like
+
+525
+00:18:33,520 --> 00:18:36,480
+so so maybe vision is just the king
+
+526
+00:18:34,960 --> 00:18:38,799
+modality and like
+
+527
+00:18:36,480 --> 00:18:40,559
+>> yeah I mean [laughter] vision and motion
+
+528
+00:18:38,799 --> 00:18:42,000
+are quite important things right
+
+529
+00:18:40,559 --> 00:18:44,000
+>> motion uh
+
+530
+00:18:42,000 --> 00:18:45,760
+>> video as opposed to static images
+
+531
+00:18:44,000 --> 00:18:47,840
+>> because I mean there's a reason
+
+532
+00:18:45,760 --> 00:18:49,840
+evolution has evolved eyes like 23
+
+533
+00:18:47,840 --> 00:18:52,720
+independent ways because it's such a
+
+534
+00:18:49,840 --> 00:18:54,480
+useful capability for sensing the world
+
+535
+00:18:52,720 --> 00:18:56,400
+around you which is really what we want
+
+536
+00:18:54,480 --> 00:18:58,799
+these models to be able to do is
+
+537
+00:18:56,400 --> 00:19:00,960
+interpret the things we're seeing or the
+
+538
+00:18:58,799 --> 00:19:03,600
+things we're we're paying attention to
+
+539
+00:19:00,960 --> 00:19:05,520
+and then help us in uh using that
+
+540
+00:19:03,600 --> 00:19:07,679
+information to to do things.
+
+541
+00:19:05,520 --> 00:19:09,919
+>> Yeah, I I think motion uh you know I
+
+542
+00:19:07,679 --> 00:19:11,600
+still want to shout out I think Gemini
+
+543
+00:19:09,919 --> 00:19:13,440
+uh still the only native video
+
+544
+00:19:11,600 --> 00:19:16,160
+understanding model that is out there.
+
+545
+00:19:13,440 --> 00:19:18,160
+Uh so I use it for YouTube all the time.
+
+546
+00:19:16,160 --> 00:19:21,039
+>> Yeah. Yeah. I mean, it's actually I
+
+547
+00:19:18,160 --> 00:19:24,559
+think people kind of are not necessarily
+
+548
+00:19:21,039 --> 00:19:26,640
+aware of what the Gemini models can
+
+549
+00:19:24,559 --> 00:19:28,799
+actually do with video. Like, uh, I have
+
+550
+00:19:26,640 --> 00:19:31,280
+an example I've used in one of my talks.
+
+551
+00:19:28,799 --> 00:19:34,559
+>> It had like, uh, it was like a YouTube
+
+552
+00:19:31,280 --> 00:19:37,039
+highlight video of 18 memorable sports
+
+553
+00:19:34,559 --> 00:19:38,480
+moments across the last 20 years or
+
+554
+00:19:37,039 --> 00:19:39,840
+something. So, it has like Michael
+
+555
+00:19:38,480 --> 00:19:42,720
+Jordan hitting some jump shot at the end
+
+556
+00:19:39,840 --> 00:19:44,240
+of the finals and, you know, some soccer
+
+557
+00:19:42,720 --> 00:19:46,080
+uh, goals and things like that. And you
+
+558
+00:19:44,240 --> 00:19:48,720
+can literally just give it the video and
+
+559
+00:19:46,080 --> 00:19:51,120
+say, "Can you please make me a table of
+
+560
+00:19:48,720 --> 00:19:53,360
+what all these different events are,
+
+561
+00:19:51,120 --> 00:19:55,760
+what when the date is, when they
+
+562
+00:19:53,360 --> 00:19:58,720
+happened, and a short description of the
+
+563
+00:19:55,760 --> 00:20:01,200
+event." And so you get like now an 18
+
+564
+00:19:58,720 --> 00:20:03,520
+row table of that information extracted
+
+565
+00:20:01,200 --> 00:20:06,559
+from the video, which is, you know, not
+
+566
+00:20:03,520 --> 00:20:09,919
+something most people think of as like a
+
+567
+00:20:06,559 --> 00:20:13,440
+turn video into SQL like table.
+
+568
+00:20:09,919 --> 00:20:15,360
+>> Yeah. Has there been any discussion
+
+569
+00:20:13,440 --> 00:20:17,520
+inside of Google of like you mentioned
+
+570
+00:20:15,360 --> 00:20:19,919
+tending to the whole internet? Right.
+
+571
+00:20:17,520 --> 00:20:21,600
+Google it's almost built because the a
+
+572
+00:20:19,919 --> 00:20:23,600
+human cannot tend to the whole internet
+
+573
+00:20:21,600 --> 00:20:24,559
+and you need some sort of ranking to
+
+574
+00:20:23,600 --> 00:20:25,360
+find what you need.
+
+575
+00:20:24,559 --> 00:20:27,200
+>> Yep.
+
+576
+00:20:25,360 --> 00:20:29,360
+>> That ranking is like much different for
+
+577
+00:20:27,200 --> 00:20:31,200
+an LLM because you you can expect a
+
+578
+00:20:29,360 --> 00:20:33,200
+person to look at maybe the first five
+
+579
+00:20:31,200 --> 00:20:35,760
+six links in a Google search
+
+580
+00:20:33,200 --> 00:20:38,159
+>> versus for an LLM should you expect to
+
+581
+00:20:35,760 --> 00:20:40,320
+have 20 links that are highly relevant?
+
+582
+00:20:38,159 --> 00:20:42,000
+like how do you internally figure out
+
+583
+00:20:40,320 --> 00:20:44,400
+you know how do we build the AI mode
+
+584
+00:20:42,000 --> 00:20:45,440
+that is like maybe like much broader
+
+585
+00:20:44,400 --> 00:20:47,280
+>> search [clears throat] and span versus
+
+586
+00:20:45,440 --> 00:20:50,159
+like the more human one.
+
+587
+00:20:47,280 --> 00:20:53,039
+>> Yeah. I mean I think even pre- language
+
+588
+00:20:50,159 --> 00:20:56,000
+model based work you know our ranking
+
+589
+00:20:53,039 --> 00:20:57,840
+systems would be built to start with a
+
+590
+00:20:56,000 --> 00:21:00,000
+giant number of web pages in our index.
+
+591
+00:20:57,840 --> 00:21:02,480
+Many of them are not relevant. So you
+
+592
+00:21:00,000 --> 00:21:04,320
+identify a subset of them that are
+
+593
+00:21:02,480 --> 00:21:07,520
+relevant with very lightweight kinds of
+
+594
+00:21:04,320 --> 00:21:09,760
+methods. Now you're down to like 30,000
+
+595
+00:21:07,520 --> 00:21:12,559
+documents or something. And then you
+
+596
+00:21:09,760 --> 00:21:14,720
+have gradually refine that to apply more
+
+597
+00:21:12,559 --> 00:21:16,720
+and more sophisticated algorithms and
+
+598
+00:21:14,720 --> 00:21:19,280
+more and more sophisticated sort of
+
+599
+00:21:16,720 --> 00:21:21,120
+signals of various kinds in order to get
+
+600
+00:21:19,280 --> 00:21:24,080
+down to ultimately what you show which
+
+601
+00:21:21,120 --> 00:21:26,159
+is you know the final 10 results or you
+
+602
+00:21:24,080 --> 00:21:29,360
+know 10 results plus other kinds of
+
+603
+00:21:26,159 --> 00:21:31,440
+information. And I think an LLM based
+
+604
+00:21:29,360 --> 00:21:32,799
+system is not going to be that
+
+605
+00:21:31,440 --> 00:21:34,320
+dissimilar, right? you're going to tend
+
+606
+00:21:32,799 --> 00:21:36,559
+to trillions of tokens, but you're going
+
+607
+00:21:34,320 --> 00:21:40,320
+to want to identify, you know, what are
+
+608
+00:21:36,559 --> 00:21:43,120
+the 30,000ish documents that with the,
+
+609
+00:21:40,320 --> 00:21:46,240
+you know, uh, maybe
+
+610
+00:21:43,120 --> 00:21:48,799
+30 million interesting tokens and then
+
+611
+00:21:46,240 --> 00:21:51,440
+how do you go from that into what are
+
+612
+00:21:48,799 --> 00:21:53,520
+the 117 documents I really should be
+
+613
+00:21:51,440 --> 00:21:55,600
+paying attention to in order to carry
+
+614
+00:21:53,520 --> 00:21:59,039
+out the task that the user has asked me
+
+615
+00:21:55,600 --> 00:22:01,360
+to do. Um and I think you know you can
+
+616
+00:21:59,039 --> 00:22:02,880
+imag you can imagine systems where you
+
+617
+00:22:01,360 --> 00:22:05,919
+have
+
+618
+00:22:02,880 --> 00:22:07,600
+you know a lot of uh highly parallel
+
+619
+00:22:05,919 --> 00:22:09,280
+processing to identify those initial
+
+620
+00:22:07,600 --> 00:22:11,600
+30,000 candidates maybe with very
+
+621
+00:22:09,280 --> 00:22:13,919
+lightweight kinds of models. Um then you
+
+622
+00:22:11,600 --> 00:22:17,760
+have some system that sort of helps you
+
+623
+00:22:13,919 --> 00:22:18,960
+narrow down from 30,000 to the 117
+
+624
+00:22:17,760 --> 00:22:22,720
+uh with maybe a little bit more
+
+625
+00:22:18,960 --> 00:22:24,559
+sophisticated um model uh or set of
+
+626
+00:22:22,720 --> 00:22:26,799
+models. And then maybe the final model
+
+627
+00:22:24,559 --> 00:22:28,400
+is the thing that looks at 117 things.
+
+628
+00:22:26,799 --> 00:22:30,880
+That might be your most capable model.
+
+629
+00:22:28,400 --> 00:22:33,440
+So I think it has to it's going to be
+
+630
+00:22:30,880 --> 00:22:35,280
+some system like that that is really
+
+631
+00:22:33,440 --> 00:22:37,840
+enables you to give the illusion of
+
+632
+00:22:35,280 --> 00:22:40,320
+attending to trillions of tokens. Um
+
+633
+00:22:37,840 --> 00:22:41,919
+sort of the way Google search gives you
+
+634
+00:22:40,320 --> 00:22:43,360
+you know not the illusion but you are
+
+635
+00:22:41,919 --> 00:22:45,440
+searching the internet. Yeah.
+
+636
+00:22:43,360 --> 00:22:46,880
+>> But you're finding you know a very small
+
+637
+00:22:45,440 --> 00:22:47,600
+subset of things that are that are
+
+638
+00:22:46,880 --> 00:22:50,400
+relevant.
+
+639
+00:22:47,600 --> 00:22:52,799
+>> Yeah. I I often tell a lot of people uh
+
+640
+00:22:50,400 --> 00:22:54,799
+that are not steeped in like Google
+
+641
+00:22:52,799 --> 00:22:56,880
+search history that uh well you know
+
+642
+00:22:54,799 --> 00:22:59,120
+like BERT was like used like basically
+
+643
+00:22:56,880 --> 00:23:00,799
+immediately inside of Google search uh
+
+644
+00:22:59,120 --> 00:23:02,640
+and that improves results a lot right
+
+645
+00:23:00,799 --> 00:23:04,559
+like I I don't I don't have any numbers
+
+646
+00:23:02,640 --> 00:23:06,400
+off the top of my head but like I'm sure
+
+647
+00:23:04,559 --> 00:23:08,960
+you that's obviously the most important
+
+648
+00:23:06,400 --> 00:23:11,919
+numbers to to Google. Yeah, I mean I I
+
+649
+00:23:08,960 --> 00:23:14,880
+think going to an LLMbased
+
+650
+00:23:11,919 --> 00:23:17,520
+representation of text and words and so
+
+651
+00:23:14,880 --> 00:23:20,480
+on enables you to get out of the
+
+652
+00:23:17,520 --> 00:23:22,000
+explicit hard notion of of particular
+
+653
+00:23:20,480 --> 00:23:24,400
+words having to be on the page, but
+
+654
+00:23:22,000 --> 00:23:26,640
+really getting at the notion of this
+
+655
+00:23:24,400 --> 00:23:28,159
+topic of this page or this paragraph is
+
+656
+00:23:26,640 --> 00:23:29,440
+highly relevant to this query.
+
+657
+00:23:28,159 --> 00:23:31,440
+>> Yeah. Yeah. I I don't think people
+
+658
+00:23:29,440 --> 00:23:33,440
+understand how much LMS have taken over
+
+659
+00:23:31,440 --> 00:23:35,120
+all these very high traffic system. very
+
+660
+00:23:33,440 --> 00:23:37,600
+high traffic. Yeah, like [laughter]
+
+661
+00:23:35,120 --> 00:23:39,919
+>> it's Google. Uh it's YouTube. Uh YouTube
+
+662
+00:23:37,600 --> 00:23:42,720
+has this like semantics uh ID thing
+
+663
+00:23:39,919 --> 00:23:44,640
+where there's like every token or every
+
+664
+00:23:42,720 --> 00:23:46,320
+uh item in the vocab is a YouTube video
+
+665
+00:23:44,640 --> 00:23:49,039
+or something that predicts the video
+
+666
+00:23:46,320 --> 00:23:51,280
+using a code book which is absurd to me
+
+667
+00:23:49,039 --> 00:23:55,039
+for YouTube size. And then most recently
+
+668
+00:23:51,280 --> 00:23:57,360
+Grock also for for XAI which is like
+
+669
+00:23:55,039 --> 00:24:00,480
+>> I mean I'll call out even before LLMs
+
+670
+00:23:57,360 --> 00:24:03,039
+were used extensively in search we put a
+
+671
+00:24:00,480 --> 00:24:05,360
+lot of emphasis on softening the notion
+
+672
+00:24:03,039 --> 00:24:07,200
+of what the user actually entered into
+
+673
+00:24:05,360 --> 00:24:08,320
+the query so that
+
+674
+00:24:07,200 --> 00:24:09,120
+>> do you have like a history of like
+
+675
+00:24:08,320 --> 00:24:11,440
+what's the
+
+676
+00:24:09,120 --> 00:24:14,240
+>> yeah I mean I actually gave a talk in uh
+
+677
+00:24:11,440 --> 00:24:15,679
+I guess uh web search and data mining
+
+678
+00:24:14,240 --> 00:24:17,200
+conference in 2009.
+
+679
+00:24:15,679 --> 00:24:19,279
+>> Okay. uh where we never actually
+
+680
+00:24:17,200 --> 00:24:22,400
+published any papers about the origins
+
+681
+00:24:19,279 --> 00:24:24,480
+of Google search uh sort of but we went
+
+682
+00:24:22,400 --> 00:24:26,559
+through sort of four or five or six
+
+683
+00:24:24,480 --> 00:24:29,600
+generations four or five or six
+
+684
+00:24:26,559 --> 00:24:31,360
+generations of uh redesigning of the
+
+685
+00:24:29,600 --> 00:24:35,120
+search and retrieval system uh from
+
+686
+00:24:31,360 --> 00:24:37,279
+about 1999 through 2004 or five and that
+
+687
+00:24:35,120 --> 00:24:39,279
+talk is really about that evolution and
+
+688
+00:24:37,279 --> 00:24:43,360
+one of the things that really happened
+
+689
+00:24:39,279 --> 00:24:46,159
+in 2001 was we were
+
+690
+00:24:43,360 --> 00:24:47,760
+sort of working to scale the system in
+
+691
+00:24:46,159 --> 00:24:49,200
+multiple dimensions. So one is we wanted
+
+692
+00:24:47,760 --> 00:24:51,679
+to make our index bigger so we could
+
+693
+00:24:49,200 --> 00:24:54,720
+retrieve from a larger index which
+
+694
+00:24:51,679 --> 00:24:56,159
+always helps your quality in general uh
+
+695
+00:24:54,720 --> 00:24:59,200
+because if you don't have the page in
+
+696
+00:24:56,159 --> 00:25:01,679
+your index you're going to not do well.
+
+697
+00:24:59,200 --> 00:25:04,159
+Um and then we also needed to scale our
+
+698
+00:25:01,679 --> 00:25:06,799
+capacity because we were our traffic was
+
+699
+00:25:04,159 --> 00:25:08,720
+growing quite extensively. Um and so we
+
+700
+00:25:06,799 --> 00:25:10,400
+had you know a sharded system where you
+
+701
+00:25:08,720 --> 00:25:13,120
+have more and more shards as the index
+
+702
+00:25:10,400 --> 00:25:14,640
+grows. you have like 30 shards and then
+
+703
+00:25:13,120 --> 00:25:17,440
+if you want to double the index size you
+
+704
+00:25:14,640 --> 00:25:20,559
+make 60 shards so that you can bound the
+
+705
+00:25:17,440 --> 00:25:23,200
+latency by which you respond for any
+
+706
+00:25:20,559 --> 00:25:24,559
+particular user query. Um and then as
+
+707
+00:25:23,200 --> 00:25:26,799
+traffic grows you add more and more
+
+708
+00:25:24,559 --> 00:25:28,960
+replicas of each of those. And so we
+
+709
+00:25:26,799 --> 00:25:30,960
+eventually did the math that realized
+
+710
+00:25:28,960 --> 00:25:34,880
+that in a data center where we had say
+
+711
+00:25:30,960 --> 00:25:37,919
+60 shards and um you know 20 copies of
+
+712
+00:25:34,880 --> 00:25:40,320
+each shard we now had 1,200 machines uh
+
+713
+00:25:37,919 --> 00:25:42,080
+with discs. and we did the math and
+
+714
+00:25:40,320 --> 00:25:43,919
+we're like, hey, one copy of that index
+
+715
+00:25:42,080 --> 00:25:44,640
+would actually fit in memory across,200
+
+716
+00:25:43,919 --> 00:25:45,360
+machines.
+
+717
+00:25:44,640 --> 00:25:49,200
+>> Mhm.
+
+718
+00:25:45,360 --> 00:25:50,880
+>> So in 2001 we introduced uh we put our
+
+719
+00:25:49,200 --> 00:25:52,799
+entire index in memory.
+
+720
+00:25:50,880 --> 00:25:55,120
+>> And what that enabled from a quality
+
+721
+00:25:52,799 --> 00:25:57,600
+perspective was amazing because before
+
+722
+00:25:55,120 --> 00:25:59,520
+you had to be really careful about, you
+
+723
+00:25:57,600 --> 00:26:01,279
+know, how many different terms you
+
+724
+00:25:59,520 --> 00:26:03,760
+looked at for a query because every one
+
+725
+00:26:01,279 --> 00:26:06,400
+of them would involve a disk seek on
+
+726
+00:26:03,760 --> 00:26:08,159
+every one of the 60 shards. And so you
+
+727
+00:26:06,400 --> 00:26:11,200
+as you make your index bigger, that
+
+728
+00:26:08,159 --> 00:26:12,640
+becomes even more inefficient.
+
+729
+00:26:11,200 --> 00:26:15,039
+But once you have the whole index in
+
+730
+00:26:12,640 --> 00:26:16,960
+memory, it's totally fine to have 50
+
+731
+00:26:15,039 --> 00:26:19,440
+terms you throw into the query from the
+
+732
+00:26:16,960 --> 00:26:21,039
+user's original three or four word query
+
+733
+00:26:19,440 --> 00:26:24,000
+because now you can add synonyms like
+
+734
+00:26:21,039 --> 00:26:26,559
+restaurant and restaurants and cafe and
+
+735
+00:26:24,000 --> 00:26:30,240
+uh beastro and all these things. And you
+
+736
+00:26:26,559 --> 00:26:33,120
+can suddenly start uh sort of really
+
+737
+00:26:30,240 --> 00:26:35,279
+uh getting at the meaning of the word as
+
+738
+00:26:33,120 --> 00:26:37,440
+opposed to the exact semantic form. the
+
+739
+00:26:35,279 --> 00:26:41,120
+user typed in. And that was, you know,
+
+740
+00:26:37,440 --> 00:26:44,320
+2001, very much preLLM, but really it
+
+741
+00:26:41,120 --> 00:26:45,760
+was about softening the the strict
+
+742
+00:26:44,320 --> 00:26:47,679
+definition of what the user typed in
+
+743
+00:26:45,760 --> 00:26:49,520
+order to get at the meaning.
+
+744
+00:26:47,679 --> 00:26:51,840
+>> What are like principles that you use to
+
+745
+00:26:49,520 --> 00:26:53,840
+like design the systems, especially when
+
+746
+00:26:51,840 --> 00:26:55,919
+you have I mean in 2001 the internet is
+
+747
+00:26:53,840 --> 00:26:57,840
+like doubling tripling every year in
+
+748
+00:26:55,919 --> 00:26:59,440
+size. It's not like a you know, and I
+
+749
+00:26:57,840 --> 00:27:01,760
+think today you kind of see that with
+
+750
+00:26:59,440 --> 00:27:03,440
+LLMs too where like every year the jumps
+
+751
+00:27:01,760 --> 00:27:05,760
+in size and like capabilities are just
+
+752
+00:27:03,440 --> 00:27:07,360
+so big. Are there just any you know
+
+753
+00:27:05,760 --> 00:27:08,080
+principles that you use to like think
+
+754
+00:27:07,360 --> 00:27:11,840
+about this?
+
+755
+00:27:08,080 --> 00:27:13,440
+>> Yeah, I mean I think uh you know first
+
+756
+00:27:11,840 --> 00:27:16,159
+whenever you're designing a system you
+
+757
+00:27:13,440 --> 00:27:17,840
+want to understand what are the sort of
+
+758
+00:27:16,159 --> 00:27:19,760
+design parameters that are going to be
+
+759
+00:27:17,840 --> 00:27:22,080
+most important in deciding that you know
+
+760
+00:27:19,760 --> 00:27:23,760
+so you know how many queries per second
+
+761
+00:27:22,080 --> 00:27:25,279
+do you need to handle? How big is the
+
+762
+00:27:23,760 --> 00:27:26,640
+index you need to handle? How much data
+
+763
+00:27:25,279 --> 00:27:28,640
+do you need to keep for every document
+
+764
+00:27:26,640 --> 00:27:30,240
+in the index?
+
+765
+00:27:28,640 --> 00:27:34,000
+How are you going to look at it when you
+
+766
+00:27:30,240 --> 00:27:36,159
+retrieve things? um what happens if
+
+767
+00:27:34,000 --> 00:27:38,159
+traffic were to double or triple you
+
+768
+00:27:36,159 --> 00:27:40,880
+know will that system work well and I
+
+769
+00:27:38,159 --> 00:27:42,880
+think a good design principle is you're
+
+770
+00:27:40,880 --> 00:27:45,279
+want to design a system so that the most
+
+771
+00:27:42,880 --> 00:27:47,919
+important characteristics could scale by
+
+772
+00:27:45,279 --> 00:27:50,159
+like factors of five or 10 but probably
+
+773
+00:27:47,919 --> 00:27:52,320
+not beyond that because
+
+774
+00:27:50,159 --> 00:27:54,720
+>> often what happens is if you design a
+
+775
+00:27:52,320 --> 00:27:57,760
+system for X and something suddenly
+
+776
+00:27:54,720 --> 00:27:59,440
+becomes 100X that would enable a very
+
+777
+00:27:57,760 --> 00:28:00,960
+different point in the design space that
+
+778
+00:27:59,440 --> 00:28:03,679
+would not make sense at X but all of a
+
+779
+00:28:00,960 --> 00:28:05,679
+sudden 100x makes total sense. So like
+
+780
+00:28:03,679 --> 00:28:08,080
+going from a disk spaced index to a
+
+781
+00:28:05,679 --> 00:28:09,679
+in-memory index makes a lot of sense
+
+782
+00:28:08,080 --> 00:28:13,760
+once you have enough traffic because now
+
+783
+00:28:09,679 --> 00:28:16,480
+you have enough replicas of the sort of
+
+784
+00:28:13,760 --> 00:28:19,200
+state on disk that those machines now
+
+785
+00:28:16,480 --> 00:28:21,440
+actually can hold uh you know a full
+
+786
+00:28:19,200 --> 00:28:21,760
+copy of the me uh index in memory.
+
+787
+00:28:21,440 --> 00:28:23,840
+>> Yeah.
+
+788
+00:28:21,760 --> 00:28:25,039
+>> And that all of a sudden enables a
+
+789
+00:28:23,840 --> 00:28:26,799
+completely different design that
+
+790
+00:28:25,039 --> 00:28:30,720
+wouldn't have been practical before.
+
+791
+00:28:26,799 --> 00:28:32,880
+>> Yeah. Um, so I'm I'm a big fan of
+
+792
+00:28:30,720 --> 00:28:35,120
+thinking through designs in your head,
+
+793
+00:28:32,880 --> 00:28:37,760
+just kind of playing with the design
+
+794
+00:28:35,120 --> 00:28:39,679
+space a little before you actually do a
+
+795
+00:28:37,760 --> 00:28:41,600
+lot of writing of code. But you know, as
+
+796
+00:28:39,679 --> 00:28:45,520
+you said, in the early days of Google,
+
+797
+00:28:41,600 --> 00:28:48,240
+we were you growing the index uh quite
+
+798
+00:28:45,520 --> 00:28:50,000
+extensively. We were growing the update
+
+799
+00:28:48,240 --> 00:28:51,919
+rate of the index. So the update rate
+
+800
+00:28:50,000 --> 00:28:54,559
+actually is the parameter that changed
+
+801
+00:28:51,919 --> 00:28:55,919
+the most surprisingly. So it used to be
+
+802
+00:28:54,559 --> 00:28:58,960
+once a month.
+
+803
+00:28:55,919 --> 00:29:01,360
+>> Yeah. And then we went to a system that
+
+804
+00:28:58,960 --> 00:29:02,559
+could update any particular page in like
+
+805
+00:29:01,360 --> 00:29:03,679
+sub one minute.
+
+806
+00:29:02,559 --> 00:29:05,120
+>> Okay. Yeah. Because this is a
+
+807
+00:29:03,679 --> 00:29:06,799
+competitive advantage, right?
+
+808
+00:29:05,120 --> 00:29:08,080
+>> Because all of a sudden news related
+
+809
+00:29:06,799 --> 00:29:09,840
+queries, you know, if you're if you've
+
+810
+00:29:08,080 --> 00:29:11,679
+got last month's news index, it's not
+
+811
+00:29:09,840 --> 00:29:13,520
+actually that useful for
+
+812
+00:29:11,679 --> 00:29:14,880
+>> a special beast. Was there any like you
+
+813
+00:29:13,520 --> 00:29:15,520
+could have split it onto a separate
+
+814
+00:29:14,880 --> 00:29:17,039
+system?
+
+815
+00:29:15,520 --> 00:29:19,440
+>> Well, we did we launched a Google News
+
+816
+00:29:17,039 --> 00:29:20,880
+product, but you also want news related
+
+817
+00:29:19,440 --> 00:29:22,399
+queries that people type into the main
+
+818
+00:29:20,880 --> 00:29:23,440
+index to also be
+
+819
+00:29:22,399 --> 00:29:24,880
+>> sort of updated. So,
+
+820
+00:29:23,440 --> 00:29:26,480
+>> yeah. Yeah. It's interesting. And then
+
+821
+00:29:24,880 --> 00:29:29,120
+you have to like classify whether the
+
+822
+00:29:26,480 --> 00:29:30,559
+page is you have to decide which pages
+
+823
+00:29:29,120 --> 00:29:32,720
+should be updated at what frequency.
+
+824
+00:29:30,559 --> 00:29:34,159
+>> Oh yeah, there's a whole like uh system
+
+825
+00:29:32,720 --> 00:29:36,480
+behind the scenes that's trying to
+
+826
+00:29:34,159 --> 00:29:38,320
+decide update rates and importance of
+
+827
+00:29:36,480 --> 00:29:40,640
+the pages. So even if the update rate
+
+828
+00:29:38,320 --> 00:29:42,399
+seems low, you might still want to rec
+
+829
+00:29:40,640 --> 00:29:43,840
+crawl important pages quite often
+
+830
+00:29:42,399 --> 00:29:46,880
+because
+
+831
+00:29:43,840 --> 00:29:49,840
+>> uh the likelihood they change might be
+
+832
+00:29:46,880 --> 00:29:50,559
+low but the value of having them updated
+
+833
+00:29:49,840 --> 00:29:53,200
+is high.
+
+834
+00:29:50,559 --> 00:29:54,880
+>> Yeah. Yeah. Yeah. Yeah. uh what you know
+
+835
+00:29:53,200 --> 00:29:57,360
+this uh you know mention of latency and
+
+836
+00:29:54,880 --> 00:29:58,559
+and saving things to this reminds me of
+
+837
+00:29:57,360 --> 00:30:00,080
+one of your classics which I have to
+
+838
+00:29:58,559 --> 00:30:01,360
+bring up which is latency numbers every
+
+839
+00:30:00,080 --> 00:30:02,159
+programmer should know.
+
+840
+00:30:01,360 --> 00:30:04,159
+>> Uh
+
+841
+00:30:02,159 --> 00:30:05,760
+>> was there was there just a just general
+
+842
+00:30:04,159 --> 00:30:06,480
+story behind that did you just write it
+
+843
+00:30:05,760 --> 00:30:08,640
+down?
+
+844
+00:30:06,480 --> 00:30:10,880
+>> I mean this has like sort of eight or 10
+
+845
+00:30:08,640 --> 00:30:12,320
+different kinds of metrics that are like
+
+846
+00:30:10,880 --> 00:30:13,840
+how long does a cache miss take, how
+
+847
+00:30:12,320 --> 00:30:15,039
+long does branch miss predict take, how
+
+848
+00:30:13,840 --> 00:30:16,720
+long does a reference domain memory
+
+849
+00:30:15,039 --> 00:30:17,120
+take, how long does a distance take
+
+850
+00:30:16,720 --> 00:30:19,200
+these
+
+851
+00:30:17,120 --> 00:30:21,120
+>> how long does it take to send you know a
+
+852
+00:30:19,200 --> 00:30:22,880
+packet from the US to the Netherlands or
+
+853
+00:30:21,120 --> 00:30:24,399
+something. Um,
+
+854
+00:30:22,880 --> 00:30:25,520
+>> why Netherlands by the way or is it is
+
+855
+00:30:24,399 --> 00:30:29,440
+that because of Chrome?
+
+856
+00:30:25,520 --> 00:30:32,240
+>> Uh, we had a data center in [laughter]
+
+857
+00:30:29,440 --> 00:30:33,919
+>> um so I mean I think this gets to the
+
+858
+00:30:32,240 --> 00:30:35,360
+point of being able to do these back at
+
+859
+00:30:33,919 --> 00:30:37,760
+the envelope calculations. So these are
+
+860
+00:30:35,360 --> 00:30:40,559
+sort of the raw ingredients of those and
+
+861
+00:30:37,760 --> 00:30:43,679
+you can use them to say okay well if I
+
+862
+00:30:40,559 --> 00:30:45,919
+need to design a system to do image
+
+863
+00:30:43,679 --> 00:30:49,120
+search and thumbnailing or something of
+
+864
+00:30:45,919 --> 00:30:50,799
+the result page you know how might I do
+
+865
+00:30:49,120 --> 00:30:52,480
+that? I could premp compute the image
+
+866
+00:30:50,799 --> 00:30:54,720
+thumbnails. I could like try to
+
+867
+00:30:52,480 --> 00:30:57,039
+thumbnail them on the fly from the
+
+868
+00:30:54,720 --> 00:30:58,960
+larger images. What would that do? How
+
+869
+00:30:57,039 --> 00:31:02,480
+much dis bandwidth I need? How many disc
+
+870
+00:30:58,960 --> 00:31:04,559
+seeks would I do? Um and you can sort of
+
+871
+00:31:02,480 --> 00:31:06,640
+actually do thought experiments in you
+
+872
+00:31:04,559 --> 00:31:09,520
+know 30 seconds or a minute with the
+
+873
+00:31:06,640 --> 00:31:11,840
+sort of uh basic uh basic numbers at
+
+874
+00:31:09,520 --> 00:31:14,799
+your fingertips. Uh and then as you sort
+
+875
+00:31:11,840 --> 00:31:16,080
+of build software using higher level
+
+876
+00:31:14,799 --> 00:31:18,880
+libraries, you kind of want to develop
+
+877
+00:31:16,080 --> 00:31:21,120
+the same intuitions for how long does it
+
+878
+00:31:18,880 --> 00:31:22,880
+take to you know look up something in
+
+879
+00:31:21,120 --> 00:31:24,880
+this particular kind of hash table I use
+
+880
+00:31:22,880 --> 00:31:26,880
+or you know how long will it take me to
+
+881
+00:31:24,880 --> 00:31:28,720
+sort a million numbers or something.
+
+882
+00:31:26,880 --> 00:31:30,240
+>> Yeah. The the reason I bring it up
+
+883
+00:31:28,720 --> 00:31:32,240
+actually is actually for I think like
+
+884
+00:31:30,240 --> 00:31:34,159
+two years now I've been trying to make
+
+885
+00:31:32,240 --> 00:31:34,880
+numbers every AI programmer should know.
+
+886
+00:31:34,159 --> 00:31:37,519
+>> Okay. Yeah.
+
+887
+00:31:34,880 --> 00:31:39,200
+>> Uh I don't have a great one. uh because
+
+888
+00:31:37,519 --> 00:31:40,799
+it's not as it's not physical constants
+
+889
+00:31:39,200 --> 00:31:43,039
+like you have physical constants in here
+
+890
+00:31:40,799 --> 00:31:45,440
+you know it's and
+
+891
+00:31:43,039 --> 00:31:49,120
+>> uh but I do think like uh so a simple
+
+892
+00:31:45,440 --> 00:31:50,960
+one would be number of parameters to um
+
+893
+00:31:49,120 --> 00:31:53,039
+uh disk size if you if you need to
+
+894
+00:31:50,960 --> 00:31:54,640
+convert that uh which is a simple bite
+
+895
+00:31:53,039 --> 00:31:56,320
+conversion that's not that's nothing
+
+896
+00:31:54,640 --> 00:31:58,320
+interesting I wonder if you have any if
+
+897
+00:31:56,320 --> 00:31:58,960
+you want if you if you were to update
+
+898
+00:31:58,320 --> 00:32:02,080
+your
+
+899
+00:31:58,960 --> 00:32:05,679
+>> I mean I think uh it's really good to
+
+900
+00:32:02,080 --> 00:32:07,440
+think about uh calculations you're doing
+
+901
+00:32:05,679 --> 00:32:10,240
+in a model either for training or
+
+902
+00:32:07,440 --> 00:32:14,399
+inference. Um,
+
+903
+00:32:10,240 --> 00:32:17,440
+often a good way to view that is how
+
+904
+00:32:14,399 --> 00:32:21,200
+much uh state will you need to bring in
+
+905
+00:32:17,440 --> 00:32:23,919
+from memory either like onchip SRAMM or
+
+906
+00:32:21,200 --> 00:32:27,760
+HPM from the accelerator attached uh
+
+907
+00:32:23,919 --> 00:32:31,200
+memory or DRAM or over the network. Um
+
+908
+00:32:27,760 --> 00:32:35,120
+and then how expensive is that data
+
+909
+00:32:31,200 --> 00:32:37,600
+motion relative to uh the cost of say an
+
+910
+00:32:35,120 --> 00:32:38,320
+actual multiply in the matrix multiply
+
+911
+00:32:37,600 --> 00:32:40,000
+unit
+
+912
+00:32:38,320 --> 00:32:43,600
+>> and that cost is actually really really
+
+913
+00:32:40,000 --> 00:32:46,559
+low right because it's you know order
+
+914
+00:32:43,600 --> 00:32:50,480
+you know uh depending on your precision
+
+915
+00:32:46,559 --> 00:32:52,000
+I think it's like sub pico one picole
+
+916
+00:32:50,480 --> 00:32:54,080
+>> oh okay you measure it by energy
+
+917
+00:32:52,000 --> 00:32:55,440
+>> yeah yeah I mean it's all going to be
+
+918
+00:32:54,080 --> 00:32:57,279
+about energy and how do you make the
+
+919
+00:32:55,440 --> 00:33:01,679
+most energy efficient
+
+920
+00:32:57,279 --> 00:33:03,360
+Um, and then moving data from the SRAMM
+
+921
+00:33:01,679 --> 00:33:06,159
+on the other side of the chip, not not
+
+922
+00:33:03,360 --> 00:33:07,919
+even off the off chip, but on the other
+
+923
+00:33:06,159 --> 00:33:09,760
+side of the same chip can be, you know,
+
+924
+00:33:07,919 --> 00:33:10,720
+a thousand pajles.
+
+925
+00:33:09,760 --> 00:33:14,080
+>> Oh.
+
+926
+00:33:10,720 --> 00:33:16,880
+>> Or Yeah. And so all of a sudden this is
+
+927
+00:33:14,080 --> 00:33:18,880
+why your accelerators uh require
+
+928
+00:33:16,880 --> 00:33:22,080
+batching because if you move like say
+
+929
+00:33:18,880 --> 00:33:25,200
+the parameter of a model from SRAMM on
+
+930
+00:33:22,080 --> 00:33:26,720
+the on the chip into the multiplier unit
+
+931
+00:33:25,200 --> 00:33:28,320
+that's going to cost you a thousand pico
+
+932
+00:33:26,720 --> 00:33:30,559
+tools. So you better make use of that
+
+933
+00:33:28,320 --> 00:33:32,320
+that thing that you moved many many
+
+934
+00:33:30,559 --> 00:33:34,000
+times with. So that's where the batch
+
+935
+00:33:32,320 --> 00:33:36,000
+dimension comes in because all of a
+
+936
+00:33:34,000 --> 00:33:38,480
+sudden, you know, if you have a batch of
+
+937
+00:33:36,000 --> 00:33:39,919
+256 or something, that's not so bad. But
+
+938
+00:33:38,480 --> 00:33:41,200
+if you have a batch of one, that's
+
+939
+00:33:39,919 --> 00:33:41,760
+really not good.
+
+940
+00:33:41,200 --> 00:33:43,120
+>> Yeah. Yeah.
+
+941
+00:33:41,760 --> 00:33:46,080
+>> Right. Because then you paid a thousand
+
+942
+00:33:43,120 --> 00:33:46,640
+podles in order to do your one pico
+
+943
+00:33:46,080 --> 00:33:48,480
+multiply.
+
+944
+00:33:46,640 --> 00:33:50,559
+>> I have never heard a energy based
+
+945
+00:33:48,480 --> 00:33:52,320
+analysis of batching. [laughter]
+
+946
+00:33:50,559 --> 00:33:53,919
+>> Yeah. I mean, that's why people batch,
+
+947
+00:33:52,320 --> 00:33:56,080
+right? Yeah, ideally you'd like to use
+
+948
+00:33:53,919 --> 00:33:57,120
+batch size one because the latency would
+
+949
+00:33:56,080 --> 00:33:59,919
+be great
+
+950
+00:33:57,120 --> 00:34:03,120
+>> but the energy cost and the the compute
+
+951
+00:33:59,919 --> 00:34:04,240
+cost inefficiency that you get um is is
+
+952
+00:34:03,120 --> 00:34:06,000
+quite large. So
+
+953
+00:34:04,240 --> 00:34:08,480
+>> yeah is there a similar trick like uh
+
+954
+00:34:06,000 --> 00:34:09,919
+like like you did with uh you know
+
+955
+00:34:08,480 --> 00:34:11,919
+putting everything in memory like you
+
+956
+00:34:09,919 --> 00:34:13,839
+know I think uh obviously Nvidia has
+
+957
+00:34:11,919 --> 00:34:16,159
+caused a lot of waves with uh betting
+
+958
+00:34:13,839 --> 00:34:17,839
+very hard on on SRAMM with grock. Uh I I
+
+959
+00:34:16,159 --> 00:34:19,919
+I wonder if like that's something that
+
+960
+00:34:17,839 --> 00:34:22,960
+you already saw with with the TPUs,
+
+961
+00:34:19,919 --> 00:34:24,879
+right? Like that that you had to uh to
+
+962
+00:34:22,960 --> 00:34:26,480
+serve at your scale. Uh you probably
+
+963
+00:34:24,879 --> 00:34:31,440
+sort of saw that coming like what what
+
+964
+00:34:26,480 --> 00:34:33,119
+what hardware uh innovations or insights
+
+965
+00:34:31,440 --> 00:34:34,240
+were formed because of what you're
+
+966
+00:34:33,119 --> 00:34:36,240
+seeing there.
+
+967
+00:34:34,240 --> 00:34:38,560
+>> Yeah. I mean, I think you know, TPUs
+
+968
+00:34:36,240 --> 00:34:41,440
+have this nice uh sort of regular
+
+969
+00:34:38,560 --> 00:34:43,679
+structure of 2D or 3D meshes with a
+
+970
+00:34:41,440 --> 00:34:46,560
+bunch of chips connected and each one of
+
+971
+00:34:43,679 --> 00:34:49,119
+those has HPM attached. Um I think for
+
+972
+00:34:46,560 --> 00:34:51,440
+serving some kinds of models,
+
+973
+00:34:49,119 --> 00:34:54,720
+>> uh you know, you you pay a lot higher
+
+974
+00:34:51,440 --> 00:34:57,440
+cost and time latency
+
+975
+00:34:54,720 --> 00:35:00,160
+um bringing things in from HBM than you
+
+976
+00:34:57,440 --> 00:35:02,079
+do bringing them in from uh SRAMM on the
+
+977
+00:35:00,160 --> 00:35:03,920
+chip. So if you have a small enough
+
+978
+00:35:02,079 --> 00:35:06,480
+model, you can actually do model
+
+979
+00:35:03,920 --> 00:35:08,400
+parallelism, spread it out over lots of
+
+980
+00:35:06,480 --> 00:35:10,560
+chips, and you actually get quite good
+
+981
+00:35:08,400 --> 00:35:12,800
+throughput improvements and latency
+
+982
+00:35:10,560 --> 00:35:16,560
+improvements from doing that. And so
+
+983
+00:35:12,800 --> 00:35:20,160
+you're now sort of striping your smalish
+
+984
+00:35:16,560 --> 00:35:22,000
+scale model over say 16 or 64 chips. Uh
+
+985
+00:35:20,160 --> 00:35:24,320
+but if if you do that and it all fits in
+
+986
+00:35:22,000 --> 00:35:26,400
+SRAMM, uh that can be a big win. So
+
+987
+00:35:24,320 --> 00:35:28,000
+yeah, that's not a surprise, but it is a
+
+988
+00:35:26,400 --> 00:35:31,200
+good technique.
+
+989
+00:35:28,000 --> 00:35:33,200
+>> Yeah. What about the TPU? design like
+
+990
+00:35:31,200 --> 00:35:35,520
+how much do you decide where the
+
+991
+00:35:33,200 --> 00:35:36,880
+improvements have to go? So like this is
+
+992
+00:35:35,520 --> 00:35:39,760
+like a good example of like is there a
+
+993
+00:35:36,880 --> 00:35:42,160
+way to bring the thousand pig jewel down
+
+994
+00:35:39,760 --> 00:35:44,560
+jewels [clears throat] down to 50 and
+
+995
+00:35:42,160 --> 00:35:46,079
+like is it worth designing a new chip to
+
+996
+00:35:44,560 --> 00:35:47,920
+do that? The extreme is like when people
+
+997
+00:35:46,079 --> 00:35:49,359
+say oh you should burn the model on the
+
+998
+00:35:47,920 --> 00:35:50,960
+ASIC and that's kind of like the most
+
+999
+00:35:49,359 --> 00:35:53,200
+extreme thing.
+
+1000
+00:35:50,960 --> 00:35:55,599
+>> How much of it is it worth doing in
+
+1001
+00:35:53,200 --> 00:35:56,880
+hardware when things change so quickly?
+
+1002
+00:35:55,599 --> 00:35:59,280
+Like what what's the internal
+
+1003
+00:35:56,880 --> 00:36:01,680
+discussion? Yeah, I mean we we have a
+
+1004
+00:35:59,280 --> 00:36:04,240
+lot of interaction between say the TPU
+
+1005
+00:36:01,680 --> 00:36:06,800
+chip design architecture team and the
+
+1006
+00:36:04,240 --> 00:36:08,480
+sort of higher level modeling uh experts
+
+1007
+00:36:06,800 --> 00:36:11,040
+because we really want to take advantage
+
+1008
+00:36:08,480 --> 00:36:14,000
+of being able to co-design what should
+
+1009
+00:36:11,040 --> 00:36:16,800
+future TPUs look like based on where we
+
+1010
+00:36:14,000 --> 00:36:19,760
+think the sort of ML research puck is
+
+1011
+00:36:16,800 --> 00:36:21,920
+going uh in some sense because uh you
+
+1012
+00:36:19,760 --> 00:36:24,480
+know as a hardware designer for ML in
+
+1013
+00:36:21,920 --> 00:36:27,359
+particular you're trying to design a
+
+1014
+00:36:24,480 --> 00:36:29,200
+chip starting today and that design
+
+1015
+00:36:27,359 --> 00:36:31,359
+might take two years before it even
+
+1016
+00:36:29,200 --> 00:36:34,400
+lands in a data center and then it has
+
+1017
+00:36:31,359 --> 00:36:36,880
+to sort of be a reasonable lifetime of
+
+1018
+00:36:34,400 --> 00:36:39,520
+the chip to take you three, four or five
+
+1019
+00:36:36,880 --> 00:36:42,880
+years. So you're trying to predict two
+
+1020
+00:36:39,520 --> 00:36:45,200
+to six years out where what ML
+
+1021
+00:36:42,880 --> 00:36:47,440
+computations will people want to run two
+
+1022
+00:36:45,200 --> 00:36:51,520
+to six years out in a very fast changing
+
+1023
+00:36:47,440 --> 00:36:54,640
+field. And so having people with
+
+1024
+00:36:51,520 --> 00:36:56,880
+interesting ML research ideas of things
+
+1025
+00:36:54,640 --> 00:36:58,560
+we think will start to work in that time
+
+1026
+00:36:56,880 --> 00:37:01,359
+frame or will be more important in that
+
+1027
+00:36:58,560 --> 00:37:03,920
+time frame. Uh really enables us to then
+
+1028
+00:37:01,359 --> 00:37:08,480
+get you know interesting hardware
+
+1029
+00:37:03,920 --> 00:37:10,400
+features put into you know TPU N plus2
+
+1030
+00:37:08,480 --> 00:37:12,640
+where TPUn is what we have today.
+
+1031
+00:37:10,400 --> 00:37:13,920
+>> Oh the cycle time is plus two
+
+1032
+00:37:12,640 --> 00:37:15,680
+>> roughly. I mean
+
+1033
+00:37:13,920 --> 00:37:17,440
+>> because uh
+
+1034
+00:37:15,680 --> 00:37:19,839
+>> I mean sometimes you can squeeze some
+
+1035
+00:37:17,440 --> 00:37:21,839
+changes into N plus1 but you know bigger
+
+1036
+00:37:19,839 --> 00:37:24,720
+changes are going to require the chip
+
+1037
+00:37:21,839 --> 00:37:28,880
+design be earlier in its lifetime design
+
+1038
+00:37:24,720 --> 00:37:30,320
+process. Um, so whenever we can do that,
+
+1039
+00:37:28,880 --> 00:37:32,160
+it's generally good. And sometimes you
+
+1040
+00:37:30,320 --> 00:37:34,160
+can put in speculative features that
+
+1041
+00:37:32,160 --> 00:37:35,599
+maybe won't cost you much chip area, but
+
+1042
+00:37:34,160 --> 00:37:38,000
+if it works out, it would make
+
+1043
+00:37:35,599 --> 00:37:39,680
+something, you know, 10 times as fast.
+
+1044
+00:37:38,000 --> 00:37:42,000
+And if it doesn't work out, well, you
+
+1045
+00:37:39,680 --> 00:37:43,599
+burned a little bit of tiny amount of
+
+1046
+00:37:42,000 --> 00:37:45,839
+your chip area on that thing, but it's
+
+1047
+00:37:43,599 --> 00:37:48,480
+not that big a deal. Uh, sometimes it's
+
+1048
+00:37:45,839 --> 00:37:50,160
+a very big change and we want to be
+
+1049
+00:37:48,480 --> 00:37:53,040
+pretty sure this is going to work out.
+
+1050
+00:37:50,160 --> 00:37:55,920
+So we'll do like lots of careful ML
+
+1051
+00:37:53,040 --> 00:37:57,839
+experimentation to show us uh this is
+
+1052
+00:37:55,920 --> 00:37:58,560
+actually the the way we want to go.
+
+1053
+00:37:57,839 --> 00:38:00,960
+>> Yeah.
+
+1054
+00:37:58,560 --> 00:38:02,720
+>> Is there a reverse of like we already
+
+1055
+00:38:00,960 --> 00:38:04,880
+committed to this chip design so we
+
+1056
+00:38:02,720 --> 00:38:07,200
+cannot take the model architecture that
+
+1057
+00:38:04,880 --> 00:38:08,960
+way because it doesn't quite fit?
+
+1058
+00:38:07,200 --> 00:38:11,839
+>> Yeah. Yeah, I mean you you definitely
+
+1059
+00:38:08,960 --> 00:38:14,480
+have things where you're going to adapt
+
+1060
+00:38:11,839 --> 00:38:16,320
+what the model architecture looks like
+
+1061
+00:38:14,480 --> 00:38:18,160
+so that they're efficient on the chips
+
+1062
+00:38:16,320 --> 00:38:21,119
+that you're going to have for both
+
+1063
+00:38:18,160 --> 00:38:25,040
+training and inference of that of that
+
+1064
+00:38:21,119 --> 00:38:27,520
+uh generation of model. So I think it
+
+1065
+00:38:25,040 --> 00:38:29,760
+kind of goes both ways. Um you know
+
+1066
+00:38:27,520 --> 00:38:32,400
+sometimes you can take advantage of you
+
+1067
+00:38:29,760 --> 00:38:35,359
+know lower precision things that are
+
+1068
+00:38:32,400 --> 00:38:37,440
+coming in a future generation. So you
+
+1069
+00:38:35,359 --> 00:38:38,960
+might train it at that lower precision
+
+1070
+00:38:37,440 --> 00:38:40,320
+even if the current generation doesn't
+
+1071
+00:38:38,960 --> 00:38:42,640
+quite uh do that.
+
+1072
+00:38:40,320 --> 00:38:44,000
+>> Mhm. Yeah. How low can we go in
+
+1073
+00:38:42,640 --> 00:38:47,241
+precision?
+
+1074
+00:38:44,000 --> 00:38:47,599
+>> People are saying like turner is like
+
+1075
+00:38:47,241 --> 00:38:49,280
+[laughter]
+
+1076
+00:38:47,599 --> 00:38:51,040
+>> Yeah. I mean I'm a big fan of very low
+
+1077
+00:38:49,280 --> 00:38:52,400
+precision because I think that gets that
+
+1078
+00:38:51,040 --> 00:38:54,640
+saves you a tremendous amount of energy,
+
+1079
+00:38:52,400 --> 00:38:56,640
+right? Because it's poujles per bit that
+
+1080
+00:38:54,640 --> 00:38:58,320
+you're transferring and reducing the
+
+1081
+00:38:56,640 --> 00:39:00,880
+number of bits is a really good way to
+
+1082
+00:38:58,320 --> 00:39:03,440
+>> to reduce that. Um, you know, I think
+
+1083
+00:39:00,880 --> 00:39:05,680
+people have gotten a lot of luck, uh,
+
+1084
+00:39:03,440 --> 00:39:07,040
+mileage out of having very low bit
+
+1085
+00:39:05,680 --> 00:39:09,920
+precision things, but then having
+
+1086
+00:39:07,040 --> 00:39:13,119
+scaling vectors that apply to a whole
+
+1087
+00:39:09,920 --> 00:39:16,880
+bunch of, uh, those those weights
+
+1088
+00:39:13,119 --> 00:39:18,800
+>> scaling. Okay. Interesting. You so low
+
+1089
+00:39:16,880 --> 00:39:19,359
+precision but scaled up weights.
+
+1090
+00:39:18,800 --> 00:39:21,760
+>> Yeah.
+
+1091
+00:39:19,359 --> 00:39:23,359
+>> Huh. Yeah. Never considered that.
+
+1092
+00:39:21,760 --> 00:39:24,480
+Interesting. Uh while we're on this
+
+1093
+00:39:23,359 --> 00:39:27,280
+topic, you know, I think there's a lot
+
+1094
+00:39:24,480 --> 00:39:30,720
+of um uh just the concept of precision
+
+1095
+00:39:27,280 --> 00:39:32,800
+at all is weird when we're sampling, you
+
+1096
+00:39:30,720 --> 00:39:34,160
+know, uh we just at the end of this
+
+1097
+00:39:32,800 --> 00:39:36,079
+we're going to have all these like chips
+
+1098
+00:39:34,160 --> 00:39:37,119
+that all do like very good math and then
+
+1099
+00:39:36,079 --> 00:39:38,987
+we're just going to throw a random
+
+1100
+00:39:37,119 --> 00:39:39,520
+number generator at the start and
+
+1101
+00:39:38,987 --> 00:39:41,760
+[laughter]
+
+1102
+00:39:39,520 --> 00:39:44,880
+>> so I mean I there's a movement towards
+
+1103
+00:39:41,760 --> 00:39:46,880
+energy based uh models and pro
+
+1104
+00:39:44,880 --> 00:39:48,160
+processors. I'm just curious if you've
+
+1105
+00:39:46,880 --> 00:39:50,960
+obviously you've thought about it but
+
+1106
+00:39:48,160 --> 00:39:52,640
+like what's your commentary? Yeah, I
+
+1107
+00:39:50,960 --> 00:39:54,240
+mean I think there's a bunch of
+
+1108
+00:39:52,640 --> 00:39:56,400
+interesting trends. So energy based
+
+1109
+00:39:54,240 --> 00:39:58,240
+models is one. You know, diffusion based
+
+1110
+00:39:56,400 --> 00:39:59,920
+models which don't sort of sequentially
+
+1111
+00:39:58,240 --> 00:40:02,640
+decode tokens is another.
+
+1112
+00:39:59,920 --> 00:40:04,560
+>> Yes. Um, you know, speculative decoding
+
+1113
+00:40:02,640 --> 00:40:06,720
+is a way that you can get sort of an
+
+1114
+00:40:04,560 --> 00:40:07,200
+equivalent very small
+
+1115
+00:40:06,720 --> 00:40:11,040
+>> draft
+
+1116
+00:40:07,200 --> 00:40:13,280
+>> batch factor uh for like you predict
+
+1117
+00:40:11,040 --> 00:40:14,800
+eight tokens out and that enables you to
+
+1118
+00:40:13,280 --> 00:40:16,400
+sort of increase the effective batch
+
+1119
+00:40:14,800 --> 00:40:19,599
+size of what you're doing by a factor of
+
+1120
+00:40:16,400 --> 00:40:21,520
+eight even and then you maybe accept
+
+1121
+00:40:19,599 --> 00:40:24,000
+five or six of those tokens. So you get
+
+1122
+00:40:21,520 --> 00:40:27,520
+five a 5x improvement in the
+
+1123
+00:40:24,000 --> 00:40:29,760
+amortization of moving weights uh into
+
+1124
+00:40:27,520 --> 00:40:33,520
+the multipliers to do the prediction for
+
+1125
+00:40:29,760 --> 00:40:34,880
+the the tokens. So these are all really
+
+1126
+00:40:33,520 --> 00:40:39,200
+good techniques and I think it's really
+
+1127
+00:40:34,880 --> 00:40:41,760
+good to look at them from the lens of uh
+
+1128
+00:40:39,200 --> 00:40:45,599
+energy real energy not energy based
+
+1129
+00:40:41,760 --> 00:40:47,680
+models um and and also latency and
+
+1130
+00:40:45,599 --> 00:40:50,960
+throughput right if you look at things
+
+1131
+00:40:47,680 --> 00:40:53,359
+from that lens that sort of guides you
+
+1132
+00:40:50,960 --> 00:40:56,880
+to solutions that are going to be uh you
+
+1133
+00:40:53,359 --> 00:41:00,079
+know better from uh you know being able
+
+1134
+00:40:56,880 --> 00:41:02,160
+to serve larger models or you know
+
+1135
+00:41:00,079 --> 00:41:03,760
+equivalent size models more cheaply and
+
+1136
+00:41:02,160 --> 00:41:07,440
+with lower latency.
+
+1137
+00:41:03,760 --> 00:41:09,520
+>> Yeah. Well, I think I think I um it's
+
+1138
+00:41:07,440 --> 00:41:11,359
+appealing intellectually. Uh haven't
+
+1139
+00:41:09,520 --> 00:41:14,000
+seen it like really hit the mainstream,
+
+1140
+00:41:11,359 --> 00:41:17,119
+but um I do think that uh there's some
+
+1141
+00:41:14,000 --> 00:41:19,680
+poetry in the sense that uh you know, we
+
+1142
+00:41:17,119 --> 00:41:21,680
+don't have to do uh a lot of shenanigans
+
+1143
+00:41:19,680 --> 00:41:22,800
+if like we fundamentally design it into
+
+1144
+00:41:21,680 --> 00:41:25,119
+the hardware.
+
+1145
+00:41:22,800 --> 00:41:27,520
+>> Yeah. Yeah. I mean, I think there's
+
+1146
+00:41:25,119 --> 00:41:31,040
+still a there's also sort of the more
+
+1147
+00:41:27,520 --> 00:41:32,480
+exotic things like analog based uh uh
+
+1148
+00:41:31,040 --> 00:41:35,119
+computing substrates as opposed to
+
+1149
+00:41:32,480 --> 00:41:36,560
+digital ones. Uh I'm, you know, I think
+
+1150
+00:41:35,119 --> 00:41:38,400
+those are super interesting because they
+
+1151
+00:41:36,560 --> 00:41:40,800
+can be potentially low power.
+
+1152
+00:41:38,400 --> 00:41:42,640
+>> Uh but I think you often end up wanting
+
+1153
+00:41:40,800 --> 00:41:44,160
+to interface that with digital systems
+
+1154
+00:41:42,640 --> 00:41:46,480
+and you end up losing a lot of the power
+
+1155
+00:41:44,160 --> 00:41:48,560
+advantages in the digital to analog and
+
+1156
+00:41:46,480 --> 00:41:49,599
+analog to digital conversions you end up
+
+1157
+00:41:48,560 --> 00:41:50,960
+doing
+
+1158
+00:41:49,599 --> 00:41:52,880
+>> uh at the sort of boundaries and
+
+1159
+00:41:50,960 --> 00:41:55,200
+periphery of that system. M
+
+1160
+00:41:52,880 --> 00:41:56,960
+>> um I still think there's a tremendous
+
+1161
+00:41:55,200 --> 00:42:00,480
+distance we can go from where we are
+
+1162
+00:41:56,960 --> 00:42:03,760
+today in terms of energy efficiency with
+
+1163
+00:42:00,480 --> 00:42:05,839
+sort of uh much better and specialized
+
+1164
+00:42:03,760 --> 00:42:07,119
+hardware for the models we care about.
+
+1165
+00:42:05,839 --> 00:42:10,160
+>> Yeah.
+
+1166
+00:42:07,119 --> 00:42:11,920
+>> Um any other interesting research ideas
+
+1167
+00:42:10,160 --> 00:42:13,599
+that you've seen or like maybe things
+
+1168
+00:42:11,920 --> 00:42:15,119
+that you cannot pursue at Google that
+
+1169
+00:42:13,599 --> 00:42:17,599
+you would be interested in seeing
+
+1170
+00:42:15,119 --> 00:42:19,119
+researchers take a stab at? I guess you
+
+1171
+00:42:17,599 --> 00:42:22,084
+have a lot of researchers. Yeah, we have
+
+1172
+00:42:19,119 --> 00:42:24,720
+a lot of our our research portfolio is
+
+1173
+00:42:22,084 --> 00:42:28,079
+[laughter] pretty broad. I would say um
+
+1174
+00:42:24,720 --> 00:42:29,599
+I mean I think [snorts] uh in terms of
+
+1175
+00:42:28,079 --> 00:42:32,319
+research directions, there's a whole
+
+1176
+00:42:29,599 --> 00:42:34,400
+bunch of uh you know open problems and
+
+1177
+00:42:32,319 --> 00:42:37,680
+how do you make these models reliable
+
+1178
+00:42:34,400 --> 00:42:39,920
+and able to do much longer kind of uh
+
+1179
+00:42:37,680 --> 00:42:41,920
+more complex tasks that have lots of
+
+1180
+00:42:39,920 --> 00:42:44,720
+subtasks? How do you orchestrate you
+
+1181
+00:42:41,920 --> 00:42:47,280
+know maybe one model that's using other
+
+1182
+00:42:44,720 --> 00:42:50,240
+models as tools in order to sort of
+
+1183
+00:42:47,280 --> 00:42:52,079
+build uh things that can accomplish uh
+
+1184
+00:42:50,240 --> 00:42:55,200
+you know much more significant pieces of
+
+1185
+00:42:52,079 --> 00:42:57,440
+work uh collectively than you would ask
+
+1186
+00:42:55,200 --> 00:42:59,359
+a single model to do. Um so that's super
+
+1187
+00:42:57,440 --> 00:43:02,560
+interesting. How do you get more
+
+1188
+00:42:59,359 --> 00:43:04,640
+verifiable uh you know how do you get RL
+
+1189
+00:43:02,560 --> 00:43:06,640
+to work for non-verifiable domains? I
+
+1190
+00:43:04,640 --> 00:43:08,560
+think it's a pretty interesting open
+
+1191
+00:43:06,640 --> 00:43:10,000
+problem because I think that would
+
+1192
+00:43:08,560 --> 00:43:12,000
+broaden out the capabilities of the
+
+1193
+00:43:10,000 --> 00:43:15,359
+models, the improvements that you're
+
+1194
+00:43:12,000 --> 00:43:16,720
+seeing in both math and coding. Uh if we
+
+1195
+00:43:15,359 --> 00:43:18,720
+could apply those to other less
+
+1196
+00:43:16,720 --> 00:43:20,400
+verifiable domains because we've come up
+
+1197
+00:43:18,720 --> 00:43:23,680
+with RL techniques that actually enable
+
+1198
+00:43:20,400 --> 00:43:24,880
+us to do that uh effectively that would
+
+1199
+00:43:23,680 --> 00:43:27,040
+that would really make the models
+
+1200
+00:43:24,880 --> 00:43:29,200
+improve quite a lot. I think
+
+1201
+00:43:27,040 --> 00:43:31,200
+>> I'm curious like when we had no brown on
+
+1202
+00:43:29,200 --> 00:43:33,119
+the podcast, he said um they already
+
+1203
+00:43:31,200 --> 00:43:33,440
+proved you can do it with deep research.
+
+1204
+00:43:33,119 --> 00:43:36,400
+Mhm.
+
+1205
+00:43:33,440 --> 00:43:39,119
+>> Um, you kind of have it with AI mode in
+
+1206
+00:43:36,400 --> 00:43:41,760
+a way. It's not verifiable.
+
+1207
+00:43:39,119 --> 00:43:43,599
+>> I'm curious if there's any thread that
+
+1208
+00:43:41,760 --> 00:43:45,760
+you think is interesting there. Like
+
+1209
+00:43:43,599 --> 00:43:48,160
+what is it? Both are like information
+
+1210
+00:43:45,760 --> 00:43:50,000
+retrieval of JSON. So I wonder if it's
+
+1211
+00:43:48,160 --> 00:43:52,560
+like the retrieval is like the
+
+1212
+00:43:50,000 --> 00:43:54,319
+verifiable part that you can score or
+
+1213
+00:43:52,560 --> 00:43:56,240
+what are like yeah how how would you
+
+1214
+00:43:54,319 --> 00:43:58,160
+model that that problem?
+
+1215
+00:43:56,240 --> 00:44:01,119
+Yeah, I mean I think there are ways of
+
+1216
+00:43:58,160 --> 00:44:04,160
+having other models that can evaluate
+
+1217
+00:44:01,119 --> 00:44:05,520
+the results of what a first model did.
+
+1218
+00:44:04,160 --> 00:44:07,920
+Maybe in retrieving, can you have
+
+1219
+00:44:05,520 --> 00:44:10,319
+another model that says, is this things
+
+1220
+00:44:07,920 --> 00:44:13,280
+are these things you retrieved relevant
+
+1221
+00:44:10,319 --> 00:44:16,400
+or can you rate these 2,00 things you
+
+1222
+00:44:13,280 --> 00:44:18,880
+retrieved to assess which ones are the
+
+1223
+00:44:16,400 --> 00:44:20,079
+50 most relevant or something. Um, I
+
+1224
+00:44:18,880 --> 00:44:21,440
+think those kinds of techniques are
+
+1225
+00:44:20,079 --> 00:44:23,280
+actually quite effective. Sometimes that
+
+1226
+00:44:21,440 --> 00:44:25,359
+can even be the same model just prompted
+
+1227
+00:44:23,280 --> 00:44:28,480
+differently to be a you know critic as
+
+1228
+00:44:25,359 --> 00:44:31,680
+opposed to a uh actual retrieval system.
+
+1229
+00:44:28,480 --> 00:44:35,119
+>> Yeah. Um, I do think like there there is
+
+1230
+00:44:31,680 --> 00:44:36,640
+that that weird cliff where like it
+
+1231
+00:44:35,119 --> 00:44:38,319
+feels like we've done the easy stuff and
+
+1232
+00:44:36,640 --> 00:44:39,119
+then now it's but it always feels like
+
+1233
+00:44:38,319 --> 00:44:42,240
+that like every year [clears throat]
+
+1234
+00:44:39,119 --> 00:44:43,920
+it's like oh like we know you know and
+
+1235
+00:44:42,240 --> 00:44:45,359
+the next part is super hard and nobody's
+
+1236
+00:44:43,920 --> 00:44:48,160
+figured it out and
+
+1237
+00:44:45,359 --> 00:44:50,000
+>> uh like exactly with this RLVR thing
+
+1238
+00:44:48,160 --> 00:44:52,880
+where like everyone's talking about well
+
+1239
+00:44:50,000 --> 00:44:54,720
+okay how do we do the next stage of the
+
+1240
+00:44:52,880 --> 00:44:57,200
+non-verifiable stuff and everyone's like
+
+1241
+00:44:54,720 --> 00:44:59,920
+I don't know you know judge [laughter]
+
+1242
+00:44:57,200 --> 00:45:01,760
+>> I mean I feel like The nice thing about
+
+1243
+00:44:59,920 --> 00:45:03,200
+this field is there's lots and lots of
+
+1244
+00:45:01,760 --> 00:45:05,040
+smart people thinking about creative
+
+1245
+00:45:03,200 --> 00:45:07,599
+solutions to some of the, you know,
+
+1246
+00:45:05,040 --> 00:45:09,599
+problems that we all see. Uh because I
+
+1247
+00:45:07,599 --> 00:45:11,760
+think everyone sort of sees that the
+
+1248
+00:45:09,599 --> 00:45:13,520
+models, you know, are great at some
+
+1249
+00:45:11,760 --> 00:45:15,680
+things and they fall down around the
+
+1250
+00:45:13,520 --> 00:45:17,280
+edges of those things and and are not as
+
+1251
+00:45:15,680 --> 00:45:20,000
+capable as we'd like in those areas. And
+
+1252
+00:45:17,280 --> 00:45:21,440
+then coming up with good techniques and
+
+1253
+00:45:20,000 --> 00:45:23,599
+trying those and seeing which ones
+
+1254
+00:45:21,440 --> 00:45:25,520
+actually make a difference is sort of
+
+1255
+00:45:23,599 --> 00:45:27,359
+what the whole research aspect of this
+
+1256
+00:45:25,520 --> 00:45:29,359
+field is is pushing forward. And I think
+
+1257
+00:45:27,359 --> 00:45:31,599
+that's why it's super interesting. You
+
+1258
+00:45:29,359 --> 00:45:34,079
+know, if you think back two years ago,
+
+1259
+00:45:31,599 --> 00:45:36,160
+we were struggling with GSM8K problems,
+
+1260
+00:45:34,079 --> 00:45:38,160
+right? Like, you know, Fred has two
+
+1261
+00:45:36,160 --> 00:45:40,720
+rabbits, he gets three more rabbits. How
+
+1262
+00:45:38,160 --> 00:45:42,480
+many rabbits does he have?
+
+1263
+00:45:40,720 --> 00:45:44,240
+>> That's a pretty far cry from the kinds
+
+1264
+00:45:42,480 --> 00:45:46,800
+of mathematics that the models can.
+
+1265
+00:45:44,240 --> 00:45:49,599
+>> And now you're doing
+
+1266
+00:45:46,800 --> 00:45:53,680
+Yeah. And erosure language. Yeah.
+
+1267
+00:45:49,599 --> 00:45:55,200
+>> Yeah. Pure language. So that is a
+
+1268
+00:45:53,680 --> 00:45:57,599
+really really amazing jump in
+
+1269
+00:45:55,200 --> 00:46:01,760
+capabilities in you know a year and a
+
+1270
+00:45:57,599 --> 00:46:03,839
+half or something. And I think um
+
+1271
+00:46:01,760 --> 00:46:06,400
+for other areas it'd be great if we
+
+1272
+00:46:03,839 --> 00:46:08,400
+could make that kind of leap. Uh and you
+
+1273
+00:46:06,400 --> 00:46:10,720
+know we don't exactly see how to do it
+
+1274
+00:46:08,400 --> 00:46:12,319
+for some some areas but we do see it for
+
+1275
+00:46:10,720 --> 00:46:13,760
+some other areas and we're going to work
+
+1276
+00:46:12,319 --> 00:46:14,160
+hard on making that better.
+
+1277
+00:46:13,760 --> 00:46:17,280
+>> Yeah.
+
+1278
+00:46:14,160 --> 00:46:18,319
+>> Yeah. Like YouTube thumbnail generation
+
+1279
+00:46:17,280 --> 00:46:20,560
+that would be very helpful.
+
+1280
+00:46:18,319 --> 00:46:22,400
+>> We need that. That would be AGI. we need
+
+1281
+00:46:20,560 --> 00:46:24,319
+for as far as content creators go.
+
+1282
+00:46:22,400 --> 00:46:26,000
+>> I guess I'm not a YouTube creator, so I
+
+1283
+00:46:24,319 --> 00:46:28,319
+don't care that much about that problem,
+
+1284
+00:46:26,000 --> 00:46:30,000
+but I guess uh many people do.
+
+1285
+00:46:28,319 --> 00:46:31,599
+>> It Yeah, it doesn't it doesn't matter.
+
+1286
+00:46:30,000 --> 00:46:32,560
+People do judge books by their covers as
+
+1287
+00:46:31,599 --> 00:46:35,280
+it turns out.
+
+1288
+00:46:32,560 --> 00:46:37,920
+>> Um just to draw a bit on the IMO gold.
+
+1289
+00:46:35,280 --> 00:46:40,880
+Um I'm still not over the fact that a
+
+1290
+00:46:37,920 --> 00:46:42,800
+year ago we had Alpha Proof and Alpha
+
+1291
+00:46:40,880 --> 00:46:44,560
+Geometry and all those things and then
+
+1292
+00:46:42,800 --> 00:46:47,119
+this year we were like screw that, we'll
+
+1293
+00:46:44,560 --> 00:46:49,680
+just chuck it into Gemini. What's your
+
+1294
+00:46:47,119 --> 00:46:51,760
+reflection? Like I think this this
+
+1295
+00:46:49,680 --> 00:46:54,880
+question about like the merger of like
+
+1296
+00:46:51,760 --> 00:46:58,079
+symbolic systems and like and and LLMs
+
+1297
+00:46:54,880 --> 00:46:59,599
+uh was a very much core belief and then
+
+1298
+00:46:58,079 --> 00:47:02,960
+somewhere along the line people just
+
+1299
+00:46:59,599 --> 00:47:05,440
+said nope we'll just all do it in LLM.
+
+1300
+00:47:02,960 --> 00:47:09,040
+>> Yeah. I mean, I think it makes a lot of
+
+1301
+00:47:05,440 --> 00:47:11,119
+sense to me because, you know, humans
+
+1302
+00:47:09,040 --> 00:47:12,319
+manipulate symbols, but we probably
+
+1303
+00:47:11,119 --> 00:47:13,920
+don't have like a symbolic
+
+1304
+00:47:12,319 --> 00:47:15,839
+representation in our heads,
+
+1305
+00:47:13,920 --> 00:47:18,319
+>> right? We have some distributed
+
+1306
+00:47:15,839 --> 00:47:20,560
+representation that is neural netlike in
+
+1307
+00:47:18,319 --> 00:47:23,200
+some way of lots of different neurons
+
+1308
+00:47:20,560 --> 00:47:25,520
+and activation patterns firing when we
+
+1309
+00:47:23,200 --> 00:47:28,560
+see certain things and that enables us
+
+1310
+00:47:25,520 --> 00:47:31,200
+to reason and plan and, you know, do
+
+1311
+00:47:28,560 --> 00:47:33,040
+chains of thought and, you know, roll
+
+1312
+00:47:31,200 --> 00:47:34,240
+them back. you know that that approach
+
+1313
+00:47:33,040 --> 00:47:35,119
+for solving the problem doesn't seem
+
+1314
+00:47:34,240 --> 00:47:37,359
+like it's going to work. I'm going to
+
+1315
+00:47:35,119 --> 00:47:39,839
+try this one. And you know, in a lot of
+
+1316
+00:47:37,359 --> 00:47:42,640
+ways, we're emulating what we
+
+1317
+00:47:39,839 --> 00:47:45,359
+intuitively think uh is happening inside
+
+1318
+00:47:42,640 --> 00:47:47,760
+real brains in neural netbased models.
+
+1319
+00:47:45,359 --> 00:47:50,880
+So it never made sense to me to have
+
+1320
+00:47:47,760 --> 00:47:54,560
+like completely separate
+
+1321
+00:47:50,880 --> 00:47:57,680
+discrete uh symbolic things and then a
+
+1322
+00:47:54,560 --> 00:48:00,079
+completely different way of of uh you
+
+1323
+00:47:57,680 --> 00:48:03,680
+know thinking about those things.
+
+1324
+00:48:00,079 --> 00:48:04,880
+>> Interesting. Yeah. Uh I mean it's maybe
+
+1325
+00:48:03,680 --> 00:48:06,480
+seems obvious to you but it wasn't
+
+1326
+00:48:04,880 --> 00:48:08,720
+obvious to me a year ago. [laughter]
+
+1327
+00:48:06,480 --> 00:48:12,160
+>> Yeah. I mean I do think like that
+
+1328
+00:48:08,720 --> 00:48:14,640
+>> IMO with you know translating to lean
+
+1329
+00:48:12,160 --> 00:48:16,800
+and using lean and then the next year
+
+1330
+00:48:14,640 --> 00:48:19,520
+and and also a specialized geometry
+
+1331
+00:48:16,800 --> 00:48:22,160
+model and then this year switching to a
+
+1332
+00:48:19,520 --> 00:48:23,599
+single unified model that is roughly the
+
+1333
+00:48:22,160 --> 00:48:26,640
+production model with a little bit more
+
+1334
+00:48:23,599 --> 00:48:29,200
+inference budget uh is actually you know
+
+1335
+00:48:26,640 --> 00:48:31,280
+quite good because it shows you that the
+
+1336
+00:48:29,200 --> 00:48:33,359
+capabilities of that general model yeah
+
+1337
+00:48:31,280 --> 00:48:34,880
+have improved dramatically and and now
+
+1338
+00:48:33,359 --> 00:48:36,800
+you don't need these specialized models.
+
+1339
+00:48:34,880 --> 00:48:41,359
+This is actually sort of very similar to
+
+1340
+00:48:36,800 --> 00:48:42,559
+the 2013 to6 era of machine learning,
+
+1341
+00:48:41,359 --> 00:48:44,800
+right? Like it used to be people would
+
+1342
+00:48:42,559 --> 00:48:46,240
+train separate models for lots of
+
+1343
+00:48:44,800 --> 00:48:49,040
+different each different problem, right?
+
+1344
+00:48:46,240 --> 00:48:50,640
+I have I want to recognize street signs
+
+1345
+00:48:49,040 --> 00:48:53,760
+in something. So I train a street sign
+
+1346
+00:48:50,640 --> 00:48:55,680
+recogn recognition model or I want to
+
+1347
+00:48:53,760 --> 00:48:58,160
+you know decode speech recognition. I
+
+1348
+00:48:55,680 --> 00:49:00,800
+have a speech model. Right? I think now
+
+1349
+00:48:58,160 --> 00:49:04,559
+the era of unified models that do
+
+1350
+00:49:00,800 --> 00:49:06,559
+everything is really upon us and the
+
+1351
+00:49:04,559 --> 00:49:08,240
+question is how well do those models
+
+1352
+00:49:06,559 --> 00:49:09,920
+generalize to new things they've never
+
+1353
+00:49:08,240 --> 00:49:10,720
+been asked to do and they're getting
+
+1354
+00:49:09,920 --> 00:49:12,559
+better and better
+
+1355
+00:49:10,720 --> 00:49:14,400
+>> and you don't need domain experts like
+
+1356
+00:49:12,559 --> 00:49:15,760
+one of my uh so I interviewed Eay who
+
+1357
+00:49:14,400 --> 00:49:17,200
+was on who's on that team
+
+1358
+00:49:15,760 --> 00:49:19,200
+>> uh and he was like yeah I I don't know
+
+1359
+00:49:17,200 --> 00:49:20,880
+how they work I don't know where the IMO
+
+1360
+00:49:19,200 --> 00:49:22,319
+competition was held I don't know the
+
+1361
+00:49:20,880 --> 00:49:25,440
+rules of it I just train the models I'm
+
+1362
+00:49:22,319 --> 00:49:25,440
+good at training [laughter] models
+
+1363
+00:49:25,760 --> 00:49:28,559
+>> and it's kind of interesting thing that
+
+1364
+00:49:27,119 --> 00:49:30,079
+like people with these this like
+
+1365
+00:49:28,559 --> 00:49:32,160
+universal skill set of just like machine
+
+1366
+00:49:30,079 --> 00:49:34,079
+learning you just give them data and
+
+1367
+00:49:32,160 --> 00:49:35,920
+give them enough compute and they can
+
+1368
+00:49:34,079 --> 00:49:37,440
+kind of tackle any task which is
+
+1369
+00:49:35,920 --> 00:49:38,960
+>> yeah right [laughter] and
+
+1370
+00:49:37,440 --> 00:49:41,040
+>> a bitter lesson I guess I don't know
+
+1371
+00:49:38,960 --> 00:49:44,640
+>> yeah yeah I mean I think uh general
+
+1372
+00:49:41,040 --> 00:49:46,240
+models uh will win out over specialized
+
+1373
+00:49:44,640 --> 00:49:47,920
+ones in most cases
+
+1374
+00:49:46,240 --> 00:49:50,559
+>> so I want to push there a bit I think
+
+1375
+00:49:47,920 --> 00:49:52,559
+there's one hole here which is like uh
+
+1376
+00:49:50,559 --> 00:49:54,720
+there's this concept of like uh maybe
+
+1377
+00:49:52,559 --> 00:49:56,160
+capacity of a model like abstractly a
+
+1378
+00:49:54,720 --> 00:49:58,720
+model can only contain [clears throat]
+
+1379
+00:49:56,160 --> 00:50:00,880
+the number of bits that it has and uh
+
+1380
+00:49:58,720 --> 00:50:03,839
+and so
+
+1381
+00:50:00,880 --> 00:50:06,079
+you know god knows like Gemini Pro is
+
+1382
+00:50:03,839 --> 00:50:08,160
+like one to 10 trillion parameters we
+
+1383
+00:50:06,079 --> 00:50:09,680
+don't know but uh the Gemma models for
+
+1384
+00:50:08,160 --> 00:50:11,599
+example right like a lot of people want
+
+1385
+00:50:09,680 --> 00:50:15,200
+like the open source local models that
+
+1386
+00:50:11,599 --> 00:50:16,480
+are like that that that and and uh they
+
+1387
+00:50:15,200 --> 00:50:18,240
+have some knowledge which is not
+
+1388
+00:50:16,480 --> 00:50:20,559
+necessary right like they can't know
+
+1389
+00:50:18,240 --> 00:50:23,040
+everything like like you have the luxury
+
+1390
+00:50:20,559 --> 00:50:24,720
+of you have the big model and big model
+
+1391
+00:50:23,040 --> 00:50:26,880
+should be able to capable of everything
+
+1392
+00:50:24,720 --> 00:50:28,160
+but like when when you're distilling and
+
+1393
+00:50:26,880 --> 00:50:29,520
+you're going down to the small models,
+
+1394
+00:50:28,160 --> 00:50:31,520
+you know, you're actually memorizing
+
+1395
+00:50:29,520 --> 00:50:33,920
+things that are not useful
+
+1396
+00:50:31,520 --> 00:50:36,960
+>> and so like how do we I guess do we want
+
+1397
+00:50:33,920 --> 00:50:39,280
+to extract that? Can we can we divorce
+
+1398
+00:50:36,960 --> 00:50:41,520
+knowledge from reasoning, you know?
+
+1399
+00:50:39,280 --> 00:50:44,480
+>> Yeah. I mean, I think you do want the
+
+1400
+00:50:41,520 --> 00:50:47,119
+model to be most effective at reasoning
+
+1401
+00:50:44,480 --> 00:50:49,359
+if it can retrieve things, right?
+
+1402
+00:50:47,119 --> 00:50:51,920
+having the model devote precious
+
+1403
+00:50:49,359 --> 00:50:54,720
+parameter space to remember obscure
+
+1404
+00:50:51,920 --> 00:50:56,240
+facts that could be looked up
+
+1405
+00:50:54,720 --> 00:50:57,599
+>> is actually not the best use of that
+
+1406
+00:50:56,240 --> 00:51:00,240
+parameter space right like you might
+
+1407
+00:50:57,599 --> 00:51:02,960
+prefer something that is more generally
+
+1408
+00:51:00,240 --> 00:51:06,160
+useful in more settings than this
+
+1409
+00:51:02,960 --> 00:51:07,760
+obscure fact that it has um so I think
+
+1410
+00:51:06,160 --> 00:51:10,160
+that's always a tension at the same time
+
+1411
+00:51:07,760 --> 00:51:12,960
+you also don't want your model to be
+
+1412
+00:51:10,160 --> 00:51:15,920
+kind of completely detached from you
+
+1413
+00:51:12,960 --> 00:51:19,040
+know knowing stuff about the world right
+
+1414
+00:51:15,920 --> 00:51:20,960
+like it's probably useful to know how
+
+1415
+00:51:19,040 --> 00:51:22,240
+long the Golden Gate Bridge is just as a
+
+1416
+00:51:20,960 --> 00:51:25,520
+general sense of like how long are
+
+1417
+00:51:22,240 --> 00:51:27,359
+bridges, right? And uh it should have
+
+1418
+00:51:25,520 --> 00:51:30,400
+that kind of knowledge. It maybe doesn't
+
+1419
+00:51:27,359 --> 00:51:32,160
+need to know how long some teeny little
+
+1420
+00:51:30,400 --> 00:51:35,599
+bridge in some other more obscure part
+
+1421
+00:51:32,160 --> 00:51:37,920
+of the world is, but uh it does help it
+
+1422
+00:51:35,599 --> 00:51:39,520
+to have a fair bit of world knowledge.
+
+1423
+00:51:37,920 --> 00:51:41,680
+And the bigger your model is, the more
+
+1424
+00:51:39,520 --> 00:51:43,920
+you can have. Uh but I do think
+
+1425
+00:51:41,680 --> 00:51:46,640
+combining retrieval with sort of
+
+1426
+00:51:43,920 --> 00:51:49,119
+reasoning and making the model really
+
+1427
+00:51:46,640 --> 00:51:51,359
+good at doing multiple stages of
+
+1428
+00:51:49,119 --> 00:51:53,040
+retrieval and reasoning through the
+
+1429
+00:51:51,359 --> 00:51:55,520
+intermediate retrieval results is going
+
+1430
+00:51:53,040 --> 00:51:58,160
+to be a a pretty effective way of making
+
+1431
+00:51:55,520 --> 00:51:59,760
+the models seem much more capable
+
+1432
+00:51:58,160 --> 00:52:00,960
+because if you think about say a
+
+1433
+00:51:59,760 --> 00:52:02,559
+personal Gemini
+
+1434
+00:52:00,960 --> 00:52:05,839
+>> Yeah. Right? Like we're not going to
+
+1435
+00:52:02,559 --> 00:52:08,400
+train Gemini on my email. Probably we'd
+
+1436
+00:52:05,839 --> 00:52:11,440
+rather have a single model that uh we
+
+1437
+00:52:08,400 --> 00:52:13,200
+can then use and use being able to
+
+1438
+00:52:11,440 --> 00:52:14,960
+retrieve from my email as a tool and
+
+1439
+00:52:13,200 --> 00:52:17,119
+have the model reason about it and
+
+1440
+00:52:14,960 --> 00:52:19,280
+retrieve from my photos or whatever. Uh
+
+1441
+00:52:17,119 --> 00:52:22,480
+and then make use of that and have
+
+1442
+00:52:19,280 --> 00:52:24,240
+multiple u you know stages of
+
+1443
+00:52:22,480 --> 00:52:25,680
+interaction.
+
+1444
+00:52:24,240 --> 00:52:28,079
+>> That makes sense. Do you think the
+
+1445
+00:52:25,680 --> 00:52:29,680
+vertical models are like [clears throat]
+
+1446
+00:52:28,079 --> 00:52:31,200
+an interesting pursuit? Like when people
+
+1447
+00:52:29,680 --> 00:52:32,960
+are like, "Oh, we're building the best
+
+1448
+00:52:31,200 --> 00:52:35,200
+healthcare LLM. We're building the best
+
+1449
+00:52:32,960 --> 00:52:37,599
+law LLM." Are those kind of like
+
+1450
+00:52:35,200 --> 00:52:39,760
+short-term stop caps or
+
+1451
+00:52:37,599 --> 00:52:41,280
+>> No, I mean I think I think vertical
+
+1452
+00:52:39,760 --> 00:52:43,520
+models are interesting like you want
+
+1453
+00:52:41,280 --> 00:52:46,400
+them to start from a pretty good base
+
+1454
+00:52:43,520 --> 00:52:49,040
+model, but then you can sort of I sort
+
+1455
+00:52:46,400 --> 00:52:51,760
+of viewing them view them as enriching
+
+1456
+00:52:49,040 --> 00:52:53,040
+the data distribution for that
+
+1457
+00:52:51,760 --> 00:52:56,319
+particular vertical domain for
+
+1458
+00:52:53,040 --> 00:52:58,480
+healthcare. say um we're probably not
+
+1459
+00:52:56,319 --> 00:53:00,319
+going to train or for say robotics,
+
+1460
+00:52:58,480 --> 00:53:03,200
+we're probably not going to train Gemini
+
+1461
+00:53:00,319 --> 00:53:05,040
+on all possible robotics data. We you
+
+1462
+00:53:03,200 --> 00:53:07,440
+could train it on because we wanted to
+
+1463
+00:53:05,040 --> 00:53:09,119
+have a balanced set of capabilities. Um,
+
+1464
+00:53:07,440 --> 00:53:10,720
+so we'll expose it to some robotics
+
+1465
+00:53:09,119 --> 00:53:12,800
+data, but if you're trying to build a
+
+1466
+00:53:10,720 --> 00:53:14,319
+really, really good robotics model,
+
+1467
+00:53:12,800 --> 00:53:17,599
+you're going to want to start with that
+
+1468
+00:53:14,319 --> 00:53:20,160
+and then train it on more robotics data
+
+1469
+00:53:17,599 --> 00:53:22,400
+and then maybe that would hurt its
+
+1470
+00:53:20,160 --> 00:53:24,319
+multilingual translation capability but
+
+1471
+00:53:22,400 --> 00:53:27,520
+improve its robotics capabilities. And
+
+1472
+00:53:24,319 --> 00:53:29,599
+we're always making these kind of uh,
+
+1473
+00:53:27,520 --> 00:53:31,599
+you know, tradeoffs in the data mix that
+
+1474
+00:53:29,599 --> 00:53:34,640
+we train the base Gemini models on. You
+
+1475
+00:53:31,599 --> 00:53:37,520
+know, we'd love to include data from 200
+
+1476
+00:53:34,640 --> 00:53:38,800
+more languages and as much data as we
+
+1477
+00:53:37,520 --> 00:53:39,599
+have for those languages.
+
+1478
+00:53:38,800 --> 00:53:41,119
+>> Yeah.
+
+1479
+00:53:39,599 --> 00:53:42,880
+>> But that's going to displace some other
+
+1480
+00:53:41,119 --> 00:53:45,599
+capabilities of the model.
+
+1481
+00:53:42,880 --> 00:53:47,440
+>> It won't be as good at um you know,
+
+1482
+00:53:45,599 --> 00:53:48,720
+Pearl programming. you know, it'll still
+
+1483
+00:53:47,440 --> 00:53:50,079
+be good at Python programming because
+
+1484
+00:53:48,720 --> 00:53:52,480
+we'll include enough of that, but
+
+1485
+00:53:50,079 --> 00:53:54,800
+there's other longtail computer
+
+1486
+00:53:52,480 --> 00:53:58,240
+languages or coding capabilities that it
+
+1487
+00:53:54,800 --> 00:53:59,760
+may suffer on or multi- uh multimodal
+
+1488
+00:53:58,240 --> 00:54:01,280
+reasoning capabilities may suffer
+
+1489
+00:53:59,760 --> 00:54:03,760
+because we didn't get to expose it to as
+
+1490
+00:54:01,280 --> 00:54:06,720
+much data there, but it's really good at
+
+1491
+00:54:03,760 --> 00:54:09,280
+multilingual things. So, I I think some
+
+1492
+00:54:06,720 --> 00:54:11,599
+combination of specialized models, maybe
+
+1493
+00:54:09,280 --> 00:54:14,400
+more modular models. So it'd be nice to
+
+1494
+00:54:11,599 --> 00:54:16,480
+have the capability to have those 200
+
+1495
+00:54:14,400 --> 00:54:19,040
+languages plus this awesome robotics
+
+1496
+00:54:16,480 --> 00:54:22,240
+model plus this awesome healthcare uh
+
+1497
+00:54:19,040 --> 00:54:25,040
+module that all can be knitted together
+
+1498
+00:54:22,240 --> 00:54:26,480
+to work in concert and called upon in
+
+1499
+00:54:25,040 --> 00:54:28,319
+different circumstances, right? Like if
+
+1500
+00:54:26,480 --> 00:54:31,680
+I have a health related thing, then it
+
+1501
+00:54:28,319 --> 00:54:33,839
+should enable using this health module
+
+1502
+00:54:31,680 --> 00:54:35,359
+in conjunction with the main base model
+
+1503
+00:54:33,839 --> 00:54:35,839
+to be even better at those kinds of
+
+1504
+00:54:35,359 --> 00:54:37,839
+things.
+
+1505
+00:54:35,839 --> 00:54:39,119
+>> Yeah. Installable knowledge. Yeah.
+
+1506
+00:54:37,839 --> 00:54:39,920
+Right. just [clears throat] download as
+
+1507
+00:54:39,119 --> 00:54:41,599
+a as a
+
+1508
+00:54:39,920 --> 00:54:43,040
+>> and some of that installable stuff can
+
+1509
+00:54:41,599 --> 00:54:45,760
+come from retrieval,
+
+1510
+00:54:43,040 --> 00:54:48,800
+>> but some of it probably should come from
+
+1511
+00:54:45,760 --> 00:54:50,559
+training on you know uh 100 billion
+
+1512
+00:54:48,800 --> 00:54:50,960
+tokens or a trillion tokens of health
+
+1513
+00:54:50,559 --> 00:54:52,400
+data.
+
+1514
+00:54:50,960 --> 00:54:53,920
+>> Yeah. And for listeners I think uh I
+
+1515
+00:54:52,400 --> 00:54:55,520
+will highlight the GEMA 3 end paper
+
+1516
+00:54:53,920 --> 00:54:56,160
+where they there was a little bit of
+
+1517
+00:54:55,520 --> 00:54:56,640
+that I think.
+
+1518
+00:54:56,160 --> 00:54:58,559
+>> Yeah.
+
+1519
+00:54:56,640 --> 00:55:01,200
+>> Yeah. I guess the question is like how
+
+1520
+00:54:58,559 --> 00:55:04,720
+many billions of tokens do you need to
+
+1521
+00:55:01,200 --> 00:55:06,319
+outpace the frontier model
+
+1522
+00:55:04,720 --> 00:55:07,520
+>> improvements? You know, it's like if I
+
+1523
+00:55:06,319 --> 00:55:10,559
+have to make this model better at
+
+1524
+00:55:07,520 --> 00:55:11,839
+healthcare and the main Gemini model is
+
+1525
+00:55:10,559 --> 00:55:14,559
+still improving,
+
+1526
+00:55:11,839 --> 00:55:16,559
+>> do I need 50 billion tokens? Can I do it
+
+1527
+00:55:14,559 --> 00:55:18,319
+with 100? If I need a trillion
+
+1528
+00:55:16,559 --> 00:55:19,599
+healthcare tokens, it's like they're
+
+1529
+00:55:18,319 --> 00:55:21,119
+probably not out there that you don't
+
+1530
+00:55:19,599 --> 00:55:22,400
+have, you know, I think that's really
+
+1531
+00:55:21,119 --> 00:55:23,920
+like the challenge.
+
+1532
+00:55:22,400 --> 00:55:25,440
+>> Oh, I mean, I think healthcare is a
+
+1533
+00:55:23,920 --> 00:55:27,280
+particularly challenging domain. So
+
+1534
+00:55:25,440 --> 00:55:28,640
+there's a lot of healthcare data that
+
+1535
+00:55:27,280 --> 00:55:30,960
+you know we don't have access to
+
+1536
+00:55:28,640 --> 00:55:33,599
+appropriately but there's a lot of you
+
+1537
+00:55:30,960 --> 00:55:35,839
+know uh healthcare organizations that
+
+1538
+00:55:33,599 --> 00:55:39,040
+want to train models on their own data
+
+1539
+00:55:35,839 --> 00:55:41,119
+that is not public healthcare data uh
+
+1540
+00:55:39,040 --> 00:55:44,079
+not public health but public healthare
+
+1541
+00:55:41,119 --> 00:55:46,559
+data. Um, so I think there are
+
+1542
+00:55:44,079 --> 00:55:48,640
+opportunities there to say partner with
+
+1543
+00:55:46,559 --> 00:55:51,040
+a large healthcare organization and
+
+1544
+00:55:48,640 --> 00:55:53,920
+train models for their use that are
+
+1545
+00:55:51,040 --> 00:55:56,400
+going to be, you know, more bespoke but
+
+1546
+00:55:53,920 --> 00:55:58,079
+probably uh might be better than a
+
+1547
+00:55:56,400 --> 00:55:58,480
+general model trained on say public
+
+1548
+00:55:58,079 --> 00:55:59,119
+data.
+
+1549
+00:55:58,480 --> 00:56:01,520
+>> Yeah.
+
+1550
+00:55:59,119 --> 00:56:02,960
+>> Yeah. I I believe uh by the way al this
+
+1551
+00:56:01,520 --> 00:56:05,119
+is like somewhat related to the language
+
+1552
+00:56:02,960 --> 00:56:06,640
+conversation. Uh I think one of your
+
+1553
+00:56:05,119 --> 00:56:08,559
+your favorite examples was you can put a
+
+1554
+00:56:06,640 --> 00:56:10,160
+low resource language in the context and
+
+1555
+00:56:08,559 --> 00:56:12,319
+it just learns [laughter] in context.
+
+1556
+00:56:10,160 --> 00:56:14,880
+>> Oh yeah. I think the example we used was
+
+1557
+00:56:12,319 --> 00:56:17,119
+Calamong which is truly low resource
+
+1558
+00:56:14,880 --> 00:56:18,880
+because it's only spoken by I think 120
+
+1559
+00:56:17,119 --> 00:56:21,359
+people in the world and there's no
+
+1560
+00:56:18,880 --> 00:56:22,000
+written text.
+
+1561
+00:56:21,359 --> 00:56:23,440
+>> So
+
+1562
+00:56:22,000 --> 00:56:24,319
+>> so you can just do it that way just to
+
+1563
+00:56:23,440 --> 00:56:24,960
+get in the context.
+
+1564
+00:56:24,319 --> 00:56:26,559
+>> Yeah. [laughter]
+
+1565
+00:56:24,960 --> 00:56:27,119
+>> Yeah. But I put your whole data set in
+
+1566
+00:56:26,559 --> 00:56:29,839
+context, right?
+
+1567
+00:56:27,119 --> 00:56:31,920
+>> If you if you take a language like uh
+
+1568
+00:56:29,839 --> 00:56:34,000
+you know Somali or something there is a
+
+1569
+00:56:31,920 --> 00:56:36,559
+fair bit of Somali text in the world
+
+1570
+00:56:34,000 --> 00:56:40,000
+that uh or Ethiopian Amharic or
+
+1571
+00:56:36,559 --> 00:56:42,240
+something um you know we probably are
+
+1572
+00:56:40,000 --> 00:56:43,680
+not putting all the data from those
+
+1573
+00:56:42,240 --> 00:56:46,240
+languages into the Gemini based
+
+1574
+00:56:43,680 --> 00:56:47,760
+training. We put some of it but if you
+
+1575
+00:56:46,240 --> 00:56:49,680
+put more of it you'll improve the
+
+1576
+00:56:47,760 --> 00:56:50,000
+capabilities of those models.
+
+1577
+00:56:49,680 --> 00:56:52,400
+>> Yeah.
+
+1578
+00:56:50,000 --> 00:56:57,920
+>> So or of those languages.
+
+1579
+00:56:52,400 --> 00:57:00,000
+>> Uh yeah cool. Uh it's uh the I I have a
+
+1580
+00:56:57,920 --> 00:57:02,400
+side interest in linguistics. I I I I
+
+1581
+00:57:00,000 --> 00:57:04,079
+did a few classes in back in college and
+
+1582
+00:57:02,400 --> 00:57:05,760
+like uh part of me like if I was a
+
+1583
+00:57:04,079 --> 00:57:07,520
+linguist and I could have access to all
+
+1584
+00:57:05,760 --> 00:57:08,880
+these models I would just be asking
+
+1585
+00:57:07,520 --> 00:57:11,920
+really fundamental questions about
+
+1586
+00:57:08,880 --> 00:57:13,760
+language itself like uh one is there's
+
+1587
+00:57:11,920 --> 00:57:15,280
+one very obvious one which is superior
+
+1588
+00:57:13,760 --> 00:57:16,480
+warf like how much does like the
+
+1589
+00:57:15,280 --> 00:57:18,160
+language that you speak affect your
+
+1590
+00:57:16,480 --> 00:57:19,440
+thinking but then also there are some
+
+1591
+00:57:18,160 --> 00:57:20,640
+languages where there's just concepts
+
+1592
+00:57:19,440 --> 00:57:22,480
+that are not represented in other
+
+1593
+00:57:20,640 --> 00:57:24,799
+languages but some others many others
+
+1594
+00:57:22,480 --> 00:57:26,319
+that are just duplicates right where uh
+
+1595
+00:57:24,799 --> 00:57:27,920
+there's also another paper that people
+
+1596
+00:57:26,319 --> 00:57:30,559
+love called the platonic representation
+
+1597
+00:57:27,920 --> 00:57:33,760
+where you know like the the an image of
+
+1598
+00:57:30,559 --> 00:57:36,079
+a cup is uh if you say learn a model on
+
+1599
+00:57:33,760 --> 00:57:38,319
+that and you you you have a lot of text
+
+1600
+00:57:36,079 --> 00:57:40,000
+with the word cup it eventually maps to
+
+1601
+00:57:38,319 --> 00:57:42,400
+like roughly the same place in laten
+
+1602
+00:57:40,000 --> 00:57:44,319
+space and so like that should apply to
+
+1603
+00:57:42,400 --> 00:57:46,640
+languages except where it doesn't and
+
+1604
+00:57:44,319 --> 00:57:49,119
+that's actually like very interesting
+
+1605
+00:57:46,640 --> 00:57:51,520
+differences in what humanity has
+
+1606
+00:57:49,119 --> 00:57:54,160
+discovered as concepts that maybe
+
+1607
+00:57:51,520 --> 00:57:55,440
+English doesn't have.
+
+1608
+00:57:54,160 --> 00:57:56,960
+[laughter]
+
+1609
+00:57:55,440 --> 00:57:58,240
+>> I I don't know. That's just like my my
+
+1610
+00:57:56,960 --> 00:58:01,680
+rant on languages.
+
+1611
+00:57:58,240 --> 00:58:04,400
+>> Yeah, I I did some work on a early model
+
+1612
+00:58:01,680 --> 00:58:06,319
+that fused together a languagebased
+
+1613
+00:58:04,400 --> 00:58:08,000
+model with you have, you know, nice
+
+1614
+00:58:06,319 --> 00:58:10,799
+word-based representations and then an
+
+1615
+00:58:08,000 --> 00:58:12,559
+image model where you have trained it on
+
+1616
+00:58:10,799 --> 00:58:14,319
+imageet like things. Yes.
+
+1617
+00:58:12,559 --> 00:58:15,359
+>> And then you fuse together the top
+
+1618
+00:58:14,319 --> 00:58:16,960
+layers of
+
+1619
+00:58:15,359 --> 00:58:17,520
+>> uh no this is device
+
+1620
+00:58:16,960 --> 00:58:19,119
+>> device.
+
+1621
+00:58:17,520 --> 00:58:22,079
+>> Uh
+
+1622
+00:58:19,119 --> 00:58:23,920
+the you do a little bit more training to
+
+1623
+00:58:22,079 --> 00:58:26,799
+fuse together those representations. And
+
+1624
+00:58:23,920 --> 00:58:28,559
+what you found was that if you give a
+
+1625
+00:58:26,799 --> 00:58:30,160
+novel image that is not in any of the
+
+1626
+00:58:28,559 --> 00:58:33,839
+categories in the image model it was
+
+1627
+00:58:30,160 --> 00:58:36,079
+trained on the model can often assign
+
+1628
+00:58:33,839 --> 00:58:40,400
+kind of the right c the right label to
+
+1629
+00:58:36,079 --> 00:58:45,680
+that image. Um so for example um I think
+
+1630
+00:58:40,400 --> 00:58:48,480
+uh telescope and uh binoculars were both
+
+1631
+00:58:45,680 --> 00:58:51,040
+in the training uh categories for the
+
+1632
+00:58:48,480 --> 00:58:51,359
+image model but um microscope was not.
+
+1633
+00:58:51,040 --> 00:58:52,559
+M.
+
+1634
+00:58:51,359 --> 00:58:54,160
+>> And so if you give it an image of a
+
+1635
+00:58:52,559 --> 00:58:56,720
+microscope, it actually can come up with
+
+1636
+00:58:54,160 --> 00:58:58,400
+something that's got the word microscope
+
+1637
+00:58:56,720 --> 00:59:00,720
+as the label that are designed even
+
+1638
+00:58:58,400 --> 00:59:02,160
+though it's never actually seen an image
+
+1639
+00:59:00,720 --> 00:59:03,839
+labeled that.
+
+1640
+00:59:02,160 --> 00:59:04,640
+>> Oh, that's nice.
+
+1641
+00:59:03,839 --> 00:59:07,520
+>> Yeah.
+
+1642
+00:59:04,640 --> 00:59:10,640
+>> Um, so yeah,
+
+1643
+00:59:07,520 --> 00:59:12,720
+>> useful. Uh, cool. I think there there's
+
+1644
+00:59:10,640 --> 00:59:15,040
+more general like broad questions, but
+
+1645
+00:59:12,720 --> 00:59:17,040
+like I guess what what do you uh wish
+
+1646
+00:59:15,040 --> 00:59:18,799
+you were asked more in in in general?
+
+1647
+00:59:17,040 --> 00:59:20,079
+Like you know you have such a broad
+
+1648
+00:59:18,799 --> 00:59:22,720
+scope. We've covered the hardware.
+
+1649
+00:59:20,079 --> 00:59:25,440
+covered the the models research.
+
+1650
+00:59:22,720 --> 00:59:27,359
+>> Yeah, I mean I think uh
+
+1651
+00:59:25,440 --> 00:59:31,119
+one thing that's kind of interesting is
+
+1652
+00:59:27,359 --> 00:59:33,760
+you know I I did a undergrad thesis on
+
+1653
+00:59:31,119 --> 00:59:35,760
+neural network uh training uh parallel
+
+1654
+00:59:33,760 --> 00:59:37,680
+neural network training uh back in 1990
+
+1655
+00:59:35,760 --> 00:59:38,960
+when I got exposed to to neural nets and
+
+1656
+00:59:37,680 --> 00:59:41,200
+I always felt kind of they were the
+
+1657
+00:59:38,960 --> 00:59:43,040
+right abstraction but we just needed way
+
+1658
+00:59:41,200 --> 00:59:45,119
+more compute than we had then. So like
+
+1659
+00:59:43,040 --> 00:59:47,599
+the 32 processors in the department
+
+1660
+00:59:45,119 --> 00:59:50,079
+parallel computer you know could get you
+
+1661
+00:59:47,599 --> 00:59:52,079
+a a little bit more interesting uh model
+
+1662
+00:59:50,079 --> 00:59:54,559
+but not not enough to solve real
+
+1663
+00:59:52,079 --> 00:59:57,520
+problems. And so starting in 2008 or
+
+1664
+00:59:54,559 --> 00:59:59,359
+nine, you know, the world started to
+
+1665
+00:59:57,520 --> 01:00:01,599
+have enough computing power through
+
+1666
+00:59:59,359 --> 01:00:03,760
+Moors law and, you know, larger
+
+1667
+01:00:01,599 --> 01:00:05,680
+interesting data sets to train on to
+
+1668
+01:00:03,760 --> 01:00:07,440
+actually, you know, start training
+
+1669
+01:00:05,680 --> 01:00:09,440
+neural nets that could tackle real
+
+1670
+01:00:07,440 --> 01:00:11,520
+problems that people cared about, speech
+
+1671
+01:00:09,440 --> 01:00:14,160
+recognition, vision, and eventually
+
+1672
+01:00:11,520 --> 01:00:17,119
+language. Um
+
+1673
+01:00:14,160 --> 01:00:20,480
+and so um when I started working on
+
+1674
+01:00:17,119 --> 01:00:21,839
+neural nets at Google in in late 2011 um
+
+1675
+01:00:20,480 --> 01:00:24,079
+you know I really just felt like we
+
+1676
+01:00:21,839 --> 01:00:26,000
+should scale up the size of neural
+
+1677
+01:00:24,079 --> 01:00:27,839
+networks we can train using you know
+
+1678
+01:00:26,000 --> 01:00:31,040
+large amounts of parallel computation
+
+1679
+01:00:27,839 --> 01:00:33,520
+and so I actually revived some ideas for
+
+1680
+01:00:31,040 --> 01:00:36,319
+my undergrad thesis where I'd done both
+
+1681
+01:00:33,520 --> 01:00:39,119
+model parallel and data parallel uh
+
+1682
+01:00:36,319 --> 01:00:40,559
+training and I compared them.
+
+1683
+01:00:39,119 --> 01:00:42,720
+>> I called them something different. It
+
+1684
+01:00:40,559 --> 01:00:44,160
+was like pattern partitioned and you
+
+1685
+01:00:42,720 --> 01:00:45,520
+know model partitioned or something.
+
+1686
+01:00:44,160 --> 01:00:45,920
+>> We'll have to Is it is it public? Can we
+
+1687
+01:00:45,520 --> 01:00:47,200
+go dig?
+
+1688
+01:00:45,920 --> 01:00:47,520
+>> Yeah, it's on it's on the web.
+
+1689
+01:00:47,200 --> 01:00:50,880
+>> Okay.
+
+1690
+01:00:47,520 --> 01:00:52,160
+>> Um but uh you know I think combining a
+
+1691
+01:00:50,880 --> 01:00:54,480
+lot of those techniques and really just
+
+1692
+01:00:52,160 --> 01:00:56,640
+trying to push on scaling things up over
+
+1693
+01:00:54,480 --> 01:00:59,760
+the last you know 15 years has been you
+
+1694
+01:00:56,640 --> 01:01:01,920
+know really important and that means you
+
+1695
+01:00:59,760 --> 01:01:04,000
+know improvements in the hardware. So
+
+1696
+01:01:01,920 --> 01:01:06,880
+you know pushing on building specialized
+
+1697
+01:01:04,000 --> 01:01:08,720
+hardware like TPUs. Uh it also means you
+
+1698
+01:01:06,880 --> 01:01:11,680
+know pushing on software abstraction
+
+1699
+01:01:08,720 --> 01:01:16,079
+layers to let people express ML ideas uh
+
+1700
+01:01:11,680 --> 01:01:19,440
+effectively. Um and then also working on
+
+1701
+01:01:16,079 --> 01:01:21,520
+things like uh say sparse models. I've
+
+1702
+01:01:19,440 --> 01:01:24,079
+felt for a long time that sort of
+
+1703
+01:01:21,520 --> 01:01:25,280
+sparsely activated models are a really
+
+1704
+01:01:24,079 --> 01:01:27,119
+important thing because you want the
+
+1705
+01:01:25,280 --> 01:01:28,720
+models to have a lot of capacity to our
+
+1706
+01:01:27,119 --> 01:01:29,359
+earlier discussion about remembering a
+
+1707
+01:01:28,720 --> 01:01:30,000
+lot of stuff.
+
+1708
+01:01:29,359 --> 01:01:32,640
+>> Yeah.
+
+1709
+01:01:30,000 --> 01:01:34,079
+>> But you also want to be super efficient
+
+1710
+01:01:32,640 --> 01:01:36,480
+in how you activate your models. So
+
+1711
+01:01:34,079 --> 01:01:39,200
+you'd like you know trillions of
+
+1712
+01:01:36,480 --> 01:01:44,319
+parameters but activate only you know
+
+1713
+01:01:39,200 --> 01:01:47,839
+one 1% or 5% or 10% of that and um that
+
+1714
+01:01:44,319 --> 01:01:50,480
+you know we did a early u paper on this
+
+1715
+01:01:47,839 --> 01:01:52,799
+where we really scaled up uh you know
+
+1716
+01:01:50,480 --> 01:01:55,280
+outrageously large neural networks that
+
+1717
+01:01:52,799 --> 01:01:56,799
+the title I think that's Nome's uh
+
+1718
+01:01:55,280 --> 01:01:57,680
+Gnome's wording in the title which is a
+
+1719
+01:01:56,799 --> 01:01:59,839
+good catchy title.
+
+1720
+01:01:57,680 --> 01:02:02,160
+>> I mean in 2017 he was out there talking
+
+1721
+01:01:59,839 --> 01:02:04,079
+about one trillion parameter models.
+
+1722
+01:02:02,160 --> 01:02:06,000
+>> Yeah. So I mean that that that is really
+
+1723
+01:02:04,079 --> 01:02:09,280
+good because that gave you like a 10x
+
+1724
+01:02:06,000 --> 01:02:11,599
+improvement in you know time to quality
+
+1725
+01:02:09,280 --> 01:02:15,040
+or compute cost to qual a given quality
+
+1726
+01:02:11,599 --> 01:02:17,599
+level relative to non-sparse models. Um
+
+1727
+01:02:15,040 --> 01:02:21,359
+transformers similarly gave you a 10x to
+
+1728
+01:02:17,599 --> 01:02:24,079
+100x improvement in you know uh compute
+
+1729
+01:02:21,359 --> 01:02:26,400
+cost to a given quality level uh versus
+
+1730
+01:02:24,079 --> 01:02:29,119
+say LSTMs at the time and all of those
+
+1731
+01:02:26,400 --> 01:02:32,559
+things multiply together. Um so I think
+
+1732
+01:02:29,119 --> 01:02:34,559
+all those things really are important to
+
+1733
+01:02:32,559 --> 01:02:36,880
+work on you know the hardware the
+
+1734
+01:02:34,559 --> 01:02:38,640
+systems infrastructure the you know
+
+1735
+01:02:36,880 --> 01:02:41,680
+algorithmic aspects of model
+
+1736
+01:02:38,640 --> 01:02:43,680
+architecture improving the data you know
+
+1737
+01:02:41,680 --> 01:02:46,640
+improving the RL recipes all these
+
+1738
+01:02:43,680 --> 01:02:48,160
+things uh are what are stacking together
+
+1739
+01:02:46,640 --> 01:02:51,520
+and multiplying together
+
+1740
+01:02:48,160 --> 01:02:54,960
+>> to give us models of 2026
+
+1741
+01:02:51,520 --> 01:02:57,440
+are much more better than models of 25
+
+1742
+01:02:54,960 --> 01:02:58,480
+and are awesomely better than 24 and 23
+
+1743
+01:02:57,440 --> 01:03:00,799
+and
+
+1744
+01:02:58,480 --> 01:03:02,400
+and and a huge uh honestly like
+
+1745
+01:03:00,799 --> 01:03:04,960
+organizational challenge like there's
+
+1746
+01:03:02,400 --> 01:03:06,720
+like a thousand people or maybe more
+
+1747
+01:03:04,960 --> 01:03:07,760
+like I know I know when the first Gemini
+
+1748
+01:03:06,720 --> 01:03:08,400
+paper came out it was like a thousand of
+
+1749
+01:03:07,760 --> 01:03:10,480
+co-authors.
+
+1750
+01:03:08,400 --> 01:03:12,640
+>> Yeah. Yeah. We have uh 10 pages of
+
+1751
+01:03:10,480 --> 01:03:13,520
+co-authors in the in the tech [laughter]
+
+1752
+01:03:12,640 --> 01:03:14,880
+report
+
+1753
+01:03:13,520 --> 01:03:16,880
+>> but it was nice. I mean you know people
+
+1754
+01:03:14,880 --> 01:03:17,920
+want to be acknowledged on probably a
+
+1755
+01:03:16,880 --> 01:03:19,680
+historical paper.
+
+1756
+01:03:17,920 --> 01:03:20,960
+>> Yeah. I mean, I think it's perfectly
+
+1757
+01:03:19,680 --> 01:03:22,880
+good to have actually a lot of
+
+1758
+01:03:20,960 --> 01:03:25,280
+co-authors and I do think
+
+1759
+01:03:22,880 --> 01:03:27,920
+>> organizing that number of people so that
+
+1760
+01:03:25,280 --> 01:03:31,280
+they're effectively pushing in common
+
+1761
+01:03:27,920 --> 01:03:34,079
+directions that all all their work
+
+1762
+01:03:31,280 --> 01:03:35,920
+actually sort of multiplies together in
+
+1763
+01:03:34,079 --> 01:03:38,079
+the ultimate output which is you know
+
+1764
+01:03:35,920 --> 01:03:40,400
+the next generation of model is actually
+
+1765
+01:03:38,079 --> 01:03:42,559
+pretty tricky and we have awesome people
+
+1766
+01:03:40,400 --> 01:03:44,559
+uh throughout the Gemini team to help
+
+1767
+01:03:42,559 --> 01:03:48,079
+orchestrate this. So you know myself,
+
+1768
+01:03:44,559 --> 01:03:50,000
+Noom and Oral are sort of helping steer
+
+1769
+01:03:48,079 --> 01:03:52,480
+this and then we have people thinking
+
+1770
+01:03:50,000 --> 01:03:53,920
+about you know what is the pre-training
+
+1771
+01:03:52,480 --> 01:03:55,599
+uh setup look like what does the
+
+1772
+01:03:53,920 --> 01:03:57,280
+infrastructure look like what does the
+
+1773
+01:03:55,599 --> 01:03:59,920
+post-raining recipe look like and what
+
+1774
+01:03:57,280 --> 01:04:03,039
+does the data preparation and eval
+
+1775
+01:03:59,920 --> 01:04:04,640
+multimodal capabilities and IN
+
+1776
+01:04:03,039 --> 01:04:06,400
+capabilities
+
+1777
+01:04:04,640 --> 01:04:08,319
+>> um you know there's a lot of different
+
+1778
+01:04:06,400 --> 01:04:10,880
+kinds of areas coding capabilities all
+
+1779
+01:04:08,319 --> 01:04:13,359
+these areas are are super important and
+
+1780
+01:04:10,880 --> 01:04:15,520
+it's really good to have people uh
+
+1781
+01:04:13,359 --> 01:04:18,000
+paying close attention to those things
+
+1782
+01:04:15,520 --> 01:04:18,880
+and then also paying close attention to
+
+1783
+01:04:18,000 --> 01:04:21,039
+all the other things.
+
+1784
+01:04:18,880 --> 01:04:22,880
+>> Yeah. I'm told Sergey is like very
+
+1785
+01:04:21,039 --> 01:04:24,720
+actively back and like very much
+
+1786
+01:04:22,880 --> 01:04:27,280
+involved in coding stuff.
+
+1787
+01:04:24,720 --> 01:04:29,039
+>> Yep. Yeah. Yeah. Yeah. We all use the
+
+1788
+01:04:27,280 --> 01:04:31,200
+same micro kitchen.
+
+1789
+01:04:29,039 --> 01:04:33,039
+>> Yeah. Uh oh. Okay. Like there's so many
+
+1790
+01:04:31,200 --> 01:04:34,720
+jumping off point. Uh so by the way I
+
+1791
+01:04:33,039 --> 01:04:36,000
+found out from the recent uh I mean
+
+1792
+01:04:34,720 --> 01:04:37,359
+you've probably told this story a few
+
+1793
+01:04:36,000 --> 01:04:38,960
+times but apparently Google brain was
+
+1794
+01:04:37,359 --> 01:04:40,640
+also started in a micro kitchen.
+
+1795
+01:04:38,960 --> 01:04:42,079
+>> Yeah. Yeah. [laughter]
+
+1796
+01:04:40,640 --> 01:04:42,480
+>> Just like your micro kitchens are very
+
+1797
+01:04:42,079 --> 01:04:44,079
+important.
+
+1798
+01:04:42,480 --> 01:04:45,599
+>> Yeah. I don't know if people like
+
+1799
+01:04:44,079 --> 01:04:48,319
+understand.
+
+1800
+01:04:45,599 --> 01:04:50,240
+>> Yeah. Uh yeah, I actually bumped into
+
+1801
+01:04:48,319 --> 01:04:53,039
+Andrew Ing who's a Stanford faculty
+
+1802
+01:04:50,240 --> 01:04:54,640
+member and uh I knew him from I'd given
+
+1803
+01:04:53,039 --> 01:04:56,160
+talks at Stanford a couple years before
+
+1804
+01:04:54,640 --> 01:04:57,280
+so I sort of knew him and I'm like, "Oh,
+
+1805
+01:04:56,160 --> 01:04:59,520
+what are you doing here?" He's like,
+
+1806
+01:04:57,280 --> 01:05:00,799
+"Oh, I'm not sure yet. I just started,
+
+1807
+01:04:59,520 --> 01:05:03,039
+you know, a couple weeks ago. I'm going
+
+1808
+01:05:00,799 --> 01:05:04,640
+to spend one day a week here consulting.
+
+1809
+01:05:03,039 --> 01:05:06,160
+Um I'm not sure what I'm working on, but
+
+1810
+01:05:04,640 --> 01:05:10,079
+my students at Stanford are starting to
+
+1811
+01:05:06,160 --> 01:05:12,799
+get good results um on using u neural
+
+1812
+01:05:10,079 --> 01:05:14,319
+nets for speech uh recognition. I'm
+
+1813
+01:05:12,799 --> 01:05:16,720
+like, "Oh, neural nets. I like neural
+
+1814
+01:05:14,319 --> 01:05:18,799
+nets." Like I remembered back to my 1990
+
+1815
+01:05:16,720 --> 01:05:19,920
+thesis. I'm like, "Oh, that sounds
+
+1816
+01:05:18,799 --> 01:05:21,359
+interesting. We should train really
+
+1817
+01:05:19,920 --> 01:05:22,400
+really big neural nets."
+
+1818
+01:05:21,359 --> 01:05:24,640
+>> So [snorts] that was the
+
+1819
+01:05:22,400 --> 01:05:26,079
+>> which you say that and that's a very
+
+1820
+01:05:24,640 --> 01:05:28,079
+interesting first instinct, which is
+
+1821
+01:05:26,079 --> 01:05:31,680
+that we should scale this up a lot.
+
+1822
+01:05:28,079 --> 01:05:35,520
+>> Yeah. Well, I mean, I felt like
+
+1823
+01:05:31,680 --> 01:05:38,559
+Google is is has lots of computational
+
+1824
+01:05:35,520 --> 01:05:41,039
+uh capability and so if they were seeing
+
+1825
+01:05:38,559 --> 01:05:44,640
+good results on, you know, what were
+
+1826
+01:05:41,039 --> 01:05:46,640
+effectively single GPU or uh models,
+
+1827
+01:05:44,640 --> 01:05:48,240
+>> you know, if we were uh we actually
+
+1828
+01:05:46,640 --> 01:05:50,000
+didn't have GPUs in our data centers
+
+1829
+01:05:48,240 --> 01:05:52,880
+then we didn't have any accelerators. We
+
+1830
+01:05:50,000 --> 01:05:54,240
+had lots of CPUs, but you know, we could
+
+1831
+01:05:52,880 --> 01:05:56,079
+build a software system that would
+
+1832
+01:05:54,240 --> 01:05:58,400
+enable you to distribute with both model
+
+1833
+01:05:56,079 --> 01:06:00,079
+parallelism and data parallelism across
+
+1834
+01:05:58,400 --> 01:06:02,960
+lots of computers. And we ended up
+
+1835
+01:06:00,079 --> 01:06:05,039
+training a pretty big model was 50x
+
+1836
+01:06:02,960 --> 01:06:07,680
+bigger than any previous neural net as
+
+1837
+01:06:05,039 --> 01:06:10,720
+far as we could tell. Um, so it's two
+
+1838
+01:06:07,680 --> 01:06:13,280
+billion parameters uh vision model uh
+
+1839
+01:06:10,720 --> 01:06:16,160
+trained on 16,000 CPU cores for like
+
+1840
+01:06:13,280 --> 01:06:18,480
+multiple weeks. Uh and that's what gave
+
+1841
+01:06:16,160 --> 01:06:20,880
+us really good it would gave us a 70%
+
+1842
+01:06:18,480 --> 01:06:24,240
+relative error improvement in imageet
+
+1843
+01:06:20,880 --> 01:06:27,359
+22k which is the 22,000 category thing
+
+1844
+01:06:24,240 --> 01:06:29,359
+and that's how we really saw okay
+
+1845
+01:06:27,359 --> 01:06:31,200
+scaling this up actually matters. We
+
+1846
+01:06:29,359 --> 01:06:33,119
+didn't write a, you know, a
+
+1847
+01:06:31,200 --> 01:06:35,920
+sophisticated scaling analysis, but we
+
+1848
+01:06:33,119 --> 01:06:37,520
+had a a saying, bigger model, more data,
+
+1849
+01:06:35,920 --> 01:06:40,079
+better results.
+
+1850
+01:06:37,520 --> 01:06:42,720
+>> And that was our our mantra for like six
+
+1851
+01:06:40,079 --> 01:06:44,880
+or seven years of scaling. And we every
+
+1852
+01:06:42,720 --> 01:06:48,720
+time we did that, we saw better results
+
+1853
+01:06:44,880 --> 01:06:51,680
+in speech, in language, in in vision.
+
+1854
+01:06:48,720 --> 01:06:53,200
+>> Uh, speaking of um bets, and this might
+
+1855
+01:06:51,680 --> 01:06:54,240
+and this, you know, I'll preface with
+
+1856
+01:06:53,200 --> 01:06:56,000
+like this might be a little bit more
+
+1857
+01:06:54,240 --> 01:06:58,000
+sensitive topic, but you have obviously
+
+1858
+01:06:56,000 --> 01:06:59,760
+a lot of opinions about this. We had a
+
+1859
+01:06:58,000 --> 01:07:02,640
+previous guest, David Juan, who used to
+
+1860
+01:06:59,760 --> 01:07:05,599
+work for you, and uh he he kind of like
+
+1861
+01:07:02,640 --> 01:07:07,680
+blames almost the brain marketplace as
+
+1862
+01:07:05,599 --> 01:07:09,760
+like the reason that Google didn't
+
+1863
+01:07:07,680 --> 01:07:12,319
+invest enough in language models. And I
+
+1864
+01:07:09,760 --> 01:07:14,240
+wonder if that's uh something you would
+
+1865
+01:07:12,319 --> 01:07:15,440
+you would agree with at the time or uh
+
+1866
+01:07:14,240 --> 01:07:16,160
+is there like a different sort of
+
+1867
+01:07:15,440 --> 01:07:18,799
+postmortm
+
+1868
+01:07:16,160 --> 01:07:20,799
+>> the brain marketplace for computers
+
+1869
+01:07:18,799 --> 01:07:23,119
+>> compute quotas where basically he was
+
+1870
+01:07:20,799 --> 01:07:25,440
+like okay the like
+
+1871
+01:07:23,119 --> 01:07:26,559
+>> David worked at OpenAI as VP engine then
+
+1872
+01:07:25,440 --> 01:07:28,400
+he worked at Google he was like
+
+1873
+01:07:26,559 --> 01:07:30,160
+fundamentally open was willing to go all
+
+1874
+01:07:28,400 --> 01:07:32,240
+in like bet the farm on one thing
+
+1875
+01:07:30,160 --> 01:07:33,119
+whereas Google was more democratic like
+
+1876
+01:07:32,240 --> 01:07:34,960
+everyone had a
+
+1877
+01:07:33,119 --> 01:07:37,280
+>> had a quota and I was like okay like
+
+1878
+01:07:34,960 --> 01:07:38,559
+like if if you believe in scaling as an
+
+1879
+01:07:37,280 --> 01:07:39,839
+important thing that's a that's an
+
+1880
+01:07:38,559 --> 01:07:42,079
+important
+
+1881
+01:07:39,839 --> 01:07:45,839
+organizationalwide decision to do.
+
+1882
+01:07:42,079 --> 01:07:47,760
+>> Yeah. Uh yeah, I mean I think uh I would
+
+1883
+01:07:45,839 --> 01:07:51,200
+somewhat agree with that. I mean I think
+
+1884
+01:07:47,760 --> 01:07:54,480
+I actually wrote a one-page memo saying
+
+1885
+01:07:51,200 --> 01:07:55,680
+we were being stupid by uh fragmenting
+
+1886
+01:07:54,480 --> 01:08:00,000
+our resources.
+
+1887
+01:07:55,680 --> 01:08:03,280
+>> Um so in particular at the time we had
+
+1888
+01:08:00,000 --> 01:08:05,760
+uh you know uh efforts within Google
+
+1889
+01:08:03,280 --> 01:08:08,400
+research on uh and and in the brain team
+
+1890
+01:08:05,760 --> 01:08:11,680
+in particular on large language models.
+
+1891
+01:08:08,400 --> 01:08:14,559
+We also had efforts on multimodal models
+
+1892
+01:08:11,680 --> 01:08:17,279
+um in uh other parts of brain and and
+
+1893
+01:08:14,559 --> 01:08:20,799
+Google research and then legacy deep
+
+1894
+01:08:17,279 --> 01:08:24,560
+mind had uh efforts like um chinchilla
+
+1895
+01:08:20,799 --> 01:08:27,440
+models and uh flamingo models. Uh and so
+
+1896
+01:08:24,560 --> 01:08:31,279
+really we were fragmenting not only our
+
+1897
+01:08:27,440 --> 01:08:33,759
+compute uh across those separate efforts
+
+1898
+01:08:31,279 --> 01:08:36,640
+but also our best people and our best
+
+1899
+01:08:33,759 --> 01:08:38,719
+ideas, right? And so I said this is just
+
+1900
+01:08:36,640 --> 01:08:41,040
+stupid. Why don't we combine things and
+
+1901
+01:08:38,719 --> 01:08:42,480
+have one effort to uh train
+
+1902
+01:08:41,040 --> 01:08:45,440
+>> and this is the merge. Yeah.
+
+1903
+01:08:42,480 --> 01:08:47,600
+>> To train an awesome single unified model
+
+1904
+01:08:45,440 --> 01:08:49,839
+that is multimodal from the start that's
+
+1905
+01:08:47,600 --> 01:08:54,080
+good at everything and that was the
+
+1906
+01:08:49,839 --> 01:08:55,679
+origin of the Gemini effort and my one
+
+1907
+01:08:54,080 --> 01:08:57,279
+page memo worked which is good.
+
+1908
+01:08:55,679 --> 01:08:59,279
+>> Did you have the name because also for
+
+1909
+01:08:57,279 --> 01:09:00,880
+those who don't know you named Gemini.
+
+1910
+01:08:59,279 --> 01:09:02,960
+>> I did. Yeah. [laughter] Yeah. There was
+
+1911
+01:09:00,880 --> 01:09:04,880
+there was another name proposed and I I
+
+1912
+01:09:02,960 --> 01:09:06,640
+said, you know, it's sort of like these
+
+1913
+01:09:04,880 --> 01:09:09,279
+two organizations
+
+1914
+01:09:06,640 --> 01:09:12,000
+really are like uh twins
+
+1915
+01:09:09,279 --> 01:09:13,759
+>> in some sense coming together. Um so I
+
+1916
+01:09:12,000 --> 01:09:16,799
+kind of like that. And then there's also
+
+1917
+01:09:13,759 --> 01:09:18,719
+the NASA interpretation of you know the
+
+1918
+01:09:16,799 --> 01:09:21,199
+early Gemini project
+
+1919
+01:09:18,719 --> 01:09:24,960
+>> uh being an important thing on your way
+
+1920
+01:09:21,199 --> 01:09:26,880
+to um you know the Apollo project. So it
+
+1921
+01:09:24,960 --> 01:09:27,359
+seemed like a good name. Twins coming
+
+1922
+01:09:26,880 --> 01:09:30,400
+together,
+
+1923
+01:09:27,359 --> 01:09:31,920
+>> right? Yeah. Nice. Um, I know we're
+
+1924
+01:09:30,400 --> 01:09:34,319
+already running out of time, but I'm
+
+1925
+01:09:31,920 --> 01:09:35,920
+curious how you use AI today to code.
+
+1926
+01:09:34,319 --> 01:09:38,159
+So, I mean, you're probably one of the
+
+1927
+01:09:35,920 --> 01:09:40,640
+most prolific engineers in the history
+
+1928
+01:09:38,159 --> 01:09:42,799
+of computer science. Um, I was reading
+
+1929
+01:09:40,640 --> 01:09:44,799
+on through the article about you and
+
+1930
+01:09:42,799 --> 01:09:45,679
+Sanji's friendship and how you work
+
+1931
+01:09:44,799 --> 01:09:47,759
+together [clears throat] and
+
+1932
+01:09:45,679 --> 01:09:49,120
+>> you have one quote about you need to
+
+1933
+01:09:47,759 --> 01:09:51,040
+find someone that you're going to pair
+
+1934
+01:09:49,120 --> 01:09:52,960
+program with who's compatible with your
+
+1935
+01:09:51,040 --> 01:09:55,120
+way of thinking so that the two of you
+
+1936
+01:09:52,960 --> 01:09:56,640
+together are a complimentary force. Mhm.
+
+1937
+01:09:55,120 --> 01:09:59,040
+>> And I was thinking about how you think
+
+1938
+01:09:56,640 --> 01:09:59,920
+about coding agents in this like how do
+
+1939
+01:09:59,040 --> 01:10:02,239
+you shape
+
+1940
+01:09:59,920 --> 01:10:04,400
+>> a coding agents to be compatible with
+
+1941
+01:10:02,239 --> 01:10:05,840
+your way of thinking like h how would
+
+1942
+01:10:04,400 --> 01:10:06,960
+you rate the tools today? Like where
+
+1943
+01:10:05,840 --> 01:10:09,040
+should things go?
+
+1944
+01:10:06,960 --> 01:10:11,840
+>> Yeah. I mean first I think the coding
+
+1945
+01:10:09,040 --> 01:10:13,360
+tools are you know getting vastly better
+
+1946
+01:10:11,840 --> 01:10:15,440
+compared to where they were a year or
+
+1947
+01:10:13,360 --> 01:10:17,440
+two two years ago. So now you can
+
+1948
+01:10:15,440 --> 01:10:19,840
+actually rely on them to do more complex
+
+1949
+01:10:17,440 --> 01:10:22,400
+things that you as a as a software
+
+1950
+01:10:19,840 --> 01:10:24,880
+engineer want to accomplish and you can
+
+1951
+01:10:22,400 --> 01:10:28,239
+sort of delegate you know pretty complex
+
+1952
+01:10:24,880 --> 01:10:31,600
+things to these tools. And I think one
+
+1953
+01:10:28,239 --> 01:10:34,800
+really nice aspect about the uh
+
+1954
+01:10:31,600 --> 01:10:37,920
+interaction between a a human uh
+
+1955
+01:10:34,800 --> 01:10:41,920
+software engineer and a a coding model
+
+1956
+01:10:37,920 --> 01:10:45,199
+that they're working with is your way of
+
+1957
+01:10:41,920 --> 01:10:48,560
+talking to that uh coding model actually
+
+1958
+01:10:45,199 --> 01:10:51,040
+sort of uh dictates how it interacts
+
+1959
+01:10:48,560 --> 01:10:52,480
+with you, right? Like you could ask it
+
+1960
+01:10:51,040 --> 01:10:55,440
+please write a bunch of good tests for
+
+1961
+01:10:52,480 --> 01:10:58,239
+this. You could ask it, please help me
+
+1962
+01:10:55,440 --> 01:11:00,880
+brainstorm performance ideas. And your
+
+1963
+01:10:58,239 --> 01:11:02,800
+way of doing that is going to shape how
+
+1964
+01:11:00,880 --> 01:11:04,960
+the model responds, what kinds of
+
+1965
+01:11:02,800 --> 01:11:06,719
+problems it tackles. You know, how much
+
+1966
+01:11:04,960 --> 01:11:08,080
+do you want the model to go off and do
+
+1967
+01:11:06,719 --> 01:11:11,120
+things that are larger and more
+
+1968
+01:11:08,080 --> 01:11:12,560
+independent versus interact with it more
+
+1969
+01:11:11,120 --> 01:11:15,679
+to make sure that you're shaping the
+
+1970
+01:11:12,560 --> 01:11:18,320
+right kinds of of things? And I think
+
+1971
+01:11:15,679 --> 01:11:19,679
+it's not the case that any one style is
+
+1972
+01:11:18,320 --> 01:11:22,560
+the right thing for everything, right?
+
+1973
+01:11:19,679 --> 01:11:24,560
+like some kinds of problems you actually
+
+1974
+01:11:22,560 --> 01:11:26,000
+want uh maybe a more frequent
+
+1975
+01:11:24,560 --> 01:11:27,280
+interaction style with the model and
+
+1976
+01:11:26,000 --> 01:11:29,280
+other ones you're just like, "Yeah,
+
+1977
+01:11:27,280 --> 01:11:30,960
+please just go write this cuz I I know I
+
+1978
+01:11:29,280 --> 01:11:34,159
+need this thing. I can specify it well
+
+1979
+01:11:30,960 --> 01:11:35,760
+enough." Um and go off and do it and
+
+1980
+01:11:34,159 --> 01:11:38,080
+come back when you're done. And so I do
+
+1981
+01:11:35,760 --> 01:11:41,120
+think there's going to be more of a
+
+1982
+01:11:38,080 --> 01:11:43,040
+style of having lots of independent uh
+
+1983
+01:11:41,120 --> 01:11:45,920
+software agents off doing things on your
+
+1984
+01:11:43,040 --> 01:11:48,080
+behalf and figuring out the right sort
+
+1985
+01:11:45,920 --> 01:11:50,560
+of human computer interaction model and
+
+1986
+01:11:48,080 --> 01:11:52,159
+UI and so on for when should it
+
+1987
+01:11:50,560 --> 01:11:53,840
+interrupt you and say hey I need a
+
+1988
+01:11:52,159 --> 01:11:55,520
+little more guidance here or I've done
+
+1989
+01:11:53,840 --> 01:11:58,000
+this thing now what now what should I
+
+1990
+01:11:55,520 --> 01:12:00,719
+do? Um I think we we're not at the end
+
+1991
+01:11:58,000 --> 01:12:03,920
+all answer to that question and as the
+
+1992
+01:12:00,719 --> 01:12:06,000
+models get better that uh set of
+
+1993
+01:12:03,920 --> 01:12:08,880
+decisions you put into how the
+
+1994
+01:12:06,000 --> 01:12:12,480
+interaction should happen may may change
+
+1995
+01:12:08,880 --> 01:12:16,080
+right like if you if you have a team of
+
+1996
+01:12:12,480 --> 01:12:19,280
+50 interns how would you manage that if
+
+1997
+01:12:16,080 --> 01:12:20,960
+they were people and I think it's not
+
+1998
+01:12:19,280 --> 01:12:23,360
+>> do you want 50 interns [laughter]
+
+1999
+01:12:20,960 --> 01:12:24,400
+>> you might if they're really good right
+
+2000
+01:12:23,360 --> 01:12:26,159
+>> it's a lot of management
+
+2001
+01:12:24,400 --> 01:12:29,840
+>> but but it's a lot of
+
+2002
+01:12:26,159 --> 01:12:31,840
+Uh yeah, I mean I think that is probably
+
+2003
+01:12:29,840 --> 01:12:34,320
+within the realm of possibilities that
+
+2004
+01:12:31,840 --> 01:12:36,400
+lots of people could have 50 interns
+
+2005
+01:12:34,320 --> 01:12:38,800
+>> and so how would you actually deal with
+
+2006
+01:12:36,400 --> 01:12:40,719
+that as a person, right? Like you would
+
+2007
+01:12:38,800 --> 01:12:42,960
+probably want them to form small sub
+
+2008
+01:12:40,719 --> 01:12:44,560
+teams so you don't have to interact with
+
+2009
+01:12:42,960 --> 01:12:46,560
+50 of them. You could interact with five
+
+2010
+01:12:44,560 --> 01:12:49,520
+of five of those teams and they're off
+
+2011
+01:12:46,560 --> 01:12:51,120
+doing things on your behalf.
+
+2012
+01:12:49,520 --> 01:12:53,440
+But I don't know exactly what the how
+
+2013
+01:12:51,120 --> 01:12:55,360
+this is going to unfold.
+
+2014
+01:12:53,440 --> 01:12:57,520
+>> Yeah. How do you think about bringing
+
+2015
+01:12:55,360 --> 01:12:59,920
+people like the pair programming is
+
+2016
+01:12:57,520 --> 01:13:02,239
+always helpful to like get net new ideas
+
+2017
+01:12:59,920 --> 01:13:04,159
+in the distribution so to speak? It
+
+2018
+01:13:02,239 --> 01:13:06,080
+feels as we have more of these coding
+
+2019
+01:13:04,159 --> 01:13:08,239
+agents write the code. It's hard to
+
+2020
+01:13:06,080 --> 01:13:09,440
+bring other people into the problem. Say
+
+2021
+01:13:08,239 --> 01:13:10,560
+you go to like you know you have 50
+
+2022
+01:13:09,440 --> 01:13:12,719
+interns [clears throat] right and then
+
+2023
+01:13:10,560 --> 01:13:15,280
+you want to go to nom shazir be like hey
+
+2024
+01:13:12,719 --> 01:13:16,880
+nom I want to like pair on this thing
+
+2025
+01:13:15,280 --> 01:13:18,719
+>> but now there's like this huge amount of
+
+2026
+01:13:16,880 --> 01:13:20,239
+work that has been done in parallel that
+
+2027
+01:13:18,719 --> 01:13:20,640
+you need to catch him up on
+
+2028
+01:13:20,239 --> 01:13:23,120
+>> right
+
+2029
+01:13:20,640 --> 01:13:24,960
+>> and I'm curious like if people are going
+
+2030
+01:13:23,120 --> 01:13:26,800
+to be in a way more isolated in their
+
+2031
+01:13:24,960 --> 01:13:28,880
+teams where it's like okay there's so
+
+2032
+01:13:26,800 --> 01:13:31,040
+much context in these 50 interns that
+
+2033
+01:13:28,880 --> 01:13:33,440
+it's just hard for me to like relay
+
+2034
+01:13:31,040 --> 01:13:36,400
+everything back to you
+
+2035
+01:13:33,440 --> 01:13:38,960
+>> maybe I mean on the other hand
+
+2036
+01:13:36,400 --> 01:13:41,040
+like imagine a classical software or
+
+2037
+01:13:38,960 --> 01:13:43,520
+organization without any AI assisted
+
+2038
+01:13:41,040 --> 01:13:46,320
+tools, right? You would have, you know,
+
+2039
+01:13:43,520 --> 01:13:48,719
+50 people doing stuff and their
+
+2040
+01:13:46,320 --> 01:13:52,320
+interaction style is going to be
+
+2041
+01:13:48,719 --> 01:13:53,840
+naturally very hierarchical because,
+
+2042
+01:13:52,320 --> 01:13:55,199
+you know, these 50 people are going to
+
+2043
+01:13:53,840 --> 01:13:57,040
+be working on this part of the system
+
+2044
+01:13:55,199 --> 01:13:59,760
+and not interact that much with these
+
+2045
+01:13:57,040 --> 01:14:02,480
+other people over here. But if you have,
+
+2046
+01:13:59,760 --> 01:14:05,040
+you know, five people each managing 50
+
+2047
+01:14:02,480 --> 01:14:06,239
+virtual agents, you know, they might be
+
+2048
+01:14:05,040 --> 01:14:07,840
+able to actually have much higher
+
+2049
+01:14:06,239 --> 01:14:11,600
+bandwidth communication among the five
+
+2050
+01:14:07,840 --> 01:14:13,360
+people uh than you would have among five
+
+2051
+01:14:11,600 --> 01:14:15,040
+people who are also trying to
+
+2052
+01:14:13,360 --> 01:14:16,880
+coordinate, you know, a 50 person
+
+2053
+01:14:15,040 --> 01:14:18,560
+software team each. Yeah. So,
+
+2054
+01:14:16,880 --> 01:14:21,760
+>> how do you I'm curious how you change
+
+2055
+01:14:18,560 --> 01:14:23,920
+your just working rhythm, you know, like
+
+2056
+01:14:21,760 --> 01:14:25,920
+do you spend more time ahead with people
+
+2057
+01:14:23,920 --> 01:14:27,120
+going through specs and design goals
+
+2058
+01:14:25,920 --> 01:14:29,360
+like
+
+2059
+01:14:27,120 --> 01:14:32,320
+>> um I mean I do think it's interesting
+
+2060
+01:14:29,360 --> 01:14:34,480
+that you know whenever people were
+
+2061
+01:14:32,320 --> 01:14:36,480
+taught how to write software they were
+
+2062
+01:14:34,480 --> 01:14:38,960
+taught that it's really important to
+
+2063
+01:14:36,480 --> 01:14:40,320
+write specifications super clearly. But
+
+2064
+01:14:38,960 --> 01:14:41,760
+no one really believed that. Like it was
+
+2065
+01:14:40,320 --> 01:14:42,880
+like yeah whatever I don't need to do
+
+2066
+01:14:41,760 --> 01:14:43,760
+that I'm going to [laughter]
+
+2067
+01:14:42,880 --> 01:14:45,360
+>> really
+
+2068
+01:14:43,760 --> 01:14:46,880
+>> I don't know. I mean, writing the
+
+2069
+01:14:45,360 --> 01:14:50,080
+English the English language
+
+2070
+01:14:46,880 --> 01:14:51,920
+specification was never kind of an
+
+2071
+01:14:50,080 --> 01:14:53,840
+artifact that was really paid a lot of
+
+2072
+01:14:51,920 --> 01:14:55,920
+attention to. I mean, it was important,
+
+2073
+01:14:53,840 --> 01:14:58,960
+but it wasn't sort of the thing that
+
+2074
+01:14:55,920 --> 01:15:01,440
+drove the actual creative process quite
+
+2075
+01:14:58,960 --> 01:15:03,920
+as much as if you
+
+2076
+01:15:01,440 --> 01:15:06,239
+specify what software you want the agent
+
+2077
+01:15:03,920 --> 01:15:08,719
+to write for you, you'd better be pretty
+
+2078
+01:15:06,239 --> 01:15:10,159
+darn careful in how you specify that
+
+2079
+01:15:08,719 --> 01:15:11,600
+because that's going to dictate the
+
+2080
+01:15:10,159 --> 01:15:14,000
+quality of the output, right? like if
+
+2081
+01:15:11,600 --> 01:15:15,840
+you if you don't cover that it needs to
+
+2082
+01:15:14,000 --> 01:15:19,040
+handle this kind of thing or that this
+
+2083
+01:15:15,840 --> 01:15:20,159
+is a super important corner case or that
+
+2084
+01:15:19,040 --> 01:15:22,320
+you know you really care about the
+
+2085
+01:15:20,159 --> 01:15:25,440
+performance of this part of it you know
+
+2086
+01:15:22,320 --> 01:15:28,239
+it may uh not do what you want and the
+
+2087
+01:15:25,440 --> 01:15:30,880
+better you get at interacting with these
+
+2088
+01:15:28,239 --> 01:15:32,640
+models and and I think one of the ways
+
+2089
+01:15:30,880 --> 01:15:35,520
+people will get better is they will get
+
+2090
+01:15:32,640 --> 01:15:38,560
+really good at crisply specifying things
+
+2091
+01:15:35,520 --> 01:15:40,800
+rather than leaving things to ambiguity
+
+2092
+01:15:38,560 --> 01:15:42,960
+>> and that is actually probably not a bad
+
+2093
+01:15:40,800 --> 01:15:44,719
+It's not a bad skill to have regardless
+
+2094
+01:15:42,960 --> 01:15:46,960
+of whether you're a software engineer or
+
+2095
+01:15:44,719 --> 01:15:49,440
+a you know trying to do some other kind
+
+2096
+01:15:46,960 --> 01:15:51,280
+of uh task. You know, being able to
+
+2097
+01:15:49,440 --> 01:15:52,480
+crisply specify what it is you want.
+
+2098
+01:15:51,280 --> 01:15:54,880
+It's going to be really important.
+
+2099
+01:15:52,480 --> 01:15:56,880
+>> Yeah. My joke is um you know, good
+
+2100
+01:15:54,880 --> 01:15:58,960
+prompting [clears throat] is in uh
+
+2101
+01:15:56,880 --> 01:16:01,280
+indistinguishable from sufficially
+
+2102
+01:15:58,960 --> 01:16:03,199
+advanced executive communication. Like
+
+2103
+01:16:01,280 --> 01:16:03,840
+it's like writing an internal memo. Like
+
+2104
+01:16:03,199 --> 01:16:05,199
+>> Yeah. Yeah.
+
+2105
+01:16:03,840 --> 01:16:06,480
+>> Weigh your words very carefully. And
+
+2106
+01:16:05,199 --> 01:16:08,239
+also I think very important to be
+
+2107
+01:16:06,480 --> 01:16:10,480
+multimodal, right? I think one thing
+
+2108
+01:16:08,239 --> 01:16:12,640
+that anti-gravity from from Google also
+
+2109
+01:16:10,480 --> 01:16:14,719
+did was like just come out the gate very
+
+2110
+01:16:12,640 --> 01:16:15,920
+very strong multimodal including videos
+
+2111
+01:16:14,719 --> 01:16:17,440
+and that's the highest bandwidth
+
+2112
+01:16:15,920 --> 01:16:18,560
+communication prompt that you can give
+
+2113
+01:16:17,440 --> 01:16:20,080
+the
+
+2114
+01:16:18,560 --> 01:16:20,560
+>> the model which is fantastic.
+
+2115
+01:16:20,080 --> 01:16:23,120
+>> Yeah.
+
+2116
+01:16:20,560 --> 01:16:24,719
+>> How do you collect things that you often
+
+2117
+01:16:23,120 --> 01:16:26,800
+you would have in your mind. So you have
+
+2118
+01:16:24,719 --> 01:16:28,239
+this amazing like performance hints
+
+2119
+01:16:26,800 --> 01:16:31,120
+thing that you wrote about how to look
+
+2120
+01:16:28,239 --> 01:16:33,199
+for performance improvements and is
+
+2121
+01:16:31,120 --> 01:16:35,760
+there a lot more value in like people
+
+2122
+01:16:33,199 --> 01:16:37,760
+writing these like generic things down
+
+2123
+01:16:35,760 --> 01:16:40,400
+so that they can then put them back as
+
+2124
+01:16:37,760 --> 01:16:42,719
+like potential retrieval artifacts for
+
+2125
+01:16:40,400 --> 01:16:44,320
+the model like or do I have like the
+
+2126
+01:16:42,719 --> 01:16:45,440
+edge cases is like a good example right
+
+2127
+01:16:44,320 --> 01:16:46,880
+it's like [snorts] if you're building
+
+2128
+01:16:45,440 --> 01:16:48,800
+systems you already have in your mind
+
+2129
+01:16:46,880 --> 01:16:50,640
+specific edge cases depending on it but
+
+2130
+01:16:48,800 --> 01:16:51,360
+now you have to like every time repeat
+
+2131
+01:16:50,640 --> 01:16:53,440
+it
+
+2132
+01:16:51,360 --> 01:16:56,000
+>> like are you having people spend a lot
+
+2133
+01:16:53,440 --> 01:16:57,520
+more I'm writing out more generic things
+
+2134
+01:16:56,000 --> 01:17:00,423
+to bring back or
+
+2135
+01:16:57,520 --> 01:17:01,840
+>> um I mean [snorts] I do think
+
+2136
+01:17:00,423 --> 01:17:04,400
+[clears throat] well-written guides of
+
+2137
+01:17:01,840 --> 01:17:06,480
+of how to do good software engineering
+
+2138
+01:17:04,400 --> 01:17:09,199
+are going to be useful because they can
+
+2139
+01:17:06,480 --> 01:17:11,840
+be used as input to models or you know
+
+2140
+01:17:09,199 --> 01:17:14,400
+read by other developers so that their
+
+2141
+01:17:11,840 --> 01:17:16,960
+prompts are you know more clear about
+
+2142
+01:17:14,400 --> 01:17:19,920
+what the the underlying software system
+
+2143
+01:17:16,960 --> 01:17:23,440
+should should be doing. Um, you know, I
+
+2144
+01:17:19,920 --> 01:17:25,840
+think it may not be that you need to
+
+2145
+01:17:23,440 --> 01:17:28,320
+create a custom one for every situation.
+
+2146
+01:17:25,840 --> 01:17:32,239
+If you have general guides and put those
+
+2147
+01:17:28,320 --> 01:17:35,040
+into, you know, the context of a coding
+
+2148
+01:17:32,239 --> 01:17:36,640
+agent that that can be helpful like in
+
+2149
+01:17:35,040 --> 01:17:38,159
+you can imagine one for distributed
+
+2150
+01:17:36,640 --> 01:17:39,920
+systems. You could say, okay, think
+
+2151
+01:17:38,159 --> 01:17:41,199
+about failures of these kinds of things
+
+2152
+01:17:39,920 --> 01:17:43,199
+and these are some techniques you can
+
+2153
+01:17:41,199 --> 01:17:44,960
+deal with failures. you know, you can
+
+2154
+01:17:43,199 --> 01:17:48,000
+have uh, you know, Paxos like
+
+2155
+01:17:44,960 --> 01:17:50,239
+replication or, you know, you can, uh,
+
+2156
+01:17:48,000 --> 01:17:52,320
+send the request to two places and
+
+2157
+01:17:50,239 --> 01:17:54,480
+tolerate failure because you only need
+
+2158
+01:17:52,320 --> 01:17:56,880
+one of them to come back. You know, a
+
+2159
+01:17:54,480 --> 01:17:59,040
+little description of 20 techniques like
+
+2160
+01:17:56,880 --> 01:18:01,120
+that in building distributed systems
+
+2161
+01:17:59,040 --> 01:18:04,000
+probably would go a long way to having a
+
+2162
+01:18:01,120 --> 01:18:06,480
+coding agent be able to sort of cobble
+
+2163
+01:18:04,000 --> 01:18:07,280
+up more reliable and robust distributed
+
+2164
+01:18:06,480 --> 01:18:09,600
+systems.
+
+2165
+01:18:07,280 --> 01:18:11,760
+>> Yeah. Yeah. [clears throat] Wonder when
+
+2166
+01:18:09,600 --> 01:18:13,920
+Gemini will be able to build spanner,
+
+2167
+01:18:11,760 --> 01:18:16,719
+>> right? Probably already has the code
+
+2168
+01:18:13,920 --> 01:18:18,159
+inside, you know. [laughter]
+
+2169
+01:18:16,719 --> 01:18:19,360
+>> Yeah, that I mean that's a good example,
+
+2170
+01:18:18,159 --> 01:18:22,159
+right? When you have like you know the
+
+2171
+01:18:19,360 --> 01:18:24,719
+cap theorem and it's like well this is
+
+2172
+01:18:22,159 --> 01:18:26,239
+like truth and you cannot break that and
+
+2173
+01:18:24,719 --> 01:18:28,800
+then you build something that broke it.
+
+2174
+01:18:26,239 --> 01:18:29,920
+Like I'm curious like models in a way
+
+2175
+01:18:28,800 --> 01:18:31,760
+are like [clears throat] what did he say
+
+2176
+01:18:29,920 --> 01:18:33,360
+he broke it? Would you say you broke cat
+
+2177
+01:18:31,760 --> 01:18:34,719
+theorem?
+
+2178
+01:18:33,360 --> 01:18:36,960
+>> Really? Yeah. Okay. All right.
+
+2179
+01:18:34,719 --> 01:18:39,199
+>> I mean [laughter]
+
+2180
+01:18:36,960 --> 01:18:41,199
+>> under local assumptions. Yeah. And some
+
+2181
+01:18:39,199 --> 01:18:42,000
+and they're like, you know, good clocks.
+
+2182
+01:18:41,199 --> 01:18:43,920
+>> Yeah. [laughter] It's like some
+
+2183
+01:18:42,000 --> 01:18:47,520
+sometimes you don't have to like always
+
+2184
+01:18:43,920 --> 01:18:48,960
+follow what is known to be true. And I I
+
+2185
+01:18:47,520 --> 01:18:51,120
+think models in a way like if you tell
+
+2186
+01:18:48,960 --> 01:18:53,040
+them something, they like really buy
+
+2187
+01:18:51,120 --> 01:18:56,159
+into that, you know. Um
+
+2188
+01:18:53,040 --> 01:18:58,960
+>> so yeah, just more thinking than any
+
+2189
+01:18:56,159 --> 01:19:01,280
+answer on how to fix that. Yeah, my my
+
+2190
+01:18:58,960 --> 01:19:03,440
+uh you know just on this like like big
+
+2191
+01:19:01,280 --> 01:19:05,199
+prompting and and uh iteration you know
+
+2192
+01:19:03,440 --> 01:19:07,920
+I think that coming back to your latency
+
+2193
+01:19:05,199 --> 01:19:10,159
+point um I always I always trying to one
+
+2194
+01:19:07,920 --> 01:19:13,120
+one AB test or experiment or benchmark
+
+2195
+01:19:10,159 --> 01:19:14,880
+or research I would like is what is the
+
+2196
+01:19:13,120 --> 01:19:17,040
+uh performance difference between let's
+
+2197
+01:19:14,880 --> 01:19:19,120
+say three dumb fast model calls with
+
+2198
+01:19:17,040 --> 01:19:19,840
+human alignment because the human will
+
+2199
+01:19:19,120 --> 01:19:21,760
+correct
+
+2200
+01:19:19,840 --> 01:19:24,000
+>> human alignment means the human looks at
+
+2201
+01:19:21,760 --> 01:19:27,040
+the first one and produces a new prompt
+
+2202
+01:19:24,000 --> 01:19:28,239
+for the second one as opposed to like
+
+2203
+01:19:27,040 --> 01:19:29,600
+you [clears throat] spec it out, you
+
+2204
+01:19:28,239 --> 01:19:31,440
+know, you spend a long time writing a
+
+2205
+01:19:29,600 --> 01:19:33,600
+pro a big big fat prompt and then you
+
+2206
+01:19:31,440 --> 01:19:36,239
+have a very smart model do it, right?
+
+2207
+01:19:33,600 --> 01:19:39,040
+You know, because uh really is is our
+
+2208
+01:19:36,239 --> 01:19:40,400
+lacks in performance uh an issue of
+
+2209
+01:19:39,040 --> 01:19:42,480
+like, well, you just haven't specified
+
+2210
+01:19:40,400 --> 01:19:43,679
+well enough. There's no universe in
+
+2211
+01:19:42,480 --> 01:19:44,880
+which I can produce what you want
+
+2212
+01:19:43,679 --> 01:19:46,320
+because you just haven't told me,
+
+2213
+01:19:44,880 --> 01:19:47,840
+>> right? It's underspecified. So, I could
+
+2214
+01:19:46,320 --> 01:19:49,199
+produce 10 different things and only one
+
+2215
+01:19:47,840 --> 01:19:51,520
+of them is the thing you wanted.
+
+2216
+01:19:49,199 --> 01:19:53,120
+>> Yeah. And the multi-turn taking with a
+
+2217
+01:19:51,520 --> 01:19:54,960
+flash model is enough.
+
+2218
+01:19:53,120 --> 01:19:58,159
+>> Yeah. [laughter]
+
+2219
+01:19:54,960 --> 01:20:00,320
+>> Yeah. I'm I'm a big believer in pushing
+
+2220
+01:19:58,159 --> 01:20:02,480
+on latency because I think being able to
+
+2221
+01:20:00,320 --> 01:20:04,800
+have really low latency interactions
+
+2222
+01:20:02,480 --> 01:20:06,800
+with a system you're using is just much
+
+2223
+01:20:04,800 --> 01:20:08,480
+more delightful than something that is,
+
+2224
+01:20:06,800 --> 01:20:10,400
+you know, 10 times as slow or 20 times
+
+2225
+01:20:08,480 --> 01:20:12,400
+as slow. And I think, you know, in the
+
+2226
+01:20:10,400 --> 01:20:14,480
+future, we'll see models that are and
+
+2227
+01:20:12,400 --> 01:20:17,440
+and underlying software and hardware
+
+2228
+01:20:14,480 --> 01:20:20,080
+systems that are 20x lower latency than
+
+2229
+01:20:17,440 --> 01:20:22,000
+what we have today, 50x lower latency.
+
+2230
+01:20:20,080 --> 01:20:24,800
+And that's going to be really really
+
+2231
+01:20:22,000 --> 01:20:26,800
+important for systems that need to do a
+
+2232
+01:20:24,800 --> 01:20:28,000
+lot of stuff uh between your
+
+2233
+01:20:26,800 --> 01:20:29,760
+interactions.
+
+2234
+01:20:28,000 --> 01:20:30,880
+>> Yeah. Yeah. There's two extremes, right?
+
+2235
+01:20:29,760 --> 01:20:32,239
+And then meanwhile [clears throat] you
+
+2236
+01:20:30,880 --> 01:20:33,199
+also have deep think which is all the
+
+2237
+01:20:32,239 --> 01:20:35,199
+way on the other side,
+
+2238
+01:20:33,199 --> 01:20:37,120
+>> right? [laughter] But you would use deep
+
+2239
+01:20:35,199 --> 01:20:39,920
+think all the time if it weren't for
+
+2240
+01:20:37,120 --> 01:20:42,400
+cost and latency, right? If if you could
+
+2241
+01:20:39,920 --> 01:20:45,520
+have that capability in a model because
+
+2242
+01:20:42,400 --> 01:20:47,199
+the latency improvement was 20x uh in
+
+2243
+01:20:45,520 --> 01:20:49,360
+the underlying hardware and system and
+
+2244
+01:20:47,199 --> 01:20:50,480
+costs, you know, there's no reason you
+
+2245
+01:20:49,360 --> 01:20:52,480
+wouldn't want that.
+
+2246
+01:20:50,480 --> 01:20:53,840
+>> Yeah.
+
+2247
+01:20:52,480 --> 01:20:56,400
+But at the same time, then you'd
+
+2248
+01:20:53,840 --> 01:20:58,800
+probably have a model that is even
+
+2249
+01:20:56,400 --> 01:21:00,560
+better that would take you 20 times
+
+2250
+01:20:58,800 --> 01:21:03,120
+longer even on that new hardware.
+
+2251
+01:21:00,560 --> 01:21:05,440
+>> Yeah. Uh you know that there's the Fredo
+
+2252
+01:21:03,120 --> 01:21:06,880
+curve keeps climbing. Um
+
+2253
+01:21:05,440 --> 01:21:09,199
+>> yeah,
+
+2254
+01:21:06,880 --> 01:21:10,719
+>> onward and outward. on way. [laughter]
+
+2255
+01:21:09,199 --> 01:21:12,480
+>> Yeah. Should we ask him for predictions
+
+2256
+01:21:10,719 --> 01:21:14,480
+to to go? I don't know if you have any
+
+2257
+01:21:12,480 --> 01:21:17,199
+>> predictions that you that you like to
+
+2258
+01:21:14,480 --> 01:21:19,520
+keep, you know, like uh one one way to
+
+2259
+01:21:17,199 --> 01:21:21,920
+do this is you have your tests whenever
+
+2260
+01:21:19,520 --> 01:21:23,840
+a a new model comes out that you run. Uh
+
+2261
+01:21:21,920 --> 01:21:26,320
+what's something that you're not quite
+
+2262
+01:21:23,840 --> 01:21:28,560
+happy with yet that you think will get
+
+2263
+01:21:26,320 --> 01:21:30,880
+done soon?
+
+2264
+01:21:28,560 --> 01:21:33,040
+>> Um
+
+2265
+01:21:30,880 --> 01:21:34,080
+let me make two predictions that are not
+
+2266
+01:21:33,040 --> 01:21:37,280
+quite in that vein.
+
+2267
+01:21:34,080 --> 01:21:39,360
+>> Yeah. So I think a personalized model
+
+2268
+01:21:37,280 --> 01:21:41,760
+that knows you and knows all your state
+
+2269
+01:21:39,360 --> 01:21:44,960
+and is able to retrieve over all state
+
+2270
+01:21:41,760 --> 01:21:47,120
+you have access to that you opt into is
+
+2271
+01:21:44,960 --> 01:21:48,640
+going to be incredibly useful compared
+
+2272
+01:21:47,120 --> 01:21:51,120
+to a more generic model that doesn't
+
+2273
+01:21:48,640 --> 01:21:53,040
+have access to that. So like can
+
+2274
+01:21:51,120 --> 01:21:56,080
+something attend to everything I've ever
+
+2275
+01:21:53,040 --> 01:21:58,080
+seen, every email, every photo, every
+
+2276
+01:21:56,080 --> 01:22:02,880
+video I've watched. That's going to be
+
+2277
+01:21:58,080 --> 01:22:04,800
+really useful. uh I think uh more and
+
+2278
+01:22:02,880 --> 01:22:07,199
+more specialized hardware is going to
+
+2279
+01:22:04,800 --> 01:22:10,239
+enable much lower latency models and
+
+2280
+01:22:07,199 --> 01:22:13,600
+much more capable models for affordable
+
+2281
+01:22:10,239 --> 01:22:15,840
+prices uh than say the current current
+
+2282
+01:22:13,600 --> 01:22:16,719
+status quo. Uh that's going to be also
+
+2283
+01:22:15,840 --> 01:22:19,120
+quite important.
+
+2284
+01:22:16,719 --> 01:22:20,639
+>> Yeah. When you say much lower latency,
+
+2285
+01:22:19,120 --> 01:22:22,719
+uh people usually talk in tokens per
+
+2286
+01:22:20,639 --> 01:22:24,960
+second. Is that a term that is okay?
+
+2287
+01:22:22,719 --> 01:22:27,679
+Okay. Uh you know [clears throat] we're
+
+2288
+01:22:24,960 --> 01:22:30,400
+at let's say 100 now. Yeah, we can go to
+
+2289
+01:22:27,679 --> 01:22:31,280
+the thousands. Is it meaningful to go 10
+
+2290
+01:22:30,400 --> 01:22:32,000
+thousands?
+
+2291
+01:22:31,280 --> 01:22:32,960
+>> Yes.
+
+2292
+01:22:32,000 --> 01:22:34,000
+>> Really? Okay.
+
+2293
+01:22:32,960 --> 01:22:35,760
+>> Absolutely. Right.
+
+2294
+01:22:34,000 --> 01:22:36,080
+>> Yeah. Because of chain of thought and
+
+2295
+01:22:35,760 --> 01:22:37,360
+all
+
+2296
+01:22:36,080 --> 01:22:39,920
+>> chain of thought reasoning. I mean you
+
+2297
+01:22:37,360 --> 01:22:41,600
+could think you know uh many more
+
+2298
+01:22:39,920 --> 01:22:43,760
+tokens. You could do many more parallel
+
+2299
+01:22:41,600 --> 01:22:46,320
+rollouts. You could generate way more
+
+2300
+01:22:43,760 --> 01:22:48,320
+code uh and check that the code is
+
+2301
+01:22:46,320 --> 01:22:50,080
+correct with uh chain of thought
+
+2302
+01:22:48,320 --> 01:22:51,760
+reasoning. So I think you know being
+
+2303
+01:22:50,080 --> 01:22:52,800
+able to do that at 10,000 tokens per
+
+2304
+01:22:51,760 --> 01:22:54,480
+second would be awesome.
+
+2305
+01:22:52,800 --> 01:22:56,000
+>> Yeah. At 10,000 tokens per second you
+
+2306
+01:22:54,480 --> 01:22:58,400
+are no longer reading code. Yeah. like
+
+2307
+01:22:56,000 --> 01:23:00,320
+you'll just generate it. You'll not
+
+2308
+01:22:58,400 --> 01:23:03,920
+remember it may not it may not
+
+2309
+01:23:00,320 --> 01:23:05,760
+>> end up with 10,000 tokens of code
+
+2310
+01:23:03,920 --> 01:23:07,760
+a thousand tokens of code that with
+
+2311
+01:23:05,760 --> 01:23:08,320
+9,000 tokens of reasoning behind it.
+
+2312
+01:23:07,760 --> 01:23:09,760
+>> Yeah. Yeah.
+
+2313
+01:23:08,320 --> 01:23:11,120
+>> Which would actually be probably much
+
+2314
+01:23:09,760 --> 01:23:12,080
+better code to read.
+
+2315
+01:23:11,120 --> 01:23:13,840
+>> Yeah. Yeah.
+
+2316
+01:23:12,080 --> 01:23:15,679
+>> Yeah. If I had more time, I would have
+
+2317
+01:23:13,840 --> 01:23:16,719
+written a shorter letter.
+
+2318
+01:23:15,679 --> 01:23:19,199
+>> Yeah. Yeah.
+
+2319
+01:23:16,719 --> 01:23:20,320
+>> Um awesome, Jeff. This was amazing.
+
+2320
+01:23:19,199 --> 01:23:21,920
+Thanks for making the time.
+
+2321
+01:23:20,320 --> 01:23:25,400
+>> Thank you. It's been it's been fun.
+
+2322
+01:23:21,920 --> 01:23:25,400
+Thanks for having me.
+
+2323
+01:23:26,222 --> 01:23:28,242
+>> [music]
+

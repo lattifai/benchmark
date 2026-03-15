@@ -1,0 +1,51 @@
+From rewriting Google’s search stack in the early 2000s to reviving sparse trillion-parameter models and co-designing TPUs with frontier ML research, Jeff Dean has quietly shaped nearly every layer of the modern AI stack. As Chief AI Scientist at Google and a driving force behind Gemini, Jeff has lived through multiple scaling revolutions from CPUs and sharded indices to multimodal models that reason across text, video, and code.
+
+Jeff joins us to unpack what it really means to “own the Pareto frontier,” why distillation is the engine behind every Flash model breakthrough, how energy (in picojoules) not FLOPs is becoming the true bottleneck, what it was like leading the charge to unify all of Google’s AI teams, and why the next leap won’t come from bigger context windows alone, but from systems that give the illusion of attending to trillions of tokens.
+
+We discuss:
+• Jeff’s early neural net thesis in 1990: parallel training before it was cool, why he believed scaling would win decades early, and the “bigger model, more data, better results” mantra that held for 15 years
+• The evolution of Google Search: sharding, moving the entire index into memory in 2001, softening query semantics pre-LLMs, and why retrieval pipelines already resemble modern LLM systems
+• Pareto frontier strategy: why you need both frontier “Pro” models and low-latency “Flash” models, and how distillation lets smaller models surpass prior generations
+• Distillation deep dive: ensembles → compression → logits as soft supervision, and why you need the biggest model to make the smallest one good
+• Latency as a first-class objective: why 10–50x lower latency changes UX entirely, and how future reasoning workloads will demand 10,000 tokens/sec
+• Energy-based thinking: picojoules per bit, why moving data costs 1000x more than a multiply, batching through the lens of energy, and speculative decoding as amortization
+• TPU co-design: predicting ML workloads 2–6 years out, speculative hardware features, precision reduction, sparsity, and the constant feedback loop between model architecture and silicon
+• Sparse models and “outrageously large” networks: trillions of parameters with 1–5% activation, and why sparsity was always the right abstraction
+• Unified vs. specialized models: abandoning symbolic systems, why general multimodal models tend to dominate vertical silos, and when vertical fine-tuning still makes sense
+• Long context and the illusion of scale: beyond needle-in-a-haystack benchmarks toward systems that narrow trillions of tokens to 117 relevant documents
+• Personalized AI: attending to your emails, photos, and documents (with permission), and why retrieval + reasoning will unlock deeply personal assistants
+• Coding agents: 50 AI interns, crisp specifications as a new core skill, and how ultra-low latency will reshape human–agent collaboration
+• Why ideas still matter: transformers, sparsity, RL, hardware, systems — scaling wasn’t blind; the pieces had to multiply together
+
+Substack Article w/Show Notes: https://www.latent.space/p/jeffdean
+
+—
+
+Jeff Dean
+• LinkedIn: https://www.linkedin.com/in/jeff-dean-8b212555
+• X: https://x.com/jeffdean
+
+Google
+• https://google.com
+• https://deepmind.google
+
+00:00:00 Intro
+00:01:31 Frontier vs Flash & Distillation Strategy  
+00:05:09 Distillation, RL & Flash Economic Advantage  
+00:07:35 Flash in Products + Importance of Latency  
+00:11:11 Benchmarks, Long Context & Real Use Cases  
+00:15:01 Attending to Trillions of Tokens & Multimodality  
+00:20:11 LLM Search & Google Search Evolution  
+00:24:09 Systems Design Principles + Latency Numbers  
+00:32:09 Energy, Batching & TPU Co-Design  
+00:42:21 Research Frontiers: Reliability & RL Challenges  
+00:46:27 Unified Models vs Symbolic Systems (IMO)  
+00:50:38 Knowledge vs Reasoning + Vertical/Modular Models  
+00:55:58 Multilingual + Low-Resource Language Insights  
+00:57:58 Vision-Language Representations Example  
+01:07:15 Gemini Origin Story + Organizational Memo  
+01:09:27 Coding with AI & Agent Interaction Style  
+01:14:26 Prompting Skills & Spec Design  
+01:19:54 Latency Predictions & Tokens/sec Vision  
+01:21:29 Future Predictions: Personal Models & Hardware  
+01:23:11 Closing
