@@ -277,5 +277,3 @@ Lace, thank you so much for joining us today. It's been an honor.
 Blaise Agüera y Arcas
 [(00:59:49)](#3589)
 Thank you. Thank you for the the really thoughtful questions.
- 
-Show Topics

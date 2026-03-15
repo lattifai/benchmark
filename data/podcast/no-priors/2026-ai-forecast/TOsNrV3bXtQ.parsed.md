@@ -340,4 +340,4 @@ But in the long term, we think it's the chips that matter more. Happy holidays. 
 
 Unknown
 [(00:40:31)](https://www.youtube.com/watch?t=2431)
-Subscribe to our YouTube channel if you want to see our faces, follow the show on Apple Podcasts, Spotify, or wherever you listen. That way you get a new episode every week. And sign up for emails or find transcripts for every episode at no-dashpires.com. There aren't comments yet for this episode. Click on any sentence in the transcript to leave a comment. DO NOT SELL OR SHARE MY PERSONAL INFORMATION What is this? Report Ad OK: 326257 bytes (scripts stripped)
+Subscribe to our YouTube channel if you want to see our faces, follow the show on Apple Podcasts, Spotify, or wherever you listen. That way you get a new episode every week. And sign up for emails or find transcripts for every episode at no-dashpires.com.

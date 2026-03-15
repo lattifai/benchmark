@@ -572,4 +572,4 @@ Yeah. A lot, thank you. Thank you. Thanks, Johnson. Happy New Year. Yeah. Find u
 
 Unknown
 [(01:16:06)](https://www.youtube.com/watch?t=4566)
-if you want to see our faces, follow the show on Apple Podcasts, Spotify, or wherever you listen. That way you get a new episode every week. And sign up for emails or find transcripts for every episode at no dash priors.com. There aren't comments yet for this episode. Click on any sentence in the transcript to leave a comment. DO NOT SELL OR SHARE MY PERSONAL INFORMATION What is this? Report Ad OK: 471865 bytes (scripts stripped)
+if you want to see our faces, follow the show on Apple Podcasts, Spotify, or wherever you listen. That way you get a new episode every week. And sign up for emails or find transcripts for every episode at no dash priors.com.
