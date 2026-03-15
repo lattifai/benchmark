@@ -1,0 +1,792 @@
+---
+url: https://app.rescript.info/public/share/VX7Gktfr3_wIn4Bj7cl9StPBO1MN4R5lcJ11NE99hLg
+title: "Blaise Agüera y Arcas: Life, Intelligence, and Embodied Computation | MLST ReScript"
+description: "Blaise Agüera y Arcas: Life, Intelligence, and Embodied Computation | Public MLST transcript, episode notes, and downloadable PDF edition."
+captured_at: "2026-03-15T09:44:23.409Z"
+---
+
+# Blaise Agüera y Arcas: Life, Intelligence, and Embodied Computation | MLST ReScript
+
+![ReScript](https://app.rescript.info/logos/combination_mark_yellow.svg)
+
+Shared Review
+
+ReScript
+
+Save Offline
+
+# Blaise Agüera y Arcas: Life, Intelligence, and Embodied Computation
+
+YouTube
+
+TranscriptTopics Map
+
+CopyReading
+![](https://files.rescript.info/static/media/pdf-file-icon.6279a47b4effd0a7eae7.png)PDF
+Transcript
+
+Book Intro & Bio
+
+Book Intro & Bio
+
+00:00 - 02:312m 31s
+
+Blaise Agüera y Arcas
+
+00:00:00
+
+The new book, so it it's called What is Intelligence? Thank you for asking. It was just published by MIT Press, you know, 3 or so weeks ago. So it's it's very it's fresh off the presses. There's an online version of it as well that is free and and very rich and it's tonic, know, full of full of all kinds of all kinds of rich media. Chapter 1 of that book is called What is Life? So What is Life is sort of the the single to the album and works as a book in its own right. So that that book is also for sale from MIT Press. I think I've explained why I think of life as being a subset of intelligence, you know, why the story of of artificial life and abiogenesis and so on is relevant to the story of intelligence and what it is. But, yeah, the subtitle of the book is, lessons from AI about, evolution and minds and something something. So, you know, it's it's basically, documenting the time since about 2020 when I when I got really shocked by seeing that that these, large sequence models, seemed to be generally intelligent and just starting to think through the implications of that, you know, what would it mean if, you know, if we believe our eyes and that is what intelligence is. What does that tell us about ourselves, about the properties of intelligence more broadly, and and the whole intellectual journey that that that that has taken us on in the last in the last few years.
+
+Dr. Tim Scarfe
+
+00:01:20
+
+MLST is supported by Cyber Fund.
+
+Prolific CEO
+
+00:01:23
+
+Thumb Phalem, I'm the co founder and CEO of Prolific. And, Prolific is a human data infrastructure company. So we make it easy for people developing frontier AI models, and running research to get access to trustworthy high quality participants for high quality online data collection.
+
+Blaise Agüera y Arcas
+
+00:01:47
+
+I'm at Google. I've been there for about 12 years now and, I am their CTO of technology and society and also the founder of a new research group. Well, newish. We've been around for a couple of years called Paradigms of Intelligence or PIE. It's much smaller than the previous organization that I, that I ran at Google Research. It's about 50 people, so, you know, enough to do some real damage. And the idea is to really focus on fundamentals of, of artificial intelligence and go beyond the the sort of exploiting of the current models and paradigms that are working well. We we believe in those, but we also think that we have to sort of refill the bucket with with new insights and new ideas as well.
+
+Life as Computation & Von Neumann
+
+Life as Computation & Von Neumann
+
+02:31 - 04:562m 25s
+
+Dr. Tim Scarfe
+
+00:02:31
+
+I've just watched your talk and you said that life and intelligence are the same thing.
+
+Blaise Agüera y Arcas
+
+00:02:36
+
+They are both computational. What do you mean by that? Yeah. This is a a surprising claim. I I know it I know it sounds a bit odd, but what I mean by that is well, let's let's begin with life and why life is computational. So, in the middle of the twentieth century, John von Neumann, was 1 of the founders of computer science, of course, realized that in order for a robot paddling around on a pond, let's suppose the robot is made out of LEGOs and its job is to make another robot out of loose LEGOs that it finds floating around in the pond just like itself. In order to do that, it needs to have instructions inside itself. So he imagined a tape with with instructions for how to assemble a Mii, and the the robot would also have to have a machine inside itself that would be able to walk along that tape and follow those instructions to take the loose lipos and put them together into into its own form. And it would also have to have a tape copier, so that it could endow the the offspring with with that tape, and the tape would have to include the instructions for the copier and the the assembler, the universal constructor, as he called it. So the cool thing is that he he made all of those predictions, if you like, on the basis of pure theory before Watson and Crick and their unacknowledged collaborators had figured out the structure and function of DNA, before we knew how ribosomes worked, which are in fact exactly that that universal constructor, before we had discovered DNA polymerase, which is the tape copier. And and in fact, you know, all of those things have to exist in order for for an organism to not only be able to reproduce itself, but to do so heritably, such that if you make a change in its genome and what's on the tape, then the offspring will also have that change. The kicker is that this universal constructor is a universal Turing machine. In other words, you have to have a computer inside yourself as a cell in order to make another cell, and DNA is in this very literal sense a Turing tape. So, you know, it's it's a very profound insight because, you know, basically he's saying, you cannot be a living organism without literally being a computer, a universal computer. Very interesting. So are you saying that DNA is basically a computer program? DNA is a computer program.
+
+Cellular Automata & Embodied Computation
+
+Cellular Automata & Embodied Computation
+
+04:56 - 07:412m 45s
+
+Dr. Tim Scarfe
+
+00:04:56
+
+Yes. Very cool. Because many folks in the audience would have been inspired by Conway's Game of Life, for example. And you were talking about computational equivalence.
+
+Blaise Agüera y Arcas
+
+00:05:04
+
+Yes.
+
+Dr. Tim Scarfe
+
+00:05:05
+
+So the Game of Life, of course, is Turing complete because it has an expandable memory. Just as DNA has an expandable memory, the the grid size could just keep growing. As you're pointing to, when we see these weakly emergent behaviors, they appear very lifelike. But does that in any way downplay the biochemical and thermodynamic realities in the physical world?
+
+Blaise Agüera y Arcas
+
+00:05:32
+
+Of course. I mean, a cellular automaton like like the game of life is a lot less is a lot less complex than the than the real world. It's in 2 dimensions rather than 3. There's no thermal randomness which turns out to be very important actually. And and and the fact that that the computation is is deterministic is a little different from, you know, from real life where where those thermal fluctuations mean that there's always a a probabilistic element to things. And you do have to extend Turing's original ideas about computation to make a so called stochastic Turing machine in order to really do a proper job. But but what what von Neumann was getting at, and and I'm glad you you bring up cellular automata because they're really a generalization of the Turing machine to the laws of physics where where you essentially every pixel on your game board, if you like, is performing a computation as what has a state and it's performing some very simple computation to say what's the next state on the basis of the neighbors. So the the idea is that those those rules that are that are determining the next state of a particular pixel are the laws of physics of that universe. And the reason that that Von Neumann came up with with this idea with solar automata is because he wanted a system that would that would allow 1 to do computation, but in which the computation is embodied. And what I mean by that is, in a Turing machine, there's a tape and there's a head, and then there are the symbols that are written on the tape. But the symbols are not the same stuff as the tape and the head and and the instruction or the or the the table of of rules. Right? Those things are are abstract and they're separate from the symbols that are written. Whereas in a in a cellular automaton, the machine can literally print itself. So it's like not just a laptop if you like, but like a laptop and a 3 d printer in 1 that can print another laptop. So embodied computation is computation where the the memory is is written and read in atoms rather than in bits, and and and therefore the machine can make another of
+
+Evolutionary Speed: DNA vs Nervous Systems
+
+Evolutionary Speed: DNA vs Nervous Systems
+
+07:41 - 09:261m 45s
+
+Blaise Agüera y Arcas
+
+00:07:40
+
+itself.
+
+Dr. Tim Scarfe
+
+00:07:41
+
+David Krakauer said to me that, I mean, you know, we can agree that intelligence, I mean, he says it's an adaptivity inference and representation. Adaptivity is very important. So, yes, DNA is is adaptive, but it's very slow. And he was saying that the nervous system and the brain is evolution at light speed because it allows us to kind of overcome the information transfer with successive generations. So does it make sense to think of the program of intelligence at the DNA level when so much of the adaptivity seems to be happening higher up? A lot of
+
+Blaise Agüera y Arcas
+
+00:08:16
+
+the adaptivity very much happens higher up. So, you know, in humans we have cultural evolution which goes, you know, as as David says, at light speed relative to genetic evolution. You know, when I say that that, you know, DNA is a is a Turing tape and that, you know, ribosomes are universal computers that construct life, that's really only the ground level. Or maybe it's level 1 or level 2. I mean, there's physics underneath that. But there are there's a level 3, a level 4, a level 5, and so on. There are computers built out of computers built out computers. The thing about it is that once you have that ground level, then then you can build as many as many floors above that as you like. The the point is that the moment you have life, meaning that you have something that can build a copy of itself, you have a general computer, which allows you to do anything. And what that means is that life from the very beginning, is computational and can start to compute in parallel. This gets us into symbiogenesis, which I guess we'll we'll cover in a bit. The fact that that ground floor is computational answers the question, you know, why are brains computational? It's because cells were computational from long before. There were action potentials and other fast fast electrical processes allowing us to think.
+
+Nesting, Recursion, & Parallelism
+
+Nesting, Recursion, & Parallelism
+
+09:26 - 11:191m 53s
+
+Dr. Tim Scarfe
+
+00:09:26
+
+Can you speak to this notion of recursion that you were just pointing to? So Carl Friston, for example, he he thinks about this division in systems called a Markov blanket, like a statistical independence. And we seem to observe empirically that complex intelligent adaptive systems have nesting. And you were just kind of speaking to having levels upon levels upon levels. And what does that buy you? Is is is it a kind of recursion? How how does that in improve the sophistication of the intelligence?
+
+Blaise Agüera y Arcas
+
+00:09:58
+
+Yeah. Well, 2 things happen. 1 of them is things inside things inside things, and the other 1 is parallelism. In other words, a lot of things at the same level happening at once. And and they're both important. They're both important parts of the story. So first of all, you know, when you have a cellular automaton like like von Neumann was imagining, that's already massively parallel computation because every pixel is like a little computer doing its thing. In the same way that in physical space, you know, every there there can be molecules, you know, in a lot of spots, you know, all of which are doing something. You can think of them as as operations, as computational operations perhaps. And they're all happening at once. So, know, in your in your body, you have quintillions of ribosomes, and all of those ribosomes are little tiny universal computers working in all of your cells at once. All of your cells are working at once. But also, there is nesting because, you know, you are a person, of course, you're already a part of a society which in some sense is an intelligence bigger than an individual human. You're made out of cells, Those cells are made out of organelles. Those organelles are made out of proteins. Those proteins are made out of molecules. You know, that that sort of nestedness is really important as well. You're you're not only a lot of computers working together in parallel, but you're also, you know, a a system of computers made of
+
+BFF Experiment: Purpose from Randomness
+
+BFF Experiment: Purpose from Randomness
+
+11:19 - 14:513m 32s
+
+Blaise Agüera y Arcas
+
+00:11:18
+
+computers.
+
+Dr. Tim Scarfe
+
+00:11:19
+
+1 thing I find fascinating that you've thought a lot about, Blaise, is where the purpose comes from. Folks like Half Wriston, for example, they have a no nonsense physics interpretation that is the second law of thermodynamics at the end of the day. Because there's some notion of valence that we build these complex adaptive systems, and there needs to be something that drives them forward, something that propels them in a certain direction. And your experiments have shown that this kind of falls out of computation. What do you mean by that?
+
+Blaise Agüera y Arcas
+
+00:11:51
+
+Yes. And to be clear, computation and the second law very much work together here. So, the the experiment that that, that I did a couple of years ago that I I that that really sort of, you know, got me started with with artificial life is called BFF. It's it's based on a language called brain fuck, which is where the first BFF come from. I didn't I didn't name it that. Although I admit, I was, you know, I enjoyed that that it was called that. But this is a a minimal Turing complete language, designed by, by a by a grad student. I think he was a grad student in physics, Urbain Miller in the nineties. It's a very minimal language. It has only only 8 instructions. I only use 7 of them. And the basic setup is that I begin with a bunch of tapes of length 64. So just 64 byte long tapes like those Turing tapes or or or or Von Neumann's tapes. They start off filled with random bytes. There are only 7 instructions, so the great majority of those bytes, about 31 out of 32 of them are no ops, meaning that they don't they don't code for any instruction at all. So they start off random and very much purposeless. You have a thousand of them in your soup, and the procedure is really simple. It's just plucking 2 of those tapes at random out of the soup, sticking them end to end, so you make 1 tape that is a 128 long, and then running it. And this modification of brain fuck is self modifying, meaning that when you run it, it can modify values on on that combined tape. And then pulling the tapes back apart and dropping them back in the soup and that's it. And you just repeat that process. If you do that a few million times, you start off with nothing much going on. I mean, again, you know, the huge majority of those of those bites are not even instructions. They're only an average of 2 of them or so on each tape, so the likelihood of them doing anything is almost 0. You know, you might once in a while see 1 bite somewhere change. But, after a few million interactions, something apparently magical happens, which is that, suddenly the entropy of the soup drops dramatically, so it goes from being incompressible because it's all random bytes to being very highly compressible and programs emerge on those tapes. And those programs are are complex, they they take some real effort to reverse engineer and and you can see that they are they're occurring in a lot of copies. That's why it's compressible. The fact that they're occurring in a lot of copies tells you what the programs are doing. They're they're reproducing. They're copying themselves. So, you know, what's so cool about this experiment is that it really shows you how life emerges from nothing. And and the emergence of life is in some sense the emergence of purpose. You know, in this case, you know, what is the purpose of 1 of these programs? Well, it is to reproduce. If you were to mess with 1 of those bytes, if you were to change it, you would in most cases break the program and when you break the program, it no longer functions to reproduce. So, you know, something that can break is something that is functional or that
+
+Thermodynamics of Emergence
+
+Thermodynamics of Emergence
+
+14:51 - 18:303m 39s
+
+Blaise Agüera y Arcas
+
+00:14:50
+
+has purpose.
+
+Dr. Tim Scarfe
+
+00:14:51
+
+Absolutely fascinating. So you said there was a phase change which was quite sudden. Would David Krakauer acknowledge that as being a form of emergence?
+
+Blaise Agüera y Arcas
+
+00:15:01
+
+I think so. Yeah. I mean, I've actually never asked David that question. We we disagree on a lot of things AI related, but I I think he would acknowledge that this is a phase change and that it is an example of emergence. Yes.
+
+Dr. Tim Scarfe
+
+00:15:14
+
+I think he would, because he he has a bunch of criteria, but 1 of them is is a fundamental coarse graining and reorganization of the micro substrate such that the new phenomena can be described with with a, you know, with within, you know, simple new variable. And this seem this seems to to to match that description. Is it possible that there's some kind of design bias or, you you know, like when we design machine learning architectures, there's so much information in the architecture. And and in this case, there's so much information in the brain fuck language and and and the terms and and so on. Could that have kind of influenced it to emerge in a certain way?
+
+Blaise Agüera y Arcas
+
+00:15:50
+
+Yes. Yes. And and the structure of those programs does change depending on the language. We have tried this with other languages. We've tried it with z 80 assembly language, which is the the the assembly language of these Zilog chips that I I that were were invented sometime in the seventies and and just got discontinued last year, a very long running microprocessor architecture. It's so the phenomenon is very generic. What those programs look like is is shaped by by the specifics of the language, but the reason that those programs emerge, the reason that they develop purpose is actually thermodynamic. So, you know, that that might seem puzzling because you would think thermodynamics is about things becoming more random and the apparently, the exact opposite is happening here. You start with randomness and you get order and, you know, how could that be? Well, I I think the answer was actually well characterized by a chemist, by an organic chemist, Adi Pross, who at the at the University of the Negev in Israel, who is now emeritus and he did a lot of work on so called dynamic kinetic stability. The idea being that it's an extension of the second law that says things seek their most stable state, their most stable form. You know, usually we think about those stabilities as only being fixed points, but those stabilities can be cycles too. So if something dynamically makes itself, if something forms more copies of itself, that's more stable than something that just settles. You know, it's the old joke about DNA being the stablest molecule in the universe. Obviously, DNA is fragile, But at the same time, if the DNA makes more DNA, then, you know, it will be around a long time after granite, you know, which can only erode.
+
+Dr. Tim Scarfe
+
+00:17:31
+
+In terms of this valence question though, does that imply to you that there is a natural drive to survive almost? I mean, for for these systems to kind of maintain their existence, they assuming that's a primary force, they would need to have a degree of sophistication. They would need to be doing modeling. They would need to be doing sophisticated things. So is that something that just always, know, is it a convergent property?
+
+Blaise Agüera y Arcas
+
+00:17:56
+
+Yes. It is. In in that sense, evolution is the second law at work. Meaning, if you have a bunch of things that are not copying themselves in the BFF soup and you have something that emerges that can copy itself, then that thing that can copy itself will write over the things that can't copy themselves, which means it's more fit or more stable, if you like. And so that that is written into the laws of statistics in just the same way that the second law is. It's just the the kinetic or the or the cyclic form of that of that same law rather than than just
+
+Dr. Tim Scarfe
+
+00:18:29
+
+the steady
+
+Symbiogenesis vs. Mutation
+
+Symbiogenesis vs. Mutation
+
+18:30 - 21:333m 3s
+
+Dr. Tim Scarfe
+
+00:18:29
+
+state. You said in your talk that merging is more important than mutation. Tell me more.
+
+Blaise Agüera y Arcas
+
+00:18:37
+
+So the usual thing, what we learned in school was that Darwinian evolution consists of mutation and selection or what Jacques Monod, the Nobel winner, called chance and necessity. So, you know, in other words, mutations maybe from cosmic rays or whatever to our DNA sort of throw spaghetti at the wall and and whatever sticks is what is what remains, whatever doesn't kill us and and and whatever hopefully makes us stronger. That was my assumption as well, you know, starting out with these BFF experiments and and so I I had a mutation rate, you know, where a byte could change at random with probability 1 in 10,000 or something, you know, with with every interaction. And then I began playing with the mutation rate and found that this emergence of these complex programs occurred even when the mutation rate was turned down to 0, which is really a surprising finding. It tells you that this emergence of purpose comes about, you know, even without any any random changes in in the code. It's it's not explainable in in purely Darwinian terms, but, you know, the other things that are not explainable in purely Darwinian terms are the emergence of life in the first place. This greatly puzzled Darwin, you know, he he thought this problem of abiogenesis or the emergence of life was just, you know, impossible to to reckon with, you know, you might as well talk about the origin of matter is how he put it in 1 of his letters. And the other thing I can't explain is the increases in complexity that occur. You know, why is life now more complex than bacterial life, you know, a million you know, billion years after it began on earth? You know, why are do we have human societies now and if we go back, you know, a hundred million years we had only, you know, things with much simpler brains. We had octopuses, had pretty complex brains, but anyway, but, you know, the the tendency has been toward toward greater complexity. There there are some people who have argued against that, you know, famously, Stephen Jay Gould, you know, has said things like, you know, everything on earth is is this is the same amount of all. We've all been evolving for, you know, 3000000000 years. It's all equally evolved. I think I think Gould was wrong, when he said this. The reason being symbiogenesis. When when you have a eukaryote formed by a a mitochondrion being sort of, you know, finding itself inside an archaea and then, you know, becoming a eukaryote, that resulting composite organism is more complex than either of the 2 parts that made it up. In the same way that a spear is more complex than a stick and a stone point. You know, you you put 2 things together, you now have a you have something more complex than the parts. And and if if this if this idea that symbiosis or symbiogenesis is is an essential part of evolution is correct, then you absolutely get more sophisticated things coming about later in evolution because they're being put together from pre existing parts.
+
+Complexity Jumps & Horizontal Transfer
+
+Complexity Jumps & Horizontal Transfer
+
+21:33 - 25:163m 43s
+
+Dr. Tim Scarfe
+
+00:21:33
+
+Yeah. I wanted to touch on the the because I said that the same thing on the show many times that inspired by Kenneth Stanley actually, that we see this monotonic increase in complexity and and and evolution.
+
+Blaise Agüera y Arcas
+
+00:21:43
+
+In in standard Darwinian evolution, there is no reason for things to become more complex. Right. So in other words, if you if you just do the spaghetti throwing at the wall thing, then you could get simplifications or complexifications, you know, and then they're they're equal. There's there's nothing to favor 1 over the other a priori. Yeah. So ordinary Darwinian evolution, you know, can can either make things simpler or more complex. But symbiogenesis, which is, you know, the the this coming together of parts to make wholes, and and these major revolutionary transitions that you just mentioned, this is the theory of Jor Sathmarie and John Maynard Smith that they published in Nature in 1995. They they only had it like 8 of them in their original paper and they've since extended it to maybe a dozen, you know, but things like single cells coming together to make bodies, individuals coming together to make colonies, the emergence of sexual reproduction, the endosymbiosis of chloroplasts and of mitochondria, there are few others. Right? Those are very clearly steps upward in complexity and and the reason that that it's trivial to prove that there are steps upward is because if you have a which is reproducing and can make more of itself, and you have b, which is reproducing and can make more of itself, think of them each as having a tape, right, that says how to make a me, then when they come together, the result has to both know how to make a and how to make b and how to put them together. And that little extra bit of information, how to put them together, is what makes the whole necessarily more complex than the parts. So that that is the the the latter. And and where where I go beyond what Smith and Sathamari say is that for them, major transitions are are a rare and exceptional event. But I I think that if you look more closely at the way biology works, that's just the tip of the iceberg. Those are just the really big transitions that involved, you know, 2 large, you know, highly consequential things, you know, merging in some way or or many cells, you know, merging into something qualitatively extremely different. But but when you look more closely, you see horizontal gene transfer in bacteria all the time. That's also a form of of symbiogenesis where, you know, parts of 1 thing get muddled up in another. You see horizontal gene transfer in eukaryotes like us all the time. Apparently, a quarter of the cow genome is this BoV b transposon which has jumped around among lizards and all kinds of other animals as well. Viruses do this all the time. They they, you know, retroviruses insert big chunks of their genomes into ours. And, you know, the the big shock when you look at at our genome when it was first sequenced in 2001 is that only 1 and a half percent of that is even, you know, our proteins. And what the hell is the rest of it? You know, that there's the junk DNA. Now, we know it's not all junk. You know, a lot of it has regulatory functions and so on, but even so, that's a lot you know, there's a lot of other stuff in there. And a huge amount of it is retrotransposons and retroviruses that have been endogenized. They serve functional purposes in many cases. The mammalian placenta was made out of, a virus, related to, the RSV virus which fuses lung cells together and can make babies sick that fuses together the cells in our placenta to make this this this blood blood barrier. Or there's an ARC virus. We don't really understand how it works but it lives in our brains and we know that if we knock it out in mice they can't form new memories. And and it goes on and on, you know, and especially in the last decade, we we find more and more examples of functional instances of bits of genome from 1 thing ending up in another and changing it.
+
+Dr. Tim Scarfe
+
+00:25:15
+
+1
+
+The Merge Operator & Technology
+
+The Merge Operator & Technology
+
+25:16 - 29:164m 0s
+
+Dr. Tim Scarfe
+
+00:25:16
+
+thing I wanna touch on is is the importance of the merge operator. We were talking about that earlier. Even Chomsky spoke about this. And you could argue whether the merge operator in language evolution was the Prometheus moment, whether it was phylogenetic or ontogenic. Because you were just talking about this, you know, this symbiosis and merging in a physical substrate, but it also happens in the information substrate. You get you get this kind of like memetic computer programs that ensconced themselves and maybe language was that, you know, I don't I don't know. But I I have a theory why merge is so important as opposed to to random selection. So I think creativity is is about grounding. It it's about path dependence, basically. So even the retroviruses and and all of these things, they they actually they form a lineage. And I think that if you don't use merge, you lose the lineage. And also something about the recursive merge operation allows you to build more complex computer programs, but allowing for this kind of reuse and canalization. There's something very natural about that.
+
+Blaise Agüera y Arcas
+
+00:26:17
+
+Yeah. I I completely buy everything that you're saying. I think that's exactly right. Except that I dislike Chomsky. So I think he's wrong he's wrong about language. I'm I'm much more of a fan of Dan Everett. I don't know if you're familiar with his work with the Piraha. Oh, it's it's wonderful. So he he spent a long time with the Piraha in in Brazil who are a a people whose language does not obey Chomsky's, you know, requirements for language. They don't have they don't have recursion. They don't have anything like center embedding, they also don't have numbers, and they don't have past and future tenses. You know, Everett wrote a wrote a great book some years ago called Don't Sleep There Are Snakes, which talks both about his experiences among the among the Piraha and language and also his big fight with Chomsky over this. Chomsky's papers are filled with theory and pseudo math and and have no time to give to ethnography or to actually studying any real languages. But anyway, I'm digressing. You know, putting Chomsky aside though, what what you're saying about merge or as I would see it composition, functional composition, I think is absolutely fundamental. It's it's how all technology is built. W Brian Arthur has written about this and how technology evolves. You know, that every every technological invention you know, it's funny, like, it every technology gets invented a dozen times around the same time as if everybody's in telepathic communication. And the reason is that every technology has precursors. You know, you can't get a light bulb until you know how to blow glass, how to make a vacuum, how to draw a filament, how to generate electric current. And when all those things were there and, you know, the need for light was there, the light bulb was gonna get invented. But it was invented, you know, a dozen times by different inventors with different contingent choices. You know, they might be, you know, which kind of filament do you use or is it prongs or do you screw in the light bulb? Which way do you screw it in? You know, what's the diameter? And and and those decisions as they get locked in determine the course of of everything after that that incorporates light bulbs. Yeah. So, you know, in a way, this this contingency, these these choices about exactly which way those combinations go is actually what the entire genome or whatever it is is made out of. In the case of BFF, the original replicators are really just single instructions that sometimes randomly, weekly, might copy themselves. 1 byte that moves here and there. But as those bytes get copied around, sometimes a couple of them end up together and then they'll they'll they'll copy as a group. They'll do better together. And and so the contingent thing, you know, which way they ended up getting copied, was it AB or BA, you know, that they stuck together, that's that's the information that the bigger thing is made out of, that little extra bit. Because, you know, in this case, you just had single bites, there was nothing, there was no information there to begin with. So so the merger tree, you know, ends up being exactly the information that is encoded in the final genome. It's all
+
+Critique of Chomsky & GOFAI
+
+Critique of Chomsky & GOFAI
+
+29:16 - 30:421m 26s
+
+Blaise Agüera y Arcas
+
+00:29:15
+
+about the history.
+
+Dr. Tim Scarfe
+
+00:29:16
+
+Yes. Absolutely fascinating. I in in a sense, I'm I'm surprised you're not a fan of Chomsky because he he was talking about automata and Turing completeness and he he was the ultimate computationalist. And and in a sense, what you're describing is Chomsky's ideas just applied lower down the stack.
+
+Blaise Agüera y Arcas
+
+00:29:31
+
+That's right. So in in that sense, think I think he was correct, but I I also think, you know, all of those ideas were already there in in Von Neumann in the 19 fifties. Even Niels Al Baricelli, the first artificial life researcher who, you know, worked on 1 of Von Neumann's machines. I think he I think he he he sort of snagged time on the maniac to to do some of his first a life experiments. They're kind of pseudo documented in Bidjamin Lavatut's book Maniac. It's really it was really fun. But oh, no. That was his it was in his first book, think, When We Ceased to Understand the World. But anyway, so so yeah. My point is those ideas were there before before Chomsky. The thing that Chomsky really pushed, you know, during his reign of terror over linguistics, sorry, I'm being a little bit mean, but the thing that he really pushed was was the the movement in artificial intelligence that we now call GoFi, good old fashioned AI, which held that you could you could formalize what AI is as grammars and programs, which turned out to be, know, wrong. That turned out to be a false start in AI, and why there were so many AI
+
+Constructive AI & Compositionality
+
+Constructive AI & Compositionality
+
+30:42 - 34:113m 29s
+
+Blaise Agüera y Arcas
+
+00:30:42
+
+winters.
+
+Dr. Tim Scarfe
+
+00:30:42
+
+There seems to be a bit of attention because the GoFi folks, they had some very interesting ideas. I mean, I'm a big fan of Fodor and Polition, for example, and they spoke about this strong compositionality. We have semantics and intentions. You know, it's possible to build these cognitive representations. But we have the issue that we can't really design them to represent the world in a high fidelity way. We have the semantics divergence. And then you're pointing to this this very interesting constructive thing. And I think a constructive form of AI and compositionality solves a lot of problems because of this path dependence problem and this canalization that we're talking about. That when you build intelligence brick by brick, you can build artifacts of incredible sophistication. But unfortunately, we can't design the artifacts to do exactly what we want. We have we can gently steer them in a certain direction. And even with with Tristan, I I feel that even though he's talking about the what of intelligence is is prediction and and adaptivity, I think the implementation matters. I think adaptivity means structure learning. I think there's something about having a substrate which actually does this form of of composition that you're talking about. That seems to be like a mechanistic necessary condition for intelligence. Right.
+
+Blaise Agüera y Arcas
+
+00:31:58
+
+Yes. I I think in many ways what we're talking about is sort of the the tension between analog and digital ways of thinking or bottom up and top down ways of thinking. Yeah. So for instance, let's talk about how you would recognize a bicycle. You know, in the good old fashioned AI world, you would say, you've got a circle detector, you know, and and a, you know, and a line detector that will detect, you know, the the lines that make up the frame of the bike and and so on, and you'll write you'll handwrite code for all of those things. And and of course, the problem is that, you know, there are many ways of looking at a bike where you're not you're not gonna see the the wheels at once or maybe the bike is of a weird design, you know, there are those funny bikes that have shoes instead of wheels, you know. When you look at 1 of those in a gestalt sort of way, you recognize a bike immediately even if all of the rules are broken as it were. That's really important because when when you're when you're looking as an intelligent being at the world, you have to cluster, you have to you have to find regularities in the world that, you know, whose shapes are not well defined by by a set of rules. You know, they're not they're not just sort of carved up by hyperplanes, they're blobby. And and so, you know, intelligence requires methods that are very neural net like, you know, that look more like continuous function approximators, and that that's why gradient descent is a good idea, for instance. You know, learning these things via smooth functions is a good idea, and learning them or or not learning them, but trying to encode them with rules never never worked out well. Now, on the other hand, DNA is is discrete. Right? There there are there are, you know, 4 symbols and you you order them in a certain way and and, you know, that's it. Doesn't mean that there's no randomness in the way, you know, the way proteins are folded and so on, but composition at the level of DNA really does have to do with, you know, chopping up programs essentially made up discrete symbols and inserting, you know, bits of code and and so on. So, you know, when you're looking from the bottom up, it's a very very quantized world. But when you start to, you know, look at at, you know, giant complex things like us, you know, from from a high level, you have to begin from a more more continuous perspective. I think you've hinted that there are natural convergent patterns in in computation. I
+
+Functionalism: Teleology & Realizability
+
+Functionalism: Teleology & Realizability
+
+34:11 - 40:126m 1s
+
+Blaise Agüera y Arcas
+
+00:34:10
+
+mean, can can we sort
+
+Dr. Tim Scarfe
+
+00:34:11
+
+of get a convex hull of your philosophy?
+
+Blaise Agüera y Arcas
+
+00:34:14
+
+We could try. I mean, I I hesitate to say I'm in anything ist, but but probably functionalist comes closest. Functionalist. Yeah. So the reason for that is that, you know, in in the old days, in the nineteenth century, we used to think that, you know, to be alive meant that there was some vital spirit or vital force, you know, that living things have and dead things don't. And as we started to figure out that the laws of chemistry were the same for living things and dead things, urea can be synthesized in a test tube and so on, you know, those ideas really went out of fashion. We went into a very strict materialist kind of perspective, where everything is just physics. And, you know, I I mean, I was trained as a physicist, you know, I think I I believe in physics fully, but I also think that there is more to life in the sense that, you know, if everything is just physics, then you have no way of saying what it means for you or me to be alive. And to understand what what that is, what it means to be alive, I think you have to come to grips with the idea of of purpose. You have to bring teleology back into the equation. What I mean by that is, you know, a kidney is not just a collection of atoms. It's it's an organ that performs a function or the function is to filter urea. And if you implant an artificial kidney that works on totally different principles but also filters urea, it's an artificial kidney. You know, it's still meaningful to say that. So that that means that there is something about that word kidney that means something that that that goes beyond the the matter that the kidney is made out of. You know, conversely, if I come back from the future and show you an object and and and you're like, what is that? And I I tell you it's an artificial kidney, You know, there's nothing about this set of weird carbon nanotubes and so on inside that would that would say to you kidney. It's just that, you know, if you happen to implant it in a body, you know, and set it and sewed it, you know, sewed it in the right way and so on, then all those relationships would be would would show up in the right way for your body to persist. So this this idea of things serving functions for other things and functions only have meaning in the context of yet other functions, so there's something ecological about this idea of functions. I think this is really central. You know, a a rock on an inanimate planet has no function. If I break it in half, I I now have 2 rocks. But a living thing has function, and, you know, the the the hallmark of function is multiple realizability just like just like Turing talked about for Turing machines because, you know, Turing and von Neumann are functionalists. Meaning that, you know, if you if you have a need to make ATP for energy inside your cells, you know, you're gonna have multiple pathways for doing it because sometimes the aerobic way works, sometimes you need the anaerobic way. Whenever you start to have multiple pathways, you know, wings and insects, wings and bats, you know that there is a function in play.
+
+Dr. Tim Scarfe
+
+00:37:04
+
+The alternative position would be essentialism. So folks like Anil Seth and John Searle, they they think that certain types of material have a certain type of causal graph. And, you know, so for example, brains might give rise to consciousness and if we simulated a brain, it it wouldn't have the same causal graph, therefore it'd be different. But I would like to I mean, let we'll just park that, you know, just just for the moment. It seems a little bit like you're you're talking about this like a computer software architecture diagram. And we can, you know, it's like that ship of Theseus type thing where we can kind of, you know, swap things out and is it still the same thing. But I think path dependence is very important. So the kidney evolved. It it has this kind of this this rich phylogeny of of evolution. And when you replace it with something, you know, which came from a different substrate, which has a different provenance, then it it's it's almost like it it is a kidney now and it works now, but it breaks the ecology. Like imagine in an ecology, if I swapped a plant out with an artificial plant and I kept doing that, it might work now, but doesn't that affect its future trajectory?
+
+Blaise Agüera y Arcas
+
+00:38:11
+
+Yes. It does. But that's exactly what symbiogenesis is all about. You know, often often you will have a repurposing of something that was that was designed, if you like, you know, by nature, right? 1 of the cool things about the BFF experiment is that it shows you how, you like, intelligent design can happen without any intelligent designer. But something that was designed for 1 purpose or to serve 1 function can come back around and serve another function, and yeah, that brings a whole different contingent history with it. Right? The the that that RSV example that I gave, you know, the the ability to fuse cell membranes together came from a, you know, a virus whose original purpose had nothing to do with building placentas, but, you know, it gets incorporated and repurposed, you know, and this is the kind of bricolage that that life is made out of. So so yeah, I think I think that that kind of, you know, not only replacement, but, you know, parallel pathing, etcetera, you know, it it it doesn't just happen when we make artificial kidneys, it's you know, all the time in nature and is the very hallmark of life. So, yes, I disagree strongly with with Anil Seth and with John Searle on on this point. You know, the the brain of Theseus kind of experiments that you've alluded to, right, the idea that if you took a an emulator or a simulator of a neuron and you plugged it into your brain, you know, so that it's it's inputs and outputs are connected to the other neurons, you know, well, you know, then the other neurons wouldn't know the difference. Well, what if you do that for half of your neurons, for all of them, you know, will your consciousness get dialed down even if you behave the same way? Of course not. You know, for me, your consciousness is is obviously a function of of the functions, of the relationships of all of those things with each other. It doesn't mean that it's so simple as a computer program where you can just, you know, substitute a subroutine for another 1. I mean, you know, we've we've made computers very kind of abstract in that way, you know, and biology is wet and messy. The interfaces are are complex and hard. But but this side, this same idea of multiple realizability and repurposability is is the very stuff
+
+Origins of Consciousness & Theory of Mind
+
+Origins of Consciousness & Theory of Mind
+
+40:12 - 43:233m 11s
+
+Blaise Agüera y Arcas
+
+00:40:11
+
+of life.
+
+Dr. Tim Scarfe
+
+00:40:12
+
+What is your position on consciousness? So what is it? What's its purpose? Is it epiphenomenal? Can it be measured? Etcetera, etcetera.
+
+Blaise Agüera y Arcas
+
+00:40:21
+
+Yes. Great question. So I think that the idea of philosophical zombies, you know, David Chalmers has talked about, right, that maybe something could behave just like you or me, but be dead on the inside, you know, not not not have any experiences, not feel anything, is is actually a lot less coherent than it sounds. So I'm a functionalist about consciousness too. And what I mean by that is twofold. 1 is that I don't think consciousness is some kind of epiphenomenon that, you know, just weirdly, you know, we happen to have for reasons that have nothing to do with our behavior, nor do I think that it is that is that it is somehow tied to anything about our fit the way we're physically made. I think it is functional. So why do we have it? Well, in in my team, Paradigms of Intelligence, we've been doing a lot of work over the last year on multi agent reinforcement learning. And the reason is that we're very interested in the precondition for symbiogenesis, which is symbiosis, now cooperation, you know, when 2 things or 700 things or whatever start to cooperate closely, you know, that's the that's the beginning of them really fusing together and becoming 1 thing. And and in order for 2 agents that are intelligent to cooperate, it turns out they have to have theory of mind. They have to model each other. They have to be able to put themselves in the place of the other. And, we have a, you know, whole long theory called MUPY about how that all works. But it you know, and and I guess the the CliffsNote version of it is that it requires that you do induction over a universe that includes not only the game that we're playing, but that also includes what is happening in your head and what is happening in my head. In other words, you have to have a universe that that that includes yourself in it and the other in it, and that allows you to generalize over the class of you and me, you know, so that I know, you know, my internal state is happy when I smile and when I see you smile, know that you're happy as well on the inside. I can make that inference, you know, in the same way that if I see a bunch of peaches, you know, then I I know that they're all the same object and I know what the backside of it will look like and so on. So this ability to do psychological, you know, induction is is really important for for cooperation and and that's why we have it. So, you know, it it and 1 of the consequences of that is that we model ourselves and we model our own models of others models of our models and so on. There's a kind of a strange loop as Douglas Hofstadter would have called it in that.
+
+Dr. Tim Scarfe
+
+00:42:57
+
+Yes. I I love Douglas Hofstadter. So so there's this kind of self modeling and then second order self modeling and third order self modeling which could be applied to other agents and of course, know, in in the real world, we are computationally bounded. Right? You know, we we can't make sense of all of the complexity. So when we do this modeling of other agents, our modeling is quite cartoonish and it's quite structured. And I'm quite And and
+
+Blaise Agüera y Arcas
+
+00:43:20
+
+it only it only goes up to sixth order as well at
+
+Collective Agency, Swing, & Split Brains
+
+Collective Agency, Swing, & Split Brains
+
+43:23 - 48:004m 37s
+
+Blaise Agüera y Arcas
+
+00:43:22
+
+most.
+
+Dr. Tim Scarfe
+
+00:43:23
+
+Oh, interesting. Interesting. I mean, how does this affect I mean, we haven't really spoken about agency yet. Presumably, you could have a strong agent, which is just doing something quite trivial. But when we have this collective intelligence and this information synchrony between agents, how does that affect your ideas of, you know, purposeful behavior?
+
+Blaise Agüera y Arcas
+
+00:43:43
+
+I sometimes use the example of rowing to to describe what's happening when purposes merge into a single purpose and and consciousnesses, you know, merge into a single consciousness. There's there's this term that I learned from Dan Brown's book, The Boys in the Boat, swing, which is when when the the 6 horsemen, or 8 horsemen, sorry, you know, all achieve this kind of state where they're in perfect sync with each other and and, you know, you know it when you when you when you experience it, the the boat acquires a soul as it were, you know, you all feel like you're like you're you're pulling as 1 and boats with that property go a lot faster than than boats where people haven't quite achieved that sync. That that I think is kind of what happens when, you know, when we we think of ourselves as being a self, despite the fact that our brain actually consists of a lot of parts, you know, like the same way that that as the oarsman, that, you know, in some sense began with their own purposes and their own self models and their own models of the other parts of the brain. But, you know, this process of of subjective symbiogenesis, I guess you could call it, where where all of those wills become 1 and all of those selves become oneself.
+
+Dr. Tim Scarfe
+
+00:44:56
+
+In hiring for example, you you want folks with high agency, but you also want alignment, which is the potential for this kind of synchrony. And we often have it. We do a thought experiment on MLST that you can look at a boat or a flotilla of boats and you're trying to draw a boundary. And the boundary for the agent should be the minimal description. It should be, you know, where where is most of the agency? Where is most of the planning and future modeling happening? And usually, it's it's the pilot. It's it's it's the driver of of the boat. But you're talking about the situation where there is such a synchrony and alignment between the agencies that almost like the the best intentional stance, if you like, is to draw a boundary around all of them.
+
+Blaise Agüera y Arcas
+
+00:45:35
+
+Yeah. I also think that that there's no there's not necessarily a single right answer. So, you know, in in my book, What is Intelligence? I talk about a few interesting cases. 1 of them is, for instance the conjoined twins, Abby and Brittany Hensel, who've who've I don't know if you've seen them on YouTube or you know, TV shows, fascinating case. And and, you know, so these are 2 people who share 1 pair of arms and 1 pair of legs, you know, each each of them controls 1 arm and 1 leg, they're in a sort of 3 legged race, 2 legged race. They often speak in synchrony and, you know, they they play volleyball and sports and stuff. They drive they drive a car. They write can write emails. No problem. And, you know, they also sometimes, you know, have, you know, differences of opinion. So, you know, they'll they'll they'll they'll sort of, you know, come together and apart in a a fluid way. And all of that is done purely with behavioral cross queuing, as Mike Gazzaniga would call it, meaning their nervous systems are separate, separate brains, separate spinal cords. So, you know, in that case, they they are able to model each other extremely well because, you know, their entire lives they've been right next to each other. Another interesting case would be split brain patients of the kind that Kasaniga, you know, spent a lot of his career studying. And, you know, those are cases where in adulthood, the the brain is essentially cut in half, so, you know, each hemisphere can only see the left or the right hemifield, controls 1 arm, 1 leg. And the the the most fascinating thing about these split brain experiments, you know, is that from the outside point of view, it is obvious that there are 2 consciousnesses in there. You know, each hemisphere is conscious of different things. You can make disjunctions between what shows up in the left and right hemisphere, and, you know, the left and right hands can be drawing different things, you know, and so on. But if you talk to somebody, you know, who's who with a split brain patient, they're always like, yeah, I'm I'm still 1 person. They will never admit that there are 2 people in there. So, you know, is there somebody who is right and somebody who is wrong? No. You know, this is entirely, relational. It's a it's a relational description. And the fact that for them, they are, you know, they're the same person they always were just, you know, occasionally something takes a little more work. Occasionally, 1 hand will be buttoning the shirt while the other hand is unbuttoning it, you know, it's just an inconvenience.
+
+The Interpretive Self & Choice Blindness
+
+The Interpretive Self & Choice Blindness
+
+48:00 - 50:002m 0s
+
+Dr. Tim Scarfe
+
+00:48:00
+
+There are split brain experiments as well even even just with a normal brain and I can believe that we are we are sort of separately conscious in in different parts of our brain. You get out of bed in the morning and you must be a slightly different person, but we kind of gloss over that, don't we?
+
+Blaise Agüera y Arcas
+
+00:48:14
+
+Absolutely. We make a narrative. The the the best the coolest experiments about this, think, are the ones from Peter Johansson at at University of Uppsala. So he's done a bunch he he was the 1 who discovered choice blindness. In these experiments, a subject is I think the very first 1 was face choice blindness. So you'd be shown 2 faces on cards and asked which 1 is more attractive. And you pick and, you know, every you know, every so often, the 1 that you're handed to then explain why you thought that face was more attractive is the 1 you didn't pick. So there's a kind of slate of hand trick. And the cool thing is that very very few people notice that, you know, that they're that they're being handed the wrong face and there is no difference in the fluency or the latency of the description. You know, you have an inner lawyer ready to spring up and justify whatever choice you made even if it's not the choice you made. And and that narrative that you invent, you know, then influences your future choices. It's as if we all, you know, make up a story about ourselves. And and of course, the reason is that, you know, you're we're all split brain patients in a way, you know, the the the left hemisphere interpreter that that generates the speech, you know, is likely not the same part of the brain that actually, you know, sort of did the the choosing if you if, you know, you know, and and yet all of those parts of your brain are invested in the idea that they're all in the same boat, you know, that it's all 1 me. So they're all covering for each other in the same way that in a split brain patient, you know, if you show to, you know, to the to the non left brain interpreter hemisphere, you know, stand up. Person stands up and you ask them, why did you stand up? And, you know, they'll say, oh, I I was thirsty. I'm going to the kitchen for a drink of water. Same thing.
+
+Dr. Tim Scarfe
+
+00:49:56
+
+Artificial intelligence, it's becoming more sophisticated. And
+
+Future of AI & Collective Intelligence
+
+Future of AI & Collective Intelligence
+
+50:00 - 53:303m 30s
+
+Dr. Tim Scarfe
+
+00:50:00
+
+there's the social question. And I suppose actually, you can think of it as a ship of Theseus for society. So we're going to be having agents embedded in society, and we're going to form a large collective intelligence. Do you do you worry about that future? I mean, what what do you predict is going to happen?
+
+Blaise Agüera y Arcas
+
+00:50:17
+
+Well, I mean, there are certainly things that I worry about. I don't wanna I don't wanna come across as a Pollyanna. I'm I'm worried about polarization, I'm worried about disinformation, I'm worried about our political and economic systems, you know, not necessarily being fit for purpose in the world that we'll all be living in in 20 years. But I'm certainly not concerned about a lot of the kinds of things that I hear Eliezer Yudkowsky talking about for instance. And in particular, you know, 1 of the reasons that I that I I feel very differently is because I feel like human intelligence in the usual sense that we think of it is already a collective phenomenon. We're not that smart individually. We're not that much better individually than our our our primate cousins. It's only, you know, because we get together in large societies of millions and billions of people that we can do these amazing things, you know, that we can transplant organs and and go to space and and so on. Know, individually, we're just we're just not all that. So for me, you know, AI is actually a part of human intelligence. It's it's literally already the the same thing. You know, I find it very interesting that we only achieved general AI when we began to literally train the models on reams and reams and reams of human language. So, you know, AI was human intelligence from the start.
+
+Dr. Tim Scarfe
+
+00:51:36
+
+Because I suppose that the thesis of Eliezer is that it is possible to have artifacts which are dramatically more intelligent than than we are. Maybe you think there's some kind of a limit, but but do
+
+Blaise Agüera y Arcas
+
+00:51:48
+
+you think in principle that we could build artifacts which are significantly more intelligent? Well, I think that collective humanity is already vastly more intelligent than individual humans. So in that side, you know, and and in many cases operates at very different time scales, for instance. I think these things are already true. Now, you know, the the ideas about so in in in a sense in a sense, our difference, our biggest difference is about thinking about it as an other versus as already a part of ourselves. You know, what do we even mean by human? There was a wonderful paper from 2006 called the science of psychology in which I'm not remembering her name, but she's a psychologist and the science of psychology is called CYC. She asks people to draw bicycles. You know, first to say, do you know how a bicycle works? Everybody says, yeah, of course, know how a bicycle works. Okay. Draw 1. Nobody can draw it. Even if it's just, you know, looking at a sketch of a bicycle and say, okay, where does the chain go? You know, or where are the pedals? Most people don't know. You know, they make some very fundamental error in this. And, you know, it's a it's a very funny it's a very funny paper, but, you know, the point is we all have these illusions about what our own knowledge is, our own capabilities, own intelligence are. We already have swing in the sense that we are I we identify what we think of as our intelligence with something that is actually in a bunch of other people and a bunch of other stuff around us, you know, and and and we do that kind of unconsciously. So for me, you know, there's there's not really a discontinuity between, you know, what we what's already going on and AI. It's it's really just more of that.
+
+Dr. Tim Scarfe
+
+00:53:27
+
+Interesting. I think they would make the argument that you
+
+AI Representation vs. Human Abstraction
+
+AI Representation vs. Human Abstraction
+
+53:30 - 59:496m 19s
+
+Dr. Tim Scarfe
+
+00:53:29
+
+could build a single artifact which is more intelligent than the totality of humans. But just parking that to 1 side, I spoke with Judith Fan. She's a wonderful professor at Stanford. And she's done studies on drawing. So comparing how humans draw to computers using clip models and stuff like that. And she sound she found something fascinating, which is that because we have quite an abstract understanding. When we make sketches, you know, and she was kind of grading it on, you know, like, the progression 1, progression 2, progression 3. And we we kind of start very coarse and very abstract. And AI systems, they start with the edges and and the details.
+
+Blaise Agüera y Arcas
+
+00:54:06
+
+Mhmm.
+
+Dr. Tim Scarfe
+
+00:54:06
+
+And that to me indicates that AI models today, they don't really understand things at a very deep abstract level like we do. Perhaps because we have this this compositional synthesis of knowledge that we were alluding to earlier. Do you see that as a gap? There are
+
+Blaise Agüera y Arcas
+
+00:54:21
+
+a few questions, I guess, hidden in there. You know, 1 of them is, you know, do I think of of LLMs for instance of of today's, you know, sort of frontier models as being less than or different than in some basic way, you know, our our brains, what are those gaps? So first of all, I mean, they're obviously very different. I mean, we know their their their architectures are different, they're trained in a very different way. The fact that, you know, for me, the remarkable thing is actually how convergent a lot of a lot of their properties are with those of brains despite all of that. You know, the fact that you find internal representations and many of them that that that surprisingly resemble, you know, ones that you can measure in human brains, it's brain score type measures of of Machen Shrimp and and Co, you know, or or, you know, sensory modalities, you know, in humans can be reproduced remarkably well even by models trained on pure language, which is really remarkable. You know, speaks to how much is encoded in language and how much of what is encoded in language is a reflection of architectural properties of our brains and umwelts and how much of that is then reconstructed essentially by those models. Now, the question of, you know, what we draw first when we draw a picture and how that all works. I mean, remember that, you know, image synthesis models like CLIP or what have you are working in pixel space, to begin with. And, you know, diffusion models, by the way, you know, work very differently from various other kinds of models. I mean, we now know that, you know, you you can drive a robot with a transformer. So if you give 1 of those robots a paintbrush and you say or, you know, know, a pen and you say, now draw, what it will draw is gonna be very, different from what you get from a diffusion model that starts filling in pixels. And for that matter, all of that is different from what happens in your own head when you're visualizing something. So, you know, I think a lot of this is is not so straightforward to to analyze because of all those differences in the way that IO and the representation space works. I do think that today's models are highly compositional. I mean, even with a lot of those original, you know, image synthesis models, the fact that you could say, you know, a teddy bear at the bottom of the sea playing with the speak and spell or whatever, it'll do it, you know, tells you that that they they can compose. Again, are there capabilities like ours? No. I mean, there there are definitely places where they're better, places where they're worse, places where they have surprising gaps. So it's different, but but I wouldn't say that there's a fundamental lack of composition there at all. I think if if anything, the biggest gap between transformer based models and what we do is actually narrative memory, right, or being able to form long term memories and and and that way have a kind of persistence of a self over over long periods of time. They they don't have that yet.
+
+Dr. Tim Scarfe
+
+00:57:11
+
+I'm conflicted. You're pointing to this universal representation hypothesis. I think Chris Ola popularized it with some of his visualization experiments. And it it's true. The representations are very convergent. And and other things lead me to to believe that the models produce these kind of superficial imposters that they give you exactly the right answer, but for the wrong reasons. And 1 of the hints of that is when you do variations on on the input, it's it's not robust. There's the there's the Turing machine argument as well. So that, you know, these LLMs are finite state automata, but they can access tools which are Turing complete. So, you know, perhaps we could say the system is Turing complete, but I don't believe that ChatGPT is is effectively searching the space of Turing machine algorithms. It hasn't been trained to do that, But it is surprisingly robust with the ARC challenge. It can actually Yeah. You know, it can it can do really well, especially if you do some evolution and do do some refinement and so on. So it feels like we're we're knocking on the door, but it but there's something missing. I think that in many
+
+Blaise Agüera y Arcas
+
+00:58:13
+
+of those cases, we're not doing the we're not doing a fair human comparison. You know, we we often, you know, and this is a little bit similar to our illusions about knowing how bicycles work and so on. You know, we I I hear a lot of people, you know, say things like, well, you know, but but look at this case where we just flip the logic, you know, you know, we we change it from do to don't and then, you know, it gets it wrong 30% more often and so on. You know, my my first question is always, have we done the human baseline? And and it turns out that surprisingly often, the human baseline shows the same the same property, you know. And this doesn't mean that humans are incapable of doing, you know, the fully robust, fully general version of these things. Right? If you're a logician or if you think about it carefully, you know, you can you can really write down your premises and be super robust to, you know, flipping the knots, you know, in the way something is is formulated. But most of us don't operate that way most of the time, you know, and we're highly susceptible to logical illusions, cognitive illusions, etc, which turn out to be in many cases surprisingly similar to the to the machine case. So I'm I'm I'm kind of unmoved by, you know, by by a lot of those and I I think often often we're we're being a little sloppy about how how we do it. It's certainly the case that that, you know, transformers don't aren't searching systematically over all possible Turing machines. I mean, we don't know how to how to do that. You know, you you have to take shortcuts of various kinds in order to make that that whole problem of of induction over over programs computationally tractable, whether you're a brain or a, you know, or a transformer.
+
+Dr. Tim Scarfe
+
+00:59:46
+
+Lace, thank you so much for joining us today. It's been an honor.
+
+Blaise Agüera y Arcas
+
+00:59:49
+
+Thank you. Thank you for the the really thoughtful questions.
+ 
+Show Topics
+
+0m
+
+10m
+
+20m
+
+30m
+
+40m
+
+50m
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+Computational Nature of Life
+
+Intro to computation
+
+Von Neumann theory
+
+Embodied computation
+
+Functional parallels
+
+Emergence of Purpose
+
+BFF experiment core
+
+Thermodynamic links
+
+Purpose in evolution
+
+Evolutionary Mechanisms
+
+Symbiogenesis dominance
+
+Complexity increases
+
+Merging in biology
+
+Composition and Language
+
+Merge operator role
+
+Chomsky critique
+
+Technological evolution
+
+Functionalism Philosophy
+
+Core functionalism
+
+Teleology return
+
+Multiple realizability
+
+Consciousness and AI
+
+Consciousness theory
+
+Collective intelligence
+
+AI future implications
+
+### Narrative Insights
+
+Most Referenced:BFF Experiment (4 times)
+
+Longest Arc:Computational Nature of Life (50 min)
+
+Back References:0 connections
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+MIT Press
+
+Publisher
+
+Publisher of Blaise's book "What is Intelligence?"
+
+2
+
+3
+
+David Krakauer (SFI)
+
+Person
+
+President of Santa Fe Institute, referenced regarding adaptivity.
+
+Carl Friston
+
+Person
+
+Neuroscientist known for Free Energy Principle and Markov Blankets.
+
+Brainfuck (Urban Muller)
+
+Programming Language
+
+Minimalist esoteric programming language used in the BFF experiment.
+
+2
+
+Stephen Jay Gould
+
+Scientist
+
+Paleontologist known for Punctuated Equilibrium.
+
+Maynard Smith & Szathmary (1995)
+
+Publication
+
+"The Major Transitions in Evolution" (Nature).
+
+3
+
+3
+
+Anil Seth / John Searle
+
+Persons
+
+Proponents of biological naturalism/essentialism.
+
+David Chalmers
+
+Person
+
+Philosopher known for the "Hard Problem" and P-Zombies.
+
+2
+
+Michael Gazzaniga
+
+Person
+
+Neuroscientist famous for split-brain research.
+
+Petter Johansson (Uppsala University)
+
+Person
+
+Researcher known for Choice Blindness experiments.
+
+Eliezer Yudkowsky
+
+Person
+
+AI researcher known for MIRI and AI safety warnings.
+
+Judith Fan (Stanford)
+
+Person
+
+Cognitive scientist studying drawing and abstraction.
+
+2
+
+0:00 / 59:53
+
+Space/←/→ for controls
+
+Timeline
+
+1x
