@@ -270,61 +270,21 @@ def _normalize_speaker_name(name: str) -> str:
 
 
 def merge_speaker_aliases(ref_ann: Annotation, hyp_ann: Annotation) -> tuple:
-    """Merge speaker aliases within each annotation before DER computation.
+    """Replace None speaker labels with "SPEAKER". No other merging.
 
-    Within each side (ref or hyp), speakers whose normalized names match
-    (case-insensitive, stripped numbering suffixes like "(1)", trailing digits)
-    are merged into one canonical label.
+    Speaker matching is fully delegated to pyannote's optimal_mapping.
 
-    Examples:
-      "GPT-4o (1)" + "GPT-4o (2)" -> "GPT-4o"
-      "ChatGPT0" + "ChatGPT" -> "ChatGPT"
-      "Astra User1" + "Astra User2" -> "Astra User1"
-
-    No cross-side merging is done — that's left to pyannote's optimal_mapping.
-
-    Returns (merged_ref, merged_hyp, ref_merge_map, hyp_merge_map).
+    Returns (cleaned_ref, cleaned_hyp, ref_merge_map, hyp_merge_map).
     """
 
     def _build_merge_map(labels):
-        norm_to_canonical = {}
-        merge_map = {}
-        # Replace None labels (single unnamed speaker) with "SPEAKER"
-        clean_labels = [x if x is not None else "SPEAKER" for x in labels]
-        for label in sorted(set(clean_labels)):
-            norm = _normalize_speaker_name(label)
-            if norm in norm_to_canonical:
-                merge_map[label] = norm_to_canonical[norm]
-            else:
-                norm_to_canonical[norm] = label
-                merge_map[label] = label
-        # Map None to the same target as its replacement
+        merge_map = {label: label for label in labels if label is not None}
         if None in labels:
-            merge_map[None] = merge_map.get("SPEAKER", "SPEAKER")
+            merge_map[None] = "SPEAKER"
         return merge_map
 
     ref_map = _build_merge_map(ref_ann.labels())
     hyp_map = _build_merge_map(hyp_ann.labels())
-
-    # Cross-side first-name matching: if HYP has "Mark" and REF has "Mark Chen",
-    # rename HYP's "Mark" to "Mark Chen" so optimal_mapping can match them.
-    # Only matches single-word names that are the first word of a multi-word name.
-    ref_canonical = set(ref_map.values())
-    hyp_canonical = set(hyp_map.values())
-    for hyp_label in list(hyp_canonical):
-        if hyp_label in ref_canonical:
-            continue  # Already an exact match
-        hyp_words = hyp_label.split()
-        if len(hyp_words) != 1:
-            continue  # Only match single-word HYP names
-        for ref_label in ref_canonical:
-            ref_words = ref_label.split()
-            if len(ref_words) > 1 and ref_words[0].lower() == hyp_words[0].lower():
-                # "Mark" matches "Mark Chen" — rename in hyp_map
-                for k, v in hyp_map.items():
-                    if v == hyp_label:
-                        hyp_map[k] = ref_label
-                break
 
     merged_ref = ref_ann.rename_labels(mapping=ref_map)
     merged_hyp = hyp_ann.rename_labels(mapping=hyp_map)
@@ -526,10 +486,11 @@ def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypot
             etype = "MIX"
 
         text = _find_hyp_text(start, end)
-        print(
-            f"[{start:7.2f}-{end:7.2f}]  {_fmt_ts(start)}-{_fmt_ts(end)}  {etype:<5}  {ref_str:<20}  {hyp_str:<20}  {dur:5.2f}s  {text[:60]}",
-            file=sys.stderr,
+        line = (
+            f"[{start:7.2f}-{end:7.2f}]  {_fmt_ts(start)}-{_fmt_ts(end)}  {etype:<5}  "
+            f"{ref_str:<20}  {hyp_str:<20}  {dur:5.2f}s  {text[:60]}"
         )
+        print(line, file=sys.stderr)
 
     total_err = fa_dur + miss_dur + conf_dur
     print(
