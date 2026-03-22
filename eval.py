@@ -336,6 +336,29 @@ def _fmt_ts(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:06.3f}"
 
 
+def _extract_speaker_mapping(der_metric, ref_ann, hyp_ann):
+    """从 DER metric 中提取 optimal_mapping (hyp_orig → ref_orig)."""
+    import warnings
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        cr, ch, _ = der_metric.uemify(ref_ann, hyp_ann, uem=None, collar=0.0, skip_overlap=False, returns_uem=True)
+    rr = cr.rename_labels(generator="string")
+    hr = ch.rename_labels(generator="int")
+    internal = der_metric.optimal_mapping(rr, hr)
+
+    ref_map = {}
+    for (_, _, orig), (_, _, renamed) in zip(cr.itertracks(yield_label=True), rr.itertracks(yield_label=True)):
+        if renamed not in ref_map:
+            ref_map[renamed] = orig
+    hyp_map = {}
+    for (_, _, orig), (_, _, renamed) in zip(ch.itertracks(yield_label=True), hr.itertracks(yield_label=True)):
+        if renamed not in hyp_map:
+            hyp_map[renamed] = orig
+
+    return {hyp_map.get(h, str(h)): ref_map.get(r, str(r)) for h, r in internal.items()}
+
+
 def _print_der_errors(der_metric, ref_ann, hyp_ann, reference, hypothesis, hypothesis_file, collar, skip_events):
     """Print detailed DER error segments and write debug TextGrid.
 
@@ -748,6 +771,8 @@ def evaluate_alignment(
         if metric_lower == "der":
             der_metric = DiarizationErrorRate(collar=collar, skip_overlap=skip_overlap)
             results["der"] = der_metric(ref_ann, hyp_ann, detailed=True, uem=None)
+            # 提取 optimal_mapping (hyp→ref)
+            results["speaker_mapping"] = _extract_speaker_mapping(der_metric, ref_ann, hyp_ann)
             if verbose:
                 _print_der_errors(
                     der_metric, ref_ann, hyp_ann, reference, hypothesis, hypothesis_file, collar, skip_events
@@ -994,6 +1019,18 @@ Examples:
                     print(f"  Missing: {', '.join(sorted(missing))}")
                 if extra:
                     print(f"  Extra:   {', '.join(sorted(extra))}")
+
+        # 输出 optimal mapping (如果 DER 计算了)
+        speaker_mapping = e["results"].get("speaker_mapping")
+        if speaker_mapping:
+            print(f"\nSpeaker Mapping ({e['model_name']}):")
+            mapped_hyp = set()
+            for hyp_name, ref_name in sorted(speaker_mapping.items()):
+                print(f"  {hyp_name:<20} → {ref_name}")
+                mapped_hyp.add(hyp_name)
+            unmapped = {sp for sp in e["hyp_speakers"] if sp is not None} - mapped_hyp
+            for name in sorted(unmapped):
+                print(f"  {name:<20} → (unmapped)")
 
 
 if __name__ == "__main__":
