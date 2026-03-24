@@ -1,0 +1,40 @@
+---
+title: "Dylan Patel — The single biggest bottleneck to scaling AI compute"
+channel: "Dwarkesh Patel"
+url: "https://www.youtube.com/watch?v=mDG_Hx3BSUE"
+duration: "02:30:44"
+upload_date: "20260313"
+view_count: 182809
+thumbnail: "https://i.ytimg.com/vi/mDG_Hx3BSUE/maxresdefault.jpg"
+---
+
+Dylan Patel, founder of SemiAnalysis, provides a deep dive into the 3 big bottlenecks to scaling AI compute: logic, memory, and power.
+
+And walks through the economics of labs, hyperscalers, foundries, and fab equipment manufacturers.
+
+Learned a ton about every single level of the stack. Enjoy!
+
+𝐄𝐏𝐈𝐒𝐎𝐃𝐄 𝐋𝐈𝐍𝐊𝐒
+* Transcript: https://www.dwarkesh.com/p/dylan-patel
+* Apple Podcasts: https://podcasts.apple.com/us/podcast/dylan-patel-deep-dive-on-the-3-big-bottlenecks-to/id1516093381?i=1000755126873
+* Spotify: https://open.spotify.com/episode/5qiibwoBWY5rXyflK7WJzH?si=SX4ajSKXT-KeNtaHsiTNzw
+
+𝐒𝐏𝐎𝐍𝐒𝐎𝐑𝐒
+- Mercury has already saved me a bunch of time this tax season. Last year, I used Mercury to request W-9s from all the contractors I worked with. Then, when it came time to issue 1099s this year, I literally just clicked a button and Mercury sent them out. Learn more at https://mercury.com
+- Labelbox noticed that even when voice models appear to take interruptions in stride, their performance degrades. To figure out why, they built a new evaluation pipeline called EchoChain. EchoChain diagnoses voice models’ specific failure modes, letting you understand what your model needs to truly handle interruptions. Check it out at https://labelbox.com/dwarkesh
+- Jane Street is basically a research lab with a trading desk attached – and their infrastructure backs this up. They’ve got tens of thousands of GPUs, hundreds of thousands of CPU cores, and exabytes of storage. This is what it takes to find subtle signals hidden deep within noisy market data. If this sounds interesting, you can explore open positions at https://janestreet.com/dwarkesh
+
+To sponsor a future episode, visit https://dwarkesh.com/advertise.
+
+𝐓𝐈𝐌𝐄𝐒𝐓𝐀𝐌𝐏𝐒
+00:00:00 – Why an H100 is worth more today than 3 years ago
+00:24:52 – Nvidia secured TSMC allocation early; Google is getting squeezed
+00:34:34 – ASML will be the #1 constraint for AI compute scaling by 2030
+00:55:47 – Can't we just use TSMC's older fabs?
+01:05:37 – When will China outscale the West in semis?
+01:16:01 – The enormous incoming memory crunch
+01:42:34 – Scaling power in the US will not be a problem
+01:54:44 – Space GPUs aren't happening this decade
+02:14:07 – Why aren't more hedge funds making the AGI trade?
+02:18:30 – Will TSMC kick Apple out from N2?
+02:24:16 – Robots and Taiwan risk

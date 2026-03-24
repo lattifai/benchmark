@@ -1,0 +1,33 @@
+---
+title: "Dario Amodei — “We are near the end of the exponential”"
+channel: "Dwarkesh Patel"
+url: "https://www.youtube.com/watch?v=n1E9IZfvGMA"
+duration: "02:22:20"
+upload_date: "20260213"
+view_count: 897973
+thumbnail: "https://i.ytimg.com/vi/n1E9IZfvGMA/maxresdefault.jpg"
+---
+
+Dario Amodei thinks we are just a few years away from “a country of geniuses in a data center”. In this episode, we discuss what to make of the scaling hypothesis in the current RL regime, how AI will diffuse throughout the economy, whether Anthropic is underinvesting in compute given their timelines, how frontier labs will ever make money, whether regulation will destroy the boons of this technology, US-China competition, and much more.
+
+𝐄𝐏𝐈𝐒𝐎𝐃𝐄 𝐋𝐈𝐍𝐊𝐒
+* Transcript: https://www.dwarkesh.com/p/dario-amodei-2
+* Apple Podcasts: https://podcasts.apple.com/us/podcast/dario-amodei-the-highest-stakes-financial-model-in-history/id1516093381?i=1000749621800
+* Spotify: https://open.spotify.com/episode/2ZNrpVSrgZMlDwQinl20Ay?si=9D4aG1l7S-2wzLsiILRLIg
+
+𝐒𝐏𝐎𝐍𝐒𝐎𝐑𝐒
+- Labelbox can get you the RL tasks and environments you need. Their massive network of subject-matter experts ensures realism across domains, and their in-house tooling lets them continuously tweak task difficulty to optimize learning. Reach out at https://labelbox.com/dwarkesh
+- Jane Street sent me another puzzle… this time, they’ve trained backdoors into 3 different language models — they want you to find the triggers. Jane Street isn’t even sure this is possible, but they’ve set aside $50,000 for the best attempts and write-ups. They’re accepting submissions until April 1st at https://janestreet.com/dwarkesh
+- Mercury’s personal accounts make it easy to share finances with a partner, a roommate… or OpenClaw. Last week, I wanted to try OpenClaw for myself, so I used Mercury to spin up a virtual debit card with a small spend limit, and then I let my agent loose. No matter your use case, apply at https://mercury.com/personal-banking
+
+To sponsor a future episode, visit https://dwarkesh.com/advertise.
+
+𝐓𝐈𝐌𝐄𝐒𝐓𝐀𝐌𝐏𝐒
+00:00:00 - What exactly are we scaling?
+00:12:36 - Is diffusion cope?
+00:29:42 - Is continual learning necessary?
+00:46:20 - If AGI is imminent, why not buy more compute?
+00:58:49 - How will AI labs actually make profit?
+01:31:19 - Will regulations destroy the boons of AGI?
+01:47:41 - Why can’t China and America both have a country of geniuses in a datacenter?
+02:05:46 - Claude's constitution

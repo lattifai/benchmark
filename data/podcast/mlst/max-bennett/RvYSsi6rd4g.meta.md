@@ -1,0 +1,93 @@
+---
+title: "Your Brain Doesn't Command Your Body. It Predicts It. [Max Bennett]"
+channel: "Machine Learning Street Talk"
+url: "https://www.youtube.com/watch?v=RvYSsi6rd4g"
+duration: "03:17:10"
+upload_date: "20251230"
+view_count: 23563
+thumbnail: "https://i.ytimg.com/vi/RvYSsi6rd4g/maxresdefault.jpg"
+---
+
+Tim sits down with Max Bennett to explore how our brains evolved over 600 million years—and what that means for understanding both human intelligence and AI.
+
+Max isn't a neuroscientist by training. He's a tech entrepreneur who got curious, started reading, and ended up weaving together three fields that rarely talk to each other: comparative psychology (what different animals can actually do), evolutionary neuroscience (how brains changed over time), and AI (what actually works in practice).
+
+*Your Brain Is a Guessing Machine*
+You don't actually "see" the world. Your brain builds a simulation of what it *thinks* is out there and just uses your eyes to check if it's right. That's why optical illusions work—your brain is filling in a triangle that isn't there, or can't decide if it's looking at a duck or a rabbit.
+
+*Rats Have Regrets*
+In a fascinating experiment called "Restaurant Row," rats make choices about waiting for food. When they skip a short wait for something they like and end up stuck with a long wait for something they don't—you can literally watch their brain imagine eating the food they passed up. They regret their choice and make different decisions next time.
+
+*Chimps Are Machiavellian*
+The most gripping story is about two chimps, Rock and Belle. Belle learns where food is hidden. Rock figures out he can just follow her and steal it. So Belle starts hiding the food when she finds it. Then Rock starts *pretending* not to watch her, then sprinting to grab the food once she moves. This escalates into an arms race of deception and counter-deception—proof that apes can think about what others are thinking.
+
+*Language Is the Human Superpower*
+Other animals learn by watching each other's actions. Humans can share what's happening *inside our minds*. You can describe a dream, plan a hunt with five other people, or warn someone about a snake you saw yesterday. This ability to share mental simulations is what lets knowledge accumulate across generations—and it's arguably the "singularity that already happened."
+
+*Does ChatGPT Think?*
+ChatGPT clearly has *a model* (it wouldn't work otherwise), but it doesn't have a *world model* in the way brains do. A real world model means you can form a hypothesis, test it, and update your beliefs based on what happens. GPT learns only from its training data—it can't run experiments or reject information it knows to be false.
+
+Understanding how the brain evolved isn't just about the past. It gives us clues about:
+- What's actually different between human intelligence and AI
+- Why we're so easily fooled by status games and tribal thinking
+- What features we might want to build into—or leave out of—future AI systems
+
+Get Max's book:
+https://www.amazon.com/Brief-History-Intelligence-Humans-Breakthroughs/dp/0063286343
+
+Rescript: https://app.rescript.info/public/share/R234b7AXyDXZusqQ_43KMGsUSvJ2TpSz2I3emnI6j9A
+
+---
+TIMESTAMPS:
+00:00:00 Introduction: Outsider's Advantage & Neocortex Theories
+00:11:34 Perception as Inference: The Filling-In Machine
+00:19:11 Understanding, Recognition & Generative Models
+00:36:39 How Mice Plan: Vicarious Trial & Error
+00:46:15 Evolution of Self: The Layer 4 Mystery
+00:58:31 Ancient Minds & The Social Brain: Machiavellian Apes
+01:19:36 AI Alignment, Instrumental Convergence & Status Games
+01:33:07 Metacognition & The IQ Paradox
+01:48:40 Does GPT Have Theory of Mind?
+02:00:40 Memes, Language Singularity & Brain Size Myths
+02:16:44 Communication, Language & The Cyborg Future
+02:44:25 Shared Fictions, World Models & The Reality Gap
+
+---
+REFERENCES:Person:
+[00:00:05] Karl Friston (UCL)
+https://www.youtube.com/watch?v=PNYWi996Beg
+[00:00:06] Jeff Hawkins
+https://www.youtube.com/watch?v=6VQILbDqaI4
+[00:12:19] Hermann von Helmholtz
+https://plato.stanford.edu/entries/hermann-helmholtz/
+[00:38:34] David Redish (U. Minnesota)
+https://redishlab.umn.edu/
+[01:10:19] Robin Dunbar
+https://www.psy.ox.ac.uk/people/robin-dunbar
+[01:15:04] Emil Menzel
+https://www.sciencedirect.com/bookseries/behavior-of-nonhuman-primates/vol/5/suppl/C
+[01:19:49] Nick Bostrom
+https://nickbostrom.com/
+[02:28:25] Noam Chomsky
+https://linguistics.mit.edu/user/chomsky/
+[03:01:22] Judea Pearl
+https://samueli.ucla.edu/people/judea-pearl/
+Concept/Framework:
+[00:05:04] Active Inference
+https://www.youtube.com/watch?v=KkR24ieh5Ow
+Paper:
+[00:35:59] Predictions not commands [Rick A Adams]
+https://pubmed.ncbi.nlm.nih.gov/23129312/
+Book:
+[01:25:42] The Elephant in the Brain
+https://www.amazon.com/Elephant-Brain-Hidden-Motives-Everyday/dp/0190495995
+[01:28:27] The Status Game
+https://www.goodreads.com/book/show/58642436-the-status-game
+[02:00:40] The Selfish Gene
+https://amazon.com/dp/0198788606
+[02:14:25] The Language Game
+https://www.amazon.com/Language-Game-Improvisation-Created-Changed/dp/1541674987
+[02:54:40] The Evolution of Language
+https://www.amazon.com/Evolution-Language-Approaches/dp/052167736X
+[03:09:37] The Three-Body Problem
+https://amazon.com/dp/0765377063
