@@ -133,7 +133,7 @@ The podcast by and for AI Engineers! In 2025, over 10 million readers and listen
 We cover Foundation Models changing every domain in Code Generation, Multimodality, AI Agents, GPU Infra and more, directly from the founders, builders, and thinkers involved in pushing the cutting edge. Striving to give you both the definitive take on the Current Thing down to the first introduction to the tech you'll be using in the next 3 months! We break news and exclusive interviews from OpenAI, Anthropic, Gemini, Meta (Soumith Chintala), Sierra (Bret Taylor), tiny (George Hotz), Databricks/MosaicML (Jon Frankle), Modular (Chris Lattner), Answer.ai (Jeremy Howard), et al.
 Full show notes always on https://latent.space
 🔬Why There Is No "AlphaFold for Materials" — AI for Materials Discovery with Heather Kulik
-14 hrs ago • Brandon Anderson and RJ Honicky
+Mar 24 • Brandon Anderson and RJ Honicky
 Dreamer: the Personal Agent OS — David Singleton
 Why Anthropic Thinks AI Should Have Its Own Computer — Felix Rieseberg of Claude Cowork & Claude Code Desktop
 Retrieval After RAG: Hybrid Search, Agents, and Database Design — Simon Hørup Eskildsen of Turbopuffer

@@ -93,4 +93,19 @@ download "https://www.youtube.com/watch?v=mDG_Hx3BSUE" "dwarkesh/dylan-patel"
 # 8. State of AI 2026 | #490 (4h25m)
 download "https://www.youtube.com/watch?v=EV7WhVT270Q" "lex-fridman/state-of-ai-2026"
 
-echo "✅ All 8 episodes downloaded${ONLY:+ (only=$ONLY)}."
+# --- 硅谷101 ---
+
+# 9. E230 英伟达的巅峰与软肋 (1h06m)
+download "https://www.youtube.com/watch?v=OpwVpEc6noc" "valley101podcast/nvidia-peak-and-weakness"
+
+# --- @xiaojunpodcast ---
+
+# 10. Saining Xie 7-hour marathon interview (6h44m)
+download "https://www.youtube.com/watch?v=rIwgZWzUKm8" "xiaojunpodcast/xie-saining-marathon"
+
+# --- @罗永浩的十字路口 ---
+
+# 11. 杨笠×罗永浩 (3h42m)
+download "https://www.youtube.com/watch?v=DpGkfVxw9ps" "罗永浩的十字路口/yangli-x-luoyonghao"
+
+echo "✅ All 11 episodes downloaded${ONLY:+ (only=$ONLY)}."
