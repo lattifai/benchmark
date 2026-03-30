@@ -85,6 +85,8 @@ Dataset: TheValley101-GPT-4o-vs-Gemini
 
 > **关于 WER 差异的说明**：YouTube Caption +LattifAI 可能显示与原始略有不同的 WER。这是因为 LattifAI 的 `split_sentence` 会重组 YouTube 的碎片化字幕（例如 `"we have 100"` + `"million people"` → `"we have 100 million people"`），这会影响 WER 计算时数字的规范化方式（`100` + `million` → `1000000` vs `100 million` → `100000000`）。
 
+> **关于 VibeVoice 的说明**：VibeVoice 是一个本地 ASR 模型，没有公开 API。评测结果通过本地启动模型生成。JSON 输出（含说话人分离）通过 `scripts/vibevoice_json2ass.py` 转换为 ASS 格式。
+
 ##### URL vs 本地音频
 
 ```
