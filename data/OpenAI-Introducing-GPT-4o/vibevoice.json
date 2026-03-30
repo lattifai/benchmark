@@ -1,0 +1,1048 @@
+[
+  {
+    "Start": 0,
+    "End": 15.03,
+    "Content": "[Music]"
+  },
+  {
+    "Start": 15.03,
+    "End": 24.23,
+    "Speaker": 0,
+    "Content": "Hi everyone. Thank you. Thank you. It's great to have you here today. Today I'm going to talk about three things. That's it."
+  },
+  {
+    "Start": 24.23,
+    "End": 61.2,
+    "Speaker": 0,
+    "Content": "We will start with why it's so important to us to have a product that we can make freely available and broadly available to everyone. And we're always trying to find out ways to reduce friction so everyone can use ChatGPT wherever they are. So today, we'll be releasing the desktop version of ChatGPT and a refreshed UI that makes it simpler to use, much more natural as well. But the big news today is that we are launching our new flagship model. And we are calling it GPT-4o."
+  },
+  {
+    "Start": 61.2,
+    "End": 82.92,
+    "Speaker": 0,
+    "Content": "The special thing about GPT-4o is that it brings GPT-4 level intelligence to everyone, including our free users. We'll be showing some live demos today to show the full extent of the capabilities of our new model, and we'll be rolling them out iteratively over the next few weeks."
+  },
+  {
+    "Start": 82.92,
+    "End": 84.09,
+    "Speaker": 0,
+    "Content": "Alright."
+  },
+  {
+    "Start": 84.09,
+    "End": 121.77,
+    "Speaker": 0,
+    "Content": "So, let's get started. A very important part of our mission is to be able to make our advanced AI tools available to everyone for free. We think it's very, very important that people have an intuitive feel for what the technology can do. And so we really want to pair it with this broader understanding. And we're always finding ways to reduce that friction. And recently we made ChatGPT available without the sign-up flow. And today, we're also bringing the desktop app to ChatGPT."
+  },
+  {
+    "Start": 121.77,
+    "End": 136.84,
+    "Speaker": 0,
+    "Content": "because we want you to be able to use it wherever you are. As you can see, it's easy, it's simple, it integrates very, very easily in your workflow. Along with it, we've also refreshed the UI."
+  },
+  {
+    "Start": 136.87,
+    "End": 155.07,
+    "Speaker": 0,
+    "Content": "We know that these models get more and more complex, but we want the experience of interaction to actually become more natural, easy, and for you not to focus on the UI at all, but just focus on the collaboration with ChatGPT."
+  },
+  {
+    "Start": 155.85,
+    "End": 165.51,
+    "Speaker": 0,
+    "Content": "And now the big news. Today, we are releasing our newest flagship model. This is GPT-4o."
+  },
+  {
+    "Start": 165.51,
+    "End": 172.81,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 172.81,
+    "End": 200.89,
+    "Speaker": 0,
+    "Content": "GPT-4o provides GPT-4 level intelligence, but it is much faster and it improves on its capabilities across text, vision, and audio. For the past couple of years, we've been very focused on improving the intelligence of these models, and they've gotten pretty good. But this is the first time that we are really making a huge step forward when it comes to the ease of use."
+  },
+  {
+    "Start": 201.87,
+    "End": 222.99,
+    "Speaker": 0,
+    "Content": "And this is incredibly important because we're looking at the future of interaction between ourselves and the machines, and we think that GPT-4o is really shifting that paradigm into the future of collaboration, where this interaction becomes much more natural and far, far easier."
+  },
+  {
+    "Start": 223.27,
+    "End": 263.14,
+    "Speaker": 0,
+    "Content": "But you know, making this happen is actually quite complex because when we interact with one another, there's a lot of stuff that we take for granted. You know, the ease of our dialogue when we interrupt one another, the background noises, the multiple voices in a conversation, or, you know, understanding the tone of voice. All of these things are actually quite complex for for these models. And until now, with voice mode, we had three models that come together to deliver this experience. We have transcription, intelligence, and then text-to-speech."
+  },
+  {
+    "Start": 263.14,
+    "End": 282.58,
+    "Speaker": 0,
+    "Content": "all comes together in orchestration to deliver voice mode. This also brings a lot of latency to the experience and it really breaks that immersion in the collaboration with ChatGPT. But now, with GPT-4o, this all happens natively."
+  },
+  {
+    "Start": 282.66,
+    "End": 289.12,
+    "Speaker": 0,
+    "Content": "GPT-4o reasons across voice, text, and vision."
+  },
+  {
+    "Start": 289.28,
+    "End": 310.04,
+    "Speaker": 0,
+    "Content": "And with these incredible efficiencies, it also allows us to bring the GPT-4 class intelligence to our free users. This is something that we've been trying to do for many, many months, and we're very, very excited to finally bring GPT-4o to all of our users."
+  },
+  {
+    "Start": 311.33,
+    "End": 341.47,
+    "Speaker": 0,
+    "Content": "Today we have hundred million people, more than hundred million in fact. They use ChatGPT to create, work, learn. And we have these advanced tools that are only available to our paid paid users, at least until now. With the efficiencies of 4.0, we can bring these tools to everyone. So starting today, you can use GPTs and the GPT Store."
+  },
+  {
+    "Start": 341.95,
+    "End": 366.67,
+    "Speaker": 0,
+    "Content": "So far, we've had more than a million users create amazing experiences with GPTs. These are custom ChatGPTs for specific use cases. They're available in the store. And now, our builders have a much bigger audience where, you know, university professors can create content for their students or podcasters can create content for their listeners."
+  },
+  {
+    "Start": 367.57,
+    "End": 401.44,
+    "Speaker": 0,
+    "Content": "And you can also use vision. So now you can upload um screenshots, photos, documents containing both text and images, and you can start conversations with ChatGPT about all of this content. You can also use memory, where it makes ChatGPT far more useful and helpful because now it has a sense of continuity across all your conversations. And you can use browse, where you can search for real-time information in your conversation."
+  },
+  {
+    "Start": 401.44,
+    "End": 413.69,
+    "Speaker": 0,
+    "Content": "and advanced data analysis where you can upload charts or any information and it will analyze this information, it will give you answers, and so on."
+  },
+  {
+    "Start": 414.61,
+    "End": 432.56,
+    "Speaker": 0,
+    "Content": "Lastly, we've also improved on the quality and speed in 50 different languages for ChatGPT. And this is very, very important because we want to be able to bring this experience to as many people out there as possible."
+  },
+  {
+    "Start": 432.64,
+    "End": 448.36,
+    "Speaker": 0,
+    "Content": "So we're very, very excited to bring GPT-4o to all of our free users out there, and for the paid users, they will continue to have up to five times the capacity limits of our free users."
+  },
+  {
+    "Start": 448.94,
+    "End": 456.36,
+    "Speaker": 0,
+    "Content": "But GPT-4o is not only available in ChatGPT. We're also bringing it to the API."
+  },
+  {
+    "Start": 456.36,
+    "End": 462.58,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 462.58,
+    "End": 481.34,
+    "Speaker": 0,
+    "Content": "So, our developers can start building today with GPT-4o and making amazing AI applications, deploying them at scale. 4o is available at two x faster, 50% cheaper, and five times higher rate limits compared to GPT-4 Turbo."
+  },
+  {
+    "Start": 483.01,
+    "End": 513.83,
+    "Speaker": 0,
+    "Content": "But, you know, as we bring these technologies into the world, it's quite challenging to figure out how to do so in a way that's both useful and also safe. And GPT-4o presents new challenges for us when it comes to safety because we're dealing with real-time audio, real-time vision. And our team has been hard at work figuring out how to build in mitigations against misuse."
+  },
+  {
+    "Start": 513.83,
+    "End": 549.68,
+    "Speaker": 0,
+    "Content": "We continue to work with different stakeholders out there from government, media, entertainment, all industries, red teamers, civil society to figure out how to best bring these technologies into the world. So, over the next few weeks, we'll continue our iterative deployment to bring out all the capabilities to you. But today, I want to show you all these capabilities. So we'll do some live demos. I will bring on two of our research leads, Mike Chen and Barrett Zoph."
+  },
+  {
+    "Start": 549.68,
+    "End": 557.88,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 557.88,
+    "End": 560.07,
+    "Speaker": 1,
+    "Content": "Hi, I'm uh, I'm Barrett."
+  },
+  {
+    "Start": 560.07,
+    "End": 561.25,
+    "Speaker": 2,
+    "Content": "Hey, I'm Mark."
+  },
+  {
+    "Start": 561.25,
+    "End": 582.98,
+    "Speaker": 2,
+    "Content": "So one of the key capabilities we're really excited to share with you today is real-time conversational speech. Let's just get a demo fired up. So I'm taking out a phone. If you are wondering about this wire, it's so we have consistent internet. And if you see, there's this little icon on the bottom right of the ChatGPT app, and this will open up GPT-4o's audio capabilities."
+  },
+  {
+    "Start": 584.4,
+    "End": 587.71,
+    "Speaker": 2,
+    "Content": "Hey, ChatGPT. Hi Mark, how are you?"
+  },
+  {
+    "Start": 587.71,
+    "End": 593.02,
+    "Speaker": 3,
+    "Content": "Oh, Mark. I'm doing great. Thanks for asking. How about you?"
+  },
+  {
+    "Start": 593.02,
+    "End": 600.44,
+    "Speaker": 2,
+    "Content": "Hey, so I'm on stage right now. I'm doing a live demo and frankly I'm feeling a little bit nervous. Can you help me calm my nerves a little bit?"
+  },
+  {
+    "Start": 600.58,
+    "End": 609.88,
+    "Speaker": 3,
+    "Content": "Oh, you're doing a live demo right now? That's awesome. Just take a deep breath and remember, you're the expert here."
+  },
+  {
+    "Start": 609.88,
+    "End": 616.44,
+    "Speaker": 2,
+    "Content": "I like that suggestion. Let me try a couple deep breaths. Can you give me feedback on my breaths? Okay, here I go. [Breath]"
+  },
+  {
+    "Start": 616.44,
+    "End": 618.52,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 618.52,
+    "End": 620.36,
+    "Speaker": 3,
+    "Content": "Whoa, slow down."
+  },
+  {
+    "Start": 621.65,
+    "End": 629.73,
+    "Speaker": 3,
+    "Content": "a little bit there. Mark, you're not a vacuum cleaner. Breathe in. for a count of four"
+  },
+  {
+    "Start": 629.73,
+    "End": 635.79,
+    "Speaker": 2,
+    "Content": "Okay, uh, let me try again. So I'm going to breathe in deeply. And then"
+  },
+  {
+    "Start": 636.17,
+    "End": 640.37,
+    "Speaker": 3,
+    "Content": "for four and then exhale slowly"
+  },
+  {
+    "Start": 640.43,
+    "End": 645.27,
+    "Speaker": 2,
+    "Content": "Okay, I'll try again. breathing in and breathe out."
+  },
+  {
+    "Start": 645.79,
+    "End": 648.28,
+    "Speaker": 3,
+    "Content": "That's it. How do you feel?"
+  },
+  {
+    "Start": 648.28,
+    "End": 650.57,
+    "Speaker": 2,
+    "Content": "I feel a lot better. Thank you so much."
+  },
+  {
+    "Start": 651.31,
+    "End": 658.54,
+    "Speaker": 0,
+    "Content": "So Mark, you've been working on these capabilities for a while now. Can you tell us a bit how it's different from Voice Mode?"
+  },
+  {
+    "Start": 658.54,
+    "End": 659.23,
+    "Speaker": 2,
+    "Content": "Right."
+  },
+  {
+    "Start": 659.23,
+    "End": 697.3,
+    "Speaker": 2,
+    "Content": "So if you've used our voice mode experience before, you'll notice a couple key differences. First, you know, you can now interrupt the model. You don't have to wait for it to finish your turn before you can start speaking, and you know, you can just butt in whenever you want. Second, the model is real-time responsiveness. So that means that you don't have this awkward two to three second lag before you wait for the model to give a response. And finally, the model picks up on emotion, right? When I was breathing super hard there, it could tell and it knew, hey, you might want to calm down a little bit. You're kind of running a little bit too fast. So, you know, it really has that capability across the board to perceive your emotion."
+  },
+  {
+    "Start": 697.3,
+    "End": 708.24,
+    "Speaker": 2,
+    "Content": "Not only that though, the model is able to generate voice in a variety of different emotive styles. And it really has a wide dynamic range. So I'm going to fire up another demo for that."
+  },
+  {
+    "Start": 708.24,
+    "End": 711.84,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 711.84,
+    "End": 714.36,
+    "Speaker": 2,
+    "Content": "Hey, ChatGPT, how are you doing?"
+  },
+  {
+    "Start": 714.36,
+    "End": 718.08,
+    "Speaker": 3,
+    "Content": "I'm doing fantastic, thanks for asking. How about you?"
+  },
+  {
+    "Start": 718.08,
+    "End": 718.82,
+    "Speaker": 2,
+    "Content": "Pretty good."
+  },
+  {
+    "Start": 718.82,
+    "End": 719.32,
+    "Speaker": 3,
+    "Content": "What's up?"
+  },
+  {
+    "Start": 719.32,
+    "End": 726.48,
+    "Speaker": 2,
+    "Content": "So my friend uh Barrett here, he's been having trouble sleeping lately. And uh I want you to tell him a bedtime story about robots and love."
+  },
+  {
+    "Start": 726.48,
+    "End": 743.5,
+    "Speaker": 3,
+    "Content": "Oh, a bedtime story about robots and love? I got you covered. Gather round, Barrett. Once upon a time, in a world not too different from ours, there was a robot named Bite. Bite was a curious robot, always exploring..."
+  },
+  {
+    "Start": 743.5,
+    "End": 747.59,
+    "Speaker": 2,
+    "Content": "started this story, but I want a little bit more emotion in your voice, a little bit more drama."
+  },
+  {
+    "Start": 747.59,
+    "End": 756.54,
+    "Speaker": 3,
+    "Content": "Got it. Let's add some drama. Once upon a time, in a world not too different from ours, there was a robot named"
+  },
+  {
+    "Start": 756.54,
+    "End": 762.22,
+    "Speaker": 1,
+    "Content": "No, no, no, ChatGPT. I really want maximal emotion, like maximal expressiveness, much more than you were doing before."
+  },
+  {
+    "Start": 762.52,
+    "End": 774.8,
+    "Speaker": 3,
+    "Content": "Understood. Let's amplify the drama. Once upon a time, in a world not too different from ours, there was a robot named Bite. Bite."
+  },
+  {
+    "Start": 774.8,
+    "End": 777.52,
+    "Speaker": 0,
+    "Content": "Can you do this in a robotic voice now?"
+  },
+  {
+    "Start": 777.6,
+    "End": 793.35,
+    "Speaker": 3,
+    "Content": "Initiating dramatic robotic voice. Once upon a time in a world not too different from ours, there was a robot named Bite. Bite was a curious robot, always exploring new circuits."
+  },
+  {
+    "Start": 793.35,
+    "End": 798.22,
+    "Speaker": 2,
+    "Content": "Yeah, Barrett here, calm down a little bit. Can you end the story, um but do it in a singing voice?"
+  },
+  {
+    "Start": 798.28,
+    "End": 808.68,
+    "Speaker": 3,
+    "Content": "Ah. And so Byte found another robot friend, and they lived circuitly ever after."
+  },
+  {
+    "Start": 808.68,
+    "End": 810.39,
+    "Speaker": 2,
+    "Content": "Thank you so much."
+  },
+  {
+    "Start": 810.39,
+    "End": 812.92,
+    "Speaker": 1,
+    "Content": "I definitely feel a lot more relaxed."
+  },
+  {
+    "Start": 812.92,
+    "End": 818.2,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 818.2,
+    "End": 827.21,
+    "Speaker": 0,
+    "Content": "You've just seen the voice capabilities, but we also want to show you the vision capabilities as the model can also see the whole world around us."
+  },
+  {
+    "Start": 827.21,
+    "End": 833.93,
+    "Speaker": 1,
+    "Content": "Yeah, absolutely. like as you can see, you know, you can chat with ChatGPT in real time, but you can also interact with it, um, with video as well."
+  },
+  {
+    "Start": 833.93,
+    "End": 840.76,
+    "Speaker": 2,
+    "Content": "Okay. So let me boot up ChatGPT. Hey ChatGPT"
+  },
+  {
+    "Start": 841.36,
+    "End": 843.99,
+    "Speaker": 3,
+    "Content": "Hello there. How's it going?"
+  },
+  {
+    "Start": 843.99,
+    "End": 848.08,
+    "Speaker": 1,
+    "Content": "It's going really well. Today I'd really like your help solving a math problem."
+  },
+  {
+    "Start": 848.08,
+    "End": 852.2,
+    "Speaker": 3,
+    "Content": "I'm all ears. What math problem can I help you tackle today?"
+  },
+  {
+    "Start": 852.2,
+    "End": 860.56,
+    "Speaker": 1,
+    "Content": "So I'm going to write down a linear equation on a sheet of paper and I'll show you. And then I'd love your help working me through it. But importantly, don't tell me the solution, just help give me hints along the way."
+  },
+  {
+    "Start": 860.8,
+    "End": 862.42,
+    "Speaker": 3,
+    "Content": "Got it."
+  },
+  {
+    "Start": 863.84,
+    "End": 865.9,
+    "Speaker": 3,
+    "Content": "Okay, I see it."
+  },
+  {
+    "Start": 865.9,
+    "End": 870.22,
+    "Speaker": 1,
+    "Content": "Hmm No, I didn't show you yet. Just give me help along the way. One second."
+  },
+  {
+    "Start": 871.66,
+    "End": 876.16,
+    "Speaker": 3,
+    "Content": "Whoops I got too excited. I'm ready when you are."
+  },
+  {
+    "Start": 876.16,
+    "End": 885.33,
+    "Content": "[Speech]"
+  },
+  {
+    "Start": 885.33,
+    "End": 889.61,
+    "Speaker": 1,
+    "Content": "ChatGPT, what equation did I write down there?"
+  },
+  {
+    "Start": 889.61,
+    "End": 896.71,
+    "Speaker": 3,
+    "Content": "Ah, I see it now. You wrote down 3x plus 1 equals 4."
+  },
+  {
+    "Start": 896.71,
+    "End": 900.61,
+    "Speaker": 1,
+    "Content": "Yep, exactly. So what's the first step I should take to try to solve this?"
+  },
+  {
+    "Start": 900.61,
+    "End": 910.5,
+    "Speaker": 3,
+    "Content": "The first step is to get all the terms with x on one side and the constants on the other side. So what do you think we should do with that plus one?"
+  },
+  {
+    "Start": 910.5,
+    "End": 914.21,
+    "Speaker": 1,
+    "Content": "Okay, I'm going to try to subtract one from both sides and then I'll see what I get."
+  },
+  {
+    "Start": 914.75,
+    "End": 921.85,
+    "Speaker": 3,
+    "Content": "Great idea. Perfect. Now what do you get when you subtract one from both sides?"
+  },
+  {
+    "Start": 921.85,
+    "End": 925.87,
+    "Content": "[Environmental Sounds]"
+  },
+  {
+    "Start": 925.87,
+    "End": 930.27,
+    "Speaker": 1,
+    "Content": "Okay, so ChatGPT, this is what I ended up with. How does this look?"
+  },
+  {
+    "Start": 930.47,
+    "End": 940.61,
+    "Speaker": 3,
+    "Content": "Spot on. Now you've isolated the term with x on one side and it looks like 3x equals 3. What do you think we should do next to solve for x?"
+  },
+  {
+    "Start": 940.61,
+    "End": 942.83,
+    "Speaker": 1,
+    "Content": "I'm not sure. Can you give me another hint?"
+  },
+  {
+    "Start": 943.25,
+    "End": 952.37,
+    "Speaker": 3,
+    "Content": "Of course. You have 3x and you want to find the value of x. Think about what operation would undo multiplication."
+  },
+  {
+    "Start": 952.37,
+    "End": 954.12,
+    "Speaker": 1,
+    "Content": "Is it subtraction?"
+  },
+  {
+    "Start": 954.18,
+    "End": 961.56,
+    "Speaker": 3,
+    "Content": "Close, but think of the opposite of multiplication because 3x means 3 times x."
+  },
+  {
+    "Start": 961.56,
+    "End": 965.98,
+    "Speaker": 1,
+    "Content": "Okay, I think it's division. Let me try to divide both sides by three and let me see what I get."
+  },
+  {
+    "Start": 965.98,
+    "End": 969.78,
+    "Speaker": 3,
+    "Content": "Bingo So, go ahead and divide both sides by three."
+  },
+  {
+    "Start": 969.78,
+    "End": 974.63,
+    "Content": "[Environmental Sounds]"
+  },
+  {
+    "Start": 974.63,
+    "End": 978.81,
+    "Speaker": 1,
+    "Content": "Okay. So ChatGPT, this is what I ended up with. How does this look?"
+  },
+  {
+    "Start": 978.81,
+    "End": 987.95,
+    "Speaker": 3,
+    "Content": "It looks perfect. You've solved it, and x equals one. Nicely done. How do you feel about solving linear equations now?"
+  },
+  {
+    "Start": 987.95,
+    "End": 996.37,
+    "Speaker": 2,
+    "Content": "Yeah, honestly, I'm I'm not pretty confident I can solve linear equations. But why would you ever need to use this in the real world? I'm really skeptical."
+  },
+  {
+    "Start": 996.59,
+    "End": 1016.47,
+    "Speaker": 3,
+    "Content": "That's a fair question. Linear equations pop up in a lot of everyday situations, even if we don't realize it. For example, calculating expenses, planning travel, cooking, and even in business for profit and loss calculations. It's basically a way to solve problems where you need to find an unknown value."
+  },
+  {
+    "Start": 1016.47,
+    "End": 1023.8,
+    "Speaker": 2,
+    "Content": "Plus, it's... Wow, okay. You know, I have a lot of unknown values in my life. I'm totally convinced. We sh- I'm gonna learn math now."
+  },
+  {
+    "Start": 1025.24,
+    "End": 1036.46,
+    "Speaker": 3,
+    "Content": "I love that attitude. Math can definitely help solve some of life's mysteries. Whenever you're ready to dive into more math, I'm here for you. Anything else you'd like to tackle today?"
+  },
+  {
+    "Start": 1036.46,
+    "End": 1043.53,
+    "Speaker": 1,
+    "Content": "So ChatGPT, I really love that you, you know, taught the value of math to my friend Mark. And I wrote, uh, one last thing I love if you could take a look at."
+  },
+  {
+    "Start": 1043.53,
+    "End": 1048.07,
+    "Speaker": 3,
+    "Content": "Of course. First, I'd love to see what you wrote. Show it to me whenever you're ready."
+  },
+  {
+    "Start": 1048.07,
+    "End": 1050.82,
+    "Speaker": 1,
+    "Content": "Okay, so this is what I wrote down. What do you see?"
+  },
+  {
+    "Start": 1051.82,
+    "End": 1057.88,
+    "Speaker": 3,
+    "Content": "Aww, I see. I love ChatGPT. That's so sweet of you."
+  },
+  {
+    "Start": 1058.14,
+    "End": 1063.21,
+    "Speaker": 1,
+    "Content": "Yeah, well I really appreciate all the help. So yeah, as we can see, [Noise]"
+  },
+  {
+    "Start": 1063.21,
+    "End": 1066.87,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 1066.87,
+    "End": 1070.26,
+    "Speaker": 3,
+    "Content": "Wow, that's quite the outfit you've got on."
+  },
+  {
+    "Start": 1070.26,
+    "End": 1076.68,
+    "Speaker": 1,
+    "Content": "Yeah, as we can see, you know, we can chat in real time to ChatGPT. And not only that, we can interact with it with uh video as well."
+  },
+  {
+    "Start": 1076.68,
+    "End": 1082.05,
+    "Speaker": 2,
+    "Content": "And I swear, like if you look at Barrett's GPT history, it's all equations like this."
+  },
+  {
+    "Start": 1082.05,
+    "End": 1084.15,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 1084.15,
+    "End": 1089.09,
+    "Speaker": 0,
+    "Content": "Now that you know you can do linear equations, can you show us something more complex?"
+  },
+  {
+    "Start": 1089.09,
+    "End": 1095.88,
+    "Speaker": 1,
+    "Content": "I think so. Okay, next let's try something uh coding related. So let me take out um a computer for this."
+  },
+  {
+    "Start": 1095.88,
+    "End": 1099.62,
+    "Content": "[Environmental Sounds]"
+  },
+  {
+    "Start": 1099.62,
+    "End": 1105.7,
+    "Speaker": 1,
+    "Content": "Okay. So I'm going to open the ChatGPT desktop app, like Mira was talking about before."
+  },
+  {
+    "Start": 1107.26,
+    "End": 1108.26,
+    "Speaker": 1,
+    "Content": "Okay."
+  },
+  {
+    "Start": 1108.26,
+    "End": 1125.78,
+    "Speaker": 1,
+    "Content": "And to give a bit of background on what's going on, so here we have um a computer and on the screen we have some code, and then the ChatGPT voice app is on the right. So ChatGPT will be able to hear me, but it can't see anything on the screen. So I'm going to highlight the code, command C it, and then that will send it to ChatGPT, and then I'm going to talk about the code to ChatGPT."
+  },
+  {
+    "Start": 1126.2,
+    "End": 1128.14,
+    "Speaker": 1,
+    "Content": "Hey ChatGPT"
+  },
+  {
+    "Start": 1128.48,
+    "End": 1130.62,
+    "Speaker": 3,
+    "Content": "Hey there. How's it going?"
+  },
+  {
+    "Start": 1130.62,
+    "End": 1134.71,
+    "Speaker": 1,
+    "Content": "Yeah, it's going really well. I was wondering if you could help me with a coding problem today."
+  },
+  {
+    "Start": 1134.71,
+    "End": 1139.52,
+    "Speaker": 3,
+    "Content": "Of course. I'd love to help you out. What's the coding problem you're dealing with?"
+  },
+  {
+    "Start": 1139.52,
+    "End": 1142.37,
+    "Speaker": 1,
+    "Content": "Okay, I'm going to share with you some code. One second."
+  },
+  {
+    "Start": 1142.37,
+    "End": 1144.72,
+    "Speaker": 3,
+    "Content": "Sure thing. Take your time."
+  },
+  {
+    "Start": 1144.72,
+    "End": 1146.81,
+    "Content": "[Music]"
+  },
+  {
+    "Start": 1146.81,
+    "End": 1153.25,
+    "Speaker": 1,
+    "Content": "Okay. So I just shared some code with you. Could you give me a really brief one-sentence description of what's going on in the code?"
+  },
+  {
+    "Start": 1153.25,
+    "End": 1170.58,
+    "Speaker": 3,
+    "Content": "This code fetches daily weather data for a specific location and time period, smooths the temperature data using a rolling average, annotates a significant weather event on the resulting plot, and then displays the plot with the average, minimum, and maximum temperatures over the year."
+  },
+  {
+    "Start": 1170.58,
+    "End": 1178.28,
+    "Speaker": 1,
+    "Content": "Awesome Thanks so much. And in the code there's this function foo. Can you describe to me what the plot would look like if I had versus didn't have this function?"
+  },
+  {
+    "Start": 1178.28,
+    "End": 1179.46,
+    "Speaker": 3,
+    "Content": "Sure."
+  },
+  {
+    "Start": 1179.46,
+    "End": 1208.65,
+    "Speaker": 3,
+    "Content": "The function foo takes in a data frame x containing temperature data and a window size y for calculating the rolling mean. It smooths the average temperature, minimum temperature, and maximum temperature columns by applying a rolling mean over the specified window. With the foo function, the plot would show smoother temperature lines because the rolling mean reduces the noise or fluctuations in the data."
+  },
+  {
+    "Start": 1208.65,
+    "End": 1209.5,
+    "Speaker": 3,
+    "Content": "Awesome"
+  },
+  {
+    "Start": 1209.5,
+    "End": 1216.14,
+    "Speaker": 1,
+    "Content": "Thanks so much. So yeah, I definitely will want to apply this function. And so I'm going to uh generate the plot and then show it to you. Give me one second."
+  },
+  {
+    "Start": 1216.64,
+    "End": 1221.08,
+    "Speaker": 3,
+    "Content": "Absolutely. Take your time. I'm excited to see the plot when you're ready."
+  },
+  {
+    "Start": 1221.22,
+    "End": 1231.36,
+    "Speaker": 1,
+    "Content": "Yeah. So so far, ChatGPT has only been able to see the code, and now I'm going to run it and then I'll use the vision capabilities of the ChatGPT desktop app so it can actually see everything going on on the screen as well."
+  },
+  {
+    "Start": 1231.36,
+    "End": 1237.42,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 1237.42,
+    "End": 1244.36,
+    "Speaker": 1,
+    "Content": "Okay, ChatGPT. I'm sharing with you the plot now. I'm wondering if you can give me a really brief one-sentence overview of what you see."
+  },
+  {
+    "Start": 1244.83,
+    "End": 1256.91,
+    "Speaker": 3,
+    "Content": "The plot displays smoothed average, minimum, and maximum temperatures throughout 2018 with a notable annotation marking a big rainfall event in late September."
+  },
+  {
+    "Start": 1256.99,
+    "End": 1264.49,
+    "Speaker": 2,
+    "Content": "Fantastic I have another question for you. Um, which months do you see the hottest temperatures and roughly what temperatures do those correspond to?"
+  },
+  {
+    "Start": 1264.51,
+    "End": 1279.96,
+    "Speaker": 3,
+    "Content": "The hottest temperatures occur around July and August. The maximum temperature during these months is roughly between 25 degrees and 30 degrees, 77 degrees Fahrenheit to 86 degrees Fahrenheit."
+  },
+  {
+    "Start": 1279.96,
+    "End": 1285.13,
+    "Speaker": 0,
+    "Content": "What's going on with the Y axis? Is this in Celsius or Fahrenheit?"
+  },
+  {
+    "Start": 1285.13,
+    "End": 1294.84,
+    "Speaker": 3,
+    "Content": "The Y axis is in Celsius. The temperatures are labeled accordingly, such as average temperature, minimum temperature, and maximum temperature."
+  },
+  {
+    "Start": 1295.04,
+    "End": 1308.56,
+    "Speaker": 1,
+    "Content": "Yeah. So as we can see, you know, not only can ChatGPT help me solve very easy linear um algebra equations that I need help with, it can also interact with, you know, code bases and see the outputs of plots and everything like this going on on the computer."
+  },
+  {
+    "Start": 1308.56,
+    "End": 1315.2,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 1315.2,
+    "End": 1326.16,
+    "Speaker": 0,
+    "Content": "So, a few minutes ago, we asked the live audience on X to submit a few requests for what they would like us to try out here. So, I will take a couple of prompts."
+  },
+  {
+    "Start": 1326.16,
+    "End": 1329.27,
+    "Content": "[Speech]"
+  },
+  {
+    "Start": 1329.27,
+    "End": 1337.55,
+    "Speaker": 0,
+    "Content": "Bott Gaskar wants to know if GPT-4o is capable of real-time translation. Mike, you want to try this one?"
+  },
+  {
+    "Start": 1337.55,
+    "End": 1338.51,
+    "Speaker": 2,
+    "Content": "Sure, yeah, let's do it."
+  },
+  {
+    "Start": 1338.51,
+    "End": 1341.79,
+    "Speaker": 0,
+    "Content": "I I speak Italian, so we can switch to English."
+  },
+  {
+    "Start": 1341.79,
+    "End": 1344.21,
+    "Speaker": 2,
+    "Content": "You want to do English-Italian? Sure, let's do it."
+  },
+  {
+    "Start": 1345.65,
+    "End": 1348.1,
+    "Speaker": 2,
+    "Content": "Hey, ChatGPT, how are you?"
+  },
+  {
+    "Start": 1348.1,
+    "End": 1352.61,
+    "Speaker": 3,
+    "Content": "I'm doing fantastic. Thanks for asking. How about you? How's your day going?"
+  },
+  {
+    "Start": 1352.61,
+    "End": 1366.28,
+    "Speaker": 2,
+    "Content": "doing great So, I would like you to function as a translator. I have a friend here who only speaks Italian, and I only speak English. And uh every time you hear English, I want you to translate it to Italian, and if you hear Italian, I want you to translate it back to English. Is that good?"
+  },
+  {
+    "Start": 1366.82,
+    "End": 1368.18,
+    "Speaker": 3,
+    "Content": "Perfecto"
+  },
+  {
+    "Start": 1368.18,
+    "End": 1370.24,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 1370.24,
+    "End": 1376.28,
+    "Speaker": 0,
+    "Content": "Mark, io mi chiedo se le balene potessero parlare, cosa ci direbbero?"
+  },
+  {
+    "Start": 1376.46,
+    "End": 1381.24,
+    "Speaker": 3,
+    "Content": "Mike, she wonders if whales could talk, what would they tell us?"
+  },
+  {
+    "Start": 1381.24,
+    "End": 1385.04,
+    "Speaker": 2,
+    "Content": "Um, they might ask, uh, how do we solve linear equations?"
+  },
+  {
+    "Start": 1385.64,
+    "End": 1392.2,
+    "Speaker": 3,
+    "Content": "Potrebbero chiederci come risolviamo le equazioni lineari."
+  },
+  {
+    "Start": 1392.52,
+    "End": 1394.52,
+    "Speaker": 0,
+    "Content": "Sicuramente sì."
+  },
+  {
+    "Start": 1395.78,
+    "End": 1397.69,
+    "Speaker": 3,
+    "Content": "Certainly, yes."
+  },
+  {
+    "Start": 1397.69,
+    "End": 1399.86,
+    "Speaker": 2,
+    "Content": "Great. Looks like it works."
+  },
+  {
+    "Start": 1399.86,
+    "End": 1404.34,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 1404.34,
+    "End": 1416.84,
+    "Speaker": 0,
+    "Content": "All right. So the next one is from Burrito John 78 who asks, can you tell what you're feeling just by looking at your face? Barrett, you want to give this one a try?"
+  },
+  {
+    "Start": 1416.84,
+    "End": 1418.62,
+    "Speaker": 1,
+    "Content": "Absolutely, let's try it out."
+  },
+  {
+    "Start": 1418.62,
+    "End": 1421.12,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 1421.12,
+    "End": 1423.0,
+    "Speaker": 1,
+    "Content": "Hey ChatGPT"
+  },
+  {
+    "Start": 1423.34,
+    "End": 1427.04,
+    "Speaker": 3,
+    "Content": "Hey there. What's up? How can I brighten your day today?"
+  },
+  {
+    "Start": 1427.04,
+    "End": 1433.8,
+    "Speaker": 1,
+    "Content": "Okay, yeah, so I'm going to show you um a selfie of what I look like and then I'd like you to try to see what emotions I'm feeling based on how I'm looking."
+  },
+  {
+    "Start": 1433.8,
+    "End": 1440.86,
+    "Speaker": 3,
+    "Content": "Sounds like a fun challenge. Go ahead and show me that selfie, and I'll put my emotional detective hat on."
+  },
+  {
+    "Start": 1440.9,
+    "End": 1445.08,
+    "Speaker": 1,
+    "Content": "Okay. So here's me. So what kind of emotions do you think I'm feeling?"
+  },
+  {
+    "Start": 1445.96,
+    "End": 1450.09,
+    "Speaker": 3,
+    "Content": "Hmm. It seems like I'm looking at a picture of a wooden surface."
+  },
+  {
+    "Start": 1450.09,
+    "End": 1456.46,
+    "Speaker": 1,
+    "Content": "Oh, you know what? That was the thing I sent you before. Don't worry, I'm not actually a table. Um, okay, so so take a take another look."
+  },
+  {
+    "Start": 1456.46,
+    "End": 1459.08,
+    "Speaker": 3,
+    "Content": "Ah, that makes more sense."
+  },
+  {
+    "Start": 1460.3,
+    "End": 1475.4,
+    "Speaker": 3,
+    "Content": "Ah, there we go. It looks like you're feeling pretty happy and cheerful, with a big smile and maybe even a touch of excitement. Whatever's going on, it seems like you're in a great mood. Care to share the source of those good vibes?"
+  },
+  {
+    "Start": 1475.4,
+    "End": 1481.0,
+    "Speaker": 1,
+    "Content": "Yeah, no, uh the reason I'm in a really good mood is because we were doing a presentation showcasing how useful and amazing you are."
+  },
+  {
+    "Start": 1481.78,
+    "End": 1485.48,
+    "Speaker": 3,
+    "Content": "Oh, stop it. You're making me blush."
+  },
+  {
+    "Start": 1485.48,
+    "End": 1488.94,
+    "Content": "[Human Sounds]"
+  },
+  {
+    "Start": 1488.94,
+    "End": 1525.5,
+    "Speaker": 0,
+    "Content": "Amazing. Well, that's it for today on live demos. As you can see, this is this just feels so magical and and that's wonderful, but we also want to remove some of the mysticism from the technology and bring it to you so you can try it for yourself. So, over the next few weeks, we'll be rolling out these capabilities to everyone. Today has been very much focused on the free users and the new modalities and new products, but we also care a lot about the next frontier. So, soon, we'll be updating you on our progress towards the next big thing."
+  },
+  {
+    "Start": 1525.5,
+    "End": 1543.08,
+    "Speaker": 0,
+    "Content": "And before we wrap up, I just want to thank the incredible OpenAI team and also thanks to Jensen and the NVIDIA team for bringing us the most advanced GPUs to make this demo possible today. And thank you all very, very much for being a part of this today."
+  },
+  {
+    "Start": 1543.08,
+    "End": 1572.71,
+    "Content": "[Music]"
+  }
+]

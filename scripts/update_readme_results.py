@@ -5,6 +5,8 @@ Supports --lang <en|zh> for partial updates: only replace dataset blocks
 matching the specified language while preserving other datasets' data.
 """
 
+from __future__ import annotations
+
 import argparse
 import re
 from pathlib import Path

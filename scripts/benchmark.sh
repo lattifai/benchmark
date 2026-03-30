@@ -15,6 +15,7 @@ source "$(dirname "$0")/common.sh"
 RUN_ALIGNMENT="true"
 DIARIZATION="false"
 LANG_FILTER=""
+MODEL_FILTER=""
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -23,17 +24,43 @@ while [[ $# -gt 0 ]]; do
             LANG_FILTER="$2"
             shift 2
             ;;
+        --models|-m)
+            MODEL_FILTER="$2"
+            shift 2
+            ;;
         --diarization)
             DIARIZATION="true"
             shift
             ;;
+        -h|--help)
+            echo "Usage: $0 [OPTIONS]"
+            echo ""
+            echo "Options:"
+            echo "  --lang LANG        Filter datasets by language (en|zh)"
+            echo "  --models, -m LIST  Space-separated model names to include"
+            echo "                     Matches against Gemini model names and external model names"
+            echo "                     Example: -m 'gemini-3-pro-preview vibevoice'"
+            echo "  --diarization      Enable diarization-aware evaluation"
+            echo "  -h, --help         Show this help"
+            exit 0
+            ;;
         *)
             echo "Unknown option: $1"
-            echo "Usage: $0 [--lang <en|zh>] [--diarization]"
+            echo "Usage: $0 [--lang <en|zh>] [--models <model1 model2 ...>] [--diarization]"
             exit 1
             ;;
     esac
 done
+
+# Helper: check if a model name matches the filter
+model_matches_filter() {
+    local model="$1"
+    [ -z "$MODEL_FILTER" ] && return 0
+    for m in $MODEL_FILTER; do
+        [[ "$model" == *"$m"* ]] && return 0
+    done
+    return 1
+}
 
 # Suffix for diarization-aware file naming
 DIAR_SUFFIX=""
@@ -102,6 +129,13 @@ get_dataset_configs() {
     esac
 }
 
+# External ASR models with pre-generated results (format: "name:ext")
+# These models produce output files placed directly in data/<dataset>/<name>.<ext>
+# Conversion to .ass is handled automatically via scripts/srt2ass.py
+EXTERNAL_MODELS=(
+    "vibevoice:json"
+)
+
 # ============================================================================
 # Step 1: Run all transcriptions
 # ============================================================================
@@ -123,6 +157,8 @@ for ds_entry in "${DATASETS[@]}"; do
 
     while IFS= read -r config; do
         IFS=':' read -r model prompt output_dir tag <<< "$config"
+
+        model_matches_filter "$model" || continue
 
         output_ext=$(get_output_ext "$prompt")
         target_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}${output_ext}"
@@ -203,9 +239,9 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                 continue
             fi
 
-            # Align YouTube Caption (official) if exists
+            # Align YouTube Caption (official) if exists (skip when --models is set)
             caption_file=$(get_dataset_info "$dataset_id" "caption")
-            if [ -n "$caption_file" ]; then
+            if [ -n "$caption_file" ] && [ -z "$MODEL_FILTER" ]; then
                 caption_path="${DATA_ROOT}/${dataset_id}/${caption_file}"
                 caption_basename="${caption_file%.*}"
                 caption_ass="${DATA_ROOT}/${dataset_id}/${caption_basename}.ass"
@@ -234,6 +270,8 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
             while IFS= read -r config; do
                 IFS=':' read -r model prompt output_dir tag <<< "$config"
 
+                model_matches_filter "$model" || continue
+
                 output_ext=$(get_output_ext "$prompt")
                 input_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}${output_ext}"
                 output_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}_LattifAI${DIAR_SUFFIX}.ass"
@@ -258,6 +296,45 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
 fi
 
 # ============================================================================
+# Step 2b: Convert external model outputs to ASS
+# ============================================================================
+print_header "Step 2b: Converting external model outputs"
+
+for ds_entry in "${DATASETS[@]}"; do
+    dataset_id="${ds_entry%%:*}"
+
+    for ext_entry in "${EXTERNAL_MODELS[@]}"; do
+        IFS=':' read -r ext_name ext_fmt <<< "$ext_entry"
+
+        model_matches_filter "$ext_name" || continue
+
+        src_file="${DATA_ROOT}/${dataset_id}/${ext_name}.${ext_fmt}"
+        ass_file="${DATA_ROOT}/${dataset_id}/${ext_name}.ass"
+
+        if [ ! -f "$src_file" ]; then
+            continue
+        fi
+
+        echo ""
+        print_step "${ext_name} (${dataset_id})"
+
+        if [ -f "$ass_file" ] && [ ! "$src_file" -nt "$ass_file" ]; then
+            echo "  ⏭ Skipping (already converted)"
+            continue
+        fi
+
+        case "$ext_fmt" in
+            json)
+                python "$PROJECT_DIR/scripts/vibevoice_json2ass.py" "$src_file" -o "$ass_file"
+                ;;
+            *)
+                convert_if_needed "$src_file" "$ass_file"
+                ;;
+        esac
+    done
+done
+
+# ============================================================================
 # Step 3: Run all evaluations and collect results
 # ============================================================================
 print_header "Step 3: Evaluating all results"
@@ -270,9 +347,9 @@ for ds_entry in "${DATASETS[@]}"; do
 
     ref_file="${DATA_ROOT}/${dataset_id}/ground_truth.ass"
 
-    # Evaluate official YouTube caption if exists
+    # Evaluate official YouTube caption if exists (skip when --models is set)
     caption_file=$(get_dataset_info "$dataset_id" "caption")
-    if [ -n "$caption_file" ]; then
+    if [ -n "$caption_file" ] && [ -z "$MODEL_FILTER" ]; then
         caption_basename="${caption_file%.*}"
         caption_ass="${DATA_ROOT}/${dataset_id}/${caption_basename}.ass"
         yt_lattifai_file="${DATA_ROOT}/${dataset_id}/${caption_basename}_LattifAI${DIAR_SUFFIX}.ass"
@@ -296,6 +373,8 @@ for ds_entry in "${DATASETS[@]}"; do
 
     while IFS= read -r config; do
         IFS=':' read -r model prompt output_dir tag <<< "$config"
+
+        model_matches_filter "$model" || continue
 
         output_ext=$(get_output_ext "$prompt")
         input_file="${PROJECT_DIR}/${output_dir}/${dataset_id}/${model}${output_ext}"
@@ -324,6 +403,30 @@ for ds_entry in "${DATASETS[@]}"; do
             echo "{\"dataset\": \"$dataset_id\", \"model\": \"${model_name} +LattifAI${DIAR_LABEL}\", \"metrics\": $result}" >> "$RESULTS_FILE"
         fi
     done < <(get_dataset_configs "$lang")
+
+    # Evaluate external models
+    for ext_entry in "${EXTERNAL_MODELS[@]}"; do
+        IFS=':' read -r ext_name ext_fmt <<< "$ext_entry"
+
+        model_matches_filter "$ext_name" || continue
+
+        hyp_file="${DATA_ROOT}/${dataset_id}/${ext_name}.ass"
+        lattifai_file="${DATA_ROOT}/${dataset_id}/${ext_name}_LattifAI${DIAR_SUFFIX}.ass"
+
+        if [ -f "$hyp_file" ]; then
+            echo ""
+            print_step "Evaluating: $ext_name"
+            result=$(run_eval_json "$ref_file" "$hyp_file")
+            echo "{\"dataset\": \"$dataset_id\", \"model\": \"$ext_name\", \"metrics\": $result}" >> "$RESULTS_FILE"
+        fi
+
+        if [ -f "$lattifai_file" ]; then
+            echo ""
+            print_step "Evaluating: ${ext_name} +LattifAI${DIAR_LABEL}"
+            result=$(run_eval_json "$ref_file" "$lattifai_file")
+            echo "{\"dataset\": \"$dataset_id\", \"model\": \"${ext_name} +LattifAI${DIAR_LABEL}\", \"metrics\": $result}" >> "$RESULTS_FILE"
+        fi
+    done
 done
 
 # ============================================================================
