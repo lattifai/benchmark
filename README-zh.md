@@ -7,13 +7,19 @@
 
 ## 测试数据
 
-我们使用 [OpenAI GPT-4o 发布会](https://www.youtube.com/watch?v=DQacCB9tDaw)（约 26 分钟）作为主要测试素材。这是一个具有挑战性的案例：
+我们使用两个数据集，覆盖英文和中文：
+
+#### 1. [OpenAI GPT-4o 发布会](https://www.youtube.com/watch?v=DQacCB9tDaw)（英文，约 26 分钟）
 
 - **4 位说话人**，包括 ChatGPT 的语音
 - **频繁的打断**和语音重叠
 - 全程伴有**观众掌声**和环境噪音
 
-> **关于样本量的说明**：目前我们只有一个主要数据集。虽然数量有限，但我们对每个实验至少运行两次以验证结果的稳定性。未来会补充更多数据集。
+#### 2. [硅谷101：GPT-4o vs Gemini](https://www.youtube.com/watch?v=JaQmSHzjlpY)（中英混合，约 27 分钟）
+
+- **14 位说话人**，包括 AI 语音助手（ChatGPT、Project Astra）
+- 全程**中英文切换**
+- **嵌入多来源视频片段**，音频质量参差不齐
 
 
 ## 基准测试

@@ -7,13 +7,19 @@ Evaluating LattifAI's audio-text alignment capabilities.
 
 ## Test Data
 
-We use the [OpenAI GPT-4o launch event](https://www.youtube.com/watch?v=DQacCB9tDaw) (~26 min) as our primary test material. This is a challenging case:
+We use two datasets covering English and Chinese:
+
+#### 1. [OpenAI GPT-4o Launch Event](https://www.youtube.com/watch?v=DQacCB9tDaw) (English, ~26 min)
 
 - **4 speakers** including ChatGPT's voice
 - **Frequent interruptions** and overlapping speech
 - **Audience applause** and ambient noise throughout
 
-> **Note on sample size**: We currently have one primary dataset. While limited, we run each experiment at least twice to verify result stability. More datasets will be added in future updates.
+#### 2. [TheValley101: GPT-4o vs Gemini](https://www.youtube.com/watch?v=JaQmSHzjlpY) (Chinese & English, ~27 min)
+
+- **14 speakers** including AI voice assistants (ChatGPT, Project Astra)
+- **Code-switching** between Chinese and English throughout
+- **Embedded video clips** from multiple sources with varying audio quality
 
 
 ## Benchmark
