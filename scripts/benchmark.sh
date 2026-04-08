@@ -207,13 +207,11 @@ run_alignment() {
         diar_arg="diarization.enabled=true"
     fi
 
-    if lai alignment align -Y "$audio" \
+    if lai alignment align -Y "$audio" "$input" "$output" \
         alignment.model_hub=modelscope \
         client.profile=true \
-        caption.include_speaker_in_text=false \
-        caption.split_sentence=true \
-        caption.input_path="$input" \
-        caption.output_path="$output" \
+        caption.render.include_speaker_in_text=false \
+        caption.input.split_sentence=true \
         $diar_arg 2>&1; then
         return 0
     else

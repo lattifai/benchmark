@@ -255,13 +255,11 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                 print_step "[$MODEL] Skipping URL alignment (already exists)"
             else
                 print_step "[$MODEL] Aligning URL transcript..."
-                lai alignment align -Y "$AUDIO_FILE" \
+                lai alignment align -Y "$AUDIO_FILE" "$URL_MD" "$URL_LATTIFAI" \
                     alignment.model_hub=modelscope \
                     client.profile=true \
-                    caption.include_speaker_in_text=false \
-                    caption.split_sentence=true \
-                    caption.input_path="$URL_MD" \
-                    caption.output_path="$URL_LATTIFAI" \
+                    caption.render.include_speaker_in_text=false \
+                    caption.input.split_sentence=true \
                     $DIAR_ARG
             fi
         fi
@@ -272,13 +270,11 @@ if [ "$RUN_ALIGNMENT" = "true" ]; then
                 print_step "[$MODEL] Skipping local alignment (already exists)"
             else
                 print_step "[$MODEL] Aligning local transcript..."
-                lai alignment align -Y "$AUDIO_FILE" \
+                lai alignment align -Y "$AUDIO_FILE" "$LOCAL_MD" "$LOCAL_LATTIFAI" \
                     alignment.model_hub=modelscope \
                     client.profile=true \
-                    caption.include_speaker_in_text=false \
-                    caption.split_sentence=true \
-                    caption.input_path="$LOCAL_MD" \
-                    caption.output_path="$LOCAL_LATTIFAI" \
+                    caption.render.include_speaker_in_text=false \
+                    caption.input.split_sentence=true \
                     $DIAR_ARG
             fi
         fi
