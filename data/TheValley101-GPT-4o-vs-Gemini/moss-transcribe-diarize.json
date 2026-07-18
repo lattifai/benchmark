@@ -1,0 +1,3446 @@
+[
+  {
+    "Start": 1.76,
+    "End": 4.73,
+    "Speaker": "S01",
+    "Content": "CHATGPT以及硅谷AI大战终于升级"
+  },
+  {
+    "Start": 4.75,
+    "End": 6.55,
+    "Speaker": "S01",
+    "Content": "长出了眼睛和嘴"
+  },
+  {
+    "Start": 6.85,
+    "End": 7.61,
+    "Speaker": "S01",
+    "Content": "五月中旬"
+  },
+  {
+    "Start": 7.62,
+    "End": 11.53,
+    "Speaker": "S01",
+    "Content": "OPENAI和谷歌前后发布重磅AI多模态更新"
+  },
+  {
+    "Start": 11.68,
+    "End": 14.65,
+    "Speaker": "S01",
+    "Content": "从基于文字交互的CHATGPT全面升级"
+  },
+  {
+    "Start": 14.74,
+    "End": 16.85,
+    "Speaker": "S01",
+    "Content": "实现了声音文字和视觉"
+  },
+  {
+    "Start": 16.94,
+    "End": 20.51,
+    "Speaker": "S01",
+    "Content": "三者全面结合的人工智能新交互功能"
+  },
+  {
+    "Start": 20.62,
+    "End": 24.83,
+    "Speaker": "S01",
+    "Content": "而这也标志着硅谷科技巨头们的生成式AI之战"
+  },
+  {
+    "Start": 24.91,
+    "End": 26.71,
+    "Speaker": "S01",
+    "Content": "正式进入到第二轮"
+  },
+  {
+    "Start": 26.99,
+    "End": 29.41,
+    "Speaker": "S01",
+    "Content": "那么新轮的竞争只会更加的激烈"
+  },
+  {
+    "Start": 29.43,
+    "End": 30.51,
+    "Speaker": "S01",
+    "Content": "更加的全面"
+  },
+  {
+    "Start": 34.36,
+    "End": 35.05,
+    "Speaker": "S01",
+    "Content": "哈喽大家好"
+  },
+  {
+    "Start": 35.06,
+    "End": 36.21,
+    "Speaker": "S01",
+    "Content": "欢迎来到硅谷101"
+  },
+  {
+    "Start": 36.22,
+    "End": 37.01,
+    "Speaker": "S01",
+    "Content": "我是陈倩"
+  },
+  {
+    "Start": 37.16,
+    "End": 38.51,
+    "Speaker": "S01",
+    "Content": "我本来在希腊休假"
+  },
+  {
+    "Start": 38.68,
+    "End": 41.29,
+    "Speaker": "S01",
+    "Content": "但是因为OPENAI和谷歌的重磅更新"
+  },
+  {
+    "Start": 41.62,
+    "End": 42.65,
+    "Speaker": "S01",
+    "Content": "又被抓来加班"
+  },
+  {
+    "Start": 42.66,
+    "End": 44.09,
+    "Speaker": "S01",
+    "Content": "更新了这期的视频"
+  },
+  {
+    "Start": 44.14,
+    "End": 46.65,
+    "Speaker": "S01",
+    "Content": "来聊聊这次的多模态AI之战"
+  },
+  {
+    "Start": 46.78,
+    "End": 49.05,
+    "Speaker": "S01",
+    "Content": "对于科技巨头们的商业版图"
+  },
+  {
+    "Start": 49.06,
+    "End": 50.33,
+    "Speaker": "S01",
+    "Content": "意味着什么变化"
+  },
+  {
+    "Start": 50.42,
+    "End": 54.33,
+    "Speaker": "S01",
+    "Content": "以及生成式AI智能技术的下一步会发生什么"
+  },
+  {
+    "Start": 54.34,
+    "End": 56.57,
+    "Speaker": "S01",
+    "Content": "那我们就首先来快速复盘一下"
+  },
+  {
+    "Start": 56.69,
+    "End": 60.06,
+    "Speaker": "S01",
+    "Content": "OPENAI和谷歌发布的多模态重磅更新"
+  },
+  {
+    "Start": 60.28,
+    "End": 62.65,
+    "Speaker": "S01",
+    "Content": "那如果大家已经看过了发布会的话"
+  },
+  {
+    "Start": 62.71,
+    "End": 65.86,
+    "Speaker": "S01",
+    "Content": "可以直接跳到第三章的这个时间点"
+  },
+  {
+    "Start": 66.13,
+    "End": 67.3,
+    "Speaker": "S01",
+    "Content": "直接看分析"
+  },
+  {
+    "Start": 67.41,
+    "End": 68.42,
+    "Speaker": "S01",
+    "Content": "但是没看过的"
+  },
+  {
+    "Start": 68.44,
+    "End": 70.95,
+    "Speaker": "S01",
+    "Content": "我们还是来回顾一下这场发布会"
+  },
+  {
+    "Start": 70.98,
+    "End": 73.33,
+    "Speaker": "S01",
+    "Content": "那里面有很多的细节还是挺重要的"
+  },
+  {
+    "Start": 73.95,
+    "End": 74.86,
+    "Speaker": "S01",
+    "Content": "Let's get started"
+  },
+  {
+    "Start": 78.02,
+    "End": 80.25,
+    "Speaker": "S01",
+    "Content": "OPENAI这次的发布会时长很短"
+  },
+  {
+    "Start": 80.26,
+    "End": 81.53,
+    "Speaker": "S01",
+    "Content": "全程就二十六分钟"
+  },
+  {
+    "Start": 81.54,
+    "End": 84.05,
+    "Speaker": "S01",
+    "Content": "就发了一款产品GPT4O"
+  },
+  {
+    "Start": 84.34,
+    "End": 87.51,
+    "Speaker": "S01",
+    "Content": "GPT4O的O是拉丁词根omni"
+  },
+  {
+    "Start": 87.6,
+    "End": 90.89,
+    "Speaker": "S01",
+    "Content": "意思是所有的全部的或者是全能"
+  },
+  {
+    "Start": 91.01,
+    "End": 95.92,
+    "Speaker": "S01",
+    "Content": "那意味着文本音频和图像的任意组合作为输入"
+  },
+  {
+    "Start": 96.01,
+    "End": 101.38,
+    "Speaker": "S01",
+    "Content": "并且生成文本音频和图像输出的全面多模态能力"
+  },
+  {
+    "Start": 101.39,
+    "End": 102.06,
+    "Speaker": "S01",
+    "Content": "说实话"
+  },
+  {
+    "Start": 102.15,
+    "End": 105.3,
+    "Speaker": "S01",
+    "Content": "2024年AI之战会升级到多模态产品呢"
+  },
+  {
+    "Start": 105.31,
+    "End": 108.1,
+    "Speaker": "S01",
+    "Content": "这个预期在2023年已经是行业共识了"
+  },
+  {
+    "Start": 108.24,
+    "End": 111.19,
+    "Speaker": "S01",
+    "Content": "我们在之前的多期视频当中都已经提到过"
+  },
+  {
+    "Start": 111.42,
+    "End": 114.71,
+    "Speaker": "S01",
+    "Content": "仅仅是文字的prompt很难表达人类的意图"
+  },
+  {
+    "Start": 114.74,
+    "End": 116.69,
+    "Speaker": "S01",
+    "Content": "非常的低效也非常的受限"
+  },
+  {
+    "Start": 116.9,
+    "End": 120.53,
+    "Speaker": "S01",
+    "Content": "所以呢有语音和视觉加持的多模态AI交互呢"
+  },
+  {
+    "Start": 120.58,
+    "End": 123.81,
+    "Speaker": "S01",
+    "Content": "是人类通往AGI的道路上必经之路"
+  },
+  {
+    "Start": 123.98,
+    "End": 126.69,
+    "Speaker": "S01",
+    "Content": "但是当多模态AI交互真的到来的时候"
+  },
+  {
+    "Start": 126.77,
+    "End": 128.86,
+    "Speaker": "S01",
+    "Content": "我还是感觉会被震撼到"
+  },
+  {
+    "Start": 129.28,
+    "End": 134.47,
+    "Speaker": "S01",
+    "Content": "OPENAI说啊GPT4O可以在232毫秒之内响应音频输入"
+  },
+  {
+    "Start": 134.49,
+    "End": 136.5,
+    "Speaker": "S01",
+    "Content": "平均是320毫秒"
+  },
+  {
+    "Start": 136.6,
+    "End": 139.53,
+    "Speaker": "S01",
+    "Content": "那这已经是达到人与人之间响应的时间了"
+  },
+  {
+    "Start": 139.58,
+    "End": 142.01,
+    "Speaker": "S01",
+    "Content": "也就是说AI语音对话的交互呢"
+  },
+  {
+    "Start": 142.02,
+    "End": 144.25,
+    "Speaker": "S01",
+    "Content": "已经能够做到非常的低延迟"
+  },
+  {
+    "Start": 144.34,
+    "End": 146.69,
+    "Speaker": "S01",
+    "Content": "很丝滑的像真人一样对话了"
+  },
+  {
+    "Start": 147.02,
+    "End": 148.57,
+    "Speaker": "S01",
+    "Content": "那么GPT4O发布之前"
+  },
+  {
+    "Start": 148.6,
+    "End": 151.85,
+    "Speaker": "S01",
+    "Content": "CHATGPT的语音模式功能有着好几秒的延迟"
+  },
+  {
+    "Start": 151.86,
+    "End": 154.45,
+    "Speaker": "S01",
+    "Content": "那么这让整个交互体验非常的差"
+  },
+  {
+    "Start": 154.77,
+    "End": 157.46,
+    "Speaker": "S01",
+    "Content": "这是因为之前的GPT系列的语音功能呢"
+  },
+  {
+    "Start": 157.48,
+    "End": 159.65,
+    "Speaker": "S01",
+    "Content": "是好几个模型的一个拼合"
+  },
+  {
+    "Start": 159.66,
+    "End": 161.45,
+    "Speaker": "S01",
+    "Content": "那它先把声音转录成文本"
+  },
+  {
+    "Start": 161.46,
+    "End": 163.65,
+    "Speaker": "S01",
+    "Content": "然后再用GPT大模型去接受之后呢"
+  },
+  {
+    "Start": 163.72,
+    "End": 164.61,
+    "Speaker": "S01",
+    "Content": "再输出文本"
+  },
+  {
+    "Start": 164.62,
+    "End": 168.57,
+    "Speaker": "S01",
+    "Content": "然后再用text to speech等等这样的模型去生成音频"
+  },
+  {
+    "Start": 168.69,
+    "End": 172.34,
+    "Speaker": "S01",
+    "Content": "但这其中呢就会损失非常多很重要的信息"
+  },
+  {
+    "Start": 172.45,
+    "End": 175.28,
+    "Speaker": "S01",
+    "Content": "比如说语调语气中的情感情绪"
+  },
+  {
+    "Start": 175.45,
+    "End": 178.42,
+    "Speaker": "S01",
+    "Content": "还有多个人说话人的识别背景的声音等等"
+  },
+  {
+    "Start": 178.53,
+    "End": 182.06,
+    "Speaker": "S01",
+    "Content": "所以这个语音功能之前很慢很迟缓也很基础"
+  },
+  {
+    "Start": 182.14,
+    "End": 183.69,
+    "Speaker": "S01",
+    "Content": "而这次GPT4O呢"
+  },
+  {
+    "Start": 183.7,
+    "End": 188.53,
+    "Speaker": "S01",
+    "Content": "是OPENAI专门训练的跨文本语音和视觉的端到端新模型"
+  },
+  {
+    "Start": 188.81,
+    "End": 190.54,
+    "Speaker": "S01",
+    "Content": "所有的输入和输出呢"
+  },
+  {
+    "Start": 190.55,
+    "End": 193.02,
+    "Speaker": "S01",
+    "Content": "都是由同一个神经网络处理"
+  },
+  {
+    "Start": 193.03,
+    "End": 198.18,
+    "Speaker": "S01",
+    "Content": "那么这使得GPT4O能够接受文本音频和图像的任意组合作为输入"
+  },
+  {
+    "Start": 198.19,
+    "End": 202.46,
+    "Speaker": "S01",
+    "Content": "并且生成文本音频和图像的任意组合的输出"
+  },
+  {
+    "Start": 202.47,
+    "End": 206.06,
+    "Speaker": "S01",
+    "Content": "那是兼具了听觉视觉的多模态模型"
+  },
+  {
+    "Start": 206.14,
+    "End": 209.33,
+    "Speaker": "S01",
+    "Content": "同时还支持中途打断和对话的插入"
+  },
+  {
+    "Start": 209.48,
+    "End": 212.11,
+    "Speaker": "S01",
+    "Content": "并且呢具备上下文记忆的能力"
+  },
+  {
+    "Start": 212.12,
+    "End": 215.21,
+    "Speaker": "S01",
+    "Content": "那么这样的多模态模型是OPENAI首次发布"
+  },
+  {
+    "Start": 215.22,
+    "End": 217.21,
+    "Speaker": "S01",
+    "Content": "表示呢还有很多的探索空间啊"
+  },
+  {
+    "Start": 217.28,
+    "End": 219.13,
+    "Speaker": "S01",
+    "Content": "但是目前展出来的功能啊"
+  },
+  {
+    "Start": 219.2,
+    "End": 221.13,
+    "Speaker": "S01",
+    "Content": "已经是非常让人惊喜的了"
+  },
+  {
+    "Start": 221.18,
+    "End": 222.81,
+    "Speaker": "S01",
+    "Content": "比如说在现场DEMO当中"
+  },
+  {
+    "Start": 222.82,
+    "End": 226.05,
+    "Speaker": "S01",
+    "Content": "GPT4O可以理解人们的呼吸急促的声音"
+  },
+  {
+    "Start": 226.18,
+    "End": 228.89,
+    "Speaker": "S01",
+    "Content": "并且呢用轻松的方式安慰人类"
+  },
+  {
+    "Start": 228.91,
+    "End": 229.74,
+    "Speaker": "S02",
+    "Content": "OK here I go"
+  },
+  {
+    "Start": 232.83,
+    "End": 233.74,
+    "Speaker": "S01",
+    "Content": "Whoa slow"
+  },
+  {
+    "Start": 236.12,
+    "End": 237.13,
+    "Speaker": "S01",
+    "Content": "A bit there"
+  },
+  {
+    "Start": 237.83,
+    "End": 240.06,
+    "Speaker": "S01",
+    "Content": "Mark you're not a vacuum cleaner"
+  },
+  {
+    "Start": 240.31,
+    "End": 242.14,
+    "Speaker": "S02",
+    "Content": "OK I'll try again breathing in"
+  },
+  {
+    "Start": 243.29,
+    "End": 244.02,
+    "Speaker": "S02",
+    "Content": "and breathe out"
+  },
+  {
+    "Start": 245.57,
+    "End": 246.18,
+    "Speaker": "S01",
+    "Content": "That's it"
+  },
+  {
+    "Start": 246.81,
+    "End": 247.5,
+    "Speaker": "S01",
+    "Content": "How do you feel"
+  },
+  {
+    "Start": 247.62,
+    "End": 248.41,
+    "Speaker": "S02",
+    "Content": "I feel a lot better"
+  },
+  {
+    "Start": 248.62,
+    "End": 249.21,
+    "Speaker": "S02",
+    "Content": "Thank you so much"
+  },
+  {
+    "Start": 249.22,
+    "End": 252.33,
+    "Speaker": "S01",
+    "Content": "它可以识别人脸表情以及呢辨别情绪"
+  },
+  {
+    "Start": 252.48,
+    "End": 254.21,
+    "Speaker": "S01",
+    "Content": "Ah there we go"
+  },
+  {
+    "Start": 254.52,
+    "End": 257.65,
+    "Speaker": "S01",
+    "Content": "It looks like you're feeling pretty happy and cheerful"
+  },
+  {
+    "Start": 257.74,
+    "End": 261.13,
+    "Speaker": "S01",
+    "Content": "它可以随意变换语气和风格来讲故事"
+  },
+  {
+    "Start": 261.22,
+    "End": 263.39,
+    "Speaker": "S01",
+    "Content": "Can you do this in a robotic voice now"
+  },
+  {
+    "Start": 264.04,
+    "End": 267.23,
+    "Speaker": "S01",
+    "Content": "Initiating dramatic robotic voice"
+  },
+  {
+    "Start": 267.68,
+    "End": 270.27,
+    "Speaker": "S01",
+    "Content": "同时呢GPT4O还可以通过硬件设备"
+  },
+  {
+    "Start": 270.29,
+    "End": 273.06,
+    "Speaker": "S01",
+    "Content": "通过视觉来分析人们正在从事的工作"
+  },
+  {
+    "Start": 273.07,
+    "End": 273.66,
+    "Speaker": "S01",
+    "Content": "看的书"
+  },
+  {
+    "Start": 273.81,
+    "End": 275.38,
+    "Speaker": "S01",
+    "Content": "可以引导人们解题"
+  },
+  {
+    "Start": 275.54,
+    "End": 277.31,
+    "Speaker": "S01",
+    "Content": "可以切换语言实时翻译"
+  },
+  {
+    "Start": 277.32,
+    "End": 279.91,
+    "Speaker": "S01",
+    "Content": "也能够通过视觉识别给他的信息"
+  },
+  {
+    "Start": 280.01,
+    "End": 282.42,
+    "Speaker": "S01",
+    "Content": "并且呢给出非常拟人化的反馈"
+  },
+  {
+    "Start": 282.51,
+    "End": 283.98,
+    "Speaker": "S02",
+    "Content": "OK so this is what I wrote down"
+  },
+  {
+    "Start": 284.06,
+    "End": 284.73,
+    "Speaker": "S02",
+    "Content": "What do you see"
+  },
+  {
+    "Start": 286.51,
+    "End": 290.26,
+    "Speaker": "S01",
+    "Content": "Ah I see I love chat GPT"
+  },
+  {
+    "Start": 290.27,
+    "End": 291.82,
+    "Speaker": "S01",
+    "Content": "That's so sweet of you"
+  },
+  {
+    "Start": 292.62,
+    "End": 293.33,
+    "Speaker": "S01",
+    "Content": "说实话"
+  },
+  {
+    "Start": 293.35,
+    "End": 296.94,
+    "Speaker": "S01",
+    "Content": "在直播发布会中直接现场演示这件事情啊"
+  },
+  {
+    "Start": 296.95,
+    "End": 298.06,
+    "Speaker": "S01",
+    "Content": "是非常需要勇气的"
+  },
+  {
+    "Start": 298.25,
+    "End": 299.34,
+    "Speaker": "S01",
+    "Content": "因为一旦出错呢"
+  },
+  {
+    "Start": 299.35,
+    "End": 301.78,
+    "Speaker": "S01",
+    "Content": "会引发非常大的公关灾难"
+  },
+  {
+    "Start": 301.88,
+    "End": 305.57,
+    "Speaker": "S01",
+    "Content": "但是OPENAI有这个勇气去直接现场演示直播"
+  },
+  {
+    "Start": 305.64,
+    "End": 307.31,
+    "Speaker": "S01",
+    "Content": "给人的感觉也是非常的自信"
+  },
+  {
+    "Start": 307.68,
+    "End": 309.25,
+    "Speaker": "S01",
+    "Content": "那除了现场的演示之外呢"
+  },
+  {
+    "Start": 309.26,
+    "End": 313.33,
+    "Speaker": "S01",
+    "Content": "OPENAI还在官网上放出了更多更加复杂场景的交互"
+  },
+  {
+    "Start": 313.46,
+    "End": 316.13,
+    "Speaker": "S01",
+    "Content": "展现出AI多模态的更多的潜力"
+  },
+  {
+    "Start": 316.39,
+    "End": 319.62,
+    "Speaker": "S01",
+    "Content": "比如说在官网上OPENAI做了十七个案例展示"
+  },
+  {
+    "Start": 319.63,
+    "End": 321.46,
+    "Speaker": "S01",
+    "Content": "包括了照片转漫画"
+  },
+  {
+    "Start": 321.57,
+    "End": 325.66,
+    "Speaker": "S01",
+    "Content": "3D物体合成海报创作角色设计等等样本"
+  },
+  {
+    "Start": 325.85,
+    "End": 329.78,
+    "Speaker": "S01",
+    "Content": "那么此外OPENAI总裁Greg Brockman的演示视频当中啊"
+  },
+  {
+    "Start": 329.87,
+    "End": 332.78,
+    "Speaker": "S01",
+    "Content": "GPT4O可以识别出他所穿的衣服"
+  },
+  {
+    "Start": 332.83,
+    "End": 333.78,
+    "Speaker": "S01",
+    "Content": "身处的环境"
+  },
+  {
+    "Start": 333.79,
+    "End": 337.22,
+    "Speaker": "S01",
+    "Content": "可以识别出Brockman的情绪和语气"
+  },
+  {
+    "Start": 337.23,
+    "End": 339.62,
+    "Speaker": "S01",
+    "Content": "还有房间里面正在出现的新动作"
+  },
+  {
+    "Start": 339.72,
+    "End": 342.05,
+    "Speaker": "S01",
+    "Content": "但是最让外界关注的一个动作是"
+  },
+  {
+    "Start": 342.1,
+    "End": 347.45,
+    "Speaker": "S01",
+    "Content": "是他让两台运行GPT4O的设备进行语音或者视频交互"
+  },
+  {
+    "Start": 347.81,
+    "End": 349.82,
+    "Speaker": "S02",
+    "Content": "Do the singing voice again please"
+  },
+  {
+    "Start": 350.83,
+    "End": 354.14,
+    "Speaker": "S02",
+    "Content": "In a room where modern lights peak"
+  },
+  {
+    "Start": 358.22,
+    "End": 361.53,
+    "Speaker": "S02",
+    "Content": "Surprise guests with a playful story"
+  },
+  {
+    "Start": 361.77,
+    "End": 366.54,
+    "Speaker": "S01",
+    "Content": "也就是说OPENAI的GPT4O多模态给了AI交互的声音和视觉"
+  },
+  {
+    "Start": 366.7,
+    "End": 369.25,
+    "Speaker": "S01",
+    "Content": "不仅是升级了人和AI之间的交互"
+  },
+  {
+    "Start": 369.26,
+    "End": 371.65,
+    "Speaker": "S01",
+    "Content": "也升级了AI和AI之间的交互"
+  },
+  {
+    "Start": 371.82,
+    "End": 373.65,
+    "Speaker": "S01",
+    "Content": "那这样的交互更自然更拟人"
+  },
+  {
+    "Start": 373.66,
+    "End": 375.61,
+    "Speaker": "S01",
+    "Content": "有着更大空间的应用场景"
+  },
+  {
+    "Start": 375.75,
+    "End": 378.46,
+    "Speaker": "S01",
+    "Content": "而且整个AI的声音和语言非常的灵动"
+  },
+  {
+    "Start": 378.59,
+    "End": 380.06,
+    "Speaker": "S01",
+    "Content": "机器人感比较弱"
+  },
+  {
+    "Start": 380.15,
+    "End": 382.46,
+    "Speaker": "S01",
+    "Content": "它会开玩笑会安慰人会害羞"
+  },
+  {
+    "Start": 382.6,
+    "End": 385.11,
+    "Speaker": "S01",
+    "Content": "难怪呢很多人在OPENAI发布会之后"
+  },
+  {
+    "Start": 385.12,
+    "End": 391.11,
+    "Speaker": "S01",
+    "Content": "直呼内部讲述人类和AI语音助手Samantha电影HER的时代真的到来了"
+  },
+  {
+    "Start": 391.41,
+    "End": 392.78,
+    "Speaker": "S01",
+    "Content": "OK and stop"
+  },
+  {
+    "Start": 394.01,
+    "End": 394.88,
+    "Speaker": "S01",
+    "Content": "walk forward"
+  },
+  {
+    "Start": 395.83,
+    "End": 397.14,
+    "Speaker": "S03",
+    "Content": "我自己是非常激动的"
+  },
+  {
+    "Start": 397.42,
+    "End": 400.25,
+    "Speaker": "S03",
+    "Content": "啊因为呃我一直觉得"
+  },
+  {
+    "Start": 400.51,
+    "End": 402.7,
+    "Speaker": "S03",
+    "Content": "我们对于AI落地的很多应用预期"
+  },
+  {
+    "Start": 402.71,
+    "End": 404.54,
+    "Speaker": "S03",
+    "Content": "其实不一定是准确的"
+  },
+  {
+    "Start": 404.55,
+    "End": 408.14,
+    "Speaker": "S03",
+    "Content": "大家可能在AI一开始的时候觉得生产力的场景很直接"
+  },
+  {
+    "Start": 408.44,
+    "End": 410.11,
+    "Speaker": "S03",
+    "Content": "啊但是现在可能发现"
+  },
+  {
+    "Start": 410.24,
+    "End": 412.35,
+    "Speaker": "S03",
+    "Content": "好像说这个理性的工作"
+  },
+  {
+    "Start": 412.36,
+    "End": 415.75,
+    "Speaker": "S03",
+    "Content": "其实呃很多agent的落地啊什么反而比较难"
+  },
+  {
+    "Start": 415.78,
+    "End": 418.45,
+    "Speaker": "S03",
+    "Content": "但是感性的角度反而会更加容易一点"
+  },
+  {
+    "Start": 418.46,
+    "End": 421.13,
+    "Speaker": "S03",
+    "Content": "第二呢我在朋友圈也发了我的感叹"
+  },
+  {
+    "Start": 421.14,
+    "End": 426.21,
+    "Speaker": "S03",
+    "Content": "就是说呃历史上当一件事情从很稀缺大家抢"
+  },
+  {
+    "Start": 426.41,
+    "End": 427.9,
+    "Speaker": "S03",
+    "Content": "变得不稀缺的时候"
+  },
+  {
+    "Start": 427.91,
+    "End": 429.34,
+    "Speaker": "S03",
+    "Content": "可能就会带来巨大的变化"
+  },
+  {
+    "Start": 429.48,
+    "End": 430.53,
+    "Speaker": "S03",
+    "Content": "对于绝大部分人来讲"
+  },
+  {
+    "Start": 430.54,
+    "End": 431.61,
+    "Speaker": "S03",
+    "Content": "生活其实是"
+  },
+  {
+    "Start": 432.43,
+    "End": 434.98,
+    "Speaker": "S03",
+    "Content": "呃单调的或者是一成不变的是乏味的"
+  },
+  {
+    "Start": 435.31,
+    "End": 438.42,
+    "Speaker": "S03",
+    "Content": "啊那这个时候其实不管像HER里面说所谓的这种"
+  },
+  {
+    "Start": 438.66,
+    "End": 440.65,
+    "Speaker": "S03",
+    "Content": "呃男女情感这个表达"
+  },
+  {
+    "Start": 440.66,
+    "End": 442.09,
+    "Speaker": "S03",
+    "Content": "还是说一种陪伴"
+  },
+  {
+    "Start": 442.17,
+    "End": 443.78,
+    "Speaker": "S03",
+    "Content": "还是说一种这个倾听"
+  },
+  {
+    "Start": 443.91,
+    "End": 448.22,
+    "Speaker": "S03",
+    "Content": "其实都是很多时候很稀缺的一种资源或者一种呃内容"
+  },
+  {
+    "Start": 448.44,
+    "End": 451.25,
+    "Speaker": "S03",
+    "Content": "啊那么呃当AI能够做到"
+  },
+  {
+    "Start": 451.51,
+    "End": 455.26,
+    "Speaker": "S03",
+    "Content": "呃以一个低延迟低成本"
+  },
+  {
+    "Start": 455.52,
+    "End": 458.95,
+    "Speaker": "S03",
+    "Content": "啊然后很好的形式去表达这种情绪价值的时候"
+  },
+  {
+    "Start": 458.96,
+    "End": 461.69,
+    "Speaker": "S03",
+    "Content": "这可能会对我们的社交啊社会啊"
+  },
+  {
+    "Start": 462.02,
+    "End": 463.29,
+    "Speaker": "S03",
+    "Content": "呃带来很大的影响"
+  },
+  {
+    "Start": 463.3,
+    "End": 465.21,
+    "Speaker": "S03",
+    "Content": "会带带来很大的这个机会"
+  },
+  {
+    "Start": 465.68,
+    "End": 467.21,
+    "Speaker": "S01",
+    "Content": "随着AI能力的提升啊"
+  },
+  {
+    "Start": 467.22,
+    "End": 470.57,
+    "Speaker": "S01",
+    "Content": "图灵测试这个概念呢可能会越来越模糊化"
+  },
+  {
+    "Start": 470.69,
+    "End": 473.94,
+    "Speaker": "S01",
+    "Content": "电影HER中描述的场景实现几乎是早晚的事"
+  },
+  {
+    "Start": 474.21,
+    "End": 477.98,
+    "Speaker": "S01",
+    "Content": "但AI多模态带来的不仅仅是情感上的陪伴和交互"
+  },
+  {
+    "Start": 478.04,
+    "End": 481.75,
+    "Speaker": "S01",
+    "Content": "更多的是整个工作场景和生态上的颠覆"
+  },
+  {
+    "Start": 482.65,
+    "End": 485.18,
+    "Speaker": "S01",
+    "Content": "那么就在OPENAI发布会的一天之后呢"
+  },
+  {
+    "Start": 485.19,
+    "End": 487.86,
+    "Speaker": "S01",
+    "Content": "谷歌发布的一系列多模态更新"
+  },
+  {
+    "Start": 488.0,
+    "End": 492.39,
+    "Speaker": "S01",
+    "Content": "进一步的说明了AI多模态能够带来的颠覆性潜力"
+  },
+  {
+    "Start": 495.58,
+    "End": 497.13,
+    "Speaker": "S01",
+    "Content": "那比起OPENAI的发布会"
+  },
+  {
+    "Start": 497.14,
+    "End": 499.85,
+    "Speaker": "S01",
+    "Content": "谷歌的发布会呢就更像一个巨头了"
+  },
+  {
+    "Start": 499.86,
+    "End": 501.01,
+    "Speaker": "S01",
+    "Content": "长达两个小时"
+  },
+  {
+    "Start": 501.1,
+    "End": 504.49,
+    "Speaker": "S01",
+    "Content": "在它的各个生态的方向用AI去发力"
+  },
+  {
+    "Start": 504.65,
+    "End": 506.82,
+    "Speaker": "S01",
+    "Content": "连CEOSunda Pichai自己也说"
+  },
+  {
+    "Start": 506.93,
+    "End": 509.42,
+    "Speaker": "S01",
+    "Content": "整场keynote的演讲稿件当中啊"
+  },
+  {
+    "Start": 509.51,
+    "End": 511.86,
+    "Speaker": "S01",
+    "Content": "总共提了一百二十次的AI"
+  },
+  {
+    "Start": 511.87,
+    "End": 513.78,
+    "Speaker": "S01",
+    "Content": "表明呢谷歌目前所有的工作"
+  },
+  {
+    "Start": 513.81,
+    "End": 517.06,
+    "Speaker": "S01",
+    "Content": "都是围绕着多模态AI模型Gemini来展开"
+  },
+  {
+    "Start": 517.19,
+    "End": 522.54,
+    "Speaker": "S01",
+    "Content": "首先呢直接与OPENAI前一天发布的GPT4O对标的是Project Astra"
+  },
+  {
+    "Start": 522.77,
+    "End": 524.54,
+    "Speaker": "S01",
+    "Content": "虽然谷歌不是现场演示"
+  },
+  {
+    "Start": 524.55,
+    "End": 525.86,
+    "Speaker": "S01",
+    "Content": "不像OPENAI那么赶"
+  },
+  {
+    "Start": 526.03,
+    "End": 528.46,
+    "Speaker": "S01",
+    "Content": "毕竟巨头还是需要保守一些些的"
+  },
+  {
+    "Start": 528.66,
+    "End": 531.13,
+    "Speaker": "S01",
+    "Content": "但是从谷歌的DEMO视频来看呢"
+  },
+  {
+    "Start": 531.22,
+    "End": 534.65,
+    "Speaker": "S01",
+    "Content": "如果谷歌的DEMO是实时生成的"
+  },
+  {
+    "Start": 534.77,
+    "End": 539.66,
+    "Speaker": "S01",
+    "Content": "谷歌的Gemini多模态模型比起OPENAI在功能上啊也不算弱"
+  },
+  {
+    "Start": 540.04,
+    "End": 545.05,
+    "Speaker": "S01",
+    "Content": "谷歌DeepMind的负责人Dennis Hassabis在台上宣布了Project Astra"
+  },
+  {
+    "Start": 545.31,
+    "End": 548.62,
+    "Speaker": "S01",
+    "Content": "那Project Astra呢是基于Gemini多模态大模型"
+  },
+  {
+    "Start": 548.69,
+    "End": 551.62,
+    "Speaker": "S01",
+    "Content": "是一个实时多模态的人工智能助手"
+  },
+  {
+    "Start": 551.63,
+    "End": 554.1,
+    "Speaker": "S01",
+    "Content": "可以通过硬件设备看到世界"
+  },
+  {
+    "Start": 554.21,
+    "End": 555.46,
+    "Speaker": "S01",
+    "Content": "知道东西是什么"
+  },
+  {
+    "Start": 555.47,
+    "End": 557.26,
+    "Speaker": "S01",
+    "Content": "以及呢你把它们放在哪里"
+  },
+  {
+    "Start": 557.27,
+    "End": 560.86,
+    "Speaker": "S01",
+    "Content": "并且可以回答问题或者帮助你做几乎任何事情"
+  },
+  {
+    "Start": 561.14,
+    "End": 562.77,
+    "Speaker": "S01",
+    "Content": "在谷歌的DEMO视频当中啊"
+  },
+  {
+    "Start": 562.78,
+    "End": 567.57,
+    "Speaker": "S01",
+    "Content": "谷歌伦敦办事处的一个工作人员就用Astra识别自己的地理位置"
+  },
+  {
+    "Start": 567.69,
+    "End": 569.26,
+    "Speaker": "S01",
+    "Content": "找到丢失的眼镜"
+  },
+  {
+    "Start": 569.41,
+    "End": 570.58,
+    "Speaker": "S01",
+    "Content": "检查代码等等"
+  },
+  {
+    "Start": 570.59,
+    "End": 573.14,
+    "Speaker": "S01",
+    "Content": "What can I add here to make this system faster"
+  },
+  {
+    "Start": 576.19,
+    "End": 579.7,
+    "Speaker": "S04",
+    "Content": "Adding a cache between the server and database could improve speed"
+  },
+  {
+    "Start": 579.91,
+    "End": 581.98,
+    "Speaker": "S01",
+    "Content": "如果谷歌的DEMO是实时拍摄的"
+  },
+  {
+    "Start": 581.99,
+    "End": 585.82,
+    "Speaker": "S01",
+    "Content": "反正Dennis Hassabis是打包票说这个视频没有任何的改动"
+  },
+  {
+    "Start": 586.21,
+    "End": 587.48,
+    "Speaker": "S01",
+    "Content": "那么毫无疑问啊"
+  },
+  {
+    "Start": 587.49,
+    "End": 590.24,
+    "Speaker": "S01",
+    "Content": "这会解锁众多的交互场景"
+  },
+  {
+    "Start": 590.42,
+    "End": 592.41,
+    "Speaker": "S01",
+    "Content": "那么Hassabis说展望未来"
+  },
+  {
+    "Start": 592.49,
+    "End": 593.94,
+    "Speaker": "S01",
+    "Content": "人工智能的故事呢"
+  },
+  {
+    "Start": 593.96,
+    "End": 596.41,
+    "Speaker": "S01",
+    "Content": "将不再是关于模型本身"
+  },
+  {
+    "Start": 596.42,
+    "End": 599.13,
+    "Speaker": "S01",
+    "Content": "而是关于他们能够为你做什么"
+  },
+  {
+    "Start": 599.41,
+    "End": 602.98,
+    "Speaker": "S01",
+    "Content": "而与OPENAI的GPT4O宣战的Project Astra"
+  },
+  {
+    "Start": 603.03,
+    "End": 604.82,
+    "Speaker": "S01",
+    "Content": "只是其中的一个产品而已"
+  },
+  {
+    "Start": 604.91,
+    "End": 607.54,
+    "Speaker": "S01",
+    "Content": "谷歌呢其实发布了非常多的更新"
+  },
+  {
+    "Start": 607.61,
+    "End": 611.62,
+    "Speaker": "S01",
+    "Content": "包括谷歌展示了最新版Gemini加持的搜索功能"
+  },
+  {
+    "Start": 612.28,
+    "End": 617.65,
+    "Speaker": "S01",
+    "Content": "谷歌首先在美国上线了名为AI Overviews的AI技术生成摘要功能"
+  },
+  {
+    "Start": 617.99,
+    "End": 618.62,
+    "Speaker": "S01",
+    "Content": "简单来说"
+  },
+  {
+    "Start": 618.63,
+    "End": 619.98,
+    "Speaker": "S01",
+    "Content": "在你搜索信息的时候"
+  },
+  {
+    "Start": 619.99,
+    "End": 623.94,
+    "Speaker": "S01",
+    "Content": "谷歌的AI呢就能够直接帮你查找整理和展示了"
+  },
+  {
+    "Start": 624.04,
+    "End": 624.71,
+    "Speaker": "S01",
+    "Content": "具体来说啊"
+  },
+  {
+    "Start": 624.72,
+    "End": 628.23,
+    "Speaker": "S01",
+    "Content": "通过多步推理Gemini可以代替用户研究"
+  },
+  {
+    "Start": 628.24,
+    "End": 631.31,
+    "Speaker": "S01",
+    "Content": "实现更好的高效的搜索总结和结果"
+  },
+  {
+    "Start": 631.48,
+    "End": 634.15,
+    "Speaker": "S01",
+    "Content": "比如说规划一日三餐购物餐厅选择"
+  },
+  {
+    "Start": 634.28,
+    "End": 637.07,
+    "Speaker": "S01",
+    "Content": "行程规划都可以在AI搜索中完成"
+  },
+  {
+    "Start": 637.19,
+    "End": 637.94,
+    "Speaker": "S01",
+    "Content": "更重要的是啊"
+  },
+  {
+    "Start": 637.95,
+    "End": 640.62,
+    "Speaker": "S01",
+    "Content": "这样的AI搜索还会直接帮你做规划"
+  },
+  {
+    "Start": 640.63,
+    "End": 643.14,
+    "Speaker": "S01",
+    "Content": "比如说帮我创建一个三天的饮食计划"
+  },
+  {
+    "Start": 643.27,
+    "End": 647.14,
+    "Speaker": "S01",
+    "Content": "那谷歌AI搜索啊就直接一个计划书摆在你面前了"
+  },
+  {
+    "Start": 647.46,
+    "End": 649.71,
+    "Speaker": "S01",
+    "Content": "另外让我觉得很期待的两个功能啊"
+  },
+  {
+    "Start": 649.72,
+    "End": 651.83,
+    "Speaker": "S01",
+    "Content": "第一个呢就是多模态搜索了"
+  },
+  {
+    "Start": 651.95,
+    "End": 653.58,
+    "Speaker": "S01",
+    "Content": "你会不会遇到过这种情况啊"
+  },
+  {
+    "Start": 653.59,
+    "End": 657.1,
+    "Speaker": "S01",
+    "Content": "搜索的时候发现难以用语言描述问题"
+  },
+  {
+    "Start": 657.11,
+    "End": 659.54,
+    "Speaker": "S01",
+    "Content": "或者呢遇到不熟悉不认识的物体"
+  },
+  {
+    "Start": 659.55,
+    "End": 661.98,
+    "Speaker": "S01",
+    "Content": "不知道如何去搜索相关的名词"
+  },
+  {
+    "Start": 662.58,
+    "End": 666.65,
+    "Speaker": "S01",
+    "Content": "那现在呢你就可以直接拍上照片或者呢录段视频"
+  },
+  {
+    "Start": 666.66,
+    "End": 669.93,
+    "Speaker": "S01",
+    "Content": "用语音或者打字问AI搜索这个是啥"
+  },
+  {
+    "Start": 669.94,
+    "End": 671.41,
+    "Speaker": "S01",
+    "Content": "怎么修理之后谷歌呢"
+  },
+  {
+    "Start": 671.46,
+    "End": 673.97,
+    "Speaker": "S01",
+    "Content": "就会帮你整理出相关的各种信息"
+  },
+  {
+    "Start": 674.1,
+    "End": 677.81,
+    "Speaker": "S01",
+    "Content": "Why will this not stay in place"
+  },
+  {
+    "Start": 679.25,
+    "End": 680.88,
+    "Speaker": "S01",
+    "Content": "In the near instant"
+  },
+  {
+    "Start": 681.08,
+    "End": 683.01,
+    "Speaker": "S01",
+    "Content": "Google gives me an AI overview"
+  },
+  {
+    "Start": 683.78,
+    "End": 685.69,
+    "Speaker": "S01",
+    "Content": "那对于我这种3C杀手啊"
+  },
+  {
+    "Start": 685.7,
+    "End": 687.89,
+    "Speaker": "S01",
+    "Content": "经常弄坏各种电器的人来说"
+  },
+  {
+    "Start": 687.9,
+    "End": 691.01,
+    "Speaker": "S01",
+    "Content": "我简直是太期待这个多模态的搜索功能了"
+  },
+  {
+    "Start": 691.12,
+    "End": 694.99,
+    "Speaker": "S01",
+    "Content": "而且多模态模型Gemini的强大搜索和推理能力"
+  },
+  {
+    "Start": 695.06,
+    "End": 696.63,
+    "Speaker": "S01",
+    "Content": "还能够做更多的事情"
+  },
+  {
+    "Start": 696.64,
+    "End": 698.91,
+    "Speaker": "S01",
+    "Content": "那么这正好呢也是我的痛点啊"
+  },
+  {
+    "Start": 699.02,
+    "End": 701.77,
+    "Speaker": "S01",
+    "Content": "那比如说谷歌CEOPichai在现场就演示"
+  },
+  {
+    "Start": 701.84,
+    "End": 706.49,
+    "Speaker": "S01",
+    "Content": "Gemini可以在谷歌相册Google Photos里面进行更多的相关搜索"
+  },
+  {
+    "Start": 706.5,
+    "End": 710.21,
+    "Speaker": "S01",
+    "Content": "比如说通过名为S Photos with Gemini的新功能啊"
+  },
+  {
+    "Start": 710.28,
+    "End": 713.39,
+    "Speaker": "S01",
+    "Content": "让Gemini找到用户想要的车牌账号"
+  },
+  {
+    "Start": 713.44,
+    "End": 714.49,
+    "Speaker": "S01",
+    "Content": "实话告诉大家"
+  },
+  {
+    "Start": 714.5,
+    "End": 717.13,
+    "Speaker": "S01",
+    "Content": "我就是那个记不住我家车牌号的人"
+  },
+  {
+    "Start": 717.26,
+    "End": 718.69,
+    "Speaker": "S01",
+    "Content": "如果大家也有人这样"
+  },
+  {
+    "Start": 718.72,
+    "End": 721.17,
+    "Speaker": "S01",
+    "Content": "可以在弹幕上让我知道我不是一个人"
+  },
+  {
+    "Start": 721.3,
+    "End": 724.97,
+    "Speaker": "S01",
+    "Content": "所以呢谷歌Gemini可以在用户的相册里面去搜索"
+  },
+  {
+    "Start": 725.02,
+    "End": 727.33,
+    "Speaker": "S01",
+    "Content": "找到相应的信息和对应的照片"
+  },
+  {
+    "Start": 727.51,
+    "End": 730.94,
+    "Speaker": "S01",
+    "Content": "来比如说获取照片中拍到的车牌照号码"
+  },
+  {
+    "Start": 731.01,
+    "End": 734.06,
+    "Speaker": "S01",
+    "Content": "那么这个功能对我来说啊真的是非常的期待了"
+  },
+  {
+    "Start": 734.21,
+    "End": 738.06,
+    "Speaker": "S01",
+    "Content": "以及任何可以帮我寻找以往照片文件中信息的功能"
+  },
+  {
+    "Start": 738.07,
+    "End": 740.14,
+    "Speaker": "S01",
+    "Content": "我觉得都会解决很多的痛点"
+  },
+  {
+    "Start": 740.3,
+    "End": 742.17,
+    "Speaker": "S01",
+    "Content": "还有一个对我来说很大帮助的是"
+  },
+  {
+    "Start": 742.18,
+    "End": 746.21,
+    "Speaker": "S01",
+    "Content": "谷歌AI呢将会结合到谷歌的所有workspace当中"
+  },
+  {
+    "Start": 746.22,
+    "End": 748.01,
+    "Speaker": "S01",
+    "Content": "俗称谷歌全家桶"
+  },
+  {
+    "Start": 748.21,
+    "End": 750.26,
+    "Speaker": "S01",
+    "Content": "也就是说在Gemini的加持之下"
+  },
+  {
+    "Start": 750.27,
+    "End": 752.14,
+    "Speaker": "S01",
+    "Content": "Google Workspace包括了Gmail"
+  },
+  {
+    "Start": 752.15,
+    "End": 752.82,
+    "Speaker": "S01",
+    "Content": "Google Docs"
+  },
+  {
+    "Start": 752.83,
+    "End": 753.58,
+    "Speaker": "S01",
+    "Content": "Google Drive"
+  },
+  {
+    "Start": 753.59,
+    "End": 754.42,
+    "Speaker": "S01",
+    "Content": "Google Calendar"
+  },
+  {
+    "Start": 754.43,
+    "End": 756.22,
+    "Speaker": "S01",
+    "Content": "Google Meet等等都可以打通"
+  },
+  {
+    "Start": 756.31,
+    "End": 758.54,
+    "Speaker": "S01",
+    "Content": "可以在这里进行跨文档搜索"
+  },
+  {
+    "Start": 758.68,
+    "End": 761.35,
+    "Speaker": "S01",
+    "Content": "那比如说你在邮箱里面收到了一张发票"
+  },
+  {
+    "Start": 761.44,
+    "End": 763.47,
+    "Speaker": "S01",
+    "Content": "那么就可以直接通过Gemini"
+  },
+  {
+    "Start": 763.56,
+    "End": 767.61,
+    "Speaker": "S01",
+    "Content": "把这张发票整理到网盘Google Drive和表格Google Sheet当中"
+  },
+  {
+    "Start": 767.68,
+    "End": 770.57,
+    "Speaker": "S01",
+    "Content": "还可以在邮件中搜索读取信息和亮点"
+  },
+  {
+    "Start": 770.69,
+    "End": 771.46,
+    "Speaker": "S01",
+    "Content": "归纳总结"
+  },
+  {
+    "Start": 771.47,
+    "End": 774.34,
+    "Speaker": "S01",
+    "Content": "那么这些功能啊都会在今年稍后推出"
+  },
+  {
+    "Start": 775.02,
+    "End": 777.95,
+    "Speaker": "S01",
+    "Content": "另外呢谷歌还发布了一系列其他的模型更新"
+  },
+  {
+    "Start": 777.96,
+    "End": 780.03,
+    "Speaker": "S01",
+    "Content": "包括了画图的Imagine 3"
+  },
+  {
+    "Start": 780.16,
+    "End": 781.99,
+    "Speaker": "S01",
+    "Content": "音乐的Music AI Sandbox"
+  },
+  {
+    "Start": 782.0,
+    "End": 783.75,
+    "Speaker": "S01",
+    "Content": "还有生成视频的View"
+  },
+  {
+    "Start": 783.88,
+    "End": 789.35,
+    "Speaker": "S01",
+    "Content": "还有有史以来最长上下文窗口200万token的Gemini 1.5 Pro"
+  },
+  {
+    "Start": 789.36,
+    "End": 790.67,
+    "Speaker": "S01",
+    "Content": "还有呢Gemini App"
+  },
+  {
+    "Start": 790.81,
+    "End": 794.58,
+    "Speaker": "S01",
+    "Content": "以及谷歌的自研芯片第六代TPU等等等等"
+  },
+  {
+    "Start": 794.67,
+    "End": 796.86,
+    "Speaker": "S01",
+    "Content": "那因为其中的细节和产品太多了"
+  },
+  {
+    "Start": 796.87,
+    "End": 799.22,
+    "Speaker": "S01",
+    "Content": "那这个视频我们就不一一的复述了"
+  },
+  {
+    "Start": 799.34,
+    "End": 803.57,
+    "Speaker": "S01",
+    "Content": "如果感兴趣的小伙伴可以去看看谷歌的两小时发布会全程"
+  },
+  {
+    "Start": 803.58,
+    "End": 805.41,
+    "Speaker": "S01",
+    "Content": "那看到这里啊你可能会问了"
+  },
+  {
+    "Start": 805.42,
+    "End": 808.93,
+    "Speaker": "S01",
+    "Content": "在OPENAI之后发布了这一系列重磅更新的谷歌"
+  },
+  {
+    "Start": 809.19,
+    "End": 812.86,
+    "Speaker": "S01",
+    "Content": "两个对手这一轮的发布谁是赢家呢"
+  },
+  {
+    "Start": 816.21,
+    "End": 817.74,
+    "Speaker": "S01",
+    "Content": "那在两场发布会之后呢"
+  },
+  {
+    "Start": 817.75,
+    "End": 821.34,
+    "Speaker": "S01",
+    "Content": "我看到不少人在对比OPENAI和谷歌的产品发布啊"
+  },
+  {
+    "Start": 821.35,
+    "End": 824.02,
+    "Speaker": "S01",
+    "Content": "那我们从公司的策略层来解读一下"
+  },
+  {
+    "Start": 824.22,
+    "End": 827.97,
+    "Speaker": "S01",
+    "Content": "首先OPENAI比谷歌IO早一天发布了这个春季更新"
+  },
+  {
+    "Start": 827.98,
+    "End": 828.93,
+    "Speaker": "S01",
+    "Content": "而且非常临时"
+  },
+  {
+    "Start": 828.94,
+    "End": 831.89,
+    "Speaker": "S01",
+    "Content": "很难猜测是不是故意抢在谷歌前面的"
+  },
+  {
+    "Start": 831.98,
+    "End": 833.93,
+    "Speaker": "S01",
+    "Content": "发布时间也只持续了二十六分钟"
+  },
+  {
+    "Start": 833.94,
+    "End": 837.21,
+    "Speaker": "S01",
+    "Content": "非常的聚焦在GPT4O的这一个产品上"
+  },
+  {
+    "Start": 837.34,
+    "End": 839.65,
+    "Speaker": "S01",
+    "Content": "那虽然外界对GPT4O的评价"
+  },
+  {
+    "Start": 839.66,
+    "End": 843.61,
+    "Speaker": "S01",
+    "Content": "没有说像当时发布CHATGPT的时候那么轰动那么惊喜啊"
+  },
+  {
+    "Start": 843.72,
+    "End": 845.99,
+    "Speaker": "S01",
+    "Content": "但是不得不说业界的很多人"
+  },
+  {
+    "Start": 846.0,
+    "End": 848.43,
+    "Speaker": "S01",
+    "Content": "还是觉得是一个非常重要的里程碑的"
+  },
+  {
+    "Start": 848.58,
+    "End": 852.11,
+    "Speaker": "S01",
+    "Content": "虽然多模态的这些功能是去年行业内的共识啊"
+  },
+  {
+    "Start": 852.12,
+    "End": 854.83,
+    "Speaker": "S01",
+    "Content": "OPENAI会在2024年做出来并且发布"
+  },
+  {
+    "Start": 854.88,
+    "End": 857.15,
+    "Speaker": "S01",
+    "Content": "并没有那么多的惊喜或者创新"
+  },
+  {
+    "Start": 857.3,
+    "End": 862.29,
+    "Speaker": "S01",
+    "Content": "但是呢它确实是实现了大家期待中早晚会实现的AI更新"
+  },
+  {
+    "Start": 862.44,
+    "End": 863.89,
+    "Speaker": "S01",
+    "Content": "也是非常的有意义的"
+  },
+  {
+    "Start": 863.9,
+    "End": 865.77,
+    "Speaker": "S01",
+    "Content": "并且也是正确的发展道路"
+  },
+  {
+    "Start": 865.78,
+    "End": 870.15,
+    "Speaker": "S05",
+    "Content": "我觉得是因为嗯一个技术不能被用起来"
+  },
+  {
+    "Start": 870.94,
+    "End": 873.49,
+    "Speaker": "S05",
+    "Content": "这个技术背后再怎么样也没啥意思"
+  },
+  {
+    "Start": 873.5,
+    "End": 878.85,
+    "Speaker": "S05",
+    "Content": "OPENAI这个呃GPT4这个模模型出来也能够做些translation"
+  },
+  {
+    "Start": 878.86,
+    "End": 881.65,
+    "Speaker": "S05",
+    "Content": "就就翻译啊什么就这并不是一个新东西"
+  },
+  {
+    "Start": 881.92,
+    "End": 883.99,
+    "Speaker": "S05",
+    "Content": "但如果没有实时效应啊"
+  },
+  {
+    "Start": 884.0,
+    "End": 886.23,
+    "Speaker": "S05",
+    "Content": "其实是很难落地"
+  },
+  {
+    "Start": 886.32,
+    "End": 890.35,
+    "Speaker": "S05",
+    "Content": "星期一他那个呃宣布的东西让我感觉到我有可能真的会去用"
+  },
+  {
+    "Start": 890.36,
+    "End": 895.95,
+    "Speaker": "S05",
+    "Content": "有可能在比如下次我跟你一起去不管是采访谁或者跟谁讲话"
+  },
+  {
+    "Start": 895.96,
+    "End": 897.79,
+    "Speaker": "S05",
+    "Content": "一个语言不懂语言不通"
+  },
+  {
+    "Start": 897.8,
+    "End": 902.03,
+    "Speaker": "S05",
+    "Content": "我们真的可能用就用打开我们的手机来来用translation"
+  },
+  {
+    "Start": 902.22,
+    "End": 905.65,
+    "Speaker": "S05",
+    "Content": "否则的话就以前的那个延迟这么慢"
+  },
+  {
+    "Start": 905.66,
+    "End": 906.73,
+    "Speaker": "S05",
+    "Content": "那个效果很不好"
+  },
+  {
+    "Start": 906.74,
+    "End": 909.61,
+    "Speaker": "S05",
+    "Content": "你都你都不你都不好意思拿出来用对吧"
+  },
+  {
+    "Start": 909.86,
+    "End": 913.05,
+    "Speaker": "S05",
+    "Content": "呃那为什么能够做到延那个延迟性这么低"
+  },
+  {
+    "Start": 913.06,
+    "End": 916.21,
+    "Speaker": "S05",
+    "Content": "那被广泛认为的就是因为它是做了一个比较"
+  },
+  {
+    "Start": 916.54,
+    "End": 919.89,
+    "Speaker": "S05",
+    "Content": "就像你说的原生的native的一个multi model"
+  },
+  {
+    "Start": 919.9,
+    "End": 921.41,
+    "Speaker": "S05",
+    "Content": "就我看了那个DEMO"
+  },
+  {
+    "Start": 921.42,
+    "End": 922.89,
+    "Speaker": "S05",
+    "Content": "我的第一反应是说OK"
+  },
+  {
+    "Start": 923.04,
+    "End": 925.63,
+    "Speaker": "S05",
+    "Content": "以前他说的这些东西我都是完完是可以的"
+  },
+  {
+    "Start": 925.64,
+    "End": 927.27,
+    "Speaker": "S05",
+    "Content": "但是我是不会拎出来用的"
+  },
+  {
+    "Start": 927.5,
+    "End": 929.81,
+    "Speaker": "S05",
+    "Content": "但是但是他星期一给我的东西"
+  },
+  {
+    "Start": 929.82,
+    "End": 931.65,
+    "Speaker": "S05",
+    "Content": "我就觉得有可能我会拿了"
+  },
+  {
+    "Start": 931.78,
+    "End": 935.89,
+    "Speaker": "S05",
+    "Content": "就在实际的生活工作的场景里面就可能用得到"
+  },
+  {
+    "Start": 935.94,
+    "End": 938.85,
+    "Speaker": "S01",
+    "Content": "如果光从语音助手的这个产品上来看"
+  },
+  {
+    "Start": 938.99,
+    "End": 941.58,
+    "Speaker": "S01",
+    "Content": "GPT4O对打谷歌Project Astra"
+  },
+  {
+    "Start": 941.61,
+    "End": 945.26,
+    "Speaker": "S01",
+    "Content": "目前业内很多声音啊仍然是认为OPENAI是领先的"
+  },
+  {
+    "Start": 945.51,
+    "End": 947.54,
+    "Speaker": "S01",
+    "Content": "单从多模态模型上来说"
+  },
+  {
+    "Start": 947.65,
+    "End": 951.86,
+    "Speaker": "S01",
+    "Content": "GPT4O呢是OPENAI第一款完全原生的多模态模型"
+  },
+  {
+    "Start": 951.97,
+    "End": 953.54,
+    "Speaker": "S01",
+    "Content": "我们视频之前也有说到"
+  },
+  {
+    "Start": 953.59,
+    "End": 955.86,
+    "Speaker": "S01",
+    "Content": "它所有的多模态输入和输出呢"
+  },
+  {
+    "Start": 955.87,
+    "End": 958.26,
+    "Speaker": "S01",
+    "Content": "都是同一个神经网络处理的"
+  },
+  {
+    "Start": 958.27,
+    "End": 963.18,
+    "Speaker": "S01",
+    "Content": "那么这使得GPT4O能够接受文本音频和图像的任意组合作为输入"
+  },
+  {
+    "Start": 963.28,
+    "End": 966.81,
+    "Speaker": "S01",
+    "Content": "并且生成文本音频和图像的任意组合的输出"
+  },
+  {
+    "Start": 966.92,
+    "End": 970.05,
+    "Speaker": "S01",
+    "Content": "是所谓的multi model in multi model out"
+  },
+  {
+    "Start": 970.24,
+    "End": 974.67,
+    "Speaker": "S01",
+    "Content": "但目前不少的业内人士认为谷歌的Gemini目前并没有做到这个程度"
+  },
+  {
+    "Start": 974.68,
+    "End": 977.07,
+    "Speaker": "S01",
+    "Content": "那比如说英伟达的高级科学家Jim Fenn"
+  },
+  {
+    "Start": 977.24,
+    "End": 979.11,
+    "Speaker": "S01",
+    "Content": "他在LinkedIn上面就发表观点"
+  },
+  {
+    "Start": 979.12,
+    "End": 982.03,
+    "Speaker": "S01",
+    "Content": "认为说谷歌是多模态作为输入"
+  },
+  {
+    "Start": 982.04,
+    "End": 984.95,
+    "Speaker": "S01",
+    "Content": "但是呢并不是多模态作为输出"
+  },
+  {
+    "Start": 985.02,
+    "End": 988.95,
+    "Speaker": "S01",
+    "Content": "它是所谓的multi model in but not multi model out"
+  },
+  {
+    "Start": 989.08,
+    "End": 992.27,
+    "Speaker": "S01",
+    "Content": "那么这意味着谷歌本次更新的视频音乐等等模型"
+  },
+  {
+    "Start": 992.28,
+    "End": 994.67,
+    "Speaker": "S01",
+    "Content": "依然是独立于Gemini大模型的存在"
+  },
+  {
+    "Start": 994.72,
+    "End": 997.15,
+    "Speaker": "S01",
+    "Content": "只是输出的时候把所有模型给整合起来"
+  },
+  {
+    "Start": 997.16,
+    "End": 998.79,
+    "Speaker": "S01",
+    "Content": "拥有的多模态输出能力"
+  },
+  {
+    "Start": 998.94,
+    "End": 1000.09,
+    "Speaker": "S01",
+    "Content": "所以Jim Fenn认为啊"
+  },
+  {
+    "Start": 1000.12,
+    "End": 1003.35,
+    "Speaker": "S01",
+    "Content": "谷歌接下来整合所有的输入输出模态"
+  },
+  {
+    "Start": 1003.36,
+    "End": 1005.59,
+    "Speaker": "S01",
+    "Content": "将是不可避免的未来发展"
+  },
+  {
+    "Start": 1005.74,
+    "End": 1007.93,
+    "Speaker": "S01",
+    "Content": "但是他还有一句评论挺有意思的"
+  },
+  {
+    "Start": 1007.94,
+    "End": 1010.73,
+    "Speaker": "S01",
+    "Content": "Jim Fenn说谷歌在这次发布会当中啊"
+  },
+  {
+    "Start": 1010.74,
+    "End": 1012.01,
+    "Speaker": "S01",
+    "Content": "做对的一件事是"
+  },
+  {
+    "Start": 1012.14,
+    "End": 1016.05,
+    "Speaker": "S01",
+    "Content": "他们终于认真努力的将AI集成到搜索框中了"
+  },
+  {
+    "Start": 1016.22,
+    "End": 1018.89,
+    "Speaker": "S01",
+    "Content": "谷歌最坚固的护城河是分销"
+  },
+  {
+    "Start": 1019.08,
+    "End": 1021.23,
+    "Speaker": "S01",
+    "Content": "Gemini不一定要成为最好的模型"
+  },
+  {
+    "Start": 1021.24,
+    "End": 1024.27,
+    "Speaker": "S01",
+    "Content": "才能够成为世界上被使用最多的模型"
+  },
+  {
+    "Start": 1024.63,
+    "End": 1027.54,
+    "Speaker": "S01",
+    "Content": "那么这也就是说啊谷歌在整个生态中"
+  },
+  {
+    "Start": 1027.55,
+    "End": 1029.74,
+    "Speaker": "S01",
+    "Content": "只要顺畅的融入AI功能"
+  },
+  {
+    "Start": 1029.81,
+    "End": 1031.74,
+    "Speaker": "S01",
+    "Content": "让用户觉得能够解决问题"
+  },
+  {
+    "Start": 1031.75,
+    "End": 1033.74,
+    "Speaker": "S01",
+    "Content": "提高生活和工作效率"
+  },
+  {
+    "Start": 1033.96,
+    "End": 1038.39,
+    "Speaker": "S01",
+    "Content": "因为谷歌在搜索邮箱谷歌云等等上的种种积累和优势"
+  },
+  {
+    "Start": 1038.44,
+    "End": 1043.83,
+    "Speaker": "S01",
+    "Content": "那谷歌的分销优势依然能够保证谷歌在AI时代中立于不败之地"
+  },
+  {
+    "Start": 1043.98,
+    "End": 1045.81,
+    "Speaker": "S01",
+    "Content": "所以呢按照这个逻辑来看"
+  },
+  {
+    "Start": 1045.82,
+    "End": 1047.57,
+    "Speaker": "S01",
+    "Content": "谷歌在这次发布会上"
+  },
+  {
+    "Start": 1047.62,
+    "End": 1050.73,
+    "Speaker": "S01",
+    "Content": "在全生态上全面升级AI功能"
+  },
+  {
+    "Start": 1050.82,
+    "End": 1051.97,
+    "Speaker": "S01",
+    "Content": "其实是做到了"
+  },
+  {
+    "Start": 1052.06,
+    "End": 1057.13,
+    "Speaker": "S01",
+    "Content": "所以呢就算OPENAI前一天抢跑这个发布亮点的GPT4O"
+  },
+  {
+    "Start": 1057.26,
+    "End": 1058.61,
+    "Speaker": "S01",
+    "Content": "谷歌整体上来看啊"
+  },
+  {
+    "Start": 1058.63,
+    "End": 1060.26,
+    "Speaker": "S01",
+    "Content": "这一局也不算输"
+  },
+  {
+    "Start": 1060.27,
+    "End": 1064.26,
+    "Speaker": "S01",
+    "Content": "那么第二天的股价本周上涨也是印证了市场的看法"
+  },
+  {
+    "Start": 1064.61,
+    "End": 1066.02,
+    "Speaker": "S03",
+    "Content": "在OPENAI发布会之后"
+  },
+  {
+    "Start": 1066.03,
+    "End": 1068.98,
+    "Speaker": "S03",
+    "Content": "我发布会之前我跟一位Google的同学聊"
+  },
+  {
+    "Start": 1069.22,
+    "End": 1071.57,
+    "Speaker": "S03",
+    "Content": "啊然后他提到一个观点还挺有意思"
+  },
+  {
+    "Start": 1071.58,
+    "End": 1075.17,
+    "Speaker": "S03",
+    "Content": "他说一年以前呃OPENAI发GPT4的时候"
+  },
+  {
+    "Start": 1075.26,
+    "End": 1078.29,
+    "Speaker": "S03",
+    "Content": "他们有很多东西他们是不知道OPENAI怎么做到的"
+  },
+  {
+    "Start": 1078.3,
+    "End": 1080.17,
+    "Speaker": "S03",
+    "Content": "觉得哇他们好厉害对吧"
+  },
+  {
+    "Start": 1080.38,
+    "End": 1082.41,
+    "Speaker": "S03",
+    "Content": "现在呢OPENAI发布会发了之后"
+  },
+  {
+    "Start": 1082.46,
+    "End": 1085.13,
+    "Speaker": "S03",
+    "Content": "他们看到是说哦这个东西我们也知道怎么做"
+  },
+  {
+    "Start": 1085.14,
+    "End": 1088.25,
+    "Speaker": "S03",
+    "Content": "但我们可能还没有像他那样做的那么好或者那么ready去DEMO"
+  },
+  {
+    "Start": 1088.66,
+    "End": 1090.33,
+    "Speaker": "S03",
+    "Content": "所以我觉得目前来看的话"
+  },
+  {
+    "Start": 1090.34,
+    "End": 1093.01,
+    "Speaker": "S03",
+    "Content": "所以他们肯定在这上面是有一些这个经验"
+  },
+  {
+    "Start": 1093.16,
+    "End": 1096.31,
+    "Speaker": "S03",
+    "Content": "所以我感觉就是双方的绝对差距还是在缩小的"
+  },
+  {
+    "Start": 1096.38,
+    "End": 1100.73,
+    "Speaker": "S05",
+    "Content": "相对来讲嗯那个Google注重的是一个solution"
+  },
+  {
+    "Start": 1100.74,
+    "End": 1101.89,
+    "Speaker": "S05",
+    "Content": "就解决方案"
+  },
+  {
+    "Start": 1102.16,
+    "End": 1105.71,
+    "Speaker": "S05",
+    "Content": "啊那个OPENAI目前注重的更多的还是一个technology"
+  },
+  {
+    "Start": 1105.72,
+    "End": 1107.63,
+    "Speaker": "S05",
+    "Content": "它在technology上面非常的惊艳"
+  },
+  {
+    "Start": 1107.82,
+    "End": 1110.57,
+    "Speaker": "S05",
+    "Content": "但你说它怎么去跟我们的人的日常的"
+  },
+  {
+    "Start": 1110.58,
+    "End": 1113.33,
+    "Speaker": "S05",
+    "Content": "不管是生活工作去结合起来"
+  },
+  {
+    "Start": 1113.8,
+    "End": 1114.99,
+    "Speaker": "S05",
+    "Content": "它没有那么多的人力"
+  },
+  {
+    "Start": 1115.0,
+    "End": 1116.03,
+    "Speaker": "S05",
+    "Content": "它也没这么多思考"
+  },
+  {
+    "Start": 1116.04,
+    "End": 1117.47,
+    "Speaker": "S05",
+    "Content": "而且这不是它的强项"
+  },
+  {
+    "Start": 1117.73,
+    "End": 1120.78,
+    "Speaker": "S05",
+    "Content": "Google I O的那个发布看上去可能"
+  },
+  {
+    "Start": 1121.01,
+    "End": 1123.34,
+    "Speaker": "S05",
+    "Content": "啊从某从某些角度来讲"
+  },
+  {
+    "Start": 1123.35,
+    "End": 1125.42,
+    "Speaker": "S05",
+    "Content": "哎呦好像还没有那个前一天的"
+  },
+  {
+    "Start": 1125.74,
+    "End": 1127.73,
+    "Speaker": "S05",
+    "Content": "嗯OPENAI的东西那么惊艳"
+  },
+  {
+    "Start": 1127.74,
+    "End": 1130.45,
+    "Speaker": "S05",
+    "Content": "但实际上我觉得啊很惊艳"
+  },
+  {
+    "Start": 1130.46,
+    "End": 1133.05,
+    "Speaker": "S05",
+    "Content": "我觉得经验不只是说是一个model的经验"
+  },
+  {
+    "Start": 1133.06,
+    "End": 1134.33,
+    "Speaker": "S05",
+    "Content": "model只是一个维度"
+  },
+  {
+    "Start": 1134.34,
+    "End": 1138.17,
+    "Speaker": "S05",
+    "Content": "还有其他维度怎么跟我的生活工作能够结合起来"
+  },
+  {
+    "Start": 1138.18,
+    "End": 1139.61,
+    "Speaker": "S05",
+    "Content": "比如说跟我的手机结合起来"
+  },
+  {
+    "Start": 1139.63,
+    "End": 1141.9,
+    "Speaker": "S05",
+    "Content": "它一些的announcement是这个技术"
+  },
+  {
+    "Start": 1141.91,
+    "End": 1144.06,
+    "Speaker": "S05",
+    "Content": "所以说一个技术AI这件技术"
+  },
+  {
+    "Start": 1144.07,
+    "End": 1147.86,
+    "Speaker": "S05",
+    "Content": "我觉得今天落地是一个很很大的一个挑战"
+  },
+  {
+    "Start": 1147.88,
+    "End": 1148.93,
+    "Speaker": "S05",
+    "Content": "或者说一件事情"
+  },
+  {
+    "Start": 1149.06,
+    "End": 1152.49,
+    "Speaker": "S01",
+    "Content": "所以呢可以预期待接下来多模态的继续整合和优化"
+  },
+  {
+    "Start": 1152.5,
+    "End": 1156.53,
+    "Speaker": "S01",
+    "Content": "以及呢将AI功能整合到谷歌的各个产品线当中"
+  },
+  {
+    "Start": 1156.54,
+    "End": 1160.53,
+    "Speaker": "S01",
+    "Content": "以及呢AI agent的引入将会是谷歌发力的重点"
+  },
+  {
+    "Start": 1160.74,
+    "End": 1161.53,
+    "Speaker": "S01",
+    "Content": "除此之外呢"
+  },
+  {
+    "Start": 1161.54,
+    "End": 1163.01,
+    "Speaker": "S01",
+    "Content": "这两场发布会听下来"
+  },
+  {
+    "Start": 1163.06,
+    "End": 1166.17,
+    "Speaker": "S01",
+    "Content": "还让我非常感兴趣的一点啊在于硬件"
+  },
+  {
+    "Start": 1166.48,
+    "End": 1169.65,
+    "Speaker": "S01",
+    "Content": "OPENAI整个DEMO用的是苹果手机和苹果电脑"
+  },
+  {
+    "Start": 1169.74,
+    "End": 1172.13,
+    "Speaker": "S01",
+    "Content": "谷歌用的是安卓手机和硬件"
+  },
+  {
+    "Start": 1172.22,
+    "End": 1174.37,
+    "Speaker": "S01",
+    "Content": "同时呢还在视频DEMO当中啊"
+  },
+  {
+    "Start": 1174.44,
+    "End": 1180.07,
+    "Speaker": "S01",
+    "Content": "非常有意思的提到了一个谷歌内部类似谷歌眼镜一样的prototype原型设备"
+  },
+  {
+    "Start": 1180.14,
+    "End": 1184.93,
+    "Speaker": "S01",
+    "Content": "所以接下来硬件和AI大模型的整合也到了加入战场的时刻"
+  },
+  {
+    "Start": 1184.98,
+    "End": 1187.65,
+    "Speaker": "S01",
+    "Content": "而这个赛道的老大苹果在干什么呢"
+  },
+  {
+    "Start": 1190.77,
+    "End": 1195.66,
+    "Speaker": "S01",
+    "Content": "虽然苹果公司在这轮硅谷科技巨头AI大战中是迟迟没有发生"
+  },
+  {
+    "Start": 1195.77,
+    "End": 1201.86,
+    "Speaker": "S01",
+    "Content": "但是最近有不少的舆论风向稍微给我们勾勒出了苹果潜在的想法和布局啊"
+  },
+  {
+    "Start": 1201.98,
+    "End": 1208.25,
+    "Speaker": "S01",
+    "Content": "目前呢市场都在等待6月10号举行的苹果2024年全球开发者大会WWDC"
+  },
+  {
+    "Start": 1208.36,
+    "End": 1212.91,
+    "Speaker": "S01",
+    "Content": "预计呢会在届时宣布一系列在AI和硬件上面的产品发布"
+  },
+  {
+    "Start": 1212.92,
+    "End": 1214.83,
+    "Speaker": "S01",
+    "Content": "包括可能会和OPENAI合作"
+  },
+  {
+    "Start": 1214.89,
+    "End": 1217.66,
+    "Speaker": "S01",
+    "Content": "将CHATGPT整合到iOS18操作系统"
+  },
+  {
+    "Start": 1217.82,
+    "End": 1219.57,
+    "Speaker": "S01",
+    "Content": "那么另外呢外界期待苹果呢"
+  },
+  {
+    "Start": 1219.58,
+    "End": 1222.69,
+    "Speaker": "S01",
+    "Content": "会宣布利用大模型全面升级Siri"
+  },
+  {
+    "Start": 1222.78,
+    "End": 1225.09,
+    "Speaker": "S01",
+    "Content": "为用户提供AI赋能的交互体验"
+  },
+  {
+    "Start": 1225.24,
+    "End": 1230.33,
+    "Speaker": "S01",
+    "Content": "还有呢苹果如何将大模型塞进手机移动端的这个苹果全家桶"
+  },
+  {
+    "Start": 1230.44,
+    "End": 1233.29,
+    "Speaker": "S01",
+    "Content": "也是啊马上会召开的苹果发布会当中"
+  },
+  {
+    "Start": 1233.3,
+    "End": 1235.45,
+    "Speaker": "S01",
+    "Content": "大家非常期待的最大看点了"
+  },
+  {
+    "Start": 1235.63,
+    "End": 1238.54,
+    "Speaker": "S01",
+    "Content": "那么今年早前苹果是发布了一系列的论文"
+  },
+  {
+    "Start": 1238.55,
+    "End": 1242.14,
+    "Speaker": "S01",
+    "Content": "包括了第一个手机端UI多模态大模型FARUI"
+  },
+  {
+    "Start": 1242.34,
+    "End": 1247.17,
+    "Speaker": "S01",
+    "Content": "还有今年1月份发布的一篇将大模型塞进iPhone的关键性论文"
+  },
+  {
+    "Start": 1247.26,
+    "End": 1250.49,
+    "Speaker": "S01",
+    "Content": "使用有限的内存实现更快的LLM推理"
+  },
+  {
+    "Start": 1250.5,
+    "End": 1252.73,
+    "Speaker": "S01",
+    "Content": "还有这篇苹果Siri团队在论文"
+  },
+  {
+    "Start": 1252.74,
+    "End": 1257.77,
+    "Speaker": "S01",
+    "Content": "利用大型语言模型进行设备指向性语音检测的多模态方法中"
+  },
+  {
+    "Start": 1257.86,
+    "End": 1259.99,
+    "Speaker": "S01",
+    "Content": "讨论了去掉唤醒词的方法"
+  },
+  {
+    "Start": 1260.22,
+    "End": 1263.05,
+    "Speaker": "S01",
+    "Content": "同时呢在今年3月份发布的另外一篇论文当中啊"
+  },
+  {
+    "Start": 1263.06,
+    "End": 1268.97,
+    "Speaker": "S01",
+    "Content": "苹果首次披露一个具有高达300亿参数的多模态模型MM1"
+  },
+  {
+    "Start": 1269.06,
+    "End": 1272.05,
+    "Speaker": "S01",
+    "Content": "那么这个多模态能力如果集成到iPhone上面"
+  },
+  {
+    "Start": 1272.06,
+    "End": 1275.73,
+    "Speaker": "S01",
+    "Content": "就能够通过视觉语音和文本等多种方式"
+  },
+  {
+    "Start": 1275.8,
+    "End": 1277.89,
+    "Speaker": "S01",
+    "Content": "理解并且响应用户的需求"
+  },
+  {
+    "Start": 1278.08,
+    "End": 1279.83,
+    "Speaker": "S01",
+    "Content": "所以呢综上所述"
+  },
+  {
+    "Start": 1279.92,
+    "End": 1282.75,
+    "Speaker": "S01",
+    "Content": "虽然最近两年来啊苹果时常被人诟病"
+  },
+  {
+    "Start": 1282.76,
+    "End": 1284.95,
+    "Speaker": "S01",
+    "Content": "在AI领域当中动作迟缓"
+  },
+  {
+    "Start": 1284.96,
+    "End": 1289.51,
+    "Speaker": "S01",
+    "Content": "但是感觉呢苹果是在等一个正确的时机来加入战局"
+  },
+  {
+    "Start": 1289.71,
+    "End": 1290.86,
+    "Speaker": "S01",
+    "Content": "它并没有落后"
+  },
+  {
+    "Start": 1290.89,
+    "End": 1292.22,
+    "Speaker": "S01",
+    "Content": "而是一直在等待"
+  },
+  {
+    "Start": 1292.27,
+    "End": 1294.5,
+    "Speaker": "S01",
+    "Content": "如今啊多模态技术逐渐成熟"
+  },
+  {
+    "Start": 1294.51,
+    "End": 1297.34,
+    "Speaker": "S01",
+    "Content": "特别是文字输入语音和视觉的交互"
+  },
+  {
+    "Start": 1297.35,
+    "End": 1299.74,
+    "Speaker": "S01",
+    "Content": "和手机等硬件是天然的适配"
+  },
+  {
+    "Start": 1299.89,
+    "End": 1303.14,
+    "Speaker": "S01",
+    "Content": "OPENAI和谷歌的AI多模态之战打响之际"
+  },
+  {
+    "Start": 1303.19,
+    "End": 1305.14,
+    "Speaker": "S01",
+    "Content": "也是苹果入局的时间了"
+  },
+  {
+    "Start": 1305.41,
+    "End": 1307.4,
+    "Speaker": "S03",
+    "Content": "如果你看互联网和移动互联网时代"
+  },
+  {
+    "Start": 1307.41,
+    "End": 1309.64,
+    "Speaker": "S03",
+    "Content": "其实他们在软件的渗透上"
+  },
+  {
+    "Start": 1309.65,
+    "End": 1311.32,
+    "Speaker": "S03",
+    "Content": "其实都要叠加一个硬件的渗透"
+  },
+  {
+    "Start": 1311.33,
+    "End": 1312.32,
+    "Speaker": "S03",
+    "Content": "大家要买PC"
+  },
+  {
+    "Start": 1312.33,
+    "End": 1313.52,
+    "Speaker": "S03",
+    "Content": "大家要买手机"
+  },
+  {
+    "Start": 1313.7,
+    "End": 1318.25,
+    "Speaker": "S03",
+    "Content": "所以导致说之前一个软件它的渗透速度其实是相对比较慢的"
+  },
+  {
+    "Start": 1318.32,
+    "End": 1321.49,
+    "Speaker": "S03",
+    "Content": "那为什么比如说CHATGPT一出来就渗透到了这么多的用户"
+  },
+  {
+    "Start": 1321.5,
+    "End": 1324.25,
+    "Speaker": "S03",
+    "Content": "实际上是因为它跑在一个已有比较成熟的硬件上"
+  },
+  {
+    "Start": 1324.26,
+    "End": 1325.77,
+    "Speaker": "S03",
+    "Content": "啊所以我觉得在目前来讲"
+  },
+  {
+    "Start": 1325.78,
+    "End": 1328.21,
+    "Speaker": "S03",
+    "Content": "AI落地肯定首选还是在手机上"
+  },
+  {
+    "Start": 1328.22,
+    "End": 1331.09,
+    "Speaker": "S03",
+    "Content": "我觉得肯定是期待像AI的这些模型"
+  },
+  {
+    "Start": 1331.1,
+    "End": 1333.25,
+    "Speaker": "S03",
+    "Content": "怎么样在苹果的生态系统去落地"
+  },
+  {
+    "Start": 1333.26,
+    "End": 1336.61,
+    "Speaker": "S03",
+    "Content": "其实说全新形态的硬件我自己觉得可能性比较低"
+  },
+  {
+    "Start": 1336.62,
+    "End": 1339.13,
+    "Speaker": "S03",
+    "Content": "但是在这个上面有了包括最近刚刚M4对吧"
+  },
+  {
+    "Start": 1339.14,
+    "End": 1342.13,
+    "Speaker": "S03",
+    "Content": "大家说iPad这个上面有这么强的这个芯片"
+  },
+  {
+    "Start": 1342.22,
+    "End": 1344.25,
+    "Speaker": "S03",
+    "Content": "你如果还是做原来的任务是不是又浪费了"
+  },
+  {
+    "Start": 1344.26,
+    "End": 1345.89,
+    "Speaker": "S03",
+    "Content": "你是不是原来干一些AI的任务呢"
+  },
+  {
+    "Start": 1346.14,
+    "End": 1349.93,
+    "Speaker": "S03",
+    "Content": "其实我觉得如果你去看两年前哈"
+  },
+  {
+    "Start": 1350.14,
+    "End": 1353.57,
+    "Speaker": "S03",
+    "Content": "两年前一些几百B上百B的模型的能力"
+  },
+  {
+    "Start": 1353.58,
+    "End": 1355.33,
+    "Speaker": "S03",
+    "Content": "现在可能到了几十B"
+  },
+  {
+    "Start": 1355.34,
+    "End": 1358.29,
+    "Speaker": "S03",
+    "Content": "甚至在这个十几B的这个情况下"
+  },
+  {
+    "Start": 1358.3,
+    "End": 1360.97,
+    "Speaker": "S03",
+    "Content": "都能够去进行呃同样的性能"
+  },
+  {
+    "Start": 1361.26,
+    "End": 1363.57,
+    "Speaker": "S03",
+    "Content": "啊这个其实是一个非常好的一个过程"
+  },
+  {
+    "Start": 1363.64,
+    "End": 1364.87,
+    "Speaker": "S01",
+    "Content": "而对于智能手机"
+  },
+  {
+    "Start": 1364.88,
+    "End": 1368.07,
+    "Speaker": "S01",
+    "Content": "智能手表乃至于以后的VR和AR眼镜设备"
+  },
+  {
+    "Start": 1368.18,
+    "End": 1371.97,
+    "Speaker": "S01",
+    "Content": "更小的端模型将是业界着重发力的重点"
+  },
+  {
+    "Start": 1372.18,
+    "End": 1373.29,
+    "Speaker": "S01",
+    "Content": "那么在今年4月份啊"
+  },
+  {
+    "Start": 1373.3,
+    "End": 1377.25,
+    "Speaker": "S01",
+    "Content": "苹果宣布在全球最大AI开源社区Hugging Face上面"
+  },
+  {
+    "Start": 1377.3,
+    "End": 1382.05,
+    "Speaker": "S01",
+    "Content": "发布了全新的开源大型语言模型OpenELM系列模型"
+  },
+  {
+    "Start": 1382.12,
+    "End": 1384.45,
+    "Speaker": "S01",
+    "Content": "包括了4个不同参数规模的模型"
+  },
+  {
+    "Start": 1384.46,
+    "End": 1387.69,
+    "Speaker": "S01",
+    "Content": "270M 450M 1.1B和3B"
+  },
+  {
+    "Start": 1387.7,
+    "End": 1388.13,
+    "Speaker": "S01",
+    "Content": "没错"
+  },
+  {
+    "Start": 1388.14,
+    "End": 1390.37,
+    "Speaker": "S01",
+    "Content": "最大的也只有30亿个参数"
+  },
+  {
+    "Start": 1390.38,
+    "End": 1393.53,
+    "Speaker": "S01",
+    "Content": "那么对移动端小模型的布局有着明显的意图"
+  },
+  {
+    "Start": 1393.88,
+    "End": 1395.81,
+    "Speaker": "S01",
+    "Content": "而郝一旭在采访中认为"
+  },
+  {
+    "Start": 1395.94,
+    "End": 1399.21,
+    "Speaker": "S01",
+    "Content": "端模型是人类应用AI发展的必然趋势"
+  },
+  {
+    "Start": 1399.48,
+    "End": 1401.81,
+    "Speaker": "S05",
+    "Content": "过去一年我们的大量的energy"
+  },
+  {
+    "Start": 1401.82,
+    "End": 1404.69,
+    "Speaker": "S05",
+    "Content": "大量的讨论都是在越大越好对吧"
+  },
+  {
+    "Start": 1404.7,
+    "End": 1407.61,
+    "Speaker": "S05",
+    "Content": "但是万亿级的parameter不适合呃端的"
+  },
+  {
+    "Start": 1407.66,
+    "End": 1410.05,
+    "Speaker": "S05",
+    "Content": "不适合放在那个手机上面"
+  },
+  {
+    "Start": 1410.1,
+    "End": 1413.81,
+    "Speaker": "S05",
+    "Content": "另外一个问题就是说那个不是万亿级的对吧"
+  },
+  {
+    "Start": 1413.82,
+    "End": 1417.97,
+    "Speaker": "S05",
+    "Content": "千亿级的或者说是百亿级的参数"
+  },
+  {
+    "Start": 1417.98,
+    "End": 1420.25,
+    "Speaker": "S05",
+    "Content": "是不是能够把模型做到足够好"
+  },
+  {
+    "Start": 1420.34,
+    "End": 1427.05,
+    "Speaker": "S05",
+    "Content": "现在我们看到的很多的小的模型可能是700呃700亿呃参数的"
+  },
+  {
+    "Start": 1427.16,
+    "End": 1432.93,
+    "Speaker": "S05",
+    "Content": "在一年之内我们能够看到10亿这么一个参数的一个model"
+  },
+  {
+    "Start": 1433.04,
+    "End": 1436.01,
+    "Speaker": "S05",
+    "Content": "能够做到2022年11月30号"
+  },
+  {
+    "Start": 1436.02,
+    "End": 1440.57,
+    "Speaker": "S05",
+    "Content": "它第一次出来时候让大家惊艳的那个相当于3.5的那个model的能力"
+  },
+  {
+    "Start": 1440.88,
+    "End": 1446.35,
+    "Speaker": "S05",
+    "Content": "我觉得是呃一个billion的一个一个billion的parameter是应该能够做到"
+  },
+  {
+    "Start": 1446.73,
+    "End": 1452.26,
+    "Speaker": "S05",
+    "Content": "啊如果能够这个端上面能够run一个billion parameter的啊model"
+  },
+  {
+    "Start": 1452.27,
+    "End": 1453.66,
+    "Speaker": "S05",
+    "Content": "能够做到3.5"
+  },
+  {
+    "Start": 1453.81,
+    "End": 1455.78,
+    "Speaker": "S05",
+    "Content": "那就打开了很多的想象空间"
+  },
+  {
+    "Start": 1455.87,
+    "End": 1458.02,
+    "Speaker": "S05",
+    "Content": "然后接下去会有更小的model"
+  },
+  {
+    "Start": 1458.03,
+    "End": 1460.1,
+    "Speaker": "S05",
+    "Content": "因为model总归是越小"
+  },
+  {
+    "Start": 1460.11,
+    "End": 1463.94,
+    "Speaker": "S05",
+    "Content": "对耗电啊对各方面的都有那个都都有很大好处"
+  },
+  {
+    "Start": 1463.95,
+    "End": 1468.66,
+    "Speaker": "S05",
+    "Content": "我觉得甚至于是sub啊one billion啊parameter会更好"
+  },
+  {
+    "Start": 1468.67,
+    "End": 1469.98,
+    "Speaker": "S05",
+    "Content": "从privacy的角度"
+  },
+  {
+    "Start": 1469.99,
+    "End": 1471.22,
+    "Speaker": "S05",
+    "Content": "从耗电的角度"
+  },
+  {
+    "Start": 1471.23,
+    "End": 1474.58,
+    "Speaker": "S05",
+    "Content": "从各方面角度我觉得呃小模型是必须的"
+  },
+  {
+    "Start": 1474.64,
+    "End": 1475.63,
+    "Speaker": "S01",
+    "Content": "那视频的最后啊"
+  },
+  {
+    "Start": 1475.64,
+    "End": 1479.55,
+    "Speaker": "S01",
+    "Content": "我们来总结一下OPENAI和谷歌的这两场发布会"
+  },
+  {
+    "Start": 1479.86,
+    "End": 1482.01,
+    "Speaker": "S01",
+    "Content": "AI多模态之战打响之后呢"
+  },
+  {
+    "Start": 1482.02,
+    "End": 1483.89,
+    "Speaker": "S01",
+    "Content": "在更多更广的应用上"
+  },
+  {
+    "Start": 1483.94,
+    "End": 1486.69,
+    "Speaker": "S01",
+    "Content": "我们看到了AI杀手级应用的曙光"
+  },
+  {
+    "Start": 1486.84,
+    "End": 1489.31,
+    "Speaker": "S01",
+    "Content": "有了更落地更切实的可用性"
+  },
+  {
+    "Start": 1489.32,
+    "End": 1493.49,
+    "Speaker": "S01",
+    "Content": "那么这将重塑人类和AI以及电子设备的交互方式"
+  },
+  {
+    "Start": 1493.78,
+    "End": 1497.33,
+    "Speaker": "S01",
+    "Content": "此外呢虽然OPENAI和谷歌表面上刀光剑影"
+  },
+  {
+    "Start": 1497.34,
+    "End": 1500.81,
+    "Speaker": "S01",
+    "Content": "但是两家公司的策略目标呢是有一些些区别的"
+  },
+  {
+    "Start": 1500.92,
+    "End": 1504.37,
+    "Speaker": "S01",
+    "Content": "前者呢是一路勇向前目标scaling lock和AGI"
+  },
+  {
+    "Start": 1504.38,
+    "End": 1507.73,
+    "Speaker": "S01",
+    "Content": "那么后者呢更加注重自家的生态和应用落地"
+  },
+  {
+    "Start": 1507.78,
+    "End": 1510.89,
+    "Speaker": "S01",
+    "Content": "来捍卫商业营收和市场分销护城河"
+  },
+  {
+    "Start": 1510.98,
+    "End": 1513.61,
+    "Speaker": "S01",
+    "Content": "可能模型是不是最好的并没有那么重要"
+  },
+  {
+    "Start": 1514.08,
+    "End": 1516.07,
+    "Speaker": "S01",
+    "Content": "所以目前的多模态出战啊"
+  },
+  {
+    "Start": 1516.08,
+    "End": 1517.51,
+    "Speaker": "S01",
+    "Content": "OPENAI虽然赢了"
+  },
+  {
+    "Start": 1517.52,
+    "End": 1519.03,
+    "Speaker": "S01",
+    "Content": "但是谷歌也没输"
+  },
+  {
+    "Start": 1519.18,
+    "End": 1523.53,
+    "Speaker": "S01",
+    "Content": "那么在硬件端各类硬件与AI的结合将带来巨大的新机会"
+  },
+  {
+    "Start": 1523.58,
+    "End": 1526.33,
+    "Speaker": "S01",
+    "Content": "而大模型瘦身进手机只是开始"
+  },
+  {
+    "Start": 1526.42,
+    "End": 1528.93,
+    "Speaker": "S01",
+    "Content": "打造应用体验才是关键所在"
+  },
+  {
+    "Start": 1529.0,
+    "End": 1529.35,
+    "Speaker": "S01",
+    "Content": "此外"
+  },
+  {
+    "Start": 1529.36,
+    "End": 1533.57,
+    "Speaker": "S01",
+    "Content": "让人惊喜的是谷歌DEMO最后展示的AR眼镜与AI的结合"
+  },
+  {
+    "Start": 1533.66,
+    "End": 1539.17,
+    "Speaker": "S01",
+    "Content": "这给AR智能眼镜这个起起伏伏了好几个周期的产品带来了新的曙光和希望"
+  },
+  {
+    "Start": 1539.42,
+    "End": 1541.37,
+    "Speaker": "S01",
+    "Content": "除了谷歌多年的AR经验"
+  },
+  {
+    "Start": 1541.38,
+    "End": 1543.49,
+    "Speaker": "S01",
+    "Content": "Meta在AR硬件上的布局"
+  },
+  {
+    "Start": 1543.5,
+    "End": 1546.85,
+    "Speaker": "S01",
+    "Content": "与苹果在Vision Pro以及自家AR团队的未来策略"
+  },
+  {
+    "Start": 1546.89,
+    "End": 1550.98,
+    "Speaker": "S01",
+    "Content": "都有可能成为下一场科技硬件巨头们比拼的新战场"
+  },
+  {
+    "Start": 1551.21,
+    "End": 1551.74,
+    "Speaker": "S01",
+    "Content": "哦对了"
+  },
+  {
+    "Start": 1551.75,
+    "End": 1555.26,
+    "Speaker": "S01",
+    "Content": "不要忘记微软这家与OPENAI深度绑定的巨头"
+  },
+  {
+    "Start": 1555.35,
+    "End": 1559.02,
+    "Speaker": "S01",
+    "Content": "它并没有将全部鸡蛋都放在OPENAI的篮子当中"
+  },
+  {
+    "Start": 1559.3,
+    "End": 1561.49,
+    "Speaker": "S01",
+    "Content": "微软目前在AI布局上的优势"
+  },
+  {
+    "Start": 1561.5,
+    "End": 1565.01,
+    "Speaker": "S01",
+    "Content": "加上呢在软硬件上都有多年的经验和布局"
+  },
+  {
+    "Start": 1565.06,
+    "End": 1571.73,
+    "Speaker": "S01",
+    "Content": "那么最近呢还收编了之前主打情感陪伴大模型公司Inflexion的大部分AI顶级人才"
+  },
+  {
+    "Start": 1571.82,
+    "End": 1574.05,
+    "Speaker": "S01",
+    "Content": "发布了自己的大模型Might One"
+  },
+  {
+    "Start": 1574.22,
+    "End": 1576.53,
+    "Speaker": "S01",
+    "Content": "所以我们很兴奋的能够感觉到"
+  },
+  {
+    "Start": 1576.54,
+    "End": 1579.77,
+    "Speaker": "S01",
+    "Content": "甚至是AI的第二轮多模态战役打响了"
+  },
+  {
+    "Start": 1579.92,
+    "End": 1581.81,
+    "Speaker": "S01",
+    "Content": "越来越多的科技巨投入局"
+  },
+  {
+    "Start": 1581.82,
+    "End": 1584.49,
+    "Speaker": "S01",
+    "Content": "并且战术和方向呢也越发清晰"
+  },
+  {
+    "Start": 1584.5,
+    "End": 1587.85,
+    "Speaker": "S01",
+    "Content": "带来的也是AI应用的潜在落地与爆发"
+  },
+  {
+    "Start": 1588.08,
+    "End": 1590.41,
+    "Speaker": "S01",
+    "Content": "这场战斗硅谷101在最前线"
+  },
+  {
+    "Start": 1590.42,
+    "End": 1592.01,
+    "Speaker": "S01",
+    "Content": "所以别忘了关注我们的账号"
+  },
+  {
+    "Start": 1592.02,
+    "End": 1592.97,
+    "Speaker": "S01",
+    "Content": "别错过更新"
+  },
+  {
+    "Start": 1592.98,
+    "End": 1594.33,
+    "Speaker": "S01",
+    "Content": "那我们就拭目以待了"
+  },
+  {
+    "Start": 1594.34,
+    "End": 1596.85,
+    "Speaker": "S01",
+    "Content": "以上呢就是这期视频的全部内容了"
+  },
+  {
+    "Start": 1596.86,
+    "End": 1599.81,
+    "Speaker": "S01",
+    "Content": "抱歉我们这一期的背景有点不硅谷哈"
+  },
+  {
+    "Start": 1599.98,
+    "End": 1603.93,
+    "Speaker": "S01",
+    "Content": "因为我在希腊休假的时候被临时抓来加入的这一期"
+  },
+  {
+    "Start": 1603.94,
+    "End": 1608.41,
+    "Speaker": "S01",
+    "Content": "在这么平静原始的海岛上看OPENAI和谷歌的直播"
+  },
+  {
+    "Start": 1608.42,
+    "End": 1610.13,
+    "Speaker": "S01",
+    "Content": "并且写了这篇AI的稿件"
+  },
+  {
+    "Start": 1610.14,
+    "End": 1612.13,
+    "Speaker": "S01",
+    "Content": "感觉非常的有趣和穿越"
+  },
+  {
+    "Start": 1612.26,
+    "End": 1613.85,
+    "Speaker": "S01",
+    "Content": "那同时呢非常感谢大家"
+  },
+  {
+    "Start": 1613.86,
+    "End": 1616.13,
+    "Speaker": "S01",
+    "Content": "欢迎大家留言点赞转发和评论"
+  },
+  {
+    "Start": 1616.14,
+    "End": 1620.93,
+    "Speaker": "S01",
+    "Content": "你们的支持是我们硅谷101做好深度科技内容和商业内容的最佳动力"
+  },
+  {
+    "Start": 1620.94,
+    "End": 1623.25,
+    "Speaker": "S01",
+    "Content": "那我们就下一个视频硅谷再见了"
+  },
+  {
+    "Start": 1623.54,
+    "End": 1624.11,
+    "Speaker": "S01",
+    "Content": "拜"
+  }
+]

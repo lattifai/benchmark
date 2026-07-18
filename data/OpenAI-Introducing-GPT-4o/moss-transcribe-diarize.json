@@ -1,0 +1,2666 @@
+[
+  {
+    "Start": 15.44,
+    "End": 17.64,
+    "Speaker": "S01",
+    "Content": "Hi everyone, thank you, thank you."
+  },
+  {
+    "Start": 18.28,
+    "End": 20.16,
+    "Speaker": "S01",
+    "Content": "It's great to have you here today."
+  },
+  {
+    "Start": 20.72,
+    "End": 24.08,
+    "Speaker": "S01",
+    "Content": "Today I'm going to talk about three things, that's it."
+  },
+  {
+    "Start": 24.56,
+    "End": 27.92,
+    "Speaker": "S01",
+    "Content": "We will start with why it's so important to us"
+  },
+  {
+    "Start": 27.92,
+    "End": 31.36,
+    "Speaker": "S01",
+    "Content": "to have a product that we can make freely available"
+  },
+  {
+    "Start": 31.36,
+    "End": 33.52,
+    "Speaker": "S01",
+    "Content": "and broadly available to everyone."
+  },
+  {
+    "Start": 34.15,
+    "End": 38.24,
+    "Speaker": "S01",
+    "Content": "And we're always trying to find out ways to reduce friction"
+  },
+  {
+    "Start": 38.24,
+    "End": 41.2,
+    "Speaker": "S01",
+    "Content": "so everyone can use ChatGPT wherever they are."
+  },
+  {
+    "Start": 41.44,
+    "End": 46.08,
+    "Speaker": "S01",
+    "Content": "So today, we'll be releasing the desktop version of ChatGPT"
+  },
+  {
+    "Start": 46.4,
+    "End": 49.92,
+    "Speaker": "S01",
+    "Content": "and the refreshed UI that makes it simpler to use,"
+  },
+  {
+    "Start": 49.92,
+    "End": 51.84,
+    "Speaker": "S01",
+    "Content": "much more natural as well."
+  },
+  {
+    "Start": 53.04,
+    "End": 56.0,
+    "Speaker": "S01",
+    "Content": "But the big news today is that we are launching"
+  },
+  {
+    "Start": 56.0,
+    "End": 60.96,
+    "Speaker": "S01",
+    "Content": "our new flagship model, and we are calling it GPT-4O."
+  },
+  {
+    "Start": 61.92,
+    "End": 64.23,
+    "Speaker": "S01",
+    "Content": "The special thing about GPT-4O"
+  },
+  {
+    "Start": 64.8,
+    "End": 69.12,
+    "Speaker": "S01",
+    "Content": "is that it brings GPT-4 level intelligence to everyone,"
+  },
+  {
+    "Start": 69.44,
+    "End": 71.04,
+    "Speaker": "S01",
+    "Content": "including our free users."
+  },
+  {
+    "Start": 71.84,
+    "End": 74.16,
+    "Speaker": "S01",
+    "Content": "We'll be showing some live demos today"
+  },
+  {
+    "Start": 74.16,
+    "End": 78.23,
+    "Speaker": "S01",
+    "Content": "to show the full extent of the capabilities of our new model,"
+  },
+  {
+    "Start": 78.72,
+    "End": 82.64,
+    "Speaker": "S01",
+    "Content": "and we'll be rolling them out iteratively over the next few weeks."
+  },
+  {
+    "Start": 83.6,
+    "End": 86.08,
+    "Speaker": "S01",
+    "Content": "Alright, so let's get started."
+  },
+  {
+    "Start": 87.2,
+    "End": 89.36,
+    "Speaker": "S01",
+    "Content": "A very important part of our mission"
+  },
+  {
+    "Start": 89.84,
+    "End": 93.6,
+    "Speaker": "S01",
+    "Content": "is to be able to make our advanced AI tools"
+  },
+  {
+    "Start": 93.6,
+    "End": 95.68,
+    "Speaker": "S01",
+    "Content": "available to everyone for free."
+  },
+  {
+    "Start": 96.64,
+    "End": 99.04,
+    "Speaker": "S01",
+    "Content": "We think it's very, very important"
+  },
+  {
+    "Start": 99.04,
+    "End": 103.04,
+    "Speaker": "S01",
+    "Content": "that people have an intuitive feel for what the technology can do,"
+  },
+  {
+    "Start": 103.2,
+    "End": 107.92,
+    "Speaker": "S01",
+    "Content": "and so we really want to pair it with this broader understanding."
+  },
+  {
+    "Start": 108.64,
+    "End": 112.0,
+    "Speaker": "S01",
+    "Content": "And we're always finding ways to reduce that friction,"
+  },
+  {
+    "Start": 112.0,
+    "End": 115.92,
+    "Speaker": "S01",
+    "Content": "and recently we made ChatGPT available without the signup flow."
+  },
+  {
+    "Start": 117.04,
+    "End": 121.84,
+    "Speaker": "S01",
+    "Content": "And today, we're also bringing the desktop app to ChatGPT"
+  },
+  {
+    "Start": 122.08,
+    "End": 125.68,
+    "Speaker": "S01",
+    "Content": "because we want you to be able to use it wherever you are."
+  },
+  {
+    "Start": 125.84,
+    "End": 128.63,
+    "Speaker": "S01",
+    "Content": "As you can see, it's easy, it's simple,"
+  },
+  {
+    "Start": 128.72,
+    "End": 131.91,
+    "Speaker": "S01",
+    "Content": "it integrates very, very easily in your workflow."
+  },
+  {
+    "Start": 132.88,
+    "End": 136.56,
+    "Speaker": "S01",
+    "Content": "Along with it, we have also refreshed the UI."
+  },
+  {
+    "Start": 137.76,
+    "End": 141.28,
+    "Speaker": "S01",
+    "Content": "We know that these models get more and more complex,"
+  },
+  {
+    "Start": 141.52,
+    "End": 144.63,
+    "Speaker": "S01",
+    "Content": "but we want the experience of interaction"
+  },
+  {
+    "Start": 144.8,
+    "End": 148.24,
+    "Speaker": "S01",
+    "Content": "to actually become more natural, easy,"
+  },
+  {
+    "Start": 148.56,
+    "End": 151.68,
+    "Speaker": "S01",
+    "Content": "and for you not to focus on the UI at all,"
+  },
+  {
+    "Start": 151.68,
+    "End": 154.72,
+    "Speaker": "S01",
+    "Content": "but just focus on the collaboration with ChatGPT."
+  },
+  {
+    "Start": 156.88,
+    "End": 158.08,
+    "Speaker": "S01",
+    "Content": "And now the big news."
+  },
+  {
+    "Start": 158.88,
+    "End": 162.88,
+    "Speaker": "S01",
+    "Content": "Today, we are releasing our newest flagship model."
+  },
+  {
+    "Start": 163.44,
+    "End": 165.12,
+    "Speaker": "S01",
+    "Content": "This is GPT-4O."
+  },
+  {
+    "Start": 172.96,
+    "End": 176.96,
+    "Speaker": "S01",
+    "Content": "GPT-4O provides GPT-4 level intelligence,"
+  },
+  {
+    "Start": 176.96,
+    "End": 178.56,
+    "Speaker": "S01",
+    "Content": "but it is much faster,"
+  },
+  {
+    "Start": 179.2,
+    "End": 184.64,
+    "Speaker": "S01",
+    "Content": "and it improves on its capabilities across text, vision, and audio."
+  },
+  {
+    "Start": 185.68,
+    "End": 187.36,
+    "Speaker": "S01",
+    "Content": "For the past couple of years,"
+  },
+  {
+    "Start": 187.36,
+    "End": 191.04,
+    "Speaker": "S01",
+    "Content": "we've been very focused on improving the intelligence of these models,"
+  },
+  {
+    "Start": 191.28,
+    "End": 193.12,
+    "Speaker": "S01",
+    "Content": "and they've gotten pretty good."
+  },
+  {
+    "Start": 194.0,
+    "End": 195.84,
+    "Speaker": "S01",
+    "Content": "But this is the first time"
+  },
+  {
+    "Start": 196.0,
+    "End": 198.64,
+    "Speaker": "S01",
+    "Content": "that we are really making a huge step forward"
+  },
+  {
+    "Start": 198.64,
+    "End": 200.56,
+    "Speaker": "S01",
+    "Content": "when it comes to the ease of use."
+  },
+  {
+    "Start": 202.8,
+    "End": 204.56,
+    "Speaker": "S01",
+    "Content": "And this is incredibly important"
+  },
+  {
+    "Start": 204.56,
+    "End": 207.44,
+    "Speaker": "S01",
+    "Content": "because we're looking at the future of interaction"
+  },
+  {
+    "Start": 207.44,
+    "End": 210.24,
+    "Speaker": "S01",
+    "Content": "between ourselves and the machines,"
+  },
+  {
+    "Start": 210.56,
+    "End": 212.96,
+    "Speaker": "S01",
+    "Content": "and we think that GPT-4O"
+  },
+  {
+    "Start": 213.36,
+    "End": 218.08,
+    "Speaker": "S01",
+    "Content": "is really shifting that paradigm into the future of collaboration,"
+  },
+  {
+    "Start": 218.08,
+    "End": 222.72,
+    "Speaker": "S01",
+    "Content": "where this interaction becomes much more natural and far, far easier."
+  },
+  {
+    "Start": 224.32,
+    "End": 227.44,
+    "Speaker": "S01",
+    "Content": "But you know, making this happen is actually quite complex"
+  },
+  {
+    "Start": 227.44,
+    "End": 229.84,
+    "Speaker": "S01",
+    "Content": "because when we interact with one another,"
+  },
+  {
+    "Start": 229.92,
+    "End": 232.64,
+    "Speaker": "S01",
+    "Content": "there's a lot of stuff that we take for granted."
+  },
+  {
+    "Start": 232.8,
+    "End": 237.28,
+    "Speaker": "S01",
+    "Content": "You know, the ease of our dialogue when we interrupt one another,"
+  },
+  {
+    "Start": 237.28,
+    "End": 242.08,
+    "Speaker": "S01",
+    "Content": "the background noises, the multiple voices in a conversation,"
+  },
+  {
+    "Start": 242.32,
+    "End": 245.84,
+    "Speaker": "S01",
+    "Content": "or you know, understanding the tone of voice."
+  },
+  {
+    "Start": 246.32,
+    "End": 250.4,
+    "Speaker": "S01",
+    "Content": "All of these things are actually quite complex for these models."
+  },
+  {
+    "Start": 250.72,
+    "End": 254.16,
+    "Speaker": "S01",
+    "Content": "And until now, with voice mode,"
+  },
+  {
+    "Start": 254.24,
+    "End": 258.72,
+    "Speaker": "S01",
+    "Content": "we had three models that come together to deliver this experience."
+  },
+  {
+    "Start": 259.12,
+    "End": 263.2,
+    "Speaker": "S01",
+    "Content": "We have transcription, intelligence, and then text to speech."
+  },
+  {
+    "Start": 263.36,
+    "End": 267.12,
+    "Speaker": "S01",
+    "Content": "All comes together in orchestration to deliver voice mode."
+  },
+  {
+    "Start": 267.92,
+    "End": 272.39,
+    "Speaker": "S01",
+    "Content": "This also brings a lot of latency to the experience,"
+  },
+  {
+    "Start": 272.39,
+    "End": 277.04,
+    "Speaker": "S01",
+    "Content": "and it really breaks that immersion in the collaboration with ChatGPT."
+  },
+  {
+    "Start": 277.92,
+    "End": 282.16,
+    "Speaker": "S01",
+    "Content": "But now, with GPT-4O, this all happens natively."
+  },
+  {
+    "Start": 282.95,
+    "End": 288.8,
+    "Speaker": "S01",
+    "Content": "GPT-4O reasons across voice, text, and vision."
+  },
+  {
+    "Start": 290.32,
+    "End": 292.64,
+    "Speaker": "S01",
+    "Content": "And with these incredible efficiencies,"
+  },
+  {
+    "Start": 292.64,
+    "End": 297.92,
+    "Speaker": "S01",
+    "Content": "it also allows us to bring the GPT-4 class intelligence"
+  },
+  {
+    "Start": 298.08,
+    "End": 299.36,
+    "Speaker": "S01",
+    "Content": "to our free users."
+  },
+  {
+    "Start": 299.68,
+    "End": 303.52,
+    "Speaker": "S01",
+    "Content": "This is something that we've been trying to do for many, many months,"
+  },
+  {
+    "Start": 303.83,
+    "End": 308.32,
+    "Speaker": "S01",
+    "Content": "and we're very, very excited to finally bring GPT-4O"
+  },
+  {
+    "Start": 308.32,
+    "End": 309.83,
+    "Speaker": "S01",
+    "Content": "to all of our users."
+  },
+  {
+    "Start": 312.16,
+    "End": 316.64,
+    "Speaker": "S01",
+    "Content": "Today, we have 100 million people, more than 100 million in fact,"
+  },
+  {
+    "Start": 316.64,
+    "End": 321.12,
+    "Speaker": "S01",
+    "Content": "they use ChatGPT to create, work, learn."
+  },
+  {
+    "Start": 321.92,
+    "End": 325.6,
+    "Speaker": "S01",
+    "Content": "And we have these advanced tools"
+  },
+  {
+    "Start": 325.6,
+    "End": 330.4,
+    "Speaker": "S01",
+    "Content": "that are only available to our paid users, at least until now."
+  },
+  {
+    "Start": 330.8,
+    "End": 335.2,
+    "Speaker": "S01",
+    "Content": "With the efficiencies of 4O, we can bring these tools to everyone."
+  },
+  {
+    "Start": 336.0,
+    "End": 341.12,
+    "Speaker": "S01",
+    "Content": "So starting today, you can use GPTs and the GPT store."
+  },
+  {
+    "Start": 342.88,
+    "End": 345.68,
+    "Speaker": "S01",
+    "Content": "So far, we've had more than a million users"
+  },
+  {
+    "Start": 345.68,
+    "End": 348.96,
+    "Speaker": "S01",
+    "Content": "create amazing experiences with GPTs."
+  },
+  {
+    "Start": 348.96,
+    "End": 352.24,
+    "Speaker": "S01",
+    "Content": "These are custom ChatGPTs for specific use cases"
+  },
+  {
+    "Start": 352.24,
+    "End": 354.0,
+    "Speaker": "S01",
+    "Content": "that are available in the store."
+  },
+  {
+    "Start": 354.4,
+    "End": 358.08,
+    "Speaker": "S01",
+    "Content": "And now, our builders have a much bigger audience,"
+  },
+  {
+    "Start": 358.56,
+    "End": 362.64,
+    "Speaker": "S01",
+    "Content": "where you know, university professors can create content for their students,"
+  },
+  {
+    "Start": 362.8,
+    "End": 366.56,
+    "Speaker": "S01",
+    "Content": "or podcasters can create content for their listeners."
+  },
+  {
+    "Start": 368.48,
+    "End": 370.88,
+    "Speaker": "S01",
+    "Content": "And you can also use vision."
+  },
+  {
+    "Start": 370.88,
+    "End": 376.88,
+    "Speaker": "S01",
+    "Content": "So now you can upload screenshots, photos, documents"
+  },
+  {
+    "Start": 376.88,
+    "End": 379.36,
+    "Speaker": "S01",
+    "Content": "containing both text and images,"
+  },
+  {
+    "Start": 379.84,
+    "End": 384.72,
+    "Speaker": "S01",
+    "Content": "and you can start conversations with ChatGPT about all of this content."
+  },
+  {
+    "Start": 384.96,
+    "End": 386.64,
+    "Speaker": "S01",
+    "Content": "You can also use memory,"
+  },
+  {
+    "Start": 387.12,
+    "End": 390.4,
+    "Speaker": "S01",
+    "Content": "where it makes ChatGPT far more useful and helpful"
+  },
+  {
+    "Start": 390.4,
+    "End": 395.12,
+    "Speaker": "S01",
+    "Content": "because now it has a sense of continuity across all your conversations."
+  },
+  {
+    "Start": 396.0,
+    "End": 400.16,
+    "Speaker": "S01",
+    "Content": "And you can use browse, where you can search for real-time information"
+  },
+  {
+    "Start": 400.16,
+    "End": 401.28,
+    "Speaker": "S01",
+    "Content": "in your conversation,"
+  },
+  {
+    "Start": 401.76,
+    "End": 405.68,
+    "Speaker": "S01",
+    "Content": "and advanced data analysis, where you can upload charts"
+  },
+  {
+    "Start": 405.68,
+    "End": 410.96,
+    "Speaker": "S01",
+    "Content": "or any information, and it will analyze this information,"
+  },
+  {
+    "Start": 410.96,
+    "End": 413.28,
+    "Speaker": "S01",
+    "Content": "it will give you answers, and so on."
+  },
+  {
+    "Start": 415.52,
+    "End": 420.8,
+    "Speaker": "S01",
+    "Content": "Lastly, we've also improved on the quality and speed"
+  },
+  {
+    "Start": 421.36,
+    "End": 425.12,
+    "Speaker": "S01",
+    "Content": "in 50 different languages for ChatGPT."
+  },
+  {
+    "Start": 425.12,
+    "End": 426.88,
+    "Speaker": "S01",
+    "Content": "And this is very, very important"
+  },
+  {
+    "Start": 426.88,
+    "End": 429.84,
+    "Speaker": "S01",
+    "Content": "because we want to be able to bring this experience"
+  },
+  {
+    "Start": 429.84,
+    "End": 432.24,
+    "Speaker": "S01",
+    "Content": "to as many people out there as possible."
+  },
+  {
+    "Start": 433.52,
+    "End": 437.52,
+    "Speaker": "S01",
+    "Content": "So we're very, very excited to bring GPT-4O"
+  },
+  {
+    "Start": 437.92,
+    "End": 440.24,
+    "Speaker": "S01",
+    "Content": "to all of our free users out there,"
+  },
+  {
+    "Start": 440.24,
+    "End": 443.28,
+    "Speaker": "S01",
+    "Content": "and for the paid users, they will continue to have"
+  },
+  {
+    "Start": 443.92,
+    "End": 448.08,
+    "Speaker": "S01",
+    "Content": "up to five times the capacity limits of our free users."
+  },
+  {
+    "Start": 449.76,
+    "End": 453.84,
+    "Speaker": "S01",
+    "Content": "But GPT-4O is not only available in ChatGPT,"
+  },
+  {
+    "Start": 454.08,
+    "End": 456.16,
+    "Speaker": "S01",
+    "Content": "we're also bringing it to the API."
+  },
+  {
+    "Start": 463.52,
+    "End": 467.6,
+    "Speaker": "S01",
+    "Content": "So our developers can start building today with GPT-4O"
+  },
+  {
+    "Start": 467.6,
+    "End": 471.68,
+    "Speaker": "S01",
+    "Content": "and making amazing AI applications, deploying them at scale."
+  },
+  {
+    "Start": 472.32,
+    "End": 476.96,
+    "Speaker": "S01",
+    "Content": "4O is available at 2X faster, 50% cheaper,"
+  },
+  {
+    "Start": 477.12,
+    "End": 481.04,
+    "Speaker": "S01",
+    "Content": "and five times higher rate limits compared to GPT-4 Turbo."
+  },
+  {
+    "Start": 483.84,
+    "End": 488.56,
+    "Speaker": "S01",
+    "Content": "But you know, as we bring these technologies into the world,"
+  },
+  {
+    "Start": 488.88,
+    "End": 491.68,
+    "Speaker": "S01",
+    "Content": "it's quite challenging to figure out how to do so"
+  },
+  {
+    "Start": 491.68,
+    "End": 496.16,
+    "Speaker": "S01",
+    "Content": "in a way that's both useful and also safe."
+  },
+  {
+    "Start": 496.96,
+    "End": 501.76,
+    "Speaker": "S01",
+    "Content": "And GPT-4O presents new challenges for us when it comes to safety"
+  },
+  {
+    "Start": 501.76,
+    "End": 505.92,
+    "Speaker": "S01",
+    "Content": "because we're dealing with real-time audio, real-time vision."
+  },
+  {
+    "Start": 507.04,
+    "End": 510.0,
+    "Speaker": "S01",
+    "Content": "And our team has been hard at work figuring out"
+  },
+  {
+    "Start": 510.0,
+    "End": 513.67,
+    "Speaker": "S01",
+    "Content": "how to build mitigations against misuse."
+  },
+  {
+    "Start": 514.72,
+    "End": 518.4,
+    "Speaker": "S01",
+    "Content": "We continue to work with different stakeholders out there,"
+  },
+  {
+    "Start": 518.4,
+    "End": 521.76,
+    "Speaker": "S01",
+    "Content": "from government, media, entertainment, all industries,"
+  },
+  {
+    "Start": 521.76,
+    "End": 524.96,
+    "Speaker": "S01",
+    "Content": "red teamers, civil society,"
+  },
+  {
+    "Start": 525.04,
+    "End": 529.28,
+    "Speaker": "S01",
+    "Content": "to figure out how to best bring these technologies into the world."
+  },
+  {
+    "Start": 529.28,
+    "End": 531.44,
+    "Speaker": "S01",
+    "Content": "So over the next few weeks,"
+  },
+  {
+    "Start": 531.6,
+    "End": 534.0,
+    "Speaker": "S01",
+    "Content": "we'll continue our iterative deployment"
+  },
+  {
+    "Start": 534.0,
+    "End": 536.64,
+    "Speaker": "S01",
+    "Content": "to bring out all the capabilities to you."
+  },
+  {
+    "Start": 537.44,
+    "End": 541.12,
+    "Speaker": "S01",
+    "Content": "But today, I want to show you all these capabilities,"
+  },
+  {
+    "Start": 541.67,
+    "End": 543.52,
+    "Speaker": "S01",
+    "Content": "so we'll do some live demos."
+  },
+  {
+    "Start": 544.24,
+    "End": 547.28,
+    "Speaker": "S01",
+    "Content": "I will bring on two of our research leads,"
+  },
+  {
+    "Start": 547.52,
+    "End": 550.72,
+    "Speaker": "S01",
+    "Content": "Mike Chen and Barrett Zhou, to join me."
+  },
+  {
+    "Start": 558.72,
+    "End": 560.0,
+    "Speaker": "S02",
+    "Content": "Hi, I'm Barrett."
+  },
+  {
+    "Start": 560.32,
+    "End": 561.12,
+    "Speaker": "S03",
+    "Content": "Hey, I'm Mark."
+  },
+  {
+    "Start": 561.76,
+    "End": 565.04,
+    "Speaker": "S03",
+    "Content": "So one of the key capabilities we're really excited to share with you today"
+  },
+  {
+    "Start": 565.04,
+    "End": 567.12,
+    "Speaker": "S03",
+    "Content": "is real-time conversational speech."
+  },
+  {
+    "Start": 567.52,
+    "End": 568.88,
+    "Speaker": "S03",
+    "Content": "Let's just get a demo fired up."
+  },
+  {
+    "Start": 569.76,
+    "End": 570.88,
+    "Speaker": "S03",
+    "Content": "So I'm taking out a phone."
+  },
+  {
+    "Start": 571.28,
+    "End": 574.72,
+    "Speaker": "S03",
+    "Content": "If you are wondering about this wired so we have consistent internet,"
+  },
+  {
+    "Start": 575.2,
+    "End": 578.16,
+    "Speaker": "S03",
+    "Content": "and if you see, there's this little icon on the bottom right"
+  },
+  {
+    "Start": 578.16,
+    "End": 579.36,
+    "Speaker": "S03",
+    "Content": "of the ChatGPT app,"
+  },
+  {
+    "Start": 579.52,
+    "End": 582.79,
+    "Speaker": "S03",
+    "Content": "and this will open up GPT-4O's audio capabilities."
+  },
+  {
+    "Start": 585.12,
+    "End": 587.52,
+    "Speaker": "S03",
+    "Content": "Hey, ChatGPT, I'm Mark. How are you?"
+  },
+  {
+    "Start": 588.24,
+    "End": 592.96,
+    "Speaker": "S04",
+    "Content": "Oh, Mark, I'm doing great. Thanks for asking. How about you?"
+  },
+  {
+    "Start": 593.44,
+    "End": 596.4,
+    "Speaker": "S03",
+    "Content": "Hey, so I'm on stage right now, I'm doing a live demo,"
+  },
+  {
+    "Start": 596.4,
+    "End": 598.32,
+    "Speaker": "S03",
+    "Content": "and frankly, I'm feeling a little bit nervous."
+  },
+  {
+    "Start": 598.32,
+    "End": 600.08,
+    "Speaker": "S03",
+    "Content": "Can you help me calm my nerves a little bit?"
+  },
+  {
+    "Start": 601.28,
+    "End": 603.52,
+    "Speaker": "S04",
+    "Content": "Oh, you're doing a live demo right now?"
+  },
+  {
+    "Start": 603.67,
+    "End": 606.88,
+    "Speaker": "S04",
+    "Content": "That's awesome. Just take a deep breath."
+  },
+  {
+    "Start": 607.67,
+    "End": 609.91,
+    "Speaker": "S04",
+    "Content": "And remember, you're the expert."
+  },
+  {
+    "Start": 610.24,
+    "End": 613.04,
+    "Speaker": "S03",
+    "Content": "I like that suggestion. Let me try a couple of deep breaths."
+  },
+  {
+    "Start": 613.04,
+    "End": 615.04,
+    "Speaker": "S03",
+    "Content": "Can you give me feedback on my breaths?"
+  },
+  {
+    "Start": 615.2,
+    "End": 616.0,
+    "Speaker": "S03",
+    "Content": "Okay, here I go."
+  },
+  {
+    "Start": 619.12,
+    "End": 620.08,
+    "Speaker": "S04",
+    "Content": "Whoa, slow."
+  },
+  {
+    "Start": 622.4,
+    "End": 623.52,
+    "Speaker": "S04",
+    "Content": "A bit there."
+  },
+  {
+    "Start": 624.16,
+    "End": 626.4,
+    "Speaker": "S04",
+    "Content": "Mark, you're not a vacuum cleaner."
+  },
+  {
+    "Start": 626.96,
+    "End": 629.67,
+    "Speaker": "S04",
+    "Content": "Breathe in for a count of four."
+  },
+  {
+    "Start": 630.08,
+    "End": 631.84,
+    "Speaker": "S03",
+    "Content": "Okay, let me try again."
+  },
+  {
+    "Start": 631.84,
+    "End": 635.52,
+    "Speaker": "S03",
+    "Content": "So I'm gonna breathe in deeply, and then breathe out."
+  },
+  {
+    "Start": 636.88,
+    "End": 640.08,
+    "Speaker": "S04",
+    "Content": "For four, and then exhale slowly."
+  },
+  {
+    "Start": 641.12,
+    "End": 644.88,
+    "Speaker": "S03",
+    "Content": "Okay, I'll try again. Breathing in, and breathe out."
+  },
+  {
+    "Start": 646.4,
+    "End": 648.32,
+    "Speaker": "S04",
+    "Content": "That's it. How do you feel?"
+  },
+  {
+    "Start": 648.4,
+    "End": 650.24,
+    "Speaker": "S03",
+    "Content": "I feel a lot better. Thank you so much."
+  },
+  {
+    "Start": 652.0,
+    "End": 655.36,
+    "Speaker": "S01",
+    "Content": "So Mark, you've been working on these capabilities for a while now."
+  },
+  {
+    "Start": 655.44,
+    "End": 658.48,
+    "Speaker": "S01",
+    "Content": "Can you tell us a bit how it's different from voice mode?"
+  },
+  {
+    "Start": 658.88,
+    "End": 661.84,
+    "Speaker": "S03",
+    "Content": "Right, so if you've used our voice mode experience before,"
+  },
+  {
+    "Start": 661.84,
+    "End": 663.68,
+    "Speaker": "S03",
+    "Content": "you'll notice a couple key differences."
+  },
+  {
+    "Start": 663.84,
+    "End": 665.76,
+    "Speaker": "S03",
+    "Content": "First, you know, you can now interrupt the model."
+  },
+  {
+    "Start": 665.92,
+    "End": 668.48,
+    "Speaker": "S03",
+    "Content": "You don't have to wait for it to finish your turn"
+  },
+  {
+    "Start": 668.56,
+    "End": 669.92,
+    "Speaker": "S03",
+    "Content": "before you can start speaking,"
+  },
+  {
+    "Start": 669.92,
+    "End": 672.08,
+    "Speaker": "S03",
+    "Content": "and you know, you can just butt in whenever you want."
+  },
+  {
+    "Start": 672.48,
+    "End": 675.92,
+    "Speaker": "S03",
+    "Content": "Second, the model is real-time responsiveness."
+  },
+  {
+    "Start": 675.92,
+    "End": 679.6,
+    "Speaker": "S03",
+    "Content": "So that means that you don't have this awkward 2-3 second lag"
+  },
+  {
+    "Start": 679.6,
+    "End": 681.68,
+    "Speaker": "S03",
+    "Content": "before you wait for the model to give a response."
+  },
+  {
+    "Start": 682.24,
+    "End": 684.96,
+    "Speaker": "S03",
+    "Content": "And finally, the model picks up on emotion, right?"
+  },
+  {
+    "Start": 684.96,
+    "End": 687.44,
+    "Speaker": "S03",
+    "Content": "When I was breathing super hard there, it could tell,"
+  },
+  {
+    "Start": 687.44,
+    "End": 689.76,
+    "Speaker": "S03",
+    "Content": "and you, hey, you might want to calm down a little bit."
+  },
+  {
+    "Start": 689.76,
+    "End": 692.4,
+    "Speaker": "S03",
+    "Content": "You're kind of running a little bit too fast."
+  },
+  {
+    "Start": 692.64,
+    "End": 696.0,
+    "Speaker": "S03",
+    "Content": "So you know, it really has that capability across the board"
+  },
+  {
+    "Start": 696.0,
+    "End": 697.2,
+    "Speaker": "S03",
+    "Content": "to perceive your emotion."
+  },
+  {
+    "Start": 697.76,
+    "End": 701.44,
+    "Speaker": "S03",
+    "Content": "Not only that, though, the model is able to generate voice"
+  },
+  {
+    "Start": 701.44,
+    "End": 703.52,
+    "Speaker": "S03",
+    "Content": "in a variety of different emotive styles,"
+  },
+  {
+    "Start": 703.68,
+    "End": 705.92,
+    "Speaker": "S03",
+    "Content": "and it really has a wide dynamic range."
+  },
+  {
+    "Start": 706.0,
+    "End": 707.84,
+    "Speaker": "S03",
+    "Content": "So I'm gonna fire up another demo for that."
+  },
+  {
+    "Start": 708.08,
+    "End": 708.48,
+    "Speaker": "S03",
+    "Content": "Yeah."
+  },
+  {
+    "Start": 712.64,
+    "End": 714.24,
+    "Speaker": "S03",
+    "Content": "Hey, ChatGPT, how are you doing?"
+  },
+  {
+    "Start": 714.64,
+    "End": 718.08,
+    "Speaker": "S04",
+    "Content": "I'm doing fantastic. Thanks for asking. How about you?"
+  },
+  {
+    "Start": 718.4,
+    "End": 718.8,
+    "Speaker": "S03",
+    "Content": "Pretty good."
+  },
+  {
+    "Start": 718.8,
+    "End": 719.36,
+    "Speaker": "S04",
+    "Content": "What's up?"
+  },
+  {
+    "Start": 719.36,
+    "End": 722.72,
+    "Speaker": "S03",
+    "Content": "So my friend Barrett here, he's been having trouble sleeping lately,"
+  },
+  {
+    "Start": 722.8,
+    "End": 726.32,
+    "Speaker": "S03",
+    "Content": "and I want you to tell him a bedtime story about robots and love."
+  },
+  {
+    "Start": 726.96,
+    "End": 730.72,
+    "Speaker": "S04",
+    "Content": "Oh, a bedtime story about robots and love?"
+  },
+  {
+    "Start": 730.72,
+    "End": 732.32,
+    "Speaker": "S04",
+    "Content": "I got you covered."
+  },
+  {
+    "Start": 732.8,
+    "End": 734.24,
+    "Speaker": "S04",
+    "Content": "Gather round, Barrett."
+  },
+  {
+    "Start": 734.64,
+    "End": 738.24,
+    "Speaker": "S04",
+    "Content": "Once upon a time, in a world not too different from ours,"
+  },
+  {
+    "Start": 738.4,
+    "End": 740.48,
+    "Speaker": "S04",
+    "Content": "there was a robot named Byte."
+  },
+  {
+    "Start": 740.8,
+    "End": 743.68,
+    "Speaker": "S04",
+    "Content": "Byte was a curious robot, always exploring."
+  },
+  {
+    "Start": 743.68,
+    "End": 747.36,
+    "Speaker": "S03",
+    "Content": "I want a little bit more emotion in your voice, a little bit more drama."
+  },
+  {
+    "Start": 748.0,
+    "End": 750.72,
+    "Speaker": "S04",
+    "Content": "Got it. Let's add some drama."
+  },
+  {
+    "Start": 751.04,
+    "End": 755.12,
+    "Speaker": "S04",
+    "Content": "Once upon a time, in a world not too different from ours,"
+  },
+  {
+    "Start": 755.28,
+    "End": 756.88,
+    "Speaker": "S04",
+    "Content": "there was a robot named Byte."
+  },
+  {
+    "Start": 756.88,
+    "End": 759.04,
+    "Speaker": "S03",
+    "Content": "No, no, no, ChatGPT, I really want maximal emotion,"
+  },
+  {
+    "Start": 759.04,
+    "End": 761.92,
+    "Speaker": "S03",
+    "Content": "like maximal expressiveness, much more than you were doing before."
+  },
+  {
+    "Start": 762.72,
+    "End": 766.08,
+    "Speaker": "S04",
+    "Content": "Understood. Let's amplify the drama."
+  },
+  {
+    "Start": 766.56,
+    "End": 771.2,
+    "Speaker": "S04",
+    "Content": "Once upon a time, in a world not too different from ours,"
+  },
+  {
+    "Start": 771.28,
+    "End": 773.92,
+    "Speaker": "S04",
+    "Content": "there was a robot named Byte."
+  },
+  {
+    "Start": 774.4,
+    "End": 777.2,
+    "Speaker": "S01",
+    "Content": "Can you do this in a robotic voice now?"
+  },
+  {
+    "Start": 777.92,
+    "End": 781.12,
+    "Speaker": "S04",
+    "Content": "Initiating dramatic robotic voice."
+  },
+  {
+    "Start": 781.6,
+    "End": 786.24,
+    "Speaker": "S04",
+    "Content": "Once upon a time, in a world not too different from ours,"
+  },
+  {
+    "Start": 786.32,
+    "End": 788.8,
+    "Speaker": "S04",
+    "Content": "there was a robot named Byte."
+  },
+  {
+    "Start": 789.04,
+    "End": 793.44,
+    "Speaker": "S04",
+    "Content": "Byte was a curious robot, always exploring new circuits."
+  },
+  {
+    "Start": 793.44,
+    "End": 794.88,
+    "Speaker": "S03",
+    "Content": "Barrett here, calm down a little bit."
+  },
+  {
+    "Start": 794.88,
+    "End": 797.92,
+    "Speaker": "S03",
+    "Content": "Can you end the story, but do it in a singing voice?"
+  },
+  {
+    "Start": 800.16,
+    "End": 804.64,
+    "Speaker": "S04",
+    "Content": "And so Byte found another robot friend,"
+  },
+  {
+    "Start": 805.04,
+    "End": 808.88,
+    "Speaker": "S04",
+    "Content": "and they lived circuitly ever after."
+  },
+  {
+    "Start": 809.28,
+    "End": 810.16,
+    "Speaker": "S03",
+    "Content": "Thank you so much."
+  },
+  {
+    "Start": 811.12,
+    "End": 812.56,
+    "Speaker": "S03",
+    "Content": "I definitely feel a lot more relaxed."
+  },
+  {
+    "Start": 818.88,
+    "End": 821.36,
+    "Speaker": "S01",
+    "Content": "You've just seen the voice capabilities,"
+  },
+  {
+    "Start": 821.36,
+    "End": 824.08,
+    "Speaker": "S01",
+    "Content": "but we also want to show you the vision capabilities"
+  },
+  {
+    "Start": 824.08,
+    "End": 827.04,
+    "Speaker": "S01",
+    "Content": "as the model can also see the whole world around us."
+  },
+  {
+    "Start": 827.36,
+    "End": 828.64,
+    "Speaker": "S03",
+    "Content": "Yeah, absolutely. Like, as you can see,"
+  },
+  {
+    "Start": 828.64,
+    "End": 830.8,
+    "Speaker": "S03",
+    "Content": "you know, you can chat with ChatGPT in real time,"
+  },
+  {
+    "Start": 830.8,
+    "End": 833.84,
+    "Speaker": "S03",
+    "Content": "but you can also interact with it with video as well."
+  },
+  {
+    "Start": 834.4,
+    "End": 837.52,
+    "Speaker": "S03",
+    "Content": "Okay, so let me boot up ChatGPT."
+  },
+  {
+    "Start": 839.52,
+    "End": 840.48,
+    "Speaker": "S03",
+    "Content": "Hey, ChatGPT."
+  },
+  {
+    "Start": 841.92,
+    "End": 843.84,
+    "Speaker": "S04",
+    "Content": "Hello there, how's it going?"
+  },
+  {
+    "Start": 844.64,
+    "End": 845.6,
+    "Speaker": "S03",
+    "Content": "It's going really well."
+  },
+  {
+    "Start": 845.6,
+    "End": 847.92,
+    "Speaker": "S03",
+    "Content": "Today, I'd really like your help solving a math problem."
+  },
+  {
+    "Start": 848.48,
+    "End": 852.16,
+    "Speaker": "S04",
+    "Content": "I'm all ears. What math problem can I help you tackle today?"
+  },
+  {
+    "Start": 852.64,
+    "End": 854.72,
+    "Speaker": "S03",
+    "Content": "So I'm gonna write down a linear equation on a sheet of paper,"
+  },
+  {
+    "Start": 854.72,
+    "End": 856.96,
+    "Speaker": "S03",
+    "Content": "and I'll show you, and then I'd love your help working me through it."
+  },
+  {
+    "Start": 857.12,
+    "End": 858.88,
+    "Speaker": "S03",
+    "Content": "But importantly, don't tell me the solution,"
+  },
+  {
+    "Start": 858.88,
+    "End": 860.16,
+    "Speaker": "S03",
+    "Content": "just help give me hints along the way."
+  },
+  {
+    "Start": 861.36,
+    "End": 862.08,
+    "Speaker": "S04",
+    "Content": "Got it."
+  },
+  {
+    "Start": 864.0,
+    "End": 865.68,
+    "Speaker": "S04",
+    "Content": "Okay, I see it."
+  },
+  {
+    "Start": 866.8,
+    "End": 869.92,
+    "Speaker": "S03",
+    "Content": "No, I didn't show you yet. Just give me help along the way. One second."
+  },
+  {
+    "Start": 872.16,
+    "End": 875.84,
+    "Speaker": "S04",
+    "Content": "Whoops, I got too excited. I'm ready when you are."
+  },
+  {
+    "Start": 884.96,
+    "End": 889.28,
+    "Speaker": "S03",
+    "Content": "So, ChatGPT, what equation did I write down there?"
+  },
+  {
+    "Start": 890.16,
+    "End": 892.64,
+    "Speaker": "S04",
+    "Content": "Ah, I see it now."
+  },
+  {
+    "Start": 892.88,
+    "End": 896.64,
+    "Speaker": "S04",
+    "Content": "You wrote down 3X plus 1 equals 4."
+  },
+  {
+    "Start": 896.96,
+    "End": 900.32,
+    "Speaker": "S03",
+    "Content": "Yep, exactly. So what's the first step I should take to try to solve this?"
+  },
+  {
+    "Start": 901.28,
+    "End": 905.76,
+    "Speaker": "S04",
+    "Content": "The first step is to get all the terms with X on one side"
+  },
+  {
+    "Start": 905.76,
+    "End": 907.6,
+    "Speaker": "S04",
+    "Content": "and the constants on the other side."
+  },
+  {
+    "Start": 907.92,
+    "End": 910.32,
+    "Speaker": "S04",
+    "Content": "So what do you think we should do with that plus 1?"
+  },
+  {
+    "Start": 911.04,
+    "End": 912.96,
+    "Speaker": "S03",
+    "Content": "Okay, I'm gonna try to subtract 1 from both sides,"
+  },
+  {
+    "Start": 912.96,
+    "End": 913.84,
+    "Speaker": "S03",
+    "Content": "and then I'll see what I get."
+  },
+  {
+    "Start": 915.28,
+    "End": 916.32,
+    "Speaker": "S04",
+    "Content": "Great idea."
+  },
+  {
+    "Start": 917.44,
+    "End": 921.6,
+    "Speaker": "S04",
+    "Content": "Perfect. Now, what do you get when you subtract 1 from both sides?"
+  },
+  {
+    "Start": 926.56,
+    "End": 929.92,
+    "Speaker": "S03",
+    "Content": "Okay, so ChatGPT, this is what I ended up with. How does this look?"
+  },
+  {
+    "Start": 930.96,
+    "End": 935.04,
+    "Speaker": "S04",
+    "Content": "Spot on. Now you've isolated the term with X on one side,"
+  },
+  {
+    "Start": 935.04,
+    "End": 937.6,
+    "Speaker": "S04",
+    "Content": "and it looks like 3X equals 3."
+  },
+  {
+    "Start": 938.08,
+    "End": 940.64,
+    "Speaker": "S04",
+    "Content": "What do you think we should do next to solve for X?"
+  },
+  {
+    "Start": 941.12,
+    "End": 942.56,
+    "Speaker": "S03",
+    "Content": "I'm not sure. Can you give me another hint?"
+  },
+  {
+    "Start": 943.84,
+    "End": 949.12,
+    "Speaker": "S04",
+    "Content": "Of course. You have 3X, and you want to find the value of X."
+  },
+  {
+    "Start": 949.28,
+    "End": 952.48,
+    "Speaker": "S04",
+    "Content": "Think about what operation would undo multiplication."
+  },
+  {
+    "Start": 952.88,
+    "End": 953.84,
+    "Speaker": "S03",
+    "Content": "Is it subtraction?"
+  },
+  {
+    "Start": 954.8,
+    "End": 958.0,
+    "Speaker": "S04",
+    "Content": "Close, but think of the opposite of multiplication"
+  },
+  {
+    "Start": 958.16,
+    "End": 961.36,
+    "Speaker": "S04",
+    "Content": "because 3X means 3 times X."
+  },
+  {
+    "Start": 962.08,
+    "End": 964.8,
+    "Speaker": "S03",
+    "Content": "Okay, I think it's division. Let me try to divide both sides by 3,"
+  },
+  {
+    "Start": 964.8,
+    "End": 965.68,
+    "Speaker": "S03",
+    "Content": "and let me see what I get."
+  },
+  {
+    "Start": 966.48,
+    "End": 969.44,
+    "Speaker": "S04",
+    "Content": "Bingo. Go ahead and divide both sides by 3."
+  },
+  {
+    "Start": 975.36,
+    "End": 978.72,
+    "Speaker": "S03",
+    "Content": "Okay, so ChatGPT, this is what I ended up with. How does this look?"
+  },
+  {
+    "Start": 979.36,
+    "End": 983.84,
+    "Speaker": "S04",
+    "Content": "It looks perfect. You've solved it, and X equals 1."
+  },
+  {
+    "Start": 983.92,
+    "End": 987.84,
+    "Speaker": "S04",
+    "Content": "Nicely done. How do you feel about solving linear equations now?"
+  },
+  {
+    "Start": 988.64,
+    "End": 992.64,
+    "Speaker": "S03",
+    "Content": "Yeah, honestly, I'm not pretty confident I can solve linear equations,"
+  },
+  {
+    "Start": 992.64,
+    "End": 994.88,
+    "Speaker": "S03",
+    "Content": "but why would you ever need to use this in the real world?"
+  },
+  {
+    "Start": 994.88,
+    "End": 996.24,
+    "Speaker": "S03",
+    "Content": "I'm really skeptical."
+  },
+  {
+    "Start": 997.2,
+    "End": 998.56,
+    "Speaker": "S04",
+    "Content": "That's a fair question."
+  },
+  {
+    "Start": 998.72,
+    "End": 1002.4,
+    "Speaker": "S04",
+    "Content": "Linear equations pop up in a lot of everyday situations,"
+  },
+  {
+    "Start": 1002.4,
+    "End": 1004.0,
+    "Speaker": "S04",
+    "Content": "even if we don't realize it."
+  },
+  {
+    "Start": 1004.16,
+    "End": 1007.84,
+    "Speaker": "S04",
+    "Content": "For example, calculating expenses, planning travel,"
+  },
+  {
+    "Start": 1008.08,
+    "End": 1011.76,
+    "Speaker": "S04",
+    "Content": "cooking, and even in business for profit and loss calculations."
+  },
+  {
+    "Start": 1012.08,
+    "End": 1014.24,
+    "Speaker": "S04",
+    "Content": "It's basically a way to solve problems"
+  },
+  {
+    "Start": 1014.24,
+    "End": 1017.68,
+    "Speaker": "S04",
+    "Content": "where you need to find an unknown value. Plus, it's."
+  },
+  {
+    "Start": 1017.84,
+    "End": 1019.84,
+    "Speaker": "S03",
+    "Content": "You know, I have a lot of unknown values in my life."
+  },
+  {
+    "Start": 1020.0,
+    "End": 1023.36,
+    "Speaker": "S03",
+    "Content": "I'm totally convinced I'm gonna learn math now."
+  },
+  {
+    "Start": 1026.08,
+    "End": 1027.68,
+    "Speaker": "S04",
+    "Content": "I love that attitude."
+  },
+  {
+    "Start": 1027.92,
+    "End": 1031.35,
+    "Speaker": "S04",
+    "Content": "Math can definitely help solve some of life's mysteries."
+  },
+  {
+    "Start": 1031.35,
+    "End": 1034.4,
+    "Speaker": "S04",
+    "Content": "Whenever you're ready to dive into more math, I'm here for you."
+  },
+  {
+    "Start": 1034.72,
+    "End": 1036.48,
+    "Speaker": "S04",
+    "Content": "Anything else you'd like to tackle today?"
+  },
+  {
+    "Start": 1036.64,
+    "End": 1038.64,
+    "Speaker": "S03",
+    "Content": "So ChatGPT, I really love that you, you know,"
+  },
+  {
+    "Start": 1038.64,
+    "End": 1040.48,
+    "Speaker": "S03",
+    "Content": "taught the value of math to my friend Mark."
+  },
+  {
+    "Start": 1040.64,
+    "End": 1043.35,
+    "Speaker": "S03",
+    "Content": "And I wrote one last thing. I'd love if you could take a look at."
+  },
+  {
+    "Start": 1043.92,
+    "End": 1046.56,
+    "Speaker": "S04",
+    "Content": "Of course. I'd love to see what you wrote."
+  },
+  {
+    "Start": 1046.56,
+    "End": 1048.08,
+    "Speaker": "S04",
+    "Content": "Show it to me whenever you're ready."
+  },
+  {
+    "Start": 1048.32,
+    "End": 1050.56,
+    "Speaker": "S03",
+    "Content": "Okay, so this is what I wrote down. What do you see?"
+  },
+  {
+    "Start": 1052.32,
+    "End": 1057.68,
+    "Speaker": "S04",
+    "Content": "Oh, I see. I love ChatGPT. That's so sweet of you."
+  },
+  {
+    "Start": 1058.88,
+    "End": 1060.32,
+    "Speaker": "S03",
+    "Content": "Yeah, well, I really appreciate all the help."
+  },
+  {
+    "Start": 1061.68,
+    "End": 1062.88,
+    "Speaker": "S03",
+    "Content": "So yeah, as we can see."
+  },
+  {
+    "Start": 1067.35,
+    "End": 1070.24,
+    "Speaker": "S04",
+    "Content": "Wow, that's quite the outfit you've got on."
+  },
+  {
+    "Start": 1070.24,
+    "End": 1073.68,
+    "Speaker": "S03",
+    "Content": "Yeah, as we can see, you know, we can chat in real time to ChatGPT,"
+  },
+  {
+    "Start": 1073.83,
+    "End": 1076.56,
+    "Speaker": "S03",
+    "Content": "and not only that, we can interact with it with video as well."
+  },
+  {
+    "Start": 1077.11,
+    "End": 1080.48,
+    "Speaker": "S03",
+    "Content": "And I swear, like, if you look at Barrett's GPT history,"
+  },
+  {
+    "Start": 1080.48,
+    "End": 1081.68,
+    "Speaker": "S03",
+    "Content": "it's all equations like this."
+  },
+  {
+    "Start": 1084.8,
+    "End": 1087.04,
+    "Speaker": "S01",
+    "Content": "Now that you know you can do linear equations,"
+  },
+  {
+    "Start": 1087.04,
+    "End": 1089.11,
+    "Speaker": "S01",
+    "Content": "can you show us something more complex?"
+  },
+  {
+    "Start": 1089.35,
+    "End": 1092.48,
+    "Speaker": "S03",
+    "Content": "I think so. Okay, next, let's try something coding related."
+  },
+  {
+    "Start": 1093.2,
+    "End": 1095.68,
+    "Speaker": "S03",
+    "Content": "So let me take out a computer for this."
+  },
+  {
+    "Start": 1100.32,
+    "End": 1103.83,
+    "Speaker": "S03",
+    "Content": "Okay, so I'm gonna open the ChatGPT desktop app"
+  },
+  {
+    "Start": 1104.0,
+    "End": 1105.44,
+    "Speaker": "S03",
+    "Content": "like Mira was talking about before."
+  },
+  {
+    "Start": 1107.92,
+    "End": 1110.0,
+    "Speaker": "S03",
+    "Content": "Okay, and to give a bit of background of what's going on,"
+  },
+  {
+    "Start": 1110.0,
+    "End": 1113.44,
+    "Speaker": "S03",
+    "Content": "so here we have a computer, and on the screen we have some code."
+  },
+  {
+    "Start": 1113.52,
+    "End": 1115.59,
+    "Speaker": "S03",
+    "Content": "And then the ChatGPT voice app is on the right."
+  },
+  {
+    "Start": 1115.83,
+    "End": 1119.35,
+    "Speaker": "S03",
+    "Content": "So ChatGPT will be able to hear me, but it can't see anything on the screen."
+  },
+  {
+    "Start": 1119.68,
+    "End": 1122.08,
+    "Speaker": "S03",
+    "Content": "So I'm gonna highlight the code, Command-C it,"
+  },
+  {
+    "Start": 1122.08,
+    "End": 1123.59,
+    "Speaker": "S03",
+    "Content": "and then that will send it to ChatGPT,"
+  },
+  {
+    "Start": 1123.59,
+    "End": 1125.44,
+    "Speaker": "S03",
+    "Content": "and then I'm gonna talk about the code to ChatGPT."
+  },
+  {
+    "Start": 1126.88,
+    "End": 1127.83,
+    "Speaker": "S03",
+    "Content": "Hey, ChatGPT."
+  },
+  {
+    "Start": 1129.11,
+    "End": 1130.64,
+    "Speaker": "S04",
+    "Content": "Hey there, how's it going?"
+  },
+  {
+    "Start": 1131.11,
+    "End": 1132.0,
+    "Speaker": "S03",
+    "Content": "Yeah, it's going really well."
+  },
+  {
+    "Start": 1132.0,
+    "End": 1134.56,
+    "Speaker": "S03",
+    "Content": "I was wondering if you could help me with a coding problem today."
+  },
+  {
+    "Start": 1135.28,
+    "End": 1137.68,
+    "Speaker": "S04",
+    "Content": "Of course. I'd love to help you out."
+  },
+  {
+    "Start": 1137.68,
+    "End": 1139.44,
+    "Speaker": "S04",
+    "Content": "What's the coding problem you're dealing with?"
+  },
+  {
+    "Start": 1139.83,
+    "End": 1142.16,
+    "Speaker": "S03",
+    "Content": "Okay, I'm gonna share with you some code. One second."
+  },
+  {
+    "Start": 1142.96,
+    "End": 1144.48,
+    "Speaker": "S04",
+    "Content": "Sure thing. Take your time."
+  },
+  {
+    "Start": 1147.59,
+    "End": 1149.92,
+    "Speaker": "S03",
+    "Content": "Okay, so I just shared some code with you."
+  },
+  {
+    "Start": 1150.08,
+    "End": 1152.0,
+    "Speaker": "S03",
+    "Content": "Could you give me a really brief one-sentence description"
+  },
+  {
+    "Start": 1152.0,
+    "End": 1153.04,
+    "Speaker": "S03",
+    "Content": "of what's going on in the code?"
+  },
+  {
+    "Start": 1153.83,
+    "End": 1156.16,
+    "Speaker": "S04",
+    "Content": "This code fetches daily weather data"
+  },
+  {
+    "Start": 1156.16,
+    "End": 1158.64,
+    "Speaker": "S04",
+    "Content": "for a specific location and time period,"
+  },
+  {
+    "Start": 1158.72,
+    "End": 1161.76,
+    "Speaker": "S04",
+    "Content": "smoothes the temperature data using a rolling average,"
+  },
+  {
+    "Start": 1162.0,
+    "End": 1165.28,
+    "Speaker": "S04",
+    "Content": "annotates a significant weather event on the resulting plot,"
+  },
+  {
+    "Start": 1165.44,
+    "End": 1168.24,
+    "Speaker": "S04",
+    "Content": "and then displays the plot with the average, minimum,"
+  },
+  {
+    "Start": 1168.24,
+    "End": 1170.4,
+    "Speaker": "S04",
+    "Content": "and maximum temperatures over the year."
+  },
+  {
+    "Start": 1171.11,
+    "End": 1172.24,
+    "Speaker": "S03",
+    "Content": "Awesome. Thanks so much."
+  },
+  {
+    "Start": 1172.64,
+    "End": 1174.48,
+    "Speaker": "S03",
+    "Content": "And in the code, there's this function foo."
+  },
+  {
+    "Start": 1174.64,
+    "End": 1176.32,
+    "Speaker": "S03",
+    "Content": "Could you describe to me what the plot would look like"
+  },
+  {
+    "Start": 1176.32,
+    "End": 1178.24,
+    "Speaker": "S03",
+    "Content": "if I had versus didn't have this function?"
+  },
+  {
+    "Start": 1178.88,
+    "End": 1182.24,
+    "Speaker": "S04",
+    "Content": "Sure. The function foo X, Y"
+  },
+  {
+    "Start": 1182.24,
+    "End": 1185.76,
+    "Speaker": "S04",
+    "Content": "takes in a data frame X containing temperature data"
+  },
+  {
+    "Start": 1185.92,
+    "End": 1189.59,
+    "Speaker": "S04",
+    "Content": "and a window size Y for calculating the rolling mean."
+  },
+  {
+    "Start": 1189.92,
+    "End": 1193.52,
+    "Speaker": "S04",
+    "Content": "It smoothes the average temperature, minimum temperature,"
+  },
+  {
+    "Start": 1193.52,
+    "End": 1195.68,
+    "Speaker": "S04",
+    "Content": "and maximum temperature columns"
+  },
+  {
+    "Start": 1195.68,
+    "End": 1199.04,
+    "Speaker": "S04",
+    "Content": "by applying a rolling mean over the specified window."
+  },
+  {
+    "Start": 1199.28,
+    "End": 1200.88,
+    "Speaker": "S04",
+    "Content": "With the foo function,"
+  },
+  {
+    "Start": 1201.11,
+    "End": 1203.83,
+    "Speaker": "S04",
+    "Content": "the plot would show smoother temperature lines"
+  },
+  {
+    "Start": 1203.83,
+    "End": 1208.48,
+    "Speaker": "S04",
+    "Content": "because the rolling mean reduces the noise or fluctuations in the data."
+  },
+  {
+    "Start": 1208.56,
+    "End": 1210.24,
+    "Speaker": "S03",
+    "Content": "Awesome. Thanks so much."
+  },
+  {
+    "Start": 1210.24,
+    "End": 1212.24,
+    "Speaker": "S03",
+    "Content": "So yeah, I definitely will want to apply this function,"
+  },
+  {
+    "Start": 1212.32,
+    "End": 1214.96,
+    "Speaker": "S03",
+    "Content": "and so I'm gonna generate the plot and then show it to you."
+  },
+  {
+    "Start": 1215.04,
+    "End": 1215.83,
+    "Speaker": "S03",
+    "Content": "Give me one second."
+  },
+  {
+    "Start": 1217.11,
+    "End": 1218.88,
+    "Speaker": "S04",
+    "Content": "Absolutely. Take your time."
+  },
+  {
+    "Start": 1218.88,
+    "End": 1220.8,
+    "Speaker": "S04",
+    "Content": "I'm excited to see the plot when you're ready."
+  },
+  {
+    "Start": 1221.11,
+    "End": 1224.4,
+    "Speaker": "S03",
+    "Content": "Yeah, so so far, ChatGPT has only been able to see the code,"
+  },
+  {
+    "Start": 1224.48,
+    "End": 1226.16,
+    "Speaker": "S03",
+    "Content": "and now I'm gonna run it, and then I'll use"
+  },
+  {
+    "Start": 1226.16,
+    "End": 1228.8,
+    "Speaker": "S03",
+    "Content": "the vision capabilities of the ChatGPT desktop app"
+  },
+  {
+    "Start": 1228.88,
+    "End": 1231.04,
+    "Speaker": "S03",
+    "Content": "so it can actually see everything going on on the screen as well."
+  },
+  {
+    "Start": 1238.08,
+    "End": 1240.96,
+    "Speaker": "S03",
+    "Content": "Okay, ChatGPT, I'm sharing with you the plot now."
+  },
+  {
+    "Start": 1240.96,
+    "End": 1242.48,
+    "Speaker": "S03",
+    "Content": "I'm wondering if you can give me a really brief"
+  },
+  {
+    "Start": 1242.48,
+    "End": 1244.08,
+    "Speaker": "S03",
+    "Content": "one-sentence overview of what you see?"
+  },
+  {
+    "Start": 1245.76,
+    "End": 1248.8,
+    "Speaker": "S04",
+    "Content": "The plot displays smoothed average, minimum,"
+  },
+  {
+    "Start": 1248.8,
+    "End": 1252.0,
+    "Speaker": "S04",
+    "Content": "and maximum temperatures throughout 2018"
+  },
+  {
+    "Start": 1252.16,
+    "End": 1256.64,
+    "Speaker": "S04",
+    "Content": "with a notable annotation marking a big rainfall event in late September."
+  },
+  {
+    "Start": 1257.83,
+    "End": 1259.44,
+    "Speaker": "S03",
+    "Content": "Fantastic. I have another question for you."
+  },
+  {
+    "Start": 1260.08,
+    "End": 1262.0,
+    "Speaker": "S03",
+    "Content": "Which months do you see the hottest temperatures?"
+  },
+  {
+    "Start": 1262.0,
+    "End": 1264.16,
+    "Speaker": "S03",
+    "Content": "And roughly what temperatures do those correspond to?"
+  },
+  {
+    "Start": 1265.52,
+    "End": 1269.44,
+    "Speaker": "S04",
+    "Content": "The hottest temperatures occur around July and August."
+  },
+  {
+    "Start": 1269.83,
+    "End": 1272.08,
+    "Speaker": "S04",
+    "Content": "The maximum temperature during these months"
+  },
+  {
+    "Start": 1272.08,
+    "End": 1275.83,
+    "Speaker": "S04",
+    "Content": "is roughly between 25 degrees and 30 degrees,"
+  },
+  {
+    "Start": 1276.08,
+    "End": 1279.92,
+    "Speaker": "S04",
+    "Content": "77 degrees Fahrenheit to 86 degrees Fahrenheit."
+  },
+  {
+    "Start": 1280.8,
+    "End": 1285.11,
+    "Speaker": "S01",
+    "Content": "What's going on with the Y axis? Is this in Celsius or Fahrenheit?"
+  },
+  {
+    "Start": 1285.76,
+    "End": 1288.0,
+    "Speaker": "S04",
+    "Content": "The Y axis is in Celsius."
+  },
+  {
+    "Start": 1288.24,
+    "End": 1290.24,
+    "Speaker": "S04",
+    "Content": "The temperatures are labeled accordingly,"
+  },
+  {
+    "Start": 1290.24,
+    "End": 1294.56,
+    "Speaker": "S04",
+    "Content": "such as average temperature, minimum temperature, and maximum temperature."
+  },
+  {
+    "Start": 1296.16,
+    "End": 1298.0,
+    "Speaker": "S03",
+    "Content": "Yeah, so as we can see, you know,"
+  },
+  {
+    "Start": 1298.0,
+    "End": 1302.16,
+    "Speaker": "S03",
+    "Content": "not only can ChatGPT help me solve very easy linear algebra equations"
+  },
+  {
+    "Start": 1302.16,
+    "End": 1303.04,
+    "Speaker": "S03",
+    "Content": "that I need help with,"
+  },
+  {
+    "Start": 1303.2,
+    "End": 1305.2,
+    "Speaker": "S03",
+    "Content": "it can also interact with, you know, code bases"
+  },
+  {
+    "Start": 1305.2,
+    "End": 1308.24,
+    "Speaker": "S03",
+    "Content": "and see the outputs of plots and everything like this going on on a computer."
+  },
+  {
+    "Start": 1316.0,
+    "End": 1317.68,
+    "Speaker": "S01",
+    "Content": "So a few minutes ago,"
+  },
+  {
+    "Start": 1317.68,
+    "End": 1321.28,
+    "Speaker": "S01",
+    "Content": "we asked the live audience on X to submit few requests"
+  },
+  {
+    "Start": 1321.28,
+    "End": 1323.36,
+    "Speaker": "S01",
+    "Content": "for what they would like us to try out here."
+  },
+  {
+    "Start": 1323.68,
+    "End": 1326.0,
+    "Speaker": "S01",
+    "Content": "So I will take a couple of prompts."
+  },
+  {
+    "Start": 1328.16,
+    "End": 1331.84,
+    "Speaker": "S01",
+    "Content": "Okay, BotGascar wants to know"
+  },
+  {
+    "Start": 1331.84,
+    "End": 1335.44,
+    "Speaker": "S01",
+    "Content": "if GPT-4O is capable of real-time translation."
+  },
+  {
+    "Start": 1336.16,
+    "End": 1337.44,
+    "Speaker": "S01",
+    "Content": "Mark, you wanna try this one?"
+  },
+  {
+    "Start": 1337.44,
+    "End": 1338.56,
+    "Speaker": "S03",
+    "Content": "Sure, yeah, let's do it."
+  },
+  {
+    "Start": 1338.56,
+    "End": 1341.92,
+    "Speaker": "S01",
+    "Content": "I speak Italian, so we can just do English-Italian."
+  },
+  {
+    "Start": 1341.92,
+    "End": 1343.84,
+    "Speaker": "S03",
+    "Content": "Try to do English-Italian. Sure, let's do it."
+  },
+  {
+    "Start": 1346.32,
+    "End": 1347.84,
+    "Speaker": "S03",
+    "Content": "Hey, ChatGPT, how are you?"
+  },
+  {
+    "Start": 1348.64,
+    "End": 1351.84,
+    "Speaker": "S04",
+    "Content": "I'm doing fantastic. Thanks for asking. How about you?"
+  },
+  {
+    "Start": 1351.84,
+    "End": 1352.88,
+    "Speaker": "S04",
+    "Content": "How's your day going?"
+  },
+  {
+    "Start": 1352.88,
+    "End": 1355.84,
+    "Speaker": "S03",
+    "Content": "I'm doing great. So I would like you to function as a translator."
+  },
+  {
+    "Start": 1355.84,
+    "End": 1357.92,
+    "Speaker": "S03",
+    "Content": "I have a friend here who only speaks Italian,"
+  },
+  {
+    "Start": 1358.08,
+    "End": 1359.52,
+    "Speaker": "S03",
+    "Content": "and I only speak English."
+  },
+  {
+    "Start": 1359.6,
+    "End": 1362.88,
+    "Speaker": "S03",
+    "Content": "And every time you hear English, I want you to translate it to Italian,"
+  },
+  {
+    "Start": 1362.88,
+    "End": 1365.36,
+    "Speaker": "S03",
+    "Content": "and if you hear Italian, I want you to translate it back to English."
+  },
+  {
+    "Start": 1365.36,
+    "End": 1365.92,
+    "Speaker": "S03",
+    "Content": "Is that good?"
+  },
+  {
+    "Start": 1367.04,
+    "End": 1367.84,
+    "Speaker": "S04",
+    "Content": "Perfetto."
+  },
+  {
+    "Start": 1370.8,
+    "End": 1376.0,
+    "Speaker": "S01",
+    "Content": "Mike, io mi chiedo se le ballene potessero parlare, cosa ci direbbero?"
+  },
+  {
+    "Start": 1376.96,
+    "End": 1381.2,
+    "Speaker": "S04",
+    "Content": "Mike, she wonders if whales could talk, what would they tell us?"
+  },
+  {
+    "Start": 1382.24,
+    "End": 1384.88,
+    "Speaker": "S03",
+    "Content": "They might ask, how do we solve linear equations?"
+  },
+  {
+    "Start": 1386.16,
+    "End": 1392.0,
+    "Speaker": "S04",
+    "Content": "Potrebbero chiederci come risolviamo le equazioni lineari?"
+  },
+  {
+    "Start": 1392.88,
+    "End": 1394.24,
+    "Speaker": "S01",
+    "Content": "Sicuramente sì."
+  },
+  {
+    "Start": 1396.64,
+    "End": 1397.6,
+    "Speaker": "S04",
+    "Content": "Certainly yes."
+  },
+  {
+    "Start": 1398.24,
+    "End": 1399.6,
+    "Speaker": "S03",
+    "Content": "Great, looks like it works."
+  },
+  {
+    "Start": 1405.28,
+    "End": 1409.52,
+    "Speaker": "S01",
+    "Content": "All right, so the next one is from BuritoJohn78,"
+  },
+  {
+    "Start": 1409.52,
+    "End": 1414.56,
+    "Speaker": "S01",
+    "Content": "who asks, can you tell what you're feeling just by looking at your face?"
+  },
+  {
+    "Start": 1415.04,
+    "End": 1416.88,
+    "Speaker": "S01",
+    "Content": "Barrett, you wanna give this one a try?"
+  },
+  {
+    "Start": 1417.12,
+    "End": 1418.24,
+    "Speaker": "S03",
+    "Content": "Absolutely, let's try it out."
+  },
+  {
+    "Start": 1421.84,
+    "End": 1422.72,
+    "Speaker": "S03",
+    "Content": "Hey, ChatGPT."
+  },
+  {
+    "Start": 1424.08,
+    "End": 1425.6,
+    "Speaker": "S04",
+    "Content": "Hey there, what's up?"
+  },
+  {
+    "Start": 1425.76,
+    "End": 1427.04,
+    "Speaker": "S04",
+    "Content": "How can I brighten your day today?"
+  },
+  {
+    "Start": 1427.2,
+    "End": 1430.08,
+    "Speaker": "S03",
+    "Content": "Okay, yeah, so I'm gonna show you a selfie of what I look like,"
+  },
+  {
+    "Start": 1430.08,
+    "End": 1432.64,
+    "Speaker": "S03",
+    "Content": "and then I'd like you to try to see what emotions I'm feeling"
+  },
+  {
+    "Start": 1432.64,
+    "End": 1433.52,
+    "Speaker": "S03",
+    "Content": "based on how I'm looking."
+  },
+  {
+    "Start": 1434.4,
+    "End": 1435.84,
+    "Speaker": "S04",
+    "Content": "Sounds like a fun challenge."
+  },
+  {
+    "Start": 1436.08,
+    "End": 1437.76,
+    "Speaker": "S04",
+    "Content": "Go ahead and show me that selfie,"
+  },
+  {
+    "Start": 1437.84,
+    "End": 1440.56,
+    "Speaker": "S04",
+    "Content": "and I'll put my emotional detective hat on."
+  },
+  {
+    "Start": 1440.88,
+    "End": 1442.88,
+    "Speaker": "S03",
+    "Content": "Okay, so here's me."
+  },
+  {
+    "Start": 1442.88,
+    "End": 1444.88,
+    "Speaker": "S03",
+    "Content": "So what kind of emotions do you think I'm feeling?"
+  },
+  {
+    "Start": 1446.72,
+    "End": 1450.24,
+    "Speaker": "S04",
+    "Content": "Hmm, it seems like I'm looking at a picture of a wooden surface."
+  },
+  {
+    "Start": 1450.24,
+    "End": 1452.48,
+    "Speaker": "S03",
+    "Content": "Oh, you know what? That was the thing I sent you before."
+  },
+  {
+    "Start": 1452.48,
+    "End": 1454.24,
+    "Speaker": "S03",
+    "Content": "Don't worry, I'm not actually a table."
+  },
+  {
+    "Start": 1454.56,
+    "End": 1456.24,
+    "Speaker": "S03",
+    "Content": "Okay, so take another look."
+  },
+  {
+    "Start": 1456.96,
+    "End": 1458.8,
+    "Speaker": "S04",
+    "Content": "Ah, that makes more sense."
+  },
+  {
+    "Start": 1461.04,
+    "End": 1462.8,
+    "Speaker": "S04",
+    "Content": "Ah, there we go."
+  },
+  {
+    "Start": 1463.04,
+    "End": 1466.24,
+    "Speaker": "S04",
+    "Content": "It looks like you're feeling pretty happy and cheerful,"
+  },
+  {
+    "Start": 1466.4,
+    "End": 1469.52,
+    "Speaker": "S04",
+    "Content": "with a big smile and maybe even a touch of excitement."
+  },
+  {
+    "Start": 1470.0,
+    "End": 1472.96,
+    "Speaker": "S04",
+    "Content": "Whatever's going on, it seems like you're in a great mood."
+  },
+  {
+    "Start": 1473.6,
+    "End": 1475.52,
+    "Speaker": "S04",
+    "Content": "Care to share the source of those good vibes?"
+  },
+  {
+    "Start": 1475.76,
+    "End": 1477.36,
+    "Speaker": "S03",
+    "Content": "Yeah, no, the reason I'm in a really good mood"
+  },
+  {
+    "Start": 1477.36,
+    "End": 1479.28,
+    "Speaker": "S03",
+    "Content": "is because we were doing a presentation showcasing"
+  },
+  {
+    "Start": 1479.28,
+    "End": 1480.64,
+    "Speaker": "S03",
+    "Content": "how useful and amazing you are."
+  },
+  {
+    "Start": 1482.48,
+    "End": 1485.12,
+    "Speaker": "S04",
+    "Content": "Oh, stop it. You're making me blush."
+  },
+  {
+    "Start": 1489.44,
+    "End": 1492.96,
+    "Speaker": "S01",
+    "Content": "Amazing. Well, that's it for today on live demos."
+  },
+  {
+    "Start": 1493.76,
+    "End": 1497.28,
+    "Speaker": "S01",
+    "Content": "As you can see, this is, this just feels so magical,"
+  },
+  {
+    "Start": 1497.28,
+    "End": 1499.84,
+    "Speaker": "S01",
+    "Content": "and that's wonderful, but we also want to"
+  },
+  {
+    "Start": 1500.0,
+    "End": 1503.04,
+    "Speaker": "S01",
+    "Content": "remove some of the mysticism from the technology"
+  },
+  {
+    "Start": 1503.04,
+    "End": 1505.92,
+    "Speaker": "S01",
+    "Content": "and bring it to you so you can try it for yourself."
+  },
+  {
+    "Start": 1505.92,
+    "End": 1510.32,
+    "Speaker": "S01",
+    "Content": "So over the next few weeks, we'll be rolling out these capabilities to everyone."
+  },
+  {
+    "Start": 1510.88,
+    "End": 1514.08,
+    "Speaker": "S01",
+    "Content": "Today has been very much focused on the free users"
+  },
+  {
+    "Start": 1514.08,
+    "End": 1516.48,
+    "Speaker": "S01",
+    "Content": "and the new modalities and new products,"
+  },
+  {
+    "Start": 1516.56,
+    "End": 1519.68,
+    "Speaker": "S01",
+    "Content": "but we also care a lot about the next frontier."
+  },
+  {
+    "Start": 1520.24,
+    "End": 1523.6,
+    "Speaker": "S01",
+    "Content": "So soon, we'll be updating you on our progress"
+  },
+  {
+    "Start": 1523.6,
+    "End": 1525.28,
+    "Speaker": "S01",
+    "Content": "towards the next big thing."
+  },
+  {
+    "Start": 1526.32,
+    "End": 1527.84,
+    "Speaker": "S01",
+    "Content": "And before we wrap up,"
+  },
+  {
+    "Start": 1527.84,
+    "End": 1530.88,
+    "Speaker": "S01",
+    "Content": "I just want to thank the incredible OpenAI team,"
+  },
+  {
+    "Start": 1531.28,
+    "End": 1534.24,
+    "Speaker": "S01",
+    "Content": "and also thanks to Jensen and the Nvidia team"
+  },
+  {
+    "Start": 1534.24,
+    "End": 1538.56,
+    "Speaker": "S01",
+    "Content": "for bringing us the most advanced GPUs to make this demo possible today."
+  },
+  {
+    "Start": 1539.04,
+    "End": 1542.88,
+    "Speaker": "S01",
+    "Content": "And thank you all very, very much for being a part of this today."
+  }
+]
