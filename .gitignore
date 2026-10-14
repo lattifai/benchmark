@@ -62,3 +62,9 @@ data/OpenAI-Introducing-GPT-4o/DQacCB9tDaw.en-uYU-mmqFLq8.ass
 *.failed
 *.SpkDiar
 data/*/vibevoice.ass
+data/TheValley101-瑞士信贷/
+data/podcast/
+*.zip
+data/*/ground_truth_word.json
+data/*/meta.md
+data/*/video.mp4
